@@ -1,0 +1,11 @@
+version: '3'
+services:
+  blog:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - /etc/certs:/etc/certs
+    ports:
+      - 8743:443
+    restart: unless-stopped

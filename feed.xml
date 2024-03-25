@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2024-03-25T14:37:08+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">通过Openwrt上安装ZeroTier实现异地访问局域网设备</title><link href="https://goooooouwa.github.io/computer/2024/03/25/openwrt-zerotier-access-lan-devices.html" rel="alternate" type="text/html" title="通过Openwrt上安装ZeroTier实现异地访问局域网设备" /><published>2024-03-25T00:00:00+00:00</published><updated>2024-03-25T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/25/openwrt-zerotier-access-lan-devices</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/25/openwrt-zerotier-access-lan-devices.html"><![CDATA[<h2 id="操作细节">操作细节</h2>
+
+<ol>
+  <li>Openwrt ZeroTier基本设置</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/1%20openwrt-zerotier-settings.PNG" alt="" /></p>
+
+<ol>
+  <li>为ZeroTier创建一个新的接口作为DHCP客户端</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/2.1%20create-new-interface-for-zerotier-dhcp.PNG" alt="" /></p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/2.2%20zerotier-dhcp-firewall-settings.PNG" alt="" /></p>
+
+<ol>
+  <li>为ZeroTier新的DHCP客户端接口添加防火墙规则</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/3%20add-firewall-rules-for-zerotier-dhcp-interface.PNG" alt="" /></p>
+
+<ol>
+  <li>在ZeroTier上为本地局域网添加指向Openwrt虚拟IP的Default Route</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/4%20add-zerotier-default-route.PNG" alt="" /></p>
+
+<h2 id="参考教程">参考教程：</h2>
+<ol>
+  <li>OpenWrt 通过安装 ZeroTier 实现异地组网教程：<a href="https://opclash.com/article/198.html">https://opclash.com/article/198.html</a></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>ZeroTier+Openwrt 内网穿透配置</td>
+          <td>WAN口配置: <a href="https://eller.top/post/94">https://eller.top/post/94</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<h2 id="关于如何使用zerotier作为vpn">关于如何使用ZeroTier作为VPN</h2>
+
+<p>ZeroTier本身并不提供VPN能力</p>
+
+<p>The ZeroTier Cloud does not offer a path to the Internet. It is not a VPN solution which will allow you to pretend to be in another location. Every ZeroTier client still needs its own viable path to the Internet.</p>
+
+<p>来自ZeroTier Topology 3：<a href="https://sensorsiot.github.io/IOTstack/Containers/ZeroTier/#topology3">https://sensorsiot.github.io/IOTstack/Containers/ZeroTier/#topology3</a></p>
+
+<h3 id="使用zerotier作为vpn的操作方法">使用ZeroTier作为VPN的操作方法</h3>
+
+<p>Overriding Default Route / Full Tunnel Mode: <a href="https://zerotier.atlassian.net/wiki/spaces/SD/pages/7110693/Overriding+Default+Route+Full+Tunnel+Mode">https://zerotier.atlassian.net/wiki/spaces/SD/pages/7110693/Overriding+Default+Route+Full+Tunnel+Mode</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="openwrt" /><category term="zerotier" /><summary type="html"><![CDATA[操作细节]]></summary></entry><entry><title type="html">如何在SSR Plus下配合使用Adguard Home过滤广告同时避免DNS污染</title><link href="https://goooooouwa.github.io/computer/2024/03/20/adguard-home-prevent-dns-poisoning-in-ssr-plus.html" rel="alternate" type="text/html" title="如何在SSR Plus下配合使用Adguard Home过滤广告同时避免DNS污染" /><published>2024-03-20T00:00:00+00:00</published><updated>2024-03-20T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/20/adguard-home-prevent-dns-poisoning-in-ssr-plus</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/20/adguard-home-prevent-dns-poisoning-in-ssr-plus.html"><![CDATA[<p>我当前的网络结构是：</p>
+<ol>
+  <li>Openwrt旁路由作为网关管理所有的网络请求</li>
+  <li>SSR Plus负责国内外请求分流</li>
+  <li>SSR Plus的国内和国外DNS都设置为Adguard Home的服务ip端口地址</li>
+  <li>Adguard Home的上游DNS设置为了主路由DNS</li>
+</ol>
+
+<p>遇到的问题是，访问一些国外网站时，DNS域名找不到，比如：</p>
+<ul>
+  <li>raw.githubusercontent.com</li>
+  <li>yt3.googleusercontent.com</li>
+</ul>
+
+<p>刚开始以为是Adguard Home过滤规则误伤了。后来搜索Adguard Home查询记录发现这2个域名并没有过滤或拦截这两个域名，是正常解析的。结合这2个域名的特点，都是国外主流的服务，看起来像是DNS被污染了，才导致查不到域名ip。</p>
+
+<p>这让我意识到，Adguard Home的上游DNS不能设置为主路由DNS（上游其实是本地电信运营商的默认DNS），国内运营商的DNS是会被污染的。我需要将上游DNS配置成采用HTTPS的安全DNS，比如：</p>
+<ul>
+  <li>https://dns.google/dns-query</li>
+  <li>https://dns.alidns.com/dns-query</li>
+</ul>
+
+<p>那么，问题来了，该如何配置SSR Plus来使用不受污染的DNS分别来解析国内和国外的域名呢？由于只有一个Adguard Home的instance，该如何为国外和国内的DNS请求分流呢？即让国内的请求走国内的安全DNS，国外的请求走国外的安全DNS？</p>
+
+<p>后来又转念一想，管不了那么多了，统一给我用Google的安全DNS吧，哪怕可能会慢一点，至少不会被DNS污染。统一设置成Google安全DNS之后，就能正常访问以上被污染的域名了。</p>
+
+<p>后来，我又在Adguard Home的上游DNS里加上了阿里的安全DNS，Adguard Home使用负载均衡规则自动选择DNS。目前使用了一段时间，并没有遇到DNS污染。以后有啥新发现再记录吧。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="adguard-home" /><category term="openwrt" /><category term="ssr-plus" /><category term="dns" /><summary type="html"><![CDATA[我当前的网络结构是： Openwrt旁路由作为网关管理所有的网络请求 SSR Plus负责国内外请求分流 SSR Plus的国内和国外DNS都设置为Adguard Home的服务ip端口地址 Adguard Home的上游DNS设置为了主路由DNS]]></summary></entry><entry><title type="html">DIY电子相册和蓝光播放器</title><link href="https://goooooouwa.github.io/computer/2024/03/18/DIY-projects.html" rel="alternate" type="text/html" title="DIY电子相册和蓝光播放器" /><published>2024-03-18T00:00:00+00:00</published><updated>2024-03-18T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/18/DIY-projects</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/18/DIY-projects.html"><![CDATA[<h2 id="diy项目">DIY项目</h2>
+
+<h3 id="电子相册电子日历">电子相册、电子日历</h3>
+
+<p>树莓派 + 7寸触摸屏 + Rasbpian OS + Chromium + Google Remote Desktop。用小屏树莓派通过Google Remote Desktop远程访问Xubuntu虚拟机，当作电子相册、日历、视频播放器。</p>
+
+<p>还尝试过用Rasbian OS+Steamlink串流的方式访问Xubuntu，实践后发现行不通。首先steam和steamlink很占资源（分别占用服务器和客户端的CPU和内存），其次虚拟机本身显卡性能就比较差，实际串流的延迟很高。steamlink串流游戏本又没必要，所以基本没用。</p>
+
+<h3 id="阿里云盘4k高清播放器">阿里云盘4k高清播放器</h3>
+
+<p>魔百盒刷Coreelec系统：kodi播放器的完成体，可以用红外遥控器一键开机，简单操作即可播放高清视频（稳定可靠, lean &amp; mean）。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="raspberry-pi" /><category term="digital-photo-gallery" /><category term="cm311" /><category term="kodi" /><category term="coreelec" /><summary type="html"><![CDATA[DIY项目]]></summary></entry><entry><title type="html">我的电脑使用场景</title><link href="https://goooooouwa.github.io/computer/2024/03/18/my-pc-use-cases.html" rel="alternate" type="text/html" title="我的电脑使用场景" /><published>2024-03-18T00:00:00+00:00</published><updated>2024-03-18T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/18/my-pc-use-cases</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/18/my-pc-use-cases.html"><![CDATA[<p>我的电脑使用场景：</p>
+<ol>
+  <li>旅游便携Windows笔记本（Steamdeck + Win to Go + Chromebook）</li>
+  <li>在家轻薄办公本（Thinkbook 14）</li>
+  <li>在家轻薄上网本（Chromebook）</li>
+  <li>桌面办公电脑（R9000P外接hdmi+键鼠）</li>
+</ol>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="laptop" /><summary type="html"><![CDATA[我的电脑使用场景： 旅游便携Windows笔记本（Steamdeck + Win to Go + Chromebook） 在家轻薄办公本（Thinkbook 14） 在家轻薄上网本（Chromebook） 桌面办公电脑（R9000P外接hdmi+键鼠）]]></summary></entry><entry><title type="html">openwrt旁路由模式SSR Plus和Adguard Home的配置</title><link href="https://goooooouwa.github.io/computer/2024/03/17/adguard-home-configurations.html" rel="alternate" type="text/html" title="openwrt旁路由模式SSR Plus和Adguard Home的配置" /><published>2024-03-17T00:00:00+00:00</published><updated>2024-03-17T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/17/adguard-home-configurations</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/17/adguard-home-configurations.html"><![CDATA[<p>openwrt旁路由，SSR plus + adguard-home 基本配置如下：</p>
+<ol>
+  <li>旁路由不使用HDCP</li>
+  <li>adguard-home重定向规则也没有改，默认作为dnsmasq的上游服务器（估计对于旁路由也用不着）</li>
+  <li>直接简单粗暴的在SSR plus的国内国外DNS同时设置为adguard-home的ip端口，比如：127.0.0.1:1745（具体端口看日志输出）</li>
+</ol>
+
+<p>adguard-home内设置：</p>
+<ol>
+  <li>上游DNS：主路由DNS</li>
+  <li>速度限制：0</li>
+  <li>勾选ENDS，DNSSEC</li>
+  <li>过滤器黑名单随意添加几个（至少1个国外1个国内即可）</li>
+</ol>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="openwrt" /><category term="adguard-home" /><category term="ssr-plus" /><summary type="html"><![CDATA[openwrt旁路由，SSR plus + adguard-home 基本配置如下： 旁路由不使用HDCP adguard-home重定向规则也没有改，默认作为dnsmasq的上游服务器（估计对于旁路由也用不着） 直接简单粗暴的在SSR plus的国内国外DNS同时设置为adguard-home的ip端口，比如：127.0.0.1:1745（具体端口看日志输出）]]></summary></entry><entry><title type="html">OMV主分区扩容</title><link href="https://goooooouwa.github.io/computer/2024/02/24/omv-partition-resize.html" rel="alternate" type="text/html" title="OMV主分区扩容" /><published>2024-02-24T00:00:00+00:00</published><updated>2024-02-24T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/02/24/omv-partition-resize</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/02/24/omv-partition-resize.html"><![CDATA[<p>OMV 主分区扩容本质上需要以下 3 步：</p>
+
+<ol>
+  <li>硬盘上分区后面存在可用的未分配空间（比如对于 PVE 虚拟机可以使用磁盘操作调整磁盘大小）</li>
+  <li>扩大分区大小（比如使用 parted 命令）</li>
+  <li>resize 文件系统来使用全部分区大小（比如使用命令 resize2fs）</li>
+</ol>
+
+<p>有 2 种方式进行分区扩容操作：</p>
+
+<ol>
+  <li><a href="https://forum.openmediavault.org/index.php?thread/41271-expand-file-system-size-to-disk-size/">Linux 系统通过命令行给主分区扩容</a></li>
+  <li><a href="https://www.wnark.com/archives/118.html">OMV 通过 GParted Live 图形界面给主分区扩容</a></li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/IMG_4196.JPG" alt="IMG_4196.JPG" /></p>
+
+<p>OMV 通过 GParted Live 扩容的具体步骤如下：</p>
+
+<ol>
+  <li>安装 kernel 插件</li>
+  <li>安装 GParted Live ISO</li>
+  <li>重启到 GParted Live 一次</li>
+  <li>一路确认进入 GParted Live 图形界面</li>
+  <li>resize 分区</li>
+  <li>apply</li>
+</ol>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="omv" /><category term="partition" /><category term="parted" /><category term="resize2fs" /><category term="gparted" /><summary type="html"><![CDATA[OMV 主分区扩容本质上需要以下 3 步：]]></summary></entry><entry><title type="html">Moonlight串流的网络调试</title><link href="https://goooooouwa.github.io/computer/2024/02/22/trouble-shoot-moonlight-manual-port-forwarding.html" rel="alternate" type="text/html" title="Moonlight串流的网络调试" /><published>2024-02-22T00:00:00+00:00</published><updated>2024-02-22T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/02/22/trouble-shoot-moonlight-manual-port-forwarding</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/02/22/trouble-shoot-moonlight-manual-port-forwarding.html"><![CDATA[<p>由于我的一台X86小主机与其他设备不在同一内网（姑且称为内网A），无法在局域网完成配对，因此Automatic configuration的方式就行不通了，此时如果想通过moonlight串流就只有以下2种方式：</p>
+
+<ol>
+  <li>ZeroTier</li>
+  <li>Manual port forwarding</li>
+</ol>
+
+<p>为了最佳的串流性能，我选择了Manual port forwarding（当然ZeroTier也设置好了，作为替代方案）。于是我对X86小主机所在内网A进行了如下设置：</p>
+
+<ol>
+  <li>宽带申请公网IP</li>
+  <li>主路由替代光猫拨号上网（以便接管WAN端口转发请求）</li>
+  <li>主路由设置端口映射（UDP+TCP: 47984 - 48010）指向X86小主机IP</li>
+  <li>旁路由设置DDNS以便能通过域名方式访问内网A（具体方法参考<a href="/computer/2024/02/21/openwrt-ddns-tutorial.html">这篇</a>文章）</li>
+</ol>
+
+<p>至此我便可以在外网使用moonlight客户端远程串流X86小主机了，只需在moonlight客户端中添加DDNS绑定的域名即可。So far so good.</p>
+
+<p>后来，由于我当前所在的另一内网（称为内网B）也有一台N卡游戏本，于是我也尝试对其进行外网串流的配置，结果导致从内网B使用moonlight客户端访问内网A的X86小主机时所需端口被占用了。接下来我会详细解释故障原因。</p>
+
+<p>为了能在外网使用moonlight客户端远程串流内网B里的N卡游戏本，我对N卡游戏本所在的内网B进行了如下设置：</p>
+
+<ol>
+  <li>宽带申请公网IP</li>
+  <li>主路由替代光猫拨号上网（以便接管WAN端口转发请求）</li>
+  <li>主路由设置端口映射（UDP+TCP: 47984 - 48010）指向旁路由IP</li>
+  <li>旁路由设置端口映射（UDP+TCP: 47984 - 48010）指向N卡游戏本IP</li>
+  <li>旁路由设置DDNS以便能通过域名方式访问内网B</li>
+</ol>
+
+<p>在此设置下，我便无法在内网B使用moonlight客户端访问内网A的X86小主机了，错误提示是UDP+TCP: 47984 - 48010被所在网络阻止访问了。在排除了内网A的DDNS公网IP获取错误、端口被占用、与ZeroTier冲突等可能性后，我无意间发现，安装了moonlight客户端的手机通过蜂窝网络是可以成功串流X86小主机的，这说明问题出在内网B。于是我开始调试内网B的设置。</p>
+
+<p>当我将旁路由的moonlight端口映射规则禁用后，问题就解决了，可以在内网B使用moonlight客户端访问内网A的X86小主机了。</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/2024-02-22 171930.png" alt="屏幕截图 2024-02-22 171930.png" /></p>
+
+<p>我怀疑moonlight串流需要客户端所在网络和服务器所在网络均能使用UDP+TCP: 47984 - 48010来完成网络连接，由于我在内网B将UDP+TCP: 47984 - 48010端口映射到了N卡游戏本IP，便导致当我尝试从内网B使用moonlight客户端访问内网A的X86小主机时所需的端口被占用了（X86小主机尝试将请求发给moonlight客户端，但是请求被映射到了N卡游戏本IP）。</p>
+
+<p>以上仅是我的推测，还有待进一步研究。至少连接X86小主机的问题是解决了。那么，剩下的问题就是，我该如何在外网使用moonlight客户端远程串流内网B里的N卡游戏本呢？这个我暂时打算使用Moonlight Internet Hosting Tool通过Automatic configuration的方式来远程访问N卡游戏本，因为我大部分时候游戏本是在身边的。希望这种方式能在不添加端口映射的情况下自动工作。有待验证。</p>
+
+<p>实验证明，我当前内网B的旁路由作为网关的拓扑结构下，Moonlight Internet Hosting Tool的Automatic configuration方式是无法工作的，Tester工具检测后提示<a href="https://github.com/moonlight-stream/moonlight-docs/wiki/Internet-Streaming-Errors#connected-through-another-router-error">Connected through another router error</a>.</p>
+
+<p>当我尝试在旁路由上开启UPnP服务然后从外网访问N卡游戏本时，结果发现moonlight串流的所有端口都被占用了。</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/Screenshot_20240222-193529.jpg" alt="moonlight client error" /></p>
+
+<p>后来一番排查才发现，原来moonlight串流所需的端口已经在UPnP服务中被自动设置了映射规则，映射到了N卡游戏本IP（如下图）。</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/2024-02-22 200702.png" alt="屏幕截图 2024-02-22 200702.png" /></p>
+
+<p>可是为什么即使映射了端口，外网仍然无法串流到内网B的N卡游戏本呢？可能还是由于我的旁路由网络拓扑结构所致吧。网上简单搜了一下，也没有找到好用的旁路由设置UPnP的教程，懒得折腾了，卸载了旁路由上的UPnP，避免端口再次被悄悄占用。</p>
+
+<p>看来对于从外网串流内网B的设备，我还是老老实实先用ZeroTier凑合着吧，以后游戏本串流得多了再研究其他办法。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="moonlight" /><category term="streaming" /><category term="troubleshooting" /><summary type="html"><![CDATA[由于我的一台X86小主机与其他设备不在同一内网（姑且称为内网A），无法在局域网完成配对，因此Automatic configuration的方式就行不通了，此时如果想通过moonlight串流就只有以下2种方式：]]></summary></entry><entry><title type="html">openwrt旁路由设置动态DNS教程</title><link href="https://goooooouwa.github.io/computer/2024/02/21/openwrt-ddns-tutorial.html" rel="alternate" type="text/html" title="openwrt旁路由设置动态DNS教程" /><published>2024-02-21T00:00:00+00:00</published><updated>2024-02-21T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/02/21/openwrt-ddns-tutorial</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/02/21/openwrt-ddns-tutorial.html"><![CDATA[<h2 id="openwrt-ddns设置步骤">openwrt DDNS设置步骤</h2>
+
+<ol>
+  <li>在DDNS基本设置中填入DNS服务提供商以及账号登录信息。</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/5.png" alt="DDNS基本设置" /></p>
+
+<ol>
+  <li>在DDNS高级设置中填入IP检测方式（由于是旁路由无法直接获取WAN IP，便选择使用URL方式获取公网IP）。</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/6.png" alt="DDNS高级设置" /></p>
+
+<ol>
+  <li>
+    <p>保存并应用设置后，回到概览页面，首次运行服务需要点启动按钮，后续修改需要点击PID按钮重启进程以便手动触发获取公网IP请求。
+<img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/8.png" alt="" /></p>
+  </li>
+  <li>
+    <p>触发获取公网IP请求后，可以在日志中查看请求结果，确保获取IP与公网IP一致即可。</p>
+  </li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/7.png" alt="" /></p>
+
+<p>如果发现修改的URL未生效，可以在修改后点击“保存”按钮（而非“保存并应用”按钮），然后点击页面右上角的“未保存配置项”，再点击“保存”。这种方式能确保配置文件修改生效。</p>
+
+<h2 id="可选防止公网ip获取成代理服务器ip">（可选）防止公网IP获取成代理服务器IP</h2>
+
+<p>如果代理导致公网IP获取成代理服务器IP，可以设置直连域名规则避免公网IP获取错误。</p>
+
+<h4 id="v2ray客户端设置直连域名的方法">v2ray客户端设置直连域名的方法</h4>
+
+<ol>
+  <li>双击相应规则集进入规则集设置：</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/1.png" alt="" /></p>
+
+<ol>
+  <li>双击direct domain规则进入路由规则详情设置：</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/2.png" alt="" /></p>
+
+<ol>
+  <li>添加直连域名后保存。</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/3.png" alt="" /></p>
+
+<h4 id="openwrt-ssr设置直连域名的方法">openwrt SSR+设置直连域名的方法</h4>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-ddns-tutorial/4.png" alt="" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="openwrt" /><category term="ddns" /><category term="freedns" /><summary type="html"><![CDATA[openwrt DDNS设置步骤]]></summary></entry><entry><title type="html">模拟器游戏掌机的最佳答案</title><link href="https://goooooouwa.github.io/gaming/2024/01/23/ultimate-retro-gaming-handheld.html" rel="alternate" type="text/html" title="模拟器游戏掌机的最佳答案" /><published>2024-01-23T00:00:00+00:00</published><updated>2024-01-23T00:00:00+00:00</updated><id>https://goooooouwa.github.io/gaming/2024/01/23/ultimate-retro-gaming-handheld</id><content type="html" xml:base="https://goooooouwa.github.io/gaming/2024/01/23/ultimate-retro-gaming-handheld.html"><![CDATA[<h2 id="模拟器游戏掌机的最佳答案">模拟器游戏掌机的最佳答案</h2>
+
+<h2 id="我的需求">我的需求</h2>
+
+<ul>
+  <li>完整的FC和街机游戏库</li>
+  <li>中文游戏名和游戏封面</li>
+  <li>支持掌机模式，便携，快速游玩</li>
+  <li>支持TV模式1080p输出</li>
+  <li>系统界面支持手柄操控</li>
+  <li>支持蓝牙连接2只手柄且稳定</li>
+</ul>
+
+<h2 id="综合表现最佳的3款模拟器掌机">综合表现最佳的3款模拟器掌机</h2>
+
+<h3 id="switch">Switch</h3>
+
+<p>定位：多人游玩利器</p>
+
+<p>优点：硬件出色，稳定可靠。</p>
+
+<p>缺点：游戏库中文支持不够友好。</p>
+
+<h3 id="安卓手机手柄天马g">安卓手机+手柄+天马G</h3>
+
+<p>定位：便携电子游戏博物馆</p>
+
+<p>优点：硬件性能优秀，软件生态强大，中文社区资源丰富。</p>
+
+<p>缺点：掌机和TV模式一体化不足，需要设置连接。</p>
+
+<h3 id="steam-deck--emudeck">Steam deck + Emudeck</h3>
+
+<p>定位：单人客厅游戏机</p>
+
+<p>优点：掌机性能天花板，通吃PS3以前所有模拟器。Steam OS系统硬件软件一体化程度高。Emudeck模拟器操控一致性高，工具丰富，方便折腾。</p>
+
+<p>缺点：不够便携，中文社区资源不如安卓丰富。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="gaming" /><category term="retro-gaming" /><category term="handheld" /><summary type="html"><![CDATA[模拟器游戏掌机的最佳答案]]></summary></entry><entry><title type="html">Issue: Portainer GitHub repo stack not able to pull update</title><link href="https://goooooouwa.github.io/computer/2024/01/18/portainer-github-repo-stack-image-removal.html" rel="alternate" type="text/html" title="Issue: Portainer GitHub repo stack not able to pull update" /><published>2024-01-18T00:00:00+00:00</published><updated>2024-01-18T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/01/18/portainer-github-repo-stack-image-removal</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/01/18/portainer-github-repo-stack-image-removal.html"><![CDATA[<h3 id="issue-portainer-github-repo-stack-not-able-to-pull-update">Issue: Portainer GitHub repo stack not able to pull update</h3>
+
+<p>issue描述：</p>
+
+<p>Portainer GitHub repo stack如果远端仓库是通过build本地image的方式compose container的话，首次创建会在本地产生build image。后续当远端仓库产生了修改，本地如果直接pull to update无法拉取最新更新。</p>
+
+<p>root cause：</p>
+
+<p>原因推测是因为Portainer无法识别本地build image与最新commit的版本差异，认为本地build image是最新版，每次pull to update都会跳过build过程，直接基于本地build image生成container。这样的问题是container里的代码和数据依然是老的commit，永远无法拉取最新的commit。</p>
+
+<p>解决办法：</p>
+
+<p>删除本地build image，再pull to update。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="portainer" /><category term="docker" /><category term="issue" /><summary type="html"><![CDATA[Issue: Portainer GitHub repo stack not able to pull update]]></summary></entry></feed>
