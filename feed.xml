@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2024-10-20T23:06:42+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">Web Apps Are Born Limited</title><link href="https://goooooouwa.github.io/2024/10/19/web-apps-are-born-limited.html" rel="alternate" type="text/html" title="Web Apps Are Born Limited" /><published>2024-10-19T00:00:00+00:00</published><updated>2024-10-19T00:00:00+00:00</updated><id>https://goooooouwa.github.io/2024/10/19/web-apps-are-born-limited</id><content type="html" xml:base="https://goooooouwa.github.io/2024/10/19/web-apps-are-born-limited.html"><![CDATA[<p>Chromebook最初所设想的纯Web的应用生态是有局限性的，主要差距在于web应用的多媒体能力（主要是高清视频、游戏）无法达到桌面应用同样的性能表现。</p>
+
+<p>比如：</p>
+<ul>
+  <li>视频方面，比如Jellyfin播放4K高清视频需要服务器转码（因为浏览器不支持编码格式），而用Kodi播放则可以直接客户端解码；</li>
+  <li>游戏方面，串流也好，浏览器渲染也好，都无法跟本地游戏对比。</li>
+</ul>
+
+<p>除了web平台本身的性能局限性以外，web作为应用平台也鲜有应用在功能性（feature set）上能达到桌面级别。比如web上少有功能齐全的电子书阅读器。当然，目前不少应用都在向云端迁移，比如在线照片编辑器。未来肯定会有越来越多的应用往云端迁移（因为云端有更好的算力），只是目前阶段，web应用的质量和数量还是无法与桌面应用相比（不然Chromebook也没必要支持安卓应用了）。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><summary type="html"><![CDATA[Chromebook最初所设想的纯Web的应用生态是有局限性的，主要差距在于web应用的多媒体能力（主要是高清视频、游戏）无法达到桌面应用同样的性能表现。]]></summary></entry><entry><title type="html">Music playlist m3u8 files in Jellyfin</title><link href="https://goooooouwa.github.io/entertainment/2024/10/08/jellyfin-music-playlist-files-m3u8.html" rel="alternate" type="text/html" title="Music playlist m3u8 files in Jellyfin" /><published>2024-10-08T00:00:00+00:00</published><updated>2024-10-08T00:00:00+00:00</updated><id>https://goooooouwa.github.io/entertainment/2024/10/08/jellyfin-music-playlist-files-m3u8</id><content type="html" xml:base="https://goooooouwa.github.io/entertainment/2024/10/08/jellyfin-music-playlist-files-m3u8.html"><![CDATA[<p>If you saw Music playlists in Jellyfin, look for <code class="language-plaintext highlighter-rouge">.m3u(8)</code> files in your Music folders. These are playlist files. If you don’t want to see them appearing in Jellyfin, just delete them.</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="entertainment" /><category term="jellyfin" /><summary type="html"><![CDATA[If you saw Music playlists in Jellyfin, look for .m3u(8) files in your Music folders. These are playlist files. If you don’t want to see them appearing in Jellyfin, just delete them.]]></summary></entry><entry><title type="html">如何将音频文件批量按年月进行文件夹分类</title><link href="https://goooooouwa.github.io/computer/2024/10/02/how-to-combine-powertoys-and-mp3tag-to-batch-rename-audio-files.html" rel="alternate" type="text/html" title="如何将音频文件批量按年月进行文件夹分类" /><published>2024-10-02T00:00:00+00:00</published><updated>2024-10-02T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/10/02/how-to-combine-powertoys-and-mp3tag-to-batch-rename-audio-files</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/10/02/how-to-combine-powertoys-and-mp3tag-to-batch-rename-audio-files.html"><![CDATA[<p>最近发现Jellyfin无法正常播放播客音频，简单尝试之后判断是由于播客的单个文件夹音频文件数量太多导致的（每个播客文件夹有大几百个音频文件）。于是我打算将音频文件分文件夹管理，减少单个文件夹的文件数量，来试图解决这个问题。</p>
+
+<p>最终通过使用<a href="https://github.com/microsoft/PowerToys">PowerToys</a>和<a href="https://www.mp3tag.de/en/">Mp3tag</a>，我成功地将所有的播客音频文件按月为单位以文件夹分类，具体操作步骤如下：</p>
+
+<ol>
+  <li>使用PowerToys批量将播客音频文件从<code class="language-plaintext highlighter-rouge">yearmonthday</code>（如<code class="language-plaintext highlighter-rouge">20150420</code>）重命名为<code class="language-plaintext highlighter-rouge">year-month-day</code>格式；</li>
+  <li>使用Mp3tag的filename to filename功能，将文件名从<code class="language-plaintext highlighter-rouge">year-month-day</code>的格式改为<code class="language-plaintext highlighter-rouge">month/year-month-day</code>。</li>
+</ol>
+
+<p>之后尝试使用Jellyfin播放任意播客音频，可以正常播放。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="powertoys" /><category term="mp3tag" /><summary type="html"><![CDATA[最近发现Jellyfin无法正常播放播客音频，简单尝试之后判断是由于播客的单个文件夹音频文件数量太多导致的（每个播客文件夹有大几百个音频文件）。于是我打算将音频文件分文件夹管理，减少单个文件夹的文件数量，来试图解决这个问题。]]></summary></entry><entry><title type="html">记一次Xfinity公网端口转发调试</title><link href="https://goooooouwa.github.io/computer/2024/09/19/debug-xfinity-modem-port-forwarding.html" rel="alternate" type="text/html" title="记一次Xfinity公网端口转发调试" /><published>2024-09-19T00:00:00+00:00</published><updated>2024-09-19T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/09/19/debug-xfinity-modem-port-forwarding</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/09/19/debug-xfinity-modem-port-forwarding.html"><![CDATA[<p>本人的家庭网络拓扑如下：</p>
+
+<p>Xfinity modem作为主路由 –端口转发到–&gt; RT-AC86U二级路由 –端口转发到–&gt; OpenWRT旁路由 –端口转发到–&gt; 局域网服务端口</p>
+
+<p>今天突然遇到公网无法访问家庭服务器的问题，经过一翻调试发现Xfinity modem somehow抽风端口转发到RT-AC86U二级路由失效。</p>
+
+<p>调试过程中，删除了原先的端口转发规则后，重新添加新的端口转发规则到其他本地设备，发现可以正常转发，之后再重新添加回原先到RT-AC86U二级路由的端口转发规则后，又无法访问了，尝试过忘掉设备、重置Xfinity的router module后，再将port range改小到8000-9000后又可以访问了，最后反复尝试后将port range缩小到40000以内后，就可以正常公网访问了。当尝试将端口范围扩大到40000以上时，遇到以下错误提示：</p>
+
+<p><img src="/assets/images/IMG_7700.PNG" alt="IMG_7700.PNG" /></p>
+
+<p>看来Xfinity对40001-41001区间的端口做了限制，可能这就是端口映射失效的原因。于是我通过设置两段port range来绕开这段限制区间，就可以正常使用大于41001的端口公网访问家庭服务器了。</p>
+
+<p>问题暂时算是解决了，后面如果再出问题，我就考虑将Xfinity modem改为Bridge mode了（这样的缺点是无法保留一个稳定的主网络）。</p>
+
+<p>顺便记录一下在Xfinity app上修改端口映射规则的界面操作流程：</p>
+
+<p><img src="/assets/images/4ee45db9a4004519931cbbd0ce0715f1.jpg" alt="4ee45db9a4004519931cbbd0ce0715f1.jpg" /></p>
+
+<p><img src="/assets/images/8316b24bc9d444c69a771964e3f03e12.jpg" alt="8316b24bc9d444c69a771964e3f03e12.jpg" /></p>
+
+<p><img src="/assets/images/64c37945791542d7b2b645db92b64dff.jpg" alt="64c37945791542d7b2b645db92b64dff.jpg" /></p>
+
+<p><img src="/assets/images/f143d952c8be44cda77a1b5563246f23.jpg" alt="f143d952c8be44cda77a1b5563246f23.jpg" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="modem" /><category term="port-forwarding" /><category term="xfinity" /><summary type="html"><![CDATA[本人的家庭网络拓扑如下：]]></summary></entry><entry><title type="html">Mp3Tag: how to convert directory name to tag</title><link href="https://goooooouwa.github.io/computer/2024/09/18/mp3tag-how-to-convert-directory-name-to-tag.html" rel="alternate" type="text/html" title="Mp3Tag: how to convert directory name to tag" /><published>2024-09-18T00:00:00+00:00</published><updated>2024-09-18T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/09/18/mp3tag-how-to-convert-directory-name-to-tag</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/09/18/mp3tag-how-to-convert-directory-name-to-tag.html"><![CDATA[<p>In <a href="https://www.mp3tag.de/en/">Mp3Tag</a>, it turns out you can not only just file name but directory name when converting file name to tag. To match a directory name, just use “" (or “/” depending on the operation system) to indicate a directory.</p>
+
+<p>For example, say you have a file with the following path:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Z:\Music\U2\2004-How to Dismantle an Atomic Bomb\Vertigo</code></p>
+
+<p>In order to convert the information such as artist, year, album from directory names, we can use the following pattern:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Z:\Music\%artist%\%year%-%album%\%title%</code></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="mp3tag" /><summary type="html"><![CDATA[In Mp3Tag, it turns out you can not only just file name but directory name when converting file name to tag. To match a directory name, just use “" (or “/” depending on the operation system) to indicate a directory.]]></summary></entry><entry><title type="html">笔记：一点透视</title><link href="https://goooooouwa.github.io/drawing/2024/09/13/notes-on-central-perspective.html" rel="alternate" type="text/html" title="笔记：一点透视" /><published>2024-09-13T00:00:00+00:00</published><updated>2024-09-13T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2024/09/13/notes-on-central-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2024/09/13/notes-on-central-perspective.html"><![CDATA[<h2 id="the-visual-ray-method视觉射线法">The visual ray method（视觉射线法）</h2>
+
+<p>90度视锥约定了view distance与view height相等,degree of vision cone为90度，此设定下，viewpoint经过向上翻折后，正好落在view circle上面，为透视绘画提供了很多便利。</p>
+
+<p><img src="/assets/images/20230916_073333000_iOS.png" alt="20230916_073333000_iOS.png" />
+<img src="/assets/images/20230916_073426000_iOS.png" alt="20230916_073426000_iOS.png" />
+<img src="/assets/images/20240911_065745817_iOS.png" alt="20240911_065745817_iOS.png" /></p>
+
+<h3 id="the-double-fold双折">The Double Fold（双折）</h3>
+
+<p>视觉射线法通过将viewpoint向上翻折，同时将地面向下翻折，与画面处于同一平面，我们能够便利地定位物体在画面上的位置。</p>
+
+<p><img src="/assets/images/20240911_051309809_iOS.png" alt="20240911_051309809_iOS.png" /></p>
+
+<p>只需在地面俯视图（Plan）上将物体按俯视角度确定其大小和位置，然后通过连接其在plan上的点与翻折后的viewpoint得到一条直线，再将该点的垂直线与ground line（地线）的交点与vanishing point连接得到第2条直线，这2条直线交叉的点即为该物体的某个点在画面中的位置。</p>
+
+<p><img src="/assets/images/20240911_051404447_iOS.png" alt="20240911_051404447_iOS.png" /></p>
+
+<p>这个基本用法只适用于物体离ground line和median line比较近的情况，如果物体离ground line和median line很远，就需要使用后面介绍的measure points和measure bar来定位了。</p>
+
+<h3 id="visual-rays-and-vanishing-points">Visual Rays and Vanishing Points</h3>
+
+<p>使用视觉射线法可以轻松的找到任意物体在画面中的消失点。只需将地面俯视图（Plan）上的物体平移，并将任一个顶点与翻折后的viewpoint重合，然后沿着顶点所在的任一条边画延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。</p>
+
+<p><img src="/assets/images/Screenshot 2024-09-14 at 11.38.12 AM.png" alt="Screenshot 2024-09-14 at 11.38.12 AM.png" />
+<img src="/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png" alt="Screenshot 2024-09-14 at 11.39.24 AM.png" /></p>
+
+<h3 id="visual-rays-and-the-principal-foundation">Visual Rays and the “Principal Foundation”</h3>
+
+<p>另外一种定位物体在画面中的位置的方法是先找到物体某条边的消失点（Visual Rays and Vanishing Points所介绍的方法），然后将俯视图中物体的这条边的延长线与ground line相交，连接消失点和ground line上的交点得到一条直线，然后将该线条在plan上的点与翻折后的viewpoint相连得到第2条直线（即双折法的第1条构造线条），这2条直线交叉的点即为该物体这条线在画面中的位置。</p>
+
+<p>该方法同样只适用于物体离groundline和median line比较近的情况。</p>
+
+<p>当物体离groundline和median line较远的情况，连接物体在plan上的点与翻折后的viewpoint就变得比较困难（线条会很长），这时可以改用双折法的第2条构造线条，即将该物体在俯视图中的线条的两个端点(end point)的垂直线与ground line（地线）的交点与princial point(direction of view与画面的交点)连接得到的直线。一个快速寻找端点(end point)垂直线与ground line（地线）的交点的方法是，根据物体在俯视图中距离median line的距离，直接在ground line上测量出交点所在的位置。</p>
+
+<p><img src="/assets/images/20240911_050144353_iOS.png" alt="20240911_050144353_iOS.png" /></p>
+
+<p>到这里我们会发现很重要的一点，the ground line is always the “actual size” ruler. ground line反应的是物体的实际大小。</p>
+
+<p>Obviously the crucial step is still missing: how do we work with objects that are very far from the median line and/or ground line? These create ground line measure points and/or intersection points that cannot conveniently be located on the perspective drawing ground line. This challenge requires the artist to reduce the scale of the ground line ruler as a substitute for working with unreasonably large dimensions in actual size. This reduced ruler is called a measure bar, and its use is explained below.</p>
+
+<p>最后一个关键问题是，当物体离groundline或median line比较远的时候，以上的构造方法就不实用了。这时我们就需要用到measure bar，即一种缩小scale后的ground line ruler（后文会介绍具体使用方法）。</p>
+
+<h2 id="one-point-perspective一点透视">One point perspective（一点透视）</h2>
+
+<h3 id="diagonals-and-the-unit-depth纵深线和单位深度">Diagonals and the Unit Depth（纵深线和单位深度）</h3>
+
+<p>通过连接单位垂直线条的上端点与视锥下方的dvp（或者下端点与视锥上方的dvp）得到一条直线，然后连接单位线条的另一个端点与pp得到第2条直线（即一条纵深线），两条线相交的点与单位垂直线条的连线与单位长度相等，即为单位深度。</p>
+
+<p><img src="/assets/images/20240913_062733556_iOS.png" alt="20240913_062733556_iOS.png" /></p>
+
+<p>同样的，对于单位水平线条，可以通过连接其左端点与视锥右侧的dvp（或者右端点与视锥左侧的dvp）得到一条类似的直线，然后连接单位线条的另一个端点与pp得到第2条直线（即一条纵深线），两条线相交的点与单位垂直线条的连线与单位长度相等，同样可以得到单位深度。</p>
+
+<p><img src="/assets/images/20240913_063754118_iOS.png" alt="20240913_063754118_iOS.png" /></p>
+
+<h3 id="unequal-spacing-in-depth不相等的深度间距">Unequal Spacing in Depth（不相等的深度间距）</h3>
+
+<p>借助measure bar我们可以在画面中将任意长度转换为对应的深度，不用只局限于单位长度。</p>
+
+<p>具体的步骤是：</p>
+
+<ol>
+  <li>画一条水平条线；</li>
+  <li>在水平条线上标记你像画的任意长度；</li>
+  <li>连接measure bar上的任一measure point与对立的左侧（或者右侧）的dvp得到一条直线；</li>
+  <li>连接measure bar的0刻度的点与vanishing point得到第2条直线；</li>
+  <li>两条直线的交点即为该measure point对应长度在画面中的深度。</li>
+</ol>
+
+<p><img src="/assets/images/Screenshot 2024-09-14 at 11.49.15 AM.png" alt="Screenshot 2024-09-14 at 11.49.15 AM.png" /></p>
+
+<p>Diagonal lines from each point to the mp <strong>transfer these measures into perspective depth</strong> at the points where the lines intersect the vanishing line.</p>
+
+<h3 id="shifting-the-unit-dimension">Shifting the Unit Dimension</h3>
+
+<p>单位水平或垂直长度可以在画面中同一透视深度上任意的反转（rotate）或平移，其长度不变。</p>
+
+<p><img src="/assets/images/perspec3q.gif" alt="perspec3q.gif" /></p>
+
+<h3 id="unit-depth-dimensions-may-not-be-shifted-or-rotated">Unit depth dimensions may not be shifted or rotated</h3>
+
+<p>但是单位深度无法自由地反转（rotate）或平移，因为不同位置深度会因为透视而有所不同。</p>
+
+<h2 id="slanting--sloping-planes倾斜面和坡斜面">slanting &amp; sloping planes（倾斜面和坡斜面）</h2>
+
+<p>画倾斜面的方法很简单，只需将纸张以同样角度旋转，让倾斜面看起来水平即可当作普通水平面处理。</p>
+
+<p><img src="/assets/images/20240911_055615053_iOS.png" alt="20240911_055615053_iOS.png" /></p>
+
+<p>画坡斜面的办法是，将viewpoint向视锥左（或右）侧翻折（与dvp重合），然后在dvp画一个与坡斜面相同的角度，其中一条线与视平线重合，另一条线与median line的交点即该坡斜面的slope vanishing point（斜坡消失点）。找到斜坡消失点，剩下的就很简单了。</p>
+
+<p><img src="/assets/images/20240911_060337731_iOS.png" alt="20240911_060337731_iOS.png" /></p>
+
+<h2 id="distance--size距离和大小">distance &amp; size（距离和大小）</h2>
+
+<p><img src="/assets/images/20240911_061325138_iOS.png" alt="20240911_061325138_iOS.png" /></p>
+
+<h2 id="scaling-the-drawing缩放画面">scaling the drawing（缩放画面）</h2>
+
+<p>缩放的具体步骤是：</p>
+
+<ol>
+  <li>根据设想的view distance，view height，结合ground line来画出单位长度的实际大小（比如1米）；</li>
+  <li>通过缩放（scaling）将实际的大小缩放相应的倍数（比如缩小10倍），令其完整的出现在所选择的format（画材）的画面中，此时我们就得到了一个单位长度在画面中特定透视深度的大小（具体深度距离可以通过scale的倍数算出来）；</li>
+  <li>接下来我们就可以以画面中的该单位长度为参考，相应的画出其他尺寸的物体。</li>
+</ol>
+
+<p><img src="/assets/images/Screenshot 2024-09-14 at 12.04.54 PM.png" alt="Screenshot 2024-09-14 at 12.04.54 PM.png" /></p>
+
+<h2 id="constructing-a-1pp-cube">constructing a 1PP cube</h2>
+
+<p>构造1点透视的具体步骤是：</p>
+
+<ol>
+  <li>确定画面中的anchor point和anchor line；</li>
+  <li>根据anchor point和anchor line画出立方体的正面（如果是长方形则需要根据其实际长宽比来画）；</li>
+  <li>将立方体的四个顶点与vanishing point相连；</li>
+  <li>如果该立方体是正方体，则只需将立方体的四个顶点与对应方向的dvp相连，每条直线分别与上面四条直线的交点即为正方体在画面中的另外4个顶点；</li>
+  <li>如果是深度与长度或宽度不相等的立方体，则可以通过利用measure bar将相同的长度或宽度映射成对应的深度。</li>
+</ol>
+
+<p>至此得到1点透视画面中的立方体。</p>
+
+<p><img src="/assets/images/constructing-1pp-cube.png" alt="constructing-1pp-cube.png" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><category term="study-notes" /><summary type="html"><![CDATA[The visual ray method（视觉射线法）]]></summary></entry><entry><title type="html">理解一点、两点、三点、四点（鱼眼）透视</title><link href="https://goooooouwa.github.io/drawing/2024/09/02/1-to-4-point-perspective.html" rel="alternate" type="text/html" title="理解一点、两点、三点、四点（鱼眼）透视" /><published>2024-09-02T00:00:00+00:00</published><updated>2024-09-02T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2024/09/02/1-to-4-point-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2024/09/02/1-to-4-point-perspective.html"><![CDATA[<p>以正方体为例，理解一点、两点、三点、四点（鱼眼）透视。</p>
+
+<p>当正方体某一侧面垂直于视线（同时顶面与视线平行）时，正方体在水平方向和竖直方向在视锥范围内会保持平行，属于一点透视；
+当正方体没有侧面与视线垂直（但顶面与视线平行）时，正方体的2个可见侧面在水平方向会分别收敛并在2个消失点相交，属于两点透视；
+当正方体没有侧面与视线垂直（且顶面与视线不平行）时，正方体的3个可见侧面在水平方向会分别收敛并在2个消失点相交，竖直方向会收敛并在第3个消失点相交，属于三点透视；
+当正方体某一侧面垂直于视线（同时顶面与视线平行）时，当正方体在水平方向或者竖直方向一直延申到视锥外，视觉图像开始扭曲形变，水平方向或者竖直方向也会分别收敛并各在2个消失点相交，这属于4点透视，或者鱼眼透视（周围视觉）。</p>
+
+<p>视锥即90° circle of view defined in <a href="https://handprint.com/HP/WCL/perspect1.html#setup">the perspective setup</a> as The Circle of View Framework.</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[以正方体为例，理解一点、两点、三点、四点（鱼眼）透视。]]></summary></entry><entry><title type="html">通过Openwrt上安装ZeroTier实现异地访问局域网设备</title><link href="https://goooooouwa.github.io/computer/2024/03/25/openwrt-zerotier-access-lan-devices.html" rel="alternate" type="text/html" title="通过Openwrt上安装ZeroTier实现异地访问局域网设备" /><published>2024-03-25T00:00:00+00:00</published><updated>2024-03-25T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/25/openwrt-zerotier-access-lan-devices</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/25/openwrt-zerotier-access-lan-devices.html"><![CDATA[<h2 id="操作细节">操作细节</h2>
+
+<ol>
+  <li>Openwrt ZeroTier基本设置</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/1%20openwrt-zerotier-settings.PNG" alt="" /></p>
+
+<ol>
+  <li>为ZeroTier创建一个新的接口作为DHCP客户端</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/2.1%20create-new-interface-for-zerotier-dhcp.PNG" alt="" /></p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/2.2%20zerotier-dhcp-firewall-settings.PNG" alt="" /></p>
+
+<ol>
+  <li>为ZeroTier新的DHCP客户端接口添加防火墙规则</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/3%20add-firewall-rules-for-zerotier-dhcp-interface.PNG" alt="" /></p>
+
+<ol>
+  <li>在ZeroTier上为本地局域网添加指向Openwrt虚拟IP的Default Route</li>
+</ol>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/4%20add-zerotier-default-route.PNG" alt="" /></p>
+
+<h2 id="参考教程">参考教程：</h2>
+<ol>
+  <li>OpenWrt 通过安装 ZeroTier 实现异地组网教程：<a href="https://opclash.com/article/198.html">https://opclash.com/article/198.html</a></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>ZeroTier+Openwrt 内网穿透配置</td>
+          <td>WAN口配置: <a href="https://eller.top/post/94">https://eller.top/post/94</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<h2 id="关于如何使用zerotier作为vpn">关于如何使用ZeroTier作为VPN</h2>
+
+<p>ZeroTier本身并不提供VPN能力</p>
+
+<p>The ZeroTier Cloud does not offer a path to the Internet. It is not a VPN solution which will allow you to pretend to be in another location. Every ZeroTier client still needs its own viable path to the Internet.</p>
+
+<p>来自ZeroTier Topology 3：<a href="https://sensorsiot.github.io/IOTstack/Containers/ZeroTier/#topology3">https://sensorsiot.github.io/IOTstack/Containers/ZeroTier/#topology3</a></p>
+
+<h3 id="使用zerotier作为vpn的操作方法">使用ZeroTier作为VPN的操作方法</h3>
+
+<p>Overriding Default Route / Full Tunnel Mode: <a href="https://zerotier.atlassian.net/wiki/spaces/SD/pages/7110693/Overriding+Default+Route+Full+Tunnel+Mode">https://zerotier.atlassian.net/wiki/spaces/SD/pages/7110693/Overriding+Default+Route+Full+Tunnel+Mode</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="openwrt" /><category term="zerotier" /><summary type="html"><![CDATA[操作细节]]></summary></entry><entry><title type="html">如何在SSR Plus下配合使用Adguard Home过滤广告同时避免DNS污染</title><link href="https://goooooouwa.github.io/computer/2024/03/20/adguard-home-prevent-dns-poisoning-in-ssr-plus.html" rel="alternate" type="text/html" title="如何在SSR Plus下配合使用Adguard Home过滤广告同时避免DNS污染" /><published>2024-03-20T00:00:00+00:00</published><updated>2024-03-20T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/20/adguard-home-prevent-dns-poisoning-in-ssr-plus</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/20/adguard-home-prevent-dns-poisoning-in-ssr-plus.html"><![CDATA[<p>我当前的网络结构是：</p>
+<ol>
+  <li>Openwrt旁路由作为网关管理所有的网络请求</li>
+  <li>SSR Plus负责国内外请求分流</li>
+  <li>SSR Plus的国内和国外DNS都设置为Adguard Home的服务ip端口地址</li>
+  <li>Adguard Home的上游DNS设置为了主路由DNS</li>
+</ol>
+
+<p>遇到的问题是，访问一些国外网站时，DNS域名找不到，比如：</p>
+<ul>
+  <li>raw.githubusercontent.com</li>
+  <li>yt3.googleusercontent.com</li>
+</ul>
+
+<p>刚开始以为是Adguard Home过滤规则误伤了。后来搜索Adguard Home查询记录发现这2个域名并没有过滤或拦截这两个域名，是正常解析的。结合这2个域名的特点，都是国外主流的服务，看起来像是DNS被污染了，才导致查不到域名ip。</p>
+
+<p>这让我意识到，Adguard Home的上游DNS不能设置为主路由DNS（上游其实是本地电信运营商的默认DNS），国内运营商的DNS是会被污染的。我需要将上游DNS配置成采用HTTPS的安全DNS，比如：</p>
+<ul>
+  <li>https://dns.google/dns-query</li>
+  <li>https://dns.alidns.com/dns-query</li>
+</ul>
+
+<p>那么，问题来了，该如何配置SSR Plus来使用不受污染的DNS分别来解析国内和国外的域名呢？由于只有一个Adguard Home的instance，该如何为国外和国内的DNS请求分流呢？即让国内的请求走国内的安全DNS，国外的请求走国外的安全DNS？</p>
+
+<p>后来又转念一想，管不了那么多了，统一给我用Google的安全DNS吧，哪怕可能会慢一点，至少不会被DNS污染。统一设置成Google安全DNS之后，就能正常访问以上被污染的域名了。</p>
+
+<p>后来，我又在Adguard Home的上游DNS里加上了阿里的安全DNS，Adguard Home使用负载均衡规则自动选择DNS。目前使用了一段时间，并没有遇到DNS污染。以后有啥新发现再记录吧。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="adguard-home" /><category term="openwrt" /><category term="ssr-plus" /><category term="dns" /><summary type="html"><![CDATA[我当前的网络结构是： Openwrt旁路由作为网关管理所有的网络请求 SSR Plus负责国内外请求分流 SSR Plus的国内和国外DNS都设置为Adguard Home的服务ip端口地址 Adguard Home的上游DNS设置为了主路由DNS]]></summary></entry><entry><title type="html">DIY电子相册和蓝光播放器</title><link href="https://goooooouwa.github.io/computer/2024/03/18/DIY-projects.html" rel="alternate" type="text/html" title="DIY电子相册和蓝光播放器" /><published>2024-03-18T00:00:00+00:00</published><updated>2024-03-18T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2024/03/18/DIY-projects</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2024/03/18/DIY-projects.html"><![CDATA[<h2 id="diy项目">DIY项目</h2>
+
+<h3 id="电子相册电子日历">电子相册、电子日历</h3>
+
+<p>树莓派 + 7寸触摸屏 + Rasbpian OS + Chromium + Google Remote Desktop。用小屏树莓派通过Google Remote Desktop远程访问Xubuntu虚拟机，当作电子相册、日历、视频播放器。</p>
+
+<p>还尝试过用Rasbian OS+Steamlink串流的方式访问Xubuntu，实践后发现行不通。首先steam和steamlink很占资源（分别占用服务器和客户端的CPU和内存），其次虚拟机本身显卡性能就比较差，实际串流的延迟很高。steamlink串流游戏本又没必要，所以基本没用。</p>
+
+<h3 id="阿里云盘4k高清播放器">阿里云盘4k高清播放器</h3>
+
+<p>魔百盒刷Coreelec系统：kodi播放器的完成体，可以用红外遥控器一键开机，简单操作即可播放高清视频（稳定可靠, lean &amp; mean）。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="raspberry-pi" /><category term="digital-photo-gallery" /><category term="cm311" /><category term="kodi" /><category term="coreelec" /><summary type="html"><![CDATA[DIY项目]]></summary></entry></feed>
