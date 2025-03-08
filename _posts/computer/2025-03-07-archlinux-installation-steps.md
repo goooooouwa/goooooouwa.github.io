@@ -2,6 +2,7 @@
 title: Arch Linux Installation Steps
 category: computer
 tags: archlinux
+published: true
 ---
 ## 1 Pre-installation
 
