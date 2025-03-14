@@ -7,6 +7,7 @@ published: true
 ### Useful SpaceVim shortcuts
 
 - `s o`: clear all other windows
+- `Space F n`: create new tab
 - `g t`: next tab
 - `g T`: previous tab
 - `[0-9] g t`: go to nth tab
