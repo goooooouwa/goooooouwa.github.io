@@ -30,7 +30,7 @@ SpaceVim will automatically install patched version of SourceCodePro Mono Nerd F
 
 1. Download latest release of `SourceCodePro.tar.xz` from [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases) release page.
 2. Decompress the font folder to `/usr/local/share/fonts`.
-3. Select SourceCodePro Regular as the default font in terminal.
+3. Select `SauceCodePro Nerd Font Mono Regular` as the default font and set font size as `11` in the terminal.
 
 ### References:
 
