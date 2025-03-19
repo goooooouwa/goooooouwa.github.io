@@ -8,8 +8,8 @@ published: true
 
 - `s o`: clear all other windows
 - `Space F n`: create new tab
-- `g t` / `Ctrl Shift ->`: next tab
-- `g T` / `Ctrl Shift <-`: previous tab
+- `g t`: next tab
+- `g T`: previous tab
 - `[0-9] g t`: go to nth tab
 - `Space p f`: find file by names (with ctrlp)
 - `Space p /`: find file by content
