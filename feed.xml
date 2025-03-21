@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2025-03-21T05:30:34+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">离不开的iOS独家功能</title><link href="https://goooooouwa.github.io/technology/2025/03/20/iOS-features-I-can-not-live-without.html" rel="alternate" type="text/html" title="离不开的iOS独家功能" /><published>2025-03-20T00:00:00+00:00</published><updated>2025-03-20T00:00:00+00:00</updated><id>https://goooooouwa.github.io/technology/2025/03/20/iOS-features-I-can-not-live-without</id><content type="html" xml:base="https://goooooouwa.github.io/technology/2025/03/20/iOS-features-I-can-not-live-without.html"><![CDATA[<p>离不开的iOS独家功能:</p>
+<ul>
+  <li>AirPlay 投屏</li>
+  <li>AirDrop（localsend替代）</li>
+  <li>电子钱包</li>
+  <li>Siri朗读屏幕（不再需要）</li>
+  <li>浏览器去广告插件（安卓firefox也可以）</li>
+  <li>实时通知消息（安卓有延迟）</li>
+  <li>操作系统和app用户体验一致，系统高度整合</li>
+  <li>不担心流氓应用，权限控制严格</li>
+  <li>Per app language</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="technology" /><category term="iOS" /><summary type="html"><![CDATA[离不开的iOS独家功能: AirPlay 投屏 AirDrop（localsend替代） 电子钱包 Siri朗读屏幕（不再需要） 浏览器去广告插件（安卓firefox也可以） 实时通知消息（安卓有延迟） 操作系统和app用户体验一致，系统高度整合 不担心流氓应用，权限控制严格 Per app language]]></summary></entry><entry><title type="html">Compiz tweaks</title><link href="https://goooooouwa.github.io/computer/2025/03/17/compiz-tweaks.html" rel="alternate" type="text/html" title="Compiz tweaks" /><published>2025-03-17T00:00:00+00:00</published><updated>2025-03-17T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/03/17/compiz-tweaks</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/03/17/compiz-tweaks.html"><![CDATA[<p>Below are my compiz tweaks to reproduce some Mac OS X like window animations. I’m using Mint xfce with built-in support for compiz window manager.</p>
+
+<h2 id="compiz-tweaks">Compiz tweaks</h2>
+
+<p>Enable rotate cube (3D Desktop)</p>
+<ul>
+  <li>Mouse binding: Middle mouse click &amp; drag</li>
+</ul>
+
+<p>Enable scale (Mission Control)</p>
+<ul>
+  <li>Hot corner: Top left corner</li>
+  <li>Key binding: Shift-Alt-W</li>
+</ul>
+
+<p>Enable Shift Switcher (Cover Flow)</p>
+<ul>
+  <li>Hot corner: Bottom left corner</li>
+  <li>Key binding: Shift-Alt-Tab</li>
+</ul>
+
+<p>Enable Expo</p>
+<ul>
+  <li>Bottom right corner</li>
+  <li>Shift-Alt-Up</li>
+</ul>
+
+<p>Enable 3D Windows (VR like spatial windows)</p>
+
+<p>Enable Wobbly Windows</p>
+
+<p>Animations</p>
+<ul>
+  <li>Minimize animation
+    <ul>
+      <li>Change Glide 2 -&gt; Magic Lamp</li>
+    </ul>
+  </li>
+  <li>Unminimize animation
+    <ul>
+      <li>Change Glide 2 -&gt; Magic Lamp</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="linux" /><category term="compiz" /><summary type="html"><![CDATA[Below are my compiz tweaks to reproduce some Mac OS X like window animations. I’m using Mint xfce with built-in support for compiz window manager.]]></summary></entry><entry><title type="html">Arch Linux Installation Steps</title><link href="https://goooooouwa.github.io/computer/2025/03/07/archlinux-installation-steps.html" rel="alternate" type="text/html" title="Arch Linux Installation Steps" /><published>2025-03-07T00:00:00+00:00</published><updated>2025-03-07T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/03/07/archlinux-installation-steps</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/03/07/archlinux-installation-steps.html"><![CDATA[<h2 id="1-pre-installation">1 Pre-installation</h2>
+
+<h3 id="11-download-iso">1.1 download iso</h3>
+
+<p>Visit the <a href="https://archlinux.org/download/">Download</a> page and download the ISO file.</p>
+
+<h3 id="13-make-bootable-usb">1.3 make bootable usb</h3>
+
+<h3 id="14-boot-live-environment">1.4 boot live environment</h3>
+
+<p>Note: Arch Linux installation images do not support Secure Boot. You will need to disable Secure Boot to boot the installation medium.</p>
+
+<h3 id="15-set-the-console-keyboard-layout-and-font">1.5 Set the console keyboard layout and font</h3>
+
+<p><code class="language-plaintext highlighter-rouge"># loadkeys us</code></p>
+
+<h3 id="16-verify-the-boot-mode">1.6 Verify the boot mode</h3>
+
+<p><code class="language-plaintext highlighter-rouge"># cat /sys/firmware/efi/fw_platform_size</code></p>
+
+<p>If the command returns 64, the system is booted in UEFI mode and has a 64-bit x64 UEFI.</p>
+
+<h3 id="17-connect-to-the-internet">1.7 Connect to the internet</h3>
+
+<p>Ensure your network interface is listed and enabled</p>
+
+<p><code class="language-plaintext highlighter-rouge"># ip link</code></p>
+
+<p>Check ip address
+<code class="language-plaintext highlighter-rouge"># ip address</code></p>
+
+<p>Connect to the network:</p>
+<ul>
+  <li>Ethernet – plug in the cable.</li>
+  <li>Wi-Fi – authenticate to the wireless network using iwctl.</li>
+</ul>
+
+<p>Use iwctl to connect to WiFi:</p>
+
+<p>First, if you do not know your wireless device name, list all Wi-Fi devices:
+[iwd]# device list</p>
+
+<p>Then, to initiate a scan for networks (note that this command will not output anything):
+[iwd]# station name scan</p>
+
+<p>You can then list all available networks:
+[iwd]# station name get-networks</p>
+
+<p>Finally, to connect to a network:
+[iwd]# station name connect SSID</p>
+
+<p>DHCP should be automatically configured by Ethernet or WiFi network connection.</p>
+
+<p>The connection may be verified with ping:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># ping archlinux.org</code></p>
+
+<h3 id="18-update-the-system-clock">1.8 Update the system clock</h3>
+
+<p><code class="language-plaintext highlighter-rouge"># timedatectl</code></p>
+
+<h3 id="19-partition-the-disks">1.9 Partition the disks</h3>
+
+<p>To identify these devices, use lsblk or fdisk.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># fdisk -l</code></p>
+
+<p>Use a partitioning tool like fdisk to modify partition tables. For example:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># fdisk /dev/the_disk_to_be_partitioned (e.g. /dev/sda)</code></p>
+
+<p>Within fdisk:</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">g</code> (create a new GPT table)</p>
+  </li>
+  <li>
+    <p>create EFI partition</p>
+  </li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">n</code> (create a new partition for EFI)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default partition number 1)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default first sector)</p>
+
+<p><code class="language-plaintext highlighter-rouge">+1G</code> (to add 1GB space for EFI boot partition)</p>
+
+<ol>
+  <li>create root partition</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">n</code> (create a new partition for root)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default partition number 2)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default first sector)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default last sector to use the remaining of the disk space)</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">w</code> (write partitions to disk)</li>
+</ol>
+
+<h3 id="110-format-the-partitions">1.10 Format the partitions</h3>
+
+<p>To create an Ext4 file system on /dev/root_partition, run:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mkfs.ext4 /dev/root_partition (e.g. /dev/sda2)</code></p>
+
+<p>If you created an EFI system partition, format it to FAT32 using mkfs.fat(8).</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mkfs.fat -F 32 /dev/efi_system_partition (e.g. /dev/sda1)</code></p>
+
+<p>1.11 Mount the file systems</p>
+
+<p>Mount the root volume to /mnt. For example, if the root volume is /dev/root_partition:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mount /dev/root_partition /mnt</code></p>
+
+<p>For UEFI systems, mount the EFI system partition:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mount --mkdir /dev/efi_system_partition /mnt/boot</code></p>
+
+<h2 id="2-installation">2. Installation</h2>
+
+<h3 id="21-select-the-mirrors">2.1 Select the mirrors</h3>
+
+<p>On the live system, after connecting to the internet, reflector updates the mirror list by choosing 20 most recently synchronized HTTPS mirrors and sorting them by download rate.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># reflector</code></p>
+
+<h3 id="22-install-essential-packages">2.2 Install essential packages</h3>
+
+<p>Use the pacstrap(8) script to install the base package, Linux kernel and firmware for common hardware:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacstrap -K /mnt base linux linux-firmware networkmanager grub efibootmgr os-prober sudo amd-ucode (or intel-ucode) vi vim git man-db man-pages texinfo</code></p>
+
+<p>To install other packages or package groups, append the names to the pacstrap command above (space separated) or use pacman to install them while chrooted into the new system. In particular, consider installing:</p>
+
+<ul>
+  <li>CPU microcode updates—amd-ucode or intel-ucode—for hardware bug and security fixes,</li>
+  <li>software necessary for networking (e.g. a network manager or a standalone DHCP client, authentication software for Wi-Fi, ModemManager for mobile broadband connections),</li>
+  <li>a console text editor (e.g nano) to allow editing configuration files from the console,</li>
+  <li>packages for accessing documentation in man and info pages: man-db, man-pages and texinfo.</li>
+  <li>a bootloader</li>
+</ul>
+
+<h2 id="3-configure-the-system">3. Configure the system</h2>
+
+<h3 id="31-fstab">3.1 Fstab</h3>
+
+<p>Generate an fstab file</p>
+
+<p><code class="language-plaintext highlighter-rouge"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p>
+
+<h3 id="32-chroot">3.2 Chroot</h3>
+
+<p>Change root into the new system:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># arch-chroot /mnt</code></p>
+
+<h3 id="33-time">3.3 Time</h3>
+
+<p>Set the time zone:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># ln -sf /usr/share/zoneinfo/Region/City /etc/localtime</code></p>
+
+<p>e.g. <code class="language-plaintext highlighter-rouge"># ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime</code></p>
+
+<p>Run hwclock(8) to generate /etc/adjtime:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># hwclock --systohc</code></p>
+
+<h3 id="34-localization">3.4 Localization</h3>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">/etc/locale.gen</code> and uncomment <code class="language-plaintext highlighter-rouge">en_US.UTF-8 UTF-8</code> and other needed UTF-8 locales (e.g. <code class="language-plaintext highlighter-rouge">zh_CN.UTF-8 UTF-8</code>). Generate the locales by running:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># locale-gen</code></p>
+
+<p>Create the locale.conf(5) file, and set the LANG variable accordingly:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/locale.conf
+LANG=en_US.UTF-8
+</code></pre></div></div>
+
+<p>If you set the console keyboard layout, make the changes persistent in vconsole.conf(5):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/vconsole.conf
+KEYMAP=us
+</code></pre></div></div>
+
+<h3 id="35-network-configuration">3.5 Network configuration</h3>
+
+<p>Create the hostname file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/hostname
+yourhostname (e.g. arch-linux)
+</code></pre></div></div>
+
+<p>Complete the network configuration for the newly installed environment by installing suitable network management software, configuring it if necessary and enabling its systemd unit so that it starts at boot.</p>
+
+<p>Here I choose NetworkManager.</p>
+
+<p>Install NetworkManager (if not installed already)</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S networkmanager</code></p>
+
+<p>Enable NetworkManager.service</p>
+
+<p><code class="language-plaintext highlighter-rouge"># systemctl enable NetworkManager.service</code></p>
+
+<h3 id="37-root-password">3.7 Root password</h3>
+
+<p>passwd</p>
+
+<h3 id="38-boot-loader">3.8 Boot loader</h3>
+
+<p>Choose and install a Linux-capable boot loader.</p>
+
+<p>Here I choose GRUB.</p>
+
+<p>Install GRUB (if not installed already)</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S grub efibootmgr</code></p>
+
+<p>Execute the following command to install the GRUB EFI application <code class="language-plaintext highlighter-rouge">grubx64.efi</code> to <code class="language-plaintext highlighter-rouge">esp/EFI/GRUB/</code> and install its modules to <code class="language-plaintext highlighter-rouge">/boot/grub/x86_64-efi/</code>.</p>
+
+<p>Note: <code class="language-plaintext highlighter-rouge">esp</code> denotes the mountpoint of the EFI system partition aka ESP, one common mountpoint for EFI is <code class="language-plaintext highlighter-rouge">/boot</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</code></p>
+
+<p>Generate the main configuration file</p>
+
+<p><code class="language-plaintext highlighter-rouge"># grub-mkconfig -o /boot/grub/grub.cfg</code></p>
+
+<p>Detecting other operating systems</p>
+
+<p>To have <code class="language-plaintext highlighter-rouge">grub-mkconfig</code> search for other installed systems and automatically add them to the menu, install the <code class="language-plaintext highlighter-rouge">os-prober</code> package and mount the partitions from which the other systems boot.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S os-prober</code></p>
+
+<p>Then re-run grub-mkconfig.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># grub-mkconfig -o /boot/grub/grub.cfg</code></p>
+
+<p>If you get the following output: Warning: os-prober will not be executed to detect other bootable partitions then edit <code class="language-plaintext highlighter-rouge">/etc/default/grub</code> and add/uncomment:</p>
+
+<p><code class="language-plaintext highlighter-rouge">GRUB_DISABLE_OS_PROBER=false</code></p>
+
+<h2 id="4-reboot">4 Reboot</h2>
+
+<p>Exit the chroot environment by typing <code class="language-plaintext highlighter-rouge">exit</code> or pressing <code class="language-plaintext highlighter-rouge">Ctrl+d</code>.</p>
+
+<p>Optionally manually unmount all the partitions with <code class="language-plaintext highlighter-rouge">umount -R /mnt</code>: this allows noticing any “busy” partitions, and finding the cause with fuser(1).</p>
+
+<p>Finally, restart the machine by typing <code class="language-plaintext highlighter-rouge">reboot</code>.</p>
+
+<h2 id="5-post-installation">5 Post-installation</h2>
+
+<h3 id="51-system-administration">5.1 System administration</h3>
+
+<p>Create user</p>
+
+<p><code class="language-plaintext highlighter-rouge"># useradd -m -G wheel greg</code></p>
+
+<p><code class="language-plaintext highlighter-rouge"># passwd greg</code></p>
+
+<p>Add user to sudo group</p>
+
+<p>Run <code class="language-plaintext highlighter-rouge">visudo</code> and uncomment line <code class="language-plaintext highlighter-rouge">"%wheel ALL=(ALL) ALL"</code></p>
+
+<h3 id="57-network-setup">5.7 Network setup</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">nmcli</code> to connect to Wi-Fi</p>
+
+<p><code class="language-plaintext highlighter-rouge">nmcli</code> examples:</p>
+
+<p>List nearby Wi-Fi networks:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># nmcli device wifi list</code></p>
+
+<p>Connect to a Wi-Fi network:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># nmcli device wifi connect SSID_or_BSSID password password</code></p>
+
+<h3 id="54-graphical-user-interface">5.4 Graphical user interface</h3>
+
+<p>Install KDE</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S plasma-meta kde-applications-meta</code></p>
+
+<p>keep pressing Enter to accept default packages to follow through the installation process (or choose your preferred packages)</p>
+
+<p>Install sddm window manager</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S sddm</code></p>
+
+<p>Enable sddm service</p>
+
+<p><code class="language-plaintext highlighter-rouge"># systemctl enable sddm.service</code></p>
+
+<h3 id="55-install-aur-helper">5.5 Install AUR helper</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -si
+</code></pre></div></div>
+
+<h3 id="56-install-google-chrome-using-aur-helper">5.6 Install Google Chrome using AUR helper</h3>
+
+<p>To install Google Chrome in Arch Linux using yay:</p>
+
+<p><code class="language-plaintext highlighter-rouge">yay -S google-chrome</code></p>
+
+<p>Keep pressing <code class="language-plaintext highlighter-rouge">Enter</code> to follow through the installation process (or choose your preferred packages).</p>
+
+<p>Keep in mind that unlike pacman, yay shouldn’t be run with “sudo” privilege.</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="archlinux" /><summary type="html"><![CDATA[1 Pre-installation]]></summary></entry><entry><title type="html">Hyprland Installation Steps</title><link href="https://goooooouwa.github.io/computer/2025/03/07/hyprland-installation-steps.html" rel="alternate" type="text/html" title="Hyprland Installation Steps" /><published>2025-03-07T00:00:00+00:00</published><updated>2025-03-07T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/03/07/hyprland-installation-steps</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/03/07/hyprland-installation-steps.html"><![CDATA[<h2 id="install">Install</h2>
+
+<p><code class="language-plaintext highlighter-rouge">$ sudo pacman -S hyprland</code></p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Install kitty (default terminal emulator):</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ sudo pacman -S kitty</code></p>
+
+<h3 id="launching-hyprland">Launching Hyprland</h3>
+<p>Systemd users can also start Hyprland, using <code class="language-plaintext highlighter-rouge">uwsm</code>. This is the recommended method of launching Hyprland on systemd-based distros.</p>
+
+<p>Install uwsm:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ sudo pacman -S uwsm</code></p>
+
+<h3 id="using-a-display-manager">Using a display manager</h3>
+
+<p>Login managers are not officially supported, but here’s a short compatibility list:</p>
+
+<p><code class="language-plaintext highlighter-rouge">SDDM</code> → Works flawlessly. Install sddm ⩾ 0.20.0 or the latest git version (or sddm-git from AUR) to prevent SDDM bug 1476 (90s shutdowns).</p>
+
+<p>If you use a display manager, choose hyprland (uwsm-managed) entry in a display manager selection menu.</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="hyprland" /><summary type="html"><![CDATA[Install]]></summary></entry><entry><title type="html">ML4W Installation Steps</title><link href="https://goooooouwa.github.io/computer/2025/03/07/ml4w-installation-steps.html" rel="alternate" type="text/html" title="ML4W Installation Steps" /><published>2025-03-07T00:00:00+00:00</published><updated>2025-03-07T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/03/07/ml4w-installation-steps</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/03/07/ml4w-installation-steps.html"><![CDATA[<h2 id="install">Install</h2>
+
+<p><code class="language-plaintext highlighter-rouge">$ yay -S ml4w-hyprland</code></p>
+
+<h2 id="setup">Setup</h2>
+
+<p><code class="language-plaintext highlighter-rouge">$ ml4w-hyprland-setup</code></p>
+
+<h3 id="monitor-configurations">Monitor configurations</h3>
+
+<p>The ML4W Dotfiles are supporting the application <a href="https://github.com/nwg-piotr/nwg-displays">nwg-displays</a> to configure your display settings.</p>
+
+<p>Install nwg-displays on Arch Linux with</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ sudo pacman -S nwg-displays</code></p>
+
+<h3 id="keybindings">Keybindings</h3>
+
+<p>Ref: <a href="https://github.com/mylinuxforwork/dotfiles/wiki/Keybindings">ML4W Keybindings</a></p>
+
+<p>Here are the most important keybindings that you need to know to start with the ML4W Dotfiles and Hyprland:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SUPER + 1...5: Open Workspace
+SUPER + RETURN: Alacritty
+SUPER + B: Firefox
+SUPER + CTRL + RETURN: rofi application launcher
+SUPER + SHIFT + W: Change wallpaper
+SUPER + PRINT: Screenshot
+SUPER + CTRL + Q: Logout screen
+SUPER + CTRL + S: Settings script on Hyprland
+SUPER + SHIFT + B: Reload waybar on Hyprland
+SUPER + T: Toggle a window between floating and tiling mode
+You can move a window with + Left Mouse Button
+You can change window size with + Right Mouse Button
+</code></pre></div></div>
+
+<p>All keybindings for Hyprland with right mouse click on Apps in waybar or here:</p>
+
+<p><a href="https://github.com/mylinuxforwork/dotfiles/blob/main/share/dotfiles/.config/hypr/conf/keybindings/default.conf">Hyprland keybindings overview</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="ml4w" /><category term="hyprland" /><summary type="html"><![CDATA[Install]]></summary></entry><entry><title type="html">SpaceVim shortcuts</title><link href="https://goooooouwa.github.io/computer/2025/03/07/spacevim-shortcuts.html" rel="alternate" type="text/html" title="SpaceVim shortcuts" /><published>2025-03-07T00:00:00+00:00</published><updated>2025-03-07T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/03/07/spacevim-shortcuts</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/03/07/spacevim-shortcuts.html"><![CDATA[<h3 id="useful-spacevim-shortcuts">Useful SpaceVim shortcuts</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">s o</code>: clear all other windows</li>
+  <li><code class="language-plaintext highlighter-rouge">Space F n</code>: create new tab</li>
+  <li><code class="language-plaintext highlighter-rouge">g t</code>: next tab</li>
+  <li><code class="language-plaintext highlighter-rouge">g T</code>: previous tab</li>
+  <li><code class="language-plaintext highlighter-rouge">[0-9] g t</code>: go to nth tab</li>
+  <li><code class="language-plaintext highlighter-rouge">Space p f</code>: find file by names (with ctrlp)</li>
+  <li><code class="language-plaintext highlighter-rouge">Space p /</code>: find file by content</li>
+  <li><code class="language-plaintext highlighter-rouge">s g</code>: horizontal split</li>
+  <li><code class="language-plaintext highlighter-rouge">s v</code>: vertical split</li>
+  <li><code class="language-plaintext highlighter-rouge">Space w h/j/k/l</code> / <code class="language-plaintext highlighter-rouge">Ctrl up/down/left/right</code>: move between windows</li>
+  <li><code class="language-plaintext highlighter-rouge">F2</code>: open tag bar</li>
+  <li><code class="language-plaintext highlighter-rouge">F3</code> / <code class="language-plaintext highlighter-rouge">Space f t</code>: open file tree</li>
+  <li><code class="language-plaintext highlighter-rouge">Space t t</code>: open tab list</li>
+  <li><code class="language-plaintext highlighter-rouge">Space a s</code>: start page</li>
+  <li><code class="language-plaintext highlighter-rouge">Space '</code>: open terminal</li>
+</ul>
+
+<h3 id="install-sourcecodepro-mono-nerd-fonts">Install SourceCodePro Mono Nerd Fonts</h3>
+
+<p>SpaceVim will automatically install patched version of SourceCodePro Mono Nerd Fonts (with glyph icons). Just select SourceCodePro Regular as the default font in terminal.</p>
+
+<p><strong>Manual install:</strong></p>
+
+<ol>
+  <li>Download latest release of <code class="language-plaintext highlighter-rouge">SourceCodePro.tar.xz</code> from <a href="https://github.com/ryanoasis/nerd-fonts/releases">Nerd Fonts</a> release page.</li>
+  <li>Decompress the font folder to <code class="language-plaintext highlighter-rouge">/usr/local/share/fonts</code>.</li>
+  <li>Select <code class="language-plaintext highlighter-rouge">SauceCodePro Nerd Font Mono Regular</code> as the default font and set font size as <code class="language-plaintext highlighter-rouge">11</code> in the terminal.</li>
+</ol>
+
+<h3 id="references">References:</h3>
+
+<ul>
+  <li><a href="https://spacevim.org/documentation/">SpaceVim documentation</a></li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="vim" /><category term="spacevim" /><summary type="html"><![CDATA[Useful SpaceVim shortcuts]]></summary></entry><entry><title type="html">游戏机对应我的人生阶段</title><link href="https://goooooouwa.github.io/personal/2024/10/30/gaming-machines-and-my-life.html" rel="alternate" type="text/html" title="游戏机对应我的人生阶段" /><published>2024-10-30T00:00:00+00:00</published><updated>2024-10-30T00:00:00+00:00</updated><id>https://goooooouwa.github.io/personal/2024/10/30/gaming-machines-and-my-life</id><content type="html" xml:base="https://goooooouwa.github.io/personal/2024/10/30/gaming-machines-and-my-life.html"><![CDATA[<p>1983年，红白机上市，当时我没出生，我爸才16岁，读高二（我读高二是2007年）。</p>
+
+<p>1984年，个人电脑Macintosh和IBM PC问世，随后开始出现PC游戏，比如，space shooter（1986年）。</p>
+
+<p>1989年，GameBoy发行。</p>
+
+<p>90年代期间，游戏玩家开始从Arcade街机厅向个人家用游戏机转变。</p>
+
+<p>1993年，PC FPS游戏Doom问世。</p>
+
+<p>1990年，SFC发行。1990年，红白机进入国内，但是售价高达1500元，不被大众接受。而这导致了类似小霸王的廉价山寨游戏机变得畅销。</p>
+
+<p>1994年，PS1发行，当时我3岁，读幼儿园小班。国内并未引进国行PS1（但是有水货盗版）。</p>
+
+<p>1996年，N64发行，当时我5岁，读幼儿园大班。</p>
+
+<p>1998年，GameBoy Color发行，当时我7岁，读小学2年级。</p>
+
+<p>2000年，PS2发行，当时我9岁，读小学4年级（同年过10岁生日）。</p>
+
+<p>2001年，GBA发行，GameCube发行，当时我10岁，读小学5年级。</p>
+
+<p>2003年，PS2引进国内，但不成功，当时我读初一，此时国内已经水货PS2盗版成熟。</p>
+
+<p>2004年，NDS发行。2004年，神游科技发布中国大陆版iQue GBA，当时我读初二。</p>
+
+<p>2006年，PS3发行，Wii发行，当时我读高一。</p>
+
+<p>2007年，任天堂计划借助神游在大陆发售wii，但最终未能发售。</p>
+
+<p>2011年，3DS发行，当时我读大三。</p>
+
+<p>2012年，Wii U发行，当时我读大四。</p>
+
+<p>2013年，PS4发行，当时我刚开始工作。</p>
+
+<p>2017年，Switch发行，当时我工作第5年。</p>
+
+<p>2020年，PS5发行，当时是疫情第一年。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="personal" /><category term="gaming" /><category term="childhood" /><summary type="html"><![CDATA[1983年，红白机上市，当时我没出生，我爸才16岁，读高二（我读高二是2007年）。]]></summary></entry><entry><title type="html">我的理想与成长</title><link href="https://goooooouwa.github.io/personal/2024/10/30/my-childhood-dream.html" rel="alternate" type="text/html" title="我的理想与成长" /><published>2024-10-30T00:00:00+00:00</published><updated>2024-10-30T00:00:00+00:00</updated><id>https://goooooouwa.github.io/personal/2024/10/30/my-childhood-dream</id><content type="html" xml:base="https://goooooouwa.github.io/personal/2024/10/30/my-childhood-dream.html"><![CDATA[<p>我1991年出生，1997年上小学，2003年上初中，2006年上高中，2009年上大学，2013年开始工作，2024年到美国。</p>
+
+<p>我小时候很喜欢看动画片（欧美日本为主，最开始看的有《蜘蛛侠》、《七龙珠》、《足球小将》、《灌篮高手》），四五年级左右电视上开始出现点播台放各种日本动画片（很多日漫都是在点播台看的，比如《蜡笔小新》、《游戏王》、《通灵王》等）。小学看的第一本漫画是《乱马1/2》（不知当时从哪得到的），六年级看的第一本漫画是《猎人》，初中经常去租书屋租漫画看，还偶尔买几本《火影忍者》。</p>
+
+<p>小时候的理想是学会画漫画，画出我喜欢的动画/漫画角色，比如《灌篮高手》里的樱木和流川，《七龙珠》里的孙悟空。这个想法从小学一直到现在都有。</p>
+
+<p>小学看《足球小将》喜欢上踢足球，后来看《灌篮高手》又喜欢上打篮球，初中跟几个好朋友一直打篮球，高中因为篮球打不好，后来又开始喜欢上踢足球，一直到现在。</p>
+
+<p>从小就喜欢玩各种游戏机，小霸王、街机、黑白屏掌机。小学时候去朋友家里排队玩小霸王游戏机，当时还有印象不记得在哪里看见过索尼克（可能是电视上？）；小学在电视上的电影频道还看到过《最终幻想10》的介绍，很被CG动画震撼；偶尔在电视上看到一些介绍游戏的电视节目，也很吸引人；六年级去网吧玩电脑打CS、初中去黑吧老板家里打PS实况足球等。虽然平时玩游戏的机会不多，也至少曾经在10岁生日上收到了一台小霸王学习机的生日礼物，之后就开始越来越多的接触电脑和游戏。高中毕业我爸花600元从网吧买了一台破旧的电脑在家给我用，我天天都会用它上网看视频下载玩游戏。</p>
+
+<p>初中时我翻遍了新华书店的漫画教材，还邮购了一支G笔，自己做了一个简易灯箱。我对如何画漫画的最初了解来自于漫画书中作者的插页之类的描述，比如火影忍者的作者岸本齐史在漫画单行本中穿插叙述的自己小时候和哥哥学漫画的经历。</p>
+
+<p>从小就对科技产品很感兴趣。小学的时候学校有机房，还上过几节微机课，印象中学校电脑用的是Windows 98系统（鼠标还是用的滚动球）；当时还听一位同学（他爸爸是初中老师）讲他在中学的机房里用电话线拨号上网的故事，充满向往；后来在街机厅偶尔见到过有电脑房，里面的人对着电脑拿着鼠标不知道在玩啥游戏；初中开始时不时去网吧打CS电脑游戏。</p>
+
+<p>初中以学英语为理由买了一台磁带播放器，后来买了第一张周杰伦的磁带专辑《八度空间》，后来还买了艾薇儿的《Let Go》，很爱听。后来开始流行MP3播放器，后来又买了一台MP3播放器，很小巧，很喜欢。偶尔去数码店老板那里花钱下载音乐，买耳机，后来为了省钱自己学着去网吧用电脑下歌。</p>
+
+<p>高中开始流行MP4和智能手机，从同学手上买了一台昂达747 MP4播放器（具体型号为<a href="https://wap.zol.com.cn/135/134613/index.html">VX747 4G版本</a>），后来又从同学手上买了一部诺基亚5700智能手机。当时还有一位同学买了台PSP玩，能在教室和宿舍玩实况足球，当时超级震憾（后来还有一个同学买了一台笔记本电脑在学校用，可惜不能上网）。由于自己爱玩，对这些数码产品有着浓厚兴趣，折腾智能手机的过程中对程序和编程有了一点点概念。</p>
+
+<p>高中期间开始频繁接触电脑，开始对搜索、下载、上网产生兴趣，后来了解到外网（Google，Twitter，YouTube）的存在，于是求知欲驱使我学习翻墙等软件技术以及英语（用于跟外网交流和学习英文知识）。</p>
+
+<p>高中毕业后开始思考以后的职业方向，在数学和编程之间选择后者，认为更有就业前景，暑假开始自学C语言编程，大学选了自动化专业，软件硬件结合。经常翻墙搜索资料，学编程，看YouTube。</p>
+
+<p>毕业后先后在3家外企从事软件开发相关工作，工作10年后，目前在美国硅谷软件行业从事软件产品经理的职业，业余爱好是画画（不只局限于漫画）、编程、数码产品和游戏，喜欢踢球但很少有机会踢。有一个可爱的孩子和一个温馨的小家。</p>
+
+<p>我小时候还有一个理想就是做点了不起的事情，能够在人类历史上留下自己的痕迹。这一点，目前的想法是做几款有用的软件，暂时还没有实现，不过现在有闲暇时间，慢慢来，不用急。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="personal" /><summary type="html"><![CDATA[我1991年出生，1997年上小学，2003年上初中，2006年上高中，2009年上大学，2013年开始工作，2024年到美国。]]></summary></entry><entry><title type="html">Web Apps Are Born Limited</title><link href="https://goooooouwa.github.io/2024/10/19/web-apps-are-born-limited.html" rel="alternate" type="text/html" title="Web Apps Are Born Limited" /><published>2024-10-19T00:00:00+00:00</published><updated>2024-10-19T00:00:00+00:00</updated><id>https://goooooouwa.github.io/2024/10/19/web-apps-are-born-limited</id><content type="html" xml:base="https://goooooouwa.github.io/2024/10/19/web-apps-are-born-limited.html"><![CDATA[<p>Chromebook最初所设想的纯Web的应用生态是有局限性的，主要差距在于web应用的多媒体能力（主要是高清视频、游戏）无法达到桌面应用同样的性能表现。</p>
+
+<p>比如：</p>
+<ul>
+  <li>视频方面，比如Jellyfin播放4K高清视频需要服务器转码（因为浏览器不支持编码格式），而用Kodi播放则可以直接客户端解码；</li>
+  <li>游戏方面，串流也好，浏览器渲染也好，都无法跟本地游戏对比。</li>
+</ul>
+
+<p>除了web平台本身的性能局限性以外，web作为应用平台也鲜有应用在功能性（feature set）上能达到桌面级别。比如web上少有功能齐全的电子书阅读器。当然，目前不少应用都在向云端迁移，比如在线照片编辑器。未来肯定会有越来越多的应用往云端迁移（因为云端有更好的算力），只是目前阶段，web应用的质量和数量还是无法与桌面应用相比（不然Chromebook也没必要支持安卓应用了）。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><summary type="html"><![CDATA[Chromebook最初所设想的纯Web的应用生态是有局限性的，主要差距在于web应用的多媒体能力（主要是高清视频、游戏）无法达到桌面应用同样的性能表现。]]></summary></entry><entry><title type="html">Music playlist m3u8 files in Jellyfin</title><link href="https://goooooouwa.github.io/entertainment/2024/10/08/jellyfin-music-playlist-files-m3u8.html" rel="alternate" type="text/html" title="Music playlist m3u8 files in Jellyfin" /><published>2024-10-08T00:00:00+00:00</published><updated>2024-10-08T00:00:00+00:00</updated><id>https://goooooouwa.github.io/entertainment/2024/10/08/jellyfin-music-playlist-files-m3u8</id><content type="html" xml:base="https://goooooouwa.github.io/entertainment/2024/10/08/jellyfin-music-playlist-files-m3u8.html"><![CDATA[<p>If you saw Music playlists in Jellyfin, look for <code class="language-plaintext highlighter-rouge">.m3u(8)</code> files in your Music folders. These are playlist files. If you don’t want to see them appearing in Jellyfin, just delete them.</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="entertainment" /><category term="jellyfin" /><summary type="html"><![CDATA[If you saw Music playlists in Jellyfin, look for .m3u(8) files in your Music folders. These are playlist files. If you don’t want to see them appearing in Jellyfin, just delete them.]]></summary></entry></feed>
