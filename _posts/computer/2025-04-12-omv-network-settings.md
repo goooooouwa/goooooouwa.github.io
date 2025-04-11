@@ -16,6 +16,13 @@ published: true
 1. type `sudo omv-firstaid`
 1. Once windows from omv-firstaid pop up select reconfigure option
 
+网络设置如下：
+
+1.设置静态IP地址
+1.修改网关地址
+1.设置子网掩码（255.255.255.0 / 24）
+1.修改DNS地址
+
 如果修改后依然无法正常联网，请检查以下事项：
 
 1.Openwrt是否打开了服务；
