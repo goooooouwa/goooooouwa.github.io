@@ -140,7 +140,7 @@ abstract class StudentDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: StudentDatabase? = null
 
-        fun getInstance(context: Android app会在数据库初始化时自动根据Entities和Database创建SQLite数据库和数据表。Context): StudentDatabase {
+        fun getInstance(context: Context): StudentDatabase {
             synchronized(this){
                 var instance = INSTANCE
 
