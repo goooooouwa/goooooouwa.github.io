@@ -57,14 +57,14 @@ The @Query annotation lets you write SQL statements and expose them as DAO metho
 ```kotlin
 @Dao
 interface StudentDao {
-	@Insert
-	fun createStudent(vararg students: Student)
+    @Insert
+    fun createStudent(vararg students: Student)
 
-	@Update
-	fun createStudent(vararg students: Student)
+    @Update
+    fun createStudent(vararg students: Student)
 
-	@Delete
-	fun createStudent(vararg students: Student)
+    @Delete
+    fun createStudent(vararg students: Student)
 
     @Query("SELECT * FROM student")
     fun getAllStudents(): List<Student>
@@ -237,4 +237,3 @@ Let's dissect the coroutines code in the `insertStudent` function:
 - `Dispatchers.IO` indicates that this coroutine should be executed on a thread reserved for I/O operations.
 
 Since this coroutine is started with viewModelScope, it is executed in the scope of the ViewModel. If the ViewModel is destroyed because the user is navigating away from the screen, viewModelScope is automatically cancelled, and all running coroutines are canceled as well.
-
