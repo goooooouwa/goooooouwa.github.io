@@ -50,9 +50,9 @@ Each parameter for an `@Insert` method must be either an instance of a [Room 
 
 All of the parameters of the Insert method must either be classes annotated with `Entity` or collections/array of it.
 
-使用@Query annotation可以创建自定义SQL语句来进行数据查询或者更加复杂的数据操作，并将其封装成Dao方法以供调用。
+使用`@Query` annotation可以创建自定义SQL语句来进行数据查询或者更加复杂的数据操作，并将其封装成Dao方法以供调用。
 
-The @Query annotation lets you write SQL statements and expose them as DAO methods. Use these query methods to query data from your app's database or when you need to perform more complex insertions, updates, and deletions.
+The `@Query` annotation lets you write SQL statements and expose them as DAO methods. Use these query methods to query data from your app's database or when you need to perform more complex insertions, updates, and deletions.
 
 ```kotlin
 @Dao
