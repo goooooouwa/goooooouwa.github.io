@@ -7,11 +7,72 @@ published: true
 
 ## 如何在Android应用中创建和使用数据库
 
+0. 安装Room依赖
 1. 创建Entity, Dao和Database类
 2. 使用Singleton模式访问Database实例
 3. 访问Dao对象
 4. 在UI中进行数据库操作
 5. 在ViewModel中进行数据库操作
+
+### 0. 安装Room依赖
+
+将以下依赖项添加到应用的 build.gradle 文件。
+
+注意 ：请仅选择 ksp 或 annotationProcessor 中的一项。请勿同时包含这两项。
+
+```kotlin
+dependencies {
+    val room_version = "2.7.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+
+    // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
+    // See Add the KSP plugin to your project
+    ksp("androidx.room:room-compiler:$room_version")
+
+    // If this project only uses Java source, use the Java annotationProcessor
+    // No additional plugins are necessary
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
+    // optional - RxJava2 support for Room
+    implementation("androidx.room:room-rxjava2:$room_version")
+
+    // optional - RxJava3 support for Room
+    implementation("androidx.room:room-rxjava3:$room_version")
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation("androidx.room:room-guava:$room_version")
+
+    // optional - Test helpers
+    testImplementation("androidx.room:room-testing:$room_version")
+
+    // optional - Paging 3 Integration
+    implementation("androidx.room:room-paging:$room_version")
+}
+```
+
+#### 0.1 将 KSP 插件添加到您的项目中
+
+首先，在顶级 `build.gradle.kts` 文件中声明 KSP 插件。请务必选择与项目的 Kotlin 版本一致的 KSP 版本。您可以在 KSP GitHub 页面上找到版本列表。
+
+注意 ：KSP 版本的前一部分必须与 build 中使用的 Kotlin 版本一致。例如，如果您使用的是 Kotlin 2.0.21，则 KSP 版本必须是 2.0.21-x.y.z 版本之一。可以在`libs.versions.toml`文件中查看当前项目使用的Kotlin的版本。
+
+```kotlin
+plugins {
+    id("com.google.devtools.ksp") version "2.0.21-1.0.27" apply false
+}
+```
+
+然后，在模块级 build.gradle.kts 文件中启用 KSP：
+
+```kotlin
+plugins {
+    id("com.google.devtools.ksp")
+}
+```
 
 ### 1. 创建Entity, Dao和Database类
 
