@@ -17,11 +17,11 @@ published: true
 
 #### 1.1 创建Entity数据实体类
 
-使用`@Entity` annotation来创建数据实体类。每个数据实体类有一个或多个Primary Key，通过`@PrimaryKey` annotation来标识。Room默然会根据参数名来匹配数据表的列名，你可以通过@ColumnInfo annotation来自定义数据列的属性。
+使用`@Entity` annotation来创建数据实体类。每个数据实体类有一个或多个Primary Key，通过`@PrimaryKey` annotation来标识。Room默然会根据参数名来匹配数据表的列名，你可以通过`@ColumnInfo` annotation来自定义数据列的属性。
 
 You define each Room entity as a class annotated with `@Entity`. A Room entity includes fields for each column in the corresponding table in the database, including one or more columns that make up the primary key.
 
-By default, Room uses the class name as the database table name. If you want the table to have a different name, set the tableName property of the `@Entity` annotation. Similarly, Room uses the field names as column names in the database by default. If you want a column to have a different name, add the @ColumnInfo annotation to the field and set the name property. 
+By default, Room uses the class name as the database table name. If you want the table to have a different name, set the tableName property of the `@Entity` annotation. Similarly, Room uses the field names as column names in the database by default. If you want a column to have a different name, add the `@ColumnInfo` annotation to the field and set the name property. 
 
 ```kotlin
 @Entity
