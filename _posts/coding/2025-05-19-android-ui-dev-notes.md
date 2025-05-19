@@ -1,5 +1,5 @@
 ---
-title: Android视图层编程笔记
+title: Android应用UI层编程笔记
 category: coding
 tags: android ui
 published: true
