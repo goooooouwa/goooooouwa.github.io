@@ -38,27 +38,29 @@ published: true
 
 - 第一步，LinearLayout查看layout_width属性值(竖直方位则查看layout_height属性值)。
 
-![f60b6edb28f028e15f12ce3faab9bd17.png](:/5e91eb8d2c404d6c928fd19c83d3ec07)
+![屏幕截图 2025-05-19 05.40.14.png]({{site.baseurl}}/assets/images/屏幕截图 2025-05-19 05.40.14.png)
 
 - 第二步，LinearLayout依据layout_weight属性值进行额外的空间分配。
 
-![ef8a860b314d12cc4501017662f034b1.png](:/a91db0d18d84416cabe786a70e5b6ad5)
+![屏幕截图 2025-05-19 05.40.22.png]({{site.baseurl}}/assets/images/屏幕截图 2025-05-19 05.40.22.png)
 
 `layout_weight`代表该视图组件在其父组件的布局空间中所占有的权重，例如，如果A组件的`layout_weight`为2，B组件的`layout_weight`为1，则A将获得父组件2/3的额外宽度，而B则将获得父组件1/3的额外宽度。
 
-![b3bc1d8d77be7269c8517fdf11aeb1e7.png](:/d3fe22869ec944f99c82b772430c5983)
+![屏幕截图 2025-05-19 05.40.31.png]({{site.baseurl}}/assets/images/屏幕截图 2025-05-19 05.40.31.png)
 
 weight设置值也可以是浮点数。一种常见的设定方式是各组件属性值加起来等于1.0或100。比如，在上一个例子中，A组件的`layout_weight`应该为0.66，B组件的`layout_weight`则为0.37。
 
 如想让`LinearLayout`分配完全相同的宽度给各自的视图，则只需设置各组件的`layout_width`属性值为0dp以避开第一步的空间分配就可以了。这样`LinearLayout`就会只考虑使用`layout_weight`属性值（而忽视组件自身的宽度）来完成所需的空间分配。
 
-![63324cfb92395d51ac565a89e6cb98fc.png](:/c521f3fb6af344dbb7f7ebdc7b88ab5c)
+![屏幕截图 2025-05-19 05.40.40.png]({{site.baseurl}}/assets/images/屏幕截图 2025-05-19 05.40.40.png)
 
-注意，如果不小心将某个组件的layout_weight`设置为1，可能会导致该组件占满整个布局空间，导致其他组件在UI中不可见。
+
+注意，如果不小心将某个组件的`layout_weight`设置为1，可能会导致该组件占满整个布局空间，导致其他组件在UI中不可见。
 
 ### 5. 例子：创建以下布局
 
-![cdd3650630b74c2de0c65408f611533b.png](:/0c2aad541dce4f6f9aa6e9e034efc028)
+![屏幕截图 2025-05-19 05.39.54.png]({{site.baseurl}}/assets/images/屏幕截图 2025-05-19 05.39.54.png)
+
 
 所需步骤如下：
 
