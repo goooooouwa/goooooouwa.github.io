@@ -69,3 +69,9 @@ weight设置值也可以是浮点数。一种常见的设定方式是各组件�
 4. 将Clear按钮的`layout_marginStart`设置为30dp，以在两个按钮间提供30dp的间距；
 5. 将StudentName和StudentEmail的layout_width设置为`match_parent`以占满水平宽度；
 6. Layout(horizontal)默认将Save和Clear按钮的`layout_weight`设置为1，因此2个按钮占据相等的水平宽度。
+
+### References
+
+- https://developer.android.com/develop/ui/views/layout/constraint-layout
+- https://www.youtube.com/watch?v=XamMbnzI5vE
+- https://book.douban.com/subject/25848404/
