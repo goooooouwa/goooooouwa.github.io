@@ -18,7 +18,7 @@ published: true
 ### 1. 使用layout组件进行视图布局
 
 - 简单布局可以通过嵌套`LinearLayout`(horizontal or vertical)来实现；
-- 复杂布局可以使用`ConstraintLayout`。
+- 复杂布局可以使用`ConstraintLayout`（以避免嵌套多层`LinearLayout`）。
 
 ### 2. 使用layout_margin控制视图间距
 
