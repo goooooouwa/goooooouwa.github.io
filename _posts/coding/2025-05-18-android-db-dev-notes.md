@@ -298,3 +298,13 @@ Let's dissect the coroutines code in the `insertStudent` function:
 - `Dispatchers.IO` indicates that this coroutine should be executed on a thread reserved for I/O operations.
 
 Since this coroutine is started with viewModelScope, it is executed in the scope of the ViewModel. If the ViewModel is destroyed because the user is navigating away from the screen, viewModelScope is automatically cancelled, and all running coroutines are canceled as well.
+
+
+### References:
+
+- https://developer.android.com/training/data-storage/room
+- https://developer.android.com/training/data-storage/room/accessing-data
+- https://kotlinlang.org/docs/functions.html#variable-number-of-arguments-varargs
+- https://stackoverflow.com/questions/40398072/singleton-with-parameter-in-kotlin
+- https://kotlinlang.org/docs/coroutines-basics.html
+- https://developer.android.com/topic/libraries/architecture/coroutines
