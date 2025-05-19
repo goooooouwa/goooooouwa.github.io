@@ -64,8 +64,8 @@ weight设置值也可以是浮点数。一种常见的设定方式是各组件�
 所需步骤如下：
 
 1. 添加1个Layout(vertical)组件；
-2. 在Layout(vertical)组件内添加所需的视图元素，以及1个Layout(horizontal)组件（将Save和Clear按钮置于其中，以对其进行水平布局）；
-3. 将Layout(vertical)的`layout_margin`设置为15dp，为所有子组件提供距离屏幕边框15dp的外边距；
+2. 在Layout(vertical)组件内添加所需的视图元素、以及1个Layout(horizontal)组件（用于将Save和Clear按钮置于其中，以对其进行水平布局）；
+3. 将Layout(vertical)的`layout_margin`设置为15dp，以为所有子组件提供距离屏幕边框15dp的外边距；
 4. 将Clear按钮的`layout_marginStart`设置为30dp，以在两个按钮间提供30dp的间距；
 5. 将StudentName和StudentEmail的layout_width设置为`match_parent`以占满水平宽度；
 6. Layout(horizontal)默认将Save和Clear按钮的`layout_weight`设置为1，因此2个按钮占据相等的水平宽度。
