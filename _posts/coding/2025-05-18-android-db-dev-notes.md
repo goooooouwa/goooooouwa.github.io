@@ -231,7 +231,7 @@ val studentDao = StudentDatabase.getInstance(application).studentDao()
 
 ### 4. 在UI中进行数据库操作
 
-因此在Android app中数据库操作需要在非UI thread进行，使用Kotlin Coroutine可以轻松在不同thread间允许异步代码。
+在Android app中数据库操作需要在非UI thread进行，以避免阻塞UI渲染。使用Kotlin Coroutine可以轻松在不同thread间允许异步代码。
 
 #### 4.1 Kotlin Coroutine语法
 
@@ -263,12 +263,12 @@ Suspending functions can be used inside coroutines just like regular functions, 
 在UI thread中可以使用`CoroutineScope`来启动Coroutine，比如：
 
 ```kotlin
-	button.setOnClickListener {
-		// Create a new coroutine to move the execution off the UI thread
-		CoroutineScope(Dispatchers.IO).launch {
-		    ...
-		}
-	}
+button.setOnClickListener {
+    // Create a new coroutine to move the execution off the UI thread
+    CoroutineScope(Dispatchers.IO).launch {
+        ...
+    }
+}
 ```
 
 ### 5. 在ViewModel中进行数据库操作
