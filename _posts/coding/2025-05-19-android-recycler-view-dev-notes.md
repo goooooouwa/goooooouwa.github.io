@@ -94,6 +94,35 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
+### How to update list data
+
+1. Provide method to update dataset
+
+```kotlin
+class StudentRecyclerViewAdapter(): RecyclerView.Adapter<StudentRecyclerViewAdapter.ViewHolder>() {
+
+    var studentList: List<Student> = emptyList();
+
+    fun setStudentsList(students: List<Student>) {
+        studentList = students
+    }
+
+    // ...
+}
+```
+
+2. Call the method to update dataset
+
+```kotlin
+studentRecyclerViewAdapter.setStudentsList(students)
+```
+
+3. notify the Adapter about the event
+
+```kotlin
+studentRecyclerViewAdapter.notifyItemRangeInserted(0, students.size)
+```
+
 ### References:
 
 - https://developer.android.com/develop/ui/views/layout/recyclerview
