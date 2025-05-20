@@ -88,15 +88,15 @@ public View inflate (int resource,
                 boolean attachToRoot)
 ```
 
-功能：Inflate a new view hierarchy from the specified xml resource. Throws InflateException if there is an error.
+功能：Inflate a new view hierarchy from the specified xml resource. Throws `InflateException` if there is an error.
 
 #### 理解`Context`对象
 
 Interface to global information about an application environment. This is an abstract class whose implementation is provided by the Android system. It allows access to application-specific resources and classes, as well as up-calls for application-level operations such as launching activities, broadcasting and receiving intents, etc.
 
-在Android开发里Context参数很常见。使用Context参数，单例可完成启动activity、获取项目资源，查找应用的私有存储空间等任务。
+在Android开发里`Context`参数很常见。使用`Context`参数，单例可完成启动activity、获取项目资源，查找应用的私有存储空间等任务。
 
-注意，在get(Context)方法里，我们并没有直接将Context参数传给构造方法。该Context可能是一个Activity，也可能是另一个Context对象，如Service。在应用的整个生命周期里，我们无法保证需要用到Context时，Context就一定会存在。因此，为保证单例总是有Context可以使用，可调用getApplicationContext()方法，将不确定是否存在的Context替换成application context。application context是针对应用的全局性Context。任何时候，只要是应用层面的单例，就应该一直使用application context。
+注意，在`get(Context)`方法里，我们并没有直接将`Context`参数传给构造方法。该`Context`可能是一个`Activity`，也可能是另一个`Context`对象，如`Service`。在应用的整个生命周期里，我们无法保证需要用到`Context`时，`Context`就一定会存在。因此，为保证单例总是有`Context`可以使用，可调用`getApplicationContext()`方法，将不确定是否存在的`Context`替换成application context。application context是针对应用的全局性`Context`。任何时候，只要是应用层面的单例，就应该一直使用application context。
 
 ## References:
 
