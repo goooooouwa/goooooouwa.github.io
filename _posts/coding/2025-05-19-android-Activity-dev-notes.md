@@ -33,7 +33,7 @@ public void setContentView (View view)
 
 `setContentView()`用来为Activity设置其顶层视图，该视图可以包含其他子视图。
 
-Set the activity content to an explicit view. This view is placed directly into the activity's view hierarchy. It can itself be a complex view hierarchy. When calling this method, the **layout parameters of the specified view are ignored**. Both **the width and the height of the view are set by default to ViewGroup.LayoutParams.MATCH_PARENT**. To use your own layout parameters, invoke `setContentView(android.view.View, android.view.ViewGroup.LayoutParams)` instead.
+Set the activity content to an explicit view. This view is placed directly into the activity's view hierarchy. It can itself be a complex view hierarchy. When calling this method, the **layout parameters of the specified view are ignored**. Both **the width and the height of the view are set by default to `ViewGroup.LayoutParams.MATCH_PARENT`**. To use your own layout parameters, invoke `setContentView(android.view.View, android.view.ViewGroup.LayoutParams)` instead.
 
 ## 理解`LayoutInflater`的用途以及如何用它创建视图
 
