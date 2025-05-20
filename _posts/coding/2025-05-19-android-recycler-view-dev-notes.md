@@ -117,7 +117,7 @@ class StudentRecyclerViewAdapter(): RecyclerView.Adapter<StudentRecyclerViewAdap
 studentRecyclerViewAdapter.setStudentsList(students)
 ```
 
-3. notify the Adapter about the event
+3. (Don't forget this) Notify the Adapter about the event
 
 ```kotlin
 studentRecyclerViewAdapter.notifyItemRangeInserted(0, students.size)
