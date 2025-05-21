@@ -70,7 +70,7 @@ You can also use the Layout Editor to add a `NavHostFragment` to an activity by 
 
 ## 3. 获取navigation controller
 
-You can retrieve your NavController using one of the following methods depending on the context:
+You can retrieve your `NavController` using one of the following methods depending on the context:
 
 1. `Fragment.findNavController()`
 2. `View.findNavController()`
@@ -79,9 +79,13 @@ You can retrieve your NavController using one of the following methods depending
 Typically, you first get a `NavHostFragment`, and then retrieve the `NavController` from the fragment. The following snippet demonstrates this:
 
 ```kotlin
+// retrieve the `NavController` from the fragment
 val navHostFragment =
     supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 val navController = navHostFragment.navController
+
+// alternatively, retrieve the `NavController` within an Activity
+val navController = findNavController(R.id.nav_host_fragment_activity_main)
 ```
 
 ## 4. Navigate to a destination 
