@@ -1,5 +1,5 @@
 ---
-title: Android应用Activity编程笔记
+title: Android编程笔记（三）：Activity
 category: coding
 tags: android activity
 published: true
