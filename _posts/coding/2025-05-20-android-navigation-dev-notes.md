@@ -50,7 +50,7 @@ To add a new destination using the Navigation Editor, do the following:
 
 1. In the Navigation Editor, click the **New Destination** icon,
 2. Select an existing destination in the drop-down or Click **Create new destination** button to create a new destination,
-3. (If creating a new destination) In the New Android Component dialog that appears, create your fragment.
+3. (If creating a new destination) In the **New Android Component** dialog that appears, create your fragment.
 
 #### Add actions
 
@@ -66,7 +66,7 @@ You can also use the Layout Editor to add a `NavHostFragment` to an activity by 
 1. In your list of project files, double-click your activity's layout XML file to open it in the Layout Editor.
 2. Within the Palette pane, choose the Containers category; alternatively, search for "NavHostFragment".
 3. Drag the `NavHostFragment` view onto your activity.
-4. In the Navigation Graphs dialog that appears, choose the corresponding navigation graph to associate with this `NavHostFragment`, and then click OK.
+4. In the **Navigation Graphs** dialog that appears, choose the corresponding navigation graph to associate with this `NavHostFragment`, and then click OK.
 
 ## 3. 获取navigation controller
 
