@@ -8,6 +8,7 @@ published: true
 ## 关键概念
 
 The following table provides an overview of the key concepts in navigation and the main types that you use to implement them.
+
 | Concept     | Purpose        | Type    |
 |-------------|----------------|---------|
 | Controller  |  `NavController`是控制页面导航的核心组件，它掌管着navigation graph，提供了在页面间导航的各种方法。It holds the navigation graph and exposes methods that allow your app to move between the destinations in the graph. The central coordinator for managing navigation between destinations. The controller offers methods for navigating between destinations, handling deep links, managing the back stack, and more. | `NavController` |
