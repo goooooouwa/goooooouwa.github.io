@@ -17,7 +17,7 @@ The Navigation component includes a [`NavigationUI`](https://developer.android.c
 
 The [top app bar](https://material.io/design/components/app-bars-top.html) provides a consistent place along the top of your app for displaying information and actions from the current screen.
 
-<img width="854" height="288" src=":/1d87d1bfc61f4c838fce137fa7c641dd"/>
+![screen displaying a top app bar]({{site.baseurl}}/assets/images/1d87d1bfc61f4c838fce137fa7c641dd.png)
 
 **Figure 1.** A screen displaying a top app bar.
 
@@ -46,7 +46,7 @@ For more information on app bars, see [Set up the app bar](https://developer.and
 
 A top-level destination is the root, or highest level destination, in a set of hierarchically-related destinations. **Top-level destinations do not display an Up button in the top app bar because there is no higher level destination**. By default, the start destination of your app is the only top-level destination.
 
-When the user is at a top-level destination, the Navigation button becomes a drawer icon <img width="19" height="19" src=":/be0d9414288b4669986d6a47f8dc5022"/> if the destination uses a `DrawerLayout`. **If the destination doesn't use a `DrawerLayout`, the Navigation button is hidden**. When the user is on any other destination, the Navigation button appears as an Up button <img width="19" height="19" src=":/a752d266f4524a71b5debe3fba64e5fd"/>. To configure the Navigation button using only the start destination as the top-level destination, create an `AppBarConfiguration` object, and pass in the corresponding navigation graph, as shown below:
+When the user is at a top-level destination, the Navigation button becomes a drawer icon <img width="19" height="19" src="{{site.baseurl}}/assets/images/be0d9414288b4669986d6a47f8dc5022.png"/> if the destination uses a `DrawerLayout`. **If the destination doesn't use a `DrawerLayout`, the Navigation button is hidden**. When the user is on any other destination, the Navigation button appears as an Up button <img width="19" height="19" src="{{site.baseurl}}/assets/images/a752d266f4524a71b5debe3fba64e5fd.png"/>. To configure the Navigation button using only the start destination as the top-level destination, create an `AppBarConfiguration` object, and pass in the corresponding navigation graph, as shown below:
 
 ```kotlin
 val appBarConfiguration = AppBarConfiguration(navController.graph)
@@ -186,7 +186,7 @@ Adding the top app bar to your activity works well when the app bar’s layout i
 As an example, one of your destinations may use a standard `Toolbar`, while another uses an `AppBarLayout` to create a more complex app bar with tabs, as shown in figure 2.
 
 ![two top app bar variations; a standard toolbar on the left, and an
-            appbarlayout with a toolbar and tabs on the right](https://developer.android.com/static/images/guide/navigation/app-bar-variations.png)
+            appbarlayout with a toolbar and tabs on the right]({{site.baseurl}}/assets/images/app-bar-variations.png)
 
 **Figure 2.** Two app bar variations. On the left, a standard `Toolbar`. On the right, an `AppBarLayout` with a `Toolbar` and tabs.
 
@@ -202,9 +202,9 @@ For more information on how to tie destinations to menu items, see [Tie destinat
 
 ## Add a navigation drawer
 
-The navigation drawer is a UI panel that shows your app's main navigation menu. The drawer appears when the user touches the drawer icon <img width="19" height="19" src=":/be0d9414288b4669986d6a47f8dc5022"/> in the app bar or when the user swipes a finger from the left edge of the screen.
+The navigation drawer is a UI panel that shows your app's main navigation menu. The drawer appears when the user touches the drawer icon <img width="19" height="19" src="{{site.baseurl}}/assets/images/be0d9414288b4669986d6a47f8dc5022.png"/> in the app bar or when the user swipes a finger from the left edge of the screen.
 
-<img width="337" height="452" src=":/7bed2e3467f8454fbb794463ef6290ee"/>
+![an open drawer displaying a navigation menu]({{site.baseurl}}/assets/images/7bed2e3467f8454fbb794463ef6290ee.png)
 
 **Figure 3.** An open drawer displaying a navigation menu.
 
@@ -278,7 +278,7 @@ Starting in [Navigation 2.4.0-alpha01](https://developer.android.com/jetpack/and
 
 `NavigationUI` can also handle bottom navigation. When a user selects a menu item, the `NavController` calls [`onNavDestinationSelected()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onNavDestinationSelected%28android.view.MenuItem,%20androidx.navigation.NavController%29) and **automatically updates the selected item in the bottom navigation bar**.
 
-<img width="854" height="287" src=":/59bb3750b98a46c199fbe3df75768dc9"/>
+![bottom navigation bar]({{site.baseurl}}/assets/images/59bb3750b98a46c199fbe3df75768dc9.png)
 
 **Figure 4.** A bottom navigation bar.
 
