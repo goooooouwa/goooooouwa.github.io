@@ -114,7 +114,7 @@ viewTransactionsButton.setOnClickListener { view ->
 
 Navigation graph包含destinations和actions. 以下为一个navigation graph的XML代码示例：
 
-```kotlin
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"

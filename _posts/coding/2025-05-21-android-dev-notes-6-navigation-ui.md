@@ -23,7 +23,7 @@ The [top app bar](https://material.io/design/components/app-bars-top.html) provi
 
 `NavigationUI` contains methods that **automatically update content in your top app bar as users navigate through your app**. For example, `NavigationUI` uses the destination labels from your navigation graph to keep the title of the top app bar up-to-date.
 
-```kotlin
+```xml
 <navigation>
     <fragment ...
               android:label="Page title">
@@ -286,7 +286,7 @@ To create a bottom navigation bar in your app:
 
 1. first define the bar in your main activity, as shown below:
 
-```
+```xml
 <LinearLayout>
     ...
     <androidx.fragment.app.FragmentContainerView
