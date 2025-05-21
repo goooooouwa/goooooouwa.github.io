@@ -1,5 +1,5 @@
 ---
-title: Android应用Model层编程笔记
+title: Android编程笔记（一）：Model
 category: coding
 tags: android db
 published: true
