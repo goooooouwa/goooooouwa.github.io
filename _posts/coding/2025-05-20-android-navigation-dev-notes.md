@@ -76,7 +76,7 @@ You can retrieve your NavController using one of the following methods depending
 2. `View.findNavController()`
 3. `Activity.findNavController(viewId: Int)`
 
-Typically, you first get a NavHostFragment, and then retrieve the NavController from the fragment. The following snippet demonstrates this:
+Typically, you first get a `NavHostFragment`, and then retrieve the `NavController` from the fragment. The following snippet demonstrates this:
 
 ```kotlin
 val navHostFragment =
