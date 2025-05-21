@@ -23,10 +23,10 @@ Each `NavHost` you create has its own corresponding `NavController`. The `NavCon
 
 ## 如何设置导航
 
-1. [创建navigation graph](https://developer.android.com/guide/navigation/design)
-2. [创建navigation host](https://developer.android.com/guide/navigation/design)
-3. [获取navigation controller](https://developer.android.com/guide/navigation/navcontroller)
-4. [进行页面导航](https://developer.android.com/guide/navigation/use-graph/navigate)
+1. 创建navigation graph
+2. 创建navigation host
+3. 获取navigation controller
+4. 进行页面导航
 
 ### 1. 创建navigation graph
 
