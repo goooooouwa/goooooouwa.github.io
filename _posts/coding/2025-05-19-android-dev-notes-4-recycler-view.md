@@ -1,5 +1,5 @@
 ---
-title: Android应用RecyclerView编程笔记
+title: Android编程笔记（四）：RecyclerView
 category: coding
 tags: android recycler-view
 published: true
