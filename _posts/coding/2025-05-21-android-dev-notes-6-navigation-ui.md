@@ -1,5 +1,5 @@
 ---
-title: Android应用Navigation UI编程笔记
+title: Android编程笔记（六）：Navigation UI
 category: coding
 tags: android navigation ui
 published: true
