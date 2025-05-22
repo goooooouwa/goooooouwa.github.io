@@ -230,7 +230,7 @@ For more information on how to support app bar variations, see [Support app bar 
 
 `NavigationUI` also provides helpers for tying destinations to menu-driven UI components. `NavigationUI` contains a helper method, [`onNavDestinationSelected()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onnavdestinationselected), which takes a [`MenuItem`](https://developer.android.com/reference/android/view/MenuItem) along with the [`NavController`](https://developer.android.com/reference/androidx/navigation/NavController) that hosts the associated destination. If the `id` of the `MenuItem` matches the `id` of the destination, the `NavController` can then navigate to that destination.
 
-As an example, the XML snippets below define a menu item and a destination with a common `id` as `details_page_fragment`:
+If your menu was created as an XML resource file, you can associate the menu items with destinations by matching the `id` of the `MenuItem` to the `id` of the destination. As an example, the XML snippets below define a menu item and a destination with a common `id` as `details_page_fragment`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -247,7 +247,7 @@ As an example, the XML snippets below define a menu item and a destination with 
 </navigation>
 ```
 
-```
+```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     ...
@@ -259,7 +259,7 @@ As an example, the XML snippets below define a menu item and a destination with 
 </menu>
 ```
 
-Alternatively, if your menu was added programmatically via the Activity's `onCreateOptionsMenu()`, for example, you can associate the menu items with destinations by overriding the Activity's `onOptionsItemSelected()` to call `onNavDestinationSelected()`, as shown in the following example:
+**Alternatively**, if your menu was added programmatically via the Activity's `onCreateOptionsMenu()`, for example, you can associate the menu items with destinations by overriding the Activity's `onOptionsItemSelected()` to call `onNavDestinationSelected()`, as shown in the following example:
 
 ```kotlin
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
