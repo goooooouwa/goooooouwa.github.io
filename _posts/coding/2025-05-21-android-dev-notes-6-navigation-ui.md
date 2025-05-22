@@ -12,6 +12,10 @@ The Navigation component includes a [`NavigationUI`](https://developer.android.c
 - navigation drawer
 - bottom navigation
 
+To set up a navigation controller with various navigational UI components, The common steps are:
+
+
+
 
 ## Top app bar
 
