@@ -62,7 +62,7 @@ All activities that use the default theme have an `ActionBar` as an app bar. App
 
 **AppCompat version of `Toolbar` & `ActionBar`**
 
-On the other hand, features are added to the AndroidX AppCompat library's version of Toolbar, which means those features are available on devices that use the AndroidX libraries. Using the AndroidX library's toolbar to implement your activities' app bars makes your app's behavior consistent across the widest range of devices.
+On the other hand, features are added to the AndroidX AppCompat library's version of `Toolbar`, which means those features are available on devices that use the AndroidX libraries. Using the AndroidX library's toolbar to implement your activities' app bars makes your app's behavior consistent across the widest range of devices.
 
 For more information on app bars, see [Set up the app bar](https://developer.android.com/training/appbar/setting-up).
 
@@ -88,7 +88,7 @@ val appBarConfiguration = AppBarConfiguration(setOf(R.id.main, R.id.profile))
 
 To create a Toolbar with `NavigationUI`:
 
-1. first define the bar in your main activity, as shown:
+1) first define the bar in your main activity, as shown:
 
 ```xml
 <LinearLayout>
@@ -101,7 +101,7 @@ To create a Toolbar with `NavigationUI`:
 </LinearLayout>
 ```
 
-2. Next, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,androidx.navigation.NavController,androidx.navigation.ui.AppBarConfiguration%29) from your main activity's `onCreate()` method, as shown in the following example:
+2) Next, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,androidx.navigation.NavController,androidx.navigation.ui.AppBarConfiguration%29) from your main activity's `onCreate()` method, as shown in the following example:
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -124,7 +124,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 To include a `CollapsingToolbarLayout` with your Toolbar:
 
-1. first define the Toolbar and surrounding layout in your activity, as shown below:
+1) first define the Toolbar and surrounding layout in your activity, as shown below:
 
 ```xml
 <LinearLayout>
@@ -155,7 +155,7 @@ To include a `CollapsingToolbarLayout` with your Toolbar:
 </LinearLayout>
 ```
 
-2. Next, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29) from your main activity's `onCreate` method, as shown below:
+2) Next, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29) from your main activity's `onCreate` method, as shown below:
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -177,7 +177,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 To add navigation support to the default action bar:
 
-1. call [`setupActionBarWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupActionBarWithNavController%28androidx.appcompat.app.AppCompatActivity,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29) from your main activity's `onCreate()` method, as shown below.
+1) call [`setupActionBarWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupActionBarWithNavController%28androidx.appcompat.app.AppCompatActivity,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29) from your main activity's `onCreate()` method, as shown below.
 
 **Note**: you need to declare your `AppBarConfiguration` outside of `onCreate()`, since you also use it when overriding `onSupportNavigateUp()`:
 
@@ -197,7 +197,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-2. Next, override `onSupportNavigateUp()` to handle Up navigation:
+2) Next, override `onSupportNavigateUp()` to handle Up navigation:
 
 ```kotlin
 override fun onSupportNavigateUp(): Boolean {
@@ -240,7 +240,7 @@ The drawer icon is displayed on all [*top-level destinations*](#appbarconfigurat
 
 To add a navigation drawer:
 
-1. first declare a [`DrawerLayout`](https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout) as the root view. Inside the `DrawerLayout`, add a layout for the main UI content and another view that contains the contents of the navigation drawer.
+1) first declare a [`DrawerLayout`](https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout) as the root view. Inside the `DrawerLayout`, add a layout for the main UI content and another view that contains the contents of the navigation drawer.
 
 For example, the following layout uses a `DrawerLayout` with two child views: a [`NavHostFragment`](https://developer.android.com/reference/androidx/navigation/fragment/NavHostFragment) to contain the main content and a [`NavigationView`](https://developer.android.com/reference/com/google/android/material/navigation/NavigationView) for the contents of the navigation drawer.
 
@@ -274,7 +274,7 @@ For example, the following layout uses a `DrawerLayout` with two child views: a 
 </androidx.drawerlayout.widget.DrawerLayout>
 ```
 
-2. Next, connect the [`DrawerLayout`](https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout) to your navigation graph by passing it to `AppBarConfiguration`, as shown in the following example:
+2) Next, connect the [`DrawerLayout`](https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout) to your navigation graph by passing it to `AppBarConfiguration`, as shown in the following example:
 
 ```kotlin
 val appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
@@ -312,7 +312,7 @@ Starting in [Navigation 2.4.0-alpha01](https://developer.android.com/jetpack/and
 
 To create a bottom navigation bar in your app:
 
-1. first define the bar in your main activity, as shown below:
+1) first define the bar in your main activity, as shown below:
 
 ```xml
 <LinearLayout>
@@ -326,7 +326,7 @@ To create a bottom navigation bar in your app:
 </LinearLayout>
 ```
 
-2. Next, in your main activity class, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29) from your main activity's `onCreate()` method, as shown below:
+2) Next, in your main activity class, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29) from your main activity's `onCreate()` method, as shown below:
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
