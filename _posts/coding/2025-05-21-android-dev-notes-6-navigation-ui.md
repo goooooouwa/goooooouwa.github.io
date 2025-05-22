@@ -54,7 +54,7 @@ The key functions of the app bar are as follows:
 
 The action bar may be represented by any `Toolbar` widget within the application layout. The application may signal to the Activity which `Toolbar` should be treated as the Activity's action bar.
 
-#### Differences between native version of `Toolbar` & AppCompat version of `Toolbar` (or native `ActionBar` & AppCompat `ActionBar`)
+#### Differences between native version of `Toolbar` & AppCompat version of `Toolbar` (or native `ActionBar` vs AppCompat `ActionBar`)
 
 **Native version of Widget `Toolbar` & App `ActionBar`**
 
