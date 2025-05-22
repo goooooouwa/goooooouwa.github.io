@@ -17,6 +17,12 @@ The Navigation component includes a [`NavigationUI`](https://developer.android.c
 
 The [top app bar](https://material.io/design/components/app-bars-top.html) provides a consistent place along the top of your app for displaying information and actions from the current screen.
 
+The key functions of the app bar are as follows:
+
+1. Dedicated space for giving your app an identity and indicating the user's location in the app.
+2. Predictable access to important actions, such as search.
+3. Support for navigation and view switching, using tabs or menus.
+
 ![screen displaying a top app bar]({{site.baseurl}}/assets/images/1d87d1bfc61f4c838fce137fa7c641dd.png)
 
 **Figure 1.** A screen displaying a top app bar.
@@ -32,11 +38,31 @@ The [top app bar](https://material.io/design/components/app-bars-top.html) provi
 </navigation>
 ```
 
-`NavigationUI` provides support for the following top app bar types:
+`NavigationUI` provides support for the following **top app bar types**:
 
-- [`Toolbar`](https://developer.android.com/reference/android/widget/Toolbar)
+- [Widget `Toolbar`](https://developer.android.com/reference/android/widget/Toolbar)
 - [`CollapsingToolbarLayout`](https://developer.android.com/reference/com/google/android/material/appbar/CollapsingToolbarLayout)
-- [`ActionBar`](https://developer.android.com/reference/androidx/appcompat/app/ActionBar)
+- [AppCompat `ActionBar`](https://developer.android.com/reference/androidx/appcompat/app/ActionBar)
+
+### Differences between [Widget `Toolbar`](https://developer.android.com/reference/android/widget/Toolbar), [App `ActionBar`](https://developer.android.com/reference/android/app/ActionBar), [AppCompat `Toolbar`](https://developer.android.com/reference/androidx/appcompat/widget/Toolbar) & [AppCompat `ActionBar`](https://developer.android.com/reference/androidx/appcompat/app/ActionBar)
+
+#### Differences between Widget `Toolbar` & App `ActionBar`
+
+**Widget `Toolbar`** is a generalization of action bars for use within application layouts. While an action bar is traditionally part of an Activity's opaque window decor controlled by the framework, a Toolbar may be placed at any arbitrary level of nesting within a view hierarchy. An application may choose to designate a Toolbar as the action bar for an Activity using the `setSupportActionBar()` method.
+
+**App `ActionBar`** is a primary toolbar within the activity that may display the activity title, application-level navigation affordances, and other interactive items.
+
+The action bar may be represented by any `Toolbar` widget within the application layout. The application may signal to the Activity which `Toolbar` should be treated as the Activity's action bar.
+
+#### Differences between native version of `Toolbar` & AppCompat version of `Toolbar` (or native `ActionBar` & AppCompat `ActionBar`)
+
+**Native version of Widget `Toolbar` & App `ActionBar`**
+
+All activities that use the default theme have an `ActionBar` as an app bar. App bar features are added to the native `ActionBar` **over various Android releases**. As a result, the **native `ActionBar` behaves differently depending on what version of Android a device is using**.
+
+**AppCompat version of `Toolbar` & `ActionBar`**
+
+On the other hand, features are added to the AndroidX AppCompat library's version of Toolbar, which means those features are available on devices that use the AndroidX libraries. Using the AndroidX library's toolbar to implement your activities' app bars makes your app's behavior consistent across the widest range of devices.
 
 For more information on app bars, see [Set up the app bar](https://developer.android.com/training/appbar/setting-up).
 
@@ -388,3 +414,8 @@ One advantage of this approach is that the `Activity` sees only the arguments in
 ## References:
 
 - https://developer.android.com/guide/navigation/integrations/ui
+- https://developer.android.com/develop/ui/views/components/appbar
+- https://developer.android.com/develop/ui/views/components/appbar/setting-up
+
+
+
