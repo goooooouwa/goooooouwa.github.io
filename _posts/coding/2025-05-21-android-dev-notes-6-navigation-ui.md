@@ -224,9 +224,45 @@ For more information on how to support app bar variations, see [Support app bar 
 
 `NavigationUI` also provides helpers for tying destinations to menu-driven UI components. `NavigationUI` contains a helper method, [`onNavDestinationSelected()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onnavdestinationselected), which takes a [`MenuItem`](https://developer.android.com/reference/android/view/MenuItem) along with the [`NavController`](https://developer.android.com/reference/androidx/navigation/NavController) that hosts the associated destination. If the `id` of the `MenuItem` matches the `id` of the destination, the `NavController` can then navigate to that destination.
 
-With this setup, when a user clicks the a menu item, the app **automatically navigates to the corresponding destination with the same id**.
+As an example, the XML snippets below define a menu item and a destination with a common `id` as `details_page_fragment`:
 
-For more information on how to tie destinations to menu items, see [Tie destinations to menu items](https://developer.android.com/guide/navigation/integrations/ui#Tie-navdrawer).
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    ... >
+
+    ...
+
+    <fragment android:id="@+id/details_page_fragment"
+         android:label="@string/details"
+         android:name="com.example.android.myapp.DetailsFragment" />
+</navigation>
+```
+
+```
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    ...
+
+    <item
+        android:id="@+id/details_page_fragment"
+        android:icon="@drawable/ic_details"
+        android:title="@string/details" />
+</menu>
+```
+
+Alternatively, if your menu was added programmatically via the Activity's `onCreateOptionsMenu()`, for example, you can associate the menu items with destinations by overriding the Activity's `onOptionsItemSelected()` to call `onNavDestinationSelected()`, as shown in the following example:
+
+```kotlin
+override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    val navController = findNavController(R.id.nav_host_fragment)
+    return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+}
+```
+
+Now, when a user clicks the `details_page_fragment` menu item, the app automatically navigates to the corresponding destination with the same `id`.
 
 ## Add a navigation drawer
 
@@ -416,6 +452,3 @@ One advantage of this approach is that the `Activity` sees only the arguments in
 - https://developer.android.com/guide/navigation/integrations/ui
 - https://developer.android.com/develop/ui/views/components/appbar
 - https://developer.android.com/develop/ui/views/components/appbar/setting-up
-
-
-
