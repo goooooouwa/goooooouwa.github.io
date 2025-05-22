@@ -318,7 +318,7 @@ val appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
 
 **Note:** When using `NavigationUI`, the [top app bar](#top-app-bar) helpers **automatically transition between the drawer icon and the Up icon as the current destination changes**. You don't need to use [`ActionBarDrawerToggle`](https://developer.android.com/reference/androidx/appcompat/app/ActionBarDrawerToggle).
 
-3. Next, in your main activity class, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29) from your main activity's `onCreate()` method, as shown below:
+3) Next, in your main activity class, call [`setupWithNavController()`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29) from your main activity's `onCreate()` method, as shown below:
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
