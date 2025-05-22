@@ -14,7 +14,9 @@ The Navigation component includes a [`NavigationUI`](https://developer.android.c
 
 To set up a navigation controller with various navigational UI components, The common steps are:
 
-
+1. add the navigational UI component to the activity layout
+2. create a `AppBarConfiguration` with one or more top level destinations
+3. setup the view with the navigation controller & `AppBarConfiguration` by calling method like `View.setupWithNavController(navController, appBarConfiguration)`
 
 
 ## Top app bar
