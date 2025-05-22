@@ -94,6 +94,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ### Include CollapsingToolbarLayout
 
+![android-collapsing-toolbar-default-output.gif]({{site.baseurl}}/assets/images/android-collapsing-toolbar-default-output.gif)
+
 To include a `CollapsingToolbarLayout` with your Toolbar:
 
 1. first define the Toolbar and surrounding layout in your activity, as shown below:
