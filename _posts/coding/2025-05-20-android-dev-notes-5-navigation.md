@@ -46,14 +46,14 @@ plugins {
 dependencies {
   val nav_version = "2.9.0"
 
-  // Jetpack Compose integration
-  implementation("androidx.navigation:navigation-compose:$nav_version")
-
   // Views/Fragments integration
   implementation("androidx.navigation:navigation-fragment:$nav_version")
   implementation("androidx.navigation:navigation-ui:$nav_version")
 
-  // Feature module support for Fragments
+  // optional - Jetpack Compose integration
+  implementation("androidx.navigation:navigation-compose:$nav_version")
+
+  // // optional - Feature module support for Fragments
   implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
 
   // Testing Navigation
