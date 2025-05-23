@@ -23,10 +23,47 @@ Each `NavHost` you create has its own corresponding `NavController`. The `NavCon
 
 ## 如何设置导航
 
+0. 安装navigation依赖
 1. 创建navigation graph
 2. 创建navigation host
 3. 获取navigation controller
 4. 进行页面导航
+
+
+### 0. 安装navigation依赖
+
+To include navigation support in your project, add the following dependencies to your app's `build.gradle` file:
+
+```kotlin
+plugins {
+  // Kotlin serialization plugin for type safe routes and navigation arguments
+  kotlin("plugin.serialization") version "2.0.21"
+}
+
+dependencies {
+  val nav_version = "2.9.0"
+
+  // Jetpack Compose integration
+  implementation("androidx.navigation:navigation-compose:$nav_version")
+
+  // Views/Fragments integration
+  implementation("androidx.navigation:navigation-fragment:$nav_version")
+  implementation("androidx.navigation:navigation-ui:$nav_version")
+
+  // Feature module support for Fragments
+  implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+
+  // Testing Navigation
+  androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
+  // JSON serialization library, works with the Kotlin serialization plugin
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+}
+```
+
+For information on adding other architecture components to your project, see Add components to your project.
+
+
 
 ### 1. 创建navigation graph
 
@@ -39,7 +76,7 @@ When using fragments with the views UI framework, use a NavHostFragment as the h
 In Android Studio:
 1. right click on the `res` folder
 2. Select New -> Android Resource File
-3. Set `Resource Type`  as Navigation
+3. Set `Resource Type`  as **Navigation**
 4. Set `File name` for the graph, e.g. `nav_graph`
 
 ### 1.1 使用Navigation Editor设计graph及其destinations和actions
