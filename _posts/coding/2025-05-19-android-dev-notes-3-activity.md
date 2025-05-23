@@ -5,6 +5,9 @@ tags: android activity
 published: true
 ---
 
+* TOC
+{:toc}
+
 ## 理解`Activity`
 
 `Activity`简单理解即是MVC中的C，即View Controller。以下是一段常见的`Activity`类的代码：

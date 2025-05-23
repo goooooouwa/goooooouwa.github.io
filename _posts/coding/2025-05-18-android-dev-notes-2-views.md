@@ -5,6 +5,9 @@ tags: android ui
 published: true
 ---
 
+* TOC
+{:toc}
+
 ## 如何为Android应用创建视图布局
 
 ### 0. 创建视图布局的大致思路

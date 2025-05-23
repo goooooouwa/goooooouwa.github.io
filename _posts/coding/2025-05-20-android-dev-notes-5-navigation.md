@@ -5,6 +5,9 @@ tags: android navigation
 published: true
 ---
 
+* TOC
+{:toc}
+
 ## 关键概念
 
 The following table provides an overview of the key concepts in navigation and the main types that you use to implement them.

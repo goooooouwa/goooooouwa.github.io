@@ -5,6 +5,9 @@ tags: android recycler-view
 published: true
 ---
 
+* TOC
+{:toc}
+
 ## 实现RecyclerView adapter和view holder以及item view layout file
 
 Once you determine your layout, you need to implement your `Adapter` and `ViewHolder`. These two classes work together to define how your data is displayed. The ViewHolder is a wrapper around a View that contains the layout for an individual item in the list. The Adapter creates ViewHolder objects as needed and also sets the data for those views. The process of associating views to their data is called binding.

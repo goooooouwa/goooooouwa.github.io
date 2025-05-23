@@ -4,6 +4,10 @@ category: coding
 tags: android navigation ui
 published: true
 ---
+
+* TOC
+{:toc}
+
 ## 将navigation controller与Navigation UI组件集成
 
 The Navigation component includes a [`NavigationUI`](https://developer.android.com/reference/androidx/navigation/ui/NavigationUI) class. This class contains static methods that manage navigation with various navigational UI components, including:

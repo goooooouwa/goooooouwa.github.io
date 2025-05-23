@@ -5,6 +5,9 @@ tags: android db
 published: true
 ---
 
+* TOC
+{:toc}
+
 ## 如何在Android应用中创建和使用数据库
 
 0. 安装Room依赖
