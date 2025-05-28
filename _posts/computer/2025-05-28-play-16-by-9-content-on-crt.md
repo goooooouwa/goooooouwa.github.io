@@ -24,6 +24,8 @@ published: true
 
 于是我将装有corelec固件的u盘插到Android TV上，连接CRT电视后启动corelec系统。进入系统设置后，发现果然corelec的分辨率选项特别全（甚至支持4K)。于是我将分辨率设为4:3比例的800x600（或1024x768），将画面比例选择为原始大小，这时corelec就可以满屏播放自带左右黑边的16:9版本的4:3视频了。
 
+![4-3-content-on-crt.jpg]({{site.baseurl}}/assets/images/4-3-content-on-crt.jpg)
+
 终于可以在CRT上满屏播放自带左右黑边的TVB电视剧了！真是泪目。看来最强的视频播放解决方案还是得corelec。
 
 ## 题外话
