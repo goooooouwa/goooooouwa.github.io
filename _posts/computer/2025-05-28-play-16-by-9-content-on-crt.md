@@ -10,6 +10,9 @@ published: true
 
 当我尝试使用Android TV连接CRT电视播放这些TVB港剧时，无论使用哪种播放软件（jellyfin、kodi、VLC等）对视频画面进行哪种调整（满屏、覆盖、填充等），都无法让4:3的画面内容充满屏幕。
 
+![16-9-content-with-bars-on-crt.jpg]({{site.baseurl}}/assets/images/16-9-content-with-bars-on-crt.jpg)
+
+
 ### 转机
 
 一天晚上当我在iPad上再次尝试全屏看TVB港剧时，惊喜地发现使用jellyfin的覆盖画面选项居然可以满屏显示4:3的画面内容。
