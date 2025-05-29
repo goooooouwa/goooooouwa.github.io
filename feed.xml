@@ -1,0 +1,1585 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2025-05-29T18:18:01+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历</title><link href="https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt.html" rel="alternate" type="text/html" title="记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历" /><published>2025-05-28T00:00:00+00:00</published><updated>2025-05-28T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt.html"><![CDATA[<h3 id="背景">背景</h3>
+
+<p>很多早年的TVB香港电视剧内容是4:3的，但是视频本身的画面比例是16:9的，原因是视频在画面左右两边自带了黑边。</p>
+
+<p>当我尝试使用Android TV连接CRT电视播放这些TVB港剧时，无论使用哪种播放软件（jellyfin、kodi、VLC等）对视频画面进行哪种调整（满屏、覆盖、填充等），都无法让4:3的画面内容充满屏幕。</p>
+
+<p><img src="/assets/images/16-9-content-with-bars-on-crt.jpg" alt="16-9-content-with-bars-on-crt.jpg" /></p>
+
+<h3 id="转机">转机</h3>
+
+<p>一天晚上当我在iPad上再次尝试全屏看TVB港剧时，惊喜地发现使用jellyfin的覆盖画面选项居然可以满屏显示4:3的画面内容。</p>
+
+<p><img src="/assets/images/tvb-fullscreen-on-ipad.png" alt="tvb-fullscreen-on-ipad.png" /></p>
+
+<p>这让我开始思考这两台设备之间的差别。很快我就想到，这是因为iPad本身的屏幕分辨率就是4:3比例的，当选择覆盖画面选项时，jellyfin便会将左右超出画面的内容裁掉，而Android TV无论是通过AV接口直接连接CRT（这种情况下只支持16:9的480p和570p）还是使用HDMI转AV转换器，系统都只支持16:9的屏幕分辨率比例（即使将其连接到CRT上，也是将视频内容以16:9比例在Android TV上播放，然后被CRT横向压缩成4:3比例在电视屏幕上显示出来，此时播放器依然会认为设备的显示比例是16:9）。</p>
+
+<p>基于这一发现，我在想是否能通过kodi自定义画面比例来强行将4:3的画面内容拉伸成16:9再被CRT压缩回4:3。于是我尝试用kodi进行手动画面调节，结果无论进行哪种手动调整（显示分辨率、缩放、画面比例、调整过扫描边缘等），画面左右两边始终都有黑边（调整画面比例后，有时上下也会出现黑边）。</p>
+
+<p>在我手动调节kodi各种画面设置几近绝望时，我注意到Android TV版的kodi的显示分辨率设置里只有1080p这一个选项。这让我想到，corelec版的kodi上印象中可以支持很多分辨率，如果用corelec连接CRT播放视频，说不定能支持4:3的原生显示分辨率。</p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>于是我将装有corelec固件的u盘插到Android TV上，连接CRT电视后启动corelec系统。进入系统设置后，发现果然corelec的分辨率选项特别全（甚至支持4K)。于是我将分辨率设为4:3比例的800x600（或1024x768），将画面比例选择为原始大小，这时corelec就可以满屏播放自带左右黑边的16:9版本的4:3视频了。</p>
+
+<p><img src="/assets/images/4-3-content-on-crt.jpg" alt="4-3-content-on-crt.jpg" /></p>
+
+<p>终于可以在CRT上满屏播放自带左右黑边的TVB电视剧了！真是泪目。看来最强的视频播放解决方案还是得corelec。</p>
+
+<h2 id="题外话">题外话</h2>
+
+<p>在使用corelec接CRT电视播放TVB电视剧的过程中，我还发现：</p>
+
+<ul>
+  <li>corelec的缩放和画面比例设置都可以正常工作，相反Android TV版的kodi上这些设置怎么调画面都有问题，估计是因为Android TV本身只支持1080p分辨率，导致kodi能进行的画面调整有一定限制。corelec才是kodi真正该有的样子。</li>
+  <li>此外我还惊喜的发现，corelec竟然也能正常识别我的usb无线网卡，亲测可以正常连接并使用wifi播放视频。</li>
+</ul>
+
+<p>在对比jellyfin和kodi的播放体验后，我有了如下感受：</p>
+
+<ul>
+  <li>kodi相比于jellyfin，播放视频时加载速度更快，原因是kodi属于纯客户端播放器，服务端只需负责数据传输；而jellyfin的数据加载和部分播放逻辑在服务端，导致播放体验会受限于服务端性能。相比之下使用kodi作为纯本地客户端进行视频播放时，服务端处理压力更小，同时kodi作为本地客户端视频播放能力也更强。相比于可以网页播放的jellyfin，使用kodi进行视频播放唯一的局限就是需要安装客户端。当然，在适用的场景下，kodi相比jellyfin是更强大的播放方案。</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="crt" /><category term="corelec" /><category term="kodi" /><category term="android-tv" /><category term="16:9" /><category term="4:3" /><summary type="html"><![CDATA[背景]]></summary></entry><entry><title type="html">记一次Switch版空洞骑士无限金币问题的调试经历</title><link href="https://goooooouwa.github.io/gaming/2025/05/28/switch-hollow-knight-geo-99999.html" rel="alternate" type="text/html" title="记一次Switch版空洞骑士无限金币问题的调试经历" /><published>2025-05-28T00:00:00+00:00</published><updated>2025-05-28T00:00:00+00:00</updated><id>https://goooooouwa.github.io/gaming/2025/05/28/switch-hollow-knight-geo-99999</id><content type="html" xml:base="https://goooooouwa.github.io/gaming/2025/05/28/switch-hollow-knight-geo-99999.html"><![CDATA[<h3 id="背景">背景</h3>
+
+<p>我的大气层switch上的空洞骑士不知道为啥出生就有99999个吉欧（游戏内金币），而且无论被什么怪攻击多少次都死不了，甚至可以不打怪无脑冲地图，很奇怪，而且毫无游戏体验。我不明白这是为什么。</p>
+
+<p><img src="/assets/images/2025-05-28 19.23.05.jpg" alt="2025-05-28 19.23.05.jpg" /></p>
+
+<p>这游戏就好像是被修改过，仿佛是开了某种作弊代码似的，可是我并不记得自己曾经打开过任何cheat。刚开始我怀疑是游戏版本问题，于是在网上找了该游戏的各种不同版本，逐一试玩后发现结果还是一样。</p>
+
+<h3 id="aha-moment">Aha! moment</h3>
+
+<p>这个问题一直困扰了我相当长的一段时间，期间我曾经多次尝试在Google上对此问题进行搜索，试图找到问题的原因，比如搜索“空洞骑士 switch 为什么 9999”、“switch hollow knight 99999”等，全都一无所获，仿佛互联网上并没有其他人遇到过类似的问题。</p>
+
+<p>所以问题到底出在哪呢？</p>
+
+<p>就在我几近放弃的时候，我想到了一个可以cut the knot的笨办法。甭管游戏是否被修改过，就算它现在真的开了cheat，那我能否手动将cheat给关掉呢？这样游戏应该就能正常玩了吧。</p>
+
+<p>带着这个想法，我开始搜索并尝试在switch上安装开关cheat的相关工具。</p>
+
+<h3 id="试验">试验</h3>
+
+<p>我想到之前有看到过一个cheat插件以及能在游戏界面中实时开关cheat的overlay工具。简单搜索后我找到了<a href="https://gbatemp.net/threads/tesla-the-nintendo-switch-overlay-menu.557362/">Tesla overlay</a>和<a href="https://github.com/WerWolv/EdiZon">Edizon</a>（switch存档和cheat管理工具）。</p>
+
+<p>在安装Edizon cheat overlay的过程中，我注意到网上<a href="https://www.cfwaifu.com/edizon-cheats/">教程</a>中的这么一句话：</p>
+
+<blockquote>
+  <p>By default, Atmosphere enables all cheats that can be found on your SD when launching a game. This can be changed via Atmosphere’s configuration files.</p>
+</blockquote>
+
+<p>原来，大气层默认会在启动游戏时打开所有找到的cheats。这似乎也印证了我之前的猜测：我的switch上的某些空洞骑士的cheats somehow被打开了。</p>
+
+<p>在安装试用的过程中还发生了2个小插曲：</p>
+
+<p>一开始，在按照教程安装好Tesla overlay和Edizon并重启了switch之后，我进入游戏尝试通过快捷键（hold down <code class="language-plaintext highlighter-rouge">L</code> and <code class="language-plaintext highlighter-rouge">DPad Down</code> and push on the <code class="language-plaintext highlighter-rouge">right joy stick</code>）打开overlay，结果每次只要一进入Edizon overlay菜单switch就会crash。简单Google搜索后发现，原来是Edizon早已停更，当前的版本并不支持最新版系统固件，需要下载安装新版的<a href="https://github.com/tomvita/EdiZon-SE">Edizon-SE</a>和<a href="https://github.com/proferabg/EdiZon-Overlay">Edizon-Overlay</a>。</p>
+
+<p>此后，我还在新版Edizon-SE的<a href="https://github.com/tomvita/EdiZon-SE?tab=readme-ov-file#how-to-install">README</a>里注意到，原来不光需要按前面教程中说的修改配置文件的默认值，还需要将那一行配置项前面的”;”注释符号删除，否则修改结果并不会生效。</p>
+
+<blockquote>
+  <p>For the best experience, open the /atmosphere/system_settings.ini file and change dmnt_cheats_enabled_by_default = u8!0x1 to dmnt_cheats_enabled_by_default = u8!0x0. If the file does not exist you can copy the template from /atmosphere/config_templates/system_settings.ini and change the line, <strong>remember to remove the “;” in front</strong>.</p>
+</blockquote>
+
+<h3 id="成果">成果</h3>
+
+<p>在下载并重新安装新版的Edizon-SE和Edizon-Overlay以及修改配置文件确保所有cheats默认关闭之后，我再次打开游戏，这次终于可以正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。</p>
+
+<p><img src="/assets/images/2025-05-28 19.19.16.jpg" alt="2025-05-28 19.19.16.jpg" /></p>
+
+<p>原来一直困扰我的就是上图中这个罪恶的”Geo 999999”和其他的空洞骑士的cheats。</p>
+
+<p><img src="/assets/images/2025-05-28 19.19.38.jpg" alt="2025-05-28 19.19.38.jpg" /></p>
+
+<p>我简单尝试打了两个小怪，发现游戏终于正常了（只有3个吉欧，而不是一开局就有99999个）。</p>
+
+<h3 id="复盘">复盘</h3>
+
+<p>回想我最初遇到的“空洞骑士99999个吉欧”的问题，原因应该就是大气层默认打开了设备上所有找到的cheats，而我的switch上不知为何会有空洞骑士的cheats，于是每次进入游戏就会有99999个吉欧和无限生命。这么一想，我记得之前曾经有一次尝试安装过Tesla overlay和Edizon，后来放弃使用overlay之后便忘记了，可能过程中无意进行了某些cheat相关的操作，但也无从得知了。</p>
+
+<h3 id="题外话">题外话</h3>
+
+<p>在了解了问题的原因之后，我再次在Google，Brave和DuckDuckGo等搜索引擎上对此问题进行搜索，搜索词为“switch hollow knight geo 99999”，结果这些搜索引擎中只有DuckDuckGo的第一条返回结果是Edizon cheats for switch hollow knight (including geo 99999)，与我的描述高度吻合。而Google和其他搜索引擎的首页结果均无任何跟cheat有关的结果。这让我不禁怀疑这些商业搜索引擎对搜索结果进行了过滤。试想如果当初我是用的DuckDuckGo来搜索这一问题的话，会不会更早找到正确结果呢？</p>
+
+<p>想到这里，我果断决定以后弃用Google，改用DuckDuckGo。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="gaming" /><category term="switch" /><category term="hollow-knight" /><category term="cheat" /><category term="overlay" /><category term="edizon" /><summary type="html"><![CDATA[背景]]></summary></entry><entry><title type="html">几种PC串流客户端方案使用体验总结</title><link href="https://goooooouwa.github.io/computer/2025/05/26/pc-streaming-client-solutions.html" rel="alternate" type="text/html" title="几种PC串流客户端方案使用体验总结" /><published>2025-05-26T00:00:00+00:00</published><updated>2025-05-26T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/05/26/pc-streaming-client-solutions</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/05/26/pc-streaming-client-solutions.html"><![CDATA[<p>使用的几个客户端：</p>
+
+<ol>
+  <li>OnePlus 7 pro安卓手机</li>
+  <li>Chromebook Duet 3平板</li>
+  <li>iPad Air M2</li>
+</ol>
+
+<p>尝试的几种方案：</p>
+
+<ol>
+  <li>手机接typc c拉伸手柄</li>
+  <li>平板接type c有线手柄</li>
+  <li>手机或平板接外界显示器和有线手柄</li>
+</ol>
+
+<p>体验感受：</p>
+
+<ol>
+  <li>屏幕小于10寸的设备在桌上PC串流时，字太小看不清，费眼睛（掌机至少需要7寸以上）；</li>
+  <li>平板和iPad都可以顺利通过type c连接有线手柄，正常识别和操作（OnePlus 7 pro无法边充电边使用usb设备，稍显可惜）。</li>
+</ol>
+
+<p>结论：</p>
+
+<p>对于我而言，体验最好的PC串流客户端方案是平板接有线手柄，或者手机接外界显示器和手柄。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="streaming" /><category term="gaming" /><summary type="html"><![CDATA[使用的几个客户端：]]></summary></entry><entry><title type="html">Android编程笔记（六）：Navigation UI</title><link href="https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html" rel="alternate" type="text/html" title="Android编程笔记（六）：Navigation UI" /><published>2025-05-21T00:00:00+00:00</published><updated>2025-05-21T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#将navigation-controller与navigation-ui组件集成" id="markdown-toc-将navigation-controller与navigation-ui组件集成">将navigation controller与Navigation UI组件集成</a></li>
+  <li><a href="#top-app-bar" id="markdown-toc-top-app-bar">Top app bar</a>    <ul>
+      <li><a href="#differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar" id="markdown-toc-differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code>, App <code class="language-plaintext highlighter-rouge">ActionBar</code>, AppCompat <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a>        <ul>
+          <li><a href="#differences-between-widget-toolbar--app-actionbar" id="markdown-toc-differences-between-widget-toolbar--app-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></a></li>
+          <li><a href="#differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar" id="markdown-toc-differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar">Differences between native version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> (or native <code class="language-plaintext highlighter-rouge">ActionBar</code> vs AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code>)</a></li>
+        </ul>
+      </li>
+      <li><a href="#appbarconfiguration" id="markdown-toc-appbarconfiguration">AppBarConfiguration</a></li>
+      <li><a href="#create-a-toolbar" id="markdown-toc-create-a-toolbar">Create a Toolbar</a></li>
+      <li><a href="#include-collapsingtoolbarlayout" id="markdown-toc-include-collapsingtoolbarlayout">Include CollapsingToolbarLayout</a></li>
+      <li><a href="#action-bar" id="markdown-toc-action-bar">Action bar</a></li>
+      <li><a href="#support-app-bar-variations" id="markdown-toc-support-app-bar-variations">Support app bar variations</a></li>
+    </ul>
+  </li>
+  <li><a href="#tie-destinations-to-menu-items" id="markdown-toc-tie-destinations-to-menu-items">Tie destinations to menu items</a></li>
+  <li><a href="#add-a-navigation-drawer" id="markdown-toc-add-a-navigation-drawer">Add a navigation drawer</a></li>
+  <li><a href="#bottom-navigation" id="markdown-toc-bottom-navigation">Bottom navigation</a></li>
+  <li><a href="#listen-for-navigation-events" id="markdown-toc-listen-for-navigation-events">Listen for navigation events</a>    <ul>
+      <li><a href="#argument-based-listeners" id="markdown-toc-argument-based-listeners">Argument-based listeners</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="将navigation-controller与navigation-ui组件集成">将navigation controller与Navigation UI组件集成</h2>
+
+<p>The Navigation component includes a <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI"><code class="language-plaintext highlighter-rouge">NavigationUI</code></a> class. This class contains static methods that manage navigation with various navigational UI components, including:</p>
+
+<ul>
+  <li>top app bar</li>
+  <li>navigation drawer</li>
+  <li>bottom navigation</li>
+</ul>
+
+<p>To set up a navigation controller with various navigational UI components, The common steps are:</p>
+
+<ol>
+  <li>add the navigational UI component to the activity layout</li>
+  <li>create a <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> with one or more top level destinations</li>
+  <li>setup the view with the navigation controller &amp; <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> by calling method like <code class="language-plaintext highlighter-rouge">View.setupWithNavController(navController, appBarConfiguration)</code></li>
+</ol>
+
+<h2 id="top-app-bar">Top app bar</h2>
+
+<p>The <a href="https://material.io/design/components/app-bars-top.html">top app bar</a> provides a consistent place along the top of your app for displaying information and actions from the current screen.</p>
+
+<p>The key functions of the app bar are as follows:</p>
+
+<ol>
+  <li>Dedicated space for giving your app an identity and indicating the user’s location in the app.</li>
+  <li>Predictable access to important actions, such as search.</li>
+  <li>Support for navigation and view switching, using tabs or menus.</li>
+</ol>
+
+<p><img src="/assets/images/1d87d1bfc61f4c838fce137fa7c641dd.png" alt="screen displaying a top app bar" /></p>
+
+<p><strong>Figure 1.</strong> A screen displaying a top app bar.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> contains methods that <strong>automatically update content in your top app bar as users navigate through your app</strong>. For example, <code class="language-plaintext highlighter-rouge">NavigationUI</code> uses the destination labels from your navigation graph to keep the title of the top app bar up-to-date.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;navigation&gt;</span>
+    <span class="nt">&lt;fragment</span> <span class="err">...</span>
+              <span class="na">android:label=</span><span class="s">"Page title"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/fragment&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> provides support for the following <strong>top app bar types</strong>:</p>
+
+<ul>
+  <li><a href="https://developer.android.com/reference/android/widget/Toolbar">Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></a></li>
+  <li><a href="https://developer.android.com/reference/com/google/android/material/appbar/CollapsingToolbarLayout"><code class="language-plaintext highlighter-rouge">CollapsingToolbarLayout</code></a></li>
+  <li><a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBar">AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a></li>
+</ul>
+
+<h3 id="differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar">Differences between <a href="https://developer.android.com/reference/android/widget/Toolbar">Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></a>, <a href="https://developer.android.com/reference/android/app/ActionBar">App <code class="language-plaintext highlighter-rouge">ActionBar</code></a>, <a href="https://developer.android.com/reference/androidx/appcompat/widget/Toolbar">AppCompat <code class="language-plaintext highlighter-rouge">Toolbar</code></a> &amp; <a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBar">AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a></h3>
+
+<h4 id="differences-between-widget-toolbar--app-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></h4>
+
+<p><strong>Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></strong> is a generalization of action bars for use within application layouts. While an action bar is traditionally part of an Activity’s opaque window decor controlled by the framework, a Toolbar may be placed at any arbitrary level of nesting within a view hierarchy. An application may choose to designate a Toolbar as the action bar for an Activity using the <code class="language-plaintext highlighter-rouge">setSupportActionBar()</code> method.</p>
+
+<p><strong>App <code class="language-plaintext highlighter-rouge">ActionBar</code></strong> is a primary toolbar within the activity that may display the activity title, application-level navigation affordances, and other interactive items.</p>
+
+<p>The action bar may be represented by any <code class="language-plaintext highlighter-rouge">Toolbar</code> widget within the application layout. The application may signal to the Activity which <code class="language-plaintext highlighter-rouge">Toolbar</code> should be treated as the Activity’s action bar.</p>
+
+<h4 id="differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar">Differences between native version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> (or native <code class="language-plaintext highlighter-rouge">ActionBar</code> vs AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code>)</h4>
+
+<p><strong>Native version of Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></strong></p>
+
+<p>All activities that use the default theme have an <code class="language-plaintext highlighter-rouge">ActionBar</code> as an app bar. App bar features are added to the native <code class="language-plaintext highlighter-rouge">ActionBar</code> <strong>over various Android releases</strong>. As a result, the <strong>native <code class="language-plaintext highlighter-rouge">ActionBar</code> behaves differently depending on what version of Android a device is using</strong>.</p>
+
+<p><strong>AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; <code class="language-plaintext highlighter-rouge">ActionBar</code></strong></p>
+
+<p>On the other hand, features are added to the AndroidX AppCompat library’s version of <code class="language-plaintext highlighter-rouge">Toolbar</code>, which means those features are available on devices that use the AndroidX libraries. Using the AndroidX library’s toolbar to implement your activities’ app bars makes your app’s behavior consistent across the widest range of devices.</p>
+
+<p>For more information on app bars, see <a href="https://developer.android.com/training/appbar/setting-up">Set up the app bar</a>.</p>
+
+<h3 id="appbarconfiguration">AppBarConfiguration</h3>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> uses an <a href="https://developer.android.com/reference/androidx/navigation/ui/AppBarConfiguration"><code class="language-plaintext highlighter-rouge">AppBarConfiguration</code></a> object to manage the behavior of the Navigation button in the upper-left corner of your app’s display area. The Navigation button’s behavior changes depending on whether the user is at a <strong><em>top-level destination</em></strong>.</p>
+
+<p>A top-level destination is the root, or highest level destination, in a set of hierarchically-related destinations. <strong>Top-level destinations do not display an Up button in the top app bar because there is no higher level destination</strong>. By default, the start destination of your app is the only top-level destination.</p>
+
+<p>When the user is at a top-level destination, the Navigation button becomes a drawer icon <img width="19" height="19" src="/assets/images/be0d9414288b4669986d6a47f8dc5022.png" /> if the destination uses a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>. <strong>If the destination doesn’t use a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>, the Navigation button is hidden</strong>. When the user is on any other destination, the Navigation button appears as an Up button <img width="19" height="19" src="/assets/images/a752d266f4524a71b5debe3fba64e5fd.png" />. To configure the Navigation button using only the start destination as the top-level destination, create an <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> object, and pass in the corresponding navigation graph, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In some cases, you might need to define multiple top-level destinations instead of using the default start destination. <strong>Using a <code class="language-plaintext highlighter-rouge">BottomNavigationView</code> is a common use case for this, where you may have sibling screens that are not hierarchically related to each other and may each have their own set of related destinations</strong>. For cases like these, you can instead pass a set of destination IDs to the constructor, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="nf">setOf</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">main</span><span class="p">,</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">profile</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="create-a-toolbar">Create a Toolbar</h3>
+
+<p>To create a Toolbar with <code class="language-plaintext highlighter-rouge">NavigationUI</code>:</p>
+
+<p>1) first define the bar in your main activity, as shown:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    <span class="nt">&lt;androidx.appcompat.widget.Toolbar</span>
+        <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,androidx.navigation.NavController,androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">Toolbar</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> When using a <code class="language-plaintext highlighter-rouge">Toolbar</code>, <strong>Navigation automatically handles click events for the Navigation button, so you do not need to override</strong> <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity#onSupportNavigateUp%28%29"><code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code></a>.</p>
+
+<h3 id="include-collapsingtoolbarlayout">Include CollapsingToolbarLayout</h3>
+
+<p><img src="/assets/images/android-collapsing-toolbar-default-output.gif" alt="android-collapsing-toolbar-default-output.gif" /></p>
+
+<p>To include a <code class="language-plaintext highlighter-rouge">CollapsingToolbarLayout</code> with your Toolbar:</p>
+
+<p>1) first define the Toolbar and surrounding layout in your activity, as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    <span class="nt">&lt;com.google.android.material.appbar.AppBarLayout</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"@dimen/tall_toolbar_height"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;com.google.android.material.appbar.CollapsingToolbarLayout</span>
+            <span class="na">android:id=</span><span class="s">"@+id/collapsing_toolbar_layout"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+            <span class="na">app:contentScrim=</span><span class="s">"?attr/colorPrimary"</span>
+            <span class="na">app:expandedTitleGravity=</span><span class="s">"top"</span>
+            <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|exitUntilCollapsed|snap"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;androidx.appcompat.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:layout_collapseMode=</span><span class="s">"pin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;</span>
+    <span class="nt">&lt;/com.google.android.material.appbar.AppBarLayout&gt;</span>
+
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">layout</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">CollapsingToolbarLayout</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">collapsing_toolbar_layout</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">toolbar</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">Toolbar</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="n">layout</span><span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">toolbar</span><span class="p">,</span> <span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="action-bar">Action bar</h3>
+
+<p>To add navigation support to the default action bar:</p>
+
+<p>1) call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupActionBarWithNavController%28androidx.appcompat.app.AppCompatActivity,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupActionBarWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below.</p>
+
+<p><strong>Note</strong>: you need to declare your <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> outside of <code class="language-plaintext highlighter-rouge">onCreate()</code>, since you also use it when overriding <code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">lateinit</span> <span class="kd">var</span> <span class="py">appBarConfiguration</span><span class="p">:</span> <span class="nc">AppBarConfiguration</span>
+
+<span class="o">..</span><span class="p">.</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="nf">setupActionBarWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>2) Next, override <code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code> to handle Up navigation:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onSupportNavigateUp</span><span class="p">():</span> <span class="nc">Boolean</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">navController</span><span class="p">.</span><span class="nf">navigateUp</span><span class="p">(</span><span class="n">appBarConfiguration</span><span class="p">)</span>
+            <span class="p">||</span> <span class="k">super</span><span class="p">.</span><span class="nf">onSupportNavigateUp</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="support-app-bar-variations">Support app bar variations</h3>
+
+<p>Adding the top app bar to your activity works well when the app bar’s layout is similar for each destination in your app. If, however, your top app bar changes substantially across destinations, then consider removing the top app bar from your activity and defining it in each destination fragment, instead.</p>
+
+<p>As an example, one of your destinations may use a standard <code class="language-plaintext highlighter-rouge">Toolbar</code>, while another uses an <code class="language-plaintext highlighter-rouge">AppBarLayout</code> to create a more complex app bar with tabs, as shown in figure 2.</p>
+
+<p><img src="/assets/images/app-bar-variations.png" alt="two top app bar variations; a standard toolbar on the left, and an
+            appbarlayout with a toolbar and tabs on the right" /></p>
+
+<p><strong>Figure 2.</strong> Two app bar variations. On the left, a standard <code class="language-plaintext highlighter-rouge">Toolbar</code>. On the right, an <code class="language-plaintext highlighter-rouge">AppBarLayout</code> with a <code class="language-plaintext highlighter-rouge">Toolbar</code> and tabs.</p>
+
+<p>For more information on how to support app bar variations, see <a href="https://developer.android.com/guide/navigation/integrations/ui#support_app_bar_variations">Support app bar variations</a>.</p>
+
+<h2 id="tie-destinations-to-menu-items">Tie destinations to menu items</h2>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> also provides helpers for tying destinations to menu-driven UI components. <code class="language-plaintext highlighter-rouge">NavigationUI</code> contains a helper method, <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onnavdestinationselected"><code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code></a>, which takes a <a href="https://developer.android.com/reference/android/view/MenuItem"><code class="language-plaintext highlighter-rouge">MenuItem</code></a> along with the <a href="https://developer.android.com/reference/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> that hosts the associated destination. If the <code class="language-plaintext highlighter-rouge">id</code> of the <code class="language-plaintext highlighter-rouge">MenuItem</code> matches the <code class="language-plaintext highlighter-rouge">id</code> of the destination, the <code class="language-plaintext highlighter-rouge">NavController</code> can then navigate to that destination.</p>
+
+<p>If your menu was created as an XML resource file, you can associate the menu items with destinations by matching the <code class="language-plaintext highlighter-rouge">id</code> of the <code class="language-plaintext highlighter-rouge">MenuItem</code> to the <code class="language-plaintext highlighter-rouge">id</code> of the destination. As an example, the XML snippets below define a menu item and a destination with a common <code class="language-plaintext highlighter-rouge">id</code> as <code class="language-plaintext highlighter-rouge">details_page_fragment</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;navigation</span> <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="err">...</span> <span class="nt">&gt;</span>
+
+    ...
+
+    <span class="nt">&lt;fragment</span> <span class="na">android:id=</span><span class="s">"@+id/details_page_fragment"</span>
+         <span class="na">android:label=</span><span class="s">"@string/details"</span>
+         <span class="na">android:name=</span><span class="s">"com.example.android.myapp.DetailsFragment"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;menu</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+
+    ...
+
+    <span class="nt">&lt;item</span>
+        <span class="na">android:id=</span><span class="s">"@+id/details_page_fragment"</span>
+        <span class="na">android:icon=</span><span class="s">"@drawable/ic_details"</span>
+        <span class="na">android:title=</span><span class="s">"@string/details"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/menu&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Alternatively</strong>, if your menu was added programmatically via the Activity’s <code class="language-plaintext highlighter-rouge">onCreateOptionsMenu()</code>, for example, you can associate the menu items with destinations by overriding the Activity’s <code class="language-plaintext highlighter-rouge">onOptionsItemSelected()</code> to call <code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code>, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="nc">MenuItem</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">.</span><span class="nf">onNavDestinationSelected</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span> <span class="p">||</span> <span class="k">super</span><span class="p">.</span><span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, when a user clicks the <code class="language-plaintext highlighter-rouge">details_page_fragment</code> menu item, the app automatically navigates to the corresponding destination with the same <code class="language-plaintext highlighter-rouge">id</code>.</p>
+
+<h2 id="add-a-navigation-drawer">Add a navigation drawer</h2>
+
+<p>The navigation drawer is a UI panel that shows your app’s main navigation menu. The drawer appears when the user touches the drawer icon <img width="19" height="19" src="/assets/images/be0d9414288b4669986d6a47f8dc5022.png" /> in the app bar or when the user swipes a finger from the left edge of the screen.</p>
+
+<p><img src="/assets/images/7bed2e3467f8454fbb794463ef6290ee.png" alt="an open drawer displaying a navigation menu" /></p>
+
+<p><strong>Figure 3.</strong> An open drawer displaying a navigation menu.</p>
+
+<p>The drawer icon is displayed on all <a href="#appbarconfiguration"><em>top-level destinations</em></a> that use a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>.</p>
+
+<p>To add a navigation drawer:</p>
+
+<p>1) first declare a <a href="https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout"><code class="language-plaintext highlighter-rouge">DrawerLayout</code></a> as the root view. Inside the <code class="language-plaintext highlighter-rouge">DrawerLayout</code>, add a layout for the main UI content and another view that contains the contents of the navigation drawer.</p>
+
+<p>For example, the following layout uses a <code class="language-plaintext highlighter-rouge">DrawerLayout</code> with two child views: a <a href="https://developer.android.com/reference/androidx/navigation/fragment/NavHostFragment"><code class="language-plaintext highlighter-rouge">NavHostFragment</code></a> to contain the main content and a <a href="https://developer.android.com/reference/com/google/android/material/navigation/NavigationView"><code class="language-plaintext highlighter-rouge">NavigationView</code></a> for the contents of the navigation drawer.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!-- Use DrawerLayout as root container for activity --&gt;</span>
+<span class="nt">&lt;androidx.drawerlayout.widget.DrawerLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/drawer_layout"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Layout to contain contents of main body of screen (drawer will slide over this) --&gt;</span>
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:name=</span><span class="s">"androidx.navigation.fragment.NavHostFragment"</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:defaultNavHost=</span><span class="s">"true"</span>
+        <span class="na">app:navGraph=</span><span class="s">"@navigation/nav_graph"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Container for contents of drawer - use NavigationView to make configuration easier --&gt;</span>
+    <span class="nt">&lt;com.google.android.material.navigation.NavigationView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
+        <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/androidx.drawerlayout.widget.DrawerLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, connect the <a href="https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout"><code class="language-plaintext highlighter-rouge">DrawerLayout</code></a> to your navigation graph by passing it to <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code>, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">,</span> <span class="n">drawerLayout</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> When using <code class="language-plaintext highlighter-rouge">NavigationUI</code>, the <a href="#top-app-bar">top app bar</a> helpers <strong>automatically transition between the drawer icon and the Up icon as the current destination changes</strong>. You don’t need to use <a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBarDrawerToggle"><code class="language-plaintext highlighter-rouge">ActionBarDrawerToggle</code></a>.</p>
+
+<p>3) Next, in your main activity class, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">NavigationView</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_view</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Setting up the navigation drawer requires that you also set up your navigation graph and menu xml as described in <a href="https://developer.android.com/guide/navigation/navigation-ui#Tie-navdrawer">Tie destinations to menu items</a>.</p>
+
+<p>Starting in <a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha01">Navigation 2.4.0-alpha01</a>, the state of each menu item is saved and restored when you use <code class="language-plaintext highlighter-rouge">setupWithNavController</code>.</p>
+
+<h2 id="bottom-navigation">Bottom navigation</h2>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> can also handle bottom navigation. When a user selects a menu item, the <code class="language-plaintext highlighter-rouge">NavController</code> calls <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onNavDestinationSelected%28android.view.MenuItem,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code></a> and <strong>automatically updates the selected item in the bottom navigation bar</strong>.</p>
+
+<p><img src="/assets/images/59bb3750b98a46c199fbe3df75768dc9.png" alt="bottom navigation bar" /></p>
+
+<p><strong>Figure 4.</strong> A bottom navigation bar.</p>
+
+<p>To create a bottom navigation bar in your app:</p>
+
+<p>1) first define the bar in your main activity, as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    ...
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;com.google.android.material.bottomnavigation.BottomNavigationView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/bottom_nav"</span>
+        <span class="na">app:menu=</span><span class="s">"@menu/menu_bottom_nav"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, in your main activity class, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">BottomNavigationView</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">bottom_nav</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Setting up bottom navigation requires that you also set up your navigation graph and menu xml as described in <a href="https://developer.android.com/guide/navigation/navigation-ui#Tie-navdrawer">Tie destinations to menu items</a>.</p>
+
+<p>Starting in <a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha01">Navigation 2.4.0-alpha01</a>, the state of each menu item is saved and restored when you use <code class="language-plaintext highlighter-rouge">setupWithNavController</code>.</p>
+
+<h2 id="listen-for-navigation-events">Listen for navigation events</h2>
+
+<p>Interacting with the <a href="https://developer.android.com/reference/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> is the primary method for navigating between destinations. The <code class="language-plaintext highlighter-rouge">NavController</code> is responsible for replacing the contents of the <a href="https://developer.android.com/reference/androidx/navigation/NavHost"><code class="language-plaintext highlighter-rouge">NavHost</code></a> with the new destination. In many cases, UI elements—such as a top app bar or other persistent navigation controls like a <code class="language-plaintext highlighter-rouge">BottomNavigationBar</code>—live outside of the <code class="language-plaintext highlighter-rouge">NavHost</code> and need to be updated as you navigate between destinations.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavController</code> offers an <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> interface that is called when the <code class="language-plaintext highlighter-rouge">NavController</code>’s <a href="https://developer.android.com/reference/androidx/navigation/NavController#getCurrentDestination%28%29">current destination</a> or its arguments change. A new listener can be registered via the <a href="https://developer.android.com/reference/androidx/navigation/NavController#addOnDestinationChangedListener%28androidx.navigation.NavController.OnDestinationChangedListener%29"><code class="language-plaintext highlighter-rouge">addOnDestinationChangedListener()</code></a> method. Note that when calling <code class="language-plaintext highlighter-rouge">addOnDestinationChangedListener()</code>, if the current destination exists, it’s immediately sent to your listener.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> uses <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> to <strong>make these common UI components navigation-aware</strong>. Note, however, that you can also use <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> on its own to make any custom UI or business logic aware of navigation events.</p>
+
+<p>As an example, you might have common UI elements that you intend to show in some areas of your app while hiding them in others. Using your own <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code>, you can selectively show or hide these UI elements based on the target destination, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">navController</span><span class="p">.</span><span class="nf">addOnDestinationChangedListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">_</span> <span class="p">-&gt;</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">destination</span><span class="p">.</span><span class="n">id</span> <span class="p">==</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">full_screen_destination</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">toolbar</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">GONE</span>
+       <span class="n">bottomNavigationView</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">GONE</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">toolbar</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">VISIBLE</span>
+       <span class="n">bottomNavigationView</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">VISIBLE</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="argument-based-listeners">Argument-based listeners</h3>
+
+<p>As an alternative, you can also use arguments with default values within the navigation graph, which can be used by the appropriate UI controller to update its state. For example, rather than base the logic in the <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> on the destination ID as per the previous example, we can create an argument in the <code class="language-plaintext highlighter-rouge">NavGraph</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;navigation</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/navigation\_graph"</span>
+    <span class="na">app:startDestination=</span><span class="s">"@id/fragmentOne"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/fragmentOne"</span>
+        <span class="na">android:name=</span><span class="s">"com.example.android.navigation.FragmentOne"</span>
+        <span class="na">android:label=</span><span class="s">"FragmentOne"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span>
+            <span class="na">android:id=</span><span class="s">"@+id/action\_fragmentOne\_to\_fragmentTwo"</span>
+            <span class="na">app:destination=</span><span class="s">"@id/fragmentTwo"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fragment&gt;</span>
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/fragmentTwo"</span>
+        <span class="na">android:name=</span><span class="s">"com.example.android.navigation.FragmentTwo"</span>
+        <span class="na">android:label=</span><span class="s">"FragmentTwo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span>
+            <span class="na">android:name=</span><span class="s">"ShowAppBar"</span>
+            <span class="na">android:defaultValue=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fragment&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<p>This argument isn’t used when <a href="https://developer.android.com/guide/navigation/navigation-navigate">navigating to the destination</a>, but rather as a way to attach additional information to the destination by using the <code class="language-plaintext highlighter-rouge">defaultValue</code>. In this case, the value indicates whether the app bar should be shown when on this destination.</p>
+
+<p>We can now add an <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> in the <code class="language-plaintext highlighter-rouge">Activity</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">navController</span><span class="p">.</span><span class="nf">addOnDestinationChangedListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">arguments</span> <span class="p">-&gt;</span>
+    <span class="n">appBar</span><span class="p">.</span><span class="n">isVisible</span> <span class="p">=</span> <span class="n">arguments</span><span class="o">?.</span><span class="nf">getBoolean</span><span class="p">(</span><span class="s">"ShowAppBar"</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span> <span class="p">==</span> <span class="k">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> invokes this callback whenever the navigation destination changes. The <code class="language-plaintext highlighter-rouge">Activity</code> can now update the state or visibility of the UI components that it owns based upon the arguments received in the callback.</p>
+
+<p>One advantage of this approach is that the <code class="language-plaintext highlighter-rouge">Activity</code> sees only the arguments in the navigation graph and doesn’t know individual <code class="language-plaintext highlighter-rouge">Fragment</code> roles and responsibilities. Similarly, the individual fragments do not know about the containing <code class="language-plaintext highlighter-rouge">Activity</code> and the UI components that it owns.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/guide/navigation/integrations/ui</li>
+  <li>https://developer.android.com/develop/ui/views/components/appbar</li>
+  <li>https://developer.android.com/develop/ui/views/components/appbar/setting-up</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="navigation" /><category term="ui" /></entry><entry><title type="html">Android编程笔记（五）：Navigation</title><link href="https://goooooouwa.github.io/coding/2025/05/20/android-dev-notes-5-navigation.html" rel="alternate" type="text/html" title="Android编程笔记（五）：Navigation" /><published>2025-05-20T00:00:00+00:00</published><updated>2025-05-20T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/05/20/android-dev-notes-5-navigation</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/05/20/android-dev-notes-5-navigation.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#关键概念" id="markdown-toc-关键概念">关键概念</a>    <ul>
+      <li><a href="#hostnavigation-controller和graph之间的关系" id="markdown-toc-hostnavigation-controller和graph之间的关系">Host、navigation controller和graph之间的关系</a></li>
+    </ul>
+  </li>
+  <li><a href="#如何设置导航" id="markdown-toc-如何设置导航">如何设置导航</a>    <ul>
+      <li><a href="#0-安装navigation依赖" id="markdown-toc-0-安装navigation依赖">0. 安装navigation依赖</a></li>
+      <li><a href="#1-创建navigation-graph" id="markdown-toc-1-创建navigation-graph">1. 创建navigation graph</a></li>
+      <li><a href="#11-使用navigation-editor设计graph及其destinations和actions" id="markdown-toc-11-使用navigation-editor设计graph及其destinations和actions">1.1 使用Navigation Editor设计graph及其destinations和actions</a>        <ul>
+          <li><a href="#add-destinations" id="markdown-toc-add-destinations">Add destinations</a></li>
+          <li><a href="#add-actions" id="markdown-toc-add-actions">Add actions</a></li>
+        </ul>
+      </li>
+      <li><a href="#2-创建navigation-host" id="markdown-toc-2-创建navigation-host">2. 创建navigation host</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-获取navigation-controller" id="markdown-toc-3-获取navigation-controller">3. 获取navigation controller</a></li>
+  <li><a href="#4-navigate-to-a-destination" id="markdown-toc-4-navigate-to-a-destination">4. Navigate to a destination</a>    <ul>
+      <li><a href="#use-a-navcontroller" id="markdown-toc-use-a-navcontroller">Use a NavController</a></li>
+      <li><a href="#navigate" id="markdown-toc-navigate">Navigate</a>        <ul>
+          <li><a href="#navigate-to-a-destination-using-integer-id" id="markdown-toc-navigate-to-a-destination-using-integer-id">Navigate to a destination using integer ID</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#理解navigation-graph" id="markdown-toc-理解navigation-graph">理解navigation graph</a>    <ul>
+      <li><a href="#理解destination" id="markdown-toc-理解destination">理解destination</a>        <ul>
+          <li><a href="#理解3种destination-type" id="markdown-toc-理解3种destination-type">理解3种destination type</a></li>
+          <li><a href="#理解placeholder-destinations" id="markdown-toc-理解placeholder-destinations">理解placeholder destinations</a></li>
+        </ul>
+      </li>
+      <li><a href="#理解action" id="markdown-toc-理解action">理解action</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="关键概念">关键概念</h2>
+
+<p>The following table provides an overview of the key concepts in navigation and the main types that you use to implement them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Purpose</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Controller</td>
+      <td><code class="language-plaintext highlighter-rouge">NavController</code>是控制页面导航的核心组件，它掌管着navigation graph，提供了在页面间导航的各种方法。It holds the navigation graph and exposes methods that allow your app to move between the destinations in the graph. The central coordinator for managing navigation between destinations. The controller offers methods for navigating between destinations, handling deep links, managing the back stack, and more.</td>
+      <td><code class="language-plaintext highlighter-rouge">NavController</code></td>
+    </tr>
+    <tr>
+      <td>Graph</td>
+      <td><code class="language-plaintext highlighter-rouge">NavGraph</code>是一种用于定义应用中所有导航目的地以及目的地之间关系的数据结构。A data structure that defines all the navigation destinations within the app and how they connect together.</td>
+      <td><code class="language-plaintext highlighter-rouge">NavGraph</code></td>
+    </tr>
+    <tr>
+      <td>Host</td>
+      <td>Host就是一个展示当前导航页面的视图容器，比如一个Fragment。A UI element that contains the current navigation destination. That is, when a user navigates through an app, the app essentially swaps destinations in and out of the navigation host.</td>
+      <td>Compose: <code class="language-plaintext highlighter-rouge">NavHost</code>, Fragments: <code class="language-plaintext highlighter-rouge">NavHostFragment</code></td>
+    </tr>
+    <tr>
+      <td>Destination</td>
+      <td>Desitination这是一个概念，代表这navigation graph中的一个结点。A node in the navigation graph. When the user navigates to this node, the host displays its content.</td>
+      <td><code class="language-plaintext highlighter-rouge">NavDestination</code> Typically created when constructing the navigation graph.</td>
+    </tr>
+    <tr>
+      <td>Route</td>
+      <td>路由用于导航到特定页面。Uniquely identifies a destination and any data required by it.You can navigate using routes. Routes take you to destinations.</td>
+      <td>Any serializable data type.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="hostnavigation-controller和graph之间的关系">Host、navigation controller和graph之间的关系</h3>
+
+<p>Each <code class="language-plaintext highlighter-rouge">NavHost</code> you create has its own corresponding <code class="language-plaintext highlighter-rouge">NavController</code>. The <code class="language-plaintext highlighter-rouge">NavController</code> provides access to the <code class="language-plaintext highlighter-rouge">NavHost</code>’s graph.</p>
+
+<h2 id="如何设置导航">如何设置导航</h2>
+
+<ol>
+  <li>安装navigation依赖</li>
+  <li>创建navigation graph</li>
+  <li>创建navigation host</li>
+  <li>获取navigation controller</li>
+  <li>进行页面导航</li>
+</ol>
+
+<h3 id="0-安装navigation依赖">0. 安装navigation依赖</h3>
+
+<p>To include navigation support in your project, add the following dependencies to your app’s <code class="language-plaintext highlighter-rouge">build.gradle</code> file:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+  <span class="c1">// Kotlin serialization plugin for type safe routes and navigation arguments</span>
+  <span class="nf">kotlin</span><span class="p">(</span><span class="s">"plugin.serialization"</span><span class="p">)</span> <span class="n">version</span> <span class="s">"2.0.21"</span>
+<span class="p">}</span>
+
+<span class="nf">dependencies</span> <span class="p">{</span>
+  <span class="kd">val</span> <span class="py">nav_version</span> <span class="p">=</span> <span class="s">"2.9.0"</span>
+
+  <span class="c1">// Views/Fragments integration</span>
+  <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.navigation:navigation-fragment:$nav_version"</span><span class="p">)</span>
+  <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.navigation:navigation-ui:$nav_version"</span><span class="p">)</span>
+
+  <span class="c1">// optional - Jetpack Compose integration</span>
+  <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.navigation:navigation-compose:$nav_version"</span><span class="p">)</span>
+
+  <span class="c1">// // optional - Feature module support for Fragments</span>
+  <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.navigation:navigation-dynamic-features-fragment:$nav_version"</span><span class="p">)</span>
+
+  <span class="c1">// Testing Navigation</span>
+  <span class="nf">androidTestImplementation</span><span class="p">(</span><span class="s">"androidx.navigation:navigation-testing:$nav_version"</span><span class="p">)</span>
+
+  <span class="c1">// JSON serialization library, works with the Kotlin serialization plugin</span>
+  <span class="nf">implementation</span><span class="p">(</span><span class="s">"org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For information on adding other architecture components to your project, see Add components to your project.</p>
+
+<h3 id="1-创建navigation-graph">1. 创建navigation graph</h3>
+
+<p>When using fragments with the views UI framework, use a NavHostFragment as the host. There are several ways to create a navigation graph:</p>
+<ul>
+  <li>Programmatically: Use the Kotlin DSL to create a NavGraph and directly apply it on the NavHostFragment.
+    <ul>
+      <li>The createGraph() function used with the Kotlin DSL for both fragments and Compose is the same.</li>
+    </ul>
+  </li>
+  <li>XML: Write your navigation host and graph directly in XML.</li>
+  <li>Android Studio editor: Use the GUI editor in Android Studio to create and adjust your graph as an XML resource file.</li>
+</ul>
+
+<p>In Android Studio:</p>
+<ol>
+  <li>right click on the <code class="language-plaintext highlighter-rouge">res</code> folder</li>
+  <li>Select New -&gt; Android Resource File</li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Resource Type</code>  as <strong>Navigation</strong></li>
+  <li>Set <code class="language-plaintext highlighter-rouge">File name</code> for the graph, e.g. <code class="language-plaintext highlighter-rouge">nav_graph</code></li>
+</ol>
+
+<h3 id="11-使用navigation-editor设计graph及其destinations和actions">1.1 使用Navigation Editor设计graph及其destinations和actions</h3>
+
+<h4 id="add-destinations">Add destinations</h4>
+
+<p>To add a new destination using the Navigation Editor, do the following:</p>
+
+<ol>
+  <li>In the Navigation Editor, click the <strong>New Destination</strong> icon,</li>
+  <li>Select an existing destination in the drop-down or Click <strong>Create new destination</strong> button to create a new destination,</li>
+  <li>(If creating a new destination) In the <strong>New Android Component</strong> dialog that appears, create your fragment.</li>
+</ol>
+
+<h4 id="add-actions">Add actions</h4>
+
+<p>You can use the Navigation Editor to connect two destinations by doing the following:</p>
+
+<ol>
+  <li>In the <strong>Design</strong> tab, hold the pointer over the right side of the destination that you want users to navigate from. A circle appears over the right side of the destination.</li>
+  <li>Drag your cursor over the destination you want users to navigate to, and release. The resulting line between the two destinations represents an action.</li>
+</ol>
+
+<h3 id="2-创建navigation-host">2. 创建navigation host</h3>
+
+<p>You can also use the Layout Editor to add a <code class="language-plaintext highlighter-rouge">NavHostFragment</code> to an activity by doing the following:</p>
+
+<ol>
+  <li>In your list of project files, double-click your activity’s layout XML file to open it in the Layout Editor.</li>
+  <li>Within the Palette pane, choose the Containers category; alternatively, search for “NavHostFragment”.</li>
+  <li>Drag the <code class="language-plaintext highlighter-rouge">NavHostFragment</code> view onto your activity.</li>
+  <li>In the <strong>Navigation Graphs</strong> dialog that appears, choose the corresponding navigation graph to associate with this <code class="language-plaintext highlighter-rouge">NavHostFragment</code>, and then click OK.</li>
+</ol>
+
+<h2 id="3-获取navigation-controller">3. 获取navigation controller</h2>
+
+<p>You can retrieve your <code class="language-plaintext highlighter-rouge">NavController</code> using one of the following methods depending on the context:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Fragment.findNavController()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">View.findNavController()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Activity.findNavController(viewId: Int)</code></li>
+</ol>
+
+<p>Typically, you first get a <code class="language-plaintext highlighter-rouge">NavHostFragment</code>, and then retrieve the <code class="language-plaintext highlighter-rouge">NavController</code> from the fragment. The following snippet demonstrates this:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// retrieve the `NavController` from the fragment</span>
+<span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+    <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+<span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+
+<span class="c1">// alternatively, retrieve the `NavController` within an Activity</span>
+<span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment_activity_main</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="4-navigate-to-a-destination">4. Navigate to a destination</h2>
+
+<h3 id="use-a-navcontroller">Use a NavController</h3>
+<p>The key type you use to move between destinations is the <code class="language-plaintext highlighter-rouge">NavController</code>.</p>
+
+<h3 id="navigate">Navigate</h3>
+<p>Regardless of which UI framework you use, there is a single function you can use to navigate to a destination: <code class="language-plaintext highlighter-rouge">NavController.navigate()</code>.</p>
+
+<p>There are many overloads available for <code class="language-plaintext highlighter-rouge">navigate()</code>. The overload you should choose corresponds to your exact context. For example, you should use one overload when navigating to a composable and another when navigating to a view.</p>
+
+<h4 id="navigate-to-a-destination-using-integer-id">Navigate to a destination using integer ID</h4>
+
+<p>To navigate to a destination using an integer ID, call the <code class="language-plaintext highlighter-rouge">navigate(int)</code> overload. It takes the resource ID of either an action or a destination. The following code snippet shows how you can use this overload to navigate to the <code class="language-plaintext highlighter-rouge">ViewTransactionsFragment</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">viewTransactionsButton</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="p">-&gt;</span>
+  <span class="n">view</span><span class="p">.</span><span class="nf">findNavController</span><span class="p">().</span><span class="nf">navigate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">viewTransactionsAction</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>When navigating using IDs, you should use actions where possible</strong>. Actions provide additional information in your navigation graph, visually showing how your destinations connect to each other.</p>
+
+<h2 id="理解navigation-graph">理解navigation graph</h2>
+
+<p>Navigation graph包含destinations和actions. 以下为一个navigation graph的XML代码示例：</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;navigation</span> <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">app:startDestination=</span><span class="s">"@id/blankFragment"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/blankFragment"</span>
+        <span class="na">android:name=</span><span class="s">"com.example.cashdog.cashdog.BlankFragment"</span>
+        <span class="na">android:label=</span><span class="s">"@string/label_blank"</span>
+        <span class="na">tools:layout=</span><span class="s">"@layout/fragment_blank"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<h3 id="理解destination">理解destination</h3>
+
+<p>Understand the attributes for a destination:</p>
+
+<ul>
+  <li>The <strong>Type</strong>` field indicates whether the destination is implemented as a fragment, activity, or other custom class in your source code.</li>
+  <li>The <strong>Label</strong><code class="language-plaintext highlighter-rouge"> field contains the user-readable name of the destination. This might be surfaced to the UI—for example, if you connect the </code>NavGraph<code class="language-plaintext highlighter-rouge"> to a </code>Toolbar<code class="language-plaintext highlighter-rouge"> using </code>setupWithNavController()`. For this reason, use resource strings for this value.</li>
+  <li>The <strong>ID</strong>` field contains the destination ID, which is used to refer to the destination in code.</li>
+  <li>The <strong>Class</strong>` drop-down shows the name of the class that is associated with the destination. Click this drop-down to change the associated class to another destination type.</li>
+</ul>
+
+<h4 id="理解3种destination-type">理解3种destination type</h4>
+
+<p>There are three general types of destinations: hosted, dialog, and activity. The following table outlines these three destination types and their purposes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Use cases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hosted</td>
+      <td>Hosted类型的导航目的地会填充整个nav host视图区域，适用于页面间的导航。Fills the entire navigation host. That is, the size of a hosted destination is the same as the size of the navigation host and previous destinations are not visible.</td>
+      <td>Main and detail screens.</td>
+    </tr>
+    <tr>
+      <td>Dialog</td>
+      <td>Dialog类型的导航目的地会以遮罩的形式出现在nav host视图区域，前一个导航页面在遮罩的下方依然可见，适用于各种弹窗、对话框等。Presents overlay UI components. This UI is not tied to the location of the navigation host or its size. Previous destinations are visible underneath the destination.</td>
+      <td>Alerts, selections, forms.</td>
+    </tr>
+    <tr>
+      <td>Activity</td>
+      <td>Activity类目的地即应用中的其他Activity，用于从navigation graph跳转到其他Activity。Represents unique screens or features within the app.</td>
+      <td>Serve as an exit point to the navigation graph that starts a new Android activity that is managed separately from the Navigation component.<br /><br /><strong>In modern Android development, an app consists of a single activity</strong>. Activity destinations are therefore best used when interacting with third party activities or as part of <a href="https://developer.android.com/guide/navigation/migrate">the migration process</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="理解placeholder-destinations">理解placeholder destinations</h4>
+<p>You can use placeholders to represent unimplemented destinations. A placeholder serves as a visual representation of a destination. Within the Navigation Editor, you can use placeholders just as you would any other destination.</p>
+
+<p>Note: You must change the Class attribute of your placeholders to existing destinations before running your app. Placeholders don’t cause compilation errors, and if you attempt to navigate to a placeholder destination, the app throws a runtime exception.</p>
+
+<h3 id="理解action">理解action</h3>
+
+<p>With actions, you’re representing the different paths that users can take through your app. Note that to actually navigate to destinations, you still need to write the code to perform the navigation.</p>
+
+<p>In your navigation graph, actions are represented by <action> elements. At a minimum, an action contains its own ID and the ID of the destination to which a user should be taken.</action></p>
+
+<p>Click the arrow to highlight the action. The following attributes appear in the <strong>Attributes</strong> panel:</p>
+
+<ul>
+  <li>The <strong>Type</strong> field contains “Action”.</li>
+  <li>The <strong>ID</strong> field contains the ID for the action.</li>
+  <li>The <strong>Destination</strong> field contains the ID for the destination fragment or activity.</li>
+</ul>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/guide/navigation</li>
+  <li>https://developer.android.com/guide/navigation/navcontroller</li>
+  <li>https://developer.android.com/guide/navigation/design</li>
+  <li>https://developer.android.com/guide/navigation/use-graph/navigate</li>
+  <li>https://developer.android.com/guide/navigation/design/editor</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="navigation" /></entry><entry><title type="html">Android编程笔记（三）：Activity</title><link href="https://goooooouwa.github.io/coding/2025/05/19/android-dev-notes-3-activity.html" rel="alternate" type="text/html" title="Android编程笔记（三）：Activity" /><published>2025-05-19T00:00:00+00:00</published><updated>2025-05-19T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/05/19/android-dev-notes-3-activity</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/05/19/android-dev-notes-3-activity.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#理解activity" id="markdown-toc-理解activity">理解<code class="language-plaintext highlighter-rouge">Activity</code></a></li>
+  <li><a href="#理解setcontentview方法" id="markdown-toc-理解setcontentview方法">理解<code class="language-plaintext highlighter-rouge">setContentView()</code>方法</a></li>
+  <li><a href="#理解layoutinflater的用途以及如何用它创建视图" id="markdown-toc-理解layoutinflater的用途以及如何用它创建视图">理解<code class="language-plaintext highlighter-rouge">LayoutInflater</code>的用途以及如何用它创建视图</a>    <ul>
+      <li><a href="#layoutinflater的用途" id="markdown-toc-layoutinflater的用途"><code class="language-plaintext highlighter-rouge">LayoutInflater</code>的用途</a></li>
+      <li><a href="#how-to-inflat-a-view" id="markdown-toc-how-to-inflat-a-view">How to inflat a view</a>        <ul>
+          <li><a href="#理解from方法" id="markdown-toc-理解from方法">理解<code class="language-plaintext highlighter-rouge">from()</code>方法</a></li>
+          <li><a href="#理解inflate方法" id="markdown-toc-理解inflate方法">理解<code class="language-plaintext highlighter-rouge">inflate()</code>方法</a></li>
+          <li><a href="#理解context对象" id="markdown-toc-理解context对象">理解<code class="language-plaintext highlighter-rouge">Context</code>对象</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="理解activity">理解<code class="language-plaintext highlighter-rouge">Activity</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">Activity</code>简单理解即是MVC中的C，即View Controller。以下是一段常见的<code class="language-plaintext highlighter-rouge">Activity</code>类的代码：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+        <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+		
+		<span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="理解setcontentview方法">理解<code class="language-plaintext highlighter-rouge">setContentView()</code>方法</h2>
+
+<p>函数定义：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">void</span> <span class="nf">setContentView</span> <span class="p">(</span><span class="nc">View</span> <span class="n">view</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>功能：</p>
+
+<p><code class="language-plaintext highlighter-rouge">setContentView()</code>用来为Activity设置其顶层视图，该视图可以包含其他子视图。</p>
+
+<p>Set the activity content to an explicit view. This view is placed directly into the activity’s view hierarchy. It can itself be a complex view hierarchy. When calling this method, the <strong>layout parameters of the specified view are ignored</strong>. Both <strong>the width and the height of the view are set by default to <code class="language-plaintext highlighter-rouge">ViewGroup.LayoutParams.MATCH_PARENT</code></strong>. To use your own layout parameters, invoke <code class="language-plaintext highlighter-rouge">setContentView(android.view.View, android.view.ViewGroup.LayoutParams)</code> instead.</p>
+
+<h2 id="理解layoutinflater的用途以及如何用它创建视图">理解<code class="language-plaintext highlighter-rouge">LayoutInflater</code>的用途以及如何用它创建视图</h2>
+
+<p>在Android中经常见到以下代码用于动态添加视图到现有视图中：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a new view, which defines the UI of the list item</span>
+<span class="kd">val</span> <span class="py">view</span> <span class="p">=</span> <span class="nc">LayoutInflater</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="n">viewGroup</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+            <span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">text_row_item</span><span class="p">,</span> <span class="n">viewGroup</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+<span class="n">containerView</span><span class="p">.</span><span class="nf">addView</span><span class="p">(</span><span class="n">view</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="layoutinflater的用途"><code class="language-plaintext highlighter-rouge">LayoutInflater</code>的用途</h3>
+
+<p>Instantiates a layout XML file into its corresponding View objects. It is never used directly. Instead, use <code class="language-plaintext highlighter-rouge">Activity.getLayoutInflater()</code> or <code class="language-plaintext highlighter-rouge">Context.getSystemService</code> to retrieve a standard <code class="language-plaintext highlighter-rouge">LayoutInflater</code> instance that is already hooked up to the current context and correctly configured for the device you are running on.</p>
+
+<p>For performance reasons, view inflation relies heavily on pre-processing of XML files that is done at build time. Therefore, it is not currently possible to use <code class="language-plaintext highlighter-rouge">LayoutInflater</code> with an <code class="language-plaintext highlighter-rouge">XmlPullParser</code> over a plain XML file at runtime; it only works with an <code class="language-plaintext highlighter-rouge">XmlPullParser</code> returned from a compiled resource (R.something file.)</p>
+
+<h3 id="how-to-inflat-a-view">How to inflat a view</h3>
+
+<ol>
+  <li>Get the <code class="language-plaintext highlighter-rouge">LayoutInflater</code>:<br />
+  Obtain a <code class="language-plaintext highlighter-rouge">LayoutInflater</code> instance from your context. This can be done using <code class="language-plaintext highlighter-rouge">Activity.getLayoutInflater()</code> or <code class="language-plaintext highlighter-rouge">getSystemService(Context.LAYOUT_INFLATER_SERVICE)</code>.</li>
+  <li>Inflate the Layout:<br />
+  Call the <code class="language-plaintext highlighter-rouge">inflate()</code> method of the <code class="language-plaintext highlighter-rouge">LayoutInflater</code> instance, providing the resource ID of the XML layout file and a <code class="language-plaintext highlighter-rouge">ViewGroup</code> (which will be the parent of the inflated view).</li>
+  <li>Add the Inflated View:<br />
+  If you’re not inflating directly into a parent view (e.g., using attachToRoot = true), you’ll need to manually add the inflated View to its parent <code class="language-plaintext highlighter-rouge">ViewGroup</code> using <code class="language-plaintext highlighter-rouge">addView()</code>.</li>
+</ol>
+
+<p>接下来，让我们逐步理解前面代码用到的两个方法以及<code class="language-plaintext highlighter-rouge">Context</code>对象。</p>
+
+<h4 id="理解from方法">理解<code class="language-plaintext highlighter-rouge">from()</code>方法</h4>
+
+<p>函数定义：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">static</span> <span class="nc">LayoutInflater</span> <span class="nf">from</span> <span class="p">(</span><span class="nc">Context</span> <span class="n">context</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>功能：Obtains the LayoutInflater from the given context.</p>
+
+<h4 id="理解inflate方法">理解<code class="language-plaintext highlighter-rouge">inflate()</code>方法</h4>
+
+<p>函数定义：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nc">View</span> <span class="nf">inflate</span> <span class="p">(</span><span class="n">int</span> <span class="n">resource</span><span class="p">,</span> 
+                <span class="nc">ViewGroup</span> <span class="n">root</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nc">View</span> <span class="nf">inflate</span> <span class="p">(</span><span class="n">int</span> <span class="n">resource</span><span class="p">,</span> 
+                <span class="nc">ViewGroup</span> <span class="n">root</span><span class="p">,</span> 
+                <span class="n">boolean</span> <span class="n">attachToRoot</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>功能：Inflate a new view hierarchy from the specified xml resource. Throws <code class="language-plaintext highlighter-rouge">InflateException</code> if there is an error.</p>
+
+<h4 id="理解context对象">理解<code class="language-plaintext highlighter-rouge">Context</code>对象</h4>
+
+<p>Interface to global information about an application environment. This is an abstract class whose implementation is provided by the Android system. It allows access to application-specific resources and classes, as well as up-calls for application-level operations such as launching activities, broadcasting and receiving intents, etc.</p>
+
+<p>在Android开发里<code class="language-plaintext highlighter-rouge">Context</code>参数很常见。使用<code class="language-plaintext highlighter-rouge">Context</code>参数，单例可完成启动activity、获取项目资源，查找应用的私有存储空间等任务。</p>
+
+<p>注意，在<code class="language-plaintext highlighter-rouge">get(Context)</code>方法里，我们并没有直接将<code class="language-plaintext highlighter-rouge">Context</code>参数传给构造方法。该<code class="language-plaintext highlighter-rouge">Context</code>可能是一个<code class="language-plaintext highlighter-rouge">Activity</code>，也可能是另一个<code class="language-plaintext highlighter-rouge">Context</code>对象，如<code class="language-plaintext highlighter-rouge">Service</code>。在应用的整个生命周期里，我们无法保证需要用到<code class="language-plaintext highlighter-rouge">Context</code>时，<code class="language-plaintext highlighter-rouge">Context</code>就一定会存在。因此，为保证单例总是有<code class="language-plaintext highlighter-rouge">Context</code>可以使用，可调用<code class="language-plaintext highlighter-rouge">getApplicationContext()</code>方法，将不确定是否存在的<code class="language-plaintext highlighter-rouge">Context</code>替换成application context。application context是针对应用的全局性<code class="language-plaintext highlighter-rouge">Context</code>。任何时候，只要是应用层面的单例，就应该一直使用application context。</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/reference/android/view/LayoutInflater</li>
+  <li>https://book.douban.com/subject/25848404/</li>
+  <li>https://developer.android.com/reference/android/app/Activity#setContentView(android.view.View)</li>
+  <li>https://developer.android.com/guide/components/activities/intro-activities</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="activity" /></entry><entry><title type="html">Android编程笔记（四）：RecyclerView</title><link href="https://goooooouwa.github.io/coding/2025/05/19/android-dev-notes-4-recycler-view.html" rel="alternate" type="text/html" title="Android编程笔记（四）：RecyclerView" /><published>2025-05-19T00:00:00+00:00</published><updated>2025-05-19T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/05/19/android-dev-notes-4-recycler-view</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/05/19/android-dev-notes-4-recycler-view.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#实现recyclerview-adapter和view-holder以及item-view-layout-file" id="markdown-toc-实现recyclerview-adapter和view-holder以及item-view-layout-file">实现RecyclerView adapter和view holder以及item view layout file</a>    <ul>
+      <li><a href="#example-recylerview-adapter--view-holder-code" id="markdown-toc-example-recylerview-adapter--view-holder-code">Example RecylerView adapter &amp; view holder code</a></li>
+      <li><a href="#example-item-view-layout-file" id="markdown-toc-example-item-view-layout-file">Example item view layout file</a></li>
+      <li><a href="#how-to-use-recyclerview" id="markdown-toc-how-to-use-recyclerview">How to use RecyclerView</a></li>
+      <li><a href="#how-to-update-list-data" id="markdown-toc-how-to-update-list-data">How to update list data</a></li>
+      <li><a href="#references" id="markdown-toc-references">References:</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="实现recyclerview-adapter和view-holder以及item-view-layout-file">实现RecyclerView adapter和view holder以及item view layout file</h2>
+
+<p>Once you determine your layout, you need to implement your <code class="language-plaintext highlighter-rouge">Adapter</code> and <code class="language-plaintext highlighter-rouge">ViewHolder</code>. These two classes work together to define how your data is displayed. The ViewHolder is a wrapper around a View that contains the layout for an individual item in the list. The Adapter creates ViewHolder objects as needed and also sets the data for those views. The process of associating views to their data is called binding.</p>
+
+<h3 id="example-recylerview-adapter--view-holder-code">Example RecylerView adapter &amp; view holder code</h3>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CustomAdapter</span><span class="p">(</span><span class="k">private</span> <span class="kd">val</span> <span class="py">dataSet</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">:</span>
+        <span class="nc">RecyclerView</span><span class="p">.</span><span class="nc">Adapter</span><span class="p">&lt;</span><span class="nc">CustomAdapter</span><span class="p">.</span><span class="nc">ViewHolder</span><span class="p">&gt;()</span> <span class="p">{</span>
+
+    <span class="cm">/**
+     * Provide a reference to the type of views that you are using
+     * (custom ViewHolder)
+     */</span>
+    <span class="kd">class</span> <span class="nc">ViewHolder</span><span class="p">(</span><span class="n">view</span><span class="p">:</span> <span class="nc">View</span><span class="p">)</span> <span class="p">:</span> <span class="nc">RecyclerView</span><span class="p">.</span><span class="nc">ViewHolder</span><span class="p">(</span><span class="n">view</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">textView</span><span class="p">:</span> <span class="nc">TextView</span>
+
+        <span class="nf">init</span> <span class="p">{</span>
+            <span class="c1">// Define click listener for the ViewHolder's View</span>
+            <span class="n">textView</span> <span class="p">=</span> <span class="n">view</span><span class="p">.</span><span class="nf">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">textView</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Create new views (invoked by the layout manager)</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateViewHolder</span><span class="p">(</span><span class="n">viewGroup</span><span class="p">:</span> <span class="nc">ViewGroup</span><span class="p">,</span> <span class="n">viewType</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">ViewHolder</span> <span class="p">{</span>
+        <span class="c1">// Create a new view, which defines the UI of the list item</span>
+        <span class="kd">val</span> <span class="py">view</span> <span class="p">=</span> <span class="nc">LayoutInflater</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="n">viewGroup</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">text_row_item</span><span class="p">,</span> <span class="n">viewGroup</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nc">ViewHolder</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Replace the contents of a view (invoked by the layout manager)</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onBindViewHolder</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">:</span> <span class="nc">ViewHolder</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// Get element from your dataset at this position and replace the</span>
+        <span class="c1">// contents of the view with that element</span>
+        <span class="n">viewHolder</span><span class="p">.</span><span class="n">textView</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">dataSet</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Return the size of your dataset (invoked by the layout manager)</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getItemCount</span><span class="p">()</span> <span class="p">=</span> <span class="n">dataSet</span><span class="p">.</span><span class="n">size</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="example-item-view-layout-file">Example item view layout file</h3>
+
+<p>The layout for the each view item is defined in an XML layout file. Below is an example item view XML layout file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;FrameLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"@dimen/list_item_height"</span>
+    <span class="na">android:layout_marginLeft=</span><span class="s">"@dimen/margin_medium"</span>
+    <span class="na">android:layout_marginRight=</span><span class="s">"@dimen/margin_medium"</span>
+    <span class="na">android:gravity=</span><span class="s">"center_vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;TextView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/textView"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"@string/element_text"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/FrameLayout&gt;</span>
+</code></pre></div></div>
+
+<h3 id="how-to-use-recyclerview">How to use RecyclerView</h3>
+
+<p>The following code snippet shows how you can use the RecyclerView.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+        <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+        <span class="kd">val</span> <span class="py">dataset</span> <span class="p">=</span> <span class="nf">arrayOf</span><span class="p">(</span><span class="s">"January"</span><span class="p">,</span> <span class="s">"February"</span><span class="p">,</span> <span class="s">"March"</span><span class="p">)</span>
+        <span class="kd">val</span> <span class="py">customAdapter</span> <span class="p">=</span> <span class="nc">CustomAdapter</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+
+        <span class="kd">val</span> <span class="py">recyclerView</span><span class="p">:</span> <span class="nc">RecyclerView</span> <span class="p">=</span> <span class="nf">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">recycler_view</span><span class="p">)</span>
+        <span class="n">recyclerView</span><span class="p">.</span><span class="n">layoutManager</span> <span class="p">=</span> <span class="nc">LinearLayoutManager</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+        <span class="n">recyclerView</span><span class="p">.</span><span class="n">adapter</span> <span class="p">=</span> <span class="n">customAdapter</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="how-to-update-list-data">How to update list data</h3>
+
+<ol>
+  <li>Provide method to update dataset</li>
+</ol>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">StudentRecyclerViewAdapter</span><span class="p">():</span> <span class="nc">RecyclerView</span><span class="p">.</span><span class="nc">Adapter</span><span class="p">&lt;</span><span class="nc">StudentRecyclerViewAdapter</span><span class="p">.</span><span class="nc">ViewHolder</span><span class="p">&gt;()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="py">studentList</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Student</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nf">emptyList</span><span class="p">();</span>
+
+    <span class="k">fun</span> <span class="nf">setStudentsList</span><span class="p">(</span><span class="n">students</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Student</span><span class="p">&gt;)</span> <span class="p">{</span>
+        <span class="n">studentList</span> <span class="p">=</span> <span class="n">students</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Call the method to update dataset</li>
+</ol>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">studentRecyclerViewAdapter</span><span class="p">.</span><span class="nf">setStudentsList</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ol>
+  <li>(Don’t forget this) Notify the Adapter about the event</li>
+</ol>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">studentRecyclerViewAdapter</span><span class="p">.</span><span class="nf">notifyItemRangeInserted</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">students</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="references">References:</h3>
+
+<ul>
+  <li>https://developer.android.com/develop/ui/views/layout/recyclerview</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="recycler-view" /></entry><entry><title type="html">Android编程笔记（一）：Model</title><link href="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-1-model.html" rel="alternate" type="text/html" title="Android编程笔记（一）：Model" /><published>2025-05-18T00:00:00+00:00</published><updated>2025-05-18T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-1-model</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-1-model.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#如何在android应用中创建和使用数据库" id="markdown-toc-如何在android应用中创建和使用数据库">如何在Android应用中创建和使用数据库</a>    <ul>
+      <li><a href="#0-安装room依赖" id="markdown-toc-0-安装room依赖">0. 安装Room依赖</a>        <ul>
+          <li><a href="#01-将-ksp-插件添加到您的项目中" id="markdown-toc-01-将-ksp-插件添加到您的项目中">0.1 将 KSP 插件添加到您的项目中</a></li>
+        </ul>
+      </li>
+      <li><a href="#1-创建entity-dao和database类" id="markdown-toc-1-创建entity-dao和database类">1. 创建Entity, Dao和Database类</a>        <ul>
+          <li><a href="#11-创建entity数据实体类" id="markdown-toc-11-创建entity数据实体类">1.1 创建Entity数据实体类</a></li>
+          <li><a href="#12-创建dao接口" id="markdown-toc-12-创建dao接口">1.2 创建Dao接口</a></li>
+          <li><a href="#13-创建database类" id="markdown-toc-13-创建database类">1.3 创建Database类</a></li>
+        </ul>
+      </li>
+      <li><a href="#2-使用singleton模式访问database实例" id="markdown-toc-2-使用singleton模式访问database实例">2. 使用Singleton模式访问Database实例</a></li>
+      <li><a href="#3-访问dao对象" id="markdown-toc-3-访问dao对象">3. 访问Dao对象</a></li>
+      <li><a href="#4-在ui中进行数据库操作" id="markdown-toc-4-在ui中进行数据库操作">4. 在UI中进行数据库操作</a>        <ul>
+          <li><a href="#41-kotlin-coroutine语法" id="markdown-toc-41-kotlin-coroutine语法">4.1 Kotlin Coroutine语法</a></li>
+          <li><a href="#42-在ui中进行数据库操作" id="markdown-toc-42-在ui中进行数据库操作">4.2 在UI中进行数据库操作</a></li>
+        </ul>
+      </li>
+      <li><a href="#5-在viewmodel中进行数据库操作" id="markdown-toc-5-在viewmodel中进行数据库操作">5. 在ViewModel中进行数据库操作</a></li>
+      <li><a href="#references" id="markdown-toc-references">References:</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="如何在android应用中创建和使用数据库">如何在Android应用中创建和使用数据库</h2>
+
+<ol>
+  <li>安装Room依赖</li>
+  <li>创建Entity, Dao和Database类</li>
+  <li>使用Singleton模式访问Database实例</li>
+  <li>访问Dao对象</li>
+  <li>在UI中进行数据库操作</li>
+  <li>在ViewModel中进行数据库操作</li>
+</ol>
+
+<h3 id="0-安装room依赖">0. 安装Room依赖</h3>
+
+<p>将以下依赖项添加到应用的 build.gradle 文件。</p>
+
+<p>注意 ：请仅选择 ksp 或 annotationProcessor 中的一项。请勿同时包含这两项。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">room_version</span> <span class="p">=</span> <span class="s">"2.7.1"</span>
+
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-runtime:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)</span>
+    <span class="c1">// See Add the KSP plugin to your project</span>
+    <span class="nf">ksp</span><span class="p">(</span><span class="s">"androidx.room:room-compiler:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// If this project only uses Java source, use the Java annotationProcessor</span>
+    <span class="c1">// No additional plugins are necessary</span>
+    <span class="nf">annotationProcessor</span><span class="p">(</span><span class="s">"androidx.room:room-compiler:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Kotlin Extensions and Coroutines support for Room</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-ktx:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - RxJava2 support for Room</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-rxjava2:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - RxJava3 support for Room</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-rxjava3:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Guava support for Room, including Optional and ListenableFuture</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-guava:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Test helpers</span>
+    <span class="nf">testImplementation</span><span class="p">(</span><span class="s">"androidx.room:room-testing:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Paging 3 Integration</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-paging:$room_version"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="01-将-ksp-插件添加到您的项目中">0.1 将 KSP 插件添加到您的项目中</h4>
+
+<p>首先，在顶级 <code class="language-plaintext highlighter-rouge">build.gradle.kts</code> 文件中声明 KSP 插件。请务必选择与项目的 Kotlin 版本一致的 KSP 版本。您可以在 KSP GitHub 页面上找到版本列表。</p>
+
+<p>注意 ：KSP 版本的前一部分必须与 build 中使用的 Kotlin 版本一致。例如，如果您使用的是 Kotlin 2.0.21，则 KSP 版本必须是 2.0.21-x.y.z 版本之一。可以在<code class="language-plaintext highlighter-rouge">libs.versions.toml</code>文件中查看当前项目使用的Kotlin的版本。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+    <span class="nf">id</span><span class="p">(</span><span class="s">"com.google.devtools.ksp"</span><span class="p">)</span> <span class="n">version</span> <span class="s">"2.0.21-1.0.27"</span> <span class="n">apply</span> <span class="k">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>然后，在模块级 build.gradle.kts 文件中启用 KSP：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+    <span class="nf">id</span><span class="p">(</span><span class="s">"com.google.devtools.ksp"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="1-创建entity-dao和database类">1. 创建Entity, Dao和Database类</h3>
+
+<h4 id="11-创建entity数据实体类">1.1 创建Entity数据实体类</h4>
+
+<p>使用<code class="language-plaintext highlighter-rouge">@Entity</code> annotation来创建数据实体类。每个数据实体类有一个或多个Primary Key，通过<code class="language-plaintext highlighter-rouge">@PrimaryKey</code> annotation来标识。Room默然会根据参数名来匹配数据表的列名，你可以通过<code class="language-plaintext highlighter-rouge">@ColumnInfo</code> annotation来自定义数据列的属性。</p>
+
+<p>You define each Room entity as a class annotated with <code class="language-plaintext highlighter-rouge">@Entity</code>. A Room entity includes fields for each column in the corresponding table in the database, including one or more columns that make up the primary key.</p>
+
+<p>By default, Room uses the class name as the database table name. If you want the table to have a different name, set the tableName property of the <code class="language-plaintext highlighter-rouge">@Entity</code> annotation. Similarly, Room uses the field names as column names in the database by default. If you want a column to have a different name, add the <code class="language-plaintext highlighter-rouge">@ColumnInfo</code> annotation to the field and set the name property.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">data class</span> <span class="nc">Student</span><span class="p">(</span>
+	<span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span><span class="p">=</span><span class="k">true</span><span class="p">)</span>
+	<span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="p">=</span><span class="s">"student_id"</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="py">studentId</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+
+	<span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="p">=</span><span class="s">"student_name"</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="py">studentName</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+
+	<span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="p">=</span><span class="s">"student_email"</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="py">studentEmail</span><span class="p">:</span> <span class="nc">String</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="12-创建dao接口">1.2 创建Dao接口</h4>
+
+<p>使用<code class="language-plaintext highlighter-rouge">@Dao</code> annotation来创建Dao接口或者抽象类。</p>
+
+<p>You can define each DAO as either an interface or an abstract class. For basic use cases, you usually use an interface. In either case, you must always annotate your DAOs with <code class="language-plaintext highlighter-rouge">@Dao</code>. DAOs don’t have properties, but they do define one or more methods for interacting with the data in your app’s database.</p>
+
+<p>Dao提供了各种基础的数据访问方法。所有对数据进行操作的方法（如Insert, Update, Delete）都只接受一个或多个Entity数据类作为参数。</p>
+
+<p>Each parameter for an <code class="language-plaintext highlighter-rouge">@Insert</code> method must be either an instance of a <a href="https://developer.android.com/training/data-storage/room/defining-data">Room data entity class</a> annotated with <code class="language-plaintext highlighter-rouge">@Entity</code> or a collection of data entity class instances, each of which points to a database. </p>
+
+<p>All of the parameters of the Insert method must either be classes annotated with <code class="language-plaintext highlighter-rouge">Entity</code> or collections/array of it.</p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">@Query</code> annotation可以创建自定义SQL语句来进行数据查询或者更加复杂的数据操作，并将其封装成Dao方法以供调用。</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">@Query</code> annotation lets you write SQL statements and expose them as DAO methods. Use these query methods to query data from your app’s database or when you need to perform more complex insertions, updates, and deletions.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Dao</span>
+<span class="kd">interface</span> <span class="nc">StudentDao</span> <span class="p">{</span>
+    <span class="nd">@Insert</span>
+    <span class="k">fun</span> <span class="nf">createStudent</span><span class="p">(</span><span class="k">vararg</span> <span class="n">students</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span>
+
+    <span class="nd">@Update</span>
+    <span class="k">fun</span> <span class="nf">createStudent</span><span class="p">(</span><span class="k">vararg</span> <span class="n">students</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span>
+
+    <span class="nd">@Delete</span>
+    <span class="k">fun</span> <span class="nf">createStudent</span><span class="p">(</span><span class="k">vararg</span> <span class="n">students</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span>
+
+    <span class="nd">@Query</span><span class="p">(</span><span class="s">"SELECT * FROM student"</span><span class="p">)</span>
+    <span class="k">fun</span> <span class="nf">getAllStudents</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Student</span><span class="p">&gt;</span>
+
+    <span class="nd">@Query</span><span class="p">(</span><span class="s">"SELECT * from student WHERE student_name = :name LIMIT 1"</span><span class="p">)</span>
+    <span class="k">fun</span> <span class="nf">findStudentByName</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">):</span> <span class="nc">Student</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">vararg</code> Kotlin语法允许调用者传入可变数量的某一类型参数而无需提前构造集合类（如数组）。</p>
+
+<p>In Kotlin, <code class="language-plaintext highlighter-rouge">vararg</code> allows a function to accept a variable number of arguments of the same type. It simplifies function calls by eliminating the need to create collections when passing multiple values.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">printNames</span><span class="p">(</span><span class="k">vararg</span> <span class="n">names</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">names</span><span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">name</span> <span class="p">-&gt;</span> <span class="nf">println</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">printNames</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">,</span> <span class="s">"Bob"</span><span class="p">,</span> <span class="s">"Charlie"</span><span class="p">)</span>
+    <span class="c1">// Output:</span>
+    <span class="c1">// Alice</span>
+    <span class="c1">// Bob</span>
+    <span class="c1">// Charlie</span>
+    
+    <span class="kd">val</span> <span class="py">people</span> <span class="p">=</span> <span class="nf">arrayOf</span><span class="p">(</span><span class="s">"David"</span><span class="p">,</span> <span class="s">"Eve"</span><span class="p">)</span>
+    <span class="nf">printNames</span><span class="p">(*</span><span class="n">people</span><span class="p">)</span> <span class="c1">// Using spread operator to pass an array as vararg</span>
+    <span class="c1">// Output:</span>
+    <span class="c1">// David</span>
+    <span class="c1">// Eve</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Dao方法允许以此方式批量创建、修改和删除多条数据记录。比如，可以批量创建多条student记录：</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">createStudent</span><span class="p">(</span>
+	<span class="nc">Student</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">"Alice"</span><span class="p">,</span><span class="s">"alice@gmail.com"</span><span class="p">),</span>
+	<span class="nc">Student</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">"Bob"</span><span class="p">,</span><span class="s">"bob@gmail.com"</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="13-创建database类">1.3 创建Database类</h4>
+
+<p>创建Database类需要使用<code class="language-plaintext highlighter-rouge">@Database</code> annotation，并且在entities参数中提供所有与该数据库有关的Entity数据类。</p>
+
+<p>The database class must satisfy the following conditions:</p>
+
+<ul>
+  <li>The class must be annotated with a <code class="language-plaintext highlighter-rouge">@Database</code> annotation that includes an entities array that lists all of the data entities associated with the database.</li>
+  <li>The class must be an abstract class that extends RoomDatabase.</li>
+  <li>For each DAO class that is associated with the database, the database class must define an abstract method that has zero arguments and returns an instance of the DAO class.</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span><span class="p">=[</span><span class="nc">Student</span><span class="o">::</span><span class="k">class</span><span class="p">],</span> <span class="n">version</span><span class="p">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">StudentDatabase</span><span class="p">:</span> <span class="nc">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">abstract</span> <span class="k">fun</span> <span class="nf">studentDao</span><span class="p">():</span> <span class="nc">StudentDao</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-使用singleton模式访问database实例">2. 使用Singleton模式访问Database实例</h3>
+
+<p>使用Kotlin提供的companion object可以轻松创建类方法和属性，可以用来实现Singleton模式，用于模式访问Database实例。</p>
+
+<p>Companion objects allow you to define class-level functions and properties. This makes it easy to create factory methods, hold constants, and access shared utilities.</p>
+
+<p>创建新项目时，直接将以下模板代码拷贝到项目中进行简答修改即可用来访问Database实例。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span> <span class="p">=</span> <span class="p">[</span><span class="nc">Student</span><span class="o">::</span><span class="k">class</span><span class="p">],</span> <span class="n">version</span> <span class="p">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">StudentDatabase</span><span class="p">:</span> <span class="nc">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">studentDao</span><span class="p">():</span> <span class="nc">StudentDao</span>
+
+    <span class="k">companion</span> <span class="k">object</span><span class="p">{</span>
+        <span class="nd">@Volatile</span>
+        <span class="k">private</span> <span class="kd">var</span> <span class="py">INSTANCE</span><span class="p">:</span> <span class="nc">StudentDatabase</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+
+        <span class="k">fun</span> <span class="nf">getInstance</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="nc">Context</span><span class="p">):</span> <span class="nc">StudentDatabase</span> <span class="p">{</span>
+            <span class="nf">synchronized</span><span class="p">(</span><span class="k">this</span><span class="p">){</span>
+                <span class="kd">var</span> <span class="py">instance</span> <span class="p">=</span> <span class="nc">INSTANCE</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">){</span>
+                    <span class="n">instance</span> <span class="p">=</span> <span class="nc">Room</span><span class="p">.</span><span class="nf">databaseBuilder</span><span class="p">(</span>
+                        <span class="n">context</span><span class="p">.</span><span class="n">applicationContext</span><span class="p">,</span>
+                        <span class="nc">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span>
+                        <span class="s">"students_database"</span>
+                    <span class="p">).</span><span class="nf">build</span><span class="p">()</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="n">instance</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Android app会在数据库初始化时自动根据Entities和Database创建SQLite数据库和数据表。(有待验证)</p>
+
+<h3 id="3-访问dao对象">3. 访问Dao对象</h3>
+
+<p>使用以下方法访问Dao对象</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">studentDao</span> <span class="p">=</span> <span class="nc">StudentDatabase</span><span class="p">.</span><span class="nf">getInstance</span><span class="p">(</span><span class="n">application</span><span class="p">).</span><span class="nf">studentDao</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="4-在ui中进行数据库操作">4. 在UI中进行数据库操作</h3>
+
+<p>在Android app中数据库操作需要在非UI thread进行，以避免阻塞UI渲染。使用Kotlin Coroutine可以轻松在不同thread间允许异步代码。</p>
+
+<h4 id="41-kotlin-coroutine语法">4.1 Kotlin Coroutine语法</h4>
+
+<p>Coroutine的简单例子：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">=</span> <span class="nf">runBlocking</span> <span class="p">{</span> <span class="c1">// this: CoroutineScope</span>
+    <span class="nf">launch</span> <span class="p">{</span> <span class="nf">doWorld</span><span class="p">()</span> <span class="p">}</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// this is your first suspending function</span>
+<span class="k">suspend</span> <span class="k">fun</span> <span class="nf">doWorld</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">1000L</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"World!"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">launch</code> is a coroutine builder. It launches a new coroutine concurrently with the rest of the code, which continues to work independently. That’s why Hello has been printed first.</p>
+
+<p><code class="language-plaintext highlighter-rouge">delay</code> is a special suspending function. It suspends the coroutine for a specific time. Suspending a coroutine does not block the underlying thread, but allows other coroutines to run and use the underlying thread for their code.</p>
+
+<p><code class="language-plaintext highlighter-rouge">runBlocking</code> is also a coroutine builder that bridges the non-coroutine world of a regular fun main() and the code with coroutines inside of <code class="language-plaintext highlighter-rouge">runBlocking { ... }</code> curly braces. This is highlighted in an IDE by <code class="language-plaintext highlighter-rouge">this: CoroutineScope</code> hint right after the runBlocking opening curly brace.</p>
+
+<p>Suspending functions can be used inside coroutines just like regular functions, but their additional feature is that they can, in turn, use other suspending functions (like delay in this example) to suspend execution of a coroutine.</p>
+
+<h4 id="42-在ui中进行数据库操作">4.2 在UI中进行数据库操作</h4>
+
+<p>在UI thread中可以使用<code class="language-plaintext highlighter-rouge">CoroutineScope</code>来启动Coroutine，比如：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span>
+    <span class="c1">// Create a new coroutine to move the execution off the UI thread</span>
+    <span class="nc">CoroutineScope</span><span class="p">(</span><span class="nc">Dispatchers</span><span class="p">.</span><span class="nc">IO</span><span class="p">).</span><span class="nf">launch</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="5-在viewmodel中进行数据库操作">5. 在ViewModel中进行数据库操作</h3>
+
+<p>ViewModel includes a set of KTX extensions that work directly with coroutines. These extension are <code class="language-plaintext highlighter-rouge">lifecycle-viewmodel-ktx</code> library.</p>
+
+<p>在ViewModel中可以使用其自带的Coroutine Scope <code class="language-plaintext highlighter-rouge">viewModelScope</code>来启动Coroutine，具体语法如下：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">StudentViewModel</span><span class="p">(</span>
+	<span class="k">private</span> <span class="kd">val</span> <span class="py">dao</span><span class="p">:</span><span class="nc">StudentDao</span>
+<span class="p">):</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">fun</span> <span class="nf">insertStudent</span><span class="p">(</span><span class="n">student</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Create a new coroutine to move the execution off the UI thread</span>
+        <span class="n">viewModelScope</span><span class="p">.</span><span class="nf">launch</span><span class="p">(</span><span class="nc">Dispatchers</span><span class="p">.</span><span class="nc">IO</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dao</span><span class="p">.</span><span class="nf">insertStudent</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>   <span class="c1">// suspend function</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Let’s dissect the coroutines code in the <code class="language-plaintext highlighter-rouge">insertStudent</code> function:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">viewModelScope</code> is a predefined CoroutineScope that is included with the ViewModel KTX extensions. Note that all coroutines must run in a scope. A CoroutineScope manages one or more related coroutines.</li>
+  <li><code class="language-plaintext highlighter-rouge">launch</code> is a function that creates a coroutine and dispatches the execution of its function body to the corresponding dispatcher.</li>
+  <li><code class="language-plaintext highlighter-rouge">Dispatchers.IO</code> indicates that this coroutine should be executed on a thread reserved for I/O operations.</li>
+</ul>
+
+<p>Since this coroutine is started with viewModelScope, it is executed in the scope of the ViewModel. If the ViewModel is destroyed because the user is navigating away from the screen, viewModelScope is automatically cancelled, and all running coroutines are canceled as well.</p>
+
+<h3 id="references">References:</h3>
+
+<ul>
+  <li>https://developer.android.com/training/data-storage/room</li>
+  <li>https://developer.android.com/training/data-storage/room/accessing-data</li>
+  <li>https://kotlinlang.org/docs/functions.html#variable-number-of-arguments-varargs</li>
+  <li>https://stackoverflow.com/questions/40398072/singleton-with-parameter-in-kotlin</li>
+  <li>https://kotlinlang.org/docs/coroutines-basics.html</li>
+  <li>https://developer.android.com/topic/libraries/architecture/coroutines</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="db" /></entry><entry><title type="html">Android编程笔记（二）：Views</title><link href="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-2-views.html" rel="alternate" type="text/html" title="Android编程笔记（二）：Views" /><published>2025-05-18T00:00:00+00:00</published><updated>2025-05-18T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-2-views</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-2-views.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#如何为android应用创建视图布局" id="markdown-toc-如何为android应用创建视图布局">如何为Android应用创建视图布局</a>    <ul>
+      <li><a href="#0-创建视图布局的大致思路" id="markdown-toc-0-创建视图布局的大致思路">0. 创建视图布局的大致思路</a></li>
+      <li><a href="#1-使用layout组件进行视图布局" id="markdown-toc-1-使用layout组件进行视图布局">1. 使用layout组件进行视图布局</a></li>
+      <li><a href="#2-使用layout_margin控制视图间距" id="markdown-toc-2-使用layout_margin控制视图间距">2. 使用layout_margin控制视图间距</a></li>
+      <li><a href="#3-使用layout_width和layout_height控制视图宽度和高度" id="markdown-toc-3-使用layout_width和layout_height控制视图宽度和高度">3. 使用<code class="language-plaintext highlighter-rouge">layout_width</code>和<code class="language-plaintext highlighter-rouge">layout_height</code>控制视图宽度和高度</a></li>
+      <li><a href="#4-使用layout_weight控制多个视图组件在间的大小比例" id="markdown-toc-4-使用layout_weight控制多个视图组件在间的大小比例">4. 使用<code class="language-plaintext highlighter-rouge">layout_weight</code>控制多个视图组件在间的大小比例</a></li>
+      <li><a href="#5-例子创建以下布局" id="markdown-toc-5-例子创建以下布局">5. 例子：创建以下布局</a></li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="如何为android应用创建视图布局">如何为Android应用创建视图布局</h2>
+
+<h3 id="0-创建视图布局的大致思路">0. 创建视图布局的大致思路</h3>
+
+<ol>
+  <li>使用layout组件进行视图布局</li>
+  <li>使用<code class="language-plaintext highlighter-rouge">layout_margin</code>控制视图间距</li>
+  <li>使用<code class="language-plaintext highlighter-rouge">layout_width</code>和<code class="language-plaintext highlighter-rouge">layout_height</code>控制视图宽度和高度</li>
+  <li>使用<code class="language-plaintext highlighter-rouge">layout_weight</code>控制多个视图间的大小比例</li>
+</ol>
+
+<h3 id="1-使用layout组件进行视图布局">1. 使用layout组件进行视图布局</h3>
+
+<ul>
+  <li>简单布局可以通过嵌套<code class="language-plaintext highlighter-rouge">LinearLayout</code>(horizontal or vertical)来实现；</li>
+  <li>复杂布局可以使用<code class="language-plaintext highlighter-rouge">ConstraintLayout</code>（以避免多层<code class="language-plaintext highlighter-rouge">LinearLayout</code>嵌套）。</li>
+</ul>
+
+<h3 id="2-使用layout_margin控制视图间距">2. 使用layout_margin控制视图间距</h3>
+
+<ul>
+  <li>在layout组件内设置<code class="language-plaintext highlighter-rouge">layout_margin</code>可以为所有子组件与父组件间提供外边距；</li>
+  <li>如果希望在水平布局的组件间增加间距，可以在靠后的组件上添加<code class="language-plaintext highlighter-rouge">layout_marginStart</code>（相比于<code class="language-plaintext highlighter-rouge">layout_marginLeft</code>对RightToLeft语言的支持更好）。</li>
+</ul>
+
+<h3 id="3-使用layout_width和layout_height控制视图宽度和高度">3. 使用<code class="language-plaintext highlighter-rouge">layout_width</code>和<code class="language-plaintext highlighter-rouge">layout_height</code>控制视图宽度和高度</h3>
+
+<p>如果希望组件占满整个布局空间的宽度或者高度，可以将组件的<code class="language-plaintext highlighter-rouge">layout_width</code> / <code class="language-plaintext highlighter-rouge">layout_height</code>设置为<code class="language-plaintext highlighter-rouge">match_parent</code>；
+如果希望组件仅仅占有自身所需宽度或者高度，可以将组件的<code class="language-plaintext highlighter-rouge">layout_width</code> / <code class="language-plaintext highlighter-rouge">layout_height</code>设置为<code class="language-plaintext highlighter-rouge">wrap_content</code>。</p>
+
+<h3 id="4-使用layout_weight控制多个视图组件在间的大小比例">4. 使用<code class="language-plaintext highlighter-rouge">layout_weight</code>控制多个视图组件在间的大小比例</h3>
+
+<p>在决定子组件视图的宽度时，<code class="language-plaintext highlighter-rouge">LinearLayout</code>使用的是<code class="language-plaintext highlighter-rouge">layout_width</code>与<code class="language-plaintext highlighter-rouge">layout_weight</code>参数的混合值。</p>
+
+<p><code class="language-plaintext highlighter-rouge">LinearLayout</code>是分两个步骤来设置视图宽度的。</p>
+
+<ul>
+  <li>第一步，LinearLayout查看layout_width属性值(竖直方位则查看layout_height属性值)。</li>
+</ul>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.14.png" alt="屏幕截图 2025-05-19 05.40.14.png" /></p>
+
+<ul>
+  <li>第二步，LinearLayout依据layout_weight属性值进行额外的空间分配。</li>
+</ul>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.22.png" alt="屏幕截图 2025-05-19 05.40.22.png" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">layout_weight</code>代表该视图组件在其父组件的布局空间中所占有的权重，例如，如果A组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>为2，B组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>为1，则A将获得父组件2/3的额外宽度，而B则将获得父组件1/3的额外宽度。</p>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.31.png" alt="屏幕截图 2025-05-19 05.40.31.png" /></p>
+
+<p>weight设置值也可以是浮点数。一种常见的设定方式是各组件属性值加起来等于1.0或100。比如，在上一个例子中，A组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>应该为0.66，B组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>则为0.37。</p>
+
+<p>如想让<code class="language-plaintext highlighter-rouge">LinearLayout</code>分配完全相同的宽度给各自的视图，则只需设置各组件的<code class="language-plaintext highlighter-rouge">layout_width</code>属性值为0dp以避开第一步的空间分配就可以了。这样<code class="language-plaintext highlighter-rouge">LinearLayout</code>就会只考虑使用<code class="language-plaintext highlighter-rouge">layout_weight</code>属性值（而忽视组件自身的宽度）来完成所需的空间分配。</p>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.40.png" alt="屏幕截图 2025-05-19 05.40.40.png" /></p>
+
+<p>注意，如果不小心将某个组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>设置为1，可能会导致该组件占满整个布局空间，导致其他组件在UI中不可见。</p>
+
+<h3 id="5-例子创建以下布局">5. 例子：创建以下布局</h3>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.39.54.png" alt="屏幕截图 2025-05-19 05.39.54.png" /></p>
+
+<p>所需步骤如下：</p>
+
+<ol>
+  <li>添加1个Layout(vertical)组件；</li>
+  <li>在Layout(vertical)组件内添加所需的视图元素、以及1个Layout(horizontal)组件（用于将Save和Clear按钮置于其中，以对其进行水平布局）；</li>
+  <li>将Layout(vertical)的<code class="language-plaintext highlighter-rouge">layout_margin</code>设置为15dp，以为所有子组件提供距离屏幕边框15dp的外边距；</li>
+  <li>将Clear按钮的<code class="language-plaintext highlighter-rouge">layout_marginStart</code>设置为30dp，以在两个按钮间提供30dp的间距；</li>
+  <li>将StudentName和StudentEmail的layout_width设置为<code class="language-plaintext highlighter-rouge">match_parent</code>以占满水平宽度；</li>
+  <li>Layout(horizontal)默认将Save和Clear按钮的<code class="language-plaintext highlighter-rouge">layout_weight</code>设置为1，因此2个按钮占据相等的水平宽度。</li>
+</ol>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li>https://developer.android.com/develop/ui/views/layout/constraint-layout</li>
+  <li>https://www.youtube.com/watch?v=XamMbnzI5vE</li>
+  <li>https://book.douban.com/subject/25848404/</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="ui" /></entry><entry><title type="html">OMV网络设置和调试方式</title><link href="https://goooooouwa.github.io/computer/2025/04/12/omv-network-settings.html" rel="alternate" type="text/html" title="OMV网络设置和调试方式" /><published>2025-04-12T00:00:00+00:00</published><updated>2025-04-12T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/04/12/omv-network-settings</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/04/12/omv-network-settings.html"><![CDATA[<p>在OMV中修改网络设置有2种方式：</p>
+
+<p>1.GUI（网络 -&gt; 接口）
+2.命令行工具omv-firstaid</p>
+
+<p>运行omv-firstaid的方式：</p>
+
+<ol>
+  <li>Login using admin or equipvalent account</li>
+  <li>type <code class="language-plaintext highlighter-rouge">su</code> and login as su using admin password</li>
+  <li>type <code class="language-plaintext highlighter-rouge">sudo omv-firstaid</code></li>
+  <li>Once windows from omv-firstaid pop up select reconfigure option</li>
+</ol>
+
+<p>网络设置如下：</p>
+
+<p>1.设置静态IP地址
+1.修改网关地址
+1.设置子网掩码（255.255.255.0 / 24）
+1.修改DNS地址</p>
+
+<p>如果修改后依然无法正常联网，请检查以下事项：</p>
+
+<p>1.Openwrt是否打开了服务；
+2.Openwrt是否选择正确的服务器和模式（之前选成了海外回国）；
+3.命令行wget google.com是否能正确解析网站DNS获得内容（不要使用ping google.com，即使在网络能够正常访问情况下，也不会ping成功）。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="homelab" /><category term="omv" /><category term="network" /><summary type="html"><![CDATA[在OMV中修改网络设置有2种方式：]]></summary></entry></feed>
