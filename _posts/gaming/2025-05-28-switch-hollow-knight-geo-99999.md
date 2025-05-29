@@ -39,7 +39,7 @@ published: true
 
 此后，我还在新版Edizon-SE的[README](https://github.com/tomvita/EdiZon-SE?tab=readme-ov-file#how-to-install)里注意到，原来不光需要按前面教程中说的修改配置文件的默认值，还需要将那一行配置项前面的";"注释符号删除，否则修改结果并不会生效。
 
-> For the best experience, open the /atmosphere/system_settings.ini file and change dmnt_cheats_enabled_by_default = u8!0x1 to dmnt_cheats_enabled_by_default = u8!0x0. If the file does not exist you can copy the template from /atmosphere/config_templates/system_settings.ini and change the line, remember to remove the ";" in front.
+> For the best experience, open the /atmosphere/system_settings.ini file and change dmnt_cheats_enabled_by_default = u8!0x1 to dmnt_cheats_enabled_by_default = u8!0x0. If the file does not exist you can copy the template from /atmosphere/config_templates/system_settings.ini and change the line, **remember to remove the ";" in front**.
 
 ### 成果
 
