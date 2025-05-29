@@ -35,7 +35,7 @@ published: true
 
 在安装试用的过程中还发生了2个小插曲：
 
-一开始，在按照教程安装好Tesla overlay和Edizon并重启了switch之后，我进入游戏尝试通过快捷键（hold down `L` and `DPad Down` and push on the `right joy stick`）打开overlay，结果每次只要一点击Edizon overlay菜单switch就会crash。简单Google搜索后发现，原来是Edizon早已停更，当前的版本并不支持最新版系统固件。
+一开始，在按照教程安装好Tesla overlay和Edizon并重启了switch之后，我进入游戏尝试通过快捷键（hold down `L` and `DPad Down` and push on the `right joy stick`）打开overlay，结果每次只要一进入Edizon overlay菜单switch就会crash。简单Google搜索后发现，原来是Edizon早已停更，当前的版本并不支持最新版系统固件。
 
 此外，我还在新版Edizon-SE的[README](https://github.com/tomvita/EdiZon-SE?tab=readme-ov-file#how-to-install)里注意到，原来不光需要按前面教程中说的修改配置文件的默认值，还需要将那一行配置项前面的";"注释符号删除，否则修改结果并不会生效。
 
