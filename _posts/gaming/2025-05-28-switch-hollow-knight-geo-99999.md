@@ -1,5 +1,5 @@
 ---
-title: Switch版空洞骑士无限吉欧问题调试
+title: 记一次Switch版空洞骑士无限金币问题的调试经历
 category: gaming
 tags: switch hollow-knight cheat overlay edizon
 published: true
