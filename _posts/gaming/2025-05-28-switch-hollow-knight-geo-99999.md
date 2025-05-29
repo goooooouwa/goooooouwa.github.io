@@ -43,7 +43,7 @@ published: true
 
 ### 成果
 
-在下载并重新安装新版的Edizon-SE和Edizon-Overlay以及修改配置文件确保所有cheats默认关闭之后，我再次尝试，终于可以在游戏中正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。
+在下载并重新安装新版的Edizon-SE和Edizon-Overlay以及修改配置文件确保所有cheats默认关闭之后，我再次打开游戏，这次终于可以正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。
 
 ![2025-05-28 19.19.16.jpg]({{site.baseurl}}/assets/images/2025-05-28 19.19.16.jpg)
 
