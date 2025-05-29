@@ -35,15 +35,15 @@ published: true
 
 在安装试用的过程中还发生了2个小插曲：
 
-一开始，在按照教程安装好Tesla overlay和Edizon并重启了switch之后，我进入游戏尝试通过快捷键（hold down `L` and `DPad Down` and push on the `right joy stick`）打开overlay，结果每次只要一进入Edizon overlay菜单switch就会crash。简单Google搜索后发现，原来是Edizon早已停更，当前的版本并不支持最新版系统固件。
+一开始，在按照教程安装好Tesla overlay和Edizon并重启了switch之后，我进入游戏尝试通过快捷键（hold down `L` and `DPad Down` and push on the `right joy stick`）打开overlay，结果每次只要一进入Edizon overlay菜单switch就会crash。简单Google搜索后发现，原来是Edizon早已停更，当前的版本并不支持最新版系统固件，需要下载安装新版的[Edizon-SE](https://github.com/tomvita/EdiZon-SE)和[Edizon-Overlay](https://github.com/proferabg/EdiZon-Overlay)。
 
-此外，我还在新版Edizon-SE的[README](https://github.com/tomvita/EdiZon-SE?tab=readme-ov-file#how-to-install)里注意到，原来不光需要按前面教程中说的修改配置文件的默认值，还需要将那一行配置项前面的";"注释符号删除，否则修改结果并不会生效。
+此后，我还在新版Edizon-SE的[README](https://github.com/tomvita/EdiZon-SE?tab=readme-ov-file#how-to-install)里注意到，原来不光需要按前面教程中说的修改配置文件的默认值，还需要将那一行配置项前面的";"注释符号删除，否则修改结果并不会生效。
 
 > For the best experience, open the /atmosphere/system_settings.ini file and change dmnt_cheats_enabled_by_default = u8!0x1 to dmnt_cheats_enabled_by_default = u8!0x0. If the file does not exist you can copy the template from /atmosphere/config_templates/system_settings.ini and change the line, remember to remove the ";" in front.
 
 ### 成果
 
-在下载并重新安装新版的[Edizon-SE](https://github.com/tomvita/EdiZon-SE)和[Edizon-Overlay](https://github.com/proferabg/EdiZon-Overlay)以及修改配置文件确保所有cheats默认关闭之后，我再次尝试，终于可以在游戏中正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。
+在下载并重新安装新版的Edizon-SE和Edizon-Overlay以及修改配置文件确保所有cheats默认关闭之后，我再次尝试，终于可以在游戏中正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。
 
 ![2025-05-28 19.19.16.jpg]({{site.baseurl}}/assets/images/2025-05-28 19.19.16.jpg)
 
