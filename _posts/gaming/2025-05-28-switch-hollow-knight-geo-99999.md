@@ -59,4 +59,6 @@ published: true
 
 ### 题外话
 
-在了解了问题的原因之后，我再次在Google，Brave和DuckDuckGo等搜索引擎上对此问题进行搜索，搜索词为“switch hollow knight geo 99999"，结果这些搜索引擎中只有DuckDuckGo的第一条返回结果是Edizon cheats for switch hollow knight (including geo 99999)，与我的描述高度吻合。而Google和其他搜索引擎的首页结果均无任何跟cheat有关的结果。这让我不禁怀疑这些商业搜索引擎对搜索结果进行了过滤。试想如果当初我是用的DuckDuckGo来搜索这一问题的话，会不会更早找到正确结果呢？想到这里，我果断决定以后弃用Google，改用DuckDuckGo。
+在了解了问题的原因之后，我再次在Google，Brave和DuckDuckGo等搜索引擎上对此问题进行搜索，搜索词为“switch hollow knight geo 99999"，结果这些搜索引擎中只有DuckDuckGo的第一条返回结果是Edizon cheats for switch hollow knight (including geo 99999)，与我的描述高度吻合。而Google和其他搜索引擎的首页结果均无任何跟cheat有关的结果。这让我不禁怀疑这些商业搜索引擎对搜索结果进行了过滤。试想如果当初我是用的DuckDuckGo来搜索这一问题的话，会不会更早找到正确结果呢？
+
+想到这里，我果断决定以后弃用Google，改用DuckDuckGo。
