@@ -1,5 +1,5 @@
 ---
-title: '如何在crt上播放带左右黑边的16:9视频（折腾记录）'
+title: '记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历'
 category: computer
 tags: 'crt corelec kodi android-tv 16:9 4:3'
 published: true
