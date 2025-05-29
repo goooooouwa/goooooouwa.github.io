@@ -33,7 +33,7 @@ published: true
 
 原来，大气层默认会在启动游戏时打开所有找到的cheats。这似乎也印证了我之前的猜测：我的switch上的某些空洞骑士的cheats somehow被打开了。
 
-在安装使用过程中还发生了2个小插曲：
+在安装试用的过程中还发生了2个小插曲：
 
 一开始，在按照教程安装好Tesla overlay和Edizon并重启了switch之后，我进入游戏尝试通过快捷键打开overlay，结果每次只要一点击Edizon overlay菜单switch就会crash。简单Google搜索后发现，原来是Edizon早已停更，当前的版本并不支持最新版系统固件。
 
