@@ -9,7 +9,9 @@ published: true
 
 我的大气层switch上的空洞骑士不知道为啥出生就有99999个吉欧（游戏货币），而且无论被什么怪攻击多少次都死不了，甚至可以不打怪无脑冲地图，很奇怪，而且毫无游戏体验。不明白这是为什么。
 
-这游戏感觉像是被修改过，好像是开了某种作弊代码似的，可是我并不记得自己曾经打开过任何cheat。我一开始怀疑是游戏版本问题，于是在网上找了该游戏的各种不同版本，逐一试玩后发现结果还是一样。
+![2025-05-28 19.23.05.jpg]({{site.baseurl}}/assets/images/2025-05-28 19.23.05.jpg)
+
+这游戏就好像是被修改过，好像是开了某种作弊代码似的，可是我并不记得自己曾经打开过任何cheat。我一开始怀疑是游戏版本问题，于是在网上找了该游戏的各种不同版本，逐一试玩后发现结果还是一样。
 
 ### Aha moment
 
@@ -41,7 +43,13 @@ published: true
 
 ### 成果
 
-在下载并重新安装新版的[Edizon-SE](https://github.com/tomvita/EdiZon-SE)和[Edizon-Overlay](https://github.com/proferabg/EdiZon-Overlay)以及修改配置文件确保所有cheats默认关闭之后，我再次尝试，终于可以在游戏中正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。这时我简单尝试打了两个小怪，发现游戏终于正常了，不再是一开局就有99999个吉欧了。
+在下载并重新安装新版的[Edizon-SE](https://github.com/tomvita/EdiZon-SE)和[Edizon-Overlay](https://github.com/proferabg/EdiZon-Overlay)以及修改配置文件确保所有cheats默认关闭之后，我再次尝试，终于可以在游戏中正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。
+
+![2025-05-28 19.19.16.jpg]({{site.baseurl}}/assets/images/2025-05-28 19.19.16.jpg)
+
+我简单尝试打了两个小怪后，发现游戏终于正常了，不再是一开局就有99999个吉欧了。
+
+![2025-05-28 19.19.38.jpg]({{site.baseurl}}/assets/images/2025-05-28 19.19.38.jpg)
 
 ### 复盘
 
