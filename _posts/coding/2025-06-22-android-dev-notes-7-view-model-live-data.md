@@ -6,11 +6,39 @@ published: true
 ---
 ## ViewModel
 
-### 0. 安装ViewModel依赖
+### 0. 安装ViewModel, LiveData和其他Lifecycle依赖
 
-Note: To import ViewModel into your Android project, see the instructions for declaring dependencies in the Lifecycle release notes.
+Note: To import ViewModel into your Android project, see the [instructions](https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies) for declaring dependencies in the Lifecycle release notes.
 
-[https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies](https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies)
+Add the dependencies for the artifacts you need in the build.gradle file for your app or module:
+
+```kotlin
+dependencies {
+        val lifecycle_version = "2.9.1"
+        val arch_version = "2.2.0"
+
+        // ViewModel
+        implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+        // ViewModel utilities for Compose
+        implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+        // LiveData
+        implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+        // Lifecycles only (without ViewModel or LiveData)
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+        // Lifecycle utilities for Compose
+        implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
+
+        // Saved state module for ViewModel
+        implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+
+        // ViewModel integration with Navigation3
+        implementation("androidx.lifecycle:lifecycle-viewmodel-navigation3:1.0.0-alpha02")
+
+        // Annotation processor
+        kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+        // alternately - if using Java8, use the following instead of lifecycle-compiler
+        implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
+```
 
 ### ViewModel benefits
 
@@ -47,5 +75,7 @@ ViewModel is the right place to handle business logic in the UI layer. The ViewM
 ## Referencces
 
 - https://developer.android.com/topic/libraries/architecture/viewmodel
+- https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies
 - https://developer.android.com/topic/libraries/architecture/livedata
+
 
