@@ -8,7 +8,7 @@ published: true
 
 ### 0. 安装ViewModel, LiveData和其他Lifecycle依赖
 
-Note: To import ViewModel into your Android project, see the [instructions](https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies) for declaring dependencies in the Lifecycle release notes.
+Note: To import Lifecycle (including ViewModel & LiveData) into your Android project, see the instructions for declaring dependencies in the Lifecycle [release notes](https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies).
 
 Add the dependencies for the artifacts you need in the build.gradle file for your app or module:
 
