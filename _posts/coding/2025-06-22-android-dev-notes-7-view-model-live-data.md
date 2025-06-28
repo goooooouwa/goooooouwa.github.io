@@ -69,6 +69,9 @@ class DiceRollActivity : AppCompatActivity() {
         // Use the 'by viewModels()' Kotlin property delegate
         // from the activity-ktx artifact
         val myViewModel: MyViewModel by viewModels()
+        // or use `ViewModelProvider` class's `get` method which provides ViewModels for the given scope.
+        // val myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        
         // Now you can access myViewModel
     }
 }
