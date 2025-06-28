@@ -150,6 +150,73 @@ Using LiveData provides the following advantages:
 - Proper configuration changes
 - Sharing resources
 
+## Work with LiveData objects
+
+Follow these steps to work with [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) objects:
+
+1.  Create an instance of `LiveData` to hold a certain type of data. This is usually done within your [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) class.
+2.  Create an [`Observer`](https://developer.android.com/reference/androidx/lifecycle/Observer) object that defines the [`onChanged()`](https://developer.android.com/reference/androidx/lifecycle/Observer#onChanged%28T%29) method, which controls what happens when the `LiveData` object's held data changes. You usually create an `Observer` object in a UI controller, such as an activity or fragment.
+3.  Attach the `Observer` object to the `LiveData` object using the [`observe()`](https://developer.android.com/reference/androidx/lifecycle/LiveData#observe%28androidx.lifecycle.LifecycleOwner,%0Aandroidx.lifecycle.Observer%3CT%3E%29) method. The `observe()` method takes a [`LifecycleOwner`](https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner) object. This subscribes the `Observer` object to the `LiveData` object so that it is notified of changes. You usually attach the `Observer` object in a UI controller, such as an activity or fragment.
+
+When you update the value stored in the `LiveData` object, it triggers all registered observers as long as the attached `LifecycleOwner` is in the active state.
+
+LiveData allows UI controller observers to subscribe to updates. When the data held by the `LiveData` object changes, the UI automatically updates in response.
+
+## How to use LiveData
+
+### 1. Create a LiveData instance:
+
+- You typically create a LiveData object within your ViewModel.
+- Use `MutableLiveData` if you need to update the data, or `LiveData` if the data is read-only.
+- Example: `val userData = MutableLiveData<User>()`
+
+### 2. Create an Observer: 
+
+- Define an `Observer` object that specifies what to do when the LiveData's data changes.
+- Implement the `onChanged()` method to handle the data update.
+- This is usually done in your UI controller (Activity or Fragment).
+
+Example:
+
+```kotlin
+val userObserver = Observer<User> { user ->
+    // Update UI with the new user data
+}
+```
+
+### 3. Observe the LiveData: 
+
+- Attach the Observer to the LiveData object using the `observe()` method.    
+- The `observe()` method takes a `LifecycleOwner` (like your Activity or Fragment) which helps manage the observer's lifecycle.
+
+Example:
+
+```kotlin
+viewModel.getUserData().observe(this, userObserver)
+```
+
+- This ensures the observer is only active when the LifecycleOwner is in an active state (e.g., not stopped or destroyed). 
+
+### 4. Update LiveData: 
+
+- If you're using `MutableLiveData`, you can update its value using `setValue()` (if called from the main thread) or `postValue()` (for updates from background threads).
+
+Example:
+
+```kotlin
+viewModel.userData.value = newUser // On main thread
+viewModel.userData.postValue(newUser) // From background thread
+```
+
+### Use LiveData with Room
+
+The [Room](https://developer.android.com/training/data-storage/room) persistence library supports observable queries, which return [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) objects. Observable queries are written as part of a Database Access Object (DAO).
+
+Room generates all the necessary code to update the `LiveData` object when a database is updated. The generated code runs the query asynchronously on a background thread when needed. This pattern is useful for keeping the data displayed in a UI in sync with the data stored in a database. You can read more about Room and DAOs in the [Room persistent library guide](https://developer.android.com/topic/libraries/architecture/room).
+
+### Use coroutines with LiveData
+
+`LiveData` includes support for Kotlin coroutines. For more information, see [Use Kotlin coroutines with Android Architecture Components](https://developer.android.com/topic/libraries/architecture/coroutines).
 
 
 ## Referencces
