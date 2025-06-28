@@ -39,6 +39,26 @@ To create a fragment, extend the AndroidX [`Fragment`](https://developer.android
 class ExampleFragment : Fragment(R.layout.example_fragment)
 ```
 
+You can customize the fragment's view by override the `onCreateView()` method.
+
+```kotlin
+class ExampleFragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment.
+        // or you can inflate a different layout here.
+        val root: View = inflater.inflate(R.layout.my_fragment_layout, container, false)
+        
+        // Additional graphical initialisations...
+        
+        return root
+    }
+}
+```
+
 #### Difference and uses of `onCreate()`, `onCreateView()` in fragments
 
 **[`onCreate()`](https://developer.android.com/reference/android/app/Fragment.html#onCreate(android.os.Bundle)):**
