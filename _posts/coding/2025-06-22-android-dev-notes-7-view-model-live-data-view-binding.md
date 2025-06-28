@@ -1,7 +1,7 @@
 ---
 title: Android编程笔记（七）：ViewModel & LiveData + View Binding
 category: coding
-tags: android live-data view-model
+tags: android live-data view-model view-binding
 published: true
 ---
 * TOC
