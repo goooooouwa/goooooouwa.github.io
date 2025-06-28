@@ -1,3 +1,9 @@
+---
+category: coding
+tags: android fragment fragment-manager
+published: true
+title: Android编程笔记（八）：Fragment
+---
 * TOC
 {:toc}
 
