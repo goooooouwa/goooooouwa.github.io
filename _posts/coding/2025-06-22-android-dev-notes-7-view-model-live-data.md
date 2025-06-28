@@ -158,8 +158,8 @@ Using LiveData provides the following advantages:
 Follow these steps to work with [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) objects:
 
 1.  Create an instance of `LiveData` to hold a certain type of data. This is usually done within your [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) class.
-2.  Create an [`Observer`](https://developer.android.com/reference/androidx/lifecycle/Observer) object that defines the [`onChanged()`](https://developer.android.com/reference/androidx/lifecycle/Observer#onChanged%28T%29) method, which controls what happens when the `LiveData` object's held data changes. You usually create an `Observer` object in a UI controller, such as an activity or fragment.
-3.  Attach the `Observer` object to the `LiveData` object using the [`observe()`](https://developer.android.com/reference/androidx/lifecycle/LiveData#observe%28androidx.lifecycle.LifecycleOwner,%0Aandroidx.lifecycle.Observer%3CT%3E%29) method. The `observe()` method takes a [`LifecycleOwner`](https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner) object. This subscribes the `Observer` object to the `LiveData` object so that it is notified of changes. You usually attach the `Observer` object in a UI controller, such as an activity or fragment.
+2.  Create an [`Observer`](https://developer.android.com/reference/androidx/lifecycle/Observer) object that defines the [`onChanged()`](https://developer.android.com/reference/androidx/lifecycle/Observer#onChanged(kotlin.Any)) method, which controls what happens when the `LiveData` object's held data changes. You usually create an `Observer` object in a UI controller, such as an activity or fragment.
+3.  Attach the `Observer` object to the `LiveData` object using the [`observe()`](https://developer.android.com/reference/androidx/lifecycle/LiveData#observe(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Observer%3C?%20super%20T%3E)) method. The `observe()` method takes a [`LifecycleOwner`](https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner) object. This subscribes the `Observer` object to the `LiveData` object so that it is notified of changes. You usually attach the `Observer` object in a UI controller, such as an activity or fragment.
 
 When you update the value stored in the `LiveData` object, it triggers all registered observers as long as the attached `LifecycleOwner` is in the active state.
 
@@ -169,7 +169,7 @@ LiveData allows UI controller observers to subscribe to updates. When the data h
 
 ### 1. Create LiveData objects
 
-LiveData is a wrapper that can be used with any data, including objects that implement `[Collections](https://developer.android.com/reference/java/util/Collections)`, such as `[List](https://developer.android.com/reference/java/util/List)`. A [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) object is usually stored within a [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) object and is accessed via a getter method, as demonstrated in the following example:
+LiveData is a wrapper that can be used with any data, including objects that implement [`Collections`](https://developer.android.com/reference/java/util/Collections), such as [`List`](https://developer.android.com/reference/java/util/List). A [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) object is usually stored within a [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) object and is accessed via a getter method, as demonstrated in the following example:
 
 ```kotlin
 class UserViewModel : ViewModel() {
@@ -186,7 +186,7 @@ Initially, the data in a `LiveData` object is not set.
 
 ### 2. Observe LiveData objects
 
-In most cases, an app component’s `[onCreate()](https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29)` method is the right place to begin observing a [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) object
+In most cases, an app component’s [`onCreate()`](https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)) method is the right place to begin observing a [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) object
 
 
 ```kotlin
