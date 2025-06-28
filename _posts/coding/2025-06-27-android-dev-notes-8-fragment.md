@@ -156,7 +156,41 @@ Other use cases for child fragments are the following:
 - Sub-navigation within a set of related screens.
 - Jetpack Navigation uses child fragments as individual destinations. An activity hosts a single parent `NavHostFragment` and fills its space with different child destination fragments as users navigate through your app.
 
-## Q&A: Difference and uses of `onCreate()`, `onCreateView()` in fragments
+### Use the FragmentManager
+
+The `FragmentManager` manages the fragment back stack. At runtime, the `FragmentManager` can perform back stack operations like adding or removing fragments in response to user interactions. Each set of changes is committed together as a single unit called a [`FragmentTransaction`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction). For a more in-depth discussion about fragment transactions, see the [fragment transactions guide](https://developer.android.com/guide/fragments/transactions).
+
+When the user taps the Back button on their device, or when you call [`FragmentManager.popBackStack()`](https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28%29), the top-most fragment transaction pops off of the stack. If there are no more fragment transactions on the stack, and if you aren't using child fragments, the Back event bubbles up to the activity. If you *are* using child fragments, see [special considerations for child and sibling fragments](#considerations).
+
+When you call [`addToBackStack()`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29) on a transaction, the transaction can include any number of operations, such as adding multiple fragments or replacing fragments in multiple containers.
+
+When the back stack is popped, all these operations reverse as a single atomic action. However, if you committed additional transactions prior to the `popBackStack()` call, and if you *didn't* use `addToBackStack()` for the transaction, these operations *don't* reverse. Therefore, within a single `FragmentTransaction`, avoid interleaving transactions that affect the back stack with those that don't.
+
+### Perform a transaction
+
+To display a fragment within a layout container, use the `FragmentManager` to create a `FragmentTransaction`. Within the transaction, you can then perform an [`add()`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#add%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29) or [`replace()`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29) operation on the container.
+
+For example, a simple `FragmentTransaction` might look like this:
+
+```kotlin
+supportFragmentManager.commit {
+   replace<ExampleFragment>(R.id.fragment_container)
+   setReorderingAllowed(true)
+   addToBackStack("name") // Name can be null
+}
+```
+
+In this example, `ExampleFragment` replaces the fragment, if any, that is currently in the layout container identified by the `R.id.fragment_container` ID. Providing the fragment's class to the [`replace()`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29) method lets the `FragmentManager` handle instantiation using its [`FragmentFactory`](https://developer.android.com/reference/androidx/fragment/app/FragmentFactory). For more information, see the [Provide dependencies to your fragments](#dependencies) section.
+
+[`setReorderingAllowed(true)`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#setReorderingAllowed%28boolean%29) optimizes the state changes of the fragments involved in the transaction so that animations and transitions work correctly. For more information on navigating with animations and transitions, see [Fragment transactions](https://developer.android.com/guide/fragments/transactions) and [Navigate between fragments using animations](https://developer.android.com/training/basics/fragments/animate).
+
+Calling [`addToBackStack()`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29) commits the transaction to the back stack. The user can later reverse the transaction and bring back the previous fragment by tapping the Back button. If you added or removed multiple fragments within a single transaction, all those operations are undone when the back stack is popped. The optional name provided in the `addToBackStack()` call gives you the ability to pop back to a specific transaction using [`popBackStack()`](https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28java.lang.String,%20int%29).
+
+If you don't call `addToBackStack()` when you perform a transaction that removes a fragment, then the removed fragment is destroyed when the transaction is committed, and the user cannot navigate back to it. If you do call `addToBackStack()` when removing a fragment, then the fragment is only `STOPPED` and is later `RESUMED` when the user navigates back. Its view *is* destroyed in this case. For more information, see [Fragment lifecycle](https://developer.android.com/guide/fragments/lifecycle).
+
+## FAQs
+
+### Difference and uses of `onCreate()`, `onCreateView()` in fragments
 
 **[`onCreate()`](http://developer.android.com/reference/android/app/Fragment.html#onCreate%28android.os.Bundle%29):**
 
