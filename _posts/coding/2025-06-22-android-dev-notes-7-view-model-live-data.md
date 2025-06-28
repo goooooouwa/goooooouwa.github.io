@@ -4,7 +4,7 @@ category: coding
 tags: android live-data view-model
 published: true
 ---
-## ViewModel
+## How to use ViewModel
 
 ### 0. 安装ViewModel, LiveData和其他Lifecycle依赖
 
@@ -40,7 +40,45 @@ dependencies {
         implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
 ```
 
-### ViewModel benefits
+### 1. How to create a view model
+
+```kotlin
+import androidx.lifecycle.ViewModel
+
+class MyViewModel : ViewModel() {
+    // Your ViewModel logic here
+}
+```
+
+### 2. How to access a view model
+
+To access a ViewModel, you use the `viewModels()` extension functions (for Fragments and Activities) provided by the `androidx.activity` library. This function retrieve a `ViewModel` instance scoped to the `ViewModelStoreOwner` (Activity, Fragment, or Navigation destination). 
+
+```kotlin
+import androidx.activity.viewModels
+
+class DiceRollActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // Create a ViewModel the first time the system calls an activity's onCreate() method.
+        // Re-created activities receive the same DiceRollViewModel instance created by the first activity.
+
+        // Use the 'by viewModels()' Kotlin property delegate
+        // from the activity-ktx artifact
+        val myViewModel: MyViewModel by viewModels()
+        // Now you can access myViewModel
+    }
+}
+```
+
+#### Kotlin `by` keyword
+
+The Kotlin soft keyword `by` is to:
+
+- [delegates the implementation of an interface to another object.](https://kotlinlang.org/docs/delegation.html)
+- [delegates the implementation of the accessors for a property to another object.](https://kotlinlang.org/docs/delegated-properties.html)
+
+## ViewModel benefits
 
 The key benefits of the ViewModel class are essentially two:
 
@@ -56,7 +94,6 @@ ViewModel allows persistence through both the state that a ViewModel holds, and 
 When you instantiate a ViewModel, you pass it an object that implements the [`ViewModelStoreOwner`](https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner) interface. This may be a Navigation destination, Navigation graph, activity, fragment, or any other type that implements the interface. Your ViewModel is then scoped to the [Lifecycle](https://developer.android.com/reference/androidx/lifecycle/Lifecycle) of the `ViewModelStoreOwner`. It remains in memory until its `ViewModelStoreOwner` goes away permanently.
 
 A range of classes are either direct or indirect subclasses of the `ViewModelStoreOwner` interface. The direct subclasses are [`ComponentActivity`](https://developer.android.com/reference/androidx/activity/ComponentActivity), [`Fragment`](https://developer.android.com/reference/androidx/fragment/app/Fragment), and [`NavBackStackEntry`](https://developer.android.com/reference/androidx/navigation/NavBackStackEntry). For a full list of indirect subclasses, see the [`ViewModelStoreOwner` reference](https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner).
-
 
 When the fragment or activity to which the ViewModel is scoped is destroyed, asynchronous work continues in the ViewModel that is scoped to it. This is the key to persistence.
 
@@ -77,5 +114,3 @@ ViewModel is the right place to handle business logic in the UI layer. The ViewM
 - https://developer.android.com/topic/libraries/architecture/viewmodel
 - https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies
 - https://developer.android.com/topic/libraries/architecture/livedata
-
-
