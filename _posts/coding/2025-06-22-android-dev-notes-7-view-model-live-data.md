@@ -215,9 +215,7 @@ class UserActivity : AppCompatActivity() {
 
 ### 4. Update LiveData: 
 
-- If you're using `MutableLiveData`, you must update its value using `setValue()` (if called from the main thread) or `postValue()` (for updates from background threads).
-
-Example:
+`LiveData` class has no publicly available methods to update the stored data. The `MutableLiveData` class extends `LiveData` with publicly exposed `setValue(T)` and `postValue(T)` methods. You must use these if you need to edit the value stored in a `LiveData` object. Usually `MutableLiveData` is used in the `ViewModel` and then the `ViewModel` only exposes immutable `LiveData` objects to the observers.
 
 ```kotlin
 button.setOnClickListener {
@@ -225,6 +223,8 @@ button.setOnClickListener {
     userViewmodel.currentUser.setValue(anotherUser)  // On main thread
 }
 ```
+
+Note: You must call the `setValue(T)` method to update the `LiveData` object from the main thread. If the code is executed in a worker thread, you can use the `postValue(T)` method instead to update the `LiveData` object.
 
 ### Use LiveData with Room
 
