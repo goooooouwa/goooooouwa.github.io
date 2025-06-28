@@ -63,10 +63,20 @@ class ExampleFragment : Fragment() {
 
 **[`onCreate()`](https://developer.android.com/reference/android/app/Fragment.html#onCreate(android.os.Bundle)):**
 
+```kotlin
+public void onCreate (Bundle savedInstanceState)
+```
+
 The `onCreate()` method in a `Fragment` is **called after the `Activity`'s `onAttachFragment()`** but before that `Fragment`'s `onCreateView()`.  
 In this method, you can assign variables, get `Intent` extras, and **anything else that doesn't involve the View hierarchy** (i.e. non-graphical initialisations). This is because this method can be called when the `Activity`'s `onCreate()` is not finished, and so trying to access the View hierarchy here may result in a crash.
 
 **[`onCreateView()`](https://developer.android.com/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater,%20android.view.ViewGroup,%20android.os.Bundle)):**
+
+```kotlin
+public View onCreateView (LayoutInflater inflater, 
+                ViewGroup container, 
+                Bundle savedInstanceState)
+```
 
 After the `onCreate()` is called (in the `Fragment`), the `Fragment`'s `onCreateView()` is called. You can assign your `View` variables and **do any graphical initialisations**. You are expected to return a `View` from this method, and this is the main UI view, but if your `Fragment` does not use any layouts or graphics, you can return `null` (happens by default if you don't override).
 
