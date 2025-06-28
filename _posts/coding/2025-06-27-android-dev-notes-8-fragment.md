@@ -39,6 +39,22 @@ To create a fragment, extend the AndroidX [`Fragment`](https://developer.android
 class ExampleFragment : Fragment(R.layout.example_fragment)
 ```
 
+#### Difference and uses of `onCreate()`, `onCreateView()` in fragments
+
+**[`onCreate()`](http://developer.android.com/reference/android/app/Fragment.html#onCreate%28android.os.Bundle%29):**
+
+The `onCreate()` method in a `Fragment` is **called after the `Activity`'s `onAttachFragment()`** but before that `Fragment`'s `onCreateView()`.  
+In this method, you can assign variables, get `Intent` extras, and **anything else that doesn't involve the View hierarchy** (i.e. non-graphical initialisations). This is because this method can be called when the `Activity`'s `onCreate()` is not finished, and so trying to access the View hierarchy here may result in a crash.
+
+**[`onCreateView()`](http://developer.android.com/reference/android/app/Fragment.html#onCreateView%28android.view.LayoutInflater%2C+android.view.ViewGroup%2C+android.os.Bundle%29):**
+
+After the `onCreate()` is called (in the `Fragment`), the `Fragment`'s `onCreateView()` is called. You can assign your `View` variables and **do any graphical initialisations**. You are expected to return a `View` from this method, and this is the main UI view, but if your `Fragment` does not use any layouts or graphics, you can return `null` (happens by default if you don't override).
+
+**To sum up**
+
+They are all called in the `Fragment` but are called at different times.  
+The `onCreate()` is called first, for doing any non-graphical initialisations. Next, you can assign and declare any `View` variables you want to use in `onCreateView()`.
+
 ### Add a fragment to an activity
 
 Generally, your fragment must be embedded within an AndroidX [`FragmentActivity`](https://developer.android.com/reference/androidx/fragment/app/FragmentActivity) to contribute a portion of UI to that activity's layout. `FragmentActivity` is the base class for [`AppCompatActivity`](https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity), so if you're already subclassing `AppCompatActivity` to provide backward compatibility in your app, then you do not need to change your activity base class.
@@ -183,24 +199,6 @@ In this example, `ExampleFragment` replaces the fragment, if any, that is curren
 Calling [`addToBackStack()`](https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29) commits the transaction to the back stack. The user can later reverse the transaction and bring back the previous fragment by tapping the Back button. If you added or removed multiple fragments within a single transaction, all those operations are undone when the back stack is popped. The optional name provided in the `addToBackStack()` call gives you the ability to pop back to a specific transaction using [`popBackStack()`](https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28java.lang.String,%20int%29).
 
 If you don't call `addToBackStack()` when you perform a transaction that removes a fragment, then the removed fragment is destroyed when the transaction is committed, and the user cannot navigate back to it. If you do call `addToBackStack()` when removing a fragment, then the fragment is only `STOPPED` and is later `RESUMED` when the user navigates back. Its view *is* destroyed in this case. For more information, see [Fragment lifecycle](https://developer.android.com/guide/fragments/lifecycle).
-
-## FAQs
-
-### Difference and uses of `onCreate()`, `onCreateView()` in fragments
-
-**[`onCreate()`](http://developer.android.com/reference/android/app/Fragment.html#onCreate%28android.os.Bundle%29):**
-
-The `onCreate()` method in a `Fragment` is **called after the `Activity`'s `onAttachFragment()`** but before that `Fragment`'s `onCreateView()`.  
-In this method, you can assign variables, get `Intent` extras, and **anything else that doesn't involve the View hierarchy** (i.e. non-graphical initialisations). This is because this method can be called when the `Activity`'s `onCreate()` is not finished, and so trying to access the View hierarchy here may result in a crash.
-
-**[`onCreateView()`](http://developer.android.com/reference/android/app/Fragment.html#onCreateView%28android.view.LayoutInflater%2C+android.view.ViewGroup%2C+android.os.Bundle%29):**
-
-After the `onCreate()` is called (in the `Fragment`), the `Fragment`'s `onCreateView()` is called. You can assign your `View` variables and **do any graphical initialisations**. You are expected to return a `View` from this method, and this is the main UI view, but if your `Fragment` does not use any layouts or graphics, you can return `null` (happens by default if you don't override).
-
-**To sum up**
-
-They are all called in the `Fragment` but are called at different times.  
-The `onCreate()` is called first, for doing any non-graphical initialisations. Next, you can assign and declare any `View` variables you want to use in `onCreateView()`.
 
 ## References:
 
