@@ -15,17 +15,7 @@ This document describes how to create a fragment and include it in an activity.
 
 ### Setup your environment
 
-Fragments require a dependency on the [AndroidX Fragment library](https://developer.android.com/jetpack/androidx/releases/fragment). You need to add the [Google Maven repository](https://developer.android.com/studio/build/dependencies#google-maven) to your project's `settings.gradle` file in order to include this dependency.
-
-```kotlin
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        ...
-    }
-}
-```
+Fragments require a dependency on the [AndroidX Fragment library](https://developer.android.com/jetpack/androidx/releases/fragment).
 
 To include the AndroidX Fragment library to your project, add the following dependencies in your app's `build.gradle` file:
 
