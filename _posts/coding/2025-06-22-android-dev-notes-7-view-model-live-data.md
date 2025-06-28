@@ -4,6 +4,9 @@ category: coding
 tags: android live-data view-model
 published: true
 ---
+* TOC
+{:toc}
+
 ## How to use ViewModel
 
 ### 0. 安装ViewModel, LiveData和其他Lifecycle依赖
@@ -73,7 +76,7 @@ class DiceRollActivity : AppCompatActivity() {
 
 #### Kotlin `by` keyword
 
-The Kotlin soft keyword `by` is to:
+The Kotlin soft keyword `by` can bee used to:
 
 - [delegates the implementation of an interface to another object.](https://kotlinlang.org/docs/delegation.html)
 - [delegates the implementation of the accessors for a property to another object.](https://kotlinlang.org/docs/delegated-properties.html)
