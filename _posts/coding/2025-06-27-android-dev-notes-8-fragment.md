@@ -39,7 +39,7 @@ To create a fragment, extend the AndroidX [`Fragment`](https://developer.android
 class ExampleFragment : Fragment(R.layout.example_fragment)
 ```
 
-You can customize the fragment's view by override the `onCreateView()` method.
+You can customize the fragment's view by overriding the `onCreateView()` method.
 
 ```kotlin
 class ExampleFragment : Fragment() {
