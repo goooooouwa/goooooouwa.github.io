@@ -78,6 +78,23 @@ The Kotlin soft keyword `by` is to:
 - [delegates the implementation of an interface to another object.](https://kotlinlang.org/docs/delegation.html)
 - [delegates the implementation of the accessors for a property to another object.](https://kotlinlang.org/docs/delegated-properties.html)
 
+## The lifecycle of a ViewModel
+
+The lifecycle of a [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) is tied directly to its scope. A `ViewModel` remains in memory until the [`ViewModelStoreOwner`](https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner) to which it is scoped disappears. This may occur in the following contexts:
+
+- In the case of an activity, when it finishes.
+- In the case of a fragment, when it detaches.
+- In the case of a Navigation entry, when it's removed from the back stack.
+
+This makes ViewModels a great solution for storing data that survives configuration changes.
+
+Figure 1 illustrates the various lifecycle states of an activity as it undergoes a rotation and then is finished. The illustration also shows the lifetime of the [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) next to the associated activity lifecycle. This particular diagram illustrates the states of an activity. The same basic states apply to the lifecycle of a fragment.
+
+![Illustrates the lifecycle of a ViewModel as an activity changes state.]({{site.baseurl}}/assets/images/viewmodel-lifecycle.png)
+
+
+You usually request a [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) the first time the system calls an activity object's [`onCreate()`](https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29) method. The system may call [`onCreate()`](https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29) several times throughout the existence of an activity, such as when a device screen is rotated. The [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) exists from when you first request a [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) until the activity is finished and destroyed.
+
 ## ViewModel benefits
 
 The key benefits of the ViewModel class are essentially two:
