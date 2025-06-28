@@ -167,48 +167,63 @@ LiveData allows UI controller observers to subscribe to updates. When the data h
 
 ## How to use LiveData
 
-### 1. Create a LiveData instance:
+### 1. Create LiveData objects
 
-- You typically create a LiveData object within your ViewModel.
-- Use `MutableLiveData` if you need to update the data, or `LiveData` if the data is read-only.
-- Example: `val userData = MutableLiveData<User>()`
-
-### 2. Create an Observer: 
-
-- Define an `Observer` object that specifies what to do when the LiveData's data changes.
-- Implement the `onChanged()` method to handle the data update.
-- This is usually done in your UI controller (Activity or Fragment).
-
-Example:
+LiveData is a wrapper that can be used with any data, including objects that implement `[Collections](https://developer.android.com/reference/java/util/Collections)`, such as `[List](https://developer.android.com/reference/java/util/List)`. A [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) object is usually stored within a [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/ViewModel) object and is accessed via a getter method, as demonstrated in the following example:
 
 ```kotlin
-val userObserver = Observer<User> { user ->
-    // Update UI with the new user data
+class UserViewModel : ViewModel() {
+
+    // Create a LiveData with a String
+    val currentUser = MutableLiveData<User>()
+
+    // Rest of the ViewModel...
 }
 ```
 
-### 3. Observe the LiveData: 
+Initially, the data in a `LiveData` object is not set.
 
-- Attach the Observer to the LiveData object using the `observe()` method.    
-- The `observe()` method takes a `LifecycleOwner` (like your Activity or Fragment) which helps manage the observer's lifecycle.
 
-Example:
+### 2. Observe LiveData objects
+
+In most cases, an app component’s `[onCreate()](https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29)` method is the right place to begin observing a [`LiveData`](https://developer.android.com/reference/androidx/lifecycle/LiveData) object
+
 
 ```kotlin
-viewModel.getUserData().observe(this, userObserver)
-```
+class UserActivity : AppCompatActivity() {
 
-- This ensures the observer is only active when the LifecycleOwner is in an active state (e.g., not stopped or destroyed). 
+    // Use the 'by viewModels()' Kotlin property delegate
+    // from the activity-ktx artifact
+    private val userViewmodel: UserViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Other code to setup the activity...
+
+        // Create the observer which updates the UI.
+        val userObserver = Observer<User> { newUser ->
+            // Update the UI, in this case, a TextView.
+            userNameView.text = newUser.name
+        }
+
+        // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
+        userViewmodel.currentUser.observe(this, userObserver)
+    }
+}
+```
 
 ### 4. Update LiveData: 
 
-- If you're using `MutableLiveData`, you can update its value using `setValue()` (if called from the main thread) or `postValue()` (for updates from background threads).
+- If you're using `MutableLiveData`, you must update its value using `setValue()` (if called from the main thread) or `postValue()` (for updates from background threads).
 
 Example:
 
 ```kotlin
-viewModel.userData.value = newUser // On main thread
-viewModel.userData.postValue(newUser) // From background thread
+button.setOnClickListener {
+    val anotherUser = User(name:"John Doe")
+    userViewmodel.currentUser.setValue(anotherUser)  // On main thread
+}
 ```
 
 ### Use LiveData with Room
