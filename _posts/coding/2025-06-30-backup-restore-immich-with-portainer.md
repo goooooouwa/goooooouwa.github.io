@@ -11,7 +11,7 @@ docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgre
 
 ### 2.1 Deletes all Immich data to start from scratch
 
-1. Remove all immich related containers from portainer (check option to remove all unamed volumes)
+1. Remove all immich related containers from portainer (check the option to "Automatically remove non-persistent volumes")
 1. Backup named volumes by renaming them to a different name with [this convenient tool](https://www.commands.dev/workflows/rename_docker_volume) (remember to check the generated commands before running, consider remove the last `docker volume rm` command to avoid accidentally data loss)
 1. Remove immich named volumes from portainer:
 	1. immich_pgdata
