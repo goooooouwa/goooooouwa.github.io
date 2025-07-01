@@ -22,9 +22,20 @@ docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgre
 
 1. Comment out all other services except `immich_postgres` in `docker-compose.yml`
 1. Pull & redeploy all immich images & containers to start `immich_postgres` alone without starting other services
+1. Wait for `immich_postgres` to be fully running (`immich_postgres` might only show "starting" status, it's normal. Check the log, if it says `PostgreSQL init process complete; ready for start up.`, it should be good to go, or just wait for another 10 seconds.)
 
+### 2.3 Restore Postgres DB from dump
+1. Run the following command with the dump file location to restore Postgres DB from dump:  
+  `gunzip --stdout "/home/admin/immich/2025-07-01-dump.sql.gz" | sed "s/SELECT pg_catalog.set_config('search_path', '', false);/SELECT pg_catalog.set_config('search_path', 'public, pg_catalog', true);/g" | sudo docker exec -i immich_postgres psql --dbname=postgres --username=postgres`
 
-  
+### 2.4 Start immich as normal
+
+1. Remove comments on `immich_server`, `immich_machine_learning` & `immich_redis` services in `docker-compose.yml`
+1. Pull & redeploy all immich images & containers to start immich as normal
+1. Open immich & check if everything working as expected
+
+Done!
+
 ## References
 
 - https://immich.app/docs/administration/backup-and-restore/
