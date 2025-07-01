@@ -32,7 +32,8 @@ docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgre
 
 1. Uncomment all other services in `docker-compose.yml`
 1. Pull & redeploy all immich images & containers to start immich as normal
-1. Open immich & check if everything working as expected
+1. Restart nginx
+1. Open immich & check if everything working as expected (scan library & regenerate thumbnails & transcode videos if necessary) 
 
 Done!
 
