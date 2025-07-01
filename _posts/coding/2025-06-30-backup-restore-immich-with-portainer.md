@@ -18,7 +18,7 @@ docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgre
 	1. immich_model-cache
 1. Remove all unused images from portaineer (including `tensorchord/pgvecto-rs` & `redis`)
 
-### 2.2 Start `immich_postgres` alone without starting `immich_server`, `immich_machine_learning` & `immich_redis`
+### 2.2 Start `immich_postgres` alone
 
 1. Comment out all other services except `immich_postgres` in `docker-compose.yml`
 1. Pull & redeploy all immich images & containers to start `immich_postgres` alone without starting other services
@@ -30,7 +30,7 @@ docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgre
 
 ### 2.4 Start immich as normal
 
-1. Remove comments on `immich_server`, `immich_machine_learning` & `immich_redis` services in `docker-compose.yml`
+1. Uncomment all other services in `docker-compose.yml`
 1. Pull & redeploy all immich images & containers to start immich as normal
 1. Open immich & check if everything working as expected
 
