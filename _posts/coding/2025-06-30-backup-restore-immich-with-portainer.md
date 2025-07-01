@@ -1,5 +1,5 @@
 ---
-title: Restore data for Immich with Portainer
+title: How to restore data for Immich with Portainer
 category: coding
 tags: immich portainer postgres docker
 published: true
@@ -7,7 +7,7 @@ published: true
 ## 1. Backup Postgres DB
 docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip > "/path/to/backup/dump.sql.gz"
 
-## 2. Restor Postgres DB
+## 2. Restore Postgres DB
 
 ### 2.1 Deletes all Immich data to start from scratch
 
