@@ -14,7 +14,7 @@ published: true
 1. 创建Entity, Dao和Database类
 2. 使用Singleton模式访问Database实例
 3. 访问Dao对象
-4. 
+4. Kotlin Coroutines
 4. 在UI中进行数据库操作
 5. 在ViewModel中进行数据库操作
 
