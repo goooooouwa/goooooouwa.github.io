@@ -14,6 +14,7 @@ published: true
 1. 创建Entity, Dao和Database类
 2. 使用Singleton模式访问Database实例
 3. 访问Dao对象
+4. 
 4. 在UI中进行数据库操作
 5. 在ViewModel中进行数据库操作
 
@@ -232,13 +233,90 @@ Android app会在数据库初始化时自动根据Entities和Database创建SQLit
 val studentDao = StudentDatabase.getInstance(application).studentDao()
 ```
 
-### 4. 在UI中进行数据库操作
+### 4. Kotlin Coroutines
 
-在Android app中数据库操作需要在非UI thread进行，以避免阻塞UI渲染。使用Kotlin Coroutine可以轻松在不同thread间允许异步代码。
+Kotlin Coroutines是用来管理多线程计算的语法工具。Coroutine里的代码在默认情况下跟普通代码一样，是线性执行的，外层代码不用显式等待Coroutine里的代码在其他线程运算结果的完成（详情见下文Sequential by default）；而如果希望Coroutine里的代码能够并行执行(Concurrency)，则可通过`async` & `await`语法实现（详情见下文Concurrent using async）。
 
-#### 4.1 Kotlin Coroutine语法
+Kotlin provides only minimal low-level APIs in its standard library to enable other libraries to utilize coroutines. Unlike many other languages with similar capabilities, async and await are not keywords in Kotlin and are not even part of its standard library. Moreover, **Kotlin's concept of suspending function provides a safer and less error-prone abstraction for asynchronous operations than futures and promises.**
 
-Coroutine的简单例子：
+`kotlinx.coroutines` is a rich library for coroutines developed by JetBrains. It contains a number of high-level coroutine-enabled primitives, including `launch`, `async`, and others.
+
+#### What is a suspending function
+
+A suspending function is simply a function that can be paused and resumed at a later time. They can execute a long running operation and wait for it to complete without blocking.
+
+The syntax of a suspending function is similar to that of a regular function except for the addition of the suspend keyword. It can take a parameter and have a return type. However, suspending functions can only be invoked by another suspending function or within a coroutine.
+
+```kotlin
+suspend fun backgroundTask(param: Int): Int {
+     // long running operation
+}
+```
+
+#### Sequential by default
+
+Assume that we have two suspending functions defined elsewhere that do something useful like some kind of remote service call or computation. We just pretend they are useful, but actually each one just delays for a second for the purpose of this example:
+
+```kotlin
+suspend fun doSomethingUsefulOne(): Int {
+    delay(1000L) // pretend we are doing something useful here
+    return 13
+}
+
+suspend fun doSomethingUsefulTwo(): Int {
+    delay(1000L) // pretend we are doing something useful here, too
+    return 29
+}
+```
+
+What do we do if we need them to be invoked **sequentially** — first `doSomethingUsefulOne` **and then** `doSomethingUsefulTwo`, and compute the sum of their results? In practice, we do this if we use the result of the first function to make a decision on whether we need to invoke the second one or to decide on how to invoke it.
+
+We use a normal sequential invocation, because the code in the coroutine, just like in the regular code, is **sequential** by default. The following example demonstrates it by measuring the total time it takes to execute both suspending functions:
+
+```kotlin
+val time = measureTimeMillis {
+    val one = doSomethingUsefulOne()
+    val two = doSomethingUsefulTwo()
+    println("The answer is ${one + two}")
+}
+println("Completed in $time ms")
+```
+
+It produces something like this:
+
+```
+The answer is 42
+Completed in 2017 ms
+```
+
+#### Concurrent using async
+
+What if there are no dependencies between invocations of `doSomethingUsefulOne` and `doSomethingUsefulTwo` and we want to get the answer faster, by doing both **concurrently**? This is where [async](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html) comes to help.
+
+Conceptually, [async](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html) is just like [launch](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html). It starts a separate coroutine which is a light-weight thread that works concurrently with all the other coroutines. The difference is that `launch` returns a [Job](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html) and does not carry any resulting value, while `async` returns a [Deferred](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/index.html) — a light-weight non-blocking future that represents a promise to provide a result later. You can use `.await()` on a deferred value to get its eventual result, but `Deferred` is also a `Job`, so you can cancel it if needed.
+
+```kotlin
+val time = measureTimeMillis {
+    val one = async(start = CoroutineStart.LAZY) { doSomethingUsefulOne() }
+    val two = async(start = CoroutineStart.LAZY) { doSomethingUsefulTwo() }
+    // some computation
+    one.start() // start the first one
+    two.start() // start the second one
+    println("The answer is ${one.await() + two.await()}")
+}
+println("Completed in $time ms")
+```
+
+It produces something like this:
+
+```
+The answer is 42
+Completed in 1017 ms
+```
+
+This is twice as fast, because the two coroutines execute concurrently. Note that concurrency with coroutines is always explicit.
+
+#### Coroutine的实例和语法解释
 
 ```kotlin
 fun main() = runBlocking { // this: CoroutineScope
@@ -255,13 +333,24 @@ suspend fun doWorld() {
 
 `launch` is a coroutine builder. It launches a new coroutine concurrently with the rest of the code, which continues to work independently. That's why Hello has been printed first.
 
-`delay` is a special suspending function. It suspends the coroutine for a specific time. Suspending a coroutine does not block the underlying thread, but allows other coroutines to run and use the underlying thread for their code.
-
 `runBlocking` is also a coroutine builder that bridges the non-coroutine world of a regular fun main() and the code with coroutines inside of `runBlocking { ... }` curly braces. This is highlighted in an IDE by `this: CoroutineScope` hint right after the runBlocking opening curly brace.
 
-Suspending functions can be used inside coroutines just like regular functions, but their additional feature is that they can, in turn, use other suspending functions (like delay in this example) to suspend execution of a coroutine.
+`suspend` a suspending function, which is simply a function that can be paused and resumed at a later time. Suspending functions can only be invoked by another suspending function or within a coroutine.
 
-#### 4.2 在UI中进行数据库操作
+`delay` is a special suspending function. It suspends the coroutine for a specific time. Suspending a coroutine does not block the underlying thread, but allows other coroutines to run and use the underlying thread for their code.
+
+`async` creates a coroutine and returns its future result as an implementation of Deferred. The running coroutine is cancelled when the resulting deferred is cancelled. Conceptually, `async` is just like `launch`. It starts a separate coroutine which is a light-weight thread that works concurrently with all the other coroutines. The difference is that `launch` returns a Job and does not carry any resulting value, while `async` returns a `Deferred` — a light-weight non-blocking future that represents a promise to provide a result later.
+
+`await` you can use `.await()` on a deferred value to get its eventual result, but `Deferred` is also a Job, so you can cancel it if needed.
+
+`Deferred` Deferred value is a non-blocking cancellable future — it is a Job with a result.
+
+`Job` a background job. Conceptually, a job is a cancellable thing with a lifecycle that concludes in its completion.
+
+
+### 5. 在UI中进行数据库操作
+
+在Android app中数据库操作需要在非UI thread进行，以避免阻塞UI渲染。使用Kotlin Coroutine可以轻松在不同thread间允许异步代码。
 
 在UI thread中可以使用`CoroutineScope`来启动Coroutine，比如：
 
@@ -274,7 +363,7 @@ button.setOnClickListener {
 }
 ```
 
-### 5. 在ViewModel中进行数据库操作
+### 6. 在ViewModel中进行数据库操作
 
 ViewModel includes a set of KTX extensions that work directly with coroutines. These extension are `lifecycle-viewmodel-ktx` library.
 
@@ -311,3 +400,5 @@ Since this coroutine is started with viewModelScope, it is executed in the scope
 - https://stackoverflow.com/questions/40398072/singleton-with-parameter-in-kotlin
 - https://kotlinlang.org/docs/coroutines-basics.html
 - https://developer.android.com/topic/libraries/architecture/coroutines
+- https://kotlinlang.org/docs/composing-suspending-functions.html
+- https://stackoverflow.com/questions/47871868/what-does-the-suspend-function-mean-in-a-kotlin-coroutine
