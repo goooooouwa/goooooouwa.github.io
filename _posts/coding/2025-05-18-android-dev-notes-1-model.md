@@ -10,14 +10,6 @@ published: true
 
 ## 如何在Android应用中创建和使用数据库
 
-0. 安装Room依赖
-1. 创建Entity, Dao和Database类
-2. 使用Singleton模式访问Database实例
-3. 访问Dao对象
-4. Kotlin Coroutines
-4. 在UI中进行数据库操作
-5. 在ViewModel中进行数据库操作
-
 ### 0. 安装Room依赖
 
 将以下依赖项添加到应用的 build.gradle 文件。
@@ -233,7 +225,35 @@ Android app会在数据库初始化时自动根据Entities和Database创建SQLit
 val studentDao = StudentDatabase.getInstance(application).studentDao()
 ```
 
-### 4. Kotlin Coroutines
+### 4. UI thread & Worker threads
+
+In Android, the UI thread, also known as the main thread, is responsible for handling all UI-related operations and user interactions. Therefore, **long-running or blocking operations** should not be executed on the UI thread to prevent the application from freezing and becoming unresponsive, which can lead to an "Application Not Responding" (ANR) error. 
+
+Here's a more detailed explanation:
+
+- **UI Thread Responsibilities:**
+
+The UI thread is crucial for rendering the user interface, processing user input (like touch events and button clicks), and managing the lifecycle of UI components.
+
+- **Concurrency Issues:**
+
+Android's UI toolkit is not thread-safe, meaning that only the UI thread should directly interact with UI elements. Modifying UI components from other threads can lead to unpredictable behavior and crashes.
+
+- **Consequences of Blocking the UI Thread:**
+
+If the UI thread is blocked for an extended period (typically more than 5 seconds), the system will display an ANR dialog to the user, indicating that the application is not responding.
+
+- **Best Practices:**
+
+To avoid blocking the UI thread, long-running tasks like network requests, database operations, or complex calculations should be offloaded to background threads (also called worker threads).
+
+- **Updating the UI from Background Threads:**
+
+After completing a task in a background thread, the results need to be posted back to the UI thread to update the UI safely. This can be achieved using mechanisms like `runOnUiThread()`, `Handlers`, or `View.post()`, or using modern concurrency APIs like `AsyncTask` or `Kotlin Coroutines`.
+
+In essence, the UI thread should be kept responsive and free from intensive operations to ensure a smooth and efficient user experience.
+
+### 5. Kotlin Coroutines
 
 Kotlin Coroutines是用来管理多线程计算的语法工具。Coroutine里的代码在默认情况下跟普通代码一样，是线性执行的，外层代码不用显式等待Coroutine里的代码在其他线程运算结果的完成（详情见下文Sequential by default）；而如果希望Coroutine里的代码能够并行执行(Concurrency)，则可通过`async` & `await`语法实现（详情见下文Concurrent using async）。
 
@@ -348,7 +368,7 @@ suspend fun doWorld() {
 `Job` a background job. Conceptually, a job is a cancellable thing with a lifecycle that concludes in its completion.
 
 
-### 5. 在UI中进行数据库操作
+### 6. 如何在UI中进行数据库操作
 
 在Android app中数据库操作需要在非UI thread进行，以避免阻塞UI渲染。使用Kotlin Coroutine可以轻松在不同thread间允许异步代码。
 
@@ -363,7 +383,7 @@ button.setOnClickListener {
 }
 ```
 
-### 6. 在ViewModel中进行数据库操作
+### 7. 在ViewModel中进行数据库操作
 
 ViewModel includes a set of KTX extensions that work directly with coroutines. These extension are `lifecycle-viewmodel-ktx` library.
 
@@ -391,8 +411,7 @@ Let's dissect the coroutines code in the `insertStudent` function:
 
 Since this coroutine is started with viewModelScope, it is executed in the scope of the ViewModel. If the ViewModel is destroyed because the user is navigating away from the screen, viewModelScope is automatically cancelled, and all running coroutines are canceled as well.
 
-
-### References:
+## References:
 
 - https://developer.android.com/training/data-storage/room
 - https://developer.android.com/training/data-storage/room/accessing-data
@@ -402,3 +421,4 @@ Since this coroutine is started with viewModelScope, it is executed in the scope
 - https://developer.android.com/topic/libraries/architecture/coroutines
 - https://kotlinlang.org/docs/composing-suspending-functions.html
 - https://stackoverflow.com/questions/47871868/what-does-the-suspend-function-mean-in-a-kotlin-coroutine
+- https://developer.android.com/guide/components/processes-and-threads
