@@ -1,7 +1,7 @@
 ---
 title: Android编程笔记（一）：Model
 category: coding
-tags: android db
+tags: android db model kotlin coroutine
 published: true
 ---
 
