@@ -335,7 +335,7 @@ suspend fun doWorld() {
 
 `runBlocking` is also a coroutine builder that bridges the non-coroutine world of a regular fun main() and the code with coroutines inside of `runBlocking { ... }` curly braces. This is highlighted in an IDE by `this: CoroutineScope` hint right after the runBlocking opening curly brace.
 
-`suspend` a suspending function, which is simply a function that can be paused and resumed at a later time. Suspending functions can only be invoked by another suspending function or within a coroutine.
+`suspend` a suspending function, which is simply a function that can be paused and resumed at a later time. **Suspending functions can only be invoked by another suspending function or within a coroutine.**
 
 `delay` is a special suspending function. It suspends the coroutine for a specific time. Suspending a coroutine does not block the underlying thread, but allows other coroutines to run and use the underlying thread for their code.
 
