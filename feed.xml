@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2025-07-11T22:29:44+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">Jellyfin和ErsatzTV在Windows实机上硬件加速的一次尝试</title><link href="https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment.html" rel="alternate" type="text/html" title="Jellyfin和ErsatzTV在Windows实机上硬件加速的一次尝试" /><published>2025-07-11T00:00:00+00:00</published><updated>2025-07-11T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment.html"><![CDATA[<p>我的硬件是J4125迷你主机，采用在Windows实机（非虚拟机）环境下安装Jellyfin和ErsatzTV。</p>
+
+<h2 id="jellyfin转码成功">Jellyfin转码成功</h2>
+
+<p>经验证，Jellyfin可以成功转码（如下图所示）。</p>
+
+<p><img src="/assets/images/jellyfin-web-player-transcode-information.png" alt="jellyfin-web-player-transcode-information.png" /></p>
+
+<p><img src="/assets/images/cpu-gpu-resource-usage-when-transcoding.png" alt="cpu-gpu-resource-usage-when-transcoding.png" /></p>
+
+<p>Jellyfin官方推荐的硬件转码配置方案推荐顺序如下：</p>
+
+<p>Apple ≥ Intel ≥ Nvidia »&gt; AMD*</p>
+
+<p>其中，集成显卡方案中推荐的CPU配置如下：</p>
+
+<p>CPU: Intel Core i5-11400, Intel Pentium Gold G7400, Intel N100, Apple M series or newer (excluding Intel J/M/N/Y series up to 11th gen)</p>
+
+<p>独立显卡的方案因为Nvidia显卡对Linux支持不够友好，因此我暂时不考虑。Apple M系列我暂时也不考虑。i5功耗较高。综合而言，最适合我的是N100系列迷你主机。</p>
+
+<p>注意，Jellyfin不推荐J系列CPU，包括J4125，原因是架构太老，对最新的视频编码格式支持不够全面。</p>
+
+<p>来源：<a href="https://jellyfin.org/docs/general/administration/hardware-selection/#server-with-integrated-graphics">https://jellyfin.org/docs/general/administration/hardware-selection/#server-with-integrated-graphics</a></p>
+
+<h2 id="ersatztv在windows下未转码成功">ErsatzTV在Windows下未转码成功</h2>
+
+<p>ErsatzTV则是无法在Windows下成功转码。由于VA-API只支持Linux，所以Windows下只能选择QSV。但实际使用发现，J4125无法成功通过QSV进行转码，根据作者的推测是因为CPU太老了。</p>
+
+<p>来源：<a href="https://discuss.ersatztv.org/d/88-help-with-intel-igpu-gen9-htop-shows-ersatz-using-cpu-for-ffmpeg">https://discuss.ersatztv.org/d/88-help-with-intel-igpu-gen9-htop-shows-ersatz-using-cpu-for-ffmpeg</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="jellyfin" /><category term="ersatztv" /><category term="hardware-acceleration" /><category term="transcode" /><summary type="html"><![CDATA[我的硬件是J4125迷你主机，采用在Windows实机（非虚拟机）环境下安装Jellyfin和ErsatzTV。]]></summary></entry><entry><title type="html">Android编程笔记（九）：推荐的代码库目录结构</title><link href="https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure.html" rel="alternate" type="text/html" title="Android编程笔记（九）：推荐的代码库目录结构" /><published>2025-07-04T00:00:00+00:00</published><updated>2025-07-04T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure.html"><![CDATA[<h2 id="概览">概览</h2>
+
+<p><img src="/assets/images/android-directory-structure.png" alt="android-directory-structure.png" /></p>
+
+<p>我个人习惯使用以下目录：</p>
+
+<ul>
+  <li>api</li>
+  <li>db</li>
+  <li>utilities</li>
+  <li>ui</li>
+  <li>viewmodels</li>
+  <li>workers</li>
+</ul>
+
+<h3 id="db子目录">DB子目录</h3>
+
+<p>This directory houses all DB-related components:</p>
+<ul>
+  <li>Database: The main access point to your app’s persistent data.</li>
+  <li>Data Entities: Classes that represent tables in your database.</li>
+  <li>Data Access Objects (Dao): Interfaces or abstract classes that define methods for accessing and manipulating data in your database.</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/db:</p>
+
+<ul>
+  <li>Database.kt</li>
+  <li>ADao.kt</li>
+  <li>A.kt</li>
+  <li>BDao.kt</li>
+  <li>B.kt</li>
+</ul>
+
+<h3 id="ui组件子目录">UI组件子目录</h3>
+
+<p>This directory houses all UI-related components:</p>
+<ul>
+  <li>Activities: The entry points for user interaction.</li>
+  <li>Fragments: Reusable UI components that can be combined within Activities.</li>
+  <li>Custom Views: Specialized UI elements created by extending existing View classes.</li>
+  <li>Adapters: Classes that bridge data and UI elements for displaying lists or grids.</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/ui:</p>
+
+<ul>
+  <li>MainActivity.kt</li>
+  <li>AListFragment.kt</li>
+  <li>ADetailsFragment.kt</li>
+  <li>ARecyclerViewAdapter.kt</li>
+  <li>BListFragment.kt</li>
+  <li>BDetailsFragment.kt</li>
+  <li>CFragment.kt</li>
+</ul>
+
+<h3 id="view-models子目录">View Models子目录</h3>
+
+<p>viewmodels directory:</p>
+<ul>
+  <li>Contains ViewModel classes that manages UI-related data and survives configuration changes (like screen rotation).</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/viewmodel:</p>
+
+<ul>
+  <li>AViewModel.kt</li>
+  <li>BViewModel.kt</li>
+</ul>
+
+<h3 id="ui布局子目录">UI布局子目录</h3>
+<p>src/main/res/layout:</p>
+
+<ul>
+  <li>activity_main.xml</li>
+  <li>fragment_a_list.xml</li>
+  <li>fragment_a_details.xml</li>
+  <li>fragment_b_list.xml</li>
+  <li>fragment_b_details.xml</li>
+  <li>fragment_c.xml</li>
+  <li>list_item.xml</li>
+</ul>
+
+<h3 id="ui导航子目录">UI导航子目录</h3>
+<p>src/main/res/navigation:</p>
+
+<ul>
+  <li>nav_graph.xml</li>
+</ul>
+
+<h3 id="androidmanifest声明文件">AndroidManifest声明文件</h3>
+
+<p>src/main:</p>
+
+<ul>
+  <li>AndroidManifest.xml</li>
+</ul>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://stackoverflow.com/a/63650013</li>
+  <li>https://blog.stackademic.com/organizing-your-android-app-with-mvvm-a-package-hierarchy-guide-c1c0f48fba60</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="directory-structure" /><summary type="html"><![CDATA[概览]]></summary></entry><entry><title type="html">How to restore data for Immich with Portainer</title><link href="https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer.html" rel="alternate" type="text/html" title="How to restore data for Immich with Portainer" /><published>2025-06-30T00:00:00+00:00</published><updated>2025-06-30T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer.html"><![CDATA[<h2 id="1-backup-postgres-db">1. Backup Postgres DB</h2>
+<p>docker exec -t immich_postgres pg_dumpall –clean –if-exists –username=postgres | gzip &gt; “/path/to/backup/dump.sql.gz”</p>
+
+<h2 id="2-restore-postgres-db">2. Restore Postgres DB</h2>
+
+<h3 id="21-deletes-all-immich-data-to-start-from-scratch">2.1 Deletes all Immich data to start from scratch</h3>
+
+<ol>
+  <li>Remove all immich related containers from portainer (check the option to “Automatically remove non-persistent volumes”)</li>
+  <li>Backup named volumes by renaming them to a different name with <a href="https://www.commands.dev/workflows/rename_docker_volume">this convenient tool</a> (remember to check the generated commands before running, consider remove the last <code class="language-plaintext highlighter-rouge">docker volume rm</code> command to avoid accidentally data loss)</li>
+  <li>Remove immich named volumes from portainer:
+    <ol>
+      <li>immich_pgdata</li>
+      <li>immich_model-cache</li>
+    </ol>
+  </li>
+  <li>Remove all unused images from portaineer (including <code class="language-plaintext highlighter-rouge">tensorchord/pgvecto-rs</code> &amp; <code class="language-plaintext highlighter-rouge">redis</code>)</li>
+</ol>
+
+<h3 id="22-start-immich_postgres-alone">2.2 Start <code class="language-plaintext highlighter-rouge">immich_postgres</code> alone</h3>
+
+<ol>
+  <li>Comment out all other services except <code class="language-plaintext highlighter-rouge">immich_postgres</code> in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
+  <li>Pull &amp; redeploy all immich images &amp; containers to start <code class="language-plaintext highlighter-rouge">immich_postgres</code> alone without starting other services</li>
+  <li>Wait for <code class="language-plaintext highlighter-rouge">immich_postgres</code> to be fully running (<code class="language-plaintext highlighter-rouge">immich_postgres</code> might only show “starting” status, it’s normal. Check the log, if it says <code class="language-plaintext highlighter-rouge">PostgreSQL init process complete; ready for start up.</code>, it should be good to go, or just wait for another 10 seconds.)</li>
+</ol>
+
+<h3 id="23-restore-postgres-db-from-dump">2.3 Restore Postgres DB from dump</h3>
+<ol>
+  <li>Run the following command with the dump file location to restore Postgres DB from dump:<br />
+  <code class="language-plaintext highlighter-rouge">gunzip --stdout "/home/admin/immich/2025-07-01-dump.sql.gz" | sed "s/SELECT pg_catalog.set_config('search_path', '', false);/SELECT pg_catalog.set_config('search_path', 'public, pg_catalog', true);/g" | sudo docker exec -i immich_postgres psql --dbname=postgres --username=postgres</code></li>
+</ol>
+
+<h3 id="24-start-immich-as-normal">2.4 Start immich as normal</h3>
+
+<ol>
+  <li>Uncomment all other services in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
+  <li>Pull &amp; redeploy all immich images &amp; containers to start immich as normal</li>
+  <li>Restart nginx</li>
+  <li>Open immich &amp; check if everything working as expected (scan library &amp; regenerate thumbnails &amp; transcode videos if necessary)</li>
+</ol>
+
+<p>Done!</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>https://immich.app/docs/administration/backup-and-restore/</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="immich" /><category term="portainer" /><category term="postgres" /><category term="docker" /><summary type="html"><![CDATA[1. Backup Postgres DB docker exec -t immich_postgres pg_dumpall –clean –if-exists –username=postgres | gzip &gt; “/path/to/backup/dump.sql.gz”]]></summary></entry><entry><title type="html">Android编程笔记（八）：Fragment</title><link href="https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html" rel="alternate" type="text/html" title="Android编程笔记（八）：Fragment" /><published>2025-06-27T00:00:00+00:00</published><updated>2025-06-27T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#how-to-use-fragments" id="markdown-toc-how-to-use-fragments">How to use fragments</a>    <ul>
+      <li><a href="#setup-your-environment" id="markdown-toc-setup-your-environment">Setup your environment</a></li>
+      <li><a href="#create-a-fragment-class" id="markdown-toc-create-a-fragment-class">Create a fragment class</a>        <ul>
+          <li><a href="#difference-and-uses-of-oncreate-oncreateview-in-fragments" id="markdown-toc-difference-and-uses-of-oncreate-oncreateview-in-fragments">Difference and uses of <code class="language-plaintext highlighter-rouge">onCreate()</code>, <code class="language-plaintext highlighter-rouge">onCreateView()</code> in fragments</a></li>
+        </ul>
+      </li>
+      <li><a href="#add-a-fragment-to-an-activity" id="markdown-toc-add-a-fragment-to-an-activity">Add a fragment to an activity</a>        <ul>
+          <li><a href="#add-a-fragment-via-xml" id="markdown-toc-add-a-fragment-via-xml">Add a fragment via XML</a></li>
+          <li><a href="#add-a-fragment-programmatically" id="markdown-toc-add-a-fragment-programmatically">Add a fragment programmatically</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#fragment-manager" id="markdown-toc-fragment-manager">Fragment manager</a>    <ul>
+      <li><a href="#access-the-fragmentmanager" id="markdown-toc-access-the-fragmentmanager">Access the FragmentManager</a></li>
+      <li><a href="#child-fragments" id="markdown-toc-child-fragments">Child fragments</a></li>
+      <li><a href="#use-the-fragmentmanager" id="markdown-toc-use-the-fragmentmanager">Use the FragmentManager</a></li>
+      <li><a href="#perform-a-transaction" id="markdown-toc-perform-a-transaction">Perform a transaction</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="how-to-use-fragments">How to use fragments</h2>
+
+<p>A <a href="https://developer.android.com/guide/fragments">fragment</a> represents a modular portion of the user interface within an activity. A fragment has its own lifecycle, receives its own input events, and you can add or remove fragments while the containing activity is running.</p>
+
+<p>This document describes how to create a fragment and include it in an activity.</p>
+
+<h3 id="setup-your-environment">Setup your environment</h3>
+
+<p>Fragments require a dependency on the <a href="https://developer.android.com/jetpack/androidx/releases/fragment">AndroidX Fragment library</a>.</p>
+
+<p>To include the AndroidX Fragment library to your project, add the following dependencies in your app’s <code class="language-plaintext highlighter-rouge">build.gradle</code> file:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">fragment_version</span> <span class="p">=</span> <span class="s">"1.8.8"</span>
+
+    <span class="c1">// Java language implementation</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.fragment:fragment:$fragment_version"</span><span class="p">)</span>
+    <span class="c1">// Kotlin</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.fragment:fragment-ktx:$fragment_version"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="create-a-fragment-class">Create a fragment class</h3>
+
+<p>To create a fragment, extend the AndroidX <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment"><code class="language-plaintext highlighter-rouge">Fragment</code></a> class, and override its methods to insert your app logic, similar to the way you would create an <a href="https://developer.android.com/reference/android/app/Activity"><code class="language-plaintext highlighter-rouge">Activity</code></a> class. To create a minimal fragment that defines its own layout, provide your fragment’s layout resource to the base constructor, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleFragment</span> <span class="p">:</span> <span class="nc">Fragment</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">example_fragment</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can customize the fragment’s view by overriding the <code class="language-plaintext highlighter-rouge">onCreateView()</code> method.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleFragment</span> <span class="p">:</span> <span class="nc">Fragment</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateView</span><span class="p">(</span>
+        <span class="n">inflater</span><span class="p">:</span> <span class="nc">LayoutInflater</span><span class="p">,</span> <span class="n">container</span><span class="p">:</span> <span class="nc">ViewGroup</span><span class="p">?,</span>
+        <span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?</span>
+    <span class="p">):</span> <span class="nc">View</span><span class="p">?</span> <span class="p">{</span>
+        <span class="c1">// Inflate the layout for this fragment.</span>
+        <span class="c1">// or you can inflate a different layout here.</span>
+        <span class="kd">val</span> <span class="py">root</span><span class="p">:</span> <span class="nc">View</span> <span class="p">=</span> <span class="n">inflater</span><span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">my_fragment_layout</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+        
+        <span class="c1">// Additional graphical initialisations...</span>
+        
+        <span class="k">return</span> <span class="n">root</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="difference-and-uses-of-oncreate-oncreateview-in-fragments">Difference and uses of <code class="language-plaintext highlighter-rouge">onCreate()</code>, <code class="language-plaintext highlighter-rouge">onCreateView()</code> in fragments</h4>
+
+<p><strong><a href="https://developer.android.com/reference/android/app/Fragment.html#onCreate(android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreate()</code></a>:</strong></p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">void</span> <span class="nf">onCreate</span> <span class="p">(</span><span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Called to do initial creation of a fragment. The <code class="language-plaintext highlighter-rouge">onCreate()</code> method in a <code class="language-plaintext highlighter-rouge">Fragment</code> is <strong>called after the <code class="language-plaintext highlighter-rouge">Activity</code>’s <code class="language-plaintext highlighter-rouge">onAttachFragment()</code></strong> but before that <code class="language-plaintext highlighter-rouge">Fragment</code>’s <code class="language-plaintext highlighter-rouge">onCreateView()</code>.<br />
+In this method, you can assign variables, get <code class="language-plaintext highlighter-rouge">Intent</code> extras, and <strong>anything else that doesn’t involve the View hierarchy</strong> (i.e. non-graphical initialisations). This is because this method can be called when the <code class="language-plaintext highlighter-rouge">Activity</code>’s <code class="language-plaintext highlighter-rouge">onCreate()</code> is not finished, and so trying to access the View hierarchy here may result in a crash.</p>
+
+<p><strong><a href="https://developer.android.com/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater,%20android.view.ViewGroup,%20android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreateView()</code></a>:</strong></p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nc">View</span> <span class="nf">onCreateView</span> <span class="p">(</span><span class="nc">LayoutInflater</span> <span class="n">inflater</span><span class="p">,</span> 
+                <span class="nc">ViewGroup</span> <span class="n">container</span><span class="p">,</span> 
+                <span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Called to have the fragment instantiate its user interface view. After the <code class="language-plaintext highlighter-rouge">onCreate()</code> is called (in the <code class="language-plaintext highlighter-rouge">Fragment</code>), the <code class="language-plaintext highlighter-rouge">Fragment</code>’s <code class="language-plaintext highlighter-rouge">onCreateView()</code> is called. You can assign your <code class="language-plaintext highlighter-rouge">View</code> variables and <strong>do any graphical initialisations</strong>. You are expected to return a <code class="language-plaintext highlighter-rouge">View</code> from this method, and this is the main UI view, but if your <code class="language-plaintext highlighter-rouge">Fragment</code> does not use any layouts or graphics, you can return <code class="language-plaintext highlighter-rouge">null</code> (happens by default if you don’t override).</p>
+
+<p><strong>To sum up</strong></p>
+
+<p>They are all called in the <code class="language-plaintext highlighter-rouge">Fragment</code> but are called at different times.<br />
+The <code class="language-plaintext highlighter-rouge">onCreate()</code> is called first, for doing any non-graphical initialisations. Next, you can assign and declare any <code class="language-plaintext highlighter-rouge">View</code> variables you want to use in <code class="language-plaintext highlighter-rouge">onCreateView()</code>.</p>
+
+<h3 id="add-a-fragment-to-an-activity">Add a fragment to an activity</h3>
+
+<p>Generally, your fragment must be embedded within an AndroidX <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity"><code class="language-plaintext highlighter-rouge">FragmentActivity</code></a> to contribute a portion of UI to that activity’s layout. <code class="language-plaintext highlighter-rouge">FragmentActivity</code> is the base class for <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity"><code class="language-plaintext highlighter-rouge">AppCompatActivity</code></a>, so if you’re already subclassing <code class="language-plaintext highlighter-rouge">AppCompatActivity</code> to provide backward compatibility in your app, then you do not need to change your activity base class.</p>
+
+<p>You can add your fragment to the activity’s view hierarchy either by defining the fragment in your activity’s layout file or by defining a fragment container in your activity’s layout file and then programmatically adding the fragment from within your activity. In either case, you need to add a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentContainerView"><code class="language-plaintext highlighter-rouge">FragmentContainerView</code></a> that defines the location where the fragment should be placed within the activity’s view hierarchy. It is strongly recommended to always use a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> as the container for fragments, as <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> includes fixes specific to fragments that other view groups such as <code class="language-plaintext highlighter-rouge">FrameLayout</code> do not provide.</p>
+
+<h4 id="add-a-fragment-via-xml">Add a fragment via XML</h4>
+
+<p>To declaratively add a fragment to your activity layout’s XML, use a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> element.</p>
+
+<p>Here’s an example activity layout containing a single <code class="language-plaintext highlighter-rouge">FragmentContainerView</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;!--</span> <span class="n">res</span><span class="p">/</span><span class="n">layout</span><span class="p">/</span><span class="n">example_activity</span><span class="p">.</span><span class="n">xml</span> <span class="p">--&gt;</span>
+<span class="p">&lt;</span><span class="n">androidx</span><span class="p">.</span><span class="n">fragment</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nc">FragmentContainerView</span>
+    <span class="n">xmlns</span><span class="p">:</span><span class="n">android</span><span class="p">=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">id</span><span class="p">=</span><span class="s">"@+id/fragment_container_view"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">name</span><span class="p">=</span><span class="s">"com.example.ExampleFragment"</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">android:name</code> attribute specifies the class name of the <code class="language-plaintext highlighter-rouge">Fragment</code> to instantiate. When the activity’s layout is inflated, the specified fragment is instantiated, <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#onInflate%28android.content.Context,%2520android.util.AttributeSet,%2520android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">onInflate()</code></a> is called on the newly instantiated fragment, and a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code> is created to add the fragment to the <code class="language-plaintext highlighter-rouge">FragmentManager</code>.</p>
+
+<p><strong>Note:</strong> You can use the <code class="language-plaintext highlighter-rouge">class</code> attribute instead of <code class="language-plaintext highlighter-rouge">android:name</code> as an alternative way to specify which <code class="language-plaintext highlighter-rouge">Fragment</code> to instantiate.</p>
+
+<h4 id="add-a-fragment-programmatically">Add a fragment programmatically</h4>
+
+<p>To programmatically add a fragment to your activity’s layout, the layout should include a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> to serve as a fragment container, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;!--</span> <span class="n">res</span><span class="p">/</span><span class="n">layout</span><span class="p">/</span><span class="n">example_activity</span><span class="p">.</span><span class="n">xml</span> <span class="p">--&gt;</span>
+<span class="p">&lt;</span><span class="n">androidx</span><span class="p">.</span><span class="n">fragment</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nc">FragmentContainerView</span>
+    <span class="n">xmlns</span><span class="p">:</span><span class="n">android</span><span class="p">=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">id</span><span class="p">=</span><span class="s">"@+id/fragment_container_view"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="p">=</span><span class="s">"match_parent"</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>Unlike the XML approach, the <code class="language-plaintext highlighter-rouge">android:name</code> attribute isn’t used on the <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> here, so no specific fragment is automatically instantiated. Instead, a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction"><code class="language-plaintext highlighter-rouge">FragmentTransaction</code></a> is used to instantiate a fragment and add it to the activity’s layout.</p>
+
+<p>While your activity is running, you can make fragment transactions such as adding, removing, or replacing a fragment. In your <code class="language-plaintext highlighter-rouge">FragmentActivity</code>, you can get an instance of the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager"><code class="language-plaintext highlighter-rouge">FragmentManager</code></a>, which can be used to create a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. Then, you can instantiate your fragment within your activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method using <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#add%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">FragmentTransaction.add()</code></a>, passing in the <code class="language-plaintext highlighter-rouge">ViewGroup</code> ID of the container in your layout and the fragment class you want to add and then commit the transaction, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">example_activity</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">savedInstanceState</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">commit</span> <span class="p">{</span>
+                <span class="nf">setReorderingAllowed</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+                <span class="n">add</span><span class="p">&lt;</span><span class="nc">ExampleFragment</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fragment_container_view</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> You should <strong>always</strong> use <code class="language-plaintext highlighter-rouge">setReorderingAllowed(true)</code> when performing a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. For more information on reordered transactions, see <a href="https://developer.android.com/guide/fragments/transactions#reordering">Fragment transactions</a>.</p>
+
+<p>In the previous example, note that the fragment transaction is only created when <code class="language-plaintext highlighter-rouge">savedInstanceState</code> is <code class="language-plaintext highlighter-rouge">null</code>. This is to ensure that the fragment is added only once, when the activity is first created. When a configuration change occurs and the activity is recreated, <code class="language-plaintext highlighter-rouge">savedInstanceState</code> is no longer <code class="language-plaintext highlighter-rouge">null</code>, and the fragment does not need to be added a second time, as the fragment is automatically restored from the <code class="language-plaintext highlighter-rouge">savedInstanceState</code>.</p>
+
+<h2 id="fragment-manager">Fragment manager</h2>
+
+<p><strong>Note:</strong> We strongly recommend using the <a href="https://developer.android.com/guide/navigation">Navigation library</a> to manage your app’s navigation. The framework follows best practices for working with fragments, the back stack, and the fragment manager. For more information about Navigation, see <a href="https://developer.android.com/guide/navigation/navigation-getting-started">Get started with the Navigation component</a> and <a href="https://developer.android.com/guide/navigation/navigation-migrate">Migrate to the Navigation component</a>.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager"><code class="language-plaintext highlighter-rouge">FragmentManager</code></a> is the class responsible for performing actions on your app’s fragments, such as adding, removing, or replacing them and adding them to the back stack.</p>
+
+<p><strong>You might never interact with <code class="language-plaintext highlighter-rouge">FragmentManager</code> directly if you’re using the <a href="https://developer.android.com/guide/navigation">Jetpack Navigation</a> library, as it works with the <code class="language-plaintext highlighter-rouge">FragmentManager</code> on your behalf.</strong> However, any app using fragments is using <code class="language-plaintext highlighter-rouge">FragmentManager</code> at some level, so it’s important to understand what it is and how it works.</p>
+
+<h3 id="access-the-fragmentmanager">Access the FragmentManager</h3>
+
+<p>You can access the <code class="language-plaintext highlighter-rouge">FragmentManager</code> from an activity or from a fragment.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity"><code class="language-plaintext highlighter-rouge">FragmentActivity</code></a> and its subclasses, such as <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity"><code class="language-plaintext highlighter-rouge">AppCompatActivity</code></a>, have access to the <code class="language-plaintext highlighter-rouge">FragmentManager</code> through the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity#getSupportFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getSupportFragmentManager()</code></a> method.</p>
+
+<p>Fragments can host one or more child fragments. Inside a fragment, you can get a reference to the <code class="language-plaintext highlighter-rouge">FragmentManager</code> that manages the fragment’s children through <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#getChildFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getChildFragmentManager()</code></a>. If you need to access its host <code class="language-plaintext highlighter-rouge">FragmentManager</code>, you can use <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#getParentFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getParentFragmentManager()</code></a>.</p>
+
+<p>Here are a couple of examples to see the relationships between fragments, their hosts, and the <code class="language-plaintext highlighter-rouge">FragmentManager</code> instances associated with each.</p>
+
+<p><img src="/assets/images/fragment-host.png" alt="two ui layout examples showing the relationships between
+            fragments and their host activities" /></p>
+
+<p><strong>Figure 1.</strong> Two UI layout examples showing the relationships between fragments and their host activities.</p>
+
+<p>Figure 1 shows two examples, each of which has a single activity host. The host activity in both of these examples displays top-level navigation to the user as a <a href="https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView"><code class="language-plaintext highlighter-rouge">BottomNavigationView</code></a> that is responsible for swapping out the host fragment with different screens in the app. Each screen is implemented as a separate fragment.</p>
+
+<p>The host fragment in Example 1 hosts two child fragments that make up a split-view screen. The host fragment in Example 2 hosts a single child fragment that makes up the display fragment of a <a href="https://developer.android.com/guide/navigation/navigation-swipe-view-2#implement_swipe_views">swipe view</a>.</p>
+
+<p>Given this setup, you can think about each host as having a <code class="language-plaintext highlighter-rouge">FragmentManager</code> associated with it that manages its child fragments. This is illustrated in figure 2 along with property mappings between <code class="language-plaintext highlighter-rouge">supportFragmentManager</code>, <code class="language-plaintext highlighter-rouge">parentFragmentManager</code>, and <code class="language-plaintext highlighter-rouge">childFragmentManager</code>.</p>
+
+<p><img src="/assets/images/manager-mappings.png" alt="each host has its own FragmentManager associated with it
+            that manages its child fragments" /></p>
+
+<p><strong>Figure 2.</strong> Each host has its own <code class="language-plaintext highlighter-rouge">FragmentManager</code> associated with it that manages its child fragments.</p>
+
+<p>The appropriate <code class="language-plaintext highlighter-rouge">FragmentManager</code> property to reference depends on where the callsite is in the fragment hierarchy along with which fragment manager you are trying to access.</p>
+
+<p>Once you have a reference to the <code class="language-plaintext highlighter-rouge">FragmentManager</code>, you can use it to manipulate the fragments being displayed to the user.</p>
+
+<h3 id="child-fragments">Child fragments</h3>
+
+<p>Generally speaking, your app consists of a single or small number of activities in your application project, with each activity representing a group of related screens. The activity might provide a point to place top-level navigation and a place to scope <code class="language-plaintext highlighter-rouge">ViewModel</code> objects and other view-state between fragments. A fragment represents an individual destination in your app.</p>
+
+<p>If you want to show multiple fragments at once, such as in a split-view or a dashboard, you can use child fragments that are managed by your destination fragment and its child fragment manager.</p>
+
+<p>Other use cases for child fragments are the following:</p>
+
+<ul>
+  <li><a href="https://developer.android.com/training/animation/screen-slide-2">Screen slides</a>, using a <code class="language-plaintext highlighter-rouge">ViewPager2</code> in a parent fragment to manage a series of child fragment views.</li>
+  <li>Sub-navigation within a set of related screens.</li>
+  <li>Jetpack Navigation uses child fragments as individual destinations. An activity hosts a single parent <code class="language-plaintext highlighter-rouge">NavHostFragment</code> and fills its space with different child destination fragments as users navigate through your app.</li>
+</ul>
+
+<h3 id="use-the-fragmentmanager">Use the FragmentManager</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">FragmentManager</code> manages the fragment back stack. At runtime, the <code class="language-plaintext highlighter-rouge">FragmentManager</code> can perform back stack operations like adding or removing fragments in response to user interactions. Each set of changes is committed together as a single unit called a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction"><code class="language-plaintext highlighter-rouge">FragmentTransaction</code></a>. For a more in-depth discussion about fragment transactions, see the <a href="https://developer.android.com/guide/fragments/transactions">fragment transactions guide</a>.</p>
+
+<p>When the user taps the Back button on their device, or when you call <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28%29"><code class="language-plaintext highlighter-rouge">FragmentManager.popBackStack()</code></a>, the top-most fragment transaction pops off of the stack. If there are no more fragment transactions on the stack, and if you aren’t using child fragments, the Back event bubbles up to the activity. If you <em>are</em> using child fragments, see <a href="#considerations">special considerations for child and sibling fragments</a>.</p>
+
+<p>When you call <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29"><code class="language-plaintext highlighter-rouge">addToBackStack()</code></a> on a transaction, the transaction can include any number of operations, such as adding multiple fragments or replacing fragments in multiple containers.</p>
+
+<p>When the back stack is popped, all these operations reverse as a single atomic action. However, if you committed additional transactions prior to the <code class="language-plaintext highlighter-rouge">popBackStack()</code> call, and if you <em>didn’t</em> use <code class="language-plaintext highlighter-rouge">addToBackStack()</code> for the transaction, these operations <em>don’t</em> reverse. Therefore, within a single <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>, avoid interleaving transactions that affect the back stack with those that don’t.</p>
+
+<h3 id="perform-a-transaction">Perform a transaction</h3>
+
+<p>To display a fragment within a layout container, use the <code class="language-plaintext highlighter-rouge">FragmentManager</code> to create a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. Within the transaction, you can then perform an <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#add%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">add()</code></a> or <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">replace()</code></a> operation on the container.</p>
+
+<p>For example, a simple <code class="language-plaintext highlighter-rouge">FragmentTransaction</code> might look like this:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">commit</span> <span class="p">{</span>
+   <span class="n">replace</span><span class="p">&lt;</span><span class="nc">ExampleFragment</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fragment_container</span><span class="p">)</span>
+   <span class="nf">setReorderingAllowed</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+   <span class="nf">addToBackStack</span><span class="p">(</span><span class="s">"name"</span><span class="p">)</span> <span class="c1">// Name can be null</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this example, <code class="language-plaintext highlighter-rouge">ExampleFragment</code> replaces the fragment, if any, that is currently in the layout container identified by the <code class="language-plaintext highlighter-rouge">R.id.fragment_container</code> ID. Providing the fragment’s class to the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">replace()</code></a> method lets the <code class="language-plaintext highlighter-rouge">FragmentManager</code> handle instantiation using its <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentFactory"><code class="language-plaintext highlighter-rouge">FragmentFactory</code></a>. For more information, see the <a href="#dependencies">Provide dependencies to your fragments</a> section.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#setReorderingAllowed%28boolean%29"><code class="language-plaintext highlighter-rouge">setReorderingAllowed(true)</code></a> optimizes the state changes of the fragments involved in the transaction so that animations and transitions work correctly. For more information on navigating with animations and transitions, see <a href="https://developer.android.com/guide/fragments/transactions">Fragment transactions</a> and <a href="https://developer.android.com/training/basics/fragments/animate">Navigate between fragments using animations</a>.</p>
+
+<p>Calling <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29"><code class="language-plaintext highlighter-rouge">addToBackStack()</code></a> commits the transaction to the back stack. The user can later reverse the transaction and bring back the previous fragment by tapping the Back button. If you added or removed multiple fragments within a single transaction, all those operations are undone when the back stack is popped. The optional name provided in the <code class="language-plaintext highlighter-rouge">addToBackStack()</code> call gives you the ability to pop back to a specific transaction using <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28java.lang.String,%20int%29"><code class="language-plaintext highlighter-rouge">popBackStack()</code></a>.</p>
+
+<p>If you don’t call <code class="language-plaintext highlighter-rouge">addToBackStack()</code> when you perform a transaction that removes a fragment, then the removed fragment is destroyed when the transaction is committed, and the user cannot navigate back to it. If you do call <code class="language-plaintext highlighter-rouge">addToBackStack()</code> when removing a fragment, then the fragment is only <code class="language-plaintext highlighter-rouge">STOPPED</code> and is later <code class="language-plaintext highlighter-rouge">RESUMED</code> when the user navigates back. Its view <em>is</em> destroyed in this case. For more information, see <a href="https://developer.android.com/guide/fragments/lifecycle">Fragment lifecycle</a>.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/guide/fragments/create</li>
+  <li>https://stackoverflow.com/questions/28929637/difference-and-uses-of-oncreate-oncreateview-and-onactivitycreated-in-fra</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="fragment" /><category term="fragment-manager" /></entry><entry><title type="html">Android编程笔记（七）：ViewModel &amp;amp; LiveData + View Binding</title><link href="https://goooooouwa.github.io/coding/2025/06/22/android-dev-notes-7-view-model-live-data-view-binding.html" rel="alternate" type="text/html" title="Android编程笔记（七）：ViewModel &amp;amp; LiveData + View Binding" /><published>2025-06-22T00:00:00+00:00</published><updated>2025-06-22T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/06/22/android-dev-notes-7-view-model-live-data-view-binding</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/06/22/android-dev-notes-7-view-model-live-data-view-binding.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#how-to-use-viewmodel" id="markdown-toc-how-to-use-viewmodel">How to use ViewModel</a>    <ul>
+      <li><a href="#0-安装viewmodel-livedata和其他lifecycle依赖" id="markdown-toc-0-安装viewmodel-livedata和其他lifecycle依赖">0. 安装ViewModel, LiveData和其他Lifecycle依赖</a></li>
+      <li><a href="#1-how-to-create-a-view-model" id="markdown-toc-1-how-to-create-a-view-model">1. How to create a view model</a></li>
+      <li><a href="#2-how-to-access-a-view-model" id="markdown-toc-2-how-to-access-a-view-model">2. How to access a view model</a>        <ul>
+          <li><a href="#kotlin-by-keyword" id="markdown-toc-kotlin-by-keyword">Kotlin <code class="language-plaintext highlighter-rouge">by</code> keyword</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#the-lifecycle-of-a-viewmodel" id="markdown-toc-the-lifecycle-of-a-viewmodel">The lifecycle of a ViewModel</a></li>
+  <li><a href="#viewmodel-benefits" id="markdown-toc-viewmodel-benefits">ViewModel benefits</a>    <ul>
+      <li><a href="#persistence" id="markdown-toc-persistence">Persistence</a>        <ul>
+          <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
+          <li><a href="#savedstatehandle" id="markdown-toc-savedstatehandle">SavedStateHandle</a></li>
+        </ul>
+      </li>
+      <li><a href="#access-to-business-logic" id="markdown-toc-access-to-business-logic">Access to business logic</a></li>
+    </ul>
+  </li>
+  <li><a href="#livedata-overview" id="markdown-toc-livedata-overview">LiveData overview</a>    <ul>
+      <li><a href="#the-advantages-of-using-livedata" id="markdown-toc-the-advantages-of-using-livedata">The advantages of using LiveData</a></li>
+    </ul>
+  </li>
+  <li><a href="#work-with-livedata-objects" id="markdown-toc-work-with-livedata-objects">Work with LiveData objects</a></li>
+  <li><a href="#how-to-use-livedata" id="markdown-toc-how-to-use-livedata">How to use LiveData</a>    <ul>
+      <li><a href="#1-create-livedata-objects" id="markdown-toc-1-create-livedata-objects">1. Create LiveData objects</a></li>
+      <li><a href="#2-observe-livedata-objects" id="markdown-toc-2-observe-livedata-objects">2. Observe LiveData objects</a></li>
+      <li><a href="#4-update-livedata" id="markdown-toc-4-update-livedata">4. Update LiveData: </a></li>
+      <li><a href="#use-livedata-with-room" id="markdown-toc-use-livedata-with-room">Use LiveData with Room</a></li>
+      <li><a href="#use-coroutines-with-livedata" id="markdown-toc-use-coroutines-with-livedata">Use coroutines with LiveData</a></li>
+    </ul>
+  </li>
+  <li><a href="#view-binding" id="markdown-toc-view-binding">View binding</a>    <ul>
+      <li><a href="#setup" id="markdown-toc-setup">Setup</a></li>
+      <li><a href="#how-to-use-view-binding" id="markdown-toc-how-to-use-view-binding">How to use view binding</a>        <ul>
+          <li><a href="#use-view-binding-in-activities" id="markdown-toc-use-view-binding-in-activities">Use view binding in activities</a></li>
+          <li><a href="#use-view-binding-in-fragments" id="markdown-toc-use-view-binding-in-fragments">Use view binding in fragments</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#referencces" id="markdown-toc-referencces">Referencces</a></li>
+</ul>
+
+<h2 id="how-to-use-viewmodel">How to use ViewModel</h2>
+
+<h3 id="0-安装viewmodel-livedata和其他lifecycle依赖">0. 安装ViewModel, LiveData和其他Lifecycle依赖</h3>
+
+<p>Note: To import Lifecycle (including ViewModel &amp; LiveData) into your Android project, see the instructions for declaring dependencies in the Lifecycle <a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies">release notes</a>.</p>
+
+<p>Add the dependencies for the artifacts you need in the build.gradle file for your app or module:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">lifecycle_version</span> <span class="p">=</span> <span class="s">"2.9.1"</span>
+        <span class="kd">val</span> <span class="py">arch_version</span> <span class="p">=</span> <span class="s">"2.2.0"</span>
+
+        <span class="c1">// ViewModel</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// ViewModel utilities for Compose</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// LiveData</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// Lifecycles only (without ViewModel or LiveData)</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// Lifecycle utilities for Compose</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"</span><span class="p">)</span>
+
+        <span class="c1">// Saved state module for ViewModel</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"</span><span class="p">)</span>
+
+        <span class="c1">// ViewModel integration with Navigation3</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-navigation3:1.0.0-alpha02"</span><span class="p">)</span>
+
+        <span class="c1">// Annotation processor</span>
+        <span class="nf">kapt</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-compiler:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// alternately - if using Java8, use the following instead of lifecycle-compiler</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="1-how-to-create-a-view-model">1. How to create a view model</h3>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">androidx.lifecycle.ViewModel</span>
+
+<span class="kd">class</span> <span class="nc">MyViewModel</span> <span class="p">:</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Your ViewModel logic here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-how-to-access-a-view-model">2. How to access a view model</h3>
+
+<p>To access a ViewModel, you use the <code class="language-plaintext highlighter-rouge">viewModels()</code> extension functions (for Fragments and Activities) provided by the <code class="language-plaintext highlighter-rouge">androidx.activity</code> library. This function retrieve a <code class="language-plaintext highlighter-rouge">ViewModel</code> instance scoped to the <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> (Activity, Fragment, or Navigation destination).</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">androidx.activity.viewModels</span>
+
+<span class="kd">class</span> <span class="nc">DiceRollActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="c1">// Create a ViewModel the first time the system calls an activity's onCreate() method.</span>
+        <span class="c1">// Re-created activities receive the same DiceRollViewModel instance created by the first activity.</span>
+
+        <span class="c1">// Use the 'by viewModels()' Kotlin property delegate</span>
+        <span class="c1">// from the activity-ktx artifact</span>
+        <span class="kd">val</span> <span class="py">myViewModel</span><span class="p">:</span> <span class="nc">MyViewModel</span> <span class="k">by</span> <span class="nf">viewModels</span><span class="p">()</span>
+        <span class="c1">// or use `ViewModelProvider` class's `get` method which provides ViewModels for the given scope.</span>
+        <span class="c1">// val myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)</span>
+        
+        <span class="c1">// Now you can access myViewModel</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="kotlin-by-keyword">Kotlin <code class="language-plaintext highlighter-rouge">by</code> keyword</h4>
+
+<p>The Kotlin soft keyword <code class="language-plaintext highlighter-rouge">by</code> can bee used to:</p>
+
+<ul>
+  <li><a href="https://kotlinlang.org/docs/delegation.html">delegates the implementation of an interface to another object.</a></li>
+  <li><a href="https://kotlinlang.org/docs/delegated-properties.html">delegates the implementation of the accessors for a property to another object.</a></li>
+</ul>
+
+<h2 id="the-lifecycle-of-a-viewmodel">The lifecycle of a ViewModel</h2>
+
+<p>The lifecycle of a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> is tied directly to its scope. A <code class="language-plaintext highlighter-rouge">ViewModel</code> remains in memory until the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner"><code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code></a> to which it is scoped disappears. This may occur in the following contexts:</p>
+
+<ul>
+  <li>In the case of an activity, when it finishes.</li>
+  <li>In the case of a fragment, when it detaches.</li>
+  <li>In the case of a Navigation entry, when it’s removed from the back stack.</li>
+</ul>
+
+<p>This makes ViewModels a great solution for storing data that survives configuration changes.</p>
+
+<p>Figure 1 illustrates the various lifecycle states of an activity as it undergoes a rotation and then is finished. The illustration also shows the lifetime of the <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> next to the associated activity lifecycle. This particular diagram illustrates the states of an activity. The same basic states apply to the lifecycle of a fragment.</p>
+
+<p><img src="/assets/images/viewmodel-lifecycle.png" alt="Illustrates the lifecycle of a ViewModel as an activity changes state." /></p>
+
+<p>You usually request a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> the first time the system calls an activity object’s <a href="https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> method. The system may call <a href="https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> several times throughout the existence of an activity, such as when a device screen is rotated. The <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> exists from when you first request a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> until the activity is finished and destroyed.</p>
+
+<h2 id="viewmodel-benefits">ViewModel benefits</h2>
+
+<p>The key benefits of the ViewModel class are essentially two:</p>
+
+<ul>
+  <li>It allows you to persist UI state.</li>
+  <li>It provides access to business logic.</li>
+</ul>
+
+<h3 id="persistence">Persistence</h3>
+
+<p>ViewModel allows persistence through both the state that a ViewModel holds, and the operations that a ViewModel triggers. This caching means that you don’t have to fetch data again through common configuration changes, such as a screen rotation.</p>
+
+<h4 id="scope">Scope</h4>
+
+<p>When you instantiate a ViewModel, you pass it an object that implements the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner"><code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code></a> interface. This may be a Navigation destination, Navigation graph, activity, fragment, or any other type that implements the interface. Your ViewModel is then scoped to the <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle">Lifecycle</a> of the <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code>. It remains in memory until its <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> goes away permanently.</p>
+
+<p>A range of classes are either direct or indirect subclasses of the <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> interface. The direct subclasses are <a href="https://developer.android.com/reference/androidx/activity/ComponentActivity"><code class="language-plaintext highlighter-rouge">ComponentActivity</code></a>, <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment"><code class="language-plaintext highlighter-rouge">Fragment</code></a>, and <a href="https://developer.android.com/reference/androidx/navigation/NavBackStackEntry"><code class="language-plaintext highlighter-rouge">NavBackStackEntry</code></a>. For a full list of indirect subclasses, see the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner"><code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> reference</a>.</p>
+
+<p>When the fragment or activity to which the ViewModel is scoped is destroyed, asynchronous work continues in the ViewModel that is scoped to it. This is the key to persistence.</p>
+
+<p>For more information, see the section below on <a href="#lifecycle">ViewModel lifecycle</a>.</p>
+
+<h4 id="savedstatehandle">SavedStateHandle</h4>
+
+<p><a href="https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate">SavedStateHandle</a> allows you to persist data not just through configuration changes, but across process recreation. That is, it enables you to keep the UI state intact even when the user closes the app and opens it at a later time.</p>
+
+<h3 id="access-to-business-logic">Access to business logic</h3>
+
+<p>Even though the vast majority of <a href="https://developer.android.com/topic/architecture/ui-layer/stateholders#business-logic">business logic</a> is present in the data layer, the UI layer can also contain business logic. This can be the case when combining data from multiple repositories to create the screen UI state, or when a particular type of data doesn’t require a data layer.</p>
+
+<p>ViewModel is the right place to handle business logic in the UI layer. The ViewModel is also in charge of handling events and delegating them to other layers of the hierarchy when business logic needs to be applied to modify application data.</p>
+
+<h2 id="livedata-overview">LiveData overview</h2>
+
+<p><a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</p>
+
+<p><strong>Note:</strong> To import LiveData components into your Android project, see <a href="https://developer.android.com/topic/libraries/architecture/adding-components#lifecycle">Adding Components to your Project</a>.</p>
+
+<p>LiveData considers an observer, which is represented by the <a href="https://developer.android.com/reference/androidx/lifecycle/Observer"><code class="language-plaintext highlighter-rouge">Observer</code></a> class, to be in an active state if its lifecycle is in the <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State#STARTED"><code class="language-plaintext highlighter-rouge">STARTED</code></a> or <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State#RESUMED"><code class="language-plaintext highlighter-rouge">RESUMED</code></a> state. LiveData only notifies active observers about updates. Inactive observers registered to watch <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects aren’t notified about changes.</p>
+
+<p>You can register an observer paired with an object that implements the <a href="https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner"><code class="language-plaintext highlighter-rouge">LifecycleOwner</code></a> interface. This relationship allows the observer to be removed when the state of the corresponding <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle"><code class="language-plaintext highlighter-rouge">Lifecycle</code></a> object changes to <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State#DESTROYED"><code class="language-plaintext highlighter-rouge">DESTROYED</code></a>. This is especially useful for activities and fragments because they can safely observe <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects and not worry about leaks—activities and fragments are instantly unsubscribed when their lifecycles are destroyed.</p>
+
+<p>For more information about how to use LiveData, see <a href="#work_livedata">Work with LiveData objects</a>.</p>
+
+<h3 id="the-advantages-of-using-livedata">The advantages of using LiveData</h3>
+
+<p>Using LiveData provides the following advantages:</p>
+
+<ul>
+  <li>Ensures your UI matches your data state</li>
+  <li>No memory leaks</li>
+  <li>No crashes due to stopped activities</li>
+  <li>No more manual lifecycle handling</li>
+  <li>Always up to date data</li>
+  <li>Proper configuration changes</li>
+  <li>Sharing resources</li>
+</ul>
+
+<h2 id="work-with-livedata-objects">Work with LiveData objects</h2>
+
+<p>Follow these steps to work with <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects:</p>
+
+<ol>
+  <li>Create an instance of <code class="language-plaintext highlighter-rouge">LiveData</code> to hold a certain type of data. This is usually done within your <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> class.</li>
+  <li>Create an <a href="https://developer.android.com/reference/androidx/lifecycle/Observer"><code class="language-plaintext highlighter-rouge">Observer</code></a> object that defines the <a href="https://developer.android.com/reference/androidx/lifecycle/Observer#onChanged(kotlin.Any)"><code class="language-plaintext highlighter-rouge">onChanged()</code></a> method, which controls what happens when the <code class="language-plaintext highlighter-rouge">LiveData</code> object’s held data changes. You usually create an <code class="language-plaintext highlighter-rouge">Observer</code> object in a UI controller, such as an activity or fragment.</li>
+  <li>Attach the <code class="language-plaintext highlighter-rouge">Observer</code> object to the <code class="language-plaintext highlighter-rouge">LiveData</code> object using the <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData#observe(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Observer%3C?%20super%20T%3E)"><code class="language-plaintext highlighter-rouge">observe()</code></a> method. The <code class="language-plaintext highlighter-rouge">observe()</code> method takes a <a href="https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner"><code class="language-plaintext highlighter-rouge">LifecycleOwner</code></a> object. This subscribes the <code class="language-plaintext highlighter-rouge">Observer</code> object to the <code class="language-plaintext highlighter-rouge">LiveData</code> object so that it is notified of changes. You usually attach the <code class="language-plaintext highlighter-rouge">Observer</code> object in a UI controller, such as an activity or fragment.</li>
+</ol>
+
+<p>When you update the value stored in the <code class="language-plaintext highlighter-rouge">LiveData</code> object, it triggers all registered observers as long as the attached <code class="language-plaintext highlighter-rouge">LifecycleOwner</code> is in the active state.</p>
+
+<p>LiveData allows UI controller observers to subscribe to updates. When the data held by the <code class="language-plaintext highlighter-rouge">LiveData</code> object changes, the UI automatically updates in response.</p>
+
+<h2 id="how-to-use-livedata">How to use LiveData</h2>
+
+<h3 id="1-create-livedata-objects">1. Create LiveData objects</h3>
+
+<p>LiveData is a wrapper that can be used with any data, including objects that implement <a href="https://developer.android.com/reference/java/util/Collections"><code class="language-plaintext highlighter-rouge">Collections</code></a>, such as <a href="https://developer.android.com/reference/java/util/List"><code class="language-plaintext highlighter-rouge">List</code></a>. A <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> object is usually stored within a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> object and is accessed via a getter method, as demonstrated in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">UserViewModel</span> <span class="p">:</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Create a LiveData with a String</span>
+    <span class="kd">val</span> <span class="py">currentUser</span> <span class="p">=</span> <span class="nc">MutableLiveData</span><span class="p">&lt;</span><span class="nc">User</span><span class="p">&gt;()</span>
+
+    <span class="c1">// Rest of the ViewModel...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Initially, the data in a <code class="language-plaintext highlighter-rouge">LiveData</code> object is not set.</p>
+
+<h3 id="2-observe-livedata-objects">2. Observe LiveData objects</h3>
+
+<p>In most cases, an app component’s <a href="https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> method is the right place to begin observing a <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> object</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">UserActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Use the 'by viewModels()' Kotlin property delegate</span>
+    <span class="c1">// from the activity-ktx artifact</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">userViewmodel</span><span class="p">:</span> <span class="nc">UserViewModel</span> <span class="k">by</span> <span class="nf">viewModels</span><span class="p">()</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+
+        <span class="c1">// Other code to setup the activity...</span>
+
+        <span class="c1">// Create the observer which updates the UI.</span>
+        <span class="kd">val</span> <span class="py">userObserver</span> <span class="p">=</span> <span class="nc">Observer</span><span class="p">&lt;</span><span class="nc">User</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">newUser</span> <span class="p">-&gt;</span>
+            <span class="c1">// Update the UI, in this case, a TextView.</span>
+            <span class="n">userNameView</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">newUser</span><span class="p">.</span><span class="n">name</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.</span>
+        <span class="n">userViewmodel</span><span class="p">.</span><span class="n">currentUser</span><span class="p">.</span><span class="nf">observe</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">userObserver</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-update-livedata">4. Update LiveData: </h3>
+
+<p><code class="language-plaintext highlighter-rouge">LiveData</code> class has no publicly available methods to update the stored data. The <code class="language-plaintext highlighter-rouge">MutableLiveData</code> class extends <code class="language-plaintext highlighter-rouge">LiveData</code> with publicly exposed <code class="language-plaintext highlighter-rouge">setValue(T)</code> and <code class="language-plaintext highlighter-rouge">postValue(T)</code> methods. You must use these if you need to edit the value stored in a <code class="language-plaintext highlighter-rouge">LiveData</code> object. Usually <code class="language-plaintext highlighter-rouge">MutableLiveData</code> is used in the <code class="language-plaintext highlighter-rouge">ViewModel</code> and then the <code class="language-plaintext highlighter-rouge">ViewModel</code> only exposes immutable <code class="language-plaintext highlighter-rouge">LiveData</code> objects to the observers.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">anotherUser</span> <span class="p">=</span> <span class="nc">User</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="s">"John Doe"</span><span class="p">)</span>
+    <span class="n">userViewmodel</span><span class="p">.</span><span class="n">currentUser</span><span class="p">.</span><span class="nf">setValue</span><span class="p">(</span><span class="n">anotherUser</span><span class="p">)</span>  <span class="c1">// On main thread</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note: You must call the <code class="language-plaintext highlighter-rouge">setValue(T)</code> method to update the <code class="language-plaintext highlighter-rouge">LiveData</code> object from the main thread. If the code is executed in a worker thread, you can use the <code class="language-plaintext highlighter-rouge">postValue(T)</code> method instead to update the <code class="language-plaintext highlighter-rouge">LiveData</code> object.</p>
+
+<h3 id="use-livedata-with-room">Use LiveData with Room</h3>
+
+<p>The <a href="https://developer.android.com/training/data-storage/room">Room</a> persistence library supports observable queries, which return <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects. Observable queries are written as part of a Database Access Object (DAO).</p>
+
+<p>Room generates all the necessary code to update the <code class="language-plaintext highlighter-rouge">LiveData</code> object when a database is updated. The generated code runs the query asynchronously on a background thread when needed. This pattern is useful for keeping the data displayed in a UI in sync with the data stored in a database. You can read more about Room and DAOs in the <a href="https://developer.android.com/topic/libraries/architecture/room">Room persistent library guide</a>.</p>
+
+<h3 id="use-coroutines-with-livedata">Use coroutines with LiveData</h3>
+
+<p><code class="language-plaintext highlighter-rouge">LiveData</code> includes support for Kotlin coroutines. For more information, see <a href="https://developer.android.com/topic/libraries/architecture/coroutines">Use Kotlin coroutines with Android Architecture Components</a>.</p>
+
+<h2 id="view-binding">View binding</h2>
+
+<p><em>View binding</em> is a feature that makes it easier to write code that interacts with views. Once view binding is enabled in a module, it generates a <em>binding class</em> for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.</p>
+
+<p>In most cases, view binding replaces <code class="language-plaintext highlighter-rouge">findViewById</code>.</p>
+
+<h3 id="setup">Setup</h3>
+
+<p>View binding is enabled on a module-by-module basis. To enable view binding in a module, set the <code class="language-plaintext highlighter-rouge">viewBinding</code> build option to <code class="language-plaintext highlighter-rouge">true</code> in the module-level <code class="language-plaintext highlighter-rouge">build.gradle</code> file, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">android</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+    <span class="nf">buildFeatures</span> <span class="p">{</span>
+        <span class="n">viewBinding</span> <span class="p">=</span> <span class="k">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="how-to-use-view-binding">How to use view binding</h3>
+
+<p>If view binding is enabled for a module, a binding class is generated for each XML layout file that the module contains. Each binding class contains references to the root view and all views that have an ID. The name of the binding class is generated by converting the name of the XML file to Pascal case and adding the word “Binding” to the end.</p>
+
+<p>For example, consider a layout file called <code class="language-plaintext highlighter-rouge">result_profile.xml</code> that contains the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;LinearLayout ... &gt;
+    &lt;TextView android:id="@+id/name" /&gt;
+    &lt;ImageView android:cropToPadding="true" /&gt;
+    &lt;Button android:id="@+id/button"
+        android:background="@drawable/rounded_button" /&gt;
+&lt;/LinearLayout&gt;
+</code></pre></div></div>
+
+<p>The generated binding class is called <code class="language-plaintext highlighter-rouge">ResultProfileBinding</code>. This class has two fields: a <code class="language-plaintext highlighter-rouge">TextView</code> called <code class="language-plaintext highlighter-rouge">name</code> and a <code class="language-plaintext highlighter-rouge">Button</code> called <code class="language-plaintext highlighter-rouge">button</code>. The <code class="language-plaintext highlighter-rouge">ImageView</code> in the layout has no ID, so there is no reference to it in the binding class.</p>
+
+<p>Every binding class also includes a <code class="language-plaintext highlighter-rouge">getRoot()</code> method, providing a direct reference for the root view of the corresponding layout file. In this example, the <code class="language-plaintext highlighter-rouge">getRoot()</code> method in the <code class="language-plaintext highlighter-rouge">ResultProfileBinding</code> class returns the <code class="language-plaintext highlighter-rouge">LinearLayout</code> root view.</p>
+
+<p>The following sections demonstrate the use of generated binding classes in activities and fragments.</p>
+
+<h4 id="use-view-binding-in-activities">Use view binding in activities</h4>
+
+<p>To set up an instance of the binding class for use with an activity, perform the following steps in the activity’s <a href="https://developer.android.com/reference/kotlin/android/app/Activity#oncreate"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> method:</p>
+
+<ol>
+  <li>Call the static <code class="language-plaintext highlighter-rouge">inflate()</code> method included in the generated binding class. This creates an instance of the binding class for the activity to use.</li>
+  <li>Get a reference to the root view by either calling the <code class="language-plaintext highlighter-rouge">getRoot()</code> method or using <a href="https://kotlinlang.org/docs/reference/properties.html#declaring-properties">Kotlin property syntax</a>.</li>
+  <li>Pass the root view to <a href="https://developer.android.com/reference/kotlin/android/app/Activity#setcontentview_1"><code class="language-plaintext highlighter-rouge">setContentView()</code></a> to make it the active view on the screen.</li>
+</ol>
+
+<p>These steps are shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">lateinit</span> <span class="kd">var</span> <span class="py">binding</span><span class="p">:</span> <span class="nc">ResultProfileBinding</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+    <span class="n">binding</span> <span class="p">=</span> <span class="nc">ResultProfileBinding</span><span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="n">layoutInflater</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">view</span> <span class="p">=</span> <span class="n">binding</span><span class="p">.</span><span class="n">root</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can now use the instance of the binding class to reference any of the views:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">binding</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">viewModel</span><span class="p">.</span><span class="n">name</span>
+<span class="n">binding</span><span class="p">.</span><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span> <span class="n">viewModel</span><span class="p">.</span><span class="nf">userClicked</span><span class="p">()</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="use-view-binding-in-fragments">Use view binding in fragments</h4>
+
+<p>To set up an instance of the binding class for use with a fragment, perform the following steps in the fragment’s <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#oncreateview"><code class="language-plaintext highlighter-rouge">onCreateView()</code></a> method:</p>
+
+<ol>
+  <li>Call the static <code class="language-plaintext highlighter-rouge">inflate()</code> method included in the generated binding class. This creates an instance of the binding class for the fragment to use.</li>
+  <li>Get a reference to the root view by either calling the <code class="language-plaintext highlighter-rouge">getRoot()</code> method or using <a href="https://kotlinlang.org/docs/reference/properties.html#declaring-properties">Kotlin property syntax</a>.</li>
+  <li>Return the root view from the <code class="language-plaintext highlighter-rouge">onCreateView()</code> method to make it the active view on the screen.</li>
+</ol>
+
+<p><strong>Note:</strong> The <code class="language-plaintext highlighter-rouge">inflate()</code> method requires you to pass in a layout inflater. If the layout is already inflated, you can instead call the binding class’s static <code class="language-plaintext highlighter-rouge">bind()</code> method.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kd">var</span> <span class="py">_binding</span><span class="p">:</span> <span class="nc">ResultProfileBinding</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+<span class="c1">// This property is only valid between onCreateView and</span>
+<span class="c1">// onDestroyView.</span>
+<span class="k">private</span> <span class="kd">val</span> <span class="py">binding</span> <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="n">_binding</span><span class="o">!!</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateView</span><span class="p">(</span>
+    <span class="n">inflater</span><span class="p">:</span> <span class="nc">LayoutInflater</span><span class="p">,</span>
+    <span class="n">container</span><span class="p">:</span> <span class="nc">ViewGroup</span><span class="p">?,</span>
+    <span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?</span>
+<span class="p">):</span> <span class="nc">View</span><span class="p">?</span> <span class="p">{</span>
+    <span class="n">_binding</span> <span class="p">=</span> <span class="nc">ResultProfileBinding</span><span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="n">inflater</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">view</span> <span class="p">=</span> <span class="n">binding</span><span class="p">.</span><span class="n">root</span>
+    <span class="k">return</span> <span class="n">view</span>
+<span class="p">}</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onDestroyView</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nf">onDestroyView</span><span class="p">()</span>
+    <span class="n">_binding</span> <span class="p">=</span> <span class="k">null</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can now use the instance of the binding class to reference any of the views:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">binding</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">viewModel</span><span class="p">.</span><span class="n">name</span>
+<span class="n">binding</span><span class="p">.</span><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span> <span class="n">viewModel</span><span class="p">.</span><span class="nf">userClicked</span><span class="p">()</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Fragments outlive their views. Make sure you clean up any references to the binding class instance in the fragment’s <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#ondestroyview"><code class="language-plaintext highlighter-rouge">onDestroyView()</code></a> method.</p>
+
+<h2 id="referencces">Referencces</h2>
+
+<ul>
+  <li>https://developer.android.com/topic/libraries/architecture/viewmodel</li>
+  <li>https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies</li>
+  <li>https://developer.android.com/topic/libraries/architecture/livedata</li>
+  <li>https://developer.android.com/topic/libraries/view-binding</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="live-data" /><category term="view-model" /><category term="view-binding" /></entry><entry><title type="html">issue: OMV上创建Samba分享遇到的权限问题</title><link href="https://goooooouwa.github.io/computer/2025/06/05/omv-samba-permission-issue.html" rel="alternate" type="text/html" title="issue: OMV上创建Samba分享遇到的权限问题" /><published>2025-06-05T00:00:00+00:00</published><updated>2025-06-05T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/06/05/omv-samba-permission-issue</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/06/05/omv-samba-permission-issue.html"><![CDATA[<p>记录一个目前遇到的在OMV上创建Samba分享的issue</p>
+
+<p>OMV出于安全考虑，不允许admin通过Samba访问OMV（只允许通过WebGUI访问）。</p>
+
+<p>https://forum.openmediavault.org/index.php?thread/41021-is-somehow-possible-allow-admin-user-to-access-smb/</p>
+
+<p>解决办法：创建其他普通用户（如，pi）来访问Samba共享目录。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="OMV" /><category term="samba" /><category term="admin" /><summary type="html"><![CDATA[记录一个目前遇到的在OMV上创建Samba分享的issue]]></summary></entry><entry><title type="html">记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历</title><link href="https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt.html" rel="alternate" type="text/html" title="记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历" /><published>2025-05-28T00:00:00+00:00</published><updated>2025-05-28T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt.html"><![CDATA[<h3 id="背景">背景</h3>
+
+<p>很多早年的TVB香港电视剧内容是4:3的，但是视频本身的画面比例是16:9的，原因是视频在画面左右两边自带了黑边。</p>
+
+<p>当我尝试使用Android TV连接CRT电视播放这些TVB港剧时，无论使用哪种播放软件（jellyfin、kodi、VLC等）对视频画面进行哪种调整（满屏、覆盖、填充等），都无法让4:3的画面内容充满屏幕。</p>
+
+<p><img src="/assets/images/16-9-content-with-bars-on-crt.jpg" alt="16-9-content-with-bars-on-crt.jpg" /></p>
+
+<h3 id="转机">转机</h3>
+
+<p>一天晚上当我在iPad上再次尝试全屏看TVB港剧时，惊喜地发现使用jellyfin的覆盖画面选项居然可以满屏显示4:3的画面内容。</p>
+
+<p><img src="/assets/images/tvb-fullscreen-on-ipad.png" alt="tvb-fullscreen-on-ipad.png" /></p>
+
+<p>这让我开始思考这两台设备之间的差别。很快我就想到，这是因为iPad本身的屏幕分辨率就是4:3比例的，当选择覆盖画面选项时，jellyfin便会将左右超出画面的内容裁掉，而Android TV无论是通过AV接口直接连接CRT（这种情况下只支持16:9的480p和570p）还是使用HDMI转AV转换器，系统都只支持16:9的屏幕分辨率比例（即使将其连接到CRT上，也是将视频内容以16:9比例在Android TV上播放，然后被CRT横向压缩成4:3比例在电视屏幕上显示出来，此时播放器依然会认为设备的显示比例是16:9）。</p>
+
+<p>基于这一发现，我在想是否能通过kodi自定义画面比例来强行将4:3的画面内容拉伸成16:9再被CRT压缩回4:3。于是我尝试用kodi进行手动画面调节，结果无论进行哪种手动调整（显示分辨率、缩放、画面比例、调整过扫描边缘等），画面左右两边始终都有黑边（调整画面比例后，有时上下也会出现黑边）。</p>
+
+<p>在我手动调节kodi各种画面设置几近绝望时，我注意到Android TV版的kodi的显示分辨率设置里只有1080p这一个选项。这让我想到，corelec版的kodi上印象中可以支持很多分辨率，如果用corelec连接CRT播放视频，说不定能支持4:3的原生显示分辨率。</p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>于是我将装有corelec固件的u盘插到Android TV上，连接CRT电视后启动corelec系统。进入系统设置后，发现果然corelec的分辨率选项特别全（甚至支持4K)。于是我将分辨率设为4:3比例的800x600（或1024x768），将画面比例选择为原始大小，这时corelec就可以满屏播放自带左右黑边的16:9版本的4:3视频了。</p>
+
+<p><img src="/assets/images/4-3-content-on-crt.jpg" alt="4-3-content-on-crt.jpg" /></p>
+
+<p>终于可以在CRT上满屏播放自带左右黑边的TVB电视剧了！真是泪目。看来最强的视频播放解决方案还是得corelec。</p>
+
+<h2 id="题外话">题外话</h2>
+
+<p>在使用corelec接CRT电视播放TVB电视剧的过程中，我还发现：</p>
+
+<ul>
+  <li>corelec的缩放和画面比例设置都可以正常工作，相反Android TV版的kodi上这些设置怎么调画面都有问题，估计是因为Android TV本身只支持1080p分辨率，导致kodi能进行的画面调整有一定限制。corelec才是kodi真正该有的样子。</li>
+  <li>此外我还惊喜的发现，corelec竟然也能正常识别我的usb无线网卡，亲测可以正常连接并使用wifi播放视频。</li>
+</ul>
+
+<p>在对比jellyfin和kodi的播放体验后，我有了如下感受：</p>
+
+<ul>
+  <li>kodi相比于jellyfin，播放视频时加载速度更快，原因是kodi属于纯客户端播放器，服务端只需负责数据传输；而jellyfin的数据加载和部分播放逻辑在服务端，导致播放体验会受限于服务端性能。相比之下使用kodi作为纯本地客户端进行视频播放时，服务端处理压力更小，同时kodi作为本地客户端视频播放能力也更强。相比于可以网页播放的jellyfin，使用kodi进行视频播放唯一的局限就是需要安装客户端。当然，在适用的场景下，kodi相比jellyfin是更强大的播放方案。</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="crt" /><category term="corelec" /><category term="kodi" /><category term="android-tv" /><category term="16:9" /><category term="4:3" /><summary type="html"><![CDATA[背景]]></summary></entry><entry><title type="html">记一次Switch版空洞骑士无限金币问题的调试经历</title><link href="https://goooooouwa.github.io/gaming/2025/05/28/switch-hollow-knight-geo-99999.html" rel="alternate" type="text/html" title="记一次Switch版空洞骑士无限金币问题的调试经历" /><published>2025-05-28T00:00:00+00:00</published><updated>2025-05-28T00:00:00+00:00</updated><id>https://goooooouwa.github.io/gaming/2025/05/28/switch-hollow-knight-geo-99999</id><content type="html" xml:base="https://goooooouwa.github.io/gaming/2025/05/28/switch-hollow-knight-geo-99999.html"><![CDATA[<h3 id="背景">背景</h3>
+
+<p>我的大气层switch上的空洞骑士不知道为啥出生就有99999个吉欧（游戏内金币），而且无论被什么怪攻击多少次都死不了，甚至可以不打怪无脑冲地图，很奇怪，而且毫无游戏体验。我不明白这是为什么。</p>
+
+<p><img src="/assets/images/2025-05-28 19.23.05.jpg" alt="2025-05-28 19.23.05.jpg" /></p>
+
+<p>这游戏就好像是被修改过，仿佛是开了某种作弊代码似的，可是我并不记得自己曾经打开过任何cheat。刚开始我怀疑是游戏版本问题，于是在网上找了该游戏的各种不同版本，逐一试玩后发现结果还是一样。</p>
+
+<h3 id="aha-moment">Aha! moment</h3>
+
+<p>这个问题一直困扰了我相当长的一段时间，期间我曾经多次尝试在Google上对此问题进行搜索，试图找到问题的原因，比如搜索“空洞骑士 switch 为什么 9999”、“switch hollow knight 99999”等，全都一无所获，仿佛互联网上并没有其他人遇到过类似的问题。</p>
+
+<p>所以问题到底出在哪呢？</p>
+
+<p>就在我几近放弃的时候，我想到了一个可以cut the knot的笨办法。甭管游戏是否被修改过，就算它现在真的开了cheat，那我能否手动将cheat给关掉呢？这样游戏应该就能正常玩了吧。</p>
+
+<p>带着这个想法，我开始搜索并尝试在switch上安装开关cheat的相关工具。</p>
+
+<h3 id="试验">试验</h3>
+
+<p>我想到之前有看到过一个cheat插件以及能在游戏界面中实时开关cheat的overlay工具。简单搜索后我找到了<a href="https://gbatemp.net/threads/tesla-the-nintendo-switch-overlay-menu.557362/">Tesla overlay</a>和<a href="https://github.com/WerWolv/EdiZon">Edizon</a>（switch存档和cheat管理工具）。</p>
+
+<p>在安装Edizon cheat overlay的过程中，我注意到网上<a href="https://www.cfwaifu.com/edizon-cheats/">教程</a>中的这么一句话：</p>
+
+<blockquote>
+  <p>By default, Atmosphere enables all cheats that can be found on your SD when launching a game. This can be changed via Atmosphere’s configuration files.</p>
+</blockquote>
+
+<p>原来，大气层默认会在启动游戏时打开所有找到的cheats。这似乎也印证了我之前的猜测：我的switch上的某些空洞骑士的cheats somehow被打开了。</p>
+
+<p>在安装试用的过程中还发生了2个小插曲：</p>
+
+<p>一开始，在按照教程安装好Tesla overlay和Edizon并重启了switch之后，我进入游戏尝试通过快捷键（hold down <code class="language-plaintext highlighter-rouge">L</code> and <code class="language-plaintext highlighter-rouge">DPad Down</code> and push on the <code class="language-plaintext highlighter-rouge">right joy stick</code>）打开overlay，结果每次只要一进入Edizon overlay菜单switch就会crash。简单Google搜索后发现，原来是Edizon早已停更，当前的版本并不支持最新版系统固件，需要下载安装新版的<a href="https://github.com/tomvita/EdiZon-SE">Edizon-SE</a>和<a href="https://github.com/proferabg/EdiZon-Overlay">Edizon-Overlay</a>。</p>
+
+<p>此后，我还在新版Edizon-SE的<a href="https://github.com/tomvita/EdiZon-SE?tab=readme-ov-file#how-to-install">README</a>里注意到，原来不光需要按前面教程中说的修改配置文件的默认值，还需要将那一行配置项前面的”;”注释符号删除，否则修改结果并不会生效。</p>
+
+<blockquote>
+  <p>For the best experience, open the /atmosphere/system_settings.ini file and change dmnt_cheats_enabled_by_default = u8!0x1 to dmnt_cheats_enabled_by_default = u8!0x0. If the file does not exist you can copy the template from /atmosphere/config_templates/system_settings.ini and change the line, <strong>remember to remove the “;” in front</strong>.</p>
+</blockquote>
+
+<h3 id="成果">成果</h3>
+
+<p>在下载并重新安装新版的Edizon-SE和Edizon-Overlay以及修改配置文件确保所有cheats默认关闭之后，我再次打开游戏，这次终于可以正常进入Edizon overlay界面了，并且可以看到所有cheats都是关闭状态。</p>
+
+<p><img src="/assets/images/2025-05-28 19.19.16.jpg" alt="2025-05-28 19.19.16.jpg" /></p>
+
+<p>原来一直困扰我的就是上图中这个罪恶的”Geo 999999”和其他的空洞骑士的cheats。</p>
+
+<p><img src="/assets/images/2025-05-28 19.19.38.jpg" alt="2025-05-28 19.19.38.jpg" /></p>
+
+<p>我简单尝试打了两个小怪，发现游戏终于正常了（只有3个吉欧，而不是一开局就有99999个）。</p>
+
+<h3 id="复盘">复盘</h3>
+
+<p>回想我最初遇到的“空洞骑士99999个吉欧”的问题，原因应该就是大气层默认打开了设备上所有找到的cheats，而我的switch上不知为何会有空洞骑士的cheats，于是每次进入游戏就会有99999个吉欧和无限生命。这么一想，我记得之前曾经有一次尝试安装过Tesla overlay和Edizon，后来放弃使用overlay之后便忘记了，可能过程中无意进行了某些cheat相关的操作，但也无从得知了。</p>
+
+<h3 id="题外话">题外话</h3>
+
+<p>在了解了问题的原因之后，我再次在Google，Brave和DuckDuckGo等搜索引擎上对此问题进行搜索，搜索词为“switch hollow knight geo 99999”，结果这些搜索引擎中只有DuckDuckGo的第一条返回结果是Edizon cheats for switch hollow knight (including geo 99999)，与我的描述高度吻合。而Google和其他搜索引擎的首页结果均无任何跟cheat有关的结果。这让我不禁怀疑这些商业搜索引擎对搜索结果进行了过滤。试想如果当初我是用的DuckDuckGo来搜索这一问题的话，会不会更早找到正确结果呢？</p>
+
+<p>想到这里，我果断决定以后弃用Google，改用DuckDuckGo。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="gaming" /><category term="switch" /><category term="hollow-knight" /><category term="cheat" /><category term="overlay" /><category term="edizon" /><summary type="html"><![CDATA[背景]]></summary></entry><entry><title type="html">几种PC串流客户端方案使用体验总结</title><link href="https://goooooouwa.github.io/computer/2025/05/26/pc-streaming-client-solutions.html" rel="alternate" type="text/html" title="几种PC串流客户端方案使用体验总结" /><published>2025-05-26T00:00:00+00:00</published><updated>2025-05-26T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/05/26/pc-streaming-client-solutions</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/05/26/pc-streaming-client-solutions.html"><![CDATA[<p>使用的几个客户端：</p>
+
+<ol>
+  <li>OnePlus 7 pro安卓手机</li>
+  <li>Chromebook Duet 3平板</li>
+  <li>iPad Air M2</li>
+</ol>
+
+<p>尝试的几种方案：</p>
+
+<ol>
+  <li>手机接typc c拉伸手柄</li>
+  <li>平板接type c有线手柄</li>
+  <li>手机或平板接外界显示器和有线手柄</li>
+</ol>
+
+<p>体验感受：</p>
+
+<ol>
+  <li>屏幕小于10寸的设备在桌上PC串流时，字太小看不清，费眼睛（掌机至少需要7寸以上）；</li>
+  <li>平板和iPad都可以顺利通过type c连接有线手柄，正常识别和操作（OnePlus 7 pro无法边充电边使用usb设备，稍显可惜）。</li>
+</ol>
+
+<p>结论：</p>
+
+<p>对于我而言，体验最好的PC串流客户端方案是平板接有线手柄，或者手机接外界显示器和手柄。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="streaming" /><category term="gaming" /><summary type="html"><![CDATA[使用的几个客户端：]]></summary></entry><entry><title type="html">Android编程笔记（六）：Navigation UI</title><link href="https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html" rel="alternate" type="text/html" title="Android编程笔记（六）：Navigation UI" /><published>2025-05-21T00:00:00+00:00</published><updated>2025-05-21T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#将navigation-controller与navigation-ui组件集成" id="markdown-toc-将navigation-controller与navigation-ui组件集成">将navigation controller与Navigation UI组件集成</a></li>
+  <li><a href="#top-app-bar" id="markdown-toc-top-app-bar">Top app bar</a>    <ul>
+      <li><a href="#differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar" id="markdown-toc-differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code>, App <code class="language-plaintext highlighter-rouge">ActionBar</code>, AppCompat <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a>        <ul>
+          <li><a href="#differences-between-widget-toolbar--app-actionbar" id="markdown-toc-differences-between-widget-toolbar--app-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></a></li>
+          <li><a href="#differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar" id="markdown-toc-differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar">Differences between native version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> (or native <code class="language-plaintext highlighter-rouge">ActionBar</code> vs AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code>)</a></li>
+        </ul>
+      </li>
+      <li><a href="#appbarconfiguration" id="markdown-toc-appbarconfiguration">AppBarConfiguration</a></li>
+      <li><a href="#create-a-toolbar" id="markdown-toc-create-a-toolbar">Create a Toolbar</a></li>
+      <li><a href="#include-collapsingtoolbarlayout" id="markdown-toc-include-collapsingtoolbarlayout">Include CollapsingToolbarLayout</a></li>
+      <li><a href="#action-bar" id="markdown-toc-action-bar">Action bar</a></li>
+      <li><a href="#support-app-bar-variations" id="markdown-toc-support-app-bar-variations">Support app bar variations</a></li>
+    </ul>
+  </li>
+  <li><a href="#tie-destinations-to-menu-items" id="markdown-toc-tie-destinations-to-menu-items">Tie destinations to menu items</a></li>
+  <li><a href="#add-a-navigation-drawer" id="markdown-toc-add-a-navigation-drawer">Add a navigation drawer</a></li>
+  <li><a href="#bottom-navigation" id="markdown-toc-bottom-navigation">Bottom navigation</a></li>
+  <li><a href="#listen-for-navigation-events" id="markdown-toc-listen-for-navigation-events">Listen for navigation events</a>    <ul>
+      <li><a href="#argument-based-listeners" id="markdown-toc-argument-based-listeners">Argument-based listeners</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="将navigation-controller与navigation-ui组件集成">将navigation controller与Navigation UI组件集成</h2>
+
+<p>The Navigation component includes a <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI"><code class="language-plaintext highlighter-rouge">NavigationUI</code></a> class. This class contains static methods that manage navigation with various navigational UI components, including:</p>
+
+<ul>
+  <li>top app bar</li>
+  <li>navigation drawer</li>
+  <li>bottom navigation</li>
+</ul>
+
+<p>To set up a navigation controller with various navigational UI components, The common steps are:</p>
+
+<ol>
+  <li>add the navigational UI component to the activity layout</li>
+  <li>create a <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> with one or more top level destinations</li>
+  <li>setup the view with the navigation controller &amp; <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> by calling method like <code class="language-plaintext highlighter-rouge">View.setupWithNavController(navController, appBarConfiguration)</code></li>
+</ol>
+
+<h2 id="top-app-bar">Top app bar</h2>
+
+<p>The <a href="https://material.io/design/components/app-bars-top.html">top app bar</a> provides a consistent place along the top of your app for displaying information and actions from the current screen.</p>
+
+<p>The key functions of the app bar are as follows:</p>
+
+<ol>
+  <li>Dedicated space for giving your app an identity and indicating the user’s location in the app.</li>
+  <li>Predictable access to important actions, such as search.</li>
+  <li>Support for navigation and view switching, using tabs or menus.</li>
+</ol>
+
+<p><img src="/assets/images/1d87d1bfc61f4c838fce137fa7c641dd.png" alt="screen displaying a top app bar" /></p>
+
+<p><strong>Figure 1.</strong> A screen displaying a top app bar.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> contains methods that <strong>automatically update content in your top app bar as users navigate through your app</strong>. For example, <code class="language-plaintext highlighter-rouge">NavigationUI</code> uses the destination labels from your navigation graph to keep the title of the top app bar up-to-date.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;navigation&gt;</span>
+    <span class="nt">&lt;fragment</span> <span class="err">...</span>
+              <span class="na">android:label=</span><span class="s">"Page title"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/fragment&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> provides support for the following <strong>top app bar types</strong>:</p>
+
+<ul>
+  <li><a href="https://developer.android.com/reference/android/widget/Toolbar">Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></a></li>
+  <li><a href="https://developer.android.com/reference/com/google/android/material/appbar/CollapsingToolbarLayout"><code class="language-plaintext highlighter-rouge">CollapsingToolbarLayout</code></a></li>
+  <li><a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBar">AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a></li>
+</ul>
+
+<h3 id="differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar">Differences between <a href="https://developer.android.com/reference/android/widget/Toolbar">Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></a>, <a href="https://developer.android.com/reference/android/app/ActionBar">App <code class="language-plaintext highlighter-rouge">ActionBar</code></a>, <a href="https://developer.android.com/reference/androidx/appcompat/widget/Toolbar">AppCompat <code class="language-plaintext highlighter-rouge">Toolbar</code></a> &amp; <a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBar">AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a></h3>
+
+<h4 id="differences-between-widget-toolbar--app-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></h4>
+
+<p><strong>Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></strong> is a generalization of action bars for use within application layouts. While an action bar is traditionally part of an Activity’s opaque window decor controlled by the framework, a Toolbar may be placed at any arbitrary level of nesting within a view hierarchy. An application may choose to designate a Toolbar as the action bar for an Activity using the <code class="language-plaintext highlighter-rouge">setSupportActionBar()</code> method.</p>
+
+<p><strong>App <code class="language-plaintext highlighter-rouge">ActionBar</code></strong> is a primary toolbar within the activity that may display the activity title, application-level navigation affordances, and other interactive items.</p>
+
+<p>The action bar may be represented by any <code class="language-plaintext highlighter-rouge">Toolbar</code> widget within the application layout. The application may signal to the Activity which <code class="language-plaintext highlighter-rouge">Toolbar</code> should be treated as the Activity’s action bar.</p>
+
+<h4 id="differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar">Differences between native version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> (or native <code class="language-plaintext highlighter-rouge">ActionBar</code> vs AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code>)</h4>
+
+<p><strong>Native version of Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></strong></p>
+
+<p>All activities that use the default theme have an <code class="language-plaintext highlighter-rouge">ActionBar</code> as an app bar. App bar features are added to the native <code class="language-plaintext highlighter-rouge">ActionBar</code> <strong>over various Android releases</strong>. As a result, the <strong>native <code class="language-plaintext highlighter-rouge">ActionBar</code> behaves differently depending on what version of Android a device is using</strong>.</p>
+
+<p><strong>AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; <code class="language-plaintext highlighter-rouge">ActionBar</code></strong></p>
+
+<p>On the other hand, features are added to the AndroidX AppCompat library’s version of <code class="language-plaintext highlighter-rouge">Toolbar</code>, which means those features are available on devices that use the AndroidX libraries. Using the AndroidX library’s toolbar to implement your activities’ app bars makes your app’s behavior consistent across the widest range of devices.</p>
+
+<p>For more information on app bars, see <a href="https://developer.android.com/training/appbar/setting-up">Set up the app bar</a>.</p>
+
+<h3 id="appbarconfiguration">AppBarConfiguration</h3>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> uses an <a href="https://developer.android.com/reference/androidx/navigation/ui/AppBarConfiguration"><code class="language-plaintext highlighter-rouge">AppBarConfiguration</code></a> object to manage the behavior of the Navigation button in the upper-left corner of your app’s display area. The Navigation button’s behavior changes depending on whether the user is at a <strong><em>top-level destination</em></strong>.</p>
+
+<p>A top-level destination is the root, or highest level destination, in a set of hierarchically-related destinations. <strong>Top-level destinations do not display an Up button in the top app bar because there is no higher level destination</strong>. By default, the start destination of your app is the only top-level destination.</p>
+
+<p>When the user is at a top-level destination, the Navigation button becomes a drawer icon <img width="19" height="19" src="/assets/images/be0d9414288b4669986d6a47f8dc5022.png" /> if the destination uses a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>. <strong>If the destination doesn’t use a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>, the Navigation button is hidden</strong>. When the user is on any other destination, the Navigation button appears as an Up button <img width="19" height="19" src="/assets/images/a752d266f4524a71b5debe3fba64e5fd.png" />. To configure the Navigation button using only the start destination as the top-level destination, create an <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> object, and pass in the corresponding navigation graph, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In some cases, you might need to define multiple top-level destinations instead of using the default start destination. <strong>Using a <code class="language-plaintext highlighter-rouge">BottomNavigationView</code> is a common use case for this, where you may have sibling screens that are not hierarchically related to each other and may each have their own set of related destinations</strong>. For cases like these, you can instead pass a set of destination IDs to the constructor, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="nf">setOf</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">main</span><span class="p">,</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">profile</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="create-a-toolbar">Create a Toolbar</h3>
+
+<p>To create a Toolbar with <code class="language-plaintext highlighter-rouge">NavigationUI</code>:</p>
+
+<p>1) first define the bar in your main activity, as shown:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    <span class="nt">&lt;androidx.appcompat.widget.Toolbar</span>
+        <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,androidx.navigation.NavController,androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">Toolbar</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> When using a <code class="language-plaintext highlighter-rouge">Toolbar</code>, <strong>Navigation automatically handles click events for the Navigation button, so you do not need to override</strong> <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity#onSupportNavigateUp%28%29"><code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code></a>.</p>
+
+<h3 id="include-collapsingtoolbarlayout">Include CollapsingToolbarLayout</h3>
+
+<p><img src="/assets/images/android-collapsing-toolbar-default-output.gif" alt="android-collapsing-toolbar-default-output.gif" /></p>
+
+<p>To include a <code class="language-plaintext highlighter-rouge">CollapsingToolbarLayout</code> with your Toolbar:</p>
+
+<p>1) first define the Toolbar and surrounding layout in your activity, as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    <span class="nt">&lt;com.google.android.material.appbar.AppBarLayout</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"@dimen/tall_toolbar_height"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;com.google.android.material.appbar.CollapsingToolbarLayout</span>
+            <span class="na">android:id=</span><span class="s">"@+id/collapsing_toolbar_layout"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+            <span class="na">app:contentScrim=</span><span class="s">"?attr/colorPrimary"</span>
+            <span class="na">app:expandedTitleGravity=</span><span class="s">"top"</span>
+            <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|exitUntilCollapsed|snap"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;androidx.appcompat.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:layout_collapseMode=</span><span class="s">"pin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;</span>
+    <span class="nt">&lt;/com.google.android.material.appbar.AppBarLayout&gt;</span>
+
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">layout</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">CollapsingToolbarLayout</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">collapsing_toolbar_layout</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">toolbar</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">Toolbar</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="n">layout</span><span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">toolbar</span><span class="p">,</span> <span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="action-bar">Action bar</h3>
+
+<p>To add navigation support to the default action bar:</p>
+
+<p>1) call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupActionBarWithNavController%28androidx.appcompat.app.AppCompatActivity,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupActionBarWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below.</p>
+
+<p><strong>Note</strong>: you need to declare your <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> outside of <code class="language-plaintext highlighter-rouge">onCreate()</code>, since you also use it when overriding <code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">lateinit</span> <span class="kd">var</span> <span class="py">appBarConfiguration</span><span class="p">:</span> <span class="nc">AppBarConfiguration</span>
+
+<span class="o">..</span><span class="p">.</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="nf">setupActionBarWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>2) Next, override <code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code> to handle Up navigation:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onSupportNavigateUp</span><span class="p">():</span> <span class="nc">Boolean</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">navController</span><span class="p">.</span><span class="nf">navigateUp</span><span class="p">(</span><span class="n">appBarConfiguration</span><span class="p">)</span>
+            <span class="p">||</span> <span class="k">super</span><span class="p">.</span><span class="nf">onSupportNavigateUp</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="support-app-bar-variations">Support app bar variations</h3>
+
+<p>Adding the top app bar to your activity works well when the app bar’s layout is similar for each destination in your app. If, however, your top app bar changes substantially across destinations, then consider removing the top app bar from your activity and defining it in each destination fragment, instead.</p>
+
+<p>As an example, one of your destinations may use a standard <code class="language-plaintext highlighter-rouge">Toolbar</code>, while another uses an <code class="language-plaintext highlighter-rouge">AppBarLayout</code> to create a more complex app bar with tabs, as shown in figure 2.</p>
+
+<p><img src="/assets/images/app-bar-variations.png" alt="two top app bar variations; a standard toolbar on the left, and an
+            appbarlayout with a toolbar and tabs on the right" /></p>
+
+<p><strong>Figure 2.</strong> Two app bar variations. On the left, a standard <code class="language-plaintext highlighter-rouge">Toolbar</code>. On the right, an <code class="language-plaintext highlighter-rouge">AppBarLayout</code> with a <code class="language-plaintext highlighter-rouge">Toolbar</code> and tabs.</p>
+
+<p>For more information on how to support app bar variations, see <a href="https://developer.android.com/guide/navigation/integrations/ui#support_app_bar_variations">Support app bar variations</a>.</p>
+
+<h2 id="tie-destinations-to-menu-items">Tie destinations to menu items</h2>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> also provides helpers for tying destinations to menu-driven UI components. <code class="language-plaintext highlighter-rouge">NavigationUI</code> contains a helper method, <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onnavdestinationselected"><code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code></a>, which takes a <a href="https://developer.android.com/reference/android/view/MenuItem"><code class="language-plaintext highlighter-rouge">MenuItem</code></a> along with the <a href="https://developer.android.com/reference/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> that hosts the associated destination. If the <code class="language-plaintext highlighter-rouge">id</code> of the <code class="language-plaintext highlighter-rouge">MenuItem</code> matches the <code class="language-plaintext highlighter-rouge">id</code> of the destination, the <code class="language-plaintext highlighter-rouge">NavController</code> can then navigate to that destination.</p>
+
+<p>If your menu was created as an XML resource file, you can associate the menu items with destinations by matching the <code class="language-plaintext highlighter-rouge">id</code> of the <code class="language-plaintext highlighter-rouge">MenuItem</code> to the <code class="language-plaintext highlighter-rouge">id</code> of the destination. As an example, the XML snippets below define a menu item and a destination with a common <code class="language-plaintext highlighter-rouge">id</code> as <code class="language-plaintext highlighter-rouge">details_page_fragment</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;navigation</span> <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="err">...</span> <span class="nt">&gt;</span>
+
+    ...
+
+    <span class="nt">&lt;fragment</span> <span class="na">android:id=</span><span class="s">"@+id/details_page_fragment"</span>
+         <span class="na">android:label=</span><span class="s">"@string/details"</span>
+         <span class="na">android:name=</span><span class="s">"com.example.android.myapp.DetailsFragment"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;menu</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+
+    ...
+
+    <span class="nt">&lt;item</span>
+        <span class="na">android:id=</span><span class="s">"@+id/details_page_fragment"</span>
+        <span class="na">android:icon=</span><span class="s">"@drawable/ic_details"</span>
+        <span class="na">android:title=</span><span class="s">"@string/details"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/menu&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Alternatively</strong>, if your menu was added programmatically via the Activity’s <code class="language-plaintext highlighter-rouge">onCreateOptionsMenu()</code>, for example, you can associate the menu items with destinations by overriding the Activity’s <code class="language-plaintext highlighter-rouge">onOptionsItemSelected()</code> to call <code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code>, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="nc">MenuItem</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">.</span><span class="nf">onNavDestinationSelected</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span> <span class="p">||</span> <span class="k">super</span><span class="p">.</span><span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, when a user clicks the <code class="language-plaintext highlighter-rouge">details_page_fragment</code> menu item, the app automatically navigates to the corresponding destination with the same <code class="language-plaintext highlighter-rouge">id</code>.</p>
+
+<h2 id="add-a-navigation-drawer">Add a navigation drawer</h2>
+
+<p>The navigation drawer is a UI panel that shows your app’s main navigation menu. The drawer appears when the user touches the drawer icon <img width="19" height="19" src="/assets/images/be0d9414288b4669986d6a47f8dc5022.png" /> in the app bar or when the user swipes a finger from the left edge of the screen.</p>
+
+<p><img src="/assets/images/7bed2e3467f8454fbb794463ef6290ee.png" alt="an open drawer displaying a navigation menu" /></p>
+
+<p><strong>Figure 3.</strong> An open drawer displaying a navigation menu.</p>
+
+<p>The drawer icon is displayed on all <a href="#appbarconfiguration"><em>top-level destinations</em></a> that use a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>.</p>
+
+<p>To add a navigation drawer:</p>
+
+<p>1) first declare a <a href="https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout"><code class="language-plaintext highlighter-rouge">DrawerLayout</code></a> as the root view. Inside the <code class="language-plaintext highlighter-rouge">DrawerLayout</code>, add a layout for the main UI content and another view that contains the contents of the navigation drawer.</p>
+
+<p>For example, the following layout uses a <code class="language-plaintext highlighter-rouge">DrawerLayout</code> with two child views: a <a href="https://developer.android.com/reference/androidx/navigation/fragment/NavHostFragment"><code class="language-plaintext highlighter-rouge">NavHostFragment</code></a> to contain the main content and a <a href="https://developer.android.com/reference/com/google/android/material/navigation/NavigationView"><code class="language-plaintext highlighter-rouge">NavigationView</code></a> for the contents of the navigation drawer.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!-- Use DrawerLayout as root container for activity --&gt;</span>
+<span class="nt">&lt;androidx.drawerlayout.widget.DrawerLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/drawer_layout"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Layout to contain contents of main body of screen (drawer will slide over this) --&gt;</span>
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:name=</span><span class="s">"androidx.navigation.fragment.NavHostFragment"</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:defaultNavHost=</span><span class="s">"true"</span>
+        <span class="na">app:navGraph=</span><span class="s">"@navigation/nav_graph"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Container for contents of drawer - use NavigationView to make configuration easier --&gt;</span>
+    <span class="nt">&lt;com.google.android.material.navigation.NavigationView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
+        <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/androidx.drawerlayout.widget.DrawerLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, connect the <a href="https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout"><code class="language-plaintext highlighter-rouge">DrawerLayout</code></a> to your navigation graph by passing it to <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code>, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">,</span> <span class="n">drawerLayout</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> When using <code class="language-plaintext highlighter-rouge">NavigationUI</code>, the <a href="#top-app-bar">top app bar</a> helpers <strong>automatically transition between the drawer icon and the Up icon as the current destination changes</strong>. You don’t need to use <a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBarDrawerToggle"><code class="language-plaintext highlighter-rouge">ActionBarDrawerToggle</code></a>.</p>
+
+<p>3) Next, in your main activity class, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">NavigationView</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_view</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Setting up the navigation drawer requires that you also set up your navigation graph and menu xml as described in <a href="https://developer.android.com/guide/navigation/navigation-ui#Tie-navdrawer">Tie destinations to menu items</a>.</p>
+
+<p>Starting in <a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha01">Navigation 2.4.0-alpha01</a>, the state of each menu item is saved and restored when you use <code class="language-plaintext highlighter-rouge">setupWithNavController</code>.</p>
+
+<h2 id="bottom-navigation">Bottom navigation</h2>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> can also handle bottom navigation. When a user selects a menu item, the <code class="language-plaintext highlighter-rouge">NavController</code> calls <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onNavDestinationSelected%28android.view.MenuItem,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code></a> and <strong>automatically updates the selected item in the bottom navigation bar</strong>.</p>
+
+<p><img src="/assets/images/59bb3750b98a46c199fbe3df75768dc9.png" alt="bottom navigation bar" /></p>
+
+<p><strong>Figure 4.</strong> A bottom navigation bar.</p>
+
+<p>To create a bottom navigation bar in your app:</p>
+
+<p>1) first define the bar in your main activity, as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    ...
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;com.google.android.material.bottomnavigation.BottomNavigationView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/bottom_nav"</span>
+        <span class="na">app:menu=</span><span class="s">"@menu/menu_bottom_nav"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, in your main activity class, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">BottomNavigationView</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">bottom_nav</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Setting up bottom navigation requires that you also set up your navigation graph and menu xml as described in <a href="https://developer.android.com/guide/navigation/navigation-ui#Tie-navdrawer">Tie destinations to menu items</a>.</p>
+
+<p>Starting in <a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha01">Navigation 2.4.0-alpha01</a>, the state of each menu item is saved and restored when you use <code class="language-plaintext highlighter-rouge">setupWithNavController</code>.</p>
+
+<h2 id="listen-for-navigation-events">Listen for navigation events</h2>
+
+<p>Interacting with the <a href="https://developer.android.com/reference/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> is the primary method for navigating between destinations. The <code class="language-plaintext highlighter-rouge">NavController</code> is responsible for replacing the contents of the <a href="https://developer.android.com/reference/androidx/navigation/NavHost"><code class="language-plaintext highlighter-rouge">NavHost</code></a> with the new destination. In many cases, UI elements—such as a top app bar or other persistent navigation controls like a <code class="language-plaintext highlighter-rouge">BottomNavigationBar</code>—live outside of the <code class="language-plaintext highlighter-rouge">NavHost</code> and need to be updated as you navigate between destinations.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavController</code> offers an <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> interface that is called when the <code class="language-plaintext highlighter-rouge">NavController</code>’s <a href="https://developer.android.com/reference/androidx/navigation/NavController#getCurrentDestination%28%29">current destination</a> or its arguments change. A new listener can be registered via the <a href="https://developer.android.com/reference/androidx/navigation/NavController#addOnDestinationChangedListener%28androidx.navigation.NavController.OnDestinationChangedListener%29"><code class="language-plaintext highlighter-rouge">addOnDestinationChangedListener()</code></a> method. Note that when calling <code class="language-plaintext highlighter-rouge">addOnDestinationChangedListener()</code>, if the current destination exists, it’s immediately sent to your listener.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> uses <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> to <strong>make these common UI components navigation-aware</strong>. Note, however, that you can also use <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> on its own to make any custom UI or business logic aware of navigation events.</p>
+
+<p>As an example, you might have common UI elements that you intend to show in some areas of your app while hiding them in others. Using your own <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code>, you can selectively show or hide these UI elements based on the target destination, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">navController</span><span class="p">.</span><span class="nf">addOnDestinationChangedListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">_</span> <span class="p">-&gt;</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">destination</span><span class="p">.</span><span class="n">id</span> <span class="p">==</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">full_screen_destination</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">toolbar</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">GONE</span>
+       <span class="n">bottomNavigationView</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">GONE</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">toolbar</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">VISIBLE</span>
+       <span class="n">bottomNavigationView</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">VISIBLE</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="argument-based-listeners">Argument-based listeners</h3>
+
+<p>As an alternative, you can also use arguments with default values within the navigation graph, which can be used by the appropriate UI controller to update its state. For example, rather than base the logic in the <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> on the destination ID as per the previous example, we can create an argument in the <code class="language-plaintext highlighter-rouge">NavGraph</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;navigation</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/navigation\_graph"</span>
+    <span class="na">app:startDestination=</span><span class="s">"@id/fragmentOne"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/fragmentOne"</span>
+        <span class="na">android:name=</span><span class="s">"com.example.android.navigation.FragmentOne"</span>
+        <span class="na">android:label=</span><span class="s">"FragmentOne"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span>
+            <span class="na">android:id=</span><span class="s">"@+id/action\_fragmentOne\_to\_fragmentTwo"</span>
+            <span class="na">app:destination=</span><span class="s">"@id/fragmentTwo"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fragment&gt;</span>
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/fragmentTwo"</span>
+        <span class="na">android:name=</span><span class="s">"com.example.android.navigation.FragmentTwo"</span>
+        <span class="na">android:label=</span><span class="s">"FragmentTwo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span>
+            <span class="na">android:name=</span><span class="s">"ShowAppBar"</span>
+            <span class="na">android:defaultValue=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fragment&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<p>This argument isn’t used when <a href="https://developer.android.com/guide/navigation/navigation-navigate">navigating to the destination</a>, but rather as a way to attach additional information to the destination by using the <code class="language-plaintext highlighter-rouge">defaultValue</code>. In this case, the value indicates whether the app bar should be shown when on this destination.</p>
+
+<p>We can now add an <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> in the <code class="language-plaintext highlighter-rouge">Activity</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">navController</span><span class="p">.</span><span class="nf">addOnDestinationChangedListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">arguments</span> <span class="p">-&gt;</span>
+    <span class="n">appBar</span><span class="p">.</span><span class="n">isVisible</span> <span class="p">=</span> <span class="n">arguments</span><span class="o">?.</span><span class="nf">getBoolean</span><span class="p">(</span><span class="s">"ShowAppBar"</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span> <span class="p">==</span> <span class="k">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> invokes this callback whenever the navigation destination changes. The <code class="language-plaintext highlighter-rouge">Activity</code> can now update the state or visibility of the UI components that it owns based upon the arguments received in the callback.</p>
+
+<p>One advantage of this approach is that the <code class="language-plaintext highlighter-rouge">Activity</code> sees only the arguments in the navigation graph and doesn’t know individual <code class="language-plaintext highlighter-rouge">Fragment</code> roles and responsibilities. Similarly, the individual fragments do not know about the containing <code class="language-plaintext highlighter-rouge">Activity</code> and the UI components that it owns.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/guide/navigation/integrations/ui</li>
+  <li>https://developer.android.com/develop/ui/views/components/appbar</li>
+  <li>https://developer.android.com/develop/ui/views/components/appbar/setting-up</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="navigation" /><category term="ui" /></entry></feed>
