@@ -26,7 +26,7 @@ published: true
 
 但是在使用过程中我逐渐发现nginx proxy manager对于我的使用场景存在的一些局限性。并且逐渐意识到通过图形界面来管理nginx配置可能没有想象中那么美好（当然这一点我之前也想到了，这也是我一直迟迟没有试用它的原因）。
 
-### 局限性#1
+### 局限性#1：界面不支持配置nginx端口
 
 NGINX Proxy Manager默认只支持通过配置多个subdomain来在同一个domain下代理多个服务，而不支持通过使用同一个subdomain但是不同端口的方式（而这恰好是我的使用场景，因为我没钱买独立域名，所以是使用的免费eu.org subdomain）。
 
@@ -36,11 +36,13 @@ NGINX Proxy Manager默认只支持通过配置多个subdomain来在同一个doma
 
 来自：https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/
 
-### 局限性#2
+### 局限性#2: 默认的Basic Auth不支持用户手动输入
 
 NPM的Basic Auth只能通过请求本身的header来传递，而不是向用户提供一个basic auth的UI界面要求用户输入。这也不符合我的使用场景。
 
-此外，在不修改默认配置的情况下，我还遇到以下docker容器访问的问题：
+## 局限性#3：兼容性问题
+
+在只使用界面提供的功能的情况下，我在配置某些docker容器的代理时还遇到以下功能故障：
 
 1. Huginn不work（连不上mysql服务器）
 1. Calibre也不work（可以访问主界面但是连接不上远程桌面）
