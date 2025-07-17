@@ -34,7 +34,7 @@ NGINX Proxy Manager默认只支持通过配置多个subdomain来在同一个doma
 
 > Configuring Nginx Proxy Manager (NPM) to serve applications like Sonarr under a subdirectory (e.g., mydomain.com/sonarr) can be challenging due to how certain web applications handle base paths. Many applications are designed to run at the root (/) and may not support being served from a subdirectory without additional configuration
 
-来自：https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/
+来自：[https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/](https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/)
 
 ### 局限性#2: 默认的Basic Auth不支持用户手动输入
 
@@ -59,7 +59,7 @@ Alternatives to Nginx Proxy Manager include Traefik, Caddy, Apache HTTP Server, 
 
 > If I was using plain nginx, it probably would've taken me a second to do the domain switch with configs alone.
 
-来自：https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+来自：[https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button](https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 ## 其他收获
 
@@ -74,4 +74,4 @@ networks:
     external: true
 ```
 
-参考：https://docs.docker.com/compose/how-tos/networking/
+参考：[https://docs.docker.com/compose/how-tos/networking/](https://docs.docker.com/compose/how-tos/networking/)
