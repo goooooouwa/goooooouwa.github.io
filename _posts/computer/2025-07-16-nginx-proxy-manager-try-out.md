@@ -30,7 +30,7 @@ published: true
 
 NGINX Proxy Manager默认只支持通过配置多个subdomain来在同一个domain下代理多个服务，而不支持通过使用同一个subdomain但是不同端口的方式（而这恰好是我的使用场景，因为我没钱买独立域名，所以是使用的免费eu.org subdomain）。
 
-尝试用Custom Locations来支持多个服务的场景。不过发现，custom location还是需要自己写配置，而且很多服务本身不支持以子目录的形式运行，比如sonarr：
+我也尝试过用Custom Locations来支持多个服务的场景。不过很快发现，custom location还是需要自己写配置，而且更致命的问题是，很多服务本身并不支持以子目录的形式运行，比如sonarr：
 
 > Configuring Nginx Proxy Manager (NPM) to serve applications like Sonarr under a subdirectory (e.g., mydomain.com/sonarr) can be challenging due to how certain web applications handle base paths. Many applications are designed to run at the root (/) and may not support being served from a subdirectory without additional configuration
 
