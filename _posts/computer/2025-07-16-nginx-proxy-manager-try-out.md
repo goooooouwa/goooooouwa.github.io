@@ -24,7 +24,7 @@ published: true
 
 ![nginx-proxy-manager-config.png]({{site.baseurl}}/assets/images/nginx-proxy-manager-config.png)
 
-但是在使用过程中我逐渐发现nginx proxy manager对于我的使用场景存在的一些局限性。并且逐渐意识到通过图形界面来管理nginx配置可能没有想象中那么美好（当然这一点我之前也意料到了，这也是我一直迟迟没有试用它的原因）。
+但是在使用过程中我逐渐发现nginx proxy manager对于我的使用场景存在的一些局限性。并且逐渐意识到通过图形界面来管理nginx配置可能没有想象中那么美好（当然这一点我之前也想到了，这也是我一直迟迟没有试用它的原因）。
 
 ### 局限性#1
 
