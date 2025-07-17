@@ -7,9 +7,9 @@ published: true
 
 我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer[不支持在Deploy时构建镜像](https://portal.portainer.io/knowledge/can-i-build-an-image-while-deploying-a-stack/application-from-git)，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。
 
-在过去很长一段时间，我开始注意到一个名为Nginx Proxy Manager的docker应用在各种地方越来越频繁地被提及，很多人都极力推荐这个应用（比如，[这个](https://www.reddit.com/r/selfhosted/comments/1dmh3mt/comment/l9vyc0t/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)Reddit帖子）。
+在过去一段时间，我开始注意到一个名为Nginx Proxy Manager的docker应用。它在各种地方越来越频繁地被提及，很多人都极力推荐这个应用（比如，[这个](https://www.reddit.com/r/selfhosted/comments/1dmh3mt/comment/l9vyc0t/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)Reddit帖子）。
 
-我想尝试这个Nginx Proxy Manager的想法已经在心里酝酿许久，今天终于觉得动手尝试。
+我想尝试这个Nginx Proxy Manager的想法已经在心里酝酿许久，今天终于决定动手尝试。
 
 ## 我的nginx使用场景
 
