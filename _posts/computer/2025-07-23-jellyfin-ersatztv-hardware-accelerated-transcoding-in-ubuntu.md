@@ -104,7 +104,7 @@ On Debian & Ubuntu:
 
 #### 4.2 Play a video in Jellyfin web client and trigger a video transcoding by setting a lower resolution or bitrate.
 
-
+![2025-07-23 jellyfin transcoding info.png]({{site.baseurl}}/assets/images/2025-07-23 jellyfin transcoding info.png)
 
 #### 4.3 Use intel_gpu_top command to check the occupancy of the engines as follows:
 
@@ -112,18 +112,43 @@ On Debian & Ubuntu:
 
 本地系统配置好并验证Jellyfin能成功通过QSV完成硬件加速转码后，可以考虑进一步配置Docker版Jellyfin的硬件解码，以后可以考虑只通过Docker运行Jellfyin，方便后期管理，当然如果你对绝对性能有要求，也推荐使用本地运行的Jellyfin，因为本地版本的设置步骤更加简单，调试也更加方便。
 
-### 在J4125小主机上通过Docker运行Jellyfin并实现硬件加速转码的步骤：
+## 在J4125小主机上通过Docker运行Jellyfin并实现硬件加速转码的步骤：
 
-1. 根据[Jellyfin官方文档](https://jellyfin.org/docs/general/installation/container#using-docker-compose)在Docker上安装Jellyfin
+### 1 根据[Jellyfin官方文档](https://jellyfin.org/docs/general/installation/container#using-docker-compose)在Docker上安装Jellyfin
 
-2. Query the id of the render group on the host system and use it in the Docker CLI or docker-compose file
+### 2 Query the id of the render group on the host system
 
+`getent group render | cut -d: -f3`
 
-3. Check the QSV and VA-API codecs in container
+### 3. Use render group in the Docker CLI or docker-compose file
+ 
+Example docker-compose configuration file written in YAML:
 
-4. Check the OpenCL runtime status in container
+```yml
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    user: 1000:1000
+    group_add:
+      - '122' # Change this to match your "render" host group id and remove this comment
+    network_mode: 'host'
+    volumes:
+      - /path/to/config:/config
+      - /path/to/cache:/cache
+      - /path/to/media:/media
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+```
 
-5. Enable QSV or VA-API in Jellyfin
+### 4 Check the QSV and VA-API codecs in container
+
+`docker exec -it jellyfin /usr/lib/jellyfin-ffmpeg/vainfo`
+
+### 5 Check the OpenCL runtime status in container
+
+`docker exec -it jellyfin /usr/lib/jellyfin-ffmpeg/ffmpeg -v verbose -init_hw_device vaapi=va -init_hw_device opencl@va`
+
+### 6 Enable QSV or VA-API in Jellyfin
 
 参考：[Jellyfin官方文档](https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel#configure-with-linux-virtualization] 
 
