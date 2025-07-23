@@ -47,7 +47,7 @@ sudo usermod -aG render jellyfin
 sudo systemctl restart jellyfin
 ```
 
-#### 2.5 Check the version of intel-opencl-icd thats the Linux distro provides:
+#### 2.5 Check the version of intel-opencl-icd that the Linux distro provides:
 
 ```bash
 $ apt policy intel-opencl-icd
