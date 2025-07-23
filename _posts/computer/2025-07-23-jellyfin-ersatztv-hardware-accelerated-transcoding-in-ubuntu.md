@@ -109,7 +109,7 @@ On Debian & Ubuntu:
 
 ![2025-07-23 jellyfin transcoding info.png]({{site.baseurl}}/assets/images/2025-07-23 jellyfin transcoding info.png)
 
-#### 4.3 Use intel_gpu_top command to check the occupancy of the engines as follows:
+#### 4.3 Use `intel_gpu_top` command to check the occupancy of the engines as follows:
 
 ![2025-07-23 verify GPU transcoding on linux.png]({{site.baseurl}}/assets/images/2025-07-23 verify GPU transcoding on linux.png)
 
