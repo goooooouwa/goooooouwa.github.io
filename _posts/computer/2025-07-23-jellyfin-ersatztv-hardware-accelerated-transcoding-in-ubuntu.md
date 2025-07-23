@@ -21,7 +21,7 @@ curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash
 
 官方文档的Jellyfin安装过程中会自动将jellyfin repository添加到apt source list，如果已经完成了Jellyfin的安装，可以直接跳过这一步。
 
-#### 2.2 Install the jellyfin-ffmpeg7 package. Remove the deprecated jellyfin meta package if it breaks the dependencies:
+#### 2.2 Install the jellyfin-ffmpeg7 package
 
 官方文档的Jellyfin安装过程中会同时安装jellyfin-ffmpeg7，如果已经完成了Jellyfin的安装，可以直接跳过这一步。
 
