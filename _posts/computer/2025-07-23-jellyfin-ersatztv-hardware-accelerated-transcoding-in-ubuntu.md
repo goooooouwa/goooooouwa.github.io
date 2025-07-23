@@ -4,6 +4,9 @@ category: computer
 tags: jellyfin ersatztv hardware-accelerated transcoding docker ubuntu
 published: true
 ---
+* TOC
+{:toc}
+
 ## 在J4125小主机的Ubuntu系统上运行Jellyfin并实现硬件加速转码的步骤：
 
 ### 1 按照[Jellyfin官方文档](https://jellyfin.org/docs/general/installation/linux/#debian--ubuntu-and-derivatives)在Ubuntu上安装Jellyfin
