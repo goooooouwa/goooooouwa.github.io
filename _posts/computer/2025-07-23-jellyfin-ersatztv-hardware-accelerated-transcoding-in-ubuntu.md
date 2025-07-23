@@ -153,7 +153,7 @@ services:
 
 ### 6 Enable QSV or VA-API in Jellyfin
 
-参考：[Jellyfin官方文档](https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel#configure-with-linux-virtualization] 
+参考：[Jellyfin官方文档](https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel#configure-with-linux-virtualization)
 
 注意：区分Linuxserver.io版本的Jellyfin Docker镜像与Jellyfin官方版本，两者的Jellyfin config和data文件的路径配置有所不同。
 
