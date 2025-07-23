@@ -113,7 +113,7 @@ On Debian & Ubuntu:
 
 ![2025-07-23 verify GPU transcoding on linux.png]({{site.baseurl}}/assets/images/2025-07-23 verify GPU transcoding on linux.png)
 
-本地系统配置好并验证Jellyfin能成功通过QSV完成硬件加速转码后，可以考虑进一步配置Docker版Jellyfin的硬件解码，以后可以考虑只通过Docker运行Jellfyin，方便管理，当然如果你对绝对性能有要求，也推荐使用本地运行的Jellyfin，因为本地版本的设置步骤更加简单，调试也更加方便。
+本地系统配置好并验证Jellyfin能成功通过QSV完成硬件加速转码后，可以考虑进一步配置Docker版Jellyfin的硬件解码，以后可以考虑只通过Docker运行Jellfyin，方便管理。当然硬件转码最简单的方法还是直接本地运行Jellyfin，因为本地版本的设置步骤更加简单，调试也更加方便。
 
 ## 在J4125小主机上通过Docker运行Jellyfin并实现硬件加速转码的步骤：
 
