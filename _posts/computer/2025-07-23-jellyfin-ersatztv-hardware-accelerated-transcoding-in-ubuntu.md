@@ -91,6 +91,7 @@ sudo /usr/lib/jellyfin-ffmpeg/ffmpeg -v verbose -init_hw_device vaapi=va:/dev/dr
 
 ### 3 在Jellyfin中开启硬件加速转码，选择QSV选项
 
+![2025-07-23 jellyfin transcodiing settings.png]({{site.baseurl}}/assets/images/2025-07-23 jellyfin transcodiing settings.png)
 
 
 ### 4 验证Jellyfin能成功通过QSV完成硬件加速转码
@@ -103,8 +104,11 @@ On Debian & Ubuntu:
 
 #### 4.2 Play a video in Jellyfin web client and trigger a video transcoding by setting a lower resolution or bitrate.
 
+
+
 #### 4.3 Use intel_gpu_top command to check the occupancy of the engines as follows:
 
+![2025-07-23 verify GPU transcoding on linux.png]({{site.baseurl}}/assets/images/2025-07-23 verify GPU transcoding on linux.png)
 
 本地系统配置好并验证Jellyfin能成功通过QSV完成硬件加速转码后，可以考虑进一步配置Docker版Jellyfin的硬件解码，以后可以考虑只通过Docker运行Jellfyin，方便后期管理，当然如果你对绝对性能有要求，也推荐使用本地运行的Jellyfin，因为本地版本的设置步骤更加简单，调试也更加方便。
 
@@ -127,12 +131,21 @@ On Debian & Ubuntu:
 
 ## 在J4125小主机的Ubuntu系统上运行ErsatzTV并实现硬件加速转码的步骤：
 
-1. 按照[ErsatzTV官方文档](https://ersatztv.org/docs/user-guide/install#linux)在Ubuntu上安装ErsatzTV
-2. 进入Settings，将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径，即`/usr/lib/jellyfin-ffmpeg/ffmpeg`和`/usr/lib/jellyfin-ffmpeg/ffprobe`
-3. 编辑FFmpeg Profile，开启硬件加速转码，选择QSV选项
-4. 进入Troubleshooting，展开QSV Capabilities，根据输出检查jellyfin-ffmpeg7是否被使用以及是否存在任何报错（比如, "Error creating a MFX session: -9", "No VA display found for device /dev/dri/renderD128"等），如果Exit Code不为0或者输出最后出现“Conversion Failed”字样，即表示硬件转码不成功；反之，如果输出中Exit Code是0并且输出最后没有出现“Conversion Failed”字样，即表示硬件转码成功。
+### 1 按照[ErsatzTV官方文档](https://ersatztv.org/docs/user-guide/install#linux)在Ubuntu上安装ErsatzTV
+
+### 2 进入Settings，将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径
+
+- ffmpeg path: `/usr/lib/jellyfin-ffmpeg/ffmpeg`
+- ffprobe path: `/usr/lib/jellyfin-ffmpeg/ffprobe`
+
+### 3 编辑FFmpeg Profile，开启硬件加速转码，选择QSV选项
+
+![2025-07-23 ersatztv ffmpeg profile settings.png]({{site.baseurl}}/assets/images/2025-07-23 ersatztv ffmpeg profile settings.png)
+
+### 4 进入Troubleshooting，展开QSV Capabilities，根据输出检查jellyfin-ffmpeg7是否被使用以及是否存在任何报错（比如, "Error creating a MFX session: -9", "No VA display found for device /dev/dri/renderD128"等），如果Exit Code不为0或者输出最后出现“Conversion Failed”字样，即表示硬件转码不成功；反之，如果输出中Exit Code是0并且输出最后没有出现“Conversion Failed”字样，即表示硬件转码成功。
 
 ErsatzTV - Troubleshooting - QSV Capabilities 硬件转码成功的输出样例：
+
 ```
 Checking device /dev/dri/renderD128
 Exit Code: 0
