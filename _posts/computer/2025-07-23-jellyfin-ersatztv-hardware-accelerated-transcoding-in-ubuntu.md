@@ -69,15 +69,44 @@ sudo apt install -y intel-opencl-icd
 ```bash
 sudo /usr/lib/jellyfin-ffmpeg/vainfo --display drm --device /dev/dri/renderD128
 
-libva info: VA-API version 1.17.0
-libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
-libva info: Found init function __vaDriverInit_1_17
-libva info: va_openDriver() returns 0
 Trying display: drm
-vainfo: VA-API version: 1.17 (libva 2.17.0)
-vainfo: Driver version: Intel iHD driver for Intel(R) Gen Graphics - 23.1.2 (xxxxxxx)
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+vainfo: VA-API version: 1.22 (libva 2.22.0)
+vainfo: Driver version: Intel iHD driver for Intel(R) Gen Graphics - 25.2.6 (c6ab0c9)
 vainfo: Supported profile and entrypoints
-...
+      VAProfileNone                   :	VAEntrypointVideoProc
+      VAProfileNone                   :	VAEntrypointStats
+      VAProfileMPEG2Simple            :	VAEntrypointVLD
+      VAProfileMPEG2Main              :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointEncSlice
+      VAProfileH264Main               :	VAEntrypointFEI
+      VAProfileH264Main               :	VAEntrypointEncSliceLP
+      VAProfileH264High               :	VAEntrypointVLD
+      VAProfileH264High               :	VAEntrypointEncSlice
+      VAProfileH264High               :	VAEntrypointFEI
+      VAProfileH264High               :	VAEntrypointEncSliceLP
+      VAProfileVC1Simple              :	VAEntrypointVLD
+      VAProfileVC1Main                :	VAEntrypointVLD
+      VAProfileVC1Advanced            :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointEncPicture
+      VAProfileH264ConstrainedBaseline:	VAEntrypointVLD
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline:	VAEntrypointFEI
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSliceLP
+      VAProfileVP8Version0_3          :	VAEntrypointVLD
+      VAProfileVP8Version0_3          :	VAEntrypointEncSlice
+      VAProfileHEVCMain               :	VAEntrypointVLD
+      VAProfileHEVCMain               :	VAEntrypointEncSlice
+      VAProfileHEVCMain               :	VAEntrypointFEI
+      VAProfileHEVCMain10             :	VAEntrypointVLD
+      VAProfileHEVCMain10             :	VAEntrypointEncSlice
+      VAProfileVP9Profile0            :	VAEntrypointVLD
+      VAProfileVP9Profile2            :	VAEntrypointVLD
 ```
 
 #### 2.8 Check the OpenCL runtime status
@@ -85,11 +114,32 @@ vainfo: Supported profile and entrypoints
 ```bash
 sudo /usr/lib/jellyfin-ffmpeg/ffmpeg -v verbose -init_hw_device vaapi=va:/dev/dri/renderD128 -init_hw_device opencl@va
 
-[AVHWDeviceContext @ 0x55cc8ac21a80] 0.0: Intel(R) OpenCL HD Graphics / Intel(R) Iris(R) Xe Graphics [0x9a49]
-[AVHWDeviceContext @ 0x55cc8ac21a80] Intel QSV to OpenCL mapping function found (clCreateFromVA_APIMediaSurfaceINTEL).
-[AVHWDeviceContext @ 0x55cc8ac21a80] Intel QSV in OpenCL acquire function found (clEnqueueAcquireVA_APIMediaSurfacesINTEL).
-[AVHWDeviceContext @ 0x55cc8ac21a80] Intel QSV in OpenCL release function found (clEnqueueReleaseVA_APIMediaSurfacesINTEL).
-...
+ffmpeg version 7.1.1-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04)
+  configuration: --prefix=/usr/lib/jellyfin-ffmpeg --target-os=linux --extra-version=Jellyfin --disable-doc --disable-ffplay --disable-static --disable-libxcb --disable-sdl2 --disable-xlib --enable-lto=auto --enable-gpl --enable-version3 --enable-shared --enable-gmp --enable-gnutls --enable-chromaprint --enable-opencl --enable-libdrm --enable-libxml2 --enable-libass --enable-libfreetype --enable-libfribidi --enable-libfontconfig --enable-libharfbuzz --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libopenmpt --enable-libdav1d --enable-libsvtav1 --enable-libwebp --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-libzimg --enable-libfdk-aac --arch=amd64 --enable-libshaderc --enable-libplacebo --enable-vulkan --enable-vaapi --enable-amf --enable-libvpl --enable-ffnvcodec --enable-cuda --enable-cuda-llvm --enable-cuvid --enable-nvdec --enable-nvenc
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[AVHWDeviceContext @ 0x5b98ad31fe80] libva: VA-API version 1.22.0
+[AVHWDeviceContext @ 0x5b98ad31fe80] libva: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+[AVHWDeviceContext @ 0x5b98ad31fe80] libva: Found init function __vaDriverInit_1_22
+[AVHWDeviceContext @ 0x5b98ad31fe80] libva: va_openDriver() returns 0
+[AVHWDeviceContext @ 0x5b98ad31fe80] Initialised VAAPI connection: version 1.22
+[AVHWDeviceContext @ 0x5b98ad31fe80] VAAPI driver: Intel iHD driver for Intel(R) Gen Graphics - 25.2.6 (c6ab0c9).
+[AVHWDeviceContext @ 0x5b98ad31fe80] Driver not found in known nonstandard list, using standard behaviour.
+[AVHWDeviceContext @ 0x5b98ad359240] 0.0: Intel(R) OpenCL HD Graphics / Intel(R) UHD Graphics 600 [0x3185]
+[AVHWDeviceContext @ 0x5b98ad359240] Intel QSV to OpenCL mapping function found (clCreateFromVA_APIMediaSurfaceINTEL).
+[AVHWDeviceContext @ 0x5b98ad359240] Intel QSV in OpenCL acquire function found (clEnqueueAcquireVA_APIMediaSurfacesINTEL).
+[AVHWDeviceContext @ 0x5b98ad359240] Intel QSV in OpenCL release function found (clEnqueueReleaseVA_APIMediaSurfacesINTEL).
+Universal media converter
+usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
+
+Use -h to get full help or, even better, run 'man ffmpeg'
 ```
 
 ### 3 在Jellyfin中开启硬件加速转码，选择QSV选项
