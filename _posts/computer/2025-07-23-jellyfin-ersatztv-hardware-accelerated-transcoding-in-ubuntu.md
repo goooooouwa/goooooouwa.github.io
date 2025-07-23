@@ -170,7 +170,9 @@ services:
 
 ![2025-07-23 ersatztv ffmpeg profile settings.png]({{site.baseurl}}/assets/images/2025-07-23 ersatztv ffmpeg profile settings.png)
 
-### 4 进入Troubleshooting，展开QSV Capabilities，根据输出检查jellyfin-ffmpeg7是否被使用以及是否存在任何报错（比如, "Error creating a MFX session: -9", "No VA display found for device /dev/dri/renderD128"等），如果Exit Code不为0或者输出最后出现“Conversion Failed”字样，即表示硬件转码不成功；反之，如果输出中Exit Code是0并且输出最后没有出现“Conversion Failed”字样，即表示硬件转码成功。
+### 4 进入Troubleshooting，展开QSV Capabilities，检查输出结果
+
+检查输出中jellyfin-ffmpeg7是否被正确使用以及结果中是否存在任何报错（比如, "Error creating a MFX session: -9", "No VA display found for device /dev/dri/renderD128"等），如果Exit Code不为0或者输出最后出现“Conversion Failed”字样，即表示硬件转码不成功；反之，如果输出中Exit Code是0并且输出最后没有出现“Conversion Failed”字样，即表示硬件转码成功。
 
 ErsatzTV - Troubleshooting - QSV Capabilities 硬件转码成功的输出样例：
 
