@@ -1,0 +1,25 @@
+.google-custom-search table {
+  margin-bottom: initial;
+  width: initial;
+  text-align: initial;
+  color: initial;
+  border-collapse: initial;
+  border: initial;
+}
+.google-custom-search table tr:nth-child(even) {
+  background-color: initial;
+}
+.google-custom-search table th,
+.google-custom-search table td {
+  padding: initial;
+}
+.google-custom-search table th {
+  background-color: initial;
+  border: initial;
+  border-bottom-color: initial;
+}
+.google-custom-search table td {
+  border: initial;
+}
+
+/*# sourceMappingURL=google-custom-search-style-fix.css.map */

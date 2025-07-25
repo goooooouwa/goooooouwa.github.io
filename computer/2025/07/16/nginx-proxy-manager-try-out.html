@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>NGINX Proxy Manager的试用总结 | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="NGINX Proxy Manager的试用总结" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer不支持在Deploy时构建镜像，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。" />
+<meta property="og:description" content="我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer不支持在Deploy时构建镜像，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。" />
+<link rel="canonical" href="https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="NGINX Proxy Manager的试用总结" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2025-07-16T00:00:00+00:00","datePublished":"2025-07-16T00:00:00+00:00","description":"我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer不支持在Deploy时构建镜像，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。","headline":"NGINX Proxy Manager的试用总结","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html"},"url":"https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">NGINX Proxy Manager的试用总结</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-07-16T00:00:00+00:00" itemprop="datePublished">
+        Jul 16, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer<a href="https://portal.portainer.io/knowledge/can-i-build-an-image-while-deploying-a-stack/application-from-git">不支持在Deploy时构建镜像</a>，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。</p>
+
+<p>在过去一段时间，我开始注意到一个名为Nginx Proxy Manager的docker应用。它在各种地方越来越频繁地被提及，很多人都极力推荐这个应用（比如，<a href="https://www.reddit.com/r/selfhosted/comments/1dmh3mt/comment/l9vyc0t/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">这个</a>Reddit帖子）。</p>
+
+<p>我想尝试这个Nginx Proxy Manager的想法已经在心里酝酿许久，今天终于决定动手尝试。</p>
+
+<h2 id="我的nginx使用场景">我的nginx使用场景</h2>
+
+<ul>
+  <li>我有一堆本地网络上运行的docker服务希望通过nginx反向代理来支持通过HTTPS请求远程访问</li>
+  <li>其中有部分docker服务自身不带任何authentication，希望nginx可以提供基本的authentication（通过提供一个basic auth的UI界面要求用户输入）</li>
+  <li>没有自己的主域名，只有一个免费的二级域名（即子域名）</li>
+  <li>希望通过nginx在一个地方统一进行SSL证书管理</li>
+</ul>
+
+<h2 id="试用总结">试用总结</h2>
+
+<p>一通操作下来，我成功的配置了一个proxy host，并将onenav通过nginx proxy manager暴露在公网上。</p>
+
+<p><img src="/assets/images/nginx-proxy-manager-config.png" alt="nginx-proxy-manager-config.png" /></p>
+
+<p>但是在使用过程中我逐渐发现nginx proxy manager对于我的使用场景存在的一些局限性。并且逐渐意识到通过图形界面来管理nginx配置可能没有想象中那么美好（当然这一点我之前也想到了，这也是我一直迟迟没有试用它的原因）。</p>
+
+<h3 id="局限性1界面不支持配置nginx端口">局限性#1：界面不支持配置nginx端口</h3>
+
+<p>NGINX Proxy Manager默认只支持通过配置多个subdomain来在同一个domain下代理多个服务，而不支持通过使用同一个subdomain但是不同端口的方式（而这恰好是我的使用场景，因为我没钱买独立域名，所以是使用的免费eu.org subdomain）。</p>
+
+<p>我也尝试过用Custom Locations来支持多个服务的场景。不过很快发现，custom location还是需要自己写配置，而且更致命的问题是，很多服务本身并不支持以子目录的形式运行，比如sonarr：</p>
+
+<blockquote>
+  <p>Configuring Nginx Proxy Manager (NPM) to serve applications like Sonarr under a subdirectory (e.g., mydomain.com/sonarr) can be challenging due to how certain web applications handle base paths. Many applications are designed to run at the root (/) and may not support being served from a subdirectory without additional configuration</p>
+</blockquote>
+
+<p>来自：<a href="https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/">https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/</a></p>
+
+<h3 id="局限性2-默认的basic-auth不支持用户手动输入">局限性#2: 默认的Basic Auth不支持用户手动输入</h3>
+
+<p>NPM的Basic Auth只能通过请求本身的header来传递，而不是向用户提供一个basic auth的UI界面要求用户输入。这也不符合我的使用场景。</p>
+
+<h2 id="局限性3兼容性问题">局限性#3：兼容性问题</h2>
+
+<p>在只使用界面提供的功能的情况下，我在配置某些docker容器的代理时还遇到以下功能故障：</p>
+
+<ol>
+  <li>Huginn不work（连不上mysql服务器）</li>
+  <li>Calibre也不work（可以访问主界面但是连接不上远程桌面）</li>
+</ol>
+
+<h2 id="what-are-some-alternatives-to-nginx-proxy-manager">What are some alternatives to Nginx Proxy Manager?</h2>
+
+<p>Alternatives to Nginx Proxy Manager include Traefik, Caddy, Apache HTTP Server, HAProxy, WinGate, and OpenResty. They are worth exploring to determine the best fit for your specific requirements and infrastructure. Bear in mind that these alternatives vary in features, performance, and configuration complexity.</p>
+
+<p>以后可能会尝试一些其他的替代品，比如Traefik, Caddy，但也不会抱太大希望。其实，有时候通过命令行、代码和配置比通过图形界面更灵活更方便也更强大。</p>
+
+<p>比如，假如你有60个proxy host的配置需要迁移到另一个域名，通过界面会非常费时，而命令行就可以很快完成。</p>
+
+<blockquote>
+  <p>I have just finished transferring 60 proxy hosts to another domain through NPM, manually via the GUI. It wouldn’t work if I bulk changed the nginx configs themselves, it would just result in server errors on NPM.</p>
+</blockquote>
+
+<blockquote>
+  <p>If I was using plain nginx, it probably would’ve taken me a second to do the domain switch with configs alone.</p>
+</blockquote>
+
+<p>来自：<a href="https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button</a></p>
+
+<h2 id="其他收获">其他收获</h2>
+
+<p>这一次试用nginx proxy manager的另一个收获是学会了通过配置default network的方式来大大的简化对各个docker服务的<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>的networks配置的修改工作量。而且我学习到，如果docker镜像自身已经expose了某些端口，那就不用额外的写expose语句来重复操作了（只要nginx跟docker服务在同一个network便能够直接访问的docker容器expose的端口），更不用添加ports指令的在网络上暴露端口。</p>
+
+<p>这样下来，以后如果有新的docker容器希望通过nginx反向代理，只需要在容器的<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>的最后添加如下一段全局默认network配置即可：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>networks:
+  default:
+    name: nginx_default
+    external: true
+</code></pre></div></div>
+
+<p>参考：<a href="https://docs.docker.com/compose/how-tos/networking/">https://docs.docker.com/compose/how-tos/networking/</a></p>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/computer/2025/07/16/nginx-proxy-manager-try-out.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

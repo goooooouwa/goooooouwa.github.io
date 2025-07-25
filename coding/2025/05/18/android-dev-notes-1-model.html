@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Android编程笔记（一）：Model | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Android编程笔记（一）：Model" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="记录生活、学习和思考" />
+<meta property="og:description" content="记录生活、学习和思考" />
+<link rel="canonical" href="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-1-model.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-1-model.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Android编程笔记（一）：Model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2025-05-18T00:00:00+00:00","datePublished":"2025-05-18T00:00:00+00:00","description":"记录生活、学习和思考","headline":"Android编程笔记（一）：Model","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-1-model.html"},"url":"https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-1-model.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Android编程笔记（一）：Model</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-05-18T00:00:00+00:00" itemprop="datePublished">
+        May 18, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li>
+<a href="#%E5%A6%82%E4%BD%95%E5%9C%A8android%E5%BA%94%E7%94%A8%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93" id="markdown-toc-如何在android应用中创建和使用数据库">如何在Android应用中创建和使用数据库</a>    <ul>
+      <li>
+<a href="#0-%E5%AE%89%E8%A3%85room%E4%BE%9D%E8%B5%96" id="markdown-toc-0-安装room依赖">0. 安装Room依赖</a>        <ul>
+          <li><a href="#01-%E5%B0%86-ksp-%E6%8F%92%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%82%A8%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%AD" id="markdown-toc-01-将-ksp-插件添加到您的项目中">0.1 将 KSP 插件添加到您的项目中</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#1-%E5%88%9B%E5%BB%BAentity-dao%E5%92%8Cdatabase%E7%B1%BB" id="markdown-toc-1-创建entity-dao和database类">1. 创建Entity, Dao和Database类</a>        <ul>
+          <li><a href="#11-%E5%88%9B%E5%BB%BAentity%E6%95%B0%E6%8D%AE%E5%AE%9E%E4%BD%93%E7%B1%BB" id="markdown-toc-11-创建entity数据实体类">1.1 创建Entity数据实体类</a></li>
+          <li><a href="#12-%E5%88%9B%E5%BB%BAdao%E6%8E%A5%E5%8F%A3" id="markdown-toc-12-创建dao接口">1.2 创建Dao接口</a></li>
+          <li><a href="#13-%E5%88%9B%E5%BB%BAdatabase%E7%B1%BB" id="markdown-toc-13-创建database类">1.3 创建Database类</a></li>
+        </ul>
+      </li>
+      <li><a href="#2-%E4%BD%BF%E7%94%A8singleton%E6%A8%A1%E5%BC%8F%E8%AE%BF%E9%97%AEdatabase%E5%AE%9E%E4%BE%8B" id="markdown-toc-2-使用singleton模式访问database实例">2. 使用Singleton模式访问Database实例</a></li>
+      <li><a href="#3-%E8%AE%BF%E9%97%AEdao%E5%AF%B9%E8%B1%A1" id="markdown-toc-3-访问dao对象">3. 访问Dao对象</a></li>
+      <li><a href="#4-ui-thread--worker-threads" id="markdown-toc-4-ui-thread--worker-threads">4. UI thread &amp; Worker threads</a></li>
+      <li>
+<a href="#5-kotlin-coroutines" id="markdown-toc-5-kotlin-coroutines">5. Kotlin Coroutines</a>        <ul>
+          <li><a href="#what-is-a-suspending-function" id="markdown-toc-what-is-a-suspending-function">What is a suspending function</a></li>
+          <li><a href="#sequential-by-default" id="markdown-toc-sequential-by-default">Sequential by default</a></li>
+          <li><a href="#concurrent-using-async" id="markdown-toc-concurrent-using-async">Concurrent using async</a></li>
+          <li><a href="#coroutine%E7%9A%84%E5%AE%9E%E4%BE%8B%E5%92%8C%E8%AF%AD%E6%B3%95%E8%A7%A3%E9%87%8A" id="markdown-toc-coroutine的实例和语法解释">Coroutine的实例和语法解释</a></li>
+        </ul>
+      </li>
+      <li><a href="#6-%E5%A6%82%E4%BD%95%E5%9C%A8ui%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C" id="markdown-toc-6-如何在ui中进行数据库操作">6. 如何在UI中进行数据库操作</a></li>
+      <li><a href="#7-%E5%9C%A8viewmodel%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C" id="markdown-toc-7-在viewmodel中进行数据库操作">7. 在ViewModel中进行数据库操作</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="如何在android应用中创建和使用数据库">如何在Android应用中创建和使用数据库</h2>
+
+<h3 id="0-安装room依赖">0. 安装Room依赖</h3>
+
+<p>将以下依赖项添加到应用的 build.gradle 文件。</p>
+
+<p>注意 ：请仅选择 ksp 或 annotationProcessor 中的一项。请勿同时包含这两项。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">room_version</span> <span class="p">=</span> <span class="s">"2.7.1"</span>
+
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-runtime:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)</span>
+    <span class="c1">// See Add the KSP plugin to your project</span>
+    <span class="nf">ksp</span><span class="p">(</span><span class="s">"androidx.room:room-compiler:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// If this project only uses Java source, use the Java annotationProcessor</span>
+    <span class="c1">// No additional plugins are necessary</span>
+    <span class="nf">annotationProcessor</span><span class="p">(</span><span class="s">"androidx.room:room-compiler:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Kotlin Extensions and Coroutines support for Room</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-ktx:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - RxJava2 support for Room</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-rxjava2:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - RxJava3 support for Room</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-rxjava3:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Guava support for Room, including Optional and ListenableFuture</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-guava:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Test helpers</span>
+    <span class="nf">testImplementation</span><span class="p">(</span><span class="s">"androidx.room:room-testing:$room_version"</span><span class="p">)</span>
+
+    <span class="c1">// optional - Paging 3 Integration</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.room:room-paging:$room_version"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="01-将-ksp-插件添加到您的项目中">0.1 将 KSP 插件添加到您的项目中</h4>
+
+<p>首先，在顶级 <code class="language-plaintext highlighter-rouge">build.gradle.kts</code> 文件中声明 KSP 插件。请务必选择与项目的 Kotlin 版本一致的 KSP 版本。您可以在 KSP GitHub 页面上找到版本列表。</p>
+
+<p>注意 ：KSP 版本的前一部分必须与 build 中使用的 Kotlin 版本一致。例如，如果您使用的是 Kotlin 2.0.21，则 KSP 版本必须是 2.0.21-x.y.z 版本之一。可以在<code class="language-plaintext highlighter-rouge">libs.versions.toml</code>文件中查看当前项目使用的Kotlin的版本。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+    <span class="nf">id</span><span class="p">(</span><span class="s">"com.google.devtools.ksp"</span><span class="p">)</span> <span class="n">version</span> <span class="s">"2.0.21-1.0.27"</span> <span class="n">apply</span> <span class="k">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>然后，在模块级 build.gradle.kts 文件中启用 KSP：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+    <span class="nf">id</span><span class="p">(</span><span class="s">"com.google.devtools.ksp"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="1-创建entity-dao和database类">1. 创建Entity, Dao和Database类</h3>
+
+<h4 id="11-创建entity数据实体类">1.1 创建Entity数据实体类</h4>
+
+<p>使用<code class="language-plaintext highlighter-rouge">@Entity</code> annotation来创建数据实体类。每个数据实体类有一个或多个Primary Key，通过<code class="language-plaintext highlighter-rouge">@PrimaryKey</code> annotation来标识。Room默然会根据参数名来匹配数据表的列名，你可以通过<code class="language-plaintext highlighter-rouge">@ColumnInfo</code> annotation来自定义数据列的属性。</p>
+
+<p>You define each Room entity as a class annotated with <code class="language-plaintext highlighter-rouge">@Entity</code>. A Room entity includes fields for each column in the corresponding table in the database, including one or more columns that make up the primary key.</p>
+
+<p>By default, Room uses the class name as the database table name. If you want the table to have a different name, set the tableName property of the <code class="language-plaintext highlighter-rouge">@Entity</code> annotation. Similarly, Room uses the field names as column names in the database by default. If you want a column to have a different name, add the <code class="language-plaintext highlighter-rouge">@ColumnInfo</code> annotation to the field and set the name property.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">data class</span> <span class="nc">Student</span><span class="p">(</span>
+	<span class="nd">@PrimaryKey</span><span class="p">(</span><span class="n">autoGenerate</span><span class="p">=</span><span class="k">true</span><span class="p">)</span>
+	<span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="p">=</span><span class="s">"student_id"</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="py">studentId</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+
+	<span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="p">=</span><span class="s">"student_name"</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="py">studentName</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+
+	<span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="p">=</span><span class="s">"student_email"</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="py">studentEmail</span><span class="p">:</span> <span class="nc">String</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="12-创建dao接口">1.2 创建Dao接口</h4>
+
+<p>使用<code class="language-plaintext highlighter-rouge">@Dao</code> annotation来创建Dao接口或者抽象类。</p>
+
+<p>You can define each DAO as either an interface or an abstract class. For basic use cases, you usually use an interface. In either case, you must always annotate your DAOs with <code class="language-plaintext highlighter-rouge">@Dao</code>. DAOs don’t have properties, but they do define one or more methods for interacting with the data in your app’s database.</p>
+
+<p>Dao提供了各种基础的数据访问方法。所有对数据进行操作的方法（如Insert, Update, Delete）都只接受一个或多个Entity数据类作为参数。</p>
+
+<p>Each parameter for an <code class="language-plaintext highlighter-rouge">@Insert</code> method must be either an instance of a <a href="https://developer.android.com/training/data-storage/room/defining-data">Room data entity class</a> annotated with <code class="language-plaintext highlighter-rouge">@Entity</code> or a collection of data entity class instances, each of which points to a database. </p>
+
+<p>All of the parameters of the Insert method must either be classes annotated with <code class="language-plaintext highlighter-rouge">Entity</code> or collections/array of it.</p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">@Query</code> annotation可以创建自定义SQL语句来进行数据查询或者更加复杂的数据操作，并将其封装成Dao方法以供调用。</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">@Query</code> annotation lets you write SQL statements and expose them as DAO methods. Use these query methods to query data from your app’s database or when you need to perform more complex insertions, updates, and deletions.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Dao</span>
+<span class="kd">interface</span> <span class="nc">StudentDao</span> <span class="p">{</span>
+    <span class="nd">@Insert</span>
+    <span class="k">fun</span> <span class="nf">createStudent</span><span class="p">(</span><span class="k">vararg</span> <span class="n">students</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span>
+
+    <span class="nd">@Update</span>
+    <span class="k">fun</span> <span class="nf">createStudent</span><span class="p">(</span><span class="k">vararg</span> <span class="n">students</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span>
+
+    <span class="nd">@Delete</span>
+    <span class="k">fun</span> <span class="nf">createStudent</span><span class="p">(</span><span class="k">vararg</span> <span class="n">students</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span>
+
+    <span class="nd">@Query</span><span class="p">(</span><span class="s">"SELECT * FROM student"</span><span class="p">)</span>
+    <span class="k">fun</span> <span class="nf">getAllStudents</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Student</span><span class="p">&gt;</span>
+
+    <span class="nd">@Query</span><span class="p">(</span><span class="s">"SELECT * from student WHERE student_name = :name LIMIT 1"</span><span class="p">)</span>
+    <span class="k">fun</span> <span class="nf">findStudentByName</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">):</span> <span class="nc">Student</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">vararg</code> Kotlin语法允许调用者传入可变数量的某一类型参数而无需提前构造集合类（如数组）。</p>
+
+<p>In Kotlin, <code class="language-plaintext highlighter-rouge">vararg</code> allows a function to accept a variable number of arguments of the same type. It simplifies function calls by eliminating the need to create collections when passing multiple values.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">printNames</span><span class="p">(</span><span class="k">vararg</span> <span class="n">names</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">names</span><span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">name</span> <span class="p">-&gt;</span> <span class="nf">println</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">printNames</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">,</span> <span class="s">"Bob"</span><span class="p">,</span> <span class="s">"Charlie"</span><span class="p">)</span>
+    <span class="c1">// Output:</span>
+    <span class="c1">// Alice</span>
+    <span class="c1">// Bob</span>
+    <span class="c1">// Charlie</span>
+    
+    <span class="kd">val</span> <span class="py">people</span> <span class="p">=</span> <span class="nf">arrayOf</span><span class="p">(</span><span class="s">"David"</span><span class="p">,</span> <span class="s">"Eve"</span><span class="p">)</span>
+    <span class="nf">printNames</span><span class="p">(*</span><span class="n">people</span><span class="p">)</span> <span class="c1">// Using spread operator to pass an array as vararg</span>
+    <span class="c1">// Output:</span>
+    <span class="c1">// David</span>
+    <span class="c1">// Eve</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Dao方法允许以此方式批量创建、修改和删除多条数据记录。比如，可以批量创建多条student记录：</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">createStudent</span><span class="p">(</span>
+	<span class="nc">Student</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">"Alice"</span><span class="p">,</span><span class="s">"alice@gmail.com"</span><span class="p">),</span>
+	<span class="nc">Student</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">"Bob"</span><span class="p">,</span><span class="s">"bob@gmail.com"</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="13-创建database类">1.3 创建Database类</h4>
+
+<p>创建Database类需要使用<code class="language-plaintext highlighter-rouge">@Database</code> annotation，并且在entities参数中提供所有与该数据库有关的Entity数据类。</p>
+
+<p>The database class must satisfy the following conditions:</p>
+
+<ul>
+  <li>The class must be annotated with a <code class="language-plaintext highlighter-rouge">@Database</code> annotation that includes an entities array that lists all of the data entities associated with the database.</li>
+  <li>The class must be an abstract class that extends RoomDatabase.</li>
+  <li>For each DAO class that is associated with the database, the database class must define an abstract method that has zero arguments and returns an instance of the DAO class.</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span><span class="p">=[</span><span class="nc">Student</span><span class="o">::</span><span class="k">class</span><span class="p">],</span> <span class="n">version</span><span class="p">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">StudentDatabase</span><span class="p">:</span> <span class="nc">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">abstract</span> <span class="k">fun</span> <span class="nf">studentDao</span><span class="p">():</span> <span class="nc">StudentDao</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-使用singleton模式访问database实例">2. 使用Singleton模式访问Database实例</h3>
+
+<p>使用Kotlin提供的companion object可以轻松创建类方法和属性，可以用来实现Singleton模式，用于模式访问Database实例。</p>
+
+<p>Companion objects allow you to define class-level functions and properties. This makes it easy to create factory methods, hold constants, and access shared utilities.</p>
+
+<p>创建新项目时，直接将以下模板代码拷贝到项目中进行简答修改即可用来访问Database实例。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Database</span><span class="p">(</span><span class="n">entities</span> <span class="p">=</span> <span class="p">[</span><span class="nc">Student</span><span class="o">::</span><span class="k">class</span><span class="p">],</span> <span class="n">version</span> <span class="p">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">StudentDatabase</span><span class="p">:</span> <span class="nc">RoomDatabase</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">studentDao</span><span class="p">():</span> <span class="nc">StudentDao</span>
+
+    <span class="k">companion</span> <span class="k">object</span><span class="p">{</span>
+        <span class="nd">@Volatile</span>
+        <span class="k">private</span> <span class="kd">var</span> <span class="py">INSTANCE</span><span class="p">:</span> <span class="nc">StudentDatabase</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+
+        <span class="k">fun</span> <span class="nf">getInstance</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="nc">Context</span><span class="p">):</span> <span class="nc">StudentDatabase</span> <span class="p">{</span>
+            <span class="nf">synchronized</span><span class="p">(</span><span class="k">this</span><span class="p">){</span>
+                <span class="kd">var</span> <span class="py">instance</span> <span class="p">=</span> <span class="nc">INSTANCE</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">){</span>
+                    <span class="n">instance</span> <span class="p">=</span> <span class="nc">Room</span><span class="p">.</span><span class="nf">databaseBuilder</span><span class="p">(</span>
+                        <span class="n">context</span><span class="p">.</span><span class="n">applicationContext</span><span class="p">,</span>
+                        <span class="nc">StudentDatabase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span>
+                        <span class="s">"students_database"</span>
+                    <span class="p">).</span><span class="nf">build</span><span class="p">()</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="n">instance</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Android app会在数据库初始化时自动根据Entities和Database创建SQLite数据库和数据表。(有待验证)</p>
+
+<h3 id="3-访问dao对象">3. 访问Dao对象</h3>
+
+<p>使用以下方法访问Dao对象</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">studentDao</span> <span class="p">=</span> <span class="nc">StudentDatabase</span><span class="p">.</span><span class="nf">getInstance</span><span class="p">(</span><span class="n">application</span><span class="p">).</span><span class="nf">studentDao</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="4-ui-thread--worker-threads">4. UI thread &amp; Worker threads</h3>
+
+<p>In Android, the UI thread, also known as the main thread, is responsible for handling all UI-related operations and user interactions. Therefore, <strong>long-running or blocking operations</strong> should not be executed on the UI thread to prevent the application from freezing and becoming unresponsive, which can lead to an “Application Not Responding” (ANR) error. </p>
+
+<p>Here’s a more detailed explanation:</p>
+
+<ul>
+  <li><strong>UI Thread Responsibilities:</strong></li>
+</ul>
+
+<p>The UI thread is crucial for rendering the user interface, processing user input (like touch events and button clicks), and managing the lifecycle of UI components.</p>
+
+<ul>
+  <li><strong>Concurrency Issues:</strong></li>
+</ul>
+
+<p>Android’s UI toolkit is not thread-safe, meaning that only the UI thread should directly interact with UI elements. Modifying UI components from other threads can lead to unpredictable behavior and crashes.</p>
+
+<ul>
+  <li><strong>Consequences of Blocking the UI Thread:</strong></li>
+</ul>
+
+<p>If the UI thread is blocked for an extended period (typically more than 5 seconds), the system will display an ANR dialog to the user, indicating that the application is not responding.</p>
+
+<ul>
+  <li><strong>Best Practices:</strong></li>
+</ul>
+
+<p>To avoid blocking the UI thread, long-running tasks like network requests, database operations, or complex calculations should be offloaded to background threads (also called worker threads).</p>
+
+<ul>
+  <li><strong>Updating the UI from Background Threads:</strong></li>
+</ul>
+
+<p>After completing a task in a background thread, the results need to be posted back to the UI thread to update the UI safely. This can be achieved using mechanisms like <code class="language-plaintext highlighter-rouge">runOnUiThread()</code>, <code class="language-plaintext highlighter-rouge">Handlers</code>, or <code class="language-plaintext highlighter-rouge">View.post()</code>, or using modern concurrency APIs like <code class="language-plaintext highlighter-rouge">AsyncTask</code> or <code class="language-plaintext highlighter-rouge">Kotlin Coroutines</code>.</p>
+
+<p>In essence, the UI thread should be kept responsive and free from intensive operations to ensure a smooth and efficient user experience.</p>
+
+<h3 id="5-kotlin-coroutines">5. Kotlin Coroutines</h3>
+
+<p>Kotlin Coroutines是用来管理多线程计算的语法工具。Coroutine里的代码在默认情况下跟普通代码一样，是线性执行的，外层代码不用显式等待Coroutine里的代码在其他线程运算结果的完成（详情见下文Sequential by default）；而如果希望Coroutine里的代码能够并行执行(Concurrency)，则可通过<code class="language-plaintext highlighter-rouge">async</code> &amp; <code class="language-plaintext highlighter-rouge">await</code>语法实现（详情见下文Concurrent using async）。</p>
+
+<p>Kotlin provides only minimal low-level APIs in its standard library to enable other libraries to utilize coroutines. Unlike many other languages with similar capabilities, async and await are not keywords in Kotlin and are not even part of its standard library. Moreover, <strong>Kotlin’s concept of suspending function provides a safer and less error-prone abstraction for asynchronous operations than futures and promises.</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">kotlinx.coroutines</code> is a rich library for coroutines developed by JetBrains. It contains a number of high-level coroutine-enabled primitives, including <code class="language-plaintext highlighter-rouge">launch</code>, <code class="language-plaintext highlighter-rouge">async</code>, and others.</p>
+
+<h4 id="what-is-a-suspending-function">What is a suspending function</h4>
+
+<p>A suspending function is simply a function that can be paused and resumed at a later time. They can execute a long running operation and wait for it to complete without blocking.</p>
+
+<p>The syntax of a suspending function is similar to that of a regular function except for the addition of the suspend keyword. It can take a parameter and have a return type. However, suspending functions can only be invoked by another suspending function or within a coroutine.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">suspend</span> <span class="k">fun</span> <span class="nf">backgroundTask</span><span class="p">(</span><span class="n">param</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Int</span> <span class="p">{</span>
+     <span class="c1">// long running operation</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="sequential-by-default">Sequential by default</h4>
+
+<p>Assume that we have two suspending functions defined elsewhere that do something useful like some kind of remote service call or computation. We just pretend they are useful, but actually each one just delays for a second for the purpose of this example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">suspend</span> <span class="k">fun</span> <span class="nf">doSomethingUsefulOne</span><span class="p">():</span> <span class="nc">Int</span> <span class="p">{</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">1000L</span><span class="p">)</span> <span class="c1">// pretend we are doing something useful here</span>
+    <span class="k">return</span> <span class="mi">13</span>
+<span class="p">}</span>
+
+<span class="k">suspend</span> <span class="k">fun</span> <span class="nf">doSomethingUsefulTwo</span><span class="p">():</span> <span class="nc">Int</span> <span class="p">{</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">1000L</span><span class="p">)</span> <span class="c1">// pretend we are doing something useful here, too</span>
+    <span class="k">return</span> <span class="mi">29</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>What do we do if we need them to be invoked <strong>sequentially</strong> — first <code class="language-plaintext highlighter-rouge">doSomethingUsefulOne</code> <strong>and then</strong> <code class="language-plaintext highlighter-rouge">doSomethingUsefulTwo</code>, and compute the sum of their results? In practice, we do this if we use the result of the first function to make a decision on whether we need to invoke the second one or to decide on how to invoke it.</p>
+
+<p>We use a normal sequential invocation, because the code in the coroutine, just like in the regular code, is <strong>sequential</strong> by default. The following example demonstrates it by measuring the total time it takes to execute both suspending functions:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">time</span> <span class="p">=</span> <span class="nf">measureTimeMillis</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">one</span> <span class="p">=</span> <span class="nf">doSomethingUsefulOne</span><span class="p">()</span>
+    <span class="kd">val</span> <span class="py">two</span> <span class="p">=</span> <span class="nf">doSomethingUsefulTwo</span><span class="p">()</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"The answer is ${one + two}"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">println</span><span class="p">(</span><span class="s">"Completed in $time ms"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>It produces something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The answer is 42
+Completed in 2017 ms
+</code></pre></div></div>
+
+<h4 id="concurrent-using-async">Concurrent using async</h4>
+
+<p>What if there are no dependencies between invocations of <code class="language-plaintext highlighter-rouge">doSomethingUsefulOne</code> and <code class="language-plaintext highlighter-rouge">doSomethingUsefulTwo</code> and we want to get the answer faster, by doing both <strong>concurrently</strong>? This is where <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html">async</a> comes to help.</p>
+
+<p>Conceptually, <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html">async</a> is just like <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html">launch</a>. It starts a separate coroutine which is a light-weight thread that works concurrently with all the other coroutines. The difference is that <code class="language-plaintext highlighter-rouge">launch</code> returns a <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html">Job</a> and does not carry any resulting value, while <code class="language-plaintext highlighter-rouge">async</code> returns a <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/index.html">Deferred</a> — a light-weight non-blocking future that represents a promise to provide a result later. You can use <code class="language-plaintext highlighter-rouge">.await()</code> on a deferred value to get its eventual result, but <code class="language-plaintext highlighter-rouge">Deferred</code> is also a <code class="language-plaintext highlighter-rouge">Job</code>, so you can cancel it if needed.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">time</span> <span class="p">=</span> <span class="nf">measureTimeMillis</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">one</span> <span class="p">=</span> <span class="nf">async</span><span class="p">(</span><span class="n">start</span> <span class="p">=</span> <span class="nc">CoroutineStart</span><span class="p">.</span><span class="nc">LAZY</span><span class="p">)</span> <span class="p">{</span> <span class="nf">doSomethingUsefulOne</span><span class="p">()</span> <span class="p">}</span>
+    <span class="kd">val</span> <span class="py">two</span> <span class="p">=</span> <span class="nf">async</span><span class="p">(</span><span class="n">start</span> <span class="p">=</span> <span class="nc">CoroutineStart</span><span class="p">.</span><span class="nc">LAZY</span><span class="p">)</span> <span class="p">{</span> <span class="nf">doSomethingUsefulTwo</span><span class="p">()</span> <span class="p">}</span>
+    <span class="c1">// some computation</span>
+    <span class="n">one</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span> <span class="c1">// start the first one</span>
+    <span class="n">two</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span> <span class="c1">// start the second one</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"The answer is ${one.await() + two.await()}"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">println</span><span class="p">(</span><span class="s">"Completed in $time ms"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>It produces something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The answer is 42
+Completed in 1017 ms
+</code></pre></div></div>
+
+<p>This is twice as fast, because the two coroutines execute concurrently. Note that concurrency with coroutines is always explicit.</p>
+
+<h4 id="coroutine的实例和语法解释">Coroutine的实例和语法解释</h4>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">=</span> <span class="nf">runBlocking</span> <span class="p">{</span> <span class="c1">// this: CoroutineScope</span>
+    <span class="nf">launch</span> <span class="p">{</span> <span class="nf">doWorld</span><span class="p">()</span> <span class="p">}</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// this is your first suspending function</span>
+<span class="k">suspend</span> <span class="k">fun</span> <span class="nf">doWorld</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">1000L</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"World!"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">launch</code> is a coroutine builder. It launches a new coroutine concurrently with the rest of the code, which continues to work independently. That’s why Hello has been printed first.</p>
+
+<p><code class="language-plaintext highlighter-rouge">runBlocking</code> is also a coroutine builder that bridges the non-coroutine world of a regular fun main() and the code with coroutines inside of <code class="language-plaintext highlighter-rouge">runBlocking { ... }</code> curly braces. This is highlighted in an IDE by <code class="language-plaintext highlighter-rouge">this: CoroutineScope</code> hint right after the runBlocking opening curly brace.</p>
+
+<p><code class="language-plaintext highlighter-rouge">suspend</code> a suspending function, which is simply a function that can be paused and resumed at a later time. <strong>Suspending functions can only be invoked by another suspending function or within a coroutine.</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">delay</code> is a special suspending function. It suspends the coroutine for a specific time. Suspending a coroutine does not block the underlying thread, but allows other coroutines to run and use the underlying thread for their code.</p>
+
+<p><code class="language-plaintext highlighter-rouge">async</code> creates a coroutine and returns its future result as an implementation of Deferred. The running coroutine is cancelled when the resulting deferred is cancelled. Conceptually, <code class="language-plaintext highlighter-rouge">async</code> is just like <code class="language-plaintext highlighter-rouge">launch</code>. It starts a separate coroutine which is a light-weight thread that works concurrently with all the other coroutines. The difference is that <code class="language-plaintext highlighter-rouge">launch</code> returns a Job and does not carry any resulting value, while <code class="language-plaintext highlighter-rouge">async</code> returns a <code class="language-plaintext highlighter-rouge">Deferred</code> — a light-weight non-blocking future that represents a promise to provide a result later.</p>
+
+<p><code class="language-plaintext highlighter-rouge">await</code> you can use <code class="language-plaintext highlighter-rouge">.await()</code> on a deferred value to get its eventual result, but <code class="language-plaintext highlighter-rouge">Deferred</code> is also a Job, so you can cancel it if needed.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Deferred</code> Deferred value is a non-blocking cancellable future — it is a Job with a result.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Job</code> a background job. Conceptually, a job is a cancellable thing with a lifecycle that concludes in its completion.</p>
+
+<h3 id="6-如何在ui中进行数据库操作">6. 如何在UI中进行数据库操作</h3>
+
+<p>在Android app中数据库操作需要在非UI thread进行，以避免阻塞UI渲染。使用Kotlin Coroutine可以轻松在不同thread间允许异步代码。</p>
+
+<p>在UI thread中可以使用<code class="language-plaintext highlighter-rouge">CoroutineScope</code>来启动Coroutine，比如：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span>
+    <span class="c1">// Create a new coroutine to move the execution off the UI thread</span>
+    <span class="nc">CoroutineScope</span><span class="p">(</span><span class="nc">Dispatchers</span><span class="p">.</span><span class="nc">IO</span><span class="p">).</span><span class="nf">launch</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="7-在viewmodel中进行数据库操作">7. 在ViewModel中进行数据库操作</h3>
+
+<p>ViewModel includes a set of KTX extensions that work directly with coroutines. These extension are <code class="language-plaintext highlighter-rouge">lifecycle-viewmodel-ktx</code> library.</p>
+
+<p>在ViewModel中可以使用其自带的Coroutine Scope <code class="language-plaintext highlighter-rouge">viewModelScope</code>来启动Coroutine，具体语法如下：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">StudentViewModel</span><span class="p">(</span>
+	<span class="k">private</span> <span class="kd">val</span> <span class="py">dao</span><span class="p">:</span><span class="nc">StudentDao</span>
+<span class="p">):</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">fun</span> <span class="nf">insertStudent</span><span class="p">(</span><span class="n">student</span><span class="p">:</span> <span class="nc">Student</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Create a new coroutine to move the execution off the UI thread</span>
+        <span class="n">viewModelScope</span><span class="p">.</span><span class="nf">launch</span><span class="p">(</span><span class="nc">Dispatchers</span><span class="p">.</span><span class="nc">IO</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dao</span><span class="p">.</span><span class="nf">insertStudent</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>   <span class="c1">// suspend function</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Let’s dissect the coroutines code in the <code class="language-plaintext highlighter-rouge">insertStudent</code> function:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">viewModelScope</code> is a predefined CoroutineScope that is included with the ViewModel KTX extensions. Note that all coroutines must run in a scope. A CoroutineScope manages one or more related coroutines.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">launch</code> is a function that creates a coroutine and dispatches the execution of its function body to the corresponding dispatcher.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Dispatchers.IO</code> indicates that this coroutine should be executed on a thread reserved for I/O operations.</li>
+</ul>
+
+<p>Since this coroutine is started with viewModelScope, it is executed in the scope of the ViewModel. If the ViewModel is destroyed because the user is navigating away from the screen, viewModelScope is automatically cancelled, and all running coroutines are canceled as well.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/training/data-storage/room</li>
+  <li>https://developer.android.com/training/data-storage/room/accessing-data</li>
+  <li>https://kotlinlang.org/docs/functions.html#variable-number-of-arguments-varargs</li>
+  <li>https://stackoverflow.com/questions/40398072/singleton-with-parameter-in-kotlin</li>
+  <li>https://kotlinlang.org/docs/coroutines-basics.html</li>
+  <li>https://developer.android.com/topic/libraries/architecture/coroutines</li>
+  <li>https://kotlinlang.org/docs/composing-suspending-functions.html</li>
+  <li>https://stackoverflow.com/questions/47871868/what-does-the-suspend-function-mean-in-a-kotlin-coroutine</li>
+  <li>https://developer.android.com/guide/components/processes-and-threads</li>
+</ul>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/coding/2025/05/18/android-dev-notes-1-model.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700%20(at)%20gmail%20(dot)%20com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"></a><br>本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links">
+<ul class="social-media-list">
+<li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
