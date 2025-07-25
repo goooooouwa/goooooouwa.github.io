@@ -359,3 +359,30 @@ Device creation failed: -1313558101.
 Failed to set value '/dev/dri/card0' for option 'qsv_device': Unknown error occurred
 Error parsing global options: Unknown error occurred
 ````
+
+### 5 Auto start ersatztv as a systemd service
+
+创建一个如下的`ersatztv.service`文件：
+
+```
+# /etc/systemd/system/ersatztv.service
+
+[Unit]
+Description=ErsatzTV Service
+
+[Service]
+ExecStart=/home/greg/Applications/ersatztv/ErsatzTV-v25.2.0-linux-x64/ErsatzTV
+Restart=on-abort
+User=root
+WorkingDirectory=/home/greg/Applications/ersatztv/ErsatzTV-v25.2.0-linux-x64
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable the service to start on boot:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable ersatztv.service
+```
