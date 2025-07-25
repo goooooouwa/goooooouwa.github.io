@@ -74,7 +74,6 @@ header_pages:
   - categories.html
   - tags.html
   - wiki.html
-  - docs.html
   - about.md
 
 # Plugin settings
