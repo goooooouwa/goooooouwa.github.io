@@ -25,7 +25,7 @@ tags: perspective study-notes
 
 ### Visual Rays and Vanishing Points
 
-使用视觉射线法可以轻松的找到任意物体在画面中的消失点。只需将地面俯视图（Plan）上的物体平移，并将任一个顶点与翻折后的viewpoint重合，然后沿着顶点所在的任一条边画延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。
+使用视觉射线法可以轻松的找到任意物体在画面中的消失点。只需将地面俯视图（Plan）上的物体平移，并将任一个顶点与翻折后的viewpoint重合，然后沿着顶点所在的两条边各画一条延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。
 
 ![Screenshot 2024-09-14 at 11.38.12 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.38.12 AM.png)
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
