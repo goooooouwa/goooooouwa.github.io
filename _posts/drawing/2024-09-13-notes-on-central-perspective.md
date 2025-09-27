@@ -113,9 +113,9 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 Diagonal lines from each point to the mp **transfer these measures into perspective depth** at the points where the lines intersect the vanishing line.
 
-### Shifting the Unit Dimension
+### 移动单位线条（Shifting the Unit Dimension）
 
-单位水平或垂直长度可以在画面中同一透视深度上任意的反转（rotate）或平移，其长度不变。
+单位水平或垂直长度可以在画面中同一透视深度上任意的旋转（rotate）或平移，其长度不变。
 
 ![perspec3q.gif]({{site.baseurl}}/assets/images/perspec3q.gif)
 
