@@ -6,6 +6,12 @@ published: true
 ---
 两点透视的整体主题是，通过将消失点旋转特定角度以及在合适的measure bar上确定相应的measure points以便投射所需的深度等办法，确定物体在两点透视中的正确比例。
 
+## 两点透视（Two point perspective）
+
+### 两点透视的标志性特征（Defining Features of Two Point Perspective）
+
+![Defining-Features-of-Two-Point-Perspective.PNG]({{site.baseurl}}/assets/images/Defining-Features-of-Two-Point-Perspective.PNG)
+
 ### 定位测量点（locating the measure points）
 
 在一点透视中，单个消失点（principal point）决定了空间中沿着纵深线（指向principal point的消失线）方向上的透视变化，而对角消失点则可以将测量单位从图像平面投射到纵深线上。
@@ -32,5 +38,3 @@ Or, as described above, you can reduce the circle of view to a workable size, us
 Unfortunately this method, even after you get the hang of it, still forces you into a lot of poking of a pocket calculator, and is hopelessly tedious and prone to error if many lines must be inserted in your drawing. The **ultimate solution** is to generate a recession grid for the distant vanishing point, and use this grid to determine the perspective reduction for any verticals in the drawing.
 
 ![use-recession-grid-for-distant-vanishing-points.png]({{site.baseurl}}/assets/images/use-recession-grid-for-distant-vanishing-points.png)
-
-
