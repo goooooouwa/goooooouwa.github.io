@@ -65,8 +65,8 @@ tags: perspective study-notes
 
 结合以上两种方法可以看出，只要找出以下三条线中的任意两条，都可以定位物体在画面中的位置：
 
-1. Viewpoint & end points. 连接 _向上翻折的viewpoint_ 与 _仰视图中物体的这条边的端点(end point)_ 所得到的直线
-1. Vanishing point & ground line intersection. 连接 _物体某条边的消失点_ 与 _仰视图中物体的这条边的延长线与ground line的交点_ 所得到的直线
+1. Line between viewpoint & end points. 连接 _向上翻折的viewpoint_ 与 _仰视图中物体的这条边的端点(end point)_ 所得到的直线
+1. Line between vanishing point & ground line intersection. 连接 _物体某条边的消失点_ 与 _仰视图中物体的这条边的延长线与ground line的交点_ 所得到的直线
 1. Orthogonals from ground line measure points. 连接 _principal point_ 与 _仰视图中物体的这条边的端点(end point)与ground line的交点_ 所得到的直线
 
 实际操作中，当物体离ground line或median line较远时，线条1和2不易构造。
