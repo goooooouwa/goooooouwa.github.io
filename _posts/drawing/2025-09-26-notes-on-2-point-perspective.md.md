@@ -10,7 +10,11 @@ published: true
 
 ### 两点透视的标志性特征（Defining Features of Two Point Perspective）
 
+下图展示的是最简单的两点透视，一个正方体以相对画面45度角的方式摆在画面中心。
+
 ![Defining-Features-of-Two-Point-Perspective.PNG]({{site.baseurl}}/assets/images/Defining-Features-of-Two-Point-Perspective.PNG)
+
+两点透视的物体有两个消失点（vp1和vp2），两者之间是90度。每个消失点与direction of view之间的夹角不同，但是两者之和永远是90度。
 
 ### 定位测量点（locating the measure points）
 
