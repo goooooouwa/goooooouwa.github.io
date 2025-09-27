@@ -16,6 +16,12 @@ published: true
 
 两点透视的物体有两个消失点（vp1和vp2），两者之间是90度。每个消失点与direction of view之间的夹角不同，但是两者之和永远是90度。
 
+### 旋转消失点（rotating the vanishing points）
+
+![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
+
+In this setup, we locate the left and right vanishing points through the angle of rotation between the front face of the primary form and the image plane, which is equal to the angle between a side face of the primary form and the direction of view. The "primary form" is simply the cubic or rectangular solid that defines most of the perspective edges in the drawing. For a room interior, it is the floor plan that defines the visible floor and walls. For an external architectural view, it is the visible sides of the largest building in view.
+
 ### 定位测量点（locating the measure points）
 
 在一点透视中，单个消失点（principal point）决定了空间中沿着纵深线（指向principal point的消失线）方向上的透视变化，而对角消失点则可以将测量单位从图像平面投射到纵深线上。
