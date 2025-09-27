@@ -104,8 +104,8 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 具体的步骤是：
 
-1. 画一条水平条线；
-1. 在水平条线上标记你像画的任意长度；
+1. 画一条水平线段；
+1. 在水平线段上标记你想画的任意长度；
 1. 连接measure bar上的任一measure point与对立的左侧（或者右侧）的dvp得到一条直线；
 1. 连接measure bar的0刻度的点与vanishing point得到第2条直线；
 1. 两条直线的交点即为该measure point对应长度在画面中的深度。
