@@ -138,6 +138,15 @@ Diagonal lines from each point to the mp (不清楚这里的mp是指什么，但
 
 ![20240911_061325138_iOS.png]({{site.baseurl}}/assets/images/20240911_061325138_iOS.png)
 
+**离画面距离、物体大小、图像大小速查表**
+
+![distance-object-size-image-size.png]({{site.baseurl}}/assets/images/distance-object-size-image-size.png)
+
+**离画面距离、视觉角度、图像比例速查表**
+
+![object-distance-visual-angle-image-scale.png]({{site.baseurl}}/assets/images/object-distance-visual-angle-image-scale.png)
+
+
 ## 缩放画面（scaling the drawing）
 
 缩放的具体步骤是：
