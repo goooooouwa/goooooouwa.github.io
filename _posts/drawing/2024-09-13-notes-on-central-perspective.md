@@ -11,7 +11,7 @@ tags: perspective study-notes
 - ground plan: 地面。
 - viewpoint: 视点，观察者眼睛所在的点，垂直于画面。
 - direction of view: viewpoint与画面之间的垂线。
-- principal point: direction of view与画面的交点。
+- principal point: 像主点，direction of view与画面的交点。
 - field of view: 视野，观察者眼睛的视野范围，形成了视锥的角度（degree of vision cone）。
 - vision cone: 视锥，观察者在特定视野范围下（如90度视野）所能看到的实际内容，其最外围构成一个空间中的圆锥体。
 - view circle: 视圈，观察者在特定视野范围下（如90度视野）所能看到的实际内容在画面上的投影，其最外围构成一个圆形。
