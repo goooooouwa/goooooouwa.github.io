@@ -5,20 +5,21 @@ tags: perspective study-notes
 ---
 ## 名词解释
 
-- viewpoint: 视点，观察者眼睛所在的点。
+- image plane: 画面，即画本身所在的平面。
+- ground plan: 地面。
+- viewpoint: 视点，观察者眼睛所在的点，垂直于画面。
+- principal point: viewpoint与画面之间的垂线与画面的交点。
 - field of view: 视野，观察者眼睛的视野范围，形成了视锥的角度（degree of vision cone）。
 - vision cone: 视锥，观察者在特定视野范围下（如90度视野）所能看到的实际内容，其最外围构成一个空间中的圆锥体。
 - view circle: 视圈，观察者在特定视野范围下（如90度视野）所能看到的实际内容在画面上的投影，其最外围构成一个圆形。
-- image plane: 画面，即画本身所在的平面，垂直与viewpoint。
-- ground plan: 地面。
-- ground line: 地面与画面相交的线。
+- ground line: 地线，地面与画面相交的线。
+- horizon line: 地平线，地面的消失线。.
+- median line：中轴线，将viewpint向上翻折后与principal point相连的线。
 - plan: 地面俯视图。
-- principal point: viewpoint与画面之间的垂线与画面的交点。
 - view distance: viewpoint与画面的距离。
 - view height: viewpoint与地面的距离。
 - vanishing point: 消失点，物体某条边在无穷远处收敛的消失点。
 - diagonal vanishing point: 正方体的对角线（而不是某条边）的消失点。
-
 
 
 ## 视觉射线法（The visual ray method）
