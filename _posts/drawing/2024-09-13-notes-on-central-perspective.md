@@ -112,7 +112,7 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 ![Screenshot 2024-09-14 at 11.49.15 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.49.15 AM.png)
 
-Diagonal lines from each point to the mp (measure point) **transfer these measures into perspective depth** at the points where the lines intersect the vanishing line.
+Diagonal lines from each point to the mp (不清楚这里的mp是指什么，但是图中写了dvp=mp，所以这里可以理解为dvp；dvp在90度视锥的view circle上，图中展示的是60度视锥，所以dvp在视锥之外) **transfer these measures into perspective depth** at the points where the lines intersect the vanishing line.
 
 ### 单位水平或垂直线段可以任意旋转或平移（Shifting the Unit Dimension）
 
