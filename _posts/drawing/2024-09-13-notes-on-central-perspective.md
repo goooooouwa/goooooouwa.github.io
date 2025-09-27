@@ -18,7 +18,6 @@ tags: perspective study-notes
 - ground line: 地线，地面与画面相交的线。
 - horizon line: 地平线，地面的消失线。
 - median line：中轴线，将viewpint向上翻折后与principal point相连的线。
-- plan: 地面仰视图。
 - view distance: viewpoint与画面的距离。
 - view height: viewpoint与地面的距离。
 - vanishing point: 消失点，物体某条边在无穷远处收敛的消失点。
