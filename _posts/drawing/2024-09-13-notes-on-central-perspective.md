@@ -20,6 +20,7 @@ tags: perspective study-notes
 - view height: viewpoint与地面的距离。
 - vanishing point: 消失点，物体某条边在无穷远处收敛的消失点。
 - diagonal vanishing point: 正方体的对角线（而不是某条边）的消失点。
+- orthogonals: 正交点，两条互相垂直的线之间的交点。
 
 
 ## 视觉射线法（The visual ray method）
