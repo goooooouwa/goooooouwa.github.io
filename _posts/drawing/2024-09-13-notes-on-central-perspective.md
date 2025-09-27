@@ -13,7 +13,7 @@ tags: perspective study-notes
 - vision cone: 视锥，观察者在特定视野范围下（如90度视野）所能看到的实际内容，其最外围构成一个空间中的圆锥体。
 - view circle: 视圈，观察者在特定视野范围下（如90度视野）所能看到的实际内容在画面上的投影，其最外围构成一个圆形。
 - ground line: 地线，地面与画面相交的线。
-- horizon line: 地平线，地面的消失线。.
+- horizon line: 地平线，地面的消失线。
 - median line：中轴线，将viewpint向上翻折后与principal point相连的线。
 - plan: 地面俯视图。
 - view distance: viewpoint与画面的距离。
@@ -24,7 +24,7 @@ tags: perspective study-notes
 
 ## 视觉射线法（The visual ray method）
 
-90度视锥约定了view distance与view height相等，degree of vision cone为90度，此设定下，viewpoint经过向上翻折后，正好落在view circle上面，为透视绘画提供了很多便利。
+90度视锥约定了view distance与view height相等，field of view为90度，此设定下，viewpoint经过向上翻折后，正好落在view circle上面，为透视绘画提供了很多便利。
 
 ![20230916_073333000_iOS.png]({{site.baseurl}}/assets/images/20230916_073333000_iOS.png)
 ![20230916_073426000_iOS.png]({{site.baseurl}}/assets/images/20230916_073426000_iOS.png)
