@@ -22,7 +22,7 @@ tags: perspective study-notes
 - view distance: viewpoint与画面的距离。
 - view height: viewpoint与地面的距离。
 - vanishing point: 消失点，物体某条边在无穷远处收敛的消失点。
-- diagonal vanishing point: 正方体的对角线（而不是某条边）的消失点。
+- diagonal vanishing point: 对角消失点，正方体的对角线（而不是某条边）的消失点。
 - orthogonals: 纵深线，在透视中，orthogonals是指平行于direction of view的线条。
 - transversals: 水平线，在透视中，transversals是指平行于ground line的线条。
 - measure point：测量点，在透视中，measure points用来将measure bar或者单位长度/宽度投射到沿着vanishing point方向的同等深度。
