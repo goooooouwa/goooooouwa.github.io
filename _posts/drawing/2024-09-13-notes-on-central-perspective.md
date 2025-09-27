@@ -41,7 +41,7 @@ tags: perspective study-notes
 
 ![20240911_051309809_iOS.png]({{site.baseurl}}/assets/images/20240911_051309809_iOS.png)
 
-只需在地面仰视图（Plan）上将物体按俯视角度确定其大小和位置，然后通过连接其在plan上的点与翻折后的viewpoint得到一条（较长的）直线，再将该点的垂直线与ground line（地线）的交点与vanishing point连接得到第2条（较短的）直线，这2条直线交叉的点即为该物体的某个点在画面中的位置。
+只需在地面仰视图上将物体按俯视角度确定其大小和位置，然后通过连接其在plan上的点与翻折后的viewpoint得到一条（较长的）直线，再将该点的垂直线与ground line（地线）的交点与vanishing point连接得到第2条（较短的）直线，这2条直线交叉的点即为该物体的某个点在画面中的位置。
 
 ![20240911_051404447_iOS.png]({{site.baseurl}}/assets/images/20240911_051404447_iOS.png)
 
@@ -51,9 +51,9 @@ tags: perspective study-notes
 
 ### 视觉射线法的应用之一（Visual Rays and Vanishing Points）——定位任意角度摆放的物体在画面中的消失点
 
-使用视觉射线法可以轻松的**找到任意物体在画面中的消失点**。只需将地面仰视图（Plan）上的物体平移，并将任一个顶点与向上翻折后的viewpoint重合，然后沿着顶点所在的两边中的任意一条边画延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。
+使用视觉射线法可以轻松的**找到任意物体在画面中的消失点**。只需将地面仰视图上的物体平移，并将任一个顶点与向上翻折后的viewpoint重合，然后沿着顶点所在的两边中的任意一条边画延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。
 
-实际操作中，可以使用量角器测量出地面仰视图（Plan）上的物体任意一条边所在线条与direction of view（将翻折后的viewpoint与principal point相连得到的垂直线）之间的夹角，然后将量角器的中心与向上翻折后的viewpoint重合，将其0度边与direction of view重合，直接画出相等角度的线条与视平线相交，即该物体这条边所在的平面在画面中的消失点。
+实际操作中，可以使用量角器测量出地面仰视图上的物体任意一条边所在线条与direction of view（将翻折后的viewpoint与principal point相连得到的垂直线）之间的夹角，然后将量角器的中心与向上翻折后的viewpoint重合，将其0度边与direction of view重合，直接画出相等角度的线条与视平线相交，即该物体这条边所在的平面在画面中的消失点。
 
 ![Screenshot 2024-09-14 at 11.38.12 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.38.12 AM.png)
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
@@ -72,7 +72,7 @@ tags: perspective study-notes
 
 实际操作中，当物体离ground line或median line较远时，线条1和2不易构造。
 
-在物体离ground line较远（而距离median line比较近）的情况下，连接物体在地面仰视图（Plan）上的点与翻折后的viewpoint就变得比较困难（线条会很长），这时可以改用双折法的第2条（较短的）构造线条，即将该物体在仰视图中的一条边的两个端点(end point)的垂直线与ground line（地线）的交点与princial point(direction of view与画面的交点)连接得到的直线。此时因为物体在地面仰视图（Plan）中距离median line比较近，一个快速寻找端点(end point)垂直线与ground line（地线）的交点的方法是将ground line作为物体尺寸的测量工具（use the ground line as a ruler），根据物体在仰视图中距离median line的距离，直接在ground line上测量出交点所在的位置。
+在物体离ground line较远（而距离median line比较近）的情况下，连接物体在地面仰视图上的点与翻折后的viewpoint就变得比较困难（线条会很长），这时可以改用双折法的第2条（较短的）构造线条，即将该物体在仰视图中的一条边的两个端点(end point)的垂直线与ground line（地线）的交点与princial point(direction of view与画面的交点)连接得到的直线。此时因为物体在地面仰视图中距离median line比较近，一个快速寻找端点(end point)垂直线与ground line（地线）的交点的方法是将ground line作为物体尺寸的测量工具（use the ground line as a ruler），根据物体在仰视图中距离median line的距离，直接在ground line上测量出交点所在的位置。
 
 ![20240911_050144353_iOS.png]({{site.baseurl}}/assets/images/20240911_050144353_iOS.png)
 
