@@ -23,7 +23,7 @@ tags: perspective study-notes
 
 这个基本用法只适用于物体离ground line和median line比较近的情况，如果物体离ground line和median line很远，就需要使用后面介绍的measure points和measure bar来定位了。
 
-### 视觉射线法的应用之一（Visual Rays and Vanishing Points）——定位任意物体在画面中的消失点
+### 视觉射线法的应用之一（Visual Rays and Vanishing Points）——定位任意角度摆放的物体在画面中的消失点
 
 使用视觉射线法可以轻松的**找到任意物体在画面中的消失点**。只需将地面俯视图（Plan）上的物体平移，并将任一个顶点与向上翻折后的viewpoint重合，然后沿着顶点所在的两边中的任意一条边画延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。
 
