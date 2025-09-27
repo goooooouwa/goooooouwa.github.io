@@ -40,6 +40,8 @@ tags: perspective study-notes
 
 ![20240911_051404447_iOS.png]({{site.baseurl}}/assets/images/20240911_051404447_iOS.png)
 
+![why-visual-ray-method-works.PNG]({{site.baseurl}}/assets/images/why-visual-ray-method-works.PNG)
+
 这个基本用法只适用于物体离ground line和median line比较近的情况，如果物体离ground line（地线）和median line（中线）很远，就需要使用后面介绍的measure points和measure bar来定位了。
 
 ### 视觉射线法的应用之一（Visual Rays and Vanishing Points）——定位任意角度摆放的物体在画面中的消失点
