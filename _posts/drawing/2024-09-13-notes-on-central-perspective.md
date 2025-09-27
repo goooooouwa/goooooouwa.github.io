@@ -123,7 +123,7 @@ Diagonal lines from each point to the mp **transfer these measures into perspect
 
 但是单位深度无法自由地反转（rotate）或平移，因为不同位置深度会因为透视而有所不同。
 
-## slanting & sloping planes（倾斜面和坡斜面）
+## 倾斜面和坡斜面（slanting & sloping planes）
 
 画倾斜面的方法很简单，只需将纸张以同样角度旋转，让倾斜面看起来水平即可当作普通水平面处理。
 
@@ -133,11 +133,11 @@ Diagonal lines from each point to the mp **transfer these measures into perspect
 
 ![20240911_060337731_iOS.png]({{site.baseurl}}/assets/images/20240911_060337731_iOS.png)
 
-## distance & size（距离和大小）
+## 距离和大小（distance & size）
 
 ![20240911_061325138_iOS.png]({{site.baseurl}}/assets/images/20240911_061325138_iOS.png)
 
-## scaling the drawing（缩放画面）
+## 缩放画面（scaling the drawing）
 
 缩放的具体步骤是：
 
@@ -147,7 +147,7 @@ Diagonal lines from each point to the mp **transfer these measures into perspect
 
 ![Screenshot 2024-09-14 at 12.04.54 PM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 12.04.54 PM.png)
 
-## constructing a 1PP cube
+## 构造一个1点透视的立方体（constructing a 1PP cube）
 
 构造1点透视的具体步骤是：
 
