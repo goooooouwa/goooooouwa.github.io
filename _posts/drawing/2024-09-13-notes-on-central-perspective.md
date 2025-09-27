@@ -3,7 +3,7 @@ title: 笔记：一点透视
 category: drawing
 tags: perspective study-notes
 ---
-## The visual ray method（视觉射线法）
+## 视觉射线法（The visual ray method）
 
 90度视锥约定了view distance与view height相等,degree of vision cone为90度，此设定下，viewpoint经过向上翻折后，正好落在view circle上面，为透视绘画提供了很多便利。
 
@@ -11,28 +11,28 @@ tags: perspective study-notes
 ![20230916_073426000_iOS.png]({{site.baseurl}}/assets/images/20230916_073426000_iOS.png)
 ![20240911_065745817_iOS.png]({{site.baseurl}}/assets/images/20240911_065745817_iOS.png)
 
-### The Double Fold（双折）——定位任何一个点在画面上的位置
+### 双折（The Double Fold）——定位任何一个点在画面上的位置
 
 视觉射线法通过将viewpoint向上翻折，同时将地面向下翻折，与画面处于同一平面，我们能够便利地**定位任何一个点在画面上的位置**。
 
 ![20240911_051309809_iOS.png]({{site.baseurl}}/assets/images/20240911_051309809_iOS.png)
 
-只需在地面俯视图（Plan）上将物体按俯视角度确定其大小和位置，然后通过连接其在plan上的点与翻折后的viewpoint得到一条直线，再将该点的垂直线与ground line（地线）的交点与vanishing point连接得到第2条直线，这2条直线交叉的点即为该物体的某个点在画面中的位置。
+只需在地面俯视图（Plan）上将物体按俯视角度确定其大小和位置，然后通过连接其在plan上的点与翻折后的viewpoint得到一条（较长的）直线，再将该点的垂直线与ground line（地线）的交点与vanishing point连接得到第2条（较短的）直线，这2条直线交叉的点即为该物体的某个点在画面中的位置。
 
 ![20240911_051404447_iOS.png]({{site.baseurl}}/assets/images/20240911_051404447_iOS.png)
 
 这个基本用法只适用于物体离ground line和median line比较近的情况，如果物体离ground line和median line很远，就需要使用后面介绍的measure points和measure bar来定位了。
 
-### Visual Rays and Vanishing Points（视觉射线和消失点）——找到任意物体在画面中的消失点
+### 视觉射线和消失点（Visual Rays and Vanishing Points）——定位任意角度物体在画面中的消失点
 
 使用视觉射线法可以轻松的**找到任意物体在画面中的消失点**。只需将地面俯视图（Plan）上的物体平移，并将任一个顶点与翻折后的viewpoint重合，然后沿着顶点所在的两边中的任意一条边画延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。
 
 ![Screenshot 2024-09-14 at 11.38.12 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.38.12 AM.png)
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
 
-### Visual Rays and the "Principal Foundation"（视觉射线和"Principal Foundation"）——
+### 视觉射线和"Principal Foundation"（Visual Rays and the "Principal Foundation"）——
 
-另外一种**定位物体在画面中的位置**的方法是先找到物体某条边的消失点（使用上一节Visual Rays and Vanishing Points所介绍的方法），然后将俯视图中物体的这条边的延长线与ground line相交，连接消失点和ground line上的交点得到一条直线，然后将该线条在plan上的点与向上翻折后的viewpoint相连得到第2条直线（即双折法的第1条构造线条），这2条直线交叉的点即为该物体这条线在画面中的位置。
+另外一种**定位物体在画面中的位置**的方法是先找到物体某条边的消失点（使用上一节Visual Rays and Vanishing Points所介绍的方法），然后将俯视图中物体的这条边的延长线与ground line相交，连接消失点和ground line上的交点得到一条直线，然后将该线条在plan上的点与向上翻折后的viewpoint相连得到第2条直线（即双折法的第1条较长的构造线条），这2条直线交叉的点即为该物体这条边在画面中的位置。
 
 该方法同样只适用于物体离groundline和median line比较近的情况。
 
@@ -50,11 +50,11 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 ### Diagonals and the Unit Depth（纵深线和单位深度）
 
-通过连接单位垂直线条的上端点与视锥下方的dvp（或者下端点与视锥上方的dvp）得到一条直线，然后连接单位线条的另一个端点与pp得到第2条直线（即一条纵深线），两条线相交的点x与单位垂直线条的下端点连线与单位长度相等，即为单位深度。
+通过连接单位垂直线条的上端点与视锥下方的dvp（或者下端点与视锥上方的dvp）得到一条直线，然后连接单位线条的另一个端点与principal point（像主点）得到第2条直线（即一条纵深线），两条线相交的点x与单位垂直线条的下端点连线与单位长度相等，即为单位深度。
 
 ![20240913_062733556_iOS.png]({{site.baseurl}}/assets/images/20240913_062733556_iOS.png)
 
-同样的，对于单位水平线条，可以通过连接其左端点与视锥右侧的dvp（或者右端点与视锥左侧的dvp）得到一条类似的直线，然后连接单位线条的另一个端点与pp得到第2条直线（即一条纵深线），两条线相交的点与单位垂直线条的连线与单位长度相等，同样可以得到单位深度。
+同样的，对于单位水平线条，可以通过连接其左端点与视锥右侧的dvp（或者右端点与视锥左侧的dvp）得到一条类似的直线，然后连接单位线条的另一个端点与principal point（像主点）得到第2条直线（即一条纵深线），两条线相交的点与单位垂直线条的连线与单位长度相等，同样可以得到单位深度。
 
 ![20240913_063754118_iOS.png]({{site.baseurl}}/assets/images/20240913_063754118_iOS.png)
 
