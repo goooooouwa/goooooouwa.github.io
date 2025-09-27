@@ -112,7 +112,7 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 ![Screenshot 2024-09-14 at 11.49.15 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.49.15 AM.png)
 
-Diagonal lines from each point to the mp **transfer these measures into perspective depth** at the points where the lines intersect the vanishing line.
+Diagonal lines from each point to the mp (measure point) **transfer these measures into perspective depth** at the points where the lines intersect the vanishing line.
 
 ### 单位水平或垂直线段可以任意旋转或平移（Shifting the Unit Dimension）
 
