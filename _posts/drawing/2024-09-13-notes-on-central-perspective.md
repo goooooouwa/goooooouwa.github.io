@@ -5,6 +5,8 @@ tags: perspective study-notes
 ---
 ## 名词解释
 
+![circle-of-view-framework-basic-terms.PNG]({{site.baseurl}}/assets/images/circle-of-view-framework-basic-terms.PNG)
+
 - image plane: 画面，即画本身所在的平面。
 - ground plan: 地面。
 - viewpoint: 视点，观察者眼睛所在的点，垂直于画面。
@@ -17,10 +19,11 @@ tags: perspective study-notes
 - median line：中轴线，将viewpint向上翻折后与principal point相连的线。
 - plan: 地面俯视图。
 - view distance: viewpoint与画面的距离。
+- view direction: 
 - view height: viewpoint与地面的距离。
 - vanishing point: 消失点，物体某条边在无穷远处收敛的消失点。
 - diagonal vanishing point: 正方体的对角线（而不是某条边）的消失点。
-- orthogonals: 正交点，两条互相垂直的线之间的交点。
+- orthogonals: 在透视中，orthogonals是指平行与direction of view的线条。
 
 
 ## 视觉射线法（The visual ray method）
