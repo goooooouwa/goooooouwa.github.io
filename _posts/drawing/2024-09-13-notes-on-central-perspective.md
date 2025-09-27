@@ -11,7 +11,7 @@ tags: perspective study-notes
 ![20230916_073426000_iOS.png]({{site.baseurl}}/assets/images/20230916_073426000_iOS.png)
 ![20240911_065745817_iOS.png]({{site.baseurl}}/assets/images/20240911_065745817_iOS.png)
 
-### 双折（The Double Fold）——定位任何一个点在画面上的位置
+### 经过双折处理后的视觉射线法（The Double Fold）——定位任何一个点在画面上的位置
 
 视觉射线法通过将viewpoint向上翻折，同时将地面向下翻折，与画面处于同一平面，我们能够便利地**定位任何一个点在画面上的位置**。
 
@@ -23,7 +23,7 @@ tags: perspective study-notes
 
 这个基本用法只适用于物体离ground line和median line比较近的情况，如果物体离ground line和median line很远，就需要使用后面介绍的measure points和measure bar来定位了。
 
-### 视觉射线法的应用（Visual Rays and Vanishing Points）——寻找任意物体在画面中的消失点
+### 视觉射线法的应用之一（Visual Rays and Vanishing Points）——寻找任意物体在画面中的消失点
 
 使用视觉射线法可以轻松的**找到任意物体在画面中的消失点**。只需将地面俯视图（Plan）上的物体平移，并将任一个顶点与向上翻折后的viewpoint重合，然后沿着顶点所在的两边中的任意一条边画延长线与视平线相交，即该物体这条边所在的平面在画面中的消失点。
 
