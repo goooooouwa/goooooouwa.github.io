@@ -83,9 +83,9 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 ## One point perspective（一点透视）
 
-### Diagonals and the Unit Depth（纵深线和单位深度）
+### Diagonals and the Unit Depth（对角线和单位深度）
 
-通过连接单位垂直线条的上端点与视锥下方的dvp（或者下端点与视锥上方的dvp）得到一条直线，然后连接单位线条的另一个端点与principal point（像主点）得到第2条直线（即一条纵深线），两条线相交的点x与单位垂直线条的下端点连线与单位长度相等，即为单位深度。
+通过连接单位垂直线条的上端点与视锥下方的dvp（或者下端点与视锥上方的dvp）得到一条直线（即对角线），然后连接单位线条的另一个端点与principal point（像主点）得到第2条直线，两条线相交的点x与单位垂直线条的下端点连线与单位长度相等，即为单位深度。
 
 ![20240913_062733556_iOS.png]({{site.baseurl}}/assets/images/20240913_062733556_iOS.png)
 
