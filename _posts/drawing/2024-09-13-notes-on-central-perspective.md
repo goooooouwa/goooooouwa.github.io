@@ -3,7 +3,7 @@ title: 笔记：一点透视
 category: drawing
 tags: perspective study-notes
 ---
-## 名词解释
+## 视锥框架的基本概念与名词解释
 
 ![circle-of-view-framework-basic-terms.PNG]({{site.baseurl}}/assets/images/circle-of-view-framework-basic-terms.PNG)
 
