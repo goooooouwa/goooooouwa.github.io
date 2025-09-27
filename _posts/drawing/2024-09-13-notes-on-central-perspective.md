@@ -81,19 +81,23 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 最后一个关键问题是，当物体离ground line和median line都比较远的时候，以上的构造方法就不实用了。这时我们就需要用到measure bar，即一种缩小scale后的ground line ruler（后文会介绍具体使用方法）。
 
-## One point perspective（一点透视）
+## 一点透视（One point perspective）
 
-### Diagonals and the Unit Depth（对角线和单位深度）
+### 对角线和单位深度（Diagonals and the Unit Depth）
+
+**通过单位垂直线条得到单位深度**
 
 通过连接单位垂直线条的上端点与视锥下方的dvp（或者下端点与视锥上方的dvp）得到一条直线（即一条对角线），然后连接单位线条的另一个端点与principal point（像主点）得到第2条直线，两条线相交的点x与单位垂直线条的下端点连线与单位长度相等，即为单位深度。
 
 ![20240913_062733556_iOS.png]({{site.baseurl}}/assets/images/20240913_062733556_iOS.png)
 
+**通过单位水平线条得到单位深度**
+
 同样的，对于单位水平线条，可以通过连接其左端点与视锥右侧的dvp（或者右端点与视锥左侧的dvp）得到一条类似的直线（对角线），然后连接单位线条的另一个端点与principal point（像主点）得到第2条直线，两条线相交的点与单位垂直线条的连线与单位长度相等，同样可以得到单位深度。
 
 ![20240913_063754118_iOS.png]({{site.baseurl}}/assets/images/20240913_063754118_iOS.png)
 
-### Unequal Spacing in Depth（不相等的深度间距）
+### 不相等的深度间距（Unequal Spacing in Depth）
 
 借助measure bar我们可以在画面中将任意长度转换为对应的深度，不用只局限于单位长度。
 
