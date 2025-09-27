@@ -32,7 +32,7 @@ tags: perspective study-notes
 ![Screenshot 2024-09-14 at 11.38.12 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.38.12 AM.png)
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
 
-### 视觉射线和"Principal Foundation"（Visual Rays and the "Principal Foundation"）——
+### 视觉射线和"透视实践的主要基础"（Visual Rays and the "Principal Foundation"）——
 
 另外一种**定位物体在画面中的位置**的方法是先找到物体某条边的消失点（使用上一节Visual Rays and Vanishing Points所介绍的方法），然后将俯视图中物体的这条边的延长线与ground line相交，连接消失点和ground line上的交点得到一条直线，然后将该线条在plan上的点与向上翻折后的viewpoint相连得到第2条直线（即双折法的第1条较长的构造线条），这2条直线交叉的点即为该物体这条边在画面中的位置。
 
