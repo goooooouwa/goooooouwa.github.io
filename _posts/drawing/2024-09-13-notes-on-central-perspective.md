@@ -25,6 +25,7 @@ tags: perspective study-notes
 - diagonal vanishing point: 正方体的对角线（而不是某条边）的消失点。
 - orthogonals: 纵深线，在透视中，orthogonals是指平行于direction of view的线条。
 - transversals: 水平线，在透视中，transversals是指平行于ground line的线条。
+- measure point：测量点，在透视中，measure points用来将measure bar或者单位长度/宽度投射到沿着vanishing point方向的同等深度。
 
 
 ## 视觉射线法（The visual ray method）
@@ -112,7 +113,7 @@ Obviously the crucial step is still missing: how do we work with objects that ar
 
 ![Screenshot 2024-09-14 at 11.49.15 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.49.15 AM.png)
 
-Diagonal lines from each point to the mp (不清楚这里的mp是指什么，但是图中写了dvp=mp，所以这里可以理解为dvp；dvp在90度视锥的view circle上，图中展示的是60度视锥，所以dvp在视锥之外) **transfer these measures into perspective depth** at the points where the lines intersect the vanishing line.
+Diagonal lines from each point to the mp (这里的mp是measure point，参考[两点透视文章](https://www.handprint.com/HP/WCL/perspect3.html#measurepoints)，一点透视中mp=dvp；dvp在90度视锥的view circle上，图中展示的是60度视锥，所以dvp在视锥之外) **transfer these measures into perspective depth** at the points where the lines intersect the vanishing line.
 
 ### 单位水平或垂直线段可以任意旋转或平移（Shifting the Unit Dimension）
 
