@@ -13,7 +13,7 @@ tags: perspective study-notes
 
 ### The Double Fold（双折）
 
-视觉射线法通过将viewpoint向上翻折，同时将地面向下翻折，与画面处于同一平面，我们能够便利地**定位物体在画面上的位置**。
+视觉射线法通过将viewpoint向上翻折，同时将地面向下翻折，与画面处于同一平面，我们能够便利地**定位任何一个点在画面上的位置**。
 
 ![20240911_051309809_iOS.png]({{site.baseurl}}/assets/images/20240911_051309809_iOS.png)
 
