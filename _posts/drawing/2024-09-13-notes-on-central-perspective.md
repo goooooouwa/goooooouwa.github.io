@@ -57,7 +57,7 @@ tags: perspective study-notes
 ![Screenshot 2024-09-14 at 11.38.12 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.38.12 AM.png)
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
 
-### 视觉射线和"透视实践的主要基础"（Visual Rays and the "Principal Foundation"）——
+### 视觉射线和"透视的主要基础"（Visual Rays and the "Principal Foundation"）——
 
 **定位物体在画面中的位置**的另一种方法是先找到物体某条边的消失点（使用上一节Visual Rays and Vanishing Points所介绍的方法），然后将仰视图中物体的这条边的延长线与ground line相交，连接消失点和ground line上的交点得到一条直线，然后将该线条在plan上的点与向上翻折后的viewpoint相连得到第2条直线（即双折法的第1条较长的构造线条），这2条直线交叉的点即为该物体这条边在画面中的位置。
 
@@ -65,9 +65,11 @@ tags: perspective study-notes
 
 结合以上两种方法可以看出，只要找出以下三条线中的任意两条，都可以定位物体在画面中的位置：
 
-1. Viewpoint & end points. 连接 _向上翻折的viewpoint_ 与 _仰视图中物体的这条边的端点(end point)_ 所得到的直线（当物体离ground line或median line较远时不易构造）
-1. Vanishing point & ground line intersection. 连接 _物体某条边的消失点_ 与 _仰视图中物体的这条边的延长线与ground line的交点_ 所得到的直线（当物体离ground line或median line较远时不易构造）
+1. Viewpoint & end points. 连接 _向上翻折的viewpoint_ 与 _仰视图中物体的这条边的端点(end point)_ 所得到的直线
+1. Vanishing point & ground line intersection. 连接 _物体某条边的消失点_ 与 _仰视图中物体的这条边的延长线与ground line的交点_ 所得到的直线
 1. Orthogonals from ground line measure points. 连接 _principal point_ 与 _仰视图中物体的这条边的端点(end point)与ground line的交点_ 所得到的直线
+
+实际操作中，当物体离ground line或median line较远时，线条1和2不易构造。
 
 在物体离ground line较远（而距离median line比较近）的情况下，连接物体在地面仰视图（Plan）上的点与翻折后的viewpoint就变得比较困难（线条会很长），这时可以改用双折法的第2条（较短的）构造线条，即将该物体在仰视图中的一条边的两个端点(end point)的垂直线与ground line（地线）的交点与princial point(direction of view与画面的交点)连接得到的直线。此时因为物体在地面仰视图（Plan）中距离median line比较近，一个快速寻找端点(end point)垂直线与ground line（地线）的交点的方法是将ground line作为物体尺寸的测量工具（use the ground line as a ruler），根据物体在仰视图中距离median line的距离，直接在ground line上测量出交点所在的位置。
 
