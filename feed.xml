@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2025-09-27T19:03:37+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">两点透视学习笔记</title><link href="https://goooooouwa.github.io/drawing/2025/09/26/notes-on-2-point-perspective.md.html" rel="alternate" type="text/html" title="两点透视学习笔记" /><published>2025-09-26T00:00:00+00:00</published><updated>2025-09-26T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/09/26/notes-on-2-point-perspective.md</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/09/26/notes-on-2-point-perspective.md.html"><![CDATA[<p>两点透视的整体主题是，通过将消失点旋转特定角度以及在合适的measure bar上确定相应的measure points以便投射所需的深度等办法，确定物体在两点透视中的正确比例。</p>
+
+<h3 id="定位测量点locating-the-measure-points">定位测量点（locating the measure points）</h3>
+
+<p>在一点透视中，单个消失点（principal point）决定了空间中沿着纵深线（指向principal point的消失线）方向上的透视变化，而对角消失点则可以将测量单位从图像平面投射到纵深线上。</p>
+
+<p>在两点透视中，principal point仍然定义了观察者的纵深方向的透视变化，以及direction of view在地平面和所有平行于视线方向的平面上产生的透视梯度。但物体本身的消失点却在两个不同的方向上发生着各自的透视变化（即两条消失线），我们的任务便是沿着这些消失线建立测量单位。</p>
+
+<p>Geometry of Measure Points. In the context of the visual ray method of perspective construction, the problem is to project a distance scale or unit dimension, defined along the ground line, into perpspective space along a vanishing line to one of the object vanishing points.</p>
+
+<p>定位测量点其实超级简单，只需draw an arc from each vanishing point, from the viewpoint to the horizon line (image plane)</p>
+
+<p><img src="/assets/images/locating-the-measure-points.png" alt="locating-the-measure-points.png" /></p>
+
+<h3 id="who-has-a-12-foot-table">who has a 12 foot table?</h3>
+
+<p>Unfortunately it is fairly common to start with the primary form in an orientation that puts the two vp’s inconveniently far apart. In the previous cube construction example, assuming a 10 foot circle of view, the cube is oriented so that the two vp’s would about 11 feet apart — one 3.2 feet to the left of the dv, and the other 7.7 feet to the right. This isn’t very convenient for a drafting table.</p>
+
+<p>If those alternatives don’t appeal to you, then you can rescale the drawing.</p>
+
+<p>How do you define the crucial distance dc (from the direction of view to a vanishing point) in the first place? The easiest method is to use my <a href="https://www.handprint.com/HP/WCL/IMG/LPR/VPCalculator.xls">vanishing point calculator</a> to get the measurements of the vp’s and mp’s, and adjust the viewing distance to the object and your angle of view until you get the proportions that seem desirable.</p>
+
+<p>Or, as described above, you can reduce the circle of view to a workable size, use the method for <a href="https://www.handprint.com/HP/WCL/perspect3.html#rotatingvp">rotating the vanishing points</a> to determine the locations of vp1 and vp2, measure the distance from these to dv on the diagram, then scale those distances back to life size.</p>
+
+<p>Unfortunately this method, even after you get the hang of it, still forces you into a lot of poking of a pocket calculator, and is hopelessly tedious and prone to error if many lines must be inserted in your drawing. The <strong>ultimate solution</strong> is to generate a recession grid for the distant vanishing point, and use this grid to determine the perspective reduction for any verticals in the drawing.</p>
+
+<p><img src="/assets/images/use-recession-grid-for-distant-vanishing-points.png" alt="use-recession-grid-for-distant-vanishing-points.png" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><category term="study-notes" /><summary type="html"><![CDATA[两点透视的整体主题是，通过将消失点旋转特定角度以及在合适的measure bar上确定相应的measure points以便投射所需的深度等办法，确定物体在两点透视中的正确比例。]]></summary></entry><entry><title type="html">Jellyfin &amp;amp; ErsatzTV在J4125小主机的Ubuntu系统上实现硬件加速转码</title><link href="https://goooooouwa.github.io/computer/2025/07/23/jellyfin-ersatztv-hardware-accelerated-transcoding-in-ubuntu.html" rel="alternate" type="text/html" title="Jellyfin &amp;amp; ErsatzTV在J4125小主机的Ubuntu系统上实现硬件加速转码" /><published>2025-07-23T00:00:00+00:00</published><updated>2025-07-23T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/07/23/jellyfin-ersatztv-hardware-accelerated-transcoding-in-ubuntu</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/07/23/jellyfin-ersatztv-hardware-accelerated-transcoding-in-ubuntu.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#在j4125小主机的ubuntu系统上运行jellyfin并实现硬件加速转码的步骤" id="markdown-toc-在j4125小主机的ubuntu系统上运行jellyfin并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行Jellyfin并实现硬件加速转码的步骤：</a>    <ul>
+      <li><a href="#1-按照jellyfin官方文档在ubuntu上安装jellyfin" id="markdown-toc-1-按照jellyfin官方文档在ubuntu上安装jellyfin">1 按照Jellyfin官方文档在Ubuntu上安装Jellyfin</a></li>
+      <li><a href="#2-按照jellyfin官方文档在ubuntu上完成qsv--va-api-codecs硬件解码器相关设置并验证硬件是否正常工作" id="markdown-toc-2-按照jellyfin官方文档在ubuntu上完成qsv--va-api-codecs硬件解码器相关设置并验证硬件是否正常工作">2 按照Jellyfin官方文档在Ubuntu上完成QSV / VA-API codecs硬件解码器相关设置并验证硬件是否正常工作</a>        <ul>
+          <li><a href="#21-add-the-jellyfin-repository-to-your-apt-source-list" id="markdown-toc-21-add-the-jellyfin-repository-to-your-apt-source-list">2.1 Add the jellyfin repository to your apt source list</a></li>
+          <li><a href="#22-install-the-jellyfin-ffmpeg7-package" id="markdown-toc-22-install-the-jellyfin-ffmpeg7-package">2.2 Install the jellyfin-ffmpeg7 package</a></li>
+          <li><a href="#23-make-sure-at-least-one-renderd-device-exists-in-devdri-otherwise-upgrade-your-kernel-or-enable-the-igpu-in-the-bios" id="markdown-toc-23-make-sure-at-least-one-renderd-device-exists-in-devdri-otherwise-upgrade-your-kernel-or-enable-the-igpu-in-the-bios">2.3 Make sure at least one renderD* device exists in /dev/dri. Otherwise upgrade your kernel or enable the iGPU in the BIOS.</a></li>
+          <li><a href="#24-add-the-jellyfin-user-to-the-render-group-then-restart-jellyfin-service" id="markdown-toc-24-add-the-jellyfin-user-to-the-render-group-then-restart-jellyfin-service">2.4 Add the jellyfin user to the render group, then restart jellyfin service:</a></li>
+          <li><a href="#25-check-the-version-of-intel-opencl-icd-that-the-linux-distro-provides" id="markdown-toc-25-check-the-version-of-intel-opencl-icd-that-the-linux-distro-provides">2.5 Check the version of intel-opencl-icd that the Linux distro provides:</a></li>
+          <li><a href="#26-if-the-version-is-newer-than-22xxxxxxx-just-install-it" id="markdown-toc-26-if-the-version-is-newer-than-22xxxxxxx-just-install-it">2.6 If the version is newer than 22.xx.xxxxx just install it.</a></li>
+          <li><a href="#27-check-the-supported-qsv--va-api-codecs" id="markdown-toc-27-check-the-supported-qsv--va-api-codecs">2.7 Check the supported QSV / VA-API codecs:</a></li>
+          <li><a href="#28-check-the-opencl-runtime-status" id="markdown-toc-28-check-the-opencl-runtime-status">2.8 Check the OpenCL runtime status</a></li>
+        </ul>
+      </li>
+      <li><a href="#3-在jellyfin中开启硬件加速转码选择qsv选项" id="markdown-toc-3-在jellyfin中开启硬件加速转码选择qsv选项">3 在Jellyfin中开启硬件加速转码，选择QSV选项</a></li>
+      <li><a href="#4-验证jellyfin能成功通过qsv完成硬件加速转码" id="markdown-toc-4-验证jellyfin能成功通过qsv完成硬件加速转码">4 验证Jellyfin能成功通过QSV完成硬件加速转码</a>        <ul>
+          <li><a href="#41-install-the-intel-gpu-tools-package-on-the-host-system" id="markdown-toc-41-install-the-intel-gpu-tools-package-on-the-host-system">4.1 Install the intel-gpu-tools package on the host system</a></li>
+          <li><a href="#42-play-a-video-in-jellyfin-web-client-and-trigger-a-video-transcoding-by-setting-a-lower-resolution-or-bitrate" id="markdown-toc-42-play-a-video-in-jellyfin-web-client-and-trigger-a-video-transcoding-by-setting-a-lower-resolution-or-bitrate">4.2 Play a video in Jellyfin web client and trigger a video transcoding by setting a lower resolution or bitrate.</a></li>
+          <li><a href="#43-use-intel_gpu_top-command-to-check-the-occupancy-of-the-engines-as-follows" id="markdown-toc-43-use-intel_gpu_top-command-to-check-the-occupancy-of-the-engines-as-follows">4.3 Use <code class="language-plaintext highlighter-rouge">intel_gpu_top</code> command to check the occupancy of the engines as follows:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#在j4125小主机上通过docker运行jellyfin并实现硬件加速转码的步骤" id="markdown-toc-在j4125小主机上通过docker运行jellyfin并实现硬件加速转码的步骤">在J4125小主机上通过Docker运行Jellyfin并实现硬件加速转码的步骤：</a>    <ul>
+      <li><a href="#1-根据jellyfin官方文档在docker上安装jellyfin" id="markdown-toc-1-根据jellyfin官方文档在docker上安装jellyfin">1 根据Jellyfin官方文档在Docker上安装Jellyfin</a></li>
+      <li><a href="#2-query-the-id-of-the-render-group-on-the-host-system" id="markdown-toc-2-query-the-id-of-the-render-group-on-the-host-system">2 Query the id of the render group on the host system</a></li>
+      <li><a href="#3-use-render-group-in-the-docker-cli-or-docker-compose-file" id="markdown-toc-3-use-render-group-in-the-docker-cli-or-docker-compose-file">3. Use render group in the Docker CLI or docker-compose file</a></li>
+      <li><a href="#4-check-the-qsv-and-va-api-codecs-in-container" id="markdown-toc-4-check-the-qsv-and-va-api-codecs-in-container">4 Check the QSV and VA-API codecs in container</a></li>
+      <li><a href="#5-check-the-opencl-runtime-status-in-container" id="markdown-toc-5-check-the-opencl-runtime-status-in-container">5 Check the OpenCL runtime status in container</a></li>
+      <li><a href="#6-enable-qsv-or-va-api-in-jellyfin" id="markdown-toc-6-enable-qsv-or-va-api-in-jellyfin">6 Enable QSV or VA-API in Jellyfin</a></li>
+    </ul>
+  </li>
+  <li><a href="#在j4125小主机的ubuntu系统上运行ersatztv并实现硬件加速转码的步骤" id="markdown-toc-在j4125小主机的ubuntu系统上运行ersatztv并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行ErsatzTV并实现硬件加速转码的步骤：</a>    <ul>
+      <li><a href="#1-按照ersatztv官方文档在ubuntu上安装ersatztv" id="markdown-toc-1-按照ersatztv官方文档在ubuntu上安装ersatztv">1 按照ErsatzTV官方文档在Ubuntu上安装ErsatzTV</a></li>
+      <li><a href="#2-进入settings将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径" id="markdown-toc-2-进入settings将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径">2 进入Settings，将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径</a></li>
+      <li><a href="#3-编辑ffmpeg-profile开启硬件加速转码选择qsv选项" id="markdown-toc-3-编辑ffmpeg-profile开启硬件加速转码选择qsv选项">3 编辑FFmpeg Profile，开启硬件加速转码，选择QSV选项</a></li>
+      <li><a href="#4-进入troubleshooting展开qsv-capabilities检查输出结果" id="markdown-toc-4-进入troubleshooting展开qsv-capabilities检查输出结果">4 进入Troubleshooting，展开QSV Capabilities，检查输出结果</a></li>
+      <li><a href="#5-auto-start-ersatztv-as-a-systemd-service" id="markdown-toc-5-auto-start-ersatztv-as-a-systemd-service">5 Auto start ersatztv as a systemd service</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="在j4125小主机的ubuntu系统上运行jellyfin并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行Jellyfin并实现硬件加速转码的步骤：</h2>
+
+<h3 id="1-按照jellyfin官方文档在ubuntu上安装jellyfin">1 按照<a href="https://jellyfin.org/docs/general/installation/linux/#debian--ubuntu-and-derivatives">Jellyfin官方文档</a>在Ubuntu上安装Jellyfin</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://repo.jellyfin.org/install-debuntu.sh | <span class="nb">sudo </span>bash
+</code></pre></div></div>
+
+<h3 id="2-按照jellyfin官方文档在ubuntu上完成qsv--va-api-codecs硬件解码器相关设置并验证硬件是否正常工作">2 按照<a href="https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel#linux-setups">Jellyfin官方文档</a>在Ubuntu上完成QSV / VA-API codecs硬件解码器相关设置并验证硬件是否正常工作</h3>
+
+<h4 id="21-add-the-jellyfin-repository-to-your-apt-source-list">2.1 Add the jellyfin repository to your apt source list</h4>
+
+<p>官方文档的Jellyfin安装过程中会自动将jellyfin repository添加到apt source list，如果已经完成了Jellyfin的安装，可以直接跳过这一步。</p>
+
+<h4 id="22-install-the-jellyfin-ffmpeg7-package">2.2 Install the jellyfin-ffmpeg7 package</h4>
+
+<p>官方文档的Jellyfin安装过程中会同时安装jellyfin-ffmpeg7，如果已经完成了Jellyfin的安装，可以直接跳过这一步。</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt update &amp;&amp; sudo apt install -y jellyfin-ffmpeg7</code></p>
+
+<h4 id="23-make-sure-at-least-one-renderd-device-exists-in-devdri-otherwise-upgrade-your-kernel-or-enable-the-igpu-in-the-bios">2.3 Make sure at least one renderD* device exists in /dev/dri. Otherwise upgrade your kernel or enable the iGPU in the BIOS.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /dev/dri
+
+total 0
+drwxr-xr-x  2 root root        120 Mar  5 05:15 by-path
+crw-rw----+ 1 root video  226,   0 Mar  5 05:15 card0
+crw-rw----+ 1 root video  226,   1 Mar  5 05:15 card1
+crw-rw----+ 1 root render 226, 128 Mar  5 05:15 renderD128
+crw-rw----+ 1 root render 226, 129 Mar  5 05:15 renderD129
+</code></pre></div></div>
+
+<h4 id="24-add-the-jellyfin-user-to-the-render-group-then-restart-jellyfin-service">2.4 Add the jellyfin user to the render group, then restart jellyfin service:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>usermod <span class="nt">-aG</span> render jellyfin
+<span class="nb">sudo </span>systemctl restart jellyfin
+</code></pre></div></div>
+
+<h4 id="25-check-the-version-of-intel-opencl-icd-that-the-linux-distro-provides">2.5 Check the version of intel-opencl-icd that the Linux distro provides:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>apt policy intel-opencl-icd
+
+intel-opencl-icd:
+  Installed: <span class="o">(</span>none<span class="o">)</span>
+  Candidate: 22.14.22890-1
+...
+</code></pre></div></div>
+
+<h4 id="26-if-the-version-is-newer-than-22xxxxxxx-just-install-it">2.6 If the version is newer than 22.xx.xxxxx just install it.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> intel-opencl-icd
+</code></pre></div></div>
+
+<h4 id="27-check-the-supported-qsv--va-api-codecs">2.7 Check the supported QSV / VA-API codecs:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /usr/lib/jellyfin-ffmpeg/vainfo <span class="nt">--display</span> drm <span class="nt">--device</span> /dev/dri/renderD128
+
+Trying display: drm
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init <span class="k">function </span>__vaDriverInit_1_22
+libva info: va_openDriver<span class="o">()</span> returns 0
+vainfo: VA-API version: 1.22 <span class="o">(</span>libva 2.22.0<span class="o">)</span>
+vainfo: Driver version: Intel iHD driver <span class="k">for </span>Intel<span class="o">(</span>R<span class="o">)</span> Gen Graphics - 25.2.6 <span class="o">(</span>c6ab0c9<span class="o">)</span>
+vainfo: Supported profile and entrypoints
+      VAProfileNone                   :	VAEntrypointVideoProc
+      VAProfileNone                   :	VAEntrypointStats
+      VAProfileMPEG2Simple            :	VAEntrypointVLD
+      VAProfileMPEG2Main              :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointEncSlice
+      VAProfileH264Main               :	VAEntrypointFEI
+      VAProfileH264Main               :	VAEntrypointEncSliceLP
+      VAProfileH264High               :	VAEntrypointVLD
+      VAProfileH264High               :	VAEntrypointEncSlice
+      VAProfileH264High               :	VAEntrypointFEI
+      VAProfileH264High               :	VAEntrypointEncSliceLP
+      VAProfileVC1Simple              :	VAEntrypointVLD
+      VAProfileVC1Main                :	VAEntrypointVLD
+      VAProfileVC1Advanced            :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointEncPicture
+      VAProfileH264ConstrainedBaseline:	VAEntrypointVLD
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline:	VAEntrypointFEI
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSliceLP
+      VAProfileVP8Version0_3          :	VAEntrypointVLD
+      VAProfileVP8Version0_3          :	VAEntrypointEncSlice
+      VAProfileHEVCMain               :	VAEntrypointVLD
+      VAProfileHEVCMain               :	VAEntrypointEncSlice
+      VAProfileHEVCMain               :	VAEntrypointFEI
+      VAProfileHEVCMain10             :	VAEntrypointVLD
+      VAProfileHEVCMain10             :	VAEntrypointEncSlice
+      VAProfileVP9Profile0            :	VAEntrypointVLD
+      VAProfileVP9Profile2            :	VAEntrypointVLD
+</code></pre></div></div>
+
+<h4 id="28-check-the-opencl-runtime-status">2.8 Check the OpenCL runtime status</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /usr/lib/jellyfin-ffmpeg/ffmpeg <span class="nt">-v</span> verbose <span class="nt">-init_hw_device</span> <span class="nv">vaapi</span><span class="o">=</span>va:/dev/dri/renderD128 <span class="nt">-init_hw_device</span> opencl@va
+
+ffmpeg version 7.1.1-Jellyfin Copyright <span class="o">(</span>c<span class="o">)</span> 2000-2025 the FFmpeg developers
+  built with gcc 11 <span class="o">(</span>Ubuntu 11.4.0-1ubuntu1~22.04<span class="o">)</span>
+  configuration: <span class="nt">--prefix</span><span class="o">=</span>/usr/lib/jellyfin-ffmpeg <span class="nt">--target-os</span><span class="o">=</span>linux <span class="nt">--extra-version</span><span class="o">=</span>Jellyfin <span class="nt">--disable-doc</span> <span class="nt">--disable-ffplay</span> <span class="nt">--disable-static</span> <span class="nt">--disable-libxcb</span> <span class="nt">--disable-sdl2</span> <span class="nt">--disable-xlib</span> <span class="nt">--enable-lto</span><span class="o">=</span>auto <span class="nt">--enable-gpl</span> <span class="nt">--enable-version3</span> <span class="nt">--enable-shared</span> <span class="nt">--enable-gmp</span> <span class="nt">--enable-gnutls</span> <span class="nt">--enable-chromaprint</span> <span class="nt">--enable-opencl</span> <span class="nt">--enable-libdrm</span> <span class="nt">--enable-libxml2</span> <span class="nt">--enable-libass</span> <span class="nt">--enable-libfreetype</span> <span class="nt">--enable-libfribidi</span> <span class="nt">--enable-libfontconfig</span> <span class="nt">--enable-libharfbuzz</span> <span class="nt">--enable-libbluray</span> <span class="nt">--enable-libmp3lame</span> <span class="nt">--enable-libopus</span> <span class="nt">--enable-libtheora</span> <span class="nt">--enable-libvorbis</span> <span class="nt">--enable-libopenmpt</span> <span class="nt">--enable-libdav1d</span> <span class="nt">--enable-libsvtav1</span> <span class="nt">--enable-libwebp</span> <span class="nt">--enable-libvpx</span> <span class="nt">--enable-libx264</span> <span class="nt">--enable-libx265</span> <span class="nt">--enable-libzvbi</span> <span class="nt">--enable-libzimg</span> <span class="nt">--enable-libfdk-aac</span> <span class="nt">--arch</span><span class="o">=</span>amd64 <span class="nt">--enable-libshaderc</span> <span class="nt">--enable-libplacebo</span> <span class="nt">--enable-vulkan</span> <span class="nt">--enable-vaapi</span> <span class="nt">--enable-amf</span> <span class="nt">--enable-libvpl</span> <span class="nt">--enable-ffnvcodec</span> <span class="nt">--enable-cuda</span> <span class="nt">--enable-cuda-llvm</span> <span class="nt">--enable-cuvid</span> <span class="nt">--enable-nvdec</span> <span class="nt">--enable-nvenc</span>
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: VA-API version 1.22.0
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: Found init <span class="k">function </span>__vaDriverInit_1_22
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: va_openDriver<span class="o">()</span> returns 0
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] Initialised VAAPI connection: version 1.22
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] VAAPI driver: Intel iHD driver <span class="k">for </span>Intel<span class="o">(</span>R<span class="o">)</span> Gen Graphics - 25.2.6 <span class="o">(</span>c6ab0c9<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] Driver not found <span class="k">in </span>known nonstandard list, using standard behaviour.
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] 0.0: Intel<span class="o">(</span>R<span class="o">)</span> OpenCL HD Graphics / Intel<span class="o">(</span>R<span class="o">)</span> UHD Graphics 600 <span class="o">[</span>0x3185]
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] Intel QSV to OpenCL mapping <span class="k">function </span>found <span class="o">(</span>clCreateFromVA_APIMediaSurfaceINTEL<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] Intel QSV <span class="k">in </span>OpenCL acquire <span class="k">function </span>found <span class="o">(</span>clEnqueueAcquireVA_APIMediaSurfacesINTEL<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] Intel QSV <span class="k">in </span>OpenCL release <span class="k">function </span>found <span class="o">(</span>clEnqueueReleaseVA_APIMediaSurfacesINTEL<span class="o">)</span><span class="nb">.</span>
+Universal media converter
+usage: ffmpeg <span class="o">[</span>options] <span class="o">[[</span>infile options] <span class="nt">-i</span> infile]... <span class="o">{[</span>outfile options] outfile<span class="o">}</span>...
+
+Use <span class="nt">-h</span> to get full <span class="nb">help </span>or, even better, run <span class="s1">'man ffmpeg'</span>
+</code></pre></div></div>
+
+<h3 id="3-在jellyfin中开启硬件加速转码选择qsv选项">3 在Jellyfin中开启硬件加速转码，选择QSV选项</h3>
+
+<p><img src="/assets/images/2025-07-23 jellyfin transcodiing settings.png" alt="2025-07-23 jellyfin transcodiing settings.png" /></p>
+
+<h3 id="4-验证jellyfin能成功通过qsv完成硬件加速转码">4 验证Jellyfin能成功通过QSV完成硬件加速转码</h3>
+
+<h4 id="41-install-the-intel-gpu-tools-package-on-the-host-system">4.1 Install the intel-gpu-tools package on the host system</h4>
+
+<p>On Debian &amp; Ubuntu:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt update &amp;&amp; sudo apt install -y intel-gpu-tools</code></p>
+
+<h4 id="42-play-a-video-in-jellyfin-web-client-and-trigger-a-video-transcoding-by-setting-a-lower-resolution-or-bitrate">4.2 Play a video in Jellyfin web client and trigger a video transcoding by setting a lower resolution or bitrate.</h4>
+
+<p><img src="/assets/images/2025-07-23 jellyfin transcoding info.png" alt="2025-07-23 jellyfin transcoding info.png" /></p>
+
+<h4 id="43-use-intel_gpu_top-command-to-check-the-occupancy-of-the-engines-as-follows">4.3 Use <code class="language-plaintext highlighter-rouge">intel_gpu_top</code> command to check the occupancy of the engines as follows:</h4>
+
+<p><img src="/assets/images/2025-07-23 verify GPU transcoding on linux.png" alt="2025-07-23 verify GPU transcoding on linux.png" /></p>
+
+<p>本地系统配置好并验证Jellyfin能成功通过QSV完成硬件加速转码后，可以考虑进一步配置Docker版Jellyfin的硬件解码，以后可以考虑只通过Docker运行Jellfyin，方便管理。当然硬件转码最简单的方法还是直接本地运行Jellyfin，因为本地版本的设置步骤更加简单，调试也更加方便直接，可能出现的问题更少。</p>
+
+<h2 id="在j4125小主机上通过docker运行jellyfin并实现硬件加速转码的步骤">在J4125小主机上通过Docker运行Jellyfin并实现硬件加速转码的步骤：</h2>
+
+<h3 id="1-根据jellyfin官方文档在docker上安装jellyfin">1 根据<a href="https://jellyfin.org/docs/general/installation/container#using-docker-compose">Jellyfin官方文档</a>在Docker上安装Jellyfin</h3>
+
+<h3 id="2-query-the-id-of-the-render-group-on-the-host-system">2 Query the id of the render group on the host system</h3>
+
+<p><code class="language-plaintext highlighter-rouge">getent group render | cut -d: -f3</code></p>
+
+<h3 id="3-use-render-group-in-the-docker-cli-or-docker-compose-file">3. Use render group in the Docker CLI or docker-compose file</h3>
+
+<p>Example docker-compose configuration file written in YAML:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">jellyfin</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">jellyfin/jellyfin</span>
+    <span class="na">user</span><span class="pi">:</span> <span class="s">1000:1000</span>
+    <span class="na">group_add</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">122'</span> <span class="c1"># Change this to match your "render" host group id and remove this comment</span>
+    <span class="na">network_mode</span><span class="pi">:</span> <span class="s1">'</span><span class="s">host'</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">/path/to/config:/config</span>
+      <span class="pi">-</span> <span class="s">/path/to/cache:/cache</span>
+      <span class="pi">-</span> <span class="s">/path/to/media:/media</span>
+    <span class="na">devices</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">/dev/dri/renderD128:/dev/dri/renderD128</span>
+</code></pre></div></div>
+
+<h3 id="4-check-the-qsv-and-va-api-codecs-in-container">4 Check the QSV and VA-API codecs in container</h3>
+
+<p><code class="language-plaintext highlighter-rouge">docker exec -it jellyfin /usr/lib/jellyfin-ffmpeg/vainfo</code></p>
+
+<h3 id="5-check-the-opencl-runtime-status-in-container">5 Check the OpenCL runtime status in container</h3>
+
+<p><code class="language-plaintext highlighter-rouge">docker exec -it jellyfin /usr/lib/jellyfin-ffmpeg/ffmpeg -v verbose -init_hw_device vaapi=va -init_hw_device opencl@va</code></p>
+
+<h3 id="6-enable-qsv-or-va-api-in-jellyfin">6 Enable QSV or VA-API in Jellyfin</h3>
+
+<p>参考：<a href="https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel#configure-with-linux-virtualization">Jellyfin官方文档</a></p>
+
+<p>注意：区分Linuxserver.io版本的Jellyfin Docker镜像与Jellyfin官方版本，两者的Jellyfin config和data文件的路径配置有所不同。</p>
+
+<h2 id="在j4125小主机的ubuntu系统上运行ersatztv并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行ErsatzTV并实现硬件加速转码的步骤：</h2>
+
+<h3 id="1-按照ersatztv官方文档在ubuntu上安装ersatztv">1 按照<a href="https://ersatztv.org/docs/user-guide/install#linux">ErsatzTV官方文档</a>在Ubuntu上安装ErsatzTV</h3>
+
+<h3 id="2-进入settings将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径">2 进入Settings，将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径</h3>
+
+<ul>
+  <li>ffmpeg path: <code class="language-plaintext highlighter-rouge">/usr/lib/jellyfin-ffmpeg/ffmpeg</code></li>
+  <li>ffprobe path: <code class="language-plaintext highlighter-rouge">/usr/lib/jellyfin-ffmpeg/ffprobe</code></li>
+</ul>
+
+<h3 id="3-编辑ffmpeg-profile开启硬件加速转码选择qsv选项">3 编辑FFmpeg Profile，开启硬件加速转码，选择QSV选项</h3>
+
+<p><img src="/assets/images/2025-07-23 ersatztv ffmpeg profile settings.png" alt="2025-07-23 ersatztv ffmpeg profile settings.png" /></p>
+
+<h3 id="4-进入troubleshooting展开qsv-capabilities检查输出结果">4 进入Troubleshooting，展开QSV Capabilities，检查输出结果</h3>
+
+<p>检查输出中jellyfin-ffmpeg7是否被正确使用以及结果中是否存在任何报错（比如, “Error creating a MFX session: -9”, “No VA display found for device /dev/dri/renderD128”等）。如果Exit Code不为0或者输出最后出现“Conversion Failed”字样，即表示硬件转码不成功；反之，如果输出中Exit Code为0并且输出最后没有出现“Conversion Failed”字样，即表示硬件转码成功。</p>
+
+<p>ErsatzTV - Troubleshooting - QSV Capabilities 硬件转码成功的输出样例：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Checking device /dev/dri/renderD128
+Exit Code: 0
+
+ffmpeg version 7.1.1-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04)
+  configuration: --prefix=/usr/lib/jellyfin-ffmpeg --target-os=linux --extra-version=Jellyfin --disable-doc --disable-ffplay --disable-static --disable-libxcb --disable-sdl2 --disable-xlib --enable-lto=auto --enable-gpl --enable-version3 --enable-shared --enable-gmp --enable-gnutls --enable-chromaprint --enable-opencl --enable-libdrm --enable-libxml2 --enable-libass --enable-libfreetype --enable-libfribidi --enable-libfontconfig --enable-libharfbuzz --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libopenmpt --enable-libdav1d --enable-libsvtav1 --enable-libwebp --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-libzimg --enable-libfdk-aac --arch=amd64 --enable-libshaderc --enable-libplacebo --enable-vulkan --enable-vaapi --enable-amf --enable-libvpl --enable-ffnvcodec --enable-cuda --enable-cuda-llvm --enable-cuvid --enable-nvdec --enable-nvenc
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+Input #0, lavfi, from 'nullsrc':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: wrapped_avframe, yuv420p, 320x240 [SAR 1:1 DAR 4:3], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -&gt; #0:0 (wrapped_avframe (native) -&gt; h264 (h264_qsv))
+Press [q] to stop, [?] for help
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+[h264_qsv @ 0x5863317fbfc0] Using the constant quantization parameter (CQP) by default. Please use the global_quality option and other options for a quality-based mode or the b option and other options for a bitrate-based mode if the default is not the desired choice.
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264, nv12(tv, progressive), 320x240 [SAR 1:1 DAR 4:3], q=2-31, 25 fps, 25 tbn
+      Metadata:
+        encoder         : Lavc61.19.101 h264_qsv
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+[out#0/null @ 0x5863311d9600] video:1KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=   25 fps=0.0 q=35.0 Lsize=N/A time=00:00:00.88 bitrate=N/A speed=9.19x    
+
+
+Checking device /dev/dri/card0
+Exit Code: 0
+
+ffmpeg version 7.1.1-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04)
+  configuration: --prefix=/usr/lib/jellyfin-ffmpeg --target-os=linux --extra-version=Jellyfin --disable-doc --disable-ffplay --disable-static --disable-libxcb --disable-sdl2 --disable-xlib --enable-lto=auto --enable-gpl --enable-version3 --enable-shared --enable-gmp --enable-gnutls --enable-chromaprint --enable-opencl --enable-libdrm --enable-libxml2 --enable-libass --enable-libfreetype --enable-libfribidi --enable-libfontconfig --enable-libharfbuzz --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libopenmpt --enable-libdav1d --enable-libsvtav1 --enable-libwebp --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-libzimg --enable-libfdk-aac --arch=amd64 --enable-libshaderc --enable-libplacebo --enable-vulkan --enable-vaapi --enable-amf --enable-libvpl --enable-ffnvcodec --enable-cuda --enable-cuda-llvm --enable-cuvid --enable-nvdec --enable-nvenc
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[AVHWDeviceContext @ 0x64e36a2e9600] libva: vaGetDriverNames() failed with operation failed
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+Input #0, lavfi, from 'nullsrc':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: wrapped_avframe, yuv420p, 320x240 [SAR 1:1 DAR 4:3], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -&gt; #0:0 (wrapped_avframe (native) -&gt; h264 (h264_qsv))
+Press [q] to stop, [?] for help
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+[h264_qsv @ 0x64e36a442a40] Using the constant quantization parameter (CQP) by default. Please use the global_quality option and other options for a quality-based mode or the b option and other options for a bitrate-based mode if the default is not the desired choice.
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264, nv12(tv, progressive), 320x240 [SAR 1:1 DAR 4:3], q=2-31, 25 fps, 25 tbn
+      Metadata:
+        encoder         : Lavc61.19.101 h264_qsv
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+[out#0/null @ 0x64e36a378740] video:1KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=   25 fps=0.0 q=35.0 Lsize=N/A time=00:00:00.88 bitrate=N/A speed=6.12x    
+</code></pre></div></div>
+
+<p>ErsatzTV - Troubleshooting - QSV Capabilities 硬件转码失败的输出样例：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Checking device /dev/dri/renderD128
+Exit Code: 171
+
+ffmpeg version n7.1.1-56-gc2184b65d2-20250716 Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 15.1.0 (crosstool-NG 1.27.0.42_35c1e72)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-ffbuild-linux-gnu- --arch=x86_64 --target-os=linux --enable-gpl --enable-version3 --disable-debug --enable-iconv --enable-zlib --enable-libfribidi --enable-gmp --enable-libxml2 --enable-openssl --enable-lzma --enable-fontconfig --enable-libharfbuzz --enable-libfreetype --enable-libvorbis --enable-opencl --enable-libpulse --enable-libvmaf --enable-libxcb --enable-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --disable-schannel --enable-sdl2 --enable-libsnappy --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame --enable-libuavs3d --enable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libshaderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs='-ldl -lgomp' --extra-ldflags=-pthread --extra-ldexeflags=-pie --cc=x86_64-ffbuild-linux-gnu-gcc --cxx=x86_64-ffbuild-linux-gnu-g++ --ar=x86_64-ffbuild-linux-gnu-gcc-ar --ranlib=x86_64-ffbuild-linux-gnu-gcc-ranlib --nm=x86_64-ffbuild-linux-gnu-gcc-nm --extra-version=20250716
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[AVHWDeviceContext @ 0x57ee44e15780] libva: Failed to get device id from the driver. Please consider to upgrade the driver to support VA-API 1.15.0
+Device creation failed: -1313558101.
+Failed to set value '/dev/dri/renderD128' for option 'qsv_device': Unknown error occurred
+Error parsing global options: Unknown error occurred
+
+
+Checking device /dev/dri/card0
+Exit Code: 171
+
+ffmpeg version n7.1.1-56-gc2184b65d2-20250716 Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 15.1.0 (crosstool-NG 1.27.0.42_35c1e72)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-ffbuild-linux-gnu- --arch=x86_64 --target-os=linux --enable-gpl --enable-version3 --disable-debug --enable-iconv --enable-zlib --enable-libfribidi --enable-gmp --enable-libxml2 --enable-openssl --enable-lzma --enable-fontconfig --enable-libharfbuzz --enable-libfreetype --enable-libvorbis --enable-opencl --enable-libpulse --enable-libvmaf --enable-libxcb --enable-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --disable-schannel --enable-sdl2 --enable-libsnappy --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame --enable-libuavs3d --enable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libshaderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs='-ldl -lgomp' --extra-ldflags=-pthread --extra-ldexeflags=-pie --cc=x86_64-ffbuild-linux-gnu-gcc --cxx=x86_64-ffbuild-linux-gnu-g++ --ar=x86_64-ffbuild-linux-gnu-gcc-ar --ranlib=x86_64-ffbuild-linux-gnu-gcc-ranlib --nm=x86_64-ffbuild-linux-gnu-gcc-nm --extra-version=20250716
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[AVHWDeviceContext @ 0x56747aacf7c0] libva: Failed to get device id from the driver. Please consider to upgrade the driver to support VA-API 1.15.0
+Device creation failed: -1313558101.
+Failed to set value '/dev/dri/card0' for option 'qsv_device': Unknown error occurred
+Error parsing global options: Unknown error occurred
+</code></pre></div></div>
+
+<h3 id="5-auto-start-ersatztv-as-a-systemd-service">5 Auto start ersatztv as a systemd service</h3>
+
+<p>创建一个如下的<code class="language-plaintext highlighter-rouge">ersatztv.service</code>文件：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/systemd/system/ersatztv.service
+
+[Unit]
+Description=ErsatzTV Service
+
+[Service]
+ExecStart=/home/greg/Applications/ersatztv/ErsatzTV-v25.2.0-linux-x64/ErsatzTV
+Restart=on-abort
+User=root
+WorkingDirectory=/home/greg/Applications/ersatztv/ErsatzTV-v25.2.0-linux-x64
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+
+<p>Enable the service to start on boot:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl daemon-reload
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>ersatztv.service
+</code></pre></div></div>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="jellyfin" /><category term="ersatztv" /><category term="hardware-accelerated" /><category term="transcoding" /><category term="docker" /><category term="ubuntu" /></entry><entry><title type="html">NGINX Proxy Manager的试用总结</title><link href="https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html" rel="alternate" type="text/html" title="NGINX Proxy Manager的试用总结" /><published>2025-07-16T00:00:00+00:00</published><updated>2025-07-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html"><![CDATA[<p>我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer<a href="https://portal.portainer.io/knowledge/can-i-build-an-image-while-deploying-a-stack/application-from-git">不支持在Deploy时构建镜像</a>，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。</p>
+
+<p>在过去一段时间，我开始注意到一个名为Nginx Proxy Manager的docker应用。它在各种地方越来越频繁地被提及，很多人都极力推荐这个应用（比如，<a href="https://www.reddit.com/r/selfhosted/comments/1dmh3mt/comment/l9vyc0t/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">这个</a>Reddit帖子）。</p>
+
+<p>我想尝试这个Nginx Proxy Manager的想法已经在心里酝酿许久，今天终于决定动手尝试。</p>
+
+<h2 id="我的nginx使用场景">我的nginx使用场景</h2>
+
+<ul>
+  <li>我有一堆本地网络上运行的docker服务希望通过nginx反向代理来支持通过HTTPS请求远程访问</li>
+  <li>其中有部分docker服务自身不带任何authentication，希望nginx可以提供基本的authentication（通过提供一个basic auth的UI界面要求用户输入）</li>
+  <li>没有自己的主域名，只有一个免费的二级域名（即子域名）</li>
+  <li>希望通过nginx在一个地方统一进行SSL证书管理</li>
+</ul>
+
+<h2 id="试用总结">试用总结</h2>
+
+<p>一通操作下来，我成功的配置了一个proxy host，并将onenav通过nginx proxy manager暴露在公网上。</p>
+
+<p><img src="/assets/images/nginx-proxy-manager-config.png" alt="nginx-proxy-manager-config.png" /></p>
+
+<p>但是在使用过程中我逐渐发现nginx proxy manager对于我的使用场景存在的一些局限性。并且逐渐意识到通过图形界面来管理nginx配置可能没有想象中那么美好（当然这一点我之前也想到了，这也是我一直迟迟没有试用它的原因）。</p>
+
+<h3 id="局限性1界面不支持配置nginx端口">局限性#1：界面不支持配置nginx端口</h3>
+
+<p>NGINX Proxy Manager默认只支持通过配置多个subdomain来在同一个domain下代理多个服务，而不支持通过使用同一个subdomain但是不同端口的方式（而这恰好是我的使用场景，因为我没钱买独立域名，所以是使用的免费eu.org subdomain）。</p>
+
+<p>我也尝试过用Custom Locations来支持多个服务的场景。不过很快发现，custom location还是需要自己写配置，而且更致命的问题是，很多服务本身并不支持以子目录的形式运行，比如sonarr：</p>
+
+<blockquote>
+  <p>Configuring Nginx Proxy Manager (NPM) to serve applications like Sonarr under a subdirectory (e.g., mydomain.com/sonarr) can be challenging due to how certain web applications handle base paths. Many applications are designed to run at the root (/) and may not support being served from a subdirectory without additional configuration</p>
+</blockquote>
+
+<p>来自：<a href="https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/">https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/</a></p>
+
+<h3 id="局限性2-默认的basic-auth不支持用户手动输入">局限性#2: 默认的Basic Auth不支持用户手动输入</h3>
+
+<p>NPM的Basic Auth只能通过请求本身的header来传递，而不是向用户提供一个basic auth的UI界面要求用户输入。这也不符合我的使用场景。</p>
+
+<h2 id="局限性3兼容性问题">局限性#3：兼容性问题</h2>
+
+<p>在只使用界面提供的功能的情况下，我在配置某些docker容器的代理时还遇到以下功能故障：</p>
+
+<ol>
+  <li>Huginn不work（连不上mysql服务器）</li>
+  <li>Calibre也不work（可以访问主界面但是连接不上远程桌面）</li>
+</ol>
+
+<h2 id="what-are-some-alternatives-to-nginx-proxy-manager">What are some alternatives to Nginx Proxy Manager?</h2>
+
+<p>Alternatives to Nginx Proxy Manager include Traefik, Caddy, Apache HTTP Server, HAProxy, WinGate, and OpenResty. They are worth exploring to determine the best fit for your specific requirements and infrastructure. Bear in mind that these alternatives vary in features, performance, and configuration complexity.</p>
+
+<p>以后可能会尝试一些其他的替代品，比如Traefik, Caddy，但也不会抱太大希望。其实，有时候通过命令行、代码和配置比通过图形界面更灵活更方便也更强大。</p>
+
+<p>比如，假如你有60个proxy host的配置需要迁移到另一个域名，通过界面会非常费时，而命令行就可以很快完成。</p>
+
+<blockquote>
+  <p>I have just finished transferring 60 proxy hosts to another domain through NPM, manually via the GUI. It wouldn’t work if I bulk changed the nginx configs themselves, it would just result in server errors on NPM.</p>
+</blockquote>
+
+<blockquote>
+  <p>If I was using plain nginx, it probably would’ve taken me a second to do the domain switch with configs alone.</p>
+</blockquote>
+
+<p>来自：<a href="https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button</a></p>
+
+<h2 id="其他收获">其他收获</h2>
+
+<p>这一次试用nginx proxy manager的另一个收获是学会了通过配置default network的方式来大大的简化对各个docker服务的<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>的networks配置的修改工作量。而且我学习到，如果docker镜像自身已经expose了某些端口，那就不用额外的写expose语句来重复操作了（只要nginx跟docker服务在同一个network便能够直接访问的docker容器expose的端口），更不用添加ports指令的在网络上暴露端口。</p>
+
+<p>这样下来，以后如果有新的docker容器希望通过nginx反向代理，只需要在容器的<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>的最后添加如下一段全局默认network配置即可：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>networks:
+  default:
+    name: nginx_default
+    external: true
+</code></pre></div></div>
+
+<p>参考：<a href="https://docs.docker.com/compose/how-tos/networking/">https://docs.docker.com/compose/how-tos/networking/</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="nginx" /><category term="docker" /><category term="docker-compose" /><category term="nginx-proxy-manager" /><summary type="html"><![CDATA[我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer不支持在Deploy时构建镜像，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。]]></summary></entry><entry><title type="html">Jellyfin和ErsatzTV在Windows实机上硬件加速的一次尝试</title><link href="https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment.html" rel="alternate" type="text/html" title="Jellyfin和ErsatzTV在Windows实机上硬件加速的一次尝试" /><published>2025-07-11T00:00:00+00:00</published><updated>2025-07-11T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment.html"><![CDATA[<p>我的硬件是J4125迷你主机，采用在Windows实机（非虚拟机）环境下安装Jellyfin和ErsatzTV。</p>
+
+<h2 id="jellyfin转码成功">Jellyfin转码成功</h2>
+
+<p>经验证，Jellyfin可以成功转码（如下图所示）。</p>
+
+<p><img src="/assets/images/jellyfin-web-player-transcode-information.png" alt="jellyfin-web-player-transcode-information.png" /></p>
+
+<p><img src="/assets/images/cpu-gpu-resource-usage-when-transcoding.png" alt="cpu-gpu-resource-usage-when-transcoding.png" /></p>
+
+<p>Jellyfin官方推荐的硬件转码配置方案推荐顺序如下：</p>
+
+<p>Apple ≥ Intel ≥ Nvidia »&gt; AMD*</p>
+
+<p>其中，集成显卡方案中推荐的CPU配置如下：</p>
+
+<p>CPU: Intel Core i5-11400, Intel Pentium Gold G7400, Intel N100, Apple M series or newer (excluding Intel J/M/N/Y series up to 11th gen)</p>
+
+<p>独立显卡的方案因为Nvidia显卡对Linux支持不够友好，因此我暂时不考虑。Apple M系列我暂时也不考虑。i5功耗较高。综合而言，最适合我的是N100系列迷你主机。</p>
+
+<p>注意，Jellyfin不推荐J系列CPU，包括J4125，原因是架构太老，对最新的视频编码格式支持不够全面。</p>
+
+<p>来源：<a href="https://jellyfin.org/docs/general/administration/hardware-selection/#server-with-integrated-graphics">https://jellyfin.org/docs/general/administration/hardware-selection/#server-with-integrated-graphics</a></p>
+
+<h2 id="ersatztv在windows下未转码成功">ErsatzTV在Windows下未转码成功</h2>
+
+<p>ErsatzTV则是无法在Windows下成功转码。由于VA-API只支持Linux，所以Windows下只能选择QSV。但实际使用发现，J4125无法成功通过QSV进行转码，根据作者的推测是因为CPU太老了。</p>
+
+<p>来源：<a href="https://discuss.ersatztv.org/d/88-help-with-intel-igpu-gen9-htop-shows-ersatz-using-cpu-for-ffmpeg">https://discuss.ersatztv.org/d/88-help-with-intel-igpu-gen9-htop-shows-ersatz-using-cpu-for-ffmpeg</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="jellyfin" /><category term="ersatztv" /><category term="hardware-acceleration" /><category term="transcode" /><summary type="html"><![CDATA[我的硬件是J4125迷你主机，采用在Windows实机（非虚拟机）环境下安装Jellyfin和ErsatzTV。]]></summary></entry><entry><title type="html">Android编程笔记（九）：推荐的代码库目录结构</title><link href="https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure.html" rel="alternate" type="text/html" title="Android编程笔记（九）：推荐的代码库目录结构" /><published>2025-07-04T00:00:00+00:00</published><updated>2025-07-04T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure.html"><![CDATA[<h2 id="概览">概览</h2>
+
+<p><img src="/assets/images/android-directory-structure.png" alt="android-directory-structure.png" /></p>
+
+<p>我个人习惯使用以下目录：</p>
+
+<ul>
+  <li>api</li>
+  <li>db</li>
+  <li>utilities</li>
+  <li>ui</li>
+  <li>viewmodels</li>
+  <li>workers</li>
+</ul>
+
+<h3 id="db子目录">DB子目录</h3>
+
+<p>This directory houses all DB-related components:</p>
+<ul>
+  <li>Database: The main access point to your app’s persistent data.</li>
+  <li>Data Entities: Classes that represent tables in your database.</li>
+  <li>Data Access Objects (Dao): Interfaces or abstract classes that define methods for accessing and manipulating data in your database.</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/db:</p>
+
+<ul>
+  <li>Database.kt</li>
+  <li>ADao.kt</li>
+  <li>A.kt</li>
+  <li>BDao.kt</li>
+  <li>B.kt</li>
+</ul>
+
+<h3 id="ui组件子目录">UI组件子目录</h3>
+
+<p>This directory houses all UI-related components:</p>
+<ul>
+  <li>Activities: The entry points for user interaction.</li>
+  <li>Fragments: Reusable UI components that can be combined within Activities.</li>
+  <li>Custom Views: Specialized UI elements created by extending existing View classes.</li>
+  <li>Adapters: Classes that bridge data and UI elements for displaying lists or grids.</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/ui:</p>
+
+<ul>
+  <li>MainActivity.kt</li>
+  <li>AListFragment.kt</li>
+  <li>ADetailsFragment.kt</li>
+  <li>ARecyclerViewAdapter.kt</li>
+  <li>BListFragment.kt</li>
+  <li>BDetailsFragment.kt</li>
+  <li>CFragment.kt</li>
+</ul>
+
+<h3 id="view-models子目录">View Models子目录</h3>
+
+<p>viewmodels directory:</p>
+<ul>
+  <li>Contains ViewModel classes that manages UI-related data and survives configuration changes (like screen rotation).</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/viewmodel:</p>
+
+<ul>
+  <li>AViewModel.kt</li>
+  <li>BViewModel.kt</li>
+</ul>
+
+<h3 id="ui布局子目录">UI布局子目录</h3>
+<p>src/main/res/layout:</p>
+
+<ul>
+  <li>activity_main.xml</li>
+  <li>fragment_a_list.xml</li>
+  <li>fragment_a_details.xml</li>
+  <li>fragment_b_list.xml</li>
+  <li>fragment_b_details.xml</li>
+  <li>fragment_c.xml</li>
+  <li>list_item.xml</li>
+</ul>
+
+<h3 id="ui导航子目录">UI导航子目录</h3>
+<p>src/main/res/navigation:</p>
+
+<ul>
+  <li>nav_graph.xml</li>
+</ul>
+
+<h3 id="androidmanifest声明文件">AndroidManifest声明文件</h3>
+
+<p>src/main:</p>
+
+<ul>
+  <li>AndroidManifest.xml</li>
+</ul>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://stackoverflow.com/a/63650013</li>
+  <li>https://blog.stackademic.com/organizing-your-android-app-with-mvvm-a-package-hierarchy-guide-c1c0f48fba60</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="directory-structure" /><summary type="html"><![CDATA[概览]]></summary></entry><entry><title type="html">How to restore data for Immich with Portainer</title><link href="https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer.html" rel="alternate" type="text/html" title="How to restore data for Immich with Portainer" /><published>2025-06-30T00:00:00+00:00</published><updated>2025-06-30T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer.html"><![CDATA[<h2 id="1-backup-postgres-db">1. Backup Postgres DB</h2>
+<p>docker exec -t immich_postgres pg_dumpall –clean –if-exists –username=postgres | gzip &gt; “/path/to/backup/dump.sql.gz”</p>
+
+<h2 id="2-restore-postgres-db">2. Restore Postgres DB</h2>
+
+<h3 id="21-deletes-all-immich-data-to-start-from-scratch">2.1 Deletes all Immich data to start from scratch</h3>
+
+<ol>
+  <li>Remove all immich related containers from portainer (check the option to “Automatically remove non-persistent volumes”)</li>
+  <li>Backup named volumes by renaming them to a different name with <a href="https://www.commands.dev/workflows/rename_docker_volume">this convenient tool</a> (remember to check the generated commands before running, consider remove the last <code class="language-plaintext highlighter-rouge">docker volume rm</code> command to avoid accidentally data loss)</li>
+  <li>Remove immich named volumes from portainer:
+    <ol>
+      <li>immich_pgdata</li>
+      <li>immich_model-cache</li>
+    </ol>
+  </li>
+  <li>Remove all unused images from portaineer (including <code class="language-plaintext highlighter-rouge">tensorchord/pgvecto-rs</code> &amp; <code class="language-plaintext highlighter-rouge">redis</code>)</li>
+</ol>
+
+<h3 id="22-start-immich_postgres-alone">2.2 Start <code class="language-plaintext highlighter-rouge">immich_postgres</code> alone</h3>
+
+<ol>
+  <li>Comment out all other services except <code class="language-plaintext highlighter-rouge">immich_postgres</code> in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
+  <li>Pull &amp; redeploy all immich images &amp; containers to start <code class="language-plaintext highlighter-rouge">immich_postgres</code> alone without starting other services</li>
+  <li>Wait for <code class="language-plaintext highlighter-rouge">immich_postgres</code> to be fully running (<code class="language-plaintext highlighter-rouge">immich_postgres</code> might only show “starting” status, it’s normal. Check the log, if it says <code class="language-plaintext highlighter-rouge">PostgreSQL init process complete; ready for start up.</code>, it should be good to go, or just wait for another 10 seconds.)</li>
+</ol>
+
+<h3 id="23-restore-postgres-db-from-dump">2.3 Restore Postgres DB from dump</h3>
+<ol>
+  <li>Run the following command with the dump file location to restore Postgres DB from dump:<br />
+  <code class="language-plaintext highlighter-rouge">gunzip --stdout "/home/admin/immich/2025-07-01-dump.sql.gz" | sed "s/SELECT pg_catalog.set_config('search_path', '', false);/SELECT pg_catalog.set_config('search_path', 'public, pg_catalog', true);/g" | sudo docker exec -i immich_postgres psql --dbname=postgres --username=postgres</code></li>
+</ol>
+
+<h3 id="24-start-immich-as-normal">2.4 Start immich as normal</h3>
+
+<ol>
+  <li>Uncomment all other services in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
+  <li>Pull &amp; redeploy all immich images &amp; containers to start immich as normal</li>
+  <li>Restart nginx</li>
+  <li>Open immich &amp; check if everything working as expected (scan library &amp; regenerate thumbnails &amp; transcode videos if necessary)</li>
+</ol>
+
+<p>Done!</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>https://immich.app/docs/administration/backup-and-restore/</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="immich" /><category term="portainer" /><category term="postgres" /><category term="docker" /><summary type="html"><![CDATA[1. Backup Postgres DB docker exec -t immich_postgres pg_dumpall –clean –if-exists –username=postgres | gzip &gt; “/path/to/backup/dump.sql.gz”]]></summary></entry><entry><title type="html">Android编程笔记（八）：Fragment</title><link href="https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html" rel="alternate" type="text/html" title="Android编程笔记（八）：Fragment" /><published>2025-06-27T00:00:00+00:00</published><updated>2025-06-27T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#how-to-use-fragments" id="markdown-toc-how-to-use-fragments">How to use fragments</a>    <ul>
+      <li><a href="#setup-your-environment" id="markdown-toc-setup-your-environment">Setup your environment</a></li>
+      <li><a href="#create-a-fragment-class" id="markdown-toc-create-a-fragment-class">Create a fragment class</a>        <ul>
+          <li><a href="#difference-and-uses-of-oncreate-oncreateview-in-fragments" id="markdown-toc-difference-and-uses-of-oncreate-oncreateview-in-fragments">Difference and uses of <code class="language-plaintext highlighter-rouge">onCreate()</code>, <code class="language-plaintext highlighter-rouge">onCreateView()</code> in fragments</a></li>
+        </ul>
+      </li>
+      <li><a href="#add-a-fragment-to-an-activity" id="markdown-toc-add-a-fragment-to-an-activity">Add a fragment to an activity</a>        <ul>
+          <li><a href="#add-a-fragment-via-xml" id="markdown-toc-add-a-fragment-via-xml">Add a fragment via XML</a></li>
+          <li><a href="#add-a-fragment-programmatically" id="markdown-toc-add-a-fragment-programmatically">Add a fragment programmatically</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#fragment-manager" id="markdown-toc-fragment-manager">Fragment manager</a>    <ul>
+      <li><a href="#access-the-fragmentmanager" id="markdown-toc-access-the-fragmentmanager">Access the FragmentManager</a></li>
+      <li><a href="#child-fragments" id="markdown-toc-child-fragments">Child fragments</a></li>
+      <li><a href="#use-the-fragmentmanager" id="markdown-toc-use-the-fragmentmanager">Use the FragmentManager</a></li>
+      <li><a href="#perform-a-transaction" id="markdown-toc-perform-a-transaction">Perform a transaction</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="how-to-use-fragments">How to use fragments</h2>
+
+<p>A <a href="https://developer.android.com/guide/fragments">fragment</a> represents a modular portion of the user interface within an activity. A fragment has its own lifecycle, receives its own input events, and you can add or remove fragments while the containing activity is running.</p>
+
+<p>This document describes how to create a fragment and include it in an activity.</p>
+
+<h3 id="setup-your-environment">Setup your environment</h3>
+
+<p>Fragments require a dependency on the <a href="https://developer.android.com/jetpack/androidx/releases/fragment">AndroidX Fragment library</a>.</p>
+
+<p>To include the AndroidX Fragment library to your project, add the following dependencies in your app’s <code class="language-plaintext highlighter-rouge">build.gradle</code> file:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">fragment_version</span> <span class="p">=</span> <span class="s">"1.8.8"</span>
+
+    <span class="c1">// Java language implementation</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.fragment:fragment:$fragment_version"</span><span class="p">)</span>
+    <span class="c1">// Kotlin</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.fragment:fragment-ktx:$fragment_version"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="create-a-fragment-class">Create a fragment class</h3>
+
+<p>To create a fragment, extend the AndroidX <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment"><code class="language-plaintext highlighter-rouge">Fragment</code></a> class, and override its methods to insert your app logic, similar to the way you would create an <a href="https://developer.android.com/reference/android/app/Activity"><code class="language-plaintext highlighter-rouge">Activity</code></a> class. To create a minimal fragment that defines its own layout, provide your fragment’s layout resource to the base constructor, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleFragment</span> <span class="p">:</span> <span class="nc">Fragment</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">example_fragment</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can customize the fragment’s view by overriding the <code class="language-plaintext highlighter-rouge">onCreateView()</code> method.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleFragment</span> <span class="p">:</span> <span class="nc">Fragment</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateView</span><span class="p">(</span>
+        <span class="n">inflater</span><span class="p">:</span> <span class="nc">LayoutInflater</span><span class="p">,</span> <span class="n">container</span><span class="p">:</span> <span class="nc">ViewGroup</span><span class="p">?,</span>
+        <span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?</span>
+    <span class="p">):</span> <span class="nc">View</span><span class="p">?</span> <span class="p">{</span>
+        <span class="c1">// Inflate the layout for this fragment.</span>
+        <span class="c1">// or you can inflate a different layout here.</span>
+        <span class="kd">val</span> <span class="py">root</span><span class="p">:</span> <span class="nc">View</span> <span class="p">=</span> <span class="n">inflater</span><span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">my_fragment_layout</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+        
+        <span class="c1">// Additional graphical initialisations...</span>
+        
+        <span class="k">return</span> <span class="n">root</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="difference-and-uses-of-oncreate-oncreateview-in-fragments">Difference and uses of <code class="language-plaintext highlighter-rouge">onCreate()</code>, <code class="language-plaintext highlighter-rouge">onCreateView()</code> in fragments</h4>
+
+<p><strong><a href="https://developer.android.com/reference/android/app/Fragment.html#onCreate(android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreate()</code></a>:</strong></p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">void</span> <span class="nf">onCreate</span> <span class="p">(</span><span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Called to do initial creation of a fragment. The <code class="language-plaintext highlighter-rouge">onCreate()</code> method in a <code class="language-plaintext highlighter-rouge">Fragment</code> is <strong>called after the <code class="language-plaintext highlighter-rouge">Activity</code>’s <code class="language-plaintext highlighter-rouge">onAttachFragment()</code></strong> but before that <code class="language-plaintext highlighter-rouge">Fragment</code>’s <code class="language-plaintext highlighter-rouge">onCreateView()</code>.<br />
+In this method, you can assign variables, get <code class="language-plaintext highlighter-rouge">Intent</code> extras, and <strong>anything else that doesn’t involve the View hierarchy</strong> (i.e. non-graphical initialisations). This is because this method can be called when the <code class="language-plaintext highlighter-rouge">Activity</code>’s <code class="language-plaintext highlighter-rouge">onCreate()</code> is not finished, and so trying to access the View hierarchy here may result in a crash.</p>
+
+<p><strong><a href="https://developer.android.com/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater,%20android.view.ViewGroup,%20android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreateView()</code></a>:</strong></p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nc">View</span> <span class="nf">onCreateView</span> <span class="p">(</span><span class="nc">LayoutInflater</span> <span class="n">inflater</span><span class="p">,</span> 
+                <span class="nc">ViewGroup</span> <span class="n">container</span><span class="p">,</span> 
+                <span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Called to have the fragment instantiate its user interface view. After the <code class="language-plaintext highlighter-rouge">onCreate()</code> is called (in the <code class="language-plaintext highlighter-rouge">Fragment</code>), the <code class="language-plaintext highlighter-rouge">Fragment</code>’s <code class="language-plaintext highlighter-rouge">onCreateView()</code> is called. You can assign your <code class="language-plaintext highlighter-rouge">View</code> variables and <strong>do any graphical initialisations</strong>. You are expected to return a <code class="language-plaintext highlighter-rouge">View</code> from this method, and this is the main UI view, but if your <code class="language-plaintext highlighter-rouge">Fragment</code> does not use any layouts or graphics, you can return <code class="language-plaintext highlighter-rouge">null</code> (happens by default if you don’t override).</p>
+
+<p><strong>To sum up</strong></p>
+
+<p>They are all called in the <code class="language-plaintext highlighter-rouge">Fragment</code> but are called at different times.<br />
+The <code class="language-plaintext highlighter-rouge">onCreate()</code> is called first, for doing any non-graphical initialisations. Next, you can assign and declare any <code class="language-plaintext highlighter-rouge">View</code> variables you want to use in <code class="language-plaintext highlighter-rouge">onCreateView()</code>.</p>
+
+<h3 id="add-a-fragment-to-an-activity">Add a fragment to an activity</h3>
+
+<p>Generally, your fragment must be embedded within an AndroidX <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity"><code class="language-plaintext highlighter-rouge">FragmentActivity</code></a> to contribute a portion of UI to that activity’s layout. <code class="language-plaintext highlighter-rouge">FragmentActivity</code> is the base class for <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity"><code class="language-plaintext highlighter-rouge">AppCompatActivity</code></a>, so if you’re already subclassing <code class="language-plaintext highlighter-rouge">AppCompatActivity</code> to provide backward compatibility in your app, then you do not need to change your activity base class.</p>
+
+<p>You can add your fragment to the activity’s view hierarchy either by defining the fragment in your activity’s layout file or by defining a fragment container in your activity’s layout file and then programmatically adding the fragment from within your activity. In either case, you need to add a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentContainerView"><code class="language-plaintext highlighter-rouge">FragmentContainerView</code></a> that defines the location where the fragment should be placed within the activity’s view hierarchy. It is strongly recommended to always use a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> as the container for fragments, as <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> includes fixes specific to fragments that other view groups such as <code class="language-plaintext highlighter-rouge">FrameLayout</code> do not provide.</p>
+
+<h4 id="add-a-fragment-via-xml">Add a fragment via XML</h4>
+
+<p>To declaratively add a fragment to your activity layout’s XML, use a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> element.</p>
+
+<p>Here’s an example activity layout containing a single <code class="language-plaintext highlighter-rouge">FragmentContainerView</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;!--</span> <span class="n">res</span><span class="p">/</span><span class="n">layout</span><span class="p">/</span><span class="n">example_activity</span><span class="p">.</span><span class="n">xml</span> <span class="p">--&gt;</span>
+<span class="p">&lt;</span><span class="n">androidx</span><span class="p">.</span><span class="n">fragment</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nc">FragmentContainerView</span>
+    <span class="n">xmlns</span><span class="p">:</span><span class="n">android</span><span class="p">=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">id</span><span class="p">=</span><span class="s">"@+id/fragment_container_view"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">name</span><span class="p">=</span><span class="s">"com.example.ExampleFragment"</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">android:name</code> attribute specifies the class name of the <code class="language-plaintext highlighter-rouge">Fragment</code> to instantiate. When the activity’s layout is inflated, the specified fragment is instantiated, <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#onInflate%28android.content.Context,%2520android.util.AttributeSet,%2520android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">onInflate()</code></a> is called on the newly instantiated fragment, and a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code> is created to add the fragment to the <code class="language-plaintext highlighter-rouge">FragmentManager</code>.</p>
+
+<p><strong>Note:</strong> You can use the <code class="language-plaintext highlighter-rouge">class</code> attribute instead of <code class="language-plaintext highlighter-rouge">android:name</code> as an alternative way to specify which <code class="language-plaintext highlighter-rouge">Fragment</code> to instantiate.</p>
+
+<h4 id="add-a-fragment-programmatically">Add a fragment programmatically</h4>
+
+<p>To programmatically add a fragment to your activity’s layout, the layout should include a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> to serve as a fragment container, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;!--</span> <span class="n">res</span><span class="p">/</span><span class="n">layout</span><span class="p">/</span><span class="n">example_activity</span><span class="p">.</span><span class="n">xml</span> <span class="p">--&gt;</span>
+<span class="p">&lt;</span><span class="n">androidx</span><span class="p">.</span><span class="n">fragment</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nc">FragmentContainerView</span>
+    <span class="n">xmlns</span><span class="p">:</span><span class="n">android</span><span class="p">=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">id</span><span class="p">=</span><span class="s">"@+id/fragment_container_view"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="p">=</span><span class="s">"match_parent"</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>Unlike the XML approach, the <code class="language-plaintext highlighter-rouge">android:name</code> attribute isn’t used on the <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> here, so no specific fragment is automatically instantiated. Instead, a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction"><code class="language-plaintext highlighter-rouge">FragmentTransaction</code></a> is used to instantiate a fragment and add it to the activity’s layout.</p>
+
+<p>While your activity is running, you can make fragment transactions such as adding, removing, or replacing a fragment. In your <code class="language-plaintext highlighter-rouge">FragmentActivity</code>, you can get an instance of the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager"><code class="language-plaintext highlighter-rouge">FragmentManager</code></a>, which can be used to create a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. Then, you can instantiate your fragment within your activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method using <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#add%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">FragmentTransaction.add()</code></a>, passing in the <code class="language-plaintext highlighter-rouge">ViewGroup</code> ID of the container in your layout and the fragment class you want to add and then commit the transaction, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">example_activity</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">savedInstanceState</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">commit</span> <span class="p">{</span>
+                <span class="nf">setReorderingAllowed</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+                <span class="n">add</span><span class="p">&lt;</span><span class="nc">ExampleFragment</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fragment_container_view</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> You should <strong>always</strong> use <code class="language-plaintext highlighter-rouge">setReorderingAllowed(true)</code> when performing a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. For more information on reordered transactions, see <a href="https://developer.android.com/guide/fragments/transactions#reordering">Fragment transactions</a>.</p>
+
+<p>In the previous example, note that the fragment transaction is only created when <code class="language-plaintext highlighter-rouge">savedInstanceState</code> is <code class="language-plaintext highlighter-rouge">null</code>. This is to ensure that the fragment is added only once, when the activity is first created. When a configuration change occurs and the activity is recreated, <code class="language-plaintext highlighter-rouge">savedInstanceState</code> is no longer <code class="language-plaintext highlighter-rouge">null</code>, and the fragment does not need to be added a second time, as the fragment is automatically restored from the <code class="language-plaintext highlighter-rouge">savedInstanceState</code>.</p>
+
+<h2 id="fragment-manager">Fragment manager</h2>
+
+<p><strong>Note:</strong> We strongly recommend using the <a href="https://developer.android.com/guide/navigation">Navigation library</a> to manage your app’s navigation. The framework follows best practices for working with fragments, the back stack, and the fragment manager. For more information about Navigation, see <a href="https://developer.android.com/guide/navigation/navigation-getting-started">Get started with the Navigation component</a> and <a href="https://developer.android.com/guide/navigation/navigation-migrate">Migrate to the Navigation component</a>.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager"><code class="language-plaintext highlighter-rouge">FragmentManager</code></a> is the class responsible for performing actions on your app’s fragments, such as adding, removing, or replacing them and adding them to the back stack.</p>
+
+<p><strong>You might never interact with <code class="language-plaintext highlighter-rouge">FragmentManager</code> directly if you’re using the <a href="https://developer.android.com/guide/navigation">Jetpack Navigation</a> library, as it works with the <code class="language-plaintext highlighter-rouge">FragmentManager</code> on your behalf.</strong> However, any app using fragments is using <code class="language-plaintext highlighter-rouge">FragmentManager</code> at some level, so it’s important to understand what it is and how it works.</p>
+
+<h3 id="access-the-fragmentmanager">Access the FragmentManager</h3>
+
+<p>You can access the <code class="language-plaintext highlighter-rouge">FragmentManager</code> from an activity or from a fragment.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity"><code class="language-plaintext highlighter-rouge">FragmentActivity</code></a> and its subclasses, such as <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity"><code class="language-plaintext highlighter-rouge">AppCompatActivity</code></a>, have access to the <code class="language-plaintext highlighter-rouge">FragmentManager</code> through the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity#getSupportFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getSupportFragmentManager()</code></a> method.</p>
+
+<p>Fragments can host one or more child fragments. Inside a fragment, you can get a reference to the <code class="language-plaintext highlighter-rouge">FragmentManager</code> that manages the fragment’s children through <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#getChildFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getChildFragmentManager()</code></a>. If you need to access its host <code class="language-plaintext highlighter-rouge">FragmentManager</code>, you can use <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#getParentFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getParentFragmentManager()</code></a>.</p>
+
+<p>Here are a couple of examples to see the relationships between fragments, their hosts, and the <code class="language-plaintext highlighter-rouge">FragmentManager</code> instances associated with each.</p>
+
+<p><img src="/assets/images/fragment-host.png" alt="two ui layout examples showing the relationships between
+            fragments and their host activities" /></p>
+
+<p><strong>Figure 1.</strong> Two UI layout examples showing the relationships between fragments and their host activities.</p>
+
+<p>Figure 1 shows two examples, each of which has a single activity host. The host activity in both of these examples displays top-level navigation to the user as a <a href="https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView"><code class="language-plaintext highlighter-rouge">BottomNavigationView</code></a> that is responsible for swapping out the host fragment with different screens in the app. Each screen is implemented as a separate fragment.</p>
+
+<p>The host fragment in Example 1 hosts two child fragments that make up a split-view screen. The host fragment in Example 2 hosts a single child fragment that makes up the display fragment of a <a href="https://developer.android.com/guide/navigation/navigation-swipe-view-2#implement_swipe_views">swipe view</a>.</p>
+
+<p>Given this setup, you can think about each host as having a <code class="language-plaintext highlighter-rouge">FragmentManager</code> associated with it that manages its child fragments. This is illustrated in figure 2 along with property mappings between <code class="language-plaintext highlighter-rouge">supportFragmentManager</code>, <code class="language-plaintext highlighter-rouge">parentFragmentManager</code>, and <code class="language-plaintext highlighter-rouge">childFragmentManager</code>.</p>
+
+<p><img src="/assets/images/manager-mappings.png" alt="each host has its own FragmentManager associated with it
+            that manages its child fragments" /></p>
+
+<p><strong>Figure 2.</strong> Each host has its own <code class="language-plaintext highlighter-rouge">FragmentManager</code> associated with it that manages its child fragments.</p>
+
+<p>The appropriate <code class="language-plaintext highlighter-rouge">FragmentManager</code> property to reference depends on where the callsite is in the fragment hierarchy along with which fragment manager you are trying to access.</p>
+
+<p>Once you have a reference to the <code class="language-plaintext highlighter-rouge">FragmentManager</code>, you can use it to manipulate the fragments being displayed to the user.</p>
+
+<h3 id="child-fragments">Child fragments</h3>
+
+<p>Generally speaking, your app consists of a single or small number of activities in your application project, with each activity representing a group of related screens. The activity might provide a point to place top-level navigation and a place to scope <code class="language-plaintext highlighter-rouge">ViewModel</code> objects and other view-state between fragments. A fragment represents an individual destination in your app.</p>
+
+<p>If you want to show multiple fragments at once, such as in a split-view or a dashboard, you can use child fragments that are managed by your destination fragment and its child fragment manager.</p>
+
+<p>Other use cases for child fragments are the following:</p>
+
+<ul>
+  <li><a href="https://developer.android.com/training/animation/screen-slide-2">Screen slides</a>, using a <code class="language-plaintext highlighter-rouge">ViewPager2</code> in a parent fragment to manage a series of child fragment views.</li>
+  <li>Sub-navigation within a set of related screens.</li>
+  <li>Jetpack Navigation uses child fragments as individual destinations. An activity hosts a single parent <code class="language-plaintext highlighter-rouge">NavHostFragment</code> and fills its space with different child destination fragments as users navigate through your app.</li>
+</ul>
+
+<h3 id="use-the-fragmentmanager">Use the FragmentManager</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">FragmentManager</code> manages the fragment back stack. At runtime, the <code class="language-plaintext highlighter-rouge">FragmentManager</code> can perform back stack operations like adding or removing fragments in response to user interactions. Each set of changes is committed together as a single unit called a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction"><code class="language-plaintext highlighter-rouge">FragmentTransaction</code></a>. For a more in-depth discussion about fragment transactions, see the <a href="https://developer.android.com/guide/fragments/transactions">fragment transactions guide</a>.</p>
+
+<p>When the user taps the Back button on their device, or when you call <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28%29"><code class="language-plaintext highlighter-rouge">FragmentManager.popBackStack()</code></a>, the top-most fragment transaction pops off of the stack. If there are no more fragment transactions on the stack, and if you aren’t using child fragments, the Back event bubbles up to the activity. If you <em>are</em> using child fragments, see <a href="#considerations">special considerations for child and sibling fragments</a>.</p>
+
+<p>When you call <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29"><code class="language-plaintext highlighter-rouge">addToBackStack()</code></a> on a transaction, the transaction can include any number of operations, such as adding multiple fragments or replacing fragments in multiple containers.</p>
+
+<p>When the back stack is popped, all these operations reverse as a single atomic action. However, if you committed additional transactions prior to the <code class="language-plaintext highlighter-rouge">popBackStack()</code> call, and if you <em>didn’t</em> use <code class="language-plaintext highlighter-rouge">addToBackStack()</code> for the transaction, these operations <em>don’t</em> reverse. Therefore, within a single <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>, avoid interleaving transactions that affect the back stack with those that don’t.</p>
+
+<h3 id="perform-a-transaction">Perform a transaction</h3>
+
+<p>To display a fragment within a layout container, use the <code class="language-plaintext highlighter-rouge">FragmentManager</code> to create a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. Within the transaction, you can then perform an <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#add%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">add()</code></a> or <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">replace()</code></a> operation on the container.</p>
+
+<p>For example, a simple <code class="language-plaintext highlighter-rouge">FragmentTransaction</code> might look like this:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">commit</span> <span class="p">{</span>
+   <span class="n">replace</span><span class="p">&lt;</span><span class="nc">ExampleFragment</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fragment_container</span><span class="p">)</span>
+   <span class="nf">setReorderingAllowed</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+   <span class="nf">addToBackStack</span><span class="p">(</span><span class="s">"name"</span><span class="p">)</span> <span class="c1">// Name can be null</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this example, <code class="language-plaintext highlighter-rouge">ExampleFragment</code> replaces the fragment, if any, that is currently in the layout container identified by the <code class="language-plaintext highlighter-rouge">R.id.fragment_container</code> ID. Providing the fragment’s class to the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">replace()</code></a> method lets the <code class="language-plaintext highlighter-rouge">FragmentManager</code> handle instantiation using its <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentFactory"><code class="language-plaintext highlighter-rouge">FragmentFactory</code></a>. For more information, see the <a href="#dependencies">Provide dependencies to your fragments</a> section.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#setReorderingAllowed%28boolean%29"><code class="language-plaintext highlighter-rouge">setReorderingAllowed(true)</code></a> optimizes the state changes of the fragments involved in the transaction so that animations and transitions work correctly. For more information on navigating with animations and transitions, see <a href="https://developer.android.com/guide/fragments/transactions">Fragment transactions</a> and <a href="https://developer.android.com/training/basics/fragments/animate">Navigate between fragments using animations</a>.</p>
+
+<p>Calling <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29"><code class="language-plaintext highlighter-rouge">addToBackStack()</code></a> commits the transaction to the back stack. The user can later reverse the transaction and bring back the previous fragment by tapping the Back button. If you added or removed multiple fragments within a single transaction, all those operations are undone when the back stack is popped. The optional name provided in the <code class="language-plaintext highlighter-rouge">addToBackStack()</code> call gives you the ability to pop back to a specific transaction using <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28java.lang.String,%20int%29"><code class="language-plaintext highlighter-rouge">popBackStack()</code></a>.</p>
+
+<p>If you don’t call <code class="language-plaintext highlighter-rouge">addToBackStack()</code> when you perform a transaction that removes a fragment, then the removed fragment is destroyed when the transaction is committed, and the user cannot navigate back to it. If you do call <code class="language-plaintext highlighter-rouge">addToBackStack()</code> when removing a fragment, then the fragment is only <code class="language-plaintext highlighter-rouge">STOPPED</code> and is later <code class="language-plaintext highlighter-rouge">RESUMED</code> when the user navigates back. Its view <em>is</em> destroyed in this case. For more information, see <a href="https://developer.android.com/guide/fragments/lifecycle">Fragment lifecycle</a>.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/guide/fragments/create</li>
+  <li>https://stackoverflow.com/questions/28929637/difference-and-uses-of-oncreate-oncreateview-and-onactivitycreated-in-fra</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="fragment" /><category term="fragment-manager" /></entry><entry><title type="html">Android编程笔记（七）：ViewModel &amp;amp; LiveData + View Binding</title><link href="https://goooooouwa.github.io/coding/2025/06/22/android-dev-notes-7-view-model-live-data-view-binding.html" rel="alternate" type="text/html" title="Android编程笔记（七）：ViewModel &amp;amp; LiveData + View Binding" /><published>2025-06-22T00:00:00+00:00</published><updated>2025-06-22T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/06/22/android-dev-notes-7-view-model-live-data-view-binding</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/06/22/android-dev-notes-7-view-model-live-data-view-binding.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#how-to-use-viewmodel" id="markdown-toc-how-to-use-viewmodel">How to use ViewModel</a>    <ul>
+      <li><a href="#0-安装viewmodel-livedata和其他lifecycle依赖" id="markdown-toc-0-安装viewmodel-livedata和其他lifecycle依赖">0. 安装ViewModel, LiveData和其他Lifecycle依赖</a></li>
+      <li><a href="#1-how-to-create-a-view-model" id="markdown-toc-1-how-to-create-a-view-model">1. How to create a view model</a></li>
+      <li><a href="#2-how-to-access-a-view-model" id="markdown-toc-2-how-to-access-a-view-model">2. How to access a view model</a>        <ul>
+          <li><a href="#kotlin-by-keyword" id="markdown-toc-kotlin-by-keyword">Kotlin <code class="language-plaintext highlighter-rouge">by</code> keyword</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#the-lifecycle-of-a-viewmodel" id="markdown-toc-the-lifecycle-of-a-viewmodel">The lifecycle of a ViewModel</a></li>
+  <li><a href="#viewmodel-benefits" id="markdown-toc-viewmodel-benefits">ViewModel benefits</a>    <ul>
+      <li><a href="#persistence" id="markdown-toc-persistence">Persistence</a>        <ul>
+          <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
+          <li><a href="#savedstatehandle" id="markdown-toc-savedstatehandle">SavedStateHandle</a></li>
+        </ul>
+      </li>
+      <li><a href="#access-to-business-logic" id="markdown-toc-access-to-business-logic">Access to business logic</a></li>
+    </ul>
+  </li>
+  <li><a href="#livedata-overview" id="markdown-toc-livedata-overview">LiveData overview</a>    <ul>
+      <li><a href="#the-advantages-of-using-livedata" id="markdown-toc-the-advantages-of-using-livedata">The advantages of using LiveData</a></li>
+    </ul>
+  </li>
+  <li><a href="#work-with-livedata-objects" id="markdown-toc-work-with-livedata-objects">Work with LiveData objects</a></li>
+  <li><a href="#how-to-use-livedata" id="markdown-toc-how-to-use-livedata">How to use LiveData</a>    <ul>
+      <li><a href="#1-create-livedata-objects" id="markdown-toc-1-create-livedata-objects">1. Create LiveData objects</a></li>
+      <li><a href="#2-observe-livedata-objects" id="markdown-toc-2-observe-livedata-objects">2. Observe LiveData objects</a></li>
+      <li><a href="#4-update-livedata" id="markdown-toc-4-update-livedata">4. Update LiveData: </a></li>
+      <li><a href="#use-livedata-with-room" id="markdown-toc-use-livedata-with-room">Use LiveData with Room</a></li>
+      <li><a href="#use-coroutines-with-livedata" id="markdown-toc-use-coroutines-with-livedata">Use coroutines with LiveData</a></li>
+    </ul>
+  </li>
+  <li><a href="#view-binding" id="markdown-toc-view-binding">View binding</a>    <ul>
+      <li><a href="#setup" id="markdown-toc-setup">Setup</a></li>
+      <li><a href="#how-to-use-view-binding" id="markdown-toc-how-to-use-view-binding">How to use view binding</a>        <ul>
+          <li><a href="#use-view-binding-in-activities" id="markdown-toc-use-view-binding-in-activities">Use view binding in activities</a></li>
+          <li><a href="#use-view-binding-in-fragments" id="markdown-toc-use-view-binding-in-fragments">Use view binding in fragments</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#referencces" id="markdown-toc-referencces">Referencces</a></li>
+</ul>
+
+<h2 id="how-to-use-viewmodel">How to use ViewModel</h2>
+
+<h3 id="0-安装viewmodel-livedata和其他lifecycle依赖">0. 安装ViewModel, LiveData和其他Lifecycle依赖</h3>
+
+<p>Note: To import Lifecycle (including ViewModel &amp; LiveData) into your Android project, see the instructions for declaring dependencies in the Lifecycle <a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies">release notes</a>.</p>
+
+<p>Add the dependencies for the artifacts you need in the build.gradle file for your app or module:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">lifecycle_version</span> <span class="p">=</span> <span class="s">"2.9.1"</span>
+        <span class="kd">val</span> <span class="py">arch_version</span> <span class="p">=</span> <span class="s">"2.2.0"</span>
+
+        <span class="c1">// ViewModel</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// ViewModel utilities for Compose</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// LiveData</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// Lifecycles only (without ViewModel or LiveData)</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// Lifecycle utilities for Compose</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"</span><span class="p">)</span>
+
+        <span class="c1">// Saved state module for ViewModel</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"</span><span class="p">)</span>
+
+        <span class="c1">// ViewModel integration with Navigation3</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-viewmodel-navigation3:1.0.0-alpha02"</span><span class="p">)</span>
+
+        <span class="c1">// Annotation processor</span>
+        <span class="nf">kapt</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-compiler:$lifecycle_version"</span><span class="p">)</span>
+        <span class="c1">// alternately - if using Java8, use the following instead of lifecycle-compiler</span>
+        <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="1-how-to-create-a-view-model">1. How to create a view model</h3>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">androidx.lifecycle.ViewModel</span>
+
+<span class="kd">class</span> <span class="nc">MyViewModel</span> <span class="p">:</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Your ViewModel logic here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-how-to-access-a-view-model">2. How to access a view model</h3>
+
+<p>To access a ViewModel, you use the <code class="language-plaintext highlighter-rouge">viewModels()</code> extension functions (for Fragments and Activities) provided by the <code class="language-plaintext highlighter-rouge">androidx.activity</code> library. This function retrieve a <code class="language-plaintext highlighter-rouge">ViewModel</code> instance scoped to the <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> (Activity, Fragment, or Navigation destination).</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">androidx.activity.viewModels</span>
+
+<span class="kd">class</span> <span class="nc">DiceRollActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="c1">// Create a ViewModel the first time the system calls an activity's onCreate() method.</span>
+        <span class="c1">// Re-created activities receive the same DiceRollViewModel instance created by the first activity.</span>
+
+        <span class="c1">// Use the 'by viewModels()' Kotlin property delegate</span>
+        <span class="c1">// from the activity-ktx artifact</span>
+        <span class="kd">val</span> <span class="py">myViewModel</span><span class="p">:</span> <span class="nc">MyViewModel</span> <span class="k">by</span> <span class="nf">viewModels</span><span class="p">()</span>
+        <span class="c1">// or use `ViewModelProvider` class's `get` method which provides ViewModels for the given scope.</span>
+        <span class="c1">// val myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)</span>
+        
+        <span class="c1">// Now you can access myViewModel</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="kotlin-by-keyword">Kotlin <code class="language-plaintext highlighter-rouge">by</code> keyword</h4>
+
+<p>The Kotlin soft keyword <code class="language-plaintext highlighter-rouge">by</code> can bee used to:</p>
+
+<ul>
+  <li><a href="https://kotlinlang.org/docs/delegation.html">delegates the implementation of an interface to another object.</a></li>
+  <li><a href="https://kotlinlang.org/docs/delegated-properties.html">delegates the implementation of the accessors for a property to another object.</a></li>
+</ul>
+
+<h2 id="the-lifecycle-of-a-viewmodel">The lifecycle of a ViewModel</h2>
+
+<p>The lifecycle of a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> is tied directly to its scope. A <code class="language-plaintext highlighter-rouge">ViewModel</code> remains in memory until the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner"><code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code></a> to which it is scoped disappears. This may occur in the following contexts:</p>
+
+<ul>
+  <li>In the case of an activity, when it finishes.</li>
+  <li>In the case of a fragment, when it detaches.</li>
+  <li>In the case of a Navigation entry, when it’s removed from the back stack.</li>
+</ul>
+
+<p>This makes ViewModels a great solution for storing data that survives configuration changes.</p>
+
+<p>Figure 1 illustrates the various lifecycle states of an activity as it undergoes a rotation and then is finished. The illustration also shows the lifetime of the <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> next to the associated activity lifecycle. This particular diagram illustrates the states of an activity. The same basic states apply to the lifecycle of a fragment.</p>
+
+<p><img src="/assets/images/viewmodel-lifecycle.png" alt="Illustrates the lifecycle of a ViewModel as an activity changes state." /></p>
+
+<p>You usually request a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> the first time the system calls an activity object’s <a href="https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> method. The system may call <a href="https://developer.android.com/reference/android/app/Activity#onCreate%28android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> several times throughout the existence of an activity, such as when a device screen is rotated. The <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> exists from when you first request a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> until the activity is finished and destroyed.</p>
+
+<h2 id="viewmodel-benefits">ViewModel benefits</h2>
+
+<p>The key benefits of the ViewModel class are essentially two:</p>
+
+<ul>
+  <li>It allows you to persist UI state.</li>
+  <li>It provides access to business logic.</li>
+</ul>
+
+<h3 id="persistence">Persistence</h3>
+
+<p>ViewModel allows persistence through both the state that a ViewModel holds, and the operations that a ViewModel triggers. This caching means that you don’t have to fetch data again through common configuration changes, such as a screen rotation.</p>
+
+<h4 id="scope">Scope</h4>
+
+<p>When you instantiate a ViewModel, you pass it an object that implements the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner"><code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code></a> interface. This may be a Navigation destination, Navigation graph, activity, fragment, or any other type that implements the interface. Your ViewModel is then scoped to the <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle">Lifecycle</a> of the <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code>. It remains in memory until its <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> goes away permanently.</p>
+
+<p>A range of classes are either direct or indirect subclasses of the <code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> interface. The direct subclasses are <a href="https://developer.android.com/reference/androidx/activity/ComponentActivity"><code class="language-plaintext highlighter-rouge">ComponentActivity</code></a>, <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment"><code class="language-plaintext highlighter-rouge">Fragment</code></a>, and <a href="https://developer.android.com/reference/androidx/navigation/NavBackStackEntry"><code class="language-plaintext highlighter-rouge">NavBackStackEntry</code></a>. For a full list of indirect subclasses, see the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModelStoreOwner"><code class="language-plaintext highlighter-rouge">ViewModelStoreOwner</code> reference</a>.</p>
+
+<p>When the fragment or activity to which the ViewModel is scoped is destroyed, asynchronous work continues in the ViewModel that is scoped to it. This is the key to persistence.</p>
+
+<p>For more information, see the section below on <a href="#lifecycle">ViewModel lifecycle</a>.</p>
+
+<h4 id="savedstatehandle">SavedStateHandle</h4>
+
+<p><a href="https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate">SavedStateHandle</a> allows you to persist data not just through configuration changes, but across process recreation. That is, it enables you to keep the UI state intact even when the user closes the app and opens it at a later time.</p>
+
+<h3 id="access-to-business-logic">Access to business logic</h3>
+
+<p>Even though the vast majority of <a href="https://developer.android.com/topic/architecture/ui-layer/stateholders#business-logic">business logic</a> is present in the data layer, the UI layer can also contain business logic. This can be the case when combining data from multiple repositories to create the screen UI state, or when a particular type of data doesn’t require a data layer.</p>
+
+<p>ViewModel is the right place to handle business logic in the UI layer. The ViewModel is also in charge of handling events and delegating them to other layers of the hierarchy when business logic needs to be applied to modify application data.</p>
+
+<h2 id="livedata-overview">LiveData overview</h2>
+
+<p><a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</p>
+
+<p><strong>Note:</strong> To import LiveData components into your Android project, see <a href="https://developer.android.com/topic/libraries/architecture/adding-components#lifecycle">Adding Components to your Project</a>.</p>
+
+<p>LiveData considers an observer, which is represented by the <a href="https://developer.android.com/reference/androidx/lifecycle/Observer"><code class="language-plaintext highlighter-rouge">Observer</code></a> class, to be in an active state if its lifecycle is in the <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State#STARTED"><code class="language-plaintext highlighter-rouge">STARTED</code></a> or <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State#RESUMED"><code class="language-plaintext highlighter-rouge">RESUMED</code></a> state. LiveData only notifies active observers about updates. Inactive observers registered to watch <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects aren’t notified about changes.</p>
+
+<p>You can register an observer paired with an object that implements the <a href="https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner"><code class="language-plaintext highlighter-rouge">LifecycleOwner</code></a> interface. This relationship allows the observer to be removed when the state of the corresponding <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle"><code class="language-plaintext highlighter-rouge">Lifecycle</code></a> object changes to <a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State#DESTROYED"><code class="language-plaintext highlighter-rouge">DESTROYED</code></a>. This is especially useful for activities and fragments because they can safely observe <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects and not worry about leaks—activities and fragments are instantly unsubscribed when their lifecycles are destroyed.</p>
+
+<p>For more information about how to use LiveData, see <a href="#work_livedata">Work with LiveData objects</a>.</p>
+
+<h3 id="the-advantages-of-using-livedata">The advantages of using LiveData</h3>
+
+<p>Using LiveData provides the following advantages:</p>
+
+<ul>
+  <li>Ensures your UI matches your data state</li>
+  <li>No memory leaks</li>
+  <li>No crashes due to stopped activities</li>
+  <li>No more manual lifecycle handling</li>
+  <li>Always up to date data</li>
+  <li>Proper configuration changes</li>
+  <li>Sharing resources</li>
+</ul>
+
+<h2 id="work-with-livedata-objects">Work with LiveData objects</h2>
+
+<p>Follow these steps to work with <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects:</p>
+
+<ol>
+  <li>Create an instance of <code class="language-plaintext highlighter-rouge">LiveData</code> to hold a certain type of data. This is usually done within your <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> class.</li>
+  <li>Create an <a href="https://developer.android.com/reference/androidx/lifecycle/Observer"><code class="language-plaintext highlighter-rouge">Observer</code></a> object that defines the <a href="https://developer.android.com/reference/androidx/lifecycle/Observer#onChanged(kotlin.Any)"><code class="language-plaintext highlighter-rouge">onChanged()</code></a> method, which controls what happens when the <code class="language-plaintext highlighter-rouge">LiveData</code> object’s held data changes. You usually create an <code class="language-plaintext highlighter-rouge">Observer</code> object in a UI controller, such as an activity or fragment.</li>
+  <li>Attach the <code class="language-plaintext highlighter-rouge">Observer</code> object to the <code class="language-plaintext highlighter-rouge">LiveData</code> object using the <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData#observe(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Observer%3C?%20super%20T%3E)"><code class="language-plaintext highlighter-rouge">observe()</code></a> method. The <code class="language-plaintext highlighter-rouge">observe()</code> method takes a <a href="https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner"><code class="language-plaintext highlighter-rouge">LifecycleOwner</code></a> object. This subscribes the <code class="language-plaintext highlighter-rouge">Observer</code> object to the <code class="language-plaintext highlighter-rouge">LiveData</code> object so that it is notified of changes. You usually attach the <code class="language-plaintext highlighter-rouge">Observer</code> object in a UI controller, such as an activity or fragment.</li>
+</ol>
+
+<p>When you update the value stored in the <code class="language-plaintext highlighter-rouge">LiveData</code> object, it triggers all registered observers as long as the attached <code class="language-plaintext highlighter-rouge">LifecycleOwner</code> is in the active state.</p>
+
+<p>LiveData allows UI controller observers to subscribe to updates. When the data held by the <code class="language-plaintext highlighter-rouge">LiveData</code> object changes, the UI automatically updates in response.</p>
+
+<h2 id="how-to-use-livedata">How to use LiveData</h2>
+
+<h3 id="1-create-livedata-objects">1. Create LiveData objects</h3>
+
+<p>LiveData is a wrapper that can be used with any data, including objects that implement <a href="https://developer.android.com/reference/java/util/Collections"><code class="language-plaintext highlighter-rouge">Collections</code></a>, such as <a href="https://developer.android.com/reference/java/util/List"><code class="language-plaintext highlighter-rouge">List</code></a>. A <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> object is usually stored within a <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel"><code class="language-plaintext highlighter-rouge">ViewModel</code></a> object and is accessed via a getter method, as demonstrated in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">UserViewModel</span> <span class="p">:</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Create a LiveData with a String</span>
+    <span class="kd">val</span> <span class="py">currentUser</span> <span class="p">=</span> <span class="nc">MutableLiveData</span><span class="p">&lt;</span><span class="nc">User</span><span class="p">&gt;()</span>
+
+    <span class="c1">// Rest of the ViewModel...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Initially, the data in a <code class="language-plaintext highlighter-rouge">LiveData</code> object is not set.</p>
+
+<h3 id="2-observe-livedata-objects">2. Observe LiveData objects</h3>
+
+<p>In most cases, an app component’s <a href="https://developer.android.com/reference/android/app/Activity#onCreate(android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> method is the right place to begin observing a <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> object</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">UserActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Use the 'by viewModels()' Kotlin property delegate</span>
+    <span class="c1">// from the activity-ktx artifact</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">userViewmodel</span><span class="p">:</span> <span class="nc">UserViewModel</span> <span class="k">by</span> <span class="nf">viewModels</span><span class="p">()</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+
+        <span class="c1">// Other code to setup the activity...</span>
+
+        <span class="c1">// Create the observer which updates the UI.</span>
+        <span class="kd">val</span> <span class="py">userObserver</span> <span class="p">=</span> <span class="nc">Observer</span><span class="p">&lt;</span><span class="nc">User</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">newUser</span> <span class="p">-&gt;</span>
+            <span class="c1">// Update the UI, in this case, a TextView.</span>
+            <span class="n">userNameView</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">newUser</span><span class="p">.</span><span class="n">name</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.</span>
+        <span class="n">userViewmodel</span><span class="p">.</span><span class="n">currentUser</span><span class="p">.</span><span class="nf">observe</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">userObserver</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-update-livedata">4. Update LiveData: </h3>
+
+<p><code class="language-plaintext highlighter-rouge">LiveData</code> class has no publicly available methods to update the stored data. The <code class="language-plaintext highlighter-rouge">MutableLiveData</code> class extends <code class="language-plaintext highlighter-rouge">LiveData</code> with publicly exposed <code class="language-plaintext highlighter-rouge">setValue(T)</code> and <code class="language-plaintext highlighter-rouge">postValue(T)</code> methods. You must use these if you need to edit the value stored in a <code class="language-plaintext highlighter-rouge">LiveData</code> object. Usually <code class="language-plaintext highlighter-rouge">MutableLiveData</code> is used in the <code class="language-plaintext highlighter-rouge">ViewModel</code> and then the <code class="language-plaintext highlighter-rouge">ViewModel</code> only exposes immutable <code class="language-plaintext highlighter-rouge">LiveData</code> objects to the observers.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">anotherUser</span> <span class="p">=</span> <span class="nc">User</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="s">"John Doe"</span><span class="p">)</span>
+    <span class="n">userViewmodel</span><span class="p">.</span><span class="n">currentUser</span><span class="p">.</span><span class="nf">setValue</span><span class="p">(</span><span class="n">anotherUser</span><span class="p">)</span>  <span class="c1">// On main thread</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note: You must call the <code class="language-plaintext highlighter-rouge">setValue(T)</code> method to update the <code class="language-plaintext highlighter-rouge">LiveData</code> object from the main thread. If the code is executed in a worker thread, you can use the <code class="language-plaintext highlighter-rouge">postValue(T)</code> method instead to update the <code class="language-plaintext highlighter-rouge">LiveData</code> object.</p>
+
+<h3 id="use-livedata-with-room">Use LiveData with Room</h3>
+
+<p>The <a href="https://developer.android.com/training/data-storage/room">Room</a> persistence library supports observable queries, which return <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData"><code class="language-plaintext highlighter-rouge">LiveData</code></a> objects. Observable queries are written as part of a Database Access Object (DAO).</p>
+
+<p>Room generates all the necessary code to update the <code class="language-plaintext highlighter-rouge">LiveData</code> object when a database is updated. The generated code runs the query asynchronously on a background thread when needed. This pattern is useful for keeping the data displayed in a UI in sync with the data stored in a database. You can read more about Room and DAOs in the <a href="https://developer.android.com/topic/libraries/architecture/room">Room persistent library guide</a>.</p>
+
+<h3 id="use-coroutines-with-livedata">Use coroutines with LiveData</h3>
+
+<p><code class="language-plaintext highlighter-rouge">LiveData</code> includes support for Kotlin coroutines. For more information, see <a href="https://developer.android.com/topic/libraries/architecture/coroutines">Use Kotlin coroutines with Android Architecture Components</a>.</p>
+
+<h2 id="view-binding">View binding</h2>
+
+<p><em>View binding</em> is a feature that makes it easier to write code that interacts with views. Once view binding is enabled in a module, it generates a <em>binding class</em> for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.</p>
+
+<p>In most cases, view binding replaces <code class="language-plaintext highlighter-rouge">findViewById</code>.</p>
+
+<h3 id="setup">Setup</h3>
+
+<p>View binding is enabled on a module-by-module basis. To enable view binding in a module, set the <code class="language-plaintext highlighter-rouge">viewBinding</code> build option to <code class="language-plaintext highlighter-rouge">true</code> in the module-level <code class="language-plaintext highlighter-rouge">build.gradle</code> file, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">android</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+    <span class="nf">buildFeatures</span> <span class="p">{</span>
+        <span class="n">viewBinding</span> <span class="p">=</span> <span class="k">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="how-to-use-view-binding">How to use view binding</h3>
+
+<p>If view binding is enabled for a module, a binding class is generated for each XML layout file that the module contains. Each binding class contains references to the root view and all views that have an ID. The name of the binding class is generated by converting the name of the XML file to Pascal case and adding the word “Binding” to the end.</p>
+
+<p>For example, consider a layout file called <code class="language-plaintext highlighter-rouge">result_profile.xml</code> that contains the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;LinearLayout ... &gt;
+    &lt;TextView android:id="@+id/name" /&gt;
+    &lt;ImageView android:cropToPadding="true" /&gt;
+    &lt;Button android:id="@+id/button"
+        android:background="@drawable/rounded_button" /&gt;
+&lt;/LinearLayout&gt;
+</code></pre></div></div>
+
+<p>The generated binding class is called <code class="language-plaintext highlighter-rouge">ResultProfileBinding</code>. This class has two fields: a <code class="language-plaintext highlighter-rouge">TextView</code> called <code class="language-plaintext highlighter-rouge">name</code> and a <code class="language-plaintext highlighter-rouge">Button</code> called <code class="language-plaintext highlighter-rouge">button</code>. The <code class="language-plaintext highlighter-rouge">ImageView</code> in the layout has no ID, so there is no reference to it in the binding class.</p>
+
+<p>Every binding class also includes a <code class="language-plaintext highlighter-rouge">getRoot()</code> method, providing a direct reference for the root view of the corresponding layout file. In this example, the <code class="language-plaintext highlighter-rouge">getRoot()</code> method in the <code class="language-plaintext highlighter-rouge">ResultProfileBinding</code> class returns the <code class="language-plaintext highlighter-rouge">LinearLayout</code> root view.</p>
+
+<p>The following sections demonstrate the use of generated binding classes in activities and fragments.</p>
+
+<h4 id="use-view-binding-in-activities">Use view binding in activities</h4>
+
+<p>To set up an instance of the binding class for use with an activity, perform the following steps in the activity’s <a href="https://developer.android.com/reference/kotlin/android/app/Activity#oncreate"><code class="language-plaintext highlighter-rouge">onCreate()</code></a> method:</p>
+
+<ol>
+  <li>Call the static <code class="language-plaintext highlighter-rouge">inflate()</code> method included in the generated binding class. This creates an instance of the binding class for the activity to use.</li>
+  <li>Get a reference to the root view by either calling the <code class="language-plaintext highlighter-rouge">getRoot()</code> method or using <a href="https://kotlinlang.org/docs/reference/properties.html#declaring-properties">Kotlin property syntax</a>.</li>
+  <li>Pass the root view to <a href="https://developer.android.com/reference/kotlin/android/app/Activity#setcontentview_1"><code class="language-plaintext highlighter-rouge">setContentView()</code></a> to make it the active view on the screen.</li>
+</ol>
+
+<p>These steps are shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">lateinit</span> <span class="kd">var</span> <span class="py">binding</span><span class="p">:</span> <span class="nc">ResultProfileBinding</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+    <span class="n">binding</span> <span class="p">=</span> <span class="nc">ResultProfileBinding</span><span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="n">layoutInflater</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">view</span> <span class="p">=</span> <span class="n">binding</span><span class="p">.</span><span class="n">root</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can now use the instance of the binding class to reference any of the views:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">binding</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">viewModel</span><span class="p">.</span><span class="n">name</span>
+<span class="n">binding</span><span class="p">.</span><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span> <span class="n">viewModel</span><span class="p">.</span><span class="nf">userClicked</span><span class="p">()</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="use-view-binding-in-fragments">Use view binding in fragments</h4>
+
+<p>To set up an instance of the binding class for use with a fragment, perform the following steps in the fragment’s <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#oncreateview"><code class="language-plaintext highlighter-rouge">onCreateView()</code></a> method:</p>
+
+<ol>
+  <li>Call the static <code class="language-plaintext highlighter-rouge">inflate()</code> method included in the generated binding class. This creates an instance of the binding class for the fragment to use.</li>
+  <li>Get a reference to the root view by either calling the <code class="language-plaintext highlighter-rouge">getRoot()</code> method or using <a href="https://kotlinlang.org/docs/reference/properties.html#declaring-properties">Kotlin property syntax</a>.</li>
+  <li>Return the root view from the <code class="language-plaintext highlighter-rouge">onCreateView()</code> method to make it the active view on the screen.</li>
+</ol>
+
+<p><strong>Note:</strong> The <code class="language-plaintext highlighter-rouge">inflate()</code> method requires you to pass in a layout inflater. If the layout is already inflated, you can instead call the binding class’s static <code class="language-plaintext highlighter-rouge">bind()</code> method.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kd">var</span> <span class="py">_binding</span><span class="p">:</span> <span class="nc">ResultProfileBinding</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+<span class="c1">// This property is only valid between onCreateView and</span>
+<span class="c1">// onDestroyView.</span>
+<span class="k">private</span> <span class="kd">val</span> <span class="py">binding</span> <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="n">_binding</span><span class="o">!!</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateView</span><span class="p">(</span>
+    <span class="n">inflater</span><span class="p">:</span> <span class="nc">LayoutInflater</span><span class="p">,</span>
+    <span class="n">container</span><span class="p">:</span> <span class="nc">ViewGroup</span><span class="p">?,</span>
+    <span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?</span>
+<span class="p">):</span> <span class="nc">View</span><span class="p">?</span> <span class="p">{</span>
+    <span class="n">_binding</span> <span class="p">=</span> <span class="nc">ResultProfileBinding</span><span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="n">inflater</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">view</span> <span class="p">=</span> <span class="n">binding</span><span class="p">.</span><span class="n">root</span>
+    <span class="k">return</span> <span class="n">view</span>
+<span class="p">}</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onDestroyView</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nf">onDestroyView</span><span class="p">()</span>
+    <span class="n">_binding</span> <span class="p">=</span> <span class="k">null</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can now use the instance of the binding class to reference any of the views:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">binding</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">viewModel</span><span class="p">.</span><span class="n">name</span>
+<span class="n">binding</span><span class="p">.</span><span class="n">button</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span> <span class="n">viewModel</span><span class="p">.</span><span class="nf">userClicked</span><span class="p">()</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Fragments outlive their views. Make sure you clean up any references to the binding class instance in the fragment’s <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment#ondestroyview"><code class="language-plaintext highlighter-rouge">onDestroyView()</code></a> method.</p>
+
+<h2 id="referencces">Referencces</h2>
+
+<ul>
+  <li>https://developer.android.com/topic/libraries/architecture/viewmodel</li>
+  <li>https://developer.android.com/jetpack/androidx/releases/lifecycle#declaring_dependencies</li>
+  <li>https://developer.android.com/topic/libraries/architecture/livedata</li>
+  <li>https://developer.android.com/topic/libraries/view-binding</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="live-data" /><category term="view-model" /><category term="view-binding" /></entry><entry><title type="html">issue: OMV上创建Samba分享遇到的权限问题</title><link href="https://goooooouwa.github.io/computer/2025/06/05/omv-samba-permission-issue.html" rel="alternate" type="text/html" title="issue: OMV上创建Samba分享遇到的权限问题" /><published>2025-06-05T00:00:00+00:00</published><updated>2025-06-05T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/06/05/omv-samba-permission-issue</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/06/05/omv-samba-permission-issue.html"><![CDATA[<p>记录一个目前遇到的在OMV上创建Samba分享的issue</p>
+
+<p>OMV出于安全考虑，不允许admin通过Samba访问OMV（只允许通过WebGUI访问）。</p>
+
+<p>https://forum.openmediavault.org/index.php?thread/41021-is-somehow-possible-allow-admin-user-to-access-smb/</p>
+
+<p>解决办法：创建其他普通用户（如，pi）来访问Samba共享目录。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="OMV" /><category term="samba" /><category term="admin" /><summary type="html"><![CDATA[记录一个目前遇到的在OMV上创建Samba分享的issue]]></summary></entry><entry><title type="html">记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历</title><link href="https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt.html" rel="alternate" type="text/html" title="记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历" /><published>2025-05-28T00:00:00+00:00</published><updated>2025-05-28T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/05/28/play-16-by-9-content-on-crt.html"><![CDATA[<h3 id="背景">背景</h3>
+
+<p>很多早年的TVB香港电视剧内容是4:3的，但是视频本身的画面比例是16:9的，原因是视频在画面左右两边自带了黑边。</p>
+
+<p>当我尝试使用Android TV连接CRT电视播放这些TVB港剧时，无论使用哪种播放软件（jellyfin、kodi、VLC等）对视频画面进行哪种调整（满屏、覆盖、填充等），都无法让4:3的画面内容充满屏幕。</p>
+
+<p><img src="/assets/images/16-9-content-with-bars-on-crt.jpg" alt="16-9-content-with-bars-on-crt.jpg" /></p>
+
+<h3 id="转机">转机</h3>
+
+<p>一天晚上当我在iPad上再次尝试全屏看TVB港剧时，惊喜地发现使用jellyfin的覆盖画面选项居然可以满屏显示4:3的画面内容。</p>
+
+<p><img src="/assets/images/tvb-fullscreen-on-ipad.png" alt="tvb-fullscreen-on-ipad.png" /></p>
+
+<p>这让我开始思考这两台设备之间的差别。很快我就想到，这是因为iPad本身的屏幕分辨率就是4:3比例的，当选择覆盖画面选项时，jellyfin便会将左右超出画面的内容裁掉，而Android TV无论是通过AV接口直接连接CRT（这种情况下只支持16:9的480p和570p）还是使用HDMI转AV转换器，系统都只支持16:9的屏幕分辨率比例（即使将其连接到CRT上，也是将视频内容以16:9比例在Android TV上播放，然后被CRT横向压缩成4:3比例在电视屏幕上显示出来，此时播放器依然会认为设备的显示比例是16:9）。</p>
+
+<p>基于这一发现，我在想是否能通过kodi自定义画面比例来强行将4:3的画面内容拉伸成16:9再被CRT压缩回4:3。于是我尝试用kodi进行手动画面调节，结果无论进行哪种手动调整（显示分辨率、缩放、画面比例、调整过扫描边缘等），画面左右两边始终都有黑边（调整画面比例后，有时上下也会出现黑边）。</p>
+
+<p>在我手动调节kodi各种画面设置几近绝望时，我注意到Android TV版的kodi的显示分辨率设置里只有1080p这一个选项。这让我想到，corelec版的kodi上印象中可以支持很多分辨率，如果用corelec连接CRT播放视频，说不定能支持4:3的原生显示分辨率。</p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>于是我将装有corelec固件的u盘插到Android TV上，连接CRT电视后启动corelec系统。进入系统设置后，发现果然corelec的分辨率选项特别全（甚至支持4K)。于是我将分辨率设为4:3比例的800x600（或1024x768），将画面比例选择为原始大小，这时corelec就可以满屏播放自带左右黑边的16:9版本的4:3视频了。</p>
+
+<p><img src="/assets/images/4-3-content-on-crt.jpg" alt="4-3-content-on-crt.jpg" /></p>
+
+<p>终于可以在CRT上满屏播放自带左右黑边的TVB电视剧了！真是泪目。看来最强的视频播放解决方案还是得corelec。</p>
+
+<h2 id="题外话">题外话</h2>
+
+<p>在使用corelec接CRT电视播放TVB电视剧的过程中，我还发现：</p>
+
+<ul>
+  <li>corelec的缩放和画面比例设置都可以正常工作，相反Android TV版的kodi上这些设置怎么调画面都有问题，估计是因为Android TV本身只支持1080p分辨率，导致kodi能进行的画面调整有一定限制。corelec才是kodi真正该有的样子。</li>
+  <li>此外我还惊喜的发现，corelec竟然也能正常识别我的usb无线网卡，亲测可以正常连接并使用wifi播放视频。</li>
+</ul>
+
+<p>在对比jellyfin和kodi的播放体验后，我有了如下感受：</p>
+
+<ul>
+  <li>kodi相比于jellyfin，播放视频时加载速度更快，原因是kodi属于纯客户端播放器，服务端只需负责数据传输；而jellyfin的数据加载和部分播放逻辑在服务端，导致播放体验会受限于服务端性能。相比之下使用kodi作为纯本地客户端进行视频播放时，服务端处理压力更小，同时kodi作为本地客户端视频播放能力也更强。相比于可以网页播放的jellyfin，使用kodi进行视频播放唯一的局限就是需要安装客户端。当然，在适用的场景下，kodi相比jellyfin是更强大的播放方案。</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="crt" /><category term="corelec" /><category term="kodi" /><category term="android-tv" /><category term="16:9" /><category term="4:3" /><summary type="html"><![CDATA[背景]]></summary></entry></feed>

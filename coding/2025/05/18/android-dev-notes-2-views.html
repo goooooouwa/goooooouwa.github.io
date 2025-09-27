@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Android编程笔记（二）：Views | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Android编程笔记（二）：Views" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="记录生活、学习和思考" />
+<meta property="og:description" content="记录生活、学习和思考" />
+<link rel="canonical" href="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-2-views.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-2-views.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Android编程笔记（二）：Views" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2025-05-18T00:00:00+00:00","datePublished":"2025-05-18T00:00:00+00:00","description":"记录生活、学习和思考","headline":"Android编程笔记（二）：Views","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-2-views.html"},"url":"https://goooooouwa.github.io/coding/2025/05/18/android-dev-notes-2-views.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Android编程笔记（二）：Views</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-05-18T00:00:00+00:00" itemprop="datePublished">
+        May 18, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li><a href="#如何为android应用创建视图布局" id="markdown-toc-如何为android应用创建视图布局">如何为Android应用创建视图布局</a>    <ul>
+      <li><a href="#0-创建视图布局的大致思路" id="markdown-toc-0-创建视图布局的大致思路">0. 创建视图布局的大致思路</a></li>
+      <li><a href="#1-使用layout组件进行视图布局" id="markdown-toc-1-使用layout组件进行视图布局">1. 使用layout组件进行视图布局</a></li>
+      <li><a href="#2-使用layout_margin控制视图间距" id="markdown-toc-2-使用layout_margin控制视图间距">2. 使用layout_margin控制视图间距</a></li>
+      <li><a href="#3-使用layout_width和layout_height控制视图宽度和高度" id="markdown-toc-3-使用layout_width和layout_height控制视图宽度和高度">3. 使用<code class="language-plaintext highlighter-rouge">layout_width</code>和<code class="language-plaintext highlighter-rouge">layout_height</code>控制视图宽度和高度</a></li>
+      <li><a href="#4-使用layout_weight控制多个视图组件在间的大小比例" id="markdown-toc-4-使用layout_weight控制多个视图组件在间的大小比例">4. 使用<code class="language-plaintext highlighter-rouge">layout_weight</code>控制多个视图组件在间的大小比例</a></li>
+      <li><a href="#5-例子创建以下布局" id="markdown-toc-5-例子创建以下布局">5. 例子：创建以下布局</a></li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="如何为android应用创建视图布局">如何为Android应用创建视图布局</h2>
+
+<h3 id="0-创建视图布局的大致思路">0. 创建视图布局的大致思路</h3>
+
+<ol>
+  <li>使用layout组件进行视图布局</li>
+  <li>使用<code class="language-plaintext highlighter-rouge">layout_margin</code>控制视图间距</li>
+  <li>使用<code class="language-plaintext highlighter-rouge">layout_width</code>和<code class="language-plaintext highlighter-rouge">layout_height</code>控制视图宽度和高度</li>
+  <li>使用<code class="language-plaintext highlighter-rouge">layout_weight</code>控制多个视图间的大小比例</li>
+</ol>
+
+<h3 id="1-使用layout组件进行视图布局">1. 使用layout组件进行视图布局</h3>
+
+<ul>
+  <li>简单布局可以通过嵌套<code class="language-plaintext highlighter-rouge">LinearLayout</code>(horizontal or vertical)来实现；</li>
+  <li>复杂布局可以使用<code class="language-plaintext highlighter-rouge">ConstraintLayout</code>（以避免多层<code class="language-plaintext highlighter-rouge">LinearLayout</code>嵌套）。</li>
+</ul>
+
+<h3 id="2-使用layout_margin控制视图间距">2. 使用layout_margin控制视图间距</h3>
+
+<ul>
+  <li>在layout组件内设置<code class="language-plaintext highlighter-rouge">layout_margin</code>可以为所有子组件与父组件间提供外边距；</li>
+  <li>如果希望在水平布局的组件间增加间距，可以在靠后的组件上添加<code class="language-plaintext highlighter-rouge">layout_marginStart</code>（相比于<code class="language-plaintext highlighter-rouge">layout_marginLeft</code>对RightToLeft语言的支持更好）。</li>
+</ul>
+
+<h3 id="3-使用layout_width和layout_height控制视图宽度和高度">3. 使用<code class="language-plaintext highlighter-rouge">layout_width</code>和<code class="language-plaintext highlighter-rouge">layout_height</code>控制视图宽度和高度</h3>
+
+<p>如果希望组件占满整个布局空间的宽度或者高度，可以将组件的<code class="language-plaintext highlighter-rouge">layout_width</code> / <code class="language-plaintext highlighter-rouge">layout_height</code>设置为<code class="language-plaintext highlighter-rouge">match_parent</code>；
+如果希望组件仅仅占有自身所需宽度或者高度，可以将组件的<code class="language-plaintext highlighter-rouge">layout_width</code> / <code class="language-plaintext highlighter-rouge">layout_height</code>设置为<code class="language-plaintext highlighter-rouge">wrap_content</code>。</p>
+
+<h3 id="4-使用layout_weight控制多个视图组件在间的大小比例">4. 使用<code class="language-plaintext highlighter-rouge">layout_weight</code>控制多个视图组件在间的大小比例</h3>
+
+<p>在决定子组件视图的宽度时，<code class="language-plaintext highlighter-rouge">LinearLayout</code>使用的是<code class="language-plaintext highlighter-rouge">layout_width</code>与<code class="language-plaintext highlighter-rouge">layout_weight</code>参数的混合值。</p>
+
+<p><code class="language-plaintext highlighter-rouge">LinearLayout</code>是分两个步骤来设置视图宽度的。</p>
+
+<ul>
+  <li>第一步，LinearLayout查看layout_width属性值(竖直方位则查看layout_height属性值)。</li>
+</ul>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.14.png" alt="屏幕截图 2025-05-19 05.40.14.png" /></p>
+
+<ul>
+  <li>第二步，LinearLayout依据layout_weight属性值进行额外的空间分配。</li>
+</ul>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.22.png" alt="屏幕截图 2025-05-19 05.40.22.png" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">layout_weight</code>代表该视图组件在其父组件的布局空间中所占有的权重，例如，如果A组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>为2，B组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>为1，则A将获得父组件2/3的额外宽度，而B则将获得父组件1/3的额外宽度。</p>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.31.png" alt="屏幕截图 2025-05-19 05.40.31.png" /></p>
+
+<p>weight设置值也可以是浮点数。一种常见的设定方式是各组件属性值加起来等于1.0或100。比如，在上一个例子中，A组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>应该为0.66，B组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>则为0.37。</p>
+
+<p>如想让<code class="language-plaintext highlighter-rouge">LinearLayout</code>分配完全相同的宽度给各自的视图，则只需设置各组件的<code class="language-plaintext highlighter-rouge">layout_width</code>属性值为0dp以避开第一步的空间分配就可以了。这样<code class="language-plaintext highlighter-rouge">LinearLayout</code>就会只考虑使用<code class="language-plaintext highlighter-rouge">layout_weight</code>属性值（而忽视组件自身的宽度）来完成所需的空间分配。</p>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.40.40.png" alt="屏幕截图 2025-05-19 05.40.40.png" /></p>
+
+<p>注意，如果不小心将某个组件的<code class="language-plaintext highlighter-rouge">layout_weight</code>设置为1，可能会导致该组件占满整个布局空间，导致其他组件在UI中不可见。</p>
+
+<h3 id="5-例子创建以下布局">5. 例子：创建以下布局</h3>
+
+<p><img src="/assets/images/屏幕截图 2025-05-19 05.39.54.png" alt="屏幕截图 2025-05-19 05.39.54.png" /></p>
+
+<p>所需步骤如下：</p>
+
+<ol>
+  <li>添加1个Layout(vertical)组件；</li>
+  <li>在Layout(vertical)组件内添加所需的视图元素、以及1个Layout(horizontal)组件（用于将Save和Clear按钮置于其中，以对其进行水平布局）；</li>
+  <li>将Layout(vertical)的<code class="language-plaintext highlighter-rouge">layout_margin</code>设置为15dp，以为所有子组件提供距离屏幕边框15dp的外边距；</li>
+  <li>将Clear按钮的<code class="language-plaintext highlighter-rouge">layout_marginStart</code>设置为30dp，以在两个按钮间提供30dp的间距；</li>
+  <li>将StudentName和StudentEmail的layout_width设置为<code class="language-plaintext highlighter-rouge">match_parent</code>以占满水平宽度；</li>
+  <li>Layout(horizontal)默认将Save和Clear按钮的<code class="language-plaintext highlighter-rouge">layout_weight</code>设置为1，因此2个按钮占据相等的水平宽度。</li>
+</ol>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li>https://developer.android.com/develop/ui/views/layout/constraint-layout</li>
+  <li>https://www.youtube.com/watch?v=XamMbnzI5vE</li>
+  <li>https://book.douban.com/subject/25848404/</li>
+</ul>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/coding/2025/05/18/android-dev-notes-2-views.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
