@@ -20,9 +20,7 @@ published: true
 
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
 
-In this setup, we locate the left and right vanishing points through the angle of rotation between the front face of the primary form and the image plane, which is equal to the angle between a side face of the primary form and the direction of view.
-
-在视觉射线法中，我们通过来定位物体的左右消失点。
+在视觉射线法中，我们通过物体的旋转角度(angle of rotation)来定位物体的左右消失点，该角度等于物体正面与画面之间的角度，也等于物体侧面与direction of view之间的角度。
 
 ### 定位测量点（locating the measure points）
 
