@@ -74,13 +74,21 @@ If you are using a protractor centered on the viewpoint, in order to define the 
 
 ![visual ray location of a measure point.PNG]({{site.baseurl}}/assets/images/visual ray location of a measure point.PNG)
 
-Then the vanishing point for the object edge or side (vp1) will be located 90-x degrees from the direction of view (dv), and the measure point will be located x/2 degrees from the dv, on the opposite side. In the example, the front face of object BC (shown in plan) is rotated 30° to the image plane; therefore x is equal to 30°. This means vp1 will be rotated 60° away from the dv on one side, and its measure point will be located mp1 or 15° to the right. These relationships hold, no matter what orientation the object has to the image plane.
-
 而该物体侧面的消失点（vp1）则位于距direction of view方向（dv）90−x 度的位置，而它的测量点则位于距 direction of view 方向 x/2 度的位置，且处在direction of view的另外一侧。举例来说，物体的正面 BC（在平面仰视图中所示）相对于图像平面旋转了 30°；因此 x = 30°。这意味着 vp1 将在视线方向的一侧偏转 60°，而它的测量点 mp1 则位于视线方向右侧 15° 的位置。无论物体相对于图像平面如何旋转，这些对应关系始终成立。
 
 
 ## constructing a 2PP cube
 
+构造2点透视的具体步骤是：
+
+1. 确定画面中的anchor point和anchor line；
+1. 根据anchor point和anchor line画出立方体的正面（如果是长方形则需要根据其实际长宽比来画）；
+1. 将立方体的四个顶点与vanishing point相连（对应立方体侧面的四条边）；
+1. 确定立方体的深度：
+	1. 如果该立方体是正方体，则只需将立方体的四个顶点与对应方向的dvp相连，每条直线分别与上面四条直线的交点即为正方体在画面中的另外4个顶点；
+	1. 如果是深度与长度或宽度不相等的立方体，则可以利用measure bar直接将与深度相等的长度或宽度映射成空间中的深度即可（无需借助dvp）。
+
+至此得到1点透视画面中的立方体。
 
 
 ### who has a 12 foot table?
