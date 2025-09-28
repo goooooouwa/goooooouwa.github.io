@@ -44,9 +44,6 @@ published: true
 
 To find the base of the triangle, we construct an arc in physical space from G with radius GA', the distance along the vanishing line from the ground line intersection to the front corner of the primary form or line segment we want to measure in perspective space (diagram, right). This arc intersects the ground line at A. Then GA' = GA, the interior angles (z) at A and A' are equal, and the triangle A'GA is an isosceles triangle. Then the line segment A'A, extended to the horizon line, defines the measure point mp1 of the vanishing point vp1.
 
-
-The purpose of this construction is that all lines parallel to A'A define equal line segments in both the ground line and in the vanishing line. Thus, the lines aa' and bb', both parallel to AA', define a line segment ab in the ground line that is exactly equal in length to the line segment a'b' in physical space.
-
 这个构造所达到的效果是所有平行于A'A的线之间的间隔在地线（ground line）上的长度与在消失线上的长度相等。举例来讲，线条aa'和bb'是2条平行于A'A的线，这2条线在地线上的形成的线段ab的长度与物理空间中的线段a'b'是完全相等的。
 
 
