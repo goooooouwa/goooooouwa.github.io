@@ -66,6 +66,17 @@ If you are using a protractor centered on the viewpoint, in order to define the 
 
 ![visual ray location of a measure point.PNG]({{site.baseurl}}/assets/images/visual ray location of a measure point.PNG)
 
+Then the vanishing point for the object edge or side (vp1) will be located 90-x degrees from the direction of view (dv), and the measure point will be located x/2 degrees from the dv, on the opposite side. In the example, the front face of object BC (shown in plan) is rotated 30° to the image plane; therefore x is equal to 30°. This means vp1 will be rotated 60° away from the dv on one side, and its measure point will be located mp1 or 15° to the right. These relationships hold, no matter what orientation the object has to the image plane.
+
+在使用量度尺时，现在比在一点透视中需要更加小心：量度尺放置在图形的哪一边，以及使用哪个量度点都很重要，因为图形的每一侧都有各自独立的量度点。
+
+基本的规则是：你是在把测量投射到消失线（vanishing lines）上，而消失线会汇聚到一个消失点（vanishing point）。因此，你必须使用由消失点画弧所确定的量度点。这个量度点位于控制你所要测量的消失线的消失点的对侧。
+
+上图（2点透视的情况）展示了量度尺放在基准点两侧时可能出现的四种组合。在所有情况下，正确的量度点总是那个由控制需要测量的消失线的消失点所画弧确定的点（图中黑点所示）。量度点的选择并不是由量度尺在基准点的左边还是右边决定的。还要注意，量度尺上的点既可以向后投射，也可以向前投射；来自距离点（dvp）的视线可以验证这些向前的投射。
+
+如果你使用以视点为中心的量角器，来精确确定消失点的旋转角度，那么图像平面的角度就是从消失点到视点的水平线之间的夹角（在下图中标记为 x）。
+
+那么，物体边或侧面的消失点（vp1）将位于距视线方向（dv）90−x 度的位置，而它的量度点则位于距 dv x/2 度的位置，且在相对的一侧。举例来说，物体的正面 BC（在平面图中所示）相对于图像平面旋转了 30°；因此 x = 30°。这意味着 vp1 将在视线方向的一侧偏转 60°，而它的量度点 mp1 将位于右侧 15° 的位置。无论物体相对于图像平面如何旋转，这些对应关系始终成立。
 
 ### who has a 12 foot table?
 
