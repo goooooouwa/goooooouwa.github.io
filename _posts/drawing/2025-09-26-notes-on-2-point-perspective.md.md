@@ -14,13 +14,15 @@ published: true
 
 ![Defining-Features-of-Two-Point-Perspective.PNG]({{site.baseurl}}/assets/images/Defining-Features-of-Two-Point-Perspective.PNG)
 
-两点透视的物体有两个消失点（vp1和vp2），两者之间是90度。每个消失点与direction of view之间的夹角不同，但是两者之和永远是90度。
+两点透视的物体有两个消失点（vp1和vp2），两者之间是90度。每个消失点与direction of view之间的夹角不同，但是两者之和永远是90度。沿着物体的2个消失点的方向上的深度变化是由2个测量点（mp1和mp2）来决定的。通过测量点，我们可以将measure bar或者单位长度投射到物体2个消失点所在的方向上。
 
 ### 旋转消失点（rotating the vanishing points）
 
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
 
 在视觉射线法中，我们通过物体的旋转角度(angle of rotation)来定位物体的左右消失点，该角度等于物体正面与画面之间的角度，也等于物体侧面与direction of view之间的角度。
+
+With the viewpoint placed at the top of the circle of view, we find the angle of rotation by drawing the plan (floor plan or aerial view) of the primary form within the top half of the circle of view, with the corner nearest to the viewer placed on the location of the viewpoint on the image plane. Then the two vanishing points are found by extending the two front sides of the primary form from the viewpoint to the image plane or horizon line (diagram, below).
 
 ### 定位测量点（locating the measure points）
 
