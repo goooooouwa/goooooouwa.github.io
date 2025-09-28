@@ -75,19 +75,26 @@ published: true
 
 ## constructing a 2PP cube
 
+一旦你定位了两个消失点和两个测量点，在2点透视中构造立方体或长方体的步骤与在1点透视中相同，唯一不同的地方是需要一个measure bar来确定两个正面的位置。
+
 构造2点透视的具体步骤是：
 
+located the two vanishing points and two measure points
+
+
+
+
 1. 确定画面中的anchor point和anchor line；
-1. 根据anchor point和anchor line画出立方体的正面（如果是长方形则需要根据其实际长宽比来画）；
-1. 将立方体的四个顶点与vanishing point相连（对应立方体侧面的四条边）；
-1. 确定立方体的深度：
-	1. 如果该立方体是正方体，则只需将立方体的四个顶点与对应方向的dvp相连，每条直线分别与上面四条直线的交点即为正方体在画面中的另外4个顶点；
-	1. 如果是深度与长度或宽度不相等的立方体，则可以利用measure bar直接将与深度相等的长度或宽度映射成空间中的深度即可（无需借助dvp）。
+1. 将anchor line的2个顶点与2个vanishing points相连（对应立方体侧面的四条边）；
+1. 绘制2个measure bars，其长度分别对应立方体正面的两个侧面各自的宽度（如果该立方体是正方体，则measure bar的长度等于anchor line的长度），将2个measure bars的一端与anchor point重合，分别摆放于anchor point的各一侧（measure bar具体摆放规则参考前文“如何正确地将measure bar映射到消失线上更靠前或靠后的位置”）；
+1. 沿着两条measure bar远离anchor point的那一端分别各画一条连到其对应测量点的直线（该直线与消失线的交点即为立方体两个侧面的对应深度）；
+1. 沿着2个交点各画一条垂直于地面的直线，与上方的消失线相交（所得到的线段为立方体两个侧面的后面两条边，其长度均小于anchor line）；
+1. 将立方体两个侧面的后面两条边的2对上端点和下端点与对侧的消失点相连（这些线的交点即为立方体第4条垂直边的上顶点和下顶点）；
+1. 将4条垂直线段的相邻顶点用直线相连。
 
-至此得到1点透视画面中的立方体。
+至此得到2点透视画面中的立方体。
 
-
-### who has a 12 foot table?
+## 如何绘制非常远的消失点（who has a 12 foot table?）
 
 Unfortunately it is fairly common to start with the primary form in an orientation that puts the two vp's inconveniently far apart. In the previous cube construction example, assuming a 10 foot circle of view, the cube is oriented so that the two vp's would about 11 feet apart — one 3.2 feet to the left of the dv, and the other 7.7 feet to the right. This isn't very convenient for a drafting table.
 
