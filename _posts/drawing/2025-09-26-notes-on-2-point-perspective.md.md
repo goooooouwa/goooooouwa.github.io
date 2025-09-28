@@ -56,19 +56,19 @@ published: true
 
 **两点透视中如何正确地将measure bar映射到消失线上更靠前或靠后的位置**
 
-相比于一点透视，在两点透视中使用measure bar时我们需要更加谨慎一些。在两点透视中，将measure bar放置在图形的哪一边，以及使用哪个量度点都很重要，因为此时物体的每一侧都有各自独立的量度点。
+相比于一点透视，在两点透视中使用measure bar时我们需要更加谨慎一些。在两点透视中，将measure bar放置在图形的哪一边，以及使用哪个测量点都很重要，因为此时物体的每一侧都有各自独立的测量点。
 
-一个基本的原则是：你是在把度量单位映射到消失线（vanishing lines）上，而消失线会汇聚到一个消失点（vanishing point）。因此，你必须**使用以该消失点为顶点的圆弧所确定的对应量度点**。这个量度点位于你所要映射度量单位的那条消失线的消失点的对面一侧。
+一个基本的原则是：你是在把度量单位映射到消失线（vanishing lines）上，而消失线会汇聚到一个消失点（vanishing point）。因此，你必须**使用以该消失点为顶点的圆弧所确定的对应测量点**。这个测量点位于你所要映射度量单位的那条消失线的消失点的对面一侧。
 
 ![two point perspective-projecting forward or backward from a measure bar.PNG]({{site.baseurl}}/assets/images/two point perspective-projecting forward or backward from a measure bar.PNG)
 
-The diagram (above) shows the four possible combinations (in 2PP) for projecting from a measure bar located on either side of the anchor point. In all cases the correct measure point is the one that was defined by an arc from the vanishing point that controls the line that must be measured (as indicated by the black dot). The measure point you use is not determined by whether the measure bar is left or right of the anchor point. Note also that a point can be projected both backward and forward from a measure bar; a visual ray from the dvp verifies these forward projections.
+上图展示了两点透视中将放在基准点两侧的measure bar映射到消失线上时可能出现的四种组合情况。在所有情况下，正确的测量点总是那个需要测量的消失线的消失点所对应的测量点。测量点的选择并不是由measure bar在基准点的左边还是右边决定的。还要注意，measure bar上的点既可以向后投射（靠近地平线的方向），也可以向前投射（靠近观察者的方向）；来自对角消失点（dvp）的视觉射线可以验证这些向前的映射。
 
-上图展示了两点透视中将放在基准点两侧的measure bar映射到消失线上时可能出现的四种组合情况。在所有情况下，正确的量度点总是那个需要测量的消失线的消失点所对应的测量点。量度点的选择并不是由量度尺在基准点的左边还是右边决定的。还要注意，量度尺上的点既可以向后投射，也可以向前投射；来自距离点（dvp）的视线可以验证这些向前的投射。
+**如何使用量角器精确确定消失点的旋转角度**
 
 If you are using a protractor centered on the viewpoint, in order to define the rotation of the vanishing points precisely, then the image plane angle is the angle between the vanishing point and a horizontal line drawn through the viewpoint (labeled x, below).
 
-**如何使用量角器精确确定消失点的旋转角度**
+你可以使用量角器（将其中心放置于viewpoint上）来精确确定消失点的旋转角度，物体某个侧面相对于图像平面旋转的角度等于 _该侧面的消失点与viewpoint的连线_ 以及 _通过viewpoint的一条水平线（图中虚线）_ 之间的夹角（在下图中标记为 x）。
 
 如果你使用以视点为中心的量角器，来精确确定消失点的旋转角度，那么图像平面的角度就是从消失点到视点的水平线之间的夹角（在下图中标记为 x）。
 
@@ -76,7 +76,7 @@ If you are using a protractor centered on the viewpoint, in order to define the 
 
 Then the vanishing point for the object edge or side (vp1) will be located 90-x degrees from the direction of view (dv), and the measure point will be located x/2 degrees from the dv, on the opposite side. In the example, the front face of object BC (shown in plan) is rotated 30° to the image plane; therefore x is equal to 30°. This means vp1 will be rotated 60° away from the dv on one side, and its measure point will be located mp1 or 15° to the right. These relationships hold, no matter what orientation the object has to the image plane.
 
-那么，物体边或侧面的消失点（vp1）将位于距视线方向（dv）90−x 度的位置，而它的量度点则位于距 dv x/2 度的位置，且在相对的一侧。举例来说，物体的正面 BC（在平面图中所示）相对于图像平面旋转了 30°；因此 x = 30°。这意味着 vp1 将在视线方向的一侧偏转 60°，而它的量度点 mp1 将位于右侧 15° 的位置。无论物体相对于图像平面如何旋转，这些对应关系始终成立。
+而该物体侧面的消失点（vp1）则位于距direction of view方向（dv）90−x 度的位置，而它的测量点则位于距 direction of view 方向 x/2 度的位置，且处在direction of view的另外一侧。举例来说，物体的正面 BC（在平面仰视图中所示）相对于图像平面旋转了 30°；因此 x = 30°。这意味着 vp1 将在视线方向的一侧偏转 60°，而它的测量点 mp1 则位于视线方向右侧 15° 的位置。无论物体相对于图像平面如何旋转，这些对应关系始终成立。
 
 ### who has a 12 foot table?
 
