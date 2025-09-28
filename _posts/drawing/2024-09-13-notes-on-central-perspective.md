@@ -141,11 +141,19 @@ Diagonal lines from each point to the mp (这里的mp是measure point，参考[�
 
 ![20240911_061325138_iOS.png]({{site.baseurl}}/assets/images/20240911_061325138_iOS.png)
 
-**离画面距离、图像缩放比例、图像大小速查表**
+在使用三角比例时，一个关键的前提假设是：物体尺寸 Z 和图像尺寸 z 的测量方向都必须垂直于视线方向，或者说是与图像平面平行。当情况并非如此时，图像尺寸会因为透视缩短（foreshortening）而发生变化。
+
+**离画面距离、图像比例、图像大小速查表**
+
+下表展示了三种对象在一副从 1.6 米（63 英寸）的距离观看的图像上所对应的画面尺寸：一栋现代单层住宅（从地面到屋顶高度 20 英尺），代表建筑或景观；一个平均身高的男子（5 英尺 9 英寸），代表人物；以及一个篮球（直径 9.5 英寸），代表静物。
 
 ![distance-object-size-image-size.png]({{site.baseurl}}/assets/images/distance-object-size-image-size.png)
 
 **离画面距离、视觉角度、图像比例速查表**
+
+结合下图来理解视觉角度（visual angle），即
+
+![distance and constant triangular proportions.PNG]({{site.baseurl}}/assets/images/distance and constant triangular proportions.PNG)
 
 ![object-distance-visual-angle-image-scale.png]({{site.baseurl}}/assets/images/object-distance-visual-angle-image-scale.png)
 
