@@ -12,6 +12,12 @@ title: 高级透视技巧
 
 ![projecting a circle without a plan.png]({{site.baseurl}}/assets/images/projecting a circle without a plan.png)
 
+构造步骤：
+
+1. 在画面中画出透视的正方形
+1. 在透视的正方形内逐步构造出图中的辅助线
+1. 根据辅助线构造出透视中的圆形
+
 **使用平面俯视图来构造圆形的透视（Circle With a Plan）**
 
 ![projecting a circle with a plan.png]({{site.baseurl}}/assets/images/projecting a circle with a plan.png)
@@ -19,13 +25,10 @@ title: 高级透视技巧
 构造步骤：
 
 1. 在平面俯视图中画出正方形和内嵌的圆形
-1. 画出辅助线
+1. 逐步画出辅助线
 1. 将正方形和辅助线投射到画面中
 1. 根据辅助线构造出透视中的圆形
 
 
 ### 椭圆的构造（Ellipse Construction）
-
-
-
 
