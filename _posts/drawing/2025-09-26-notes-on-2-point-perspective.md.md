@@ -20,7 +20,9 @@ published: true
 
 ![Screenshot 2024-09-14 at 11.39.24 AM.png]({{site.baseurl}}/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png)
 
-In this setup, we locate the left and right vanishing points through the angle of rotation between the front face of the primary form and the image plane, which is equal to the angle between a side face of the primary form and the direction of view. The "primary form" is simply the cubic or rectangular solid that defines most of the perspective edges in the drawing. For a room interior, it is the floor plan that defines the visible floor and walls. For an external architectural view, it is the visible sides of the largest building in view.
+In this setup, we locate the left and right vanishing points through the angle of rotation between the front face of the primary form and the image plane, which is equal to the angle between a side face of the primary form and the direction of view.
+
+在视觉射线法中，我们通过来定位物体的左右消失点。
 
 ### 定位测量点（locating the measure points）
 
