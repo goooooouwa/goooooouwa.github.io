@@ -34,11 +34,23 @@ published: true
 
 在两点透视中，principal point仍然定义了观察者的纵深方向的透视变化，以及direction of view在地平面和所有平行于视线方向的平面上产生的透视梯度。但物体本身的消失点却在两个不同的方向上（即两条消失线上）发生着各自的透视变化，我们的任务便是在这2条消失线上建立单位刻度。
 
-### 测量点的几何关系（Geometry of Measure Points）
+### 测量点的几何原理（Geometry of Measure Points）
 
 在视觉射线法中，解决这个问题的办法是将地线（ground line）上的特定长度或者单位长度映射到透视空间中物体消失点所在的方向上。
 
 ![geometry-of-measure-points.PNG]({{site.baseurl}}/assets/images/geometry-of-measure-points.PNG)
+
+等腰三角形
+
+To find the base of the triangle, we construct an arc in physical space from G with radius GA', the distance along the vanishing line from the ground line intersection to the front corner of the primary form or line segment we want to measure in perspective space (diagram, right). This arc intersects the ground line at A. Then GA' = GA, the interior angles (z) at A and A' are equal, and the triangle A'GA is an isosceles triangle. Then the line segment A'A, extended to the horizon line, defines the measure point mp1 of the vanishing point vp1.
+
+
+The purpose of this construction is that all lines parallel to A'A define equal line segments in both the ground line and in the vanishing line. Thus, the lines aa' and bb', both parallel to AA', define a line segment ab in the ground line that is exactly equal in length to the line segment a'b' in physical space.
+
+这个构造所达到的效果是所有平行于A'A的线之间的间隔在地线（ground line）上的长度与在消失线上的长度相等。举例来讲，线条aa'和bb'是2条平行于A'A的线，这2条线在地线上的形成的线段ab的长度与物理空间中的线段a'b'是完全相等的。
+
+
+### 定位测量点（Locating the Measure Points）
 
 定位测量点其实超级简单，只需draw an arc from each vanishing point, from the viewpoint to the horizon line (image plane)
 
