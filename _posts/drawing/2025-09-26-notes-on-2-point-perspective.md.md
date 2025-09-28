@@ -32,14 +32,13 @@ published: true
 
 在一点透视中，单个消失点（principal point）决定了空间中沿着纵深线（指向principal point的消失线）方向上的透视变化，而对角消失点则可以将单位长度从图像平面映射到纵深方向上。
 
-在两点透视中，principal point仍然定义了观察者的纵深方向的透视变化，以及direction of view在地平面和所有平行于视线方向的平面上产生的透视梯度。但物体本身的消失点却在两个不同的方向上发生着各自的透视变化（即两条消失线），我们的任务便是沿着这些消失线建立单位长度。
+在两点透视中，principal point仍然定义了观察者的纵深方向的透视变化，以及direction of view在地平面和所有平行于视线方向的平面上产生的透视梯度。但物体本身的消失点却在两个不同的方向上（即两条消失线上）发生着各自的透视变化，我们的任务便是在这2条消失线上建立单位刻度。
 
-### Geometry of Measure Points.
+### 测量点的几何关系（Geometry of Measure Points）
 
-In the context of the visual ray method of perspective construction, the problem is to project a distance scale or unit dimension, defined along the ground line, into perpspective space along a vanishing line to one of the object vanishing points.
+在视觉射线法中，解决这个问题的办法是将地线（ground line）上的特定长度或者单位长度映射到透视空间中物体消失点所在的方向上。
 
 ![geometry-of-measure-points.PNG]({{site.baseurl}}/assets/images/geometry-of-measure-points.PNG)
-
 
 定位测量点其实超级简单，只需draw an arc from each vanishing point, from the viewpoint to the horizon line (image plane)
 
