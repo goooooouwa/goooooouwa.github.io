@@ -78,6 +78,11 @@ Then the vanishing point for the object edge or side (vp1) will be located 90-x 
 
 而该物体侧面的消失点（vp1）则位于距direction of view方向（dv）90−x 度的位置，而它的测量点则位于距 direction of view 方向 x/2 度的位置，且处在direction of view的另外一侧。举例来说，物体的正面 BC（在平面仰视图中所示）相对于图像平面旋转了 30°；因此 x = 30°。这意味着 vp1 将在视线方向的一侧偏转 60°，而它的测量点 mp1 则位于视线方向右侧 15° 的位置。无论物体相对于图像平面如何旋转，这些对应关系始终成立。
 
+
+## constructing a 2PP cube
+
+
+
 ### who has a 12 foot table?
 
 Unfortunately it is fairly common to start with the primary form in an orientation that puts the two vp's inconveniently far apart. In the previous cube construction example, assuming a 10 foot circle of view, the cube is oriented so that the two vp's would about 11 feet apart — one 3.2 feet to the left of the dv, and the other 7.7 feet to the right. This isn't very convenient for a drafting table.
