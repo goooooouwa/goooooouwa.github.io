@@ -151,7 +151,13 @@ Diagonal lines from each point to the mp (这里的mp是measure point，参考[�
 
 **离画面距离、视觉角度、图像比例速查表**
 
-结合下图来理解视觉角度（visual angle），即
+下表中的视觉角度（visual angle）是居中视觉角度（centered visual angle），即是当该对象水平或垂直居中于direction of view上时所占的视觉角度（the object is centered on the direction of view）。比如对于一个高1.6的人，这里的视觉角度（visual angle）是指当direction of view正好处于人的身高一半的位置时的观察角度，而不是当人站在地面上时的视觉角度。
+
+对应的计算公式是：
+
+![angsub1.gif]({{site.baseurl}}/assets/images/angsub1.gif)
+
+结合下图来理解这个公式，图中显示的object size为Z，假设有一个物体，它的object size为Z的2倍并且居中于direction of view放置，那么图中显示的object正好是其高度的1/2，即公式中的 1/2 object size，而arctangent[1/2 object size / object distance ]求得的就是这个物体的visual angle的一半（即图中的visual angle <1>），那么将其乘以2便可以得到object size为2Z的物体的居中视觉角度。
 
 ![distance and constant triangular proportions.PNG]({{site.baseurl}}/assets/images/distance and constant triangular proportions.PNG)
 
