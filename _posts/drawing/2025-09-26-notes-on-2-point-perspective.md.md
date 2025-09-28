@@ -36,7 +36,7 @@ published: true
 
 ### 测量点的几何原理（Geometry of Measure Points）
 
-在视觉射线法中，解决这个问题的办法是将地线（ground line）上的特定长度或者单位长度映射到透视空间中物体消失点所在的方向上。
+在视觉射线法中，解决这个问题的办法是将地线（ground line）上的度量单位映射到透视空间中物体消失点所在的方向上。
 
 ![geometry-of-measure-points.PNG]({{site.baseurl}}/assets/images/geometry-of-measure-points.PNG)
 
