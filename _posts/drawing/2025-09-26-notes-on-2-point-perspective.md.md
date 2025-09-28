@@ -79,11 +79,6 @@ published: true
 
 构造2点透视的具体步骤是：
 
-located the two vanishing points and two measure points
-
-
-
-
 1. 确定画面中的anchor point和anchor line；
 1. 将anchor line的2个顶点与2个vanishing points相连（对应立方体侧面的四条边）；
 1. 绘制2个measure bars，其长度分别对应立方体正面的两个侧面各自的宽度（如果该立方体是正方体，则measure bar的长度等于anchor line的长度），将2个measure bars的一端与anchor point重合，分别摆放于anchor point的各一侧（measure bar具体摆放规则参考前文“如何正确地将measure bar映射到消失线上更靠前或靠后的位置”）；
