@@ -64,7 +64,7 @@ published: true
 
 The diagram (above) shows the four possible combinations (in 2PP) for projecting from a measure bar located on either side of the anchor point. In all cases the correct measure point is the one that was defined by an arc from the vanishing point that controls the line that must be measured (as indicated by the black dot). The measure point you use is not determined by whether the measure bar is left or right of the anchor point. Note also that a point can be projected both backward and forward from a measure bar; a visual ray from the dvp verifies these forward projections.
 
-上图展示了两点透视中将measure bar量度尺放在基准点两侧时可能出现的四种组合的情况。在所有情况下，正确的量度点总是那个由控制需要测量的消失线的消失点所画弧确定的点（图中黑点所示）。量度点的选择并不是由量度尺在基准点的左边还是右边决定的。还要注意，量度尺上的点既可以向后投射，也可以向前投射；来自距离点（dvp）的视线可以验证这些向前的投射。
+上图展示了两点透视中将放在基准点两侧的measure bar映射到消失线上时可能出现的四种组合情况。在所有情况下，正确的量度点总是那个需要测量的消失线的消失点所对应的测量点。量度点的选择并不是由量度尺在基准点的左边还是右边决定的。还要注意，量度尺上的点既可以向后投射，也可以向前投射；来自距离点（dvp）的视线可以验证这些向前的投射。
 
 If you are using a protractor centered on the viewpoint, in order to define the rotation of the vanishing points precisely, then the image plane angle is the angle between the vanishing point and a horizontal line drawn through the viewpoint (labeled x, below).
 
