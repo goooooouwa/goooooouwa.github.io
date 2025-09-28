@@ -141,7 +141,7 @@ Diagonal lines from each point to the mp (这里的mp是measure point，参考[�
 
 ![20240911_061325138_iOS.png]({{site.baseurl}}/assets/images/20240911_061325138_iOS.png)
 
-**离画面距离、物体大小、图像大小速查表**
+**离画面距离、图像缩放比例、图像大小速查表**
 
 ![distance-object-size-image-size.png]({{site.baseurl}}/assets/images/distance-object-size-image-size.png)
 
