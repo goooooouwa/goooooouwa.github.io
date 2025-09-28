@@ -52,6 +52,20 @@ published: true
 
 ![locating-the-measure-points.png]({{site.baseurl}}/assets/images/locating-the-measure-points.png)
 
+因此，从 vp1 出发的圆弧与图像平面相交于 B 点；三角形 VAB 是平面仰视图中的在视点和图像平面之间的一个等腰三角形（此时相当于将其沿地平线向上翻折到90°视圈上），其底边 VB 与图像平面相交于测量点 mp1。从 vp2 出发的圆弧与图像平面相交于 Y 点；三角形 VXY 是一个等腰三角形，其底边 VY 与像平面相交于测量点 mp2。
+
+A little more care is necessary now when using a measure bar than was needed in central perspective: it matters which side of the figure the bar is placed on, and which measure point you use, because we have separate points for each side of the figure. 
+
+The guiding rule is that you are projecting measurements onto vanishing lines, and the vanishing lines recede to a vanishing point. So you use the measure point defined by an arc from the vanishing point. This is the measure point opposite the vanishing point that controls the vanishing line you want to measure.
+
+![two point perspective-projecting forward or backward from a measure bar.PNG]({{site.baseurl}}/assets/images/two point perspective-projecting forward or backward from a measure bar.PNG)
+
+The diagram (above) shows the four possible combinations (in 2PP) for projecting from a measure bar located on either side of the anchor point. In all cases the correct measure point is the one that was defined by an arc from the vanishing point that controls the line that must be measured (as indicated by the black dot). The measure point you use is not determined by whether the measure bar is left or right of the anchor point. Note also that a point can be projected both backward and forward from a measure bar; a visual ray from the dvp verifies these forward projections.
+
+If you are using a protractor centered on the viewpoint, in order to define the rotation of the vanishing points precisely, then the image plane angle is the angle between the vanishing point and a horizontal line drawn through the viewpoint (labeled x, below).
+
+![visual ray location of a measure point.PNG]({{site.baseurl}}/assets/images/visual ray location of a measure point.PNG)
+
 
 ### who has a 12 foot table?
 
