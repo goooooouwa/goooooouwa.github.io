@@ -40,16 +40,15 @@ published: true
 
 ![geometry-of-measure-points.PNG]({{site.baseurl}}/assets/images/geometry-of-measure-points.PNG)
 
-等腰三角形
-
-To find the base of the triangle, we construct an arc in physical space from G with radius GA', the distance along the vanishing line from the ground line intersection to the front corner of the primary form or line segment we want to measure in perspective space (diagram, right). This arc intersects the ground line at A. Then GA' = GA, the interior angles (z) at A and A' are equal, and the triangle A'GA is an isosceles triangle. Then the line segment A'A, extended to the horizon line, defines the measure point mp1 of the vanishing point vp1.
+假设我们在物理空间中(注意，不是在画面中）以G为顶点GA'为半径构造出一个弧线，它与地线在A点相交。由此得到的A'GA便是一个等腰三角形，而GA'在物理空间中的长度等于GA。A'A的延长线与地平线的交点便是消失点vp1的测量点mp1。
 
 这个构造所达到的效果是所有平行于A'A的线之间的间隔在地线（ground line）上的长度与在消失线上的长度相等。举例来讲，线条aa'和bb'是2条平行于A'A的线，这2条线在地线上的形成的线段ab的长度与物理空间中的线段a'b'是完全相等的。
 
-
 ### 定位测量点（Locating the Measure Points）
 
-定位测量点其实超级简单，只需draw an arc from each vanishing point, from the viewpoint to the horizon line (image plane)
+那么改如何定位测量点呢？显然我们无法直接在画面上G为顶点画一条弧线，因为透视的关系，物理空间中的一条弧线会在画面中变成一个椭圆的弧线。
+
+定位测量点其实超级简单，只需以物体的某一个消失点为顶点从向上翻折的viewpoint画一条弧线与地平线（或者说是与图像平面）相交，得到的交点便是这个消失点的测量点。这条弧线其实就是在仰视图中在viewpoint和图像平面之间构造出了一个等腰三角形。
 
 ![locating-the-measure-points.png]({{site.baseurl}}/assets/images/locating-the-measure-points.png)
 
