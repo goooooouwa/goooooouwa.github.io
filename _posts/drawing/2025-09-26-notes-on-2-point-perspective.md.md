@@ -94,6 +94,9 @@ located the two vanishing points and two measure points
 
 至此得到2点透视画面中的立方体。
 
+![screencapture-handprint-HP-WCL-perspect3-html-2025-09-27-23_40_39.png]({{site.baseurl}}/assets/images/screencapture-handprint-HP-WCL-perspect3-html-2025-09-27-23_40_39.png)
+
+
 ## 如何绘制非常远的消失点（who has a 12 foot table?）
 
 Unfortunately it is fairly common to start with the primary form in an orientation that puts the two vp's inconveniently far apart. In the previous cube construction example, assuming a 10 foot circle of view, the cube is oriented so that the two vp's would about 11 feet apart — one 3.2 feet to the left of the dv, and the other 7.7 feet to the right. This isn't very convenient for a drafting table.
