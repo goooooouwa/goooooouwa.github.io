@@ -66,8 +66,6 @@ published: true
 
 **如何使用量角器精确确定消失点的旋转角度**
 
-If you are using a protractor centered on the viewpoint, in order to define the rotation of the vanishing points precisely, then the image plane angle is the angle between the vanishing point and a horizontal line drawn through the viewpoint (labeled x, below).
-
 你可以使用量角器（将其中心放置于viewpoint上）来精确确定消失点的旋转角度，物体某个侧面相对于图像平面旋转的角度等于 _该侧面的消失点与viewpoint的连线_ 以及 _通过viewpoint的一条水平线（图中虚线）_ 之间的夹角（在下图中标记为 x）。
 
 如果你使用以视点为中心的量角器，来精确确定消失点的旋转角度，那么图像平面的角度就是从消失点到视点的水平线之间的夹角（在下图中标记为 x）。
