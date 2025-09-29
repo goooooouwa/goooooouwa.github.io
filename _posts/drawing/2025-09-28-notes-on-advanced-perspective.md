@@ -42,15 +42,15 @@ title: 高级透视技巧学习笔记
 
 另一种更高效的方法是**游标法（Trammel Method，方法 B）**。
 
-![ellipse-construction-method-b.png]({{site.baseurl}}/assets/images/ellipse-construction-method-b.png)
-
 具体做法是：先确定椭圆的外接矩形，然后将长轴和短轴的长度转移到一条硬纸板或厚纸条上（保持长短轴的某一端对齐，见右图）。由于长轴和短轴长度不相等，在另一端会留下一个间隔（洋红色线所示）。将这两个端点分别与椭圆矩形的短轴和长轴对齐，此时便可以直接在纸条另一端的对齐点标记出椭圆的圆周所在的位置。此方法快速，但当长轴和短轴逐渐接近相等（即椭圆趋近圆形）时，精度会显著下降。
+
+![ellipse-construction-method-b.png]({{site.baseurl}}/assets/images/ellipse-construction-method-b.png)
 
 **第三种方法（C）** 使用两个以点 a 为圆心的同心圆。
 
-![ellipse-construction-method-c.png]({{site.baseurl}}/assets/images/ellipse-construction-method-c.png)
-
 先画出大圆和小圆，然后用两条互相垂直的直线将其四等分，这两条直线定义了椭圆的长轴和短轴。接着，从点 a 向外任意画若干条放射线，使它们分别交小圆和大圆，得到成对的交点。然后从这些交点分别作平行于椭圆的长轴或短轴的线段；这些线的交点便是该椭圆在这个象限内所在的点。此方法的优点在于：如果将“辐射线”以及水平、垂直辅助线延伸穿过整个大圆，就能标定出完整椭圆的全部圆周。
+
+![ellipse-construction-method-c.png]({{site.baseurl}}/assets/images/ellipse-construction-method-c.png)
 
 然而，这里出现了一个问题。从下面的圆形构造图可以看出，椭圆的中心并不与图像方形的中心（即方形对角线的交点）重合，因为透视缩短导致方形的后半部分看起来比前半部分略小。因此，表示椭圆中心的黑色十字并没有位于对角线交点，而是稍微偏下（靠前）的位置。
 
