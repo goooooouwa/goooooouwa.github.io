@@ -2,7 +2,7 @@
 category: drawing
 tags: perspective study-notes
 published: true
-title: 高级透视技巧
+title: 高级透视技巧学习笔记
 ---
 ## 复杂平面图形的透视画法
 
