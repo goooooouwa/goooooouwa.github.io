@@ -80,15 +80,12 @@ title: 高级透视技巧学习笔记
 
 人物也可以通过观察网格来转绘：先把人物形象分割到一个方格网中，再逐格转绘到纸上较小的方格网里。接着将这幅图按比例缩放到主画稿上。这就是丢勒在《人体比例四书》（1528 年）中演示的方法。
 
-更严格的方法
+一种更严格更“较真”的方法是：将人体的三维点映射到透视空间里。传统上大体有三种方法：
 
-一种更“较真”的方法是：将人体的三维点映射到透视空间里。传统上大体有三种方法：
+1. 截面投影 (sectional projection)
+1. 体块投影 (volumetric projection)
+1. 骨架投影 (armature projection)
 
-截面投影 (sectional projection)
-
-体块投影 (volumetric projection)
-
-骨架投影 (armature projection)
 
 (1) 截面投影
 
