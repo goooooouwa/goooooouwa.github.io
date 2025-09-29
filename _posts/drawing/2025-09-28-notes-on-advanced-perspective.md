@@ -48,20 +48,22 @@ title: 高级透视技巧
 
 先画出大圆和小圆，然后用两条互相垂直的直线将其四等分，这两条直线定义了椭圆的长轴和短轴。接着，从点 a 向外任意画若干条放射线，使它们分别交小圆和大圆，得到成对的交点。然后从这些交点分别作平行于椭圆的长轴或短轴的线段；这些线的交点便是该椭圆在这个象限内所在的点。此方法的优点在于：如果将“辐射线”以及水平、垂直辅助线延伸穿过整个大圆，就能标定出完整椭圆的全部圆周。
 
-然而，这里出现了一个问题。上面的圆形构造图显示，椭圆的中心并不与图像方形的中心（即方形对角线的交点）重合，因为透视缩短导致方形的后半部分看起来比前半部分略小。因此，表示椭圆中心的黑色十字并没有位于对角线交点，而是稍微偏下（靠前）的位置。
+然而，这里出现了一个问题。从下面的圆形构造图可以看出，椭圆的中心并不与图像方形的中心（即方形对角线的交点）重合，因为透视缩短导致方形的后半部分看起来比前半部分略小。因此，表示椭圆中心的黑色十字并没有位于对角线交点，而是稍微偏下（靠前）的位置。
 
-这与另一个视觉差异本质相同：球体的可见圆周（等于椭圆长轴在图像中的宽度）与球体直径的视觉角度（等于透视方形中横跨中心的宽度）之间的差异。这个问题会在“球体投影”章节中进一步讨论。遗憾的是，除了在平面图中按比例绘制外，没有一种简单的方法能直接缩放椭圆的宽度，因为椭圆的长轴并不与方形的中线横截线重合，而椭圆与方形边框相切的点通常也不位于椭圆的长轴上。
+![center of the ellipse is not coincident with the center of the image square.png]({{site.baseurl}}/assets/images/center of the ellipse is not coincident with the center of the image square.png)
 
-但在小于 20° 视角范围 的透视圆中，这种误差极小，可以忽略不计。
+这与另一个视觉差异本质相同：球体的可见圆周（等于椭圆长轴在图像中的宽度）与球体直径的视觉角度（等于透视方形中横跨中心的宽度）之间的差异（见下图）。这个问题会在下面“球体投影”章节中进一步讨论。遗憾的是，除了在平面俯视图中按比例绘制外，没有一种简单的方法能直接缩放椭圆的宽度，因为**椭圆的长轴并不与方形的中线横截线重合**，而**椭圆与方形边框相切的点通常也不位于椭圆的长轴上**。但在小于20°视角范围的透视圆中，这种误差极小，可以忽略不计。
 
-这也是建筑师们传统上使用椭圆模板，而现在依赖计算机绘图软件的一个主要原因。椭圆模板包含大量切割好的椭圆，每一个都比前一个略大，并且都按照一个标准视角比例缩放，适配到包含圆的平面。绘图者只需选择与所需长短轴比例最接近的模板角度，然后再挑选最符合图像大小的椭圆切口即可。
+![discrepancy between the visible circumference and angular diameter of a sphere.png]({{site.baseurl}}/assets/images/discrepancy between the visible circumference and angular diameter of a sphere.png)
 
-用于估算圆的缩短程度（即椭圆模板角度）的方法，源自视角几何中**圆内切线（trigonometric tangent）**的计算：
+这也是为什么建筑师们通常习惯使用椭圆模板以及依赖于计算机绘图软件的一个主要原因。椭圆模板包含大量切割好的椭圆，每一个都比前一个略大，并且都按照一个标准视角比例缩放，适配到包含圆的平面。绘图者只需选择与所需长短轴比例最接近的模板角度，然后再挑选最符合图像大小的椭圆切口即可。
 
-Given a perspective square located near the median line, draw the vertical line A from a front corner, and the horizontal line B from the opposite back corner; these lines intersect to form a right triangle. Using a ruler, measure the lengths of A and B and find the arctangent of their ratio. This is the angle of view onto the plane surface of the square at point x. This angle is used to identify the most suitable ellipse template.
+用于估算圆的透视缩短程度（即椭圆模板角度）的方法，源自视角几何中圆内切线（trigonometric tangent）的计算：
 
-Architects do not bother with any of this: they just try one or another template until they visually discover the best match in angle and size.
+![angle-of-view-at-x.png]({{site.baseurl}}/assets/images/angle-of-view-at-x.png)
 
-在中轴线附近放置一个透视方形后，从前方的一个角点引出一条竖直线 A，再从相对的后角点引出一条水平线 B；这两条线相交后形成一个直角三角形。然后用直尺测量 A 与 B 的长度，并取其比值的反正切（arctangent）。这个角度就是从点 x 处看到该方形平面的视角。该角度可用来选择最合适的椭圆模板。
+在中轴线附近放置一个透视的正方形，从前面的一个角引出一条竖直线 A，再从斜对面的后角引出一条水平线 B；这两条线相交后形成一个直角三角形。然后用直尺测量 A 与 B 的长度，并取其比值的反正切（arctangent）。这个角度就是从点 x 处看到该方形平面的视觉角度（angle of view）。该角度可用来选择最合适的椭圆模板。
 
-不过，建筑师们通常不会去做这些计算：他们只会尝试不同的模板，直到在角度和尺寸上找到视觉上最接近的匹配为止。
+不过，建筑师们通常不会去做这些计算：他们只会**尝试不同的模板，直到在角度和尺寸上找到视觉上最接近的匹配为止**。
+
+
