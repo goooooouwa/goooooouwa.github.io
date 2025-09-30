@@ -8,7 +8,7 @@ title: 高级透视技巧学习笔记
 
 ### 圆的透视画法（Projecting A Circle）
 
-**不使用平面仰视图来构造圆形的透视（Circle Without a Plan）**
+**不使用平面图来构造圆形的透视（Circle Without a Plan）**
 
 ![projecting a circle without a plan.png]({{site.baseurl}}/assets/images/projecting a circle without a plan.png)
 
@@ -18,13 +18,13 @@ title: 高级透视技巧学习笔记
 1. 在透视的正方形内逐步构造出图中的辅助线
 1. 根据辅助线构造出透视中的圆形
 
-**使用平面仰视图来构造圆形的透视（Circle With a Plan）**
+**使用平面图来构造圆形的透视（Circle With a Plan）**
 
 ![projecting a circle with a plan.png]({{site.baseurl}}/assets/images/projecting a circle with a plan.png)
 
 构造步骤：
 
-1. 在平面仰视图中画出正方形和内嵌的圆形
+1. 在平面图中画出正方形和内嵌的圆形
 1. 逐步画出辅助线
 1. 将正方形和辅助线投射到画面中
 1. 根据辅助线构造出透视中的圆形
@@ -56,7 +56,7 @@ title: 高级透视技巧学习笔记
 
 ![center of the ellipse is not coincident with the center of the image square.png]({{site.baseurl}}/assets/images/center of the ellipse is not coincident with the center of the image square.png)
 
-这与另一个视觉差异本质相同：球体的可见宽度（等于椭圆长轴在图像中的宽度）与球体直径的视觉角度（等于透视方形中横跨中心的宽度）之间的差异（见下图）。这个问题会在下面“球体投影”章节中进一步讨论。遗憾的是，**除了在平面仰视图中按比例绘制外，没有一种简单的方法能直接缩放椭圆的宽度**，因为**椭圆的长轴并不与方形的中线横截线重合**，而**椭圆与方形边框相切的点通常也不位于椭圆的长轴上**。但在小于20°视角范围的透视圆中，这种误差极小，可以忽略不计。
+这与另一个视觉差异本质相同：球体的可见宽度（等于椭圆长轴在图像中的宽度）与球体直径的视觉角度（等于透视方形中横跨中心的宽度）之间的差异（见下图）。这个问题会在下面“球体投影”章节中进一步讨论。遗憾的是，**除了在平面图中按比例绘制外，没有一种简单的方法能直接缩放椭圆的宽度**，因为**椭圆的长轴并不与方形的中线横截线重合**，而**椭圆与方形边框相切的点通常也不位于椭圆的长轴上**。但在小于20°视角范围的透视圆中，这种误差极小，可以忽略不计。
 
 ![discrepancy between the visible circumference and angular diameter of a sphere.png]({{site.baseurl}}/assets/images/discrepancy between the visible circumference and angular diameter of a sphere.png)
 
