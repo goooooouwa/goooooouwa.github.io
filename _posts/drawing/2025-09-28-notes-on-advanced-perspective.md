@@ -64,6 +64,8 @@ title: 高级透视技巧学习笔记
 
 ![ellipse-template.PNG]({{site.baseurl}}/assets/images/ellipse-template.PNG)
 
+椭圆模板的角度是指其视觉角度（angle of view），即一个圆在三维空间中看起来被压缩（缩短）或张开的程度，通常范围从 0°（一条平直的线）到 90°（一个完整的圆）。
+
 用于估算圆的透视缩短程度（即椭圆模板角度）的方法，源自视角几何中圆内切线（trigonometric tangent）的计算：
 
 ![angle-of-view-at-x.png]({{site.baseurl}}/assets/images/angle-of-view-at-x.png)
