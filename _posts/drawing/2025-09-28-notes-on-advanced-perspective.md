@@ -62,6 +62,8 @@ title: 高级透视技巧学习笔记
 
 这也是为什么建筑师们通常习惯使用椭圆模板以及依赖于计算机绘图软件的一个主要原因。椭圆模板包含大量切割好的椭圆，每一个都比前一个略大，并且都按照一个标准视角比例缩放，适配到包含圆的平面。绘图者只需选择与所需长短轴比例最接近的模板角度，然后再挑选最符合图像大小的椭圆切口即可。
 
+![ellipse-template.PNG]({{site.baseurl}}/assets/images/ellipse-template.PNG)
+
 用于估算圆的透视缩短程度（即椭圆模板角度）的方法，源自视角几何中圆内切线（trigonometric tangent）的计算：
 
 ![angle-of-view-at-x.png]({{site.baseurl}}/assets/images/angle-of-view-at-x.png)
