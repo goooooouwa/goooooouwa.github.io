@@ -8,6 +8,12 @@ tags: perspective study-notes
 
 原文地址：[https://handprint.com/HP/WCL/perspect2.html](https://handprint.com/HP/WCL/perspect2.html)
 
+系列笔记：
+
+1. [一点透视学习笔记]({% post_url drawing/2024-09-13-notes-on-central-perspective %})
+1. [两点透视学习笔记]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
+1. [高级透视技巧学习笔记]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
+
 ## 视锥框架的基本概念与名词解释
 
 ![circle-of-view-framework-basic-terms.PNG]({{site.baseurl}}/assets/images/circle-of-view-framework-basic-terms.PNG)
