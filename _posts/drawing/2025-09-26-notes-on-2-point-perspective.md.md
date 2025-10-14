@@ -9,6 +9,12 @@ published: true
 
 原文地址：[https://handprint.com/HP/WCL/perspect3.html](https://handprint.com/HP/WCL/perspect3.html)
 
+系列笔记：
+
+1. [一点透视学习笔记]({% post_url drawing/2024-09-13-notes-on-central-perspective %})
+1. [两点透视学习笔记]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
+1. [高级透视技巧学习笔记]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
+
 两点透视的整体主题是，通过将消失点旋转特定角度以及在合适的measure bar上确定相应的measure points以便投射所需的深度等办法，确定物体在两点透视中的正确比例。
 
 ## 两点透视（Two point perspective）
