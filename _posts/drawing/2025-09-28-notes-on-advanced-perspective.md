@@ -8,7 +8,7 @@ title: 高级透视技巧学习笔记
 * TOC
 {:toc}
 
-原文地址：[https://handprint.com/HP/WCL/perspect2.html](https://handprint.com/HP/WCL/perspect2.html)
+原文地址：[https://handprint.com/HP/WCL/perspect5.html](https://handprint.com/HP/WCL/perspect5.html)
 
 系列笔记：
 
