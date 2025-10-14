@@ -16,8 +16,6 @@ published: true
 
 这只是非常粗浅的理解。详细解释请看系列笔记：
 
-1. [一点透视学习笔记](https://goooooouwa.github.io/drawing/2024/09/13/notes-on-central-perspective.html)
-1. [两点透视学习笔记](https://goooooouwa.github.io/drawing/2025/09/26/notes-on-2-point-perspective.md.html)
-1. [高级透视技巧学习笔记](https://goooooouwa.github.io/drawing/2025/09/28/notes-on-advanced-perspective.html)
-
-
+1. [一点透视学习笔记]({% post_url drawing/2024-09-13-notes-on-central-perspective %})
+1. [两点透视学习笔记]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
+1. [高级透视技巧学习笔记]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
