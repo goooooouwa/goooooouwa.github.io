@@ -4,6 +4,10 @@ tags: perspective study-notes
 published: true
 title: 高级透视技巧学习笔记
 ---
+
+
+原文地址：[https://handprint.com/HP/WCL/perspect2.html](https://handprint.com/HP/WCL/perspect2.html)
+
 ## 复杂平面图形的透视画法
 
 ### 圆的透视画法（Projecting A Circle）
