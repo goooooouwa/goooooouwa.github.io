@@ -74,7 +74,7 @@ title: 高级透视技巧学习笔记
 
 angle of view的定义即观察者在特定位置观察画面中的物体时物体所占据的视觉角度：
 
-![angle-of-view]({{site.baseurl}}/assets/images/angle-of-view.png)
+![angle-of-view]({{site.baseurl}}/assets/images/angle-of-view.jpg)
 
 从一个摆在地面的正方形的中心附近观察该正方形的透视（因为此时还未确认椭圆及其中心所在位置，只能找正方形的中心来近似，所以这里才说“中心附近”），从接近观察者的这一面的一个角引出一条竖直线 A，再从斜对面的后角引出一条水平线 B；这两条线相交后形成一个直角三角形。然后用直尺测量 A 与 B 的长度，并取其比值的反正切（arctangent）。根据定义，这个角度就是从点 x 处看地面上该正方形平面的视觉角度（angle of view）。该角度可用来粗略估算出比较合适的椭圆模板角度。
 
