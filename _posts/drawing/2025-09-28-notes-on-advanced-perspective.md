@@ -68,7 +68,7 @@ title: 高级透视技巧学习笔记
 
 ![yJcOC.png]({{site.baseurl}}/assets/images/yJcOC.png)
 
-用于估算圆的透视缩短程度（即椭圆模板角度）可以由circle of view中的圆内切线（trigonometric tangent）计算得到：
+另一方面，圆的透视缩短程度（即椭圆的视觉角度，而不是椭圆自身的角度）可以由circle of view中的圆内切线（trigonometric tangent）计算得到：
 
 ![angle-of-view-at-x.png]({{site.baseurl}}/assets/images/angle-of-view-at-x.png)
 
