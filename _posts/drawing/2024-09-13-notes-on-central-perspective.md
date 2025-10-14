@@ -6,7 +6,7 @@ tags: perspective study-notes
 * TOC
 {:toc}
 
-原文地址：[https://handprint.com/HP/WCL/perspect1.html](https://handprint.com/HP/WCL/perspect1.html)
+原文地址：[https://handprint.com/HP/WCL/perspect2.html](https://handprint.com/HP/WCL/perspect2.html)
 
 ## 视锥框架的基本概念与名词解释
 
