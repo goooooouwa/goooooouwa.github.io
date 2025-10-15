@@ -47,13 +47,17 @@ published: true
 
 ### 测量点的几何原理（Geometry of Measure Points）
 
-在视觉射线法中，解决这个问题的办法是将地线（ground line）上的度量单位映射到透视空间中物体消失点所在的方向上。
+在视觉射线法中，解决这个问题的办法是**将地线（ground line）上的度量单位映射到透视空间中物体消失点所在的方向上**。
 
 ![geometry-of-measure-points.PNG]({{site.baseurl}}/assets/images/geometry-of-measure-points.PNG)
 
 假设我们在物理空间中（注意，不是在画面中）以G为顶点GA'为半径构造出一个弧线，它与地线在A点相交。由此得到的A'GA便是一个等腰三角形，而GA'在物理空间中的长度等于GA。A'A的延长线与地平线的交点便是消失点vp1的测量点mp1。
 
 这个构造所达到的效果是所有平行于A'A的线之间的间隔在地线（ground line）上的长度与在消失线上的长度相等。举例来讲，线条aa'和bb'是2条平行于A'A的线，这2条线在地线上的形成的线段ab的长度与物理空间中的线段a'b'是完全相等的。
+
+![plan view of geometry of measure bar.jpg]({{site.baseurl}}/assets/images/plan view of geometry of measure bar.jpg)
+
+由俯视图可以看出，线段AB与线段A'B'（即measure bar）以及消失点方向上的线段Aa'三者之间的长度相等的（因为AB与A'B'是菱形的两条边，而A'B'与Aa'是等腰三角形的两条边）。
 
 ### 定位测量点（Locating the Measure Points）
 
