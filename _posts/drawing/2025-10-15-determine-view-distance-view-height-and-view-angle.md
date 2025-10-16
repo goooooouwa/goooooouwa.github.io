@@ -73,7 +73,8 @@ published: true
 
 ### 实战演练
 
-![20251016_045021000_iOS.jpg]({{site.baseurl}}/assets/images/20251016_045021000_iOS.jpg)
+![perspective analysis.jpg]({{site.baseurl}}/assets/images/perspective analysis.jpg)
+
 
 ## 如何根据画面判断镜头的视距、视高和俯仰角度
 
