@@ -42,11 +42,11 @@ published: true
 
 ![looking downward.PNG]({{site.baseurl}}/assets/images/looking downward.PNG)
 
+如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）。
+
 对比调整视高与调整俯仰角度对画面透视产生的影响：
 
 ![change-view-height-vs-view-angle.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle.png)
-
-如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）。
 
 ## 确定画面的关键透视点
 
