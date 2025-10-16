@@ -75,6 +75,8 @@ published: true
 
 ### 根据视距、物体画面大小和实际大小确定物体与观察者的实际距离
 
+![reduction in Bierstadts Looking Up the Yosemite Valley.PNG]({{site.baseurl}}/assets/images/reduction in Bierstadts Looking Up the Yosemite Valley.PNG)
+
 如果已知观察者的视距（比如根据画幅的尺寸或者展览馆里作品的摆放来推测画家希望观众采用的欣赏距离），且已知物体画面大小（直接在画面上测量）和物体的实际大小（根据现实生活中可以查到的物体数据），根据[距离和大小]({% post_url drawing/2024-09-13-notes-on-central-perspective %})，我们可以计算出物体在三维空间中与画家（或者说假象的观察者）的实际距离。
 
 ## 参考
