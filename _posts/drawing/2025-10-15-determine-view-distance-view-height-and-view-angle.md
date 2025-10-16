@@ -30,6 +30,8 @@ published: true
 
 作者可以为画面选择选择不同的视高，以营造出不同身高的观察者或者观察者视线处在不同水平高度（比如匍匐在地面或者站在楼顶）时透过画框所看到的三维空间的样子。
 
+![horizon line and viewpoint in landscape perspective.PNG]({{site.baseurl}}/assets/images/horizon line and viewpoint in landscape perspective.PNG)
+
 ### 俯仰角度
 
 画框这个透明的窗户可以相对于地面有各种不同的俯仰角度，但观察者的视线永远是垂直于图像平面的（否则为了真正欣赏一副作品，观众就必须先找到作家设定的特定的观察角度，会很麻烦）。
