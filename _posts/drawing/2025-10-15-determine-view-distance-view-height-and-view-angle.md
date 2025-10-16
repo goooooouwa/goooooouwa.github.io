@@ -35,6 +35,8 @@ published: true
 
 ### 如何根据画面内容确定一点透视的关键点（中央消失点和视距等）
 
+![1PP reconstruction of the center of projection.PNG]({{site.baseurl}}/assets/images/1PP reconstruction of the center of projection.PNG)
+
 1. 根据画面中的纵深线（orthogonals，即垂直于画面的线条）确定中央消失点；
 2. 根据中央消失点和画面中地面上的元素确定地平线（通常等于视平线）以及median line的位置；
 4. 根据画面中的对角线（diagonals，与median line之间夹角45度的线条，比如地面上平行于ground line的正方形瓷砖的对角线）确定dvp（对角线消失点）；
@@ -44,6 +46,8 @@ published: true
 至此一点透视的关键点就都确定了下来。
 
 ### 如何根据画面内容确定两点透视的关键点（消失点和direction of view等）
+
+![2PP reconstruction of the center of projection.PNG]({{site.baseurl}}/assets/images/2PP reconstruction of the center of projection.PNG)
 
 1. 根据画面中的直角线条确定两个vanishing points；
 2. 将2个vanishing points连线即可得到视平线（通常等于视平线）；
