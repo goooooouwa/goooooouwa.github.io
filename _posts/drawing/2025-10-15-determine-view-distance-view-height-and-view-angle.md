@@ -63,11 +63,17 @@ published: true
 
 #### 如何确定median line
 
-如果可以在画面中找到纵深线（Orthogonals，即垂直于画面的线条），则可以根据纵深线与地平线的交点确定direction of view，进而确定median line的位置；如果画面中没有明显的垂直于画面的线条（即纵深线，Orthogonals），则无法准确地确定direction of view以及median line的位置（但是可以根据画面一般处在60度视锥范围内这一点来大致确定direction of view以及median line的位置）。
+**Median Line.** This is parallel to the side edges of a rectangular image format, or perpendicular to the floor when the painting is correctly hung. **The median line is nearly always through the center of the image format.**
 
+如果可以在画面中找到纵深线（orthogonals，即垂直于画面的线条），则可以根据纵深线与地平线的交点确定direction of view，进而确定median line的位置；如果画面中没有明显的垂直于画面的线条（即纵深线，Orthogonals），则可以将垂直平分画面的竖线作为median line，因为median line几乎总是穿过画面中心的（画家通常都会将center of view设置于画面的垂直中心线上，因为观察者在欣赏画作时会很自然地站在画面的正前方）。
+ 
 > Orthogonals, if visible, will point to the direction of view on the horizon line; if there are no orthogonals, then the median line of the format can be used to locate the dv.
-> ...
+> 
 > (if there are no orthogonals) The median line and direction of view (dv) are arbitrarily located on the midline of the painting.
+
+### 实战演练
+
+![20251016_045021000_iOS.jpg]({{site.baseurl}}/assets/images/20251016_045021000_iOS.jpg)
 
 ## 如何根据画面判断镜头的视距、视高和俯仰角度
 
