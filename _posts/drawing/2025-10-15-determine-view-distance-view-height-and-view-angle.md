@@ -7,11 +7,7 @@ published: true
 * TOC
 {:toc}
 
-系列笔记：
-
-1. [一点透视学习笔记]({% post_url drawing/2024-09-13-notes-on-central-perspective %})
-1. [两点透视学习笔记]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
-1. [高级透视技巧学习笔记]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
+[透视系列笔记]({{ site.baseurl }}/tag/#{{ perspective | slugize }})
 
 ## 基本概念
 
