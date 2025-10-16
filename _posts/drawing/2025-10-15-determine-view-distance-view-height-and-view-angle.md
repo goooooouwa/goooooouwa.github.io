@@ -73,6 +73,10 @@ published: true
 3. 根据ground line（地面与画面的相交线）和视平线在画面上的垂直距离可以推算出观察者眼睛与地面的距离，即**视高**（根据[距离和大小]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）；
 4. 根据地平线与视平线在dvp处的夹角可以确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）；
 
+### 根据视距、物体画面大小和实际大小确定物体与观察者的实际距离
+
+如果已知观察者的视距（比如根据画幅的尺寸或者展览馆里作品的摆放来推测画家希望观众采用的欣赏距离），且已知物体画面大小（直接在画面上测量）和物体的实际大小（根据现实生活中可以查到的物体数据），根据[距离和大小]({% post_url drawing/2024-09-13-notes-on-central-perspective %})，我们可以计算出物体在三维空间中与画家（或者说假象的观察者）的实际距离。
+
 ## 参考
 
 - [https://handprint.com/HP/WCL/perspect2.html](https://handprint.com/HP/WCL/perspect2.html)
