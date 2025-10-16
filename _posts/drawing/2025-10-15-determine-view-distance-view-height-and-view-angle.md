@@ -7,7 +7,7 @@ published: true
 * TOC
 {:toc}
 
-[透视系列笔记]({{ site.baseurl }}/tag/#{{ perspective | slugize }})
+[透视系列笔记]({{ site.baseurl }}/tag/#{{ tag | slugize }})
 
 ## 基本概念
 
