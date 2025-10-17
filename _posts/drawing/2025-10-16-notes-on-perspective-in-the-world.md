@@ -20,6 +20,8 @@ published: true
 
 ### Object Orientation to the Direction of View
 
+假设画面中有一个出现在观察者正前方的物体，当我们在水平方向将direction of view从正前方移向其他方向时，物体在画面中所呈现的图形随即从一点透视变为两点透视。
+
 ![effect of changing only the direction of view.jpg]({{site.baseurl}}/assets/images/effect of changing only the direction of view.jpg)
 
 ### Horizon Line and Viewpoint
