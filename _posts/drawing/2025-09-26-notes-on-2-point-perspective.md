@@ -1,5 +1,5 @@
 ---
-title: 两点透视学习笔记
+title: 笔记：两点透视
 category: drawing
 tags: perspective study-notes
 published: true
