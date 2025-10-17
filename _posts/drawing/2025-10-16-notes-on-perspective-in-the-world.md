@@ -16,27 +16,31 @@ published: true
 1. [笔记：两点透视]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
 1. [笔记：高级透视技巧]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
 
-## image plane, viewpoint & direction of view
+## 图像平面、视点和视线方向（image plane, viewpoint & direction of view）
 
-### Object Orientation to the Direction of View
+### 调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）
 
 假设画面中有一个出现在观察者正前方的物体，当我们在水平方向将direction of view从正前方移向其他方向时，物体在画面中所呈现的图形随即从一点透视变为两点透视。
 
 ![effect of changing only the direction of view.jpg]({{site.baseurl}}/assets/images/effect of changing only the direction of view.jpg)
 
-### Horizon Line and Viewpoint
+### 地平线和视点的关系（Horizon Line and Viewpoint）
 
 An important and useful fact of linear perspective is that objects at the same height above the ground plane as the viewpoint are intersected in the image plane by the horizon line.
 
 ![horizon line and viewpoint in landscape perspective.PNG]({{site.baseurl}}/assets/images/horizon line and viewpoint in landscape perspective.PNG)
 
-## perspective distortions
+## 透视形变（perspective distortions）
 
-### Foreshortening Distortions
+### 透视缩短形变（Foreshortening Distortions）
 
 ![foreshortening and the triangular proportions.png]({{site.baseurl}}/assets/images/foreshortening and the triangular proportions.png)
 
+**平移产生的透视缩短**
+
 In **shift foreshortening**, a two dimensional surface is shifted away from the direction of view (the principal point) but remains parallel to the image plane; the actual surface *always* appears foreshortened because it is at an oblique angle to the viewpoint.
+
+**旋转产生的透视缩短**
 
 In **rotation foreshortening**, the surface is rotated so that it is no longer parallel to the image plane; the actual surface may or may not appear foreshortened, depending on whether it is at an oblique or perpendicular angle to the viewpoint.
 
@@ -61,3 +65,9 @@ The objectionable perspective distortions occur in the oblique view of a three d
 将一个三维物体（而不是二维的平面图形）的斜视图在图像平面上仅进行“平移缩短”处理时，会出现令人不适的透视形变。在这种情况下，发生“旋转”的不是二维物体的平面表面，而是三维形体中的某个平面截面。
 
 ![perspective image of rounded forms.png]({{site.baseurl}}/assets/images/perspective image of rounded forms.png)
+
+From [https://en.wikipedia.org/wiki/Perspective_distortion](https://en.wikipedia.org/wiki/Perspective_distortion):
+
+![Camera_focal_length_distance_house_animation.gif]({{site.baseurl}}/assets/images/Camera_focal_length_distance_house_animation.gif)
+
+Simulation showing how adjusting the angle of view of a camera, while varying the camera's distance and keeping the object in frame, results in vastly differing images. At narrow angles and long distances, light rays are nearly parallel, resulting in a "flattened" image. At wide angles and short distances, objects appear foreshortened or distorted.
