@@ -1,5 +1,5 @@
 ---
-title: 一点透视物体大小和物距之间关系
+title: 一点透视中物体大小和物距之间关系
 category: drawing
 tags: perspective
 published: true
@@ -45,4 +45,3 @@ published: true
 可以发现，超出90度视锥后的正方形形变很厉害（60度视锥半径是半径的0.58倍，所以蓝色正方形的大部分区域和黄色正方形已经处在60度视锥以外了，可以看到它们也有不同程度的透视扭曲distortion）。
 
 ![object-distance-exercise.png]({{site.baseurl}}/assets/images/object-distance-exercise.png)
-
