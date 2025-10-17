@@ -44,11 +44,21 @@ published: true
 
 如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）。
 
-对比调整视高与调整俯仰角度对画面透视产生的影响：
+#### 对比调整视高与调整俯仰角度对画面透视产生的影响
 
 ![change-view-height-vs-view-angle.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle.png)
 
+对比初始画面与低视高画面可以得出，在视线角度保持不变的情况下将视点进行任意的上下左右平移后，画面的透视特征将保持不变（包括center of view，视平线、地平线和消失点的位置等），画面中同一个物体的所有平行于画面的平面大小都将保持不变。（参考平移透视缩短）。
+
+对比初始画面与俯视画面可以得出，如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。
+
 ![change-view-height-vs-view-angle-continued.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle-continued.png)
+
+对比高视高画面与俯视画面可以得出，当视线角度发生变化后，画面中的同一个物体最多只会有一条边可以在画面中保持大小位置不变，其他部位的大小和位置都会发生变化。
+
+![2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png]({{site.baseurl}}/assets/images/2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png)
+
+对比高视高画面与俯视画面可以得出，当视线角度发生变化后，即使同一个物体在画面的水平方向高度保持不变，其他部位的大小和位置依然会发生变化（比如物体的宽度会变，物体侧边线条的角度也会发生变化。整个画面都展现出同样的变化。
 
 ## 确定画面的关键透视点
 
