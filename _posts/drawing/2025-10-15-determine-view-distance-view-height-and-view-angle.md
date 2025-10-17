@@ -1,5 +1,5 @@
 ---
-title: 如何根据画面判断镜头的视距、视高和俯仰角度
+title: 如何根据画面判断透视类型以及视距、视高和俯仰角度
 category: drawing
 tags: perspective
 published: true
