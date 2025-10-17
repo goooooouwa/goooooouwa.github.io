@@ -1,5 +1,5 @@
 ---
-title: 一点透视学习笔记
+title: 笔记：一点透视
 category: drawing
 tags: perspective study-notes
 ---
