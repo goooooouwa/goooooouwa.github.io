@@ -48,6 +48,8 @@ published: true
 
 ![change-view-height-vs-view-angle.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle.png)
 
+![change-view-height-vs-view-angle-continued.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle-continued.png)
+
 ## 确定画面的关键透视点
 
 ### 如何根据画面内容确定一点透视的关键点（中央消失点和视距等）
