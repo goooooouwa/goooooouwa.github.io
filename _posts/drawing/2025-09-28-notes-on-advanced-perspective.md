@@ -2,7 +2,7 @@
 category: drawing
 tags: perspective study-notes
 published: true
-title: 高级透视技巧学习笔记
+title: 笔记：高级透视技巧
 ---
 
 * TOC
