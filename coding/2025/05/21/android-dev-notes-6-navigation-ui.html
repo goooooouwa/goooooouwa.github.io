@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Android编程笔记（六）：Navigation UI | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Android编程笔记（六）：Navigation UI" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="记录生活、学习和思考" />
+<meta property="og:description" content="记录生活、学习和思考" />
+<link rel="canonical" href="https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Android编程笔记（六）：Navigation UI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2025-05-21T00:00:00+00:00","datePublished":"2025-05-21T00:00:00+00:00","description":"记录生活、学习和思考","headline":"Android编程笔记（六）：Navigation UI","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html"},"url":"https://goooooouwa.github.io/coding/2025/05/21/android-dev-notes-6-navigation-ui.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Android编程笔记（六）：Navigation UI</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-05-21T00:00:00+00:00" itemprop="datePublished">
+        May 21, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li><a href="#将navigation-controller与navigation-ui组件集成" id="markdown-toc-将navigation-controller与navigation-ui组件集成">将navigation controller与Navigation UI组件集成</a></li>
+  <li><a href="#top-app-bar" id="markdown-toc-top-app-bar">Top app bar</a>    <ul>
+      <li><a href="#differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar" id="markdown-toc-differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code>, App <code class="language-plaintext highlighter-rouge">ActionBar</code>, AppCompat <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a>        <ul>
+          <li><a href="#differences-between-widget-toolbar--app-actionbar" id="markdown-toc-differences-between-widget-toolbar--app-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></a></li>
+          <li><a href="#differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar" id="markdown-toc-differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar">Differences between native version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> (or native <code class="language-plaintext highlighter-rouge">ActionBar</code> vs AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code>)</a></li>
+        </ul>
+      </li>
+      <li><a href="#appbarconfiguration" id="markdown-toc-appbarconfiguration">AppBarConfiguration</a></li>
+      <li><a href="#create-a-toolbar" id="markdown-toc-create-a-toolbar">Create a Toolbar</a></li>
+      <li><a href="#include-collapsingtoolbarlayout" id="markdown-toc-include-collapsingtoolbarlayout">Include CollapsingToolbarLayout</a></li>
+      <li><a href="#action-bar" id="markdown-toc-action-bar">Action bar</a></li>
+      <li><a href="#support-app-bar-variations" id="markdown-toc-support-app-bar-variations">Support app bar variations</a></li>
+    </ul>
+  </li>
+  <li><a href="#tie-destinations-to-menu-items" id="markdown-toc-tie-destinations-to-menu-items">Tie destinations to menu items</a></li>
+  <li><a href="#add-a-navigation-drawer" id="markdown-toc-add-a-navigation-drawer">Add a navigation drawer</a></li>
+  <li><a href="#bottom-navigation" id="markdown-toc-bottom-navigation">Bottom navigation</a></li>
+  <li><a href="#listen-for-navigation-events" id="markdown-toc-listen-for-navigation-events">Listen for navigation events</a>    <ul>
+      <li><a href="#argument-based-listeners" id="markdown-toc-argument-based-listeners">Argument-based listeners</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="将navigation-controller与navigation-ui组件集成">将navigation controller与Navigation UI组件集成</h2>
+
+<p>The Navigation component includes a <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI"><code class="language-plaintext highlighter-rouge">NavigationUI</code></a> class. This class contains static methods that manage navigation with various navigational UI components, including:</p>
+
+<ul>
+  <li>top app bar</li>
+  <li>navigation drawer</li>
+  <li>bottom navigation</li>
+</ul>
+
+<p>To set up a navigation controller with various navigational UI components, The common steps are:</p>
+
+<ol>
+  <li>add the navigational UI component to the activity layout</li>
+  <li>create a <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> with one or more top level destinations</li>
+  <li>setup the view with the navigation controller &amp; <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> by calling method like <code class="language-plaintext highlighter-rouge">View.setupWithNavController(navController, appBarConfiguration)</code></li>
+</ol>
+
+<h2 id="top-app-bar">Top app bar</h2>
+
+<p>The <a href="https://material.io/design/components/app-bars-top.html">top app bar</a> provides a consistent place along the top of your app for displaying information and actions from the current screen.</p>
+
+<p>The key functions of the app bar are as follows:</p>
+
+<ol>
+  <li>Dedicated space for giving your app an identity and indicating the user’s location in the app.</li>
+  <li>Predictable access to important actions, such as search.</li>
+  <li>Support for navigation and view switching, using tabs or menus.</li>
+</ol>
+
+<p><img src="/assets/images/1d87d1bfc61f4c838fce137fa7c641dd.png" alt="screen displaying a top app bar" /></p>
+
+<p><strong>Figure 1.</strong> A screen displaying a top app bar.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> contains methods that <strong>automatically update content in your top app bar as users navigate through your app</strong>. For example, <code class="language-plaintext highlighter-rouge">NavigationUI</code> uses the destination labels from your navigation graph to keep the title of the top app bar up-to-date.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;navigation&gt;</span>
+    <span class="nt">&lt;fragment</span> <span class="err">...</span>
+              <span class="na">android:label=</span><span class="s">"Page title"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/fragment&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> provides support for the following <strong>top app bar types</strong>:</p>
+
+<ul>
+  <li><a href="https://developer.android.com/reference/android/widget/Toolbar">Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></a></li>
+  <li><a href="https://developer.android.com/reference/com/google/android/material/appbar/CollapsingToolbarLayout"><code class="language-plaintext highlighter-rouge">CollapsingToolbarLayout</code></a></li>
+  <li><a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBar">AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a></li>
+</ul>
+
+<h3 id="differences-between-widget-toolbar-app-actionbar-appcompat-toolbar--appcompat-actionbar">Differences between <a href="https://developer.android.com/reference/android/widget/Toolbar">Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></a>, <a href="https://developer.android.com/reference/android/app/ActionBar">App <code class="language-plaintext highlighter-rouge">ActionBar</code></a>, <a href="https://developer.android.com/reference/androidx/appcompat/widget/Toolbar">AppCompat <code class="language-plaintext highlighter-rouge">Toolbar</code></a> &amp; <a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBar">AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code></a></h3>
+
+<h4 id="differences-between-widget-toolbar--app-actionbar">Differences between Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></h4>
+
+<p><strong>Widget <code class="language-plaintext highlighter-rouge">Toolbar</code></strong> is a generalization of action bars for use within application layouts. While an action bar is traditionally part of an Activity’s opaque window decor controlled by the framework, a Toolbar may be placed at any arbitrary level of nesting within a view hierarchy. An application may choose to designate a Toolbar as the action bar for an Activity using the <code class="language-plaintext highlighter-rouge">setSupportActionBar()</code> method.</p>
+
+<p><strong>App <code class="language-plaintext highlighter-rouge">ActionBar</code></strong> is a primary toolbar within the activity that may display the activity title, application-level navigation affordances, and other interactive items.</p>
+
+<p>The action bar may be represented by any <code class="language-plaintext highlighter-rouge">Toolbar</code> widget within the application layout. The application may signal to the Activity which <code class="language-plaintext highlighter-rouge">Toolbar</code> should be treated as the Activity’s action bar.</p>
+
+<h4 id="differences-between-native-version-of-toolbar--appcompat-version-of-toolbar-or-native-actionbar-vs-appcompat-actionbar">Differences between native version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> (or native <code class="language-plaintext highlighter-rouge">ActionBar</code> vs AppCompat <code class="language-plaintext highlighter-rouge">ActionBar</code>)</h4>
+
+<p><strong>Native version of Widget <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; App <code class="language-plaintext highlighter-rouge">ActionBar</code></strong></p>
+
+<p>All activities that use the default theme have an <code class="language-plaintext highlighter-rouge">ActionBar</code> as an app bar. App bar features are added to the native <code class="language-plaintext highlighter-rouge">ActionBar</code> <strong>over various Android releases</strong>. As a result, the <strong>native <code class="language-plaintext highlighter-rouge">ActionBar</code> behaves differently depending on what version of Android a device is using</strong>.</p>
+
+<p><strong>AppCompat version of <code class="language-plaintext highlighter-rouge">Toolbar</code> &amp; <code class="language-plaintext highlighter-rouge">ActionBar</code></strong></p>
+
+<p>On the other hand, features are added to the AndroidX AppCompat library’s version of <code class="language-plaintext highlighter-rouge">Toolbar</code>, which means those features are available on devices that use the AndroidX libraries. Using the AndroidX library’s toolbar to implement your activities’ app bars makes your app’s behavior consistent across the widest range of devices.</p>
+
+<p>For more information on app bars, see <a href="https://developer.android.com/training/appbar/setting-up">Set up the app bar</a>.</p>
+
+<h3 id="appbarconfiguration">AppBarConfiguration</h3>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> uses an <a href="https://developer.android.com/reference/androidx/navigation/ui/AppBarConfiguration"><code class="language-plaintext highlighter-rouge">AppBarConfiguration</code></a> object to manage the behavior of the Navigation button in the upper-left corner of your app’s display area. The Navigation button’s behavior changes depending on whether the user is at a <strong><em>top-level destination</em></strong>.</p>
+
+<p>A top-level destination is the root, or highest level destination, in a set of hierarchically-related destinations. <strong>Top-level destinations do not display an Up button in the top app bar because there is no higher level destination</strong>. By default, the start destination of your app is the only top-level destination.</p>
+
+<p>When the user is at a top-level destination, the Navigation button becomes a drawer icon <img width="19" height="19" src="/assets/images/be0d9414288b4669986d6a47f8dc5022.png" /> if the destination uses a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>. <strong>If the destination doesn’t use a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>, the Navigation button is hidden</strong>. When the user is on any other destination, the Navigation button appears as an Up button <img width="19" height="19" src="/assets/images/a752d266f4524a71b5debe3fba64e5fd.png" />. To configure the Navigation button using only the start destination as the top-level destination, create an <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> object, and pass in the corresponding navigation graph, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In some cases, you might need to define multiple top-level destinations instead of using the default start destination. <strong>Using a <code class="language-plaintext highlighter-rouge">BottomNavigationView</code> is a common use case for this, where you may have sibling screens that are not hierarchically related to each other and may each have their own set of related destinations</strong>. For cases like these, you can instead pass a set of destination IDs to the constructor, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="nf">setOf</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">main</span><span class="p">,</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">profile</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="create-a-toolbar">Create a Toolbar</h3>
+
+<p>To create a Toolbar with <code class="language-plaintext highlighter-rouge">NavigationUI</code>:</p>
+
+<p>1) first define the bar in your main activity, as shown:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    <span class="nt">&lt;androidx.appcompat.widget.Toolbar</span>
+        <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,androidx.navigation.NavController,androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">Toolbar</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> When using a <code class="language-plaintext highlighter-rouge">Toolbar</code>, <strong>Navigation automatically handles click events for the Navigation button, so you do not need to override</strong> <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity#onSupportNavigateUp%28%29"><code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code></a>.</p>
+
+<h3 id="include-collapsingtoolbarlayout">Include CollapsingToolbarLayout</h3>
+
+<p><img src="/assets/images/android-collapsing-toolbar-default-output.gif" alt="android-collapsing-toolbar-default-output.gif" /></p>
+
+<p>To include a <code class="language-plaintext highlighter-rouge">CollapsingToolbarLayout</code> with your Toolbar:</p>
+
+<p>1) first define the Toolbar and surrounding layout in your activity, as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    <span class="nt">&lt;com.google.android.material.appbar.AppBarLayout</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"@dimen/tall_toolbar_height"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;com.google.android.material.appbar.CollapsingToolbarLayout</span>
+            <span class="na">android:id=</span><span class="s">"@+id/collapsing_toolbar_layout"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+            <span class="na">app:contentScrim=</span><span class="s">"?attr/colorPrimary"</span>
+            <span class="na">app:expandedTitleGravity=</span><span class="s">"top"</span>
+            <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|exitUntilCollapsed|snap"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;androidx.appcompat.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:layout_collapseMode=</span><span class="s">"pin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;</span>
+    <span class="nt">&lt;/com.google.android.material.appbar.AppBarLayout&gt;</span>
+
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    ...
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28androidx.appcompat.widget.Toolbar,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">layout</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">CollapsingToolbarLayout</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">collapsing_toolbar_layout</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">toolbar</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">Toolbar</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">toolbar</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="n">layout</span><span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">toolbar</span><span class="p">,</span> <span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="action-bar">Action bar</h3>
+
+<p>To add navigation support to the default action bar:</p>
+
+<p>1) call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupActionBarWithNavController%28androidx.appcompat.app.AppCompatActivity,%20androidx.navigation.NavController,%20androidx.navigation.ui.AppBarConfiguration%29"><code class="language-plaintext highlighter-rouge">setupActionBarWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below.</p>
+
+<p><strong>Note</strong>: you need to declare your <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code> outside of <code class="language-plaintext highlighter-rouge">onCreate()</code>, since you also use it when overriding <code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">lateinit</span> <span class="kd">var</span> <span class="py">appBarConfiguration</span><span class="p">:</span> <span class="nc">AppBarConfiguration</span>
+
+<span class="o">..</span><span class="p">.</span>
+
+<span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">)</span>
+    <span class="nf">setupActionBarWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span> <span class="n">appBarConfiguration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>2) Next, override <code class="language-plaintext highlighter-rouge">onSupportNavigateUp()</code> to handle Up navigation:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onSupportNavigateUp</span><span class="p">():</span> <span class="nc">Boolean</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">navController</span><span class="p">.</span><span class="nf">navigateUp</span><span class="p">(</span><span class="n">appBarConfiguration</span><span class="p">)</span>
+            <span class="p">||</span> <span class="k">super</span><span class="p">.</span><span class="nf">onSupportNavigateUp</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="support-app-bar-variations">Support app bar variations</h3>
+
+<p>Adding the top app bar to your activity works well when the app bar’s layout is similar for each destination in your app. If, however, your top app bar changes substantially across destinations, then consider removing the top app bar from your activity and defining it in each destination fragment, instead.</p>
+
+<p>As an example, one of your destinations may use a standard <code class="language-plaintext highlighter-rouge">Toolbar</code>, while another uses an <code class="language-plaintext highlighter-rouge">AppBarLayout</code> to create a more complex app bar with tabs, as shown in figure 2.</p>
+
+<p><img src="/assets/images/app-bar-variations.png" alt="two top app bar variations; a standard toolbar on the left, and an
+            appbarlayout with a toolbar and tabs on the right" /></p>
+
+<p><strong>Figure 2.</strong> Two app bar variations. On the left, a standard <code class="language-plaintext highlighter-rouge">Toolbar</code>. On the right, an <code class="language-plaintext highlighter-rouge">AppBarLayout</code> with a <code class="language-plaintext highlighter-rouge">Toolbar</code> and tabs.</p>
+
+<p>For more information on how to support app bar variations, see <a href="https://developer.android.com/guide/navigation/integrations/ui#support_app_bar_variations">Support app bar variations</a>.</p>
+
+<h2 id="tie-destinations-to-menu-items">Tie destinations to menu items</h2>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> also provides helpers for tying destinations to menu-driven UI components. <code class="language-plaintext highlighter-rouge">NavigationUI</code> contains a helper method, <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onnavdestinationselected"><code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code></a>, which takes a <a href="https://developer.android.com/reference/android/view/MenuItem"><code class="language-plaintext highlighter-rouge">MenuItem</code></a> along with the <a href="https://developer.android.com/reference/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> that hosts the associated destination. If the <code class="language-plaintext highlighter-rouge">id</code> of the <code class="language-plaintext highlighter-rouge">MenuItem</code> matches the <code class="language-plaintext highlighter-rouge">id</code> of the destination, the <code class="language-plaintext highlighter-rouge">NavController</code> can then navigate to that destination.</p>
+
+<p>If your menu was created as an XML resource file, you can associate the menu items with destinations by matching the <code class="language-plaintext highlighter-rouge">id</code> of the <code class="language-plaintext highlighter-rouge">MenuItem</code> to the <code class="language-plaintext highlighter-rouge">id</code> of the destination. As an example, the XML snippets below define a menu item and a destination with a common <code class="language-plaintext highlighter-rouge">id</code> as <code class="language-plaintext highlighter-rouge">details_page_fragment</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;navigation</span> <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="err">...</span> <span class="nt">&gt;</span>
+
+    ...
+
+    <span class="nt">&lt;fragment</span> <span class="na">android:id=</span><span class="s">"@+id/details_page_fragment"</span>
+         <span class="na">android:label=</span><span class="s">"@string/details"</span>
+         <span class="na">android:name=</span><span class="s">"com.example.android.myapp.DetailsFragment"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;menu</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+
+    ...
+
+    <span class="nt">&lt;item</span>
+        <span class="na">android:id=</span><span class="s">"@+id/details_page_fragment"</span>
+        <span class="na">android:icon=</span><span class="s">"@drawable/ic_details"</span>
+        <span class="na">android:title=</span><span class="s">"@string/details"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/menu&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Alternatively</strong>, if your menu was added programmatically via the Activity’s <code class="language-plaintext highlighter-rouge">onCreateOptionsMenu()</code>, for example, you can associate the menu items with destinations by overriding the Activity’s <code class="language-plaintext highlighter-rouge">onOptionsItemSelected()</code> to call <code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code>, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="nc">MenuItem</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">findNavController</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">.</span><span class="nf">onNavDestinationSelected</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span> <span class="p">||</span> <span class="k">super</span><span class="p">.</span><span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, when a user clicks the <code class="language-plaintext highlighter-rouge">details_page_fragment</code> menu item, the app automatically navigates to the corresponding destination with the same <code class="language-plaintext highlighter-rouge">id</code>.</p>
+
+<h2 id="add-a-navigation-drawer">Add a navigation drawer</h2>
+
+<p>The navigation drawer is a UI panel that shows your app’s main navigation menu. The drawer appears when the user touches the drawer icon <img width="19" height="19" src="/assets/images/be0d9414288b4669986d6a47f8dc5022.png" /> in the app bar or when the user swipes a finger from the left edge of the screen.</p>
+
+<p><img src="/assets/images/7bed2e3467f8454fbb794463ef6290ee.png" alt="an open drawer displaying a navigation menu" /></p>
+
+<p><strong>Figure 3.</strong> An open drawer displaying a navigation menu.</p>
+
+<p>The drawer icon is displayed on all <a href="#appbarconfiguration"><em>top-level destinations</em></a> that use a <code class="language-plaintext highlighter-rouge">DrawerLayout</code>.</p>
+
+<p>To add a navigation drawer:</p>
+
+<p>1) first declare a <a href="https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout"><code class="language-plaintext highlighter-rouge">DrawerLayout</code></a> as the root view. Inside the <code class="language-plaintext highlighter-rouge">DrawerLayout</code>, add a layout for the main UI content and another view that contains the contents of the navigation drawer.</p>
+
+<p>For example, the following layout uses a <code class="language-plaintext highlighter-rouge">DrawerLayout</code> with two child views: a <a href="https://developer.android.com/reference/androidx/navigation/fragment/NavHostFragment"><code class="language-plaintext highlighter-rouge">NavHostFragment</code></a> to contain the main content and a <a href="https://developer.android.com/reference/com/google/android/material/navigation/NavigationView"><code class="language-plaintext highlighter-rouge">NavigationView</code></a> for the contents of the navigation drawer.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!-- Use DrawerLayout as root container for activity --&gt;</span>
+<span class="nt">&lt;androidx.drawerlayout.widget.DrawerLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/drawer_layout"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Layout to contain contents of main body of screen (drawer will slide over this) --&gt;</span>
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:name=</span><span class="s">"androidx.navigation.fragment.NavHostFragment"</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:defaultNavHost=</span><span class="s">"true"</span>
+        <span class="na">app:navGraph=</span><span class="s">"@navigation/nav_graph"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Container for contents of drawer - use NavigationView to make configuration easier --&gt;</span>
+    <span class="nt">&lt;com.google.android.material.navigation.NavigationView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
+        <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/androidx.drawerlayout.widget.DrawerLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, connect the <a href="https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout"><code class="language-plaintext highlighter-rouge">DrawerLayout</code></a> to your navigation graph by passing it to <code class="language-plaintext highlighter-rouge">AppBarConfiguration</code>, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">appBarConfiguration</span> <span class="p">=</span> <span class="nc">AppBarConfiguration</span><span class="p">(</span><span class="n">navController</span><span class="p">.</span><span class="n">graph</span><span class="p">,</span> <span class="n">drawerLayout</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> When using <code class="language-plaintext highlighter-rouge">NavigationUI</code>, the <a href="#top-app-bar">top app bar</a> helpers <strong>automatically transition between the drawer icon and the Up icon as the current destination changes</strong>. You don’t need to use <a href="https://developer.android.com/reference/androidx/appcompat/app/ActionBarDrawerToggle"><code class="language-plaintext highlighter-rouge">ActionBarDrawerToggle</code></a>.</p>
+
+<p>3) Next, in your main activity class, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">NavigationView</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_view</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Setting up the navigation drawer requires that you also set up your navigation graph and menu xml as described in <a href="https://developer.android.com/guide/navigation/navigation-ui#Tie-navdrawer">Tie destinations to menu items</a>.</p>
+
+<p>Starting in <a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha01">Navigation 2.4.0-alpha01</a>, the state of each menu item is saved and restored when you use <code class="language-plaintext highlighter-rouge">setupWithNavController</code>.</p>
+
+<h2 id="bottom-navigation">Bottom navigation</h2>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> can also handle bottom navigation. When a user selects a menu item, the <code class="language-plaintext highlighter-rouge">NavController</code> calls <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#onNavDestinationSelected%28android.view.MenuItem,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">onNavDestinationSelected()</code></a> and <strong>automatically updates the selected item in the bottom navigation bar</strong>.</p>
+
+<p><img src="/assets/images/59bb3750b98a46c199fbe3df75768dc9.png" alt="bottom navigation bar" /></p>
+
+<p><strong>Figure 4.</strong> A bottom navigation bar.</p>
+
+<p>To create a bottom navigation bar in your app:</p>
+
+<p>1) first define the bar in your main activity, as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout&gt;</span>
+    ...
+    <span class="nt">&lt;androidx.fragment.app.FragmentContainerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/nav_host_fragment"</span>
+        <span class="err">...</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;com.google.android.material.bottomnavigation.BottomNavigationView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/bottom_nav"</span>
+        <span class="na">app:menu=</span><span class="s">"@menu/menu_bottom_nav"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>2) Next, in your main activity class, call <a href="https://developer.android.com/reference/androidx/navigation/ui/NavigationUI#setupWithNavController%28com.google.android.material.navigation.NavigationView,%20androidx.navigation.NavController%29"><code class="language-plaintext highlighter-rouge">setupWithNavController()</code></a> from your main activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method, as shown below:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nf">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="o">..</span><span class="p">.</span>
+
+    <span class="kd">val</span> <span class="py">navHostFragment</span> <span class="p">=</span>
+        <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">nav_host_fragment</span><span class="p">)</span> <span class="k">as</span> <span class="nc">NavHostFragment</span>
+    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="n">navHostFragment</span><span class="p">.</span><span class="n">navController</span>
+    <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">BottomNavigationView</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">bottom_nav</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setupWithNavController</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Setting up bottom navigation requires that you also set up your navigation graph and menu xml as described in <a href="https://developer.android.com/guide/navigation/navigation-ui#Tie-navdrawer">Tie destinations to menu items</a>.</p>
+
+<p>Starting in <a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha01">Navigation 2.4.0-alpha01</a>, the state of each menu item is saved and restored when you use <code class="language-plaintext highlighter-rouge">setupWithNavController</code>.</p>
+
+<h2 id="listen-for-navigation-events">Listen for navigation events</h2>
+
+<p>Interacting with the <a href="https://developer.android.com/reference/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> is the primary method for navigating between destinations. The <code class="language-plaintext highlighter-rouge">NavController</code> is responsible for replacing the contents of the <a href="https://developer.android.com/reference/androidx/navigation/NavHost"><code class="language-plaintext highlighter-rouge">NavHost</code></a> with the new destination. In many cases, UI elements—such as a top app bar or other persistent navigation controls like a <code class="language-plaintext highlighter-rouge">BottomNavigationBar</code>—live outside of the <code class="language-plaintext highlighter-rouge">NavHost</code> and need to be updated as you navigate between destinations.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavController</code> offers an <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> interface that is called when the <code class="language-plaintext highlighter-rouge">NavController</code>’s <a href="https://developer.android.com/reference/androidx/navigation/NavController#getCurrentDestination%28%29">current destination</a> or its arguments change. A new listener can be registered via the <a href="https://developer.android.com/reference/androidx/navigation/NavController#addOnDestinationChangedListener%28androidx.navigation.NavController.OnDestinationChangedListener%29"><code class="language-plaintext highlighter-rouge">addOnDestinationChangedListener()</code></a> method. Note that when calling <code class="language-plaintext highlighter-rouge">addOnDestinationChangedListener()</code>, if the current destination exists, it’s immediately sent to your listener.</p>
+
+<p><code class="language-plaintext highlighter-rouge">NavigationUI</code> uses <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> to <strong>make these common UI components navigation-aware</strong>. Note, however, that you can also use <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> on its own to make any custom UI or business logic aware of navigation events.</p>
+
+<p>As an example, you might have common UI elements that you intend to show in some areas of your app while hiding them in others. Using your own <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code>, you can selectively show or hide these UI elements based on the target destination, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">navController</span><span class="p">.</span><span class="nf">addOnDestinationChangedListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">_</span> <span class="p">-&gt;</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">destination</span><span class="p">.</span><span class="n">id</span> <span class="p">==</span> <span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">full_screen_destination</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">toolbar</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">GONE</span>
+       <span class="n">bottomNavigationView</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">GONE</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">toolbar</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">VISIBLE</span>
+       <span class="n">bottomNavigationView</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">VISIBLE</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="argument-based-listeners">Argument-based listeners</h3>
+
+<p>As an alternative, you can also use arguments with default values within the navigation graph, which can be used by the appropriate UI controller to update its state. For example, rather than base the logic in the <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> on the destination ID as per the previous example, we can create an argument in the <code class="language-plaintext highlighter-rouge">NavGraph</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;navigation</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/navigation\_graph"</span>
+    <span class="na">app:startDestination=</span><span class="s">"@id/fragmentOne"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/fragmentOne"</span>
+        <span class="na">android:name=</span><span class="s">"com.example.android.navigation.FragmentOne"</span>
+        <span class="na">android:label=</span><span class="s">"FragmentOne"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span>
+            <span class="na">android:id=</span><span class="s">"@+id/action\_fragmentOne\_to\_fragmentTwo"</span>
+            <span class="na">app:destination=</span><span class="s">"@id/fragmentTwo"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fragment&gt;</span>
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/fragmentTwo"</span>
+        <span class="na">android:name=</span><span class="s">"com.example.android.navigation.FragmentTwo"</span>
+        <span class="na">android:label=</span><span class="s">"FragmentTwo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span>
+            <span class="na">android:name=</span><span class="s">"ShowAppBar"</span>
+            <span class="na">android:defaultValue=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fragment&gt;</span>
+<span class="nt">&lt;/navigation&gt;</span>
+</code></pre></div></div>
+
+<p>This argument isn’t used when <a href="https://developer.android.com/guide/navigation/navigation-navigate">navigating to the destination</a>, but rather as a way to attach additional information to the destination by using the <code class="language-plaintext highlighter-rouge">defaultValue</code>. In this case, the value indicates whether the app bar should be shown when on this destination.</p>
+
+<p>We can now add an <code class="language-plaintext highlighter-rouge">OnDestinationChangedListener</code> in the <code class="language-plaintext highlighter-rouge">Activity</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">navController</span><span class="p">.</span><span class="nf">addOnDestinationChangedListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">arguments</span> <span class="p">-&gt;</span>
+    <span class="n">appBar</span><span class="p">.</span><span class="n">isVisible</span> <span class="p">=</span> <span class="n">arguments</span><span class="o">?.</span><span class="nf">getBoolean</span><span class="p">(</span><span class="s">"ShowAppBar"</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span> <span class="p">==</span> <span class="k">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <a href="https://developer.android.com/reference/kotlin/androidx/navigation/NavController"><code class="language-plaintext highlighter-rouge">NavController</code></a> invokes this callback whenever the navigation destination changes. The <code class="language-plaintext highlighter-rouge">Activity</code> can now update the state or visibility of the UI components that it owns based upon the arguments received in the callback.</p>
+
+<p>One advantage of this approach is that the <code class="language-plaintext highlighter-rouge">Activity</code> sees only the arguments in the navigation graph and doesn’t know individual <code class="language-plaintext highlighter-rouge">Fragment</code> roles and responsibilities. Similarly, the individual fragments do not know about the containing <code class="language-plaintext highlighter-rouge">Activity</code> and the UI components that it owns.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/guide/navigation/integrations/ui</li>
+  <li>https://developer.android.com/develop/ui/views/components/appbar</li>
+  <li>https://developer.android.com/develop/ui/views/components/appbar/setting-up</li>
+</ul>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/coding/2025/05/21/android-dev-notes-6-navigation-ui.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

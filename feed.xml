@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2025-10-18T22:00:12+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">笔记：现实中的透视</title><link href="https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world.html" rel="alternate" type="text/html" title="笔记：现实中的透视" /><published>2025-10-16T00:00:00+00:00</published><updated>2025-10-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#图像平面视点和视线方向image-plane-viewpoint--direction-of-view" id="markdown-toc-图像平面视点和视线方向image-plane-viewpoint--direction-of-view">图像平面、视点和视线方向（image plane, viewpoint &amp; direction of view）</a>    <ul>
+      <li><a href="#调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view" id="markdown-toc-调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view">调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）</a></li>
+      <li><a href="#地平线和视点的关系horizon-line-and-viewpoint" id="markdown-toc-地平线和视点的关系horizon-line-and-viewpoint">地平线和视点的关系（Horizon Line and Viewpoint）</a></li>
+    </ul>
+  </li>
+  <li><a href="#透视形变perspective-distortions" id="markdown-toc-透视形变perspective-distortions">透视形变（perspective distortions）</a>    <ul>
+      <li><a href="#透视缩短形变foreshortening-distortions" id="markdown-toc-透视缩短形变foreshortening-distortions">透视缩短形变（Foreshortening Distortions）</a></li>
+      <li><a href="#修正透视形变cures-for-perspective-distortions" id="markdown-toc-修正透视形变cures-for-perspective-distortions">“修正”透视形变（Cures for Perspective Distortions）</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>原文地址：<a href="https://handprint.com/HP/WCL/perspect1.html">https://handprint.com/HP/WCL/perspect1.html</a></p>
+
+<p>系列笔记：</p>
+
+<ol>
+  <li><a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">笔记：现实中的透视</a></li>
+  <li><a href="/drawing/2024/09/13/notes-on-central-perspective.html">笔记：一点透视</a></li>
+  <li><a href="/drawing/2025/09/26/notes-on-2-point-perspective.html">笔记：两点透视</a></li>
+  <li><a href="/drawing/2025/09/28/notes-on-advanced-perspective.html">笔记：高级透视技巧</a></li>
+</ol>
+
+<h2 id="图像平面视点和视线方向image-plane-viewpoint--direction-of-view">图像平面、视点和视线方向（image plane, viewpoint &amp; direction of view）</h2>
+
+<h3 id="调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view">调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）</h3>
+
+<p>假设画面中有一个出现在观察者正前方的物体，当我们在水平方向将direction of view从正前方移向其他方向时，物体在画面中所呈现的图形随即从一点透视变为两点透视。</p>
+
+<p><img src="/assets/images/effect of changing only the direction of view.jpg" alt="effect of changing only the direction of view.jpg" /></p>
+
+<h3 id="地平线和视点的关系horizon-line-and-viewpoint">地平线和视点的关系（Horizon Line and Viewpoint）</h3>
+
+<p>An important and useful fact of linear perspective is that objects at the same height above the ground plane as the viewpoint are intersected in the image plane by the horizon line.</p>
+
+<p><img src="/assets/images/horizon line and viewpoint in landscape perspective.PNG" alt="horizon line and viewpoint in landscape perspective.PNG" /></p>
+
+<h2 id="透视形变perspective-distortions">透视形变（perspective distortions）</h2>
+
+<h3 id="透视缩短形变foreshortening-distortions">透视缩短形变（Foreshortening Distortions）</h3>
+
+<p><img src="/assets/images/foreshortening and the triangular proportions.png" alt="foreshortening and the triangular proportions.png" /></p>
+
+<p><strong>平移产生的透视缩短</strong></p>
+
+<p>In <strong>shift foreshortening</strong>, a two dimensional surface is shifted away from the direction of view (the principal point) but remains parallel to the image plane; the actual surface <em>always</em> appears foreshortened because it is at an oblique angle to the viewpoint.</p>
+
+<p><strong>旋转产生的透视缩短</strong></p>
+
+<p>In <strong>rotation foreshortening</strong>, the surface is rotated so that it is no longer parallel to the image plane; the actual surface may or may not appear foreshortened, depending on whether it is at an oblique or perpendicular angle to the viewpoint.</p>
+
+<p>These different types of foreshortening have different perspective effects.</p>
+
+<p><img src="/assets/images/perspective image of flat forms.png" alt="perspective image of flat forms.png" /></p>
+
+<p><strong>shift foreshortening has no effect on the perspective image of a two dimensional surface parallel to the image plane</strong></p>
+
+<p>在空间中与画面平行的平面图形在保持与画面距离不变的情况下进行任意平移所导致的透视缩短并不改变该图形在画面中的形状和尺寸。换句话说，对于一个空间中的与画面平行的平面图形，将其在其所在的平面上任意挪动，该平面出现在画面中的大小将保持不变，哪怕超出了90度视锥。</p>
+
+<p>The figure above shows the correct perspective projection of an identical row of windows (center). In the top row, the windows are kept parallel to the image plane but become increasingly oblique to the direction of view (<em>shift foreshortening</em>); in the bottom row, the windows are rotated in place to remain perpendicular to the viewpoint, which puts them at an oblique angle to the image plane (<em>rotation foreshortening</em>).</p>
+
+<p>Surprisingly, even though it produces a foreshortened view of the actual two dimensional object, <strong>shift foreshortening has no effect on a perspective image</strong>. A window shifted 45° to one side is exactly the same size <em>on the image plane</em> as a window centered on the direction of view. This occurs because, at the location of the perspective image of the window, <strong>the image plane is also foreshortened</strong> by the same oblique angle of view, and this “secondary” foreshortening matches the foreshortening seen in the surface.</p>
+
+<p>这是因为观察者在观看画面时，画面本身在进入观察者眼里时同样会产生透视缩短，而画面中的图形与观察者眼睛之间的视角倾斜程度（oblique angle of view）刚好使该图形在进入观察者眼睛后投影出正确的透视图形。</p>
+
+<p>In contrast, <strong>rotation foreshortening <em>always alters</em> the perspective image</strong>. The image becomes “distorted” in the direction <em>perpendicular to the axis of rotation,</em> regardless of whether the object is central or peripheral in the circle of view and even when the rotation eliminates any foreshortening in the actual object! Remember: rotation foreshortening is still a completely correct perspective view of the rotated object, when viewed from the center of projection; it just <em>looks wrong</em> when we view the image from farther away.</p>
+
+<p>The objectionable perspective distortions occur in the oblique view of a three dimensional object that has only been shift foreshortened on the image plane. In these cases, what “rotates” is not the plane surface of a two dimensional object but our view of a plane cross section through its three dimensional form.</p>
+
+<p>将一个三维物体（而不是二维的平面图形）的斜视图在图像平面上仅进行“平移缩短”处理时，会出现令人不适的透视形变。在这种情况下，发生“旋转”的不是二维物体的平面表面，而是三维形体中的某个平面截面。</p>
+
+<p><img src="/assets/images/perspective image of rounded forms.png" alt="perspective image of rounded forms.png" /></p>
+
+<p>From <a href="https://en.wikipedia.org/wiki/Perspective_distortion">Wikipedia</a>:</p>
+
+<p><img src="/assets/images/Camera_focal_length_distance_house_animation.gif" alt="Camera_focal_length_distance_house_animation.gif" /></p>
+
+<p>Simulation showing how adjusting the angle of view of a camera, while varying the camera’s distance and keeping the object in frame, results in vastly differing images. At narrow angles and long distances, light rays are nearly parallel, resulting in a “flattened” image. At wide angles and short distances, objects appear foreshortened or distorted.</p>
+
+<h3 id="修正透视形变cures-for-perspective-distortions">“修正”透视形变（Cures for Perspective Distortions）</h3>
+
+<p>古典壁画会尽量将画面保持在60度视锥之内，以避免出现明显的透视形变，影响画面美感。如果画中出现了一定程度的透视形变，画家便会人为的”修正”这些形变。比如在拉斐尔的壁画中，他将画面中的每个人物都以人物自身为视觉中心来按照一点透视进行绘制，脱离了背景的透视形变；他还将右下角本来因为透视形变会变成椭圆形的球体画成了标准的圆形；此外，他会巧妙地中画面中合适的地方安排人物，以遮挡背景中的建筑上可能出现透视形变的部分（比如画面中心的走廊被正前方的两位人物遮住；左右两根立柱的顶部被现实中的圆顶挡住；地面的瓷砖被各种人物遮挡）。</p>
+
+<p><img src="/assets/images/IMG_0098.jpeg" alt="IMG_0098.jpeg" /></p>
+
+<p>All figures are drawn as if centered on the direction of view — that is, with no perspective distortion. This is easiest to see in the two astronomers shown holding celestial globes (at right). Both figures are located at the righthand edge of the fresco, beyond the 30° circle of view. Rather than draw the spheres with the correct but elliptical perspective projections, Raphael simply drew them perfectly round.</p>
+
+<p><img src="/assets/images/IMG_0095.jpeg" alt="IMG_0095.jpeg" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /></entry><entry><title type="html">一点透视中物体大小和物距之间关系</title><link href="https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective.html" rel="alternate" type="text/html" title="一点透视中物体大小和物距之间关系" /><published>2025-10-16T00:00:00+00:00</published><updated>2025-10-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective.html"><![CDATA[<h3 id="距离和物体大小关系的核心几何原理">距离和物体大小关系的核心几何原理</h3>
+
+<p>两个等角三角形的三条边之间的比例是相等的，即边a/边A = 边b/边B = 边c/边C。</p>
+
+<p><img src="/assets/images/angle-of-view.jpg" alt="angle of view" /></p>
+
+<h3 id="当物体处于画面后方更远处时">当物体处于画面后方更远处时</h3>
+
+<p>根据这一公式可以推算出：</p>
+
+<ul>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者1倍视锥半径距离（即物体距离画面0距离）时，其视觉高度为视锥半径的1倍（因为此时该物体的底部处于地面与画面的相交线上，而其顶部位于视平线上，因此其高度在画面中等于视锥半径）；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者2倍视锥半径距离（即物体距离画面1倍距离）时，其视觉高度为视锥半径的1/2；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者3倍视锥半径距离（即物体距离画面2倍距离）时，其视觉高度为视锥半径的1/3；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者4倍视锥半径距离（即物体距离画面3倍距离）时，其视觉高度为视锥半径的1/4；</li>
+</ul>
+
+<p>由此可以得出，当一个高度为视锥半径1倍的物体站在距离观察者n倍 视锥半径距离（即物体距离画面n - 1倍距离) 时，其视觉高度为视锥半径的1 / n。</p>
+
+<h3 id="当物体处于画面跟观察者之间时">当物体处于画面跟观察者之间时</h3>
+
+<p>反过来，也可以推算出：</p>
+
+<ul>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.5倍视锥半径距离（即物体距离画面-0.5倍距离，即距1.6米高的观察者80厘米）时，其视觉高度为视锥半径的2倍；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.25倍 (即0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.75倍距离，即距1.6米高的观察者40厘米）时，其视觉高度为视锥半径的4倍 (即2 * 2)；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.125倍 (即0.5 * 0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.875倍距离，即距1.6米高的观察者20厘米）时，其视觉高度为视锥半径的8倍 (即2 * 2 * 2)；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.0625倍 (即0.5 * 0.5 * 0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.9375倍距离，即距1.6米高的观察者10厘米）时，其视觉高度为视锥半径的16倍 (即2 * 2 * 2 * 2)；</li>
+</ul>
+
+<p>由此可以得出，当一个高度为视锥半径1倍的物体站在距离观察者0.5^n倍 (即n个0.5相乘) 的视锥半径距离（即物体距离画面1 - 0.5^n倍距离）时，其视觉高度为视锥半径的2^n倍 (即n个2相乘)。</p>
+
+<p><img src="/assets/images/relation-between-object-distance-and-its-image-size.png" alt="relation-between-object-distance-and-its-image-size.png" /></p>
+
+<h3 id="物体离画面距离占画面比例画面尺寸速查表">物体离画面距离、占画面比例、画面尺寸速查表：</h3>
+
+<p><img src="/assets/images/object-distance-visual-angle-image-scale.png" alt="object-distance-visual-angle-image-scale.png" /></p>
+
+<h3 id="练习">练习</h3>
+
+<p>地面上的正方形边长为视锥半径长度的0.5倍，距离画面的距离分别为视锥半径的1倍、0、-0.5倍。</p>
+
+<p>可以发现，超出90度视锥后的正方形形变很厉害（60度视锥半径是半径的0.58倍，所以蓝色正方形的大部分区域和黄色正方形已经处在60度视锥以外了，可以看到它们也有不同程度的透视扭曲distortion）。</p>
+
+<p><img src="/assets/images/object-distance-exercise.png" alt="object-distance-exercise.png" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[距离和物体大小关系的核心几何原理]]></summary></entry><entry><title type="html">如何根据画面判断透视类型以及视距、视高和俯仰角度</title><link href="https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html" rel="alternate" type="text/html" title="如何根据画面判断透视类型以及视距、视高和俯仰角度" /><published>2025-10-15T00:00:00+00:00</published><updated>2025-10-15T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#基本概念" id="markdown-toc-基本概念">基本概念</a>    <ul>
+      <li><a href="#画的本质" id="markdown-toc-画的本质">画的本质</a></li>
+      <li><a href="#共同的前提和假设" id="markdown-toc-共同的前提和假设">共同的前提和假设</a></li>
+      <li><a href="#视距" id="markdown-toc-视距">视距</a></li>
+      <li><a href="#视高" id="markdown-toc-视高">视高</a></li>
+      <li><a href="#俯仰角度" id="markdown-toc-俯仰角度">俯仰角度</a>        <ul>
+          <li><a href="#对比调整视高与调整俯仰角度对画面透视产生的影响" id="markdown-toc-对比调整视高与调整俯仰角度对画面透视产生的影响">对比调整视高与调整俯仰角度对画面透视产生的影响</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#确定画面的关键透视点" id="markdown-toc-确定画面的关键透视点">确定画面的关键透视点</a>    <ul>
+      <li><a href="#如何根据画面内容确定一点透视的关键点中央消失点和视距等" id="markdown-toc-如何根据画面内容确定一点透视的关键点中央消失点和视距等">如何根据画面内容确定一点透视的关键点（中央消失点和视距等）</a></li>
+      <li><a href="#如何根据画面内容确定两点透视的关键点消失点和direction-of-view等" id="markdown-toc-如何根据画面内容确定两点透视的关键点消失点和direction-of-view等">如何根据画面内容确定两点透视的关键点（消失点和direction of view等）</a>        <ul>
+          <li><a href="#如何确定median-line" id="markdown-toc-如何确定median-line">如何确定median line</a></li>
+        </ul>
+      </li>
+      <li><a href="#实战演练" id="markdown-toc-实战演练">实战演练</a></li>
+    </ul>
+  </li>
+  <li><a href="#如何根据画面判断镜头的视距视高和俯仰角度" id="markdown-toc-如何根据画面判断镜头的视距视高和俯仰角度">如何根据画面判断镜头的视距、视高和俯仰角度</a>    <ul>
+      <li><a href="#根据视距物体画面大小和实际大小确定物体与观察者的实际距离" id="markdown-toc-根据视距物体画面大小和实际大小确定物体与观察者的实际距离">根据视距、物体画面大小和实际大小确定物体与观察者的实际距离</a></li>
+      <li><a href="#根据物体画面大小和实际大小确定视距以及其他物体的画面大小" id="markdown-toc-根据物体画面大小和实际大小确定视距以及其他物体的画面大小">根据物体画面大小和实际大小确定视距以及其他物体的画面大小</a></li>
+    </ul>
+  </li>
+  <li><a href="#参考" id="markdown-toc-参考">参考</a></li>
+</ul>
+
+<p><a href="/tag/perspective">透视系列笔记</a></p>
+
+<h2 id="基本概念">基本概念</h2>
+
+<h3 id="画的本质">画的本质</h3>
+
+<p>一幅画的本质是一种视错觉，它试图模仿的是当一位观察者站在特定的视高和视距下，视线垂直于图像平面时，透过图像所在的画框（这个透明的窗户）所看到的三维空间的样子。</p>
+
+<h3 id="共同的前提和假设">共同的前提和假设</h3>
+
+<p>每一副画作都有一些共同的前提和假设：</p>
+<ol>
+  <li>观察者眼睛所看到的90度视锥的半径等于观察者的视距（这是基本数学原理）；</li>
+  <li>为了避免画面出现明显的透视扭曲 (perspective distortion) ，图像画面通常会被安排在60度视锥之内；</li>
+  <li>观察者的视线永远是垂直于图像平面的（画框可以相对于地面有各种不同的俯仰角度）；</li>
+</ol>
+
+<h3 id="视距">视距</h3>
+
+<p>作者可以通过选择不同的视距来控制90度视锥所能看到的三维空间的范围，更长的视距意味着观众通过同样尺寸的画框所能看到的三维空间更小，因为画面的视觉角度更窄。</p>
+
+<h3 id="视高">视高</h3>
+
+<p>根据透视的平移缩放规则可知，画面的视高是可以任意设定的，不用一定等于视距（比如当观察者趴在地上或者站在高楼上）。90度视锥假设视高等于视距只是为了方便根据90度视锥建立ground line以及定位翻折后的视点（viewpoint）。实际作画中可以任意选择视高和视距，只要画面不要超出60度视锥即可。</p>
+
+<p>作者可以为画面选择选择不同的视高，以营造出不同身高的观察者或者观察者视线处在不同水平高度（比如匍匐在地面或者站在楼顶）时透过画框所看到的三维空间的样子。</p>
+
+<p><img src="/assets/images/horizon line and viewpoint in landscape perspective.PNG" alt="horizon line and viewpoint in landscape perspective.PNG" /></p>
+
+<h3 id="俯仰角度">俯仰角度</h3>
+
+<p>画框这个透明的窗户可以相对于地面有各种不同的俯仰角度，但观察者的视线永远是垂直于图像平面的（否则为了真正欣赏一副作品，观众就必须先找到作家设定的特定的观察角度，会很麻烦）。</p>
+
+<p>如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。因此一个快速判断镜头是否相对于地面有俯仰角度的办法是，检查垂直于地面的物体（比如建筑物）是否出现透视现象（寻找消失点，即多条垂直于地面的线条之间的交点）。</p>
+
+<p>调整俯仰角度会在画面垂直方向新增一个消失点：</p>
+
+<p><img src="/assets/images/looking downward.PNG" alt="looking downward.PNG" /></p>
+
+<p>如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的<strong>俯仰角度</strong>（参考<a href="/drawing/2024/09/13/notes-on-central-perspective.html">倾斜面和坡斜面</a>一节）。</p>
+
+<h4 id="对比调整视高与调整俯仰角度对画面透视产生的影响">对比调整视高与调整俯仰角度对画面透视产生的影响</h4>
+
+<p><img src="/assets/images/change-view-height-vs-view-angle.png" alt="change-view-height-vs-view-angle.png" /></p>
+
+<p>对比初始画面（图一）与低视高画面（图二）可以得出，在视线角度保持不变的情况下将视点进行任意的上下左右平移后，画面的透视特征将保持不变（包括center of view，视平线、地平线和消失点的位置等），画面中同一个物体的所有平行于画面的平面大小都将保持不变。（参考平移透视缩短）。</p>
+
+<p>对比初始画面（图一）与俯视画面（图三）可以得出，如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。</p>
+
+<p><img src="/assets/images/change-view-height-vs-view-angle-continued.png" alt="change-view-height-vs-view-angle-continued.png" /></p>
+
+<p>对比高视高画面（图一）与俯视画面（图二）可以得出，当视线角度发生变化后，画面中的同一个物体最多只会有一条边可以在画面中保持大小位置不变，其他部位的大小和位置都会发生变化。</p>
+
+<p><img src="/assets/images/2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png" alt="2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png" /></p>
+
+<p>对比高视高画面（图一）与俯视画面（图二）可以得出，当视线角度发生变化后，即使同一个物体在画面的水平方向高度保持不变，其他部位的大小和位置依然会发生变化（比如物体的宽度会变，物体侧边线条的角度也会发生变化。整个画面都展现出同样的变化。</p>
+
+<h2 id="确定画面的关键透视点">确定画面的关键透视点</h2>
+
+<h3 id="如何根据画面内容确定一点透视的关键点中央消失点和视距等">如何根据画面内容确定一点透视的关键点（中央消失点和视距等）</h3>
+
+<p><img src="/assets/images/1PP reconstruction of the center of projection.PNG" alt="1PP reconstruction of the center of projection.PNG" /></p>
+
+<ol>
+  <li>根据画面中的纵深线（orthogonals，即垂直于画面的线条）确定中央消失点；</li>
+  <li>根据中央消失点和画面中地面上的元素确定地平线（通常等于视平线）以及median line的位置；</li>
+  <li>根据画面中的对角线（diagonals，与median line之间夹角45度的线条，比如地面上平行于ground line的正方形瓷砖的对角线）确定dvp（对角线消失点）；</li>
+  <li>找到了dvp也就顺便确定了view distance（视距）；</li>
+  <li>有了view distance（视距）和中央消失点，便可以确定90度和60度视锥的大小。</li>
+</ol>
+
+<p>至此一点透视的关键点就都确定了下来。</p>
+
+<h3 id="如何根据画面内容确定两点透视的关键点消失点和direction-of-view等">如何根据画面内容确定两点透视的关键点（消失点和direction of view等）</h3>
+
+<p><img src="/assets/images/2PP reconstruction of the center of projection.PNG" alt="2PP reconstruction of the center of projection.PNG" /></p>
+
+<ol>
+  <li>根据画面中的直角线条确定两个vanishing points；</li>
+  <li>将2个vanishing points连线即可得到视平线（通常等于视平线）；</li>
+  <li>根据画面中的纵深线（orthogonals，即垂直于画面的线条）找到direction of view并确定median line的位置；</li>
+  <li>在median line上找到一个点，它与两个vanishing points的连线正好是90度，而这个点便是向上翻折后的视点（folded viewpoint）；</li>
+  <li>找到了folded viewpoint也就顺便确定了view distance（视距）和principal point（观察者眼睛的位置）；</li>
+  <li>有了view distance（视距）和principal point，便可以确定90度和60度视锥的大小。</li>
+</ol>
+
+<p>至此两点透视的关键点就都确定了下来。</p>
+
+<h4 id="如何确定median-line">如何确定median line</h4>
+
+<p><strong>Median Line.</strong> This is parallel to the side edges of a rectangular image format, or perpendicular to the floor when the painting is correctly hung. <strong>The median line is nearly always through the center of the image format.</strong></p>
+
+<blockquote>
+  <p>Orthogonals, if visible, will point to the direction of view on the horizon line; if there are no orthogonals, then the median line of the format can be used to locate the dv.</p>
+
+  <p>(if there are no orthogonals) The median line and direction of view (dv) are arbitrarily located on the midline of the painting.</p>
+</blockquote>
+
+<p><strong>如果可以在画面中找到纵深线（orthogonals，即垂直于画面的线条），则可以根据纵深线与地平线的交点确定direction of view，进而确定median line的位置</strong>；如果画面中没有明显的垂直于画面的线条（即纵深线，Orthogonals），则可以将垂直平分画面的竖线作为median line，因为median line几乎总是穿过画面中心的（画家通常都会将center of view设置于画面的垂直中心线上，因为观察者在欣赏画作时会很自然地站在画面的正前方）。</p>
+
+<h3 id="实战演练">实战演练</h3>
+
+<p><img src="/assets/images/perspective analysis.jpg" alt="perspective analysis.jpg" /></p>
+
+<h2 id="如何根据画面判断镜头的视距视高和俯仰角度">如何根据画面判断镜头的视距、视高和俯仰角度</h2>
+
+<ol>
+  <li>先确定画面的关键透视点（消失点、地平线、center of view等）；</li>
+  <li>找到（一点透视的）dvp或者（两点透视的）folded viewpoint后便确定了<strong>视距</strong>；</li>
+  <li>画面中任何处于地平线上的物体（比如人的头部、树的枝干或者建筑物的墙壁），其距离地面的垂直距离等于观察者眼睛与地面的距离（即<strong>视高</strong>），然后可以根据<a href="/drawing/2024/09/13/notes-on-central-perspective.html">距离和大小</a>来推算出实际的视高；</li>
+  <li>检查垂直于地面的物体（比如建筑物）是否出现透视现象（即是否存在垂直方向的消失点），如果存在，则可以根据地平线与视平线在dvp处的夹角确定画面的<strong>俯仰角度</strong>（参考<a href="/drawing/2024/09/13/notes-on-central-perspective.html">倾斜面和坡斜面</a>一节）；</li>
+</ol>
+
+<h3 id="根据视距物体画面大小和实际大小确定物体与观察者的实际距离">根据视距、物体画面大小和实际大小确定物体与观察者的实际距离</h3>
+
+<p><img src="/assets/images/reduction in Bierstadts Looking Up the Yosemite Valley.PNG" alt="reduction in Bierstadts Looking Up the Yosemite Valley.PNG" /></p>
+
+<p>如果已知观察者的视距（比如根据画幅的尺寸或者展览馆里作品的摆放来推测理想的欣赏距离，即为视距），且已知物体画面大小（直接在画面上测量）和物体的实际大小（根据现实生活中可以查到的物体数据），根据<a href="/drawing/2024/09/13/notes-on-central-perspective.html">距离和大小</a>，我们可以计算出物体在三维空间中与画家（或者说假象的观察者）的实际距离。</p>
+
+<h3 id="根据物体画面大小和实际大小确定视距以及其他物体的画面大小">根据物体画面大小和实际大小确定视距以及其他物体的画面大小</h3>
+
+<ol>
+  <li>根据心中的构图思路画一幅草图，此时不用考虑透视问题（比如，视距，视高，视锥角度等）；</li>
+  <li>在画面外围画一个圆，将画面包围起来，以这个圆为60度视锥（也可以是25-60度之间的任意角度，这样可以保证画面内不会出现夸张的透视形变），在画面中心作一条垂直线作为median line；</li>
+  <li>在60度视锥外围画一个90度视锥（与60度视锥同心，半径是60度视锥的1.72倍，即1 / 0.58）；</li>
+  <li>根据90度视锥框架的几何属性可知，90度视锥的半径即等于视距；</li>
+  <li>在90度视锥下方画一条平行于地平线的水平线，即ground line（如果找不到地平线，也可以在90度视锥下方画一条水平线，因为它与ground line同样处在画面所在的平面中，所以可以作为一条与ground line等比例的参考线条）；</li>
+  <li>将画面中已知尺寸的物体根据透视规则移动到ground line上（并进行相应的缩放），测量出它在ground line上的实际尺寸，即可根据画面和物体大小比例关系计算出画面的视距长度（比如，已知一个人的头部高度是20厘米，将画面中此人的头部移动缩放到ground line后，假设测量出其头部的实际尺寸为10厘米，那么可知整幅画面相比与理论尺寸缩小了2倍，而假如测量出的视距大小为20厘米，那么画面的实际视距即为40厘米）；</li>
+  <li>至此，便可将任意其他物体的实际尺寸按照画面缩放倍数在ground line上画出同等长度的线段，然后根据透视规则，将其移动缩放到画面空间中的任意位置。</li>
+</ol>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+  <li><a href="https://handprint.com/HP/WCL/perspect2.html">https://handprint.com/HP/WCL/perspect2.html</a></li>
+  <li><a href="https://handprint.com/HP/WCL/perspect3.html">https://handprint.com/HP/WCL/perspect3.html</a></li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /></entry><entry><title type="html">笔记：高级透视技巧</title><link href="https://goooooouwa.github.io/drawing/2025/09/28/notes-on-advanced-perspective.html" rel="alternate" type="text/html" title="笔记：高级透视技巧" /><published>2025-09-28T00:00:00+00:00</published><updated>2025-09-28T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/09/28/notes-on-advanced-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/09/28/notes-on-advanced-perspective.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#复杂平面图形的透视画法" id="markdown-toc-复杂平面图形的透视画法">复杂平面图形的透视画法</a>    <ul>
+      <li><a href="#圆的透视画法projecting-a-circle" id="markdown-toc-圆的透视画法projecting-a-circle">圆的透视画法（Projecting A Circle）</a></li>
+      <li><a href="#椭圆的构造ellipse-construction" id="markdown-toc-椭圆的构造ellipse-construction">椭圆的构造（Ellipse Construction）</a></li>
+      <li><a href="#人体透视" id="markdown-toc-人体透视">人体透视</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>原文地址：<a href="https://handprint.com/HP/WCL/perspect5.html">https://handprint.com/HP/WCL/perspect5.html</a></p>
+
+<p>系列笔记：</p>
+
+<ol>
+  <li><a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">笔记：现实中的透视</a></li>
+  <li><a href="/drawing/2024/09/13/notes-on-central-perspective.html">笔记：一点透视</a></li>
+  <li><a href="/drawing/2025/09/26/notes-on-2-point-perspective.html">笔记：两点透视</a></li>
+  <li><a href="/drawing/2025/09/28/notes-on-advanced-perspective.html">笔记：高级透视技巧</a></li>
+</ol>
+
+<h2 id="复杂平面图形的透视画法">复杂平面图形的透视画法</h2>
+
+<h3 id="圆的透视画法projecting-a-circle">圆的透视画法（Projecting A Circle）</h3>
+
+<p><strong>不使用平面图来构造圆形的透视（Circle Without a Plan）</strong></p>
+
+<p><img src="/assets/images/projecting a circle without a plan.png" alt="projecting a circle without a plan.png" /></p>
+
+<p>构造步骤：</p>
+
+<ol>
+  <li>在画面中画出透视的正方形</li>
+  <li>在透视的正方形内逐步构造出图中的辅助线</li>
+  <li>根据辅助线构造出透视中的圆形</li>
+</ol>
+
+<p><strong>使用平面图来构造圆形的透视（Circle With a Plan）</strong></p>
+
+<p><img src="/assets/images/projecting a circle with a plan.png" alt="projecting a circle with a plan.png" /></p>
+
+<p>构造步骤：</p>
+
+<ol>
+  <li>在平面图中画出正方形和内嵌的圆形</li>
+  <li>逐步画出辅助线</li>
+  <li>将正方形和辅助线投射到画面中</li>
+  <li>根据辅助线构造出透视中的圆形</li>
+</ol>
+
+<h3 id="椭圆的构造ellipse-construction">椭圆的构造（Ellipse Construction）</h3>
+
+<p>每一个椭圆都可以通过它的高度和宽度来描述，这两个维度分别称为长轴（最长的方向）和短轴（与长轴垂直的方向）。由此可以得到两种简单的椭圆构造方法，以及一种估算圆在透视中缩短程度的计算方式。</p>
+
+<p><strong>根据固定的高度和宽度来构造椭圆的3种方法</strong></p>
+
+<p>在 <strong>第一种方法（A）</strong> 中，高度和宽度先定义一个矩形，然后用两条线将矩形等分为四个象限。接着，将矩形内部的一条水平线段（相当于椭圆的长轴）和矩形外部的一条垂直线段（长度等于椭圆的短轴）按同样的比例划分为相等的部分（这些点之间不必保持相等的间隔距离，只需这些点在两条线段上的比例相等即可，比如均为所在线段的4分之一长度）。然后，从中线上的两个点 a 和 b 分别向这些分点引线，如图所示。对应直线的交点定义了椭圆在一个象限中的点。最后，将这些关键点用徒手曲线或曲线板分段连接，并复制到其他三个象限中，即可得到完整椭圆。</p>
+
+<p><img src="/assets/images/ellipse-construction-method-a.png" alt="ellipse-construction-method-a.png" /></p>
+
+<p>另一种更高效的方法是<strong>游标法（Trammel Method，方法 B）</strong>。</p>
+
+<p>具体做法是：先确定椭圆的外接矩形，然后将长轴和短轴的长度转移到一条硬纸板或厚纸条上（保持长短轴的某一端对齐，见右图）。由于长轴和短轴长度不相等，在另一端会留下一个间隔（洋红色线所示）。将这两个端点分别与椭圆矩形的短轴和长轴对齐，此时便可以直接在纸条另一端的对齐点标记出椭圆的圆周所在的位置。此方法快速，但当长轴和短轴逐渐接近相等（即椭圆趋近圆形）时，精度会显著下降。</p>
+
+<p><img src="/assets/images/ellipse-construction-method-b.png" alt="ellipse-construction-method-b.png" /></p>
+
+<p><strong>第三种方法（C）</strong> 使用两个以点 a 为圆心的同心圆。</p>
+
+<p>先画出大圆和小圆，然后用两条互相垂直的直线将其四等分，这两条直线定义了椭圆的长轴和短轴。接着，从点 a 向外任意画若干条放射线，使它们分别交小圆和大圆，得到成对的交点。然后从这些交点分别作平行于椭圆的长轴或短轴的线段；这些线的交点便是该椭圆在这个象限内所在的点。此方法的优点在于：如果将“辐射线”以及水平、垂直辅助线延伸穿过整个大圆，就能标定出完整椭圆的全部圆周。</p>
+
+<p><img src="/assets/images/ellipse-construction-method-c.png" alt="ellipse-construction-method-c.png" /></p>
+
+<p>然而，这里出现了一个问题。从下面的圆形构造图可以看出，椭圆的中心并不与图像方形的中心（即方形对角线的交点）重合，因为透视缩短导致方形的后半部分看起来比前半部分略小。因此，表示椭圆中心的黑色十字并没有位于对角线交点，而是稍微偏下（靠前）的位置。</p>
+
+<p><img src="/assets/images/center of the ellipse is not coincident with the center of the image square.png" alt="center of the ellipse is not coincident with the center of the image square.png" /></p>
+
+<p>这与另一个视觉差异本质相同：球体的可见宽度（等于椭圆长轴在图像中的宽度）与球体直径的视觉角度（等于透视方形中横跨中心的宽度）之间的差异（见下图）。这个问题会在下面“球体投影”章节中进一步讨论。遗憾的是，<strong>除了在平面图中按比例绘制外，没有一种简单的方法能直接缩放椭圆的宽度</strong>，因为<strong>椭圆的长轴并不与正方形的中心横截线重合</strong>，而<strong>椭圆与正方形边框相切的点通常也不位于椭圆的长轴上</strong>。但在小于20°视角范围的透视圆中，这种误差极小，可以忽略不计（这里的视角范围不是指下文提到的椭圆自身的角度，而是椭圆在画面中的视觉角度，这与椭圆的大小以及其与画面距离有关，不是固定不变的；而下文提到的椭圆自身的角度对同一个椭圆而言是一个固定值，有相关的定义，不受观察距离影响）。</p>
+
+<p><img src="/assets/images/discrepancy between the visible circumference and angular diameter of a sphere.png" alt="discrepancy between the visible circumference and angular diameter of a sphere.png" /></p>
+
+<p>这也是为什么建筑师们通常习惯使用椭圆模板以及依赖于计算机绘图软件的一个主要原因。椭圆模板包含大量切割好的椭圆，每一个都比前一个略大，并且都按照一个标准视角比例缩放，适配到包含圆的平面。绘图者只需选择与所需长短轴比例最接近的模板角度，然后再挑选最符合图像大小的椭圆切口即可。</p>
+
+<p><img src="/assets/images/ellipse-template.PNG" alt="ellipse-template.PNG" /></p>
+
+<p>椭圆模板角度的定义是椭圆焦点到短轴顶点的连线与长轴之间的夹角。注意这里的角度虽然也是通常范围从 0°（一条平直的线）到 90°（一个完整的圆），但它与该椭圆在透视画面中的视觉角度（angle of view）是两个完全不同的概念。以下图蓝色的45°椭圆为例。首先，将一段长度与长轴相等的线段的一端与短轴顶点重合、另一端与长轴相交，根据椭圆焦点的公式（长轴^2 = 短轴^2 + 焦点到圆心距离^2）可知，相交得到的点即该椭圆的焦点。椭圆模板的角度指的就是这条线段与长轴之间的夹角。图中显示该椭圆长轴为30，短轴为21.5，根据椭圆公式可以求得焦点距圆心距离也等于21.5（这里是一个等边直角三角形），进而可以求得焦点与短轴的连线与长轴的夹角，即椭圆的角度为45度。</p>
+
+<p><img src="/assets/images/yJcOC.png" alt="yJcOC.png" /></p>
+
+<p>有一种方法可以根据圆的透视缩短程度（即椭圆的视觉角度）来大致估算出应该使用多少角度的椭圆模板来画出对应的椭圆，该方法由circle of view中的三角关系（trigonometric tangent）计算得到：</p>
+
+<p><img src="/assets/images/angle-of-view-at-x.png" alt="angle-of-view-at-x.png" /></p>
+
+<p>angle of view的定义即观察者在特定位置观察画面中的物体时物体所占据的视觉角度：</p>
+
+<p><img src="/assets/images/angle-of-view.jpg" alt="angle-of-view" /></p>
+
+<p>将地面上的正方形放在视觉中轴线（将viewpint向上翻折后与principal point相连的线）上（令其中心线与中轴线重合），从接近观察者的这一面的一个角引出一条竖直线 A，再从斜对面的后角引出一条水平线 B；这两条线相交后形成一个直角三角形。然后用直尺测量 A 与 B 的长度，并取其比值的反正切（arctangent）。根据angle of view的定义，这个角度就是从点 x 处观察地面上该正方形平面的视觉角度（angle of view）。该角度可用来<strong>粗略估算</strong>出比较合适的椭圆模板角度（两者并不相等，这个方法只是求一个近似值）。</p>
+
+<p>不过，建筑师们通常不会去做这些计算：他们只会<strong>尝试不同的模板，直到在角度和尺寸上找到视觉上最接近的匹配为止</strong>。</p>
+
+<h3 id="人体透视">人体透视</h3>
+
+<p>艺术家在透视绘画中遇到的最困难的问题，无疑是人体。但这也是最早被尝试解决的问题之一。一个复杂但精确的方法见于皮耶罗·德拉·弗朗切斯卡的《论绘画透视》（De Prospectiva pingendi，约 1474 年），而阿尔布雷希特·丢勒在《人体比例四书》（Vier Bücher von menschlicher Proportion，1528 年）中则提出了比较粗糙但高效的方法。16 世纪时，这个问题真正“火热”起来——因为大量天顶壁画里那些飞向天堂的圣徒与天使需要仔细分析人体的透视缩短（包括人的脚底）。到 17 世纪，这类研究已成为绘画学习的常规课程，追随丁托列托的创作风格。</p>
+
+<p>将人体进行透视的最简单的方法是：先通过写生或或临摹一张合适角度和姿态的照片。然后把这幅人物作画按比例缩放到所需大小，并描摹到画面上的指定位置即可。</p>
+
+<p><img src="/assets/images/perspective drawing using a viewing grid.PNG" alt="perspective drawing using a viewing grid.PNG" /></p>
+
+<p>使用观察网格进行透视绘制</p>
+
+<p>一种更严格更“较真”的方法是：将人体的三维点映射到透视空间里。传统上大体有三种方法：</p>
+
+<ol>
+  <li>截面投影法 (sectional projection)</li>
+  <li>体块投影法 (volumetric projection)</li>
+  <li>骨架投影法 (armature projection)</li>
+</ol>
+
+<p><strong>截面投影法 (sectional projection)</strong></p>
+
+<p>皮耶罗使用的就是截面投影法：他将人头划分为一系列平行的矢状面，然后像我们之前投射八边形平面那样，把每个截面的关键点投射出来。只不过这里的这些方格在垂直方向上的间距要与解剖学上各截面之间的实际距离相对应。这样就形成了一个由点构成的“笼子”，最后只需把这些点还原为面部特征，就能重建出整张脸。</p>
+
+<p><strong>体块投影法 (volumetric projection)</strong></p>
+
+<p>第二种方法是体块投影法：它先把人体分解成一系列相互连接的椭圆体、圆柱体、方盒子或棱锥，然后在透视中投射这些简单形体的主要棱角或轴线，接着再围绕它们重建人体。这种方法在巴洛克时期很流行，甚至一直延续到 20 世纪的人体绘画和透视教材中。我非常不喜欢这种方法，因为它彻底破坏了人体那种富有张力、关节灵活、又浑圆有力的特征。我认为，<strong>积极的人体写生绘画训练才是更好的方法，它能让人从不同角度真正理解身体的形态与重量感</strong>。</p>
+
+<p><strong>骨架投影法 (armature projection)</strong></p>
+
+<p>如果你已经具备了对人体的基本理解，那么骨架投影法就是一个非常高效的方式，可以在透视中把握人体比例。你真正需要的，只是一个在美术商店里随处可见的那种木制人体模型。</p>
+
+<p><img src="/assets/images/projecting the human figure from an art school mannekin.png" alt="projecting the human figure from an art school mannekin.png" /></p>
+
+<p>上图展示了这种方法的基本步骤：</p>
+
+<ol>
+  <li>先把木偶摆放成所需的姿势，然后把它放在玻璃桌面或投影架上。用天花板灯或尽可能高处的聚光灯，把木偶的影子投射到人物下方的一块硬质白卡纸上。利用影子作为参照，在卡纸上标记出主要关节的位置。</li>
+  <li>接着，在木偶的一侧、与木偶等高、并且与人体主轴成直角的地方，放置一盏聚光灯或台灯，距离要和天花板灯与木偶的距离相同。然后在木偶身后，支撑另一块硬质白卡纸，距离与先前下方卡纸相同。用同样的方法标记出关节的位置。</li>
+  <li>从这两张卡纸中选择其中关节间距更合理的一张卡纸作为主视面，把关节点要么描到方格纸上，要么直接使用卡纸进行测量：测量从每个点到卡纸的一条长边和一条短边的距离（作为X轴和Z轴的比例数据）。再从另一张卡纸上，取一组点到其长边的距离（作为Y轴的比例数据）。</li>
+  <li>接着，用前面介绍的方法把这些数据缩放、旋转并转移到一个比例尺上，然后投射到透视空间中（的X、Y、Z轴上去）。</li>
+  <li>最后再根据这些关节位置，通过手绘将透视后的身体形态描绘出来。</li>
+</ol>
+
+<p><img src="/assets/images/drawing-spider-using-armature-projection.PNG" alt="drawing-spider-using-armature-projection.PNG" /></p>
+
+<p>虽然我用木偶来解释这种方法，但如果能从同一距离拍摄一个姿势的两张互相垂直的照片，这个方法会更好用。测量可以直接在照片上进行，把每张照片看作是一块“投影卡”。在电脑上，用 Photoshop 之类的图像处理软件，你甚至可以先把照片变形、缩放，使之与预先绘制好的透视矩形框相吻合，然后直接在两张照片之间连线对应的特征点，而不必进行任何测量。</p>
+
+<p><strong>艺术家们现在完全可以用 Poser 这样的软件来生成任意姿势的男女“数字木偶”</strong>，无论是裸体还是着装，并以此为基础绘制作品。而且还有一系列 VirtualPose 光盘可以用二维旋转的方式呈现静态姿势。针对大型动物的类似软件，相信也很快会出现。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><category term="study-notes" /></entry><entry><title type="html">笔记：两点透视</title><link href="https://goooooouwa.github.io/drawing/2025/09/26/notes-on-2-point-perspective.html" rel="alternate" type="text/html" title="笔记：两点透视" /><published>2025-09-26T00:00:00+00:00</published><updated>2025-09-26T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/09/26/notes-on-2-point-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/09/26/notes-on-2-point-perspective.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#两点透视two-point-perspective" id="markdown-toc-两点透视two-point-perspective">两点透视（Two point perspective）</a>    <ul>
+      <li><a href="#两点透视的标志性特征defining-features-of-two-point-perspective" id="markdown-toc-两点透视的标志性特征defining-features-of-two-point-perspective">两点透视的标志性特征（Defining Features of Two Point Perspective）</a></li>
+    </ul>
+  </li>
+  <li><a href="#旋转消失点rotating-the-vanishing-points" id="markdown-toc-旋转消失点rotating-the-vanishing-points">旋转消失点（rotating the vanishing points）</a></li>
+  <li><a href="#定位测量点locating-the-measure-points" id="markdown-toc-定位测量点locating-the-measure-points">定位测量点（locating the measure points）</a>    <ul>
+      <li><a href="#测量点的几何原理geometry-of-measure-points" id="markdown-toc-测量点的几何原理geometry-of-measure-points">测量点的几何原理（Geometry of Measure Points）</a></li>
+      <li><a href="#定位测量点locating-the-measure-points-1" id="markdown-toc-定位测量点locating-the-measure-points-1">定位测量点（Locating the Measure Points）</a></li>
+    </ul>
+  </li>
+  <li><a href="#构造一个2点透视的立方体constructing-a-2pp-cube" id="markdown-toc-构造一个2点透视的立方体constructing-a-2pp-cube">构造一个2点透视的立方体（constructing a 2PP cube）</a></li>
+  <li><a href="#如何绘制非常远的消失点who-has-a-12-foot-table" id="markdown-toc-如何绘制非常远的消失点who-has-a-12-foot-table">如何绘制非常远的消失点（who has a 12 foot table?）</a></li>
+</ul>
+
+<p>原文地址：<a href="https://handprint.com/HP/WCL/perspect3.html">https://handprint.com/HP/WCL/perspect3.html</a></p>
+
+<p>系列笔记：</p>
+
+<ol>
+  <li><a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">笔记：现实中的透视</a></li>
+  <li><a href="/drawing/2024/09/13/notes-on-central-perspective.html">笔记：一点透视</a></li>
+  <li><a href="/drawing/2025/09/26/notes-on-2-point-perspective.html">笔记：两点透视</a></li>
+  <li><a href="/drawing/2025/09/28/notes-on-advanced-perspective.html">笔记：高级透视技巧</a></li>
+</ol>
+
+<p>两点透视的整体主题是，通过将消失点旋转特定角度以及在合适的measure bar上确定相应的measure points以便投射所需的深度等办法，确定物体在两点透视中的正确比例。</p>
+
+<h2 id="两点透视two-point-perspective">两点透视（Two point perspective）</h2>
+
+<h3 id="两点透视的标志性特征defining-features-of-two-point-perspective">两点透视的标志性特征（Defining Features of Two Point Perspective）</h3>
+
+<p>下图展示的是最简单的两点透视，一个正方体以相对画面45度角的方式摆在画面中心。</p>
+
+<p><img src="/assets/images/Defining-Features-of-Two-Point-Perspective.PNG" alt="Defining-Features-of-Two-Point-Perspective.PNG" /></p>
+
+<p>两点透视的物体有两个消失点（vp1和vp2），两者之间是90度。每个消失点与direction of view之间的夹角不同，但是两者之和永远是90度。沿着物体的2个消失点的方向上的深度变化是由2个测量点（mp1和mp2）来决定的。通过测量点，我们可以将measure bar或者单位长度投射到物体2个消失点所在的方向上。</p>
+
+<h2 id="旋转消失点rotating-the-vanishing-points">旋转消失点（rotating the vanishing points）</h2>
+
+<p><img src="/assets/images/Screenshot 2024-09-14 at 11.39.24 AM.png" alt="Screenshot 2024-09-14 at 11.39.24 AM.png" /></p>
+
+<p>在视觉射线法中，我们通过物体的旋转角度(angle of rotation)来定位物体的左右消失点，该角度等于物体正面与画面之间的角度，也等于物体侧面与direction of view之间的角度。通过将物体在仰视图中离观察者（viewer）最近的那个角与向上翻折的viewpoint重合，我们可以确定物体的旋转角度（angle of rotation）。接下来将物体的两边从viewpoint延长与画面相交（同时也是与地平线相交）便可以确定物体的两个消失点。</p>
+
+<p><strong>VP定位速查表</strong></p>
+
+<p><img src="/assets/images/vp-spacing.PNG" alt="vp-spacing.PNG" /></p>
+
+<p>举例来说，假设一个正方体左侧面与direction of view的角度是30度，那么通过VP定位速查表可以得知vp1应该在地平线左侧从direction of view开始的0.58个半径长度的位置。此时正方体右侧面与direction of view的角度是60度（90-30度），对应的vp2的位置则是在地平线右侧从direction of view开始的1.73个半径长度的位置。</p>
+
+<h2 id="定位测量点locating-the-measure-points">定位测量点（locating the measure points）</h2>
+
+<p>在一点透视中，单个消失点（principal point）决定了空间中沿着纵深线（指向principal point的消失线）方向上的透视变化，而对角消失点则可以将单位长度从图像平面映射到纵深方向上。</p>
+
+<p>在两点透视中，principal point仍然定义了观察者的纵深方向的透视变化，以及direction of view在地平面和所有平行于视线方向的平面上产生的透视梯度。但物体本身的消失点却在两个不同的方向上（即两条消失线上）发生着各自的透视变化，我们的任务便是在这2条消失线上建立单位刻度。</p>
+
+<h3 id="测量点的几何原理geometry-of-measure-points">测量点的几何原理（Geometry of Measure Points）</h3>
+
+<p>在视觉射线法中，解决这个问题的办法是<strong>将地线（ground line）上的度量单位映射到透视空间中物体消失点所在的方向上</strong>。</p>
+
+<p><img src="/assets/images/geometry-of-measure-points.PNG" alt="geometry-of-measure-points.PNG" /></p>
+
+<p>假设我们在物理空间中（注意，不是在画面中）以G为顶点GA’为半径构造出一个弧线，它与地线在A点相交。由此得到的A’GA便是一个等腰三角形，而GA’在物理空间中的长度等于GA。A’A的延长线与地平线的交点便是消失点vp1的测量点mp1。</p>
+
+<p>这个构造所达到的效果是所有平行于A’A的线之间的间隔在地线（ground line）上的长度与在消失线上的长度相等。举例来讲，线条aa’和bb’是2条平行于A’A的线，这2条线在地线上的形成的线段ab的长度与物理空间中的线段a’b’是完全相等的。</p>
+
+<p><img src="/assets/images/plan view of geometry of measure bar.jpg" alt="plan view of geometry of measure bar.jpg" /></p>
+
+<p>由俯视图可以看出，线段AB与线段A’B’（即measure bar）以及消失点方向上的线段Aa’三者之间的长度相等的（因为AB与A’B’是菱形的两条边，而A’B’与Aa’是等腰三角形的两条边）。</p>
+
+<h3 id="定位测量点locating-the-measure-points-1">定位测量点（Locating the Measure Points）</h3>
+
+<p>那么实际操作中该如何定位测量点呢？显然我们无法直接在画面上G为顶点画一条圆弧，因为透视的关系，物理空间中的一条圆弧会在画面中变成一个椭圆的圆弧。</p>
+
+<p>其实想要定位测量点有一个非常简单的办法，只需以物体的某一个消失点为顶点从向上翻折的viewpoint画一条弧线与地平线（或者说是与图像平面）相交，得到的交点便是这个消失点的测量点。这条弧线其实就是在仰视图中在viewpoint和图像平面之间构造出了一个等腰三角形。</p>
+
+<p><img src="/assets/images/locating-the-measure-points.png" alt="locating-the-measure-points.png" /></p>
+
+<p>因此，从 vp1 出发的圆弧与图像平面相交于 B 点；三角形 VAB 是平面仰视图中的在视点和图像平面之间的一个等腰三角形（此时相当于将其沿地平线向上翻折到90°视圈上），其底边 VB 与图像平面相交于测量点 mp1。从 vp2 出发的圆弧与图像平面相交于 Y 点；三角形 VXY 是一个等腰三角形，其底边 VY 与像平面相交于测量点 mp2。</p>
+
+<p><strong>两点透视中如何正确地将measure bar映射到消失线上更靠前或靠后的位置</strong></p>
+
+<p>相比于一点透视，在两点透视中使用measure bar时我们需要更加谨慎一些。在两点透视中，将measure bar放置在图形的哪一边，以及使用哪个测量点都很重要，因为此时物体的每一侧都有各自独立的测量点。</p>
+
+<p>一个基本的原则是：你是在把度量单位映射到消失线（vanishing lines）上，而消失线会汇聚到一个消失点（vanishing point）。因此，你必须<strong>使用以该消失点为顶点的圆弧所确定的对应测量点</strong>。这个测量点位于你所要映射度量单位的那条消失线的消失点的对面一侧。</p>
+
+<p><img src="/assets/images/two point perspective-projecting forward or backward from a measure bar.PNG" alt="two point perspective-projecting forward or backward from a measure bar.PNG" /></p>
+
+<p>上图展示了两点透视中将放在基准点两侧的measure bar映射到消失线上时可能出现的四种组合情况。在所有情况下，正确的测量点总是那个需要测量的消失线的消失点所对应的测量点。测量点的选择并不是由measure bar在基准点的左边还是右边决定的。还要注意，measure bar上的点既可以向后投射（靠近地平线的方向），也可以向前投射（靠近观察者的方向）；来自对角消失点（dvp）的视觉射线可以验证这些向前的映射。</p>
+
+<p><strong>如何使用量角器精确确定消失点的旋转角度</strong></p>
+
+<p>你可以使用量角器（将其中心放置于viewpoint上）来精确确定消失点的旋转角度。物体某个侧面相对于图像平面旋转的角度等于 <em>该侧面的消失点与viewpoint的连线</em> 以及 <em>通过viewpoint的一条水平线（图中虚线）</em> 之间的夹角（在下图中标记为 x）。</p>
+
+<p><img src="/assets/images/visual ray location of a measure point.PNG" alt="visual ray location of a measure point.PNG" /></p>
+
+<p>而该物体侧面的消失点（vp1）则位于距direction of view方向（dv）90−x 度的位置，而它的测量点则位于距 direction of view 方向 x/2 度的位置，且处在direction of view的另外一侧。举例来说，物体的正面 BC（在平面仰视图中所示）相对于图像平面旋转了 30°；因此 x = 30°。这意味着 vp1 将在视线方向的一侧偏转 60°，而它的测量点 mp1 则位于视线方向右侧 15° 的位置。无论物体相对于图像平面如何旋转，这些对应关系始终成立。</p>
+
+<h2 id="构造一个2点透视的立方体constructing-a-2pp-cube">构造一个2点透视的立方体（constructing a 2PP cube）</h2>
+
+<p>一旦你定位了两个消失点和两个测量点，在2点透视中构造立方体或长方体的步骤与在1点透视中相同，唯一不同的地方是还需要measure bar来确定物体正面的两个侧面的具体位置。</p>
+
+<p>构造2点透视的具体步骤是：</p>
+
+<ol>
+  <li>确定画面中的anchor point和anchor line；</li>
+  <li>将anchor line的2个顶点与2个vanishing points相连（对应立方体侧面的四条边）；</li>
+  <li>绘制2个measure bars，其长度分别对应立方体正面的两个侧面各自的宽度（如果该立方体是正方体，则measure bar的长度等于anchor line的长度），将2个measure bars的一端与anchor point重合，分别摆放于anchor point的各一侧（measure bar具体摆放规则参考前文“如何正确地将measure bar映射到消失线上更靠前或靠后的位置”）；</li>
+  <li>沿着两条measure bar远离anchor point的那一端分别各画一条连到其对应测量点的直线（该直线与消失线的交点即为立方体两个侧面的对应深度）；</li>
+  <li>沿着2个交点各画一条垂直于地面的直线，与上方的消失线相交（所得到的线段为立方体两个侧面的后面两条边，其长度均小于anchor line）；</li>
+  <li>将立方体两个侧面的后面两条边的2对上端点和下端点与对侧的消失点相连（这些线的交点即为立方体第4条垂直边的上顶点和下顶点）；</li>
+  <li>将4条垂直线段的相邻顶点用直线相连。</li>
+</ol>
+
+<p>至此得到2点透视画面中的立方体。</p>
+
+<p><img src="/assets/images/screencapture-handprint-HP-WCL-perspect3-html-2025-09-27-23_40_39.png" alt="screencapture-handprint-HP-WCL-perspect3-html-2025-09-27-23_40_39.png" /></p>
+
+<h2 id="如何绘制非常远的消失点who-has-a-12-foot-table">如何绘制非常远的消失点（who has a 12 foot table?）</h2>
+
+<p>Unfortunately it is fairly common to start with the primary form in an orientation that puts the two vp’s inconveniently far apart. In the previous cube construction example, assuming a 10 foot circle of view, the cube is oriented so that the two vp’s would about 11 feet apart — one 3.2 feet to the left of the dv, and the other 7.7 feet to the right. This isn’t very convenient for a drafting table.</p>
+
+<p>If those alternatives don’t appeal to you, then you can rescale the drawing.</p>
+
+<p>How do you define the crucial distance dc (from the direction of view to a vanishing point) in the first place? The easiest method is to use my <a href="https://www.handprint.com/HP/WCL/IMG/LPR/VPCalculator.xls">vanishing point calculator</a> to get the measurements of the vp’s and mp’s, and adjust the viewing distance to the object and your angle of view until you get the proportions that seem desirable.</p>
+
+<p>Or, as described above, you can reduce the circle of view to a workable size, use the method for <a href="https://www.handprint.com/HP/WCL/perspect3.html#rotatingvp">rotating the vanishing points</a> to determine the locations of vp1 and vp2, measure the distance from these to dv on the diagram, then scale those distances back to life size.</p>
+
+<p>Unfortunately this method, even after you get the hang of it, still forces you into a lot of poking of a pocket calculator, and is hopelessly tedious and prone to error if many lines must be inserted in your drawing. The <strong>ultimate solution</strong> is to generate a recession grid for the distant vanishing point, and use this grid to determine the perspective reduction for any verticals in the drawing.</p>
+
+<p><img src="/assets/images/use-recession-grid-for-distant-vanishing-points.png" alt="use-recession-grid-for-distant-vanishing-points.png" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><category term="study-notes" /></entry><entry><title type="html">Jellyfin &amp;amp; ErsatzTV在J4125小主机的Ubuntu系统上实现硬件加速转码</title><link href="https://goooooouwa.github.io/computer/2025/07/23/jellyfin-ersatztv-hardware-accelerated-transcoding-in-ubuntu.html" rel="alternate" type="text/html" title="Jellyfin &amp;amp; ErsatzTV在J4125小主机的Ubuntu系统上实现硬件加速转码" /><published>2025-07-23T00:00:00+00:00</published><updated>2025-07-23T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/07/23/jellyfin-ersatztv-hardware-accelerated-transcoding-in-ubuntu</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/07/23/jellyfin-ersatztv-hardware-accelerated-transcoding-in-ubuntu.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#在j4125小主机的ubuntu系统上运行jellyfin并实现硬件加速转码的步骤" id="markdown-toc-在j4125小主机的ubuntu系统上运行jellyfin并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行Jellyfin并实现硬件加速转码的步骤：</a>    <ul>
+      <li><a href="#1-按照jellyfin官方文档在ubuntu上安装jellyfin" id="markdown-toc-1-按照jellyfin官方文档在ubuntu上安装jellyfin">1 按照Jellyfin官方文档在Ubuntu上安装Jellyfin</a></li>
+      <li><a href="#2-按照jellyfin官方文档在ubuntu上完成qsv--va-api-codecs硬件解码器相关设置并验证硬件是否正常工作" id="markdown-toc-2-按照jellyfin官方文档在ubuntu上完成qsv--va-api-codecs硬件解码器相关设置并验证硬件是否正常工作">2 按照Jellyfin官方文档在Ubuntu上完成QSV / VA-API codecs硬件解码器相关设置并验证硬件是否正常工作</a>        <ul>
+          <li><a href="#21-add-the-jellyfin-repository-to-your-apt-source-list" id="markdown-toc-21-add-the-jellyfin-repository-to-your-apt-source-list">2.1 Add the jellyfin repository to your apt source list</a></li>
+          <li><a href="#22-install-the-jellyfin-ffmpeg7-package" id="markdown-toc-22-install-the-jellyfin-ffmpeg7-package">2.2 Install the jellyfin-ffmpeg7 package</a></li>
+          <li><a href="#23-make-sure-at-least-one-renderd-device-exists-in-devdri-otherwise-upgrade-your-kernel-or-enable-the-igpu-in-the-bios" id="markdown-toc-23-make-sure-at-least-one-renderd-device-exists-in-devdri-otherwise-upgrade-your-kernel-or-enable-the-igpu-in-the-bios">2.3 Make sure at least one renderD* device exists in /dev/dri. Otherwise upgrade your kernel or enable the iGPU in the BIOS.</a></li>
+          <li><a href="#24-add-the-jellyfin-user-to-the-render-group-then-restart-jellyfin-service" id="markdown-toc-24-add-the-jellyfin-user-to-the-render-group-then-restart-jellyfin-service">2.4 Add the jellyfin user to the render group, then restart jellyfin service:</a></li>
+          <li><a href="#25-check-the-version-of-intel-opencl-icd-that-the-linux-distro-provides" id="markdown-toc-25-check-the-version-of-intel-opencl-icd-that-the-linux-distro-provides">2.5 Check the version of intel-opencl-icd that the Linux distro provides:</a></li>
+          <li><a href="#26-if-the-version-is-newer-than-22xxxxxxx-just-install-it" id="markdown-toc-26-if-the-version-is-newer-than-22xxxxxxx-just-install-it">2.6 If the version is newer than 22.xx.xxxxx just install it.</a></li>
+          <li><a href="#27-check-the-supported-qsv--va-api-codecs" id="markdown-toc-27-check-the-supported-qsv--va-api-codecs">2.7 Check the supported QSV / VA-API codecs:</a></li>
+          <li><a href="#28-check-the-opencl-runtime-status" id="markdown-toc-28-check-the-opencl-runtime-status">2.8 Check the OpenCL runtime status</a></li>
+        </ul>
+      </li>
+      <li><a href="#3-在jellyfin中开启硬件加速转码选择qsv选项" id="markdown-toc-3-在jellyfin中开启硬件加速转码选择qsv选项">3 在Jellyfin中开启硬件加速转码，选择QSV选项</a></li>
+      <li><a href="#4-验证jellyfin能成功通过qsv完成硬件加速转码" id="markdown-toc-4-验证jellyfin能成功通过qsv完成硬件加速转码">4 验证Jellyfin能成功通过QSV完成硬件加速转码</a>        <ul>
+          <li><a href="#41-install-the-intel-gpu-tools-package-on-the-host-system" id="markdown-toc-41-install-the-intel-gpu-tools-package-on-the-host-system">4.1 Install the intel-gpu-tools package on the host system</a></li>
+          <li><a href="#42-play-a-video-in-jellyfin-web-client-and-trigger-a-video-transcoding-by-setting-a-lower-resolution-or-bitrate" id="markdown-toc-42-play-a-video-in-jellyfin-web-client-and-trigger-a-video-transcoding-by-setting-a-lower-resolution-or-bitrate">4.2 Play a video in Jellyfin web client and trigger a video transcoding by setting a lower resolution or bitrate.</a></li>
+          <li><a href="#43-use-intel_gpu_top-command-to-check-the-occupancy-of-the-engines-as-follows" id="markdown-toc-43-use-intel_gpu_top-command-to-check-the-occupancy-of-the-engines-as-follows">4.3 Use <code class="language-plaintext highlighter-rouge">intel_gpu_top</code> command to check the occupancy of the engines as follows:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#在j4125小主机上通过docker运行jellyfin并实现硬件加速转码的步骤" id="markdown-toc-在j4125小主机上通过docker运行jellyfin并实现硬件加速转码的步骤">在J4125小主机上通过Docker运行Jellyfin并实现硬件加速转码的步骤：</a>    <ul>
+      <li><a href="#1-根据jellyfin官方文档在docker上安装jellyfin" id="markdown-toc-1-根据jellyfin官方文档在docker上安装jellyfin">1 根据Jellyfin官方文档在Docker上安装Jellyfin</a></li>
+      <li><a href="#2-query-the-id-of-the-render-group-on-the-host-system" id="markdown-toc-2-query-the-id-of-the-render-group-on-the-host-system">2 Query the id of the render group on the host system</a></li>
+      <li><a href="#3-use-render-group-in-the-docker-cli-or-docker-compose-file" id="markdown-toc-3-use-render-group-in-the-docker-cli-or-docker-compose-file">3. Use render group in the Docker CLI or docker-compose file</a></li>
+      <li><a href="#4-check-the-qsv-and-va-api-codecs-in-container" id="markdown-toc-4-check-the-qsv-and-va-api-codecs-in-container">4 Check the QSV and VA-API codecs in container</a></li>
+      <li><a href="#5-check-the-opencl-runtime-status-in-container" id="markdown-toc-5-check-the-opencl-runtime-status-in-container">5 Check the OpenCL runtime status in container</a></li>
+      <li><a href="#6-enable-qsv-or-va-api-in-jellyfin" id="markdown-toc-6-enable-qsv-or-va-api-in-jellyfin">6 Enable QSV or VA-API in Jellyfin</a></li>
+    </ul>
+  </li>
+  <li><a href="#在j4125小主机的ubuntu系统上运行ersatztv并实现硬件加速转码的步骤" id="markdown-toc-在j4125小主机的ubuntu系统上运行ersatztv并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行ErsatzTV并实现硬件加速转码的步骤：</a>    <ul>
+      <li><a href="#1-按照ersatztv官方文档在ubuntu上安装ersatztv" id="markdown-toc-1-按照ersatztv官方文档在ubuntu上安装ersatztv">1 按照ErsatzTV官方文档在Ubuntu上安装ErsatzTV</a></li>
+      <li><a href="#2-进入settings将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径" id="markdown-toc-2-进入settings将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径">2 进入Settings，将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径</a></li>
+      <li><a href="#3-编辑ffmpeg-profile开启硬件加速转码选择qsv选项" id="markdown-toc-3-编辑ffmpeg-profile开启硬件加速转码选择qsv选项">3 编辑FFmpeg Profile，开启硬件加速转码，选择QSV选项</a></li>
+      <li><a href="#4-进入troubleshooting展开qsv-capabilities检查输出结果" id="markdown-toc-4-进入troubleshooting展开qsv-capabilities检查输出结果">4 进入Troubleshooting，展开QSV Capabilities，检查输出结果</a></li>
+      <li><a href="#5-auto-start-ersatztv-as-a-systemd-service" id="markdown-toc-5-auto-start-ersatztv-as-a-systemd-service">5 Auto start ersatztv as a systemd service</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="在j4125小主机的ubuntu系统上运行jellyfin并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行Jellyfin并实现硬件加速转码的步骤：</h2>
+
+<h3 id="1-按照jellyfin官方文档在ubuntu上安装jellyfin">1 按照<a href="https://jellyfin.org/docs/general/installation/linux/#debian--ubuntu-and-derivatives">Jellyfin官方文档</a>在Ubuntu上安装Jellyfin</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://repo.jellyfin.org/install-debuntu.sh | <span class="nb">sudo </span>bash
+</code></pre></div></div>
+
+<h3 id="2-按照jellyfin官方文档在ubuntu上完成qsv--va-api-codecs硬件解码器相关设置并验证硬件是否正常工作">2 按照<a href="https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel#linux-setups">Jellyfin官方文档</a>在Ubuntu上完成QSV / VA-API codecs硬件解码器相关设置并验证硬件是否正常工作</h3>
+
+<h4 id="21-add-the-jellyfin-repository-to-your-apt-source-list">2.1 Add the jellyfin repository to your apt source list</h4>
+
+<p>官方文档的Jellyfin安装过程中会自动将jellyfin repository添加到apt source list，如果已经完成了Jellyfin的安装，可以直接跳过这一步。</p>
+
+<h4 id="22-install-the-jellyfin-ffmpeg7-package">2.2 Install the jellyfin-ffmpeg7 package</h4>
+
+<p>官方文档的Jellyfin安装过程中会同时安装jellyfin-ffmpeg7，如果已经完成了Jellyfin的安装，可以直接跳过这一步。</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt update &amp;&amp; sudo apt install -y jellyfin-ffmpeg7</code></p>
+
+<h4 id="23-make-sure-at-least-one-renderd-device-exists-in-devdri-otherwise-upgrade-your-kernel-or-enable-the-igpu-in-the-bios">2.3 Make sure at least one renderD* device exists in /dev/dri. Otherwise upgrade your kernel or enable the iGPU in the BIOS.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /dev/dri
+
+total 0
+drwxr-xr-x  2 root root        120 Mar  5 05:15 by-path
+crw-rw----+ 1 root video  226,   0 Mar  5 05:15 card0
+crw-rw----+ 1 root video  226,   1 Mar  5 05:15 card1
+crw-rw----+ 1 root render 226, 128 Mar  5 05:15 renderD128
+crw-rw----+ 1 root render 226, 129 Mar  5 05:15 renderD129
+</code></pre></div></div>
+
+<h4 id="24-add-the-jellyfin-user-to-the-render-group-then-restart-jellyfin-service">2.4 Add the jellyfin user to the render group, then restart jellyfin service:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>usermod <span class="nt">-aG</span> render jellyfin
+<span class="nb">sudo </span>systemctl restart jellyfin
+</code></pre></div></div>
+
+<h4 id="25-check-the-version-of-intel-opencl-icd-that-the-linux-distro-provides">2.5 Check the version of intel-opencl-icd that the Linux distro provides:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>apt policy intel-opencl-icd
+
+intel-opencl-icd:
+  Installed: <span class="o">(</span>none<span class="o">)</span>
+  Candidate: 22.14.22890-1
+...
+</code></pre></div></div>
+
+<h4 id="26-if-the-version-is-newer-than-22xxxxxxx-just-install-it">2.6 If the version is newer than 22.xx.xxxxx just install it.</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> intel-opencl-icd
+</code></pre></div></div>
+
+<h4 id="27-check-the-supported-qsv--va-api-codecs">2.7 Check the supported QSV / VA-API codecs:</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /usr/lib/jellyfin-ffmpeg/vainfo <span class="nt">--display</span> drm <span class="nt">--device</span> /dev/dri/renderD128
+
+Trying display: drm
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init <span class="k">function </span>__vaDriverInit_1_22
+libva info: va_openDriver<span class="o">()</span> returns 0
+vainfo: VA-API version: 1.22 <span class="o">(</span>libva 2.22.0<span class="o">)</span>
+vainfo: Driver version: Intel iHD driver <span class="k">for </span>Intel<span class="o">(</span>R<span class="o">)</span> Gen Graphics - 25.2.6 <span class="o">(</span>c6ab0c9<span class="o">)</span>
+vainfo: Supported profile and entrypoints
+      VAProfileNone                   :	VAEntrypointVideoProc
+      VAProfileNone                   :	VAEntrypointStats
+      VAProfileMPEG2Simple            :	VAEntrypointVLD
+      VAProfileMPEG2Main              :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointEncSlice
+      VAProfileH264Main               :	VAEntrypointFEI
+      VAProfileH264Main               :	VAEntrypointEncSliceLP
+      VAProfileH264High               :	VAEntrypointVLD
+      VAProfileH264High               :	VAEntrypointEncSlice
+      VAProfileH264High               :	VAEntrypointFEI
+      VAProfileH264High               :	VAEntrypointEncSliceLP
+      VAProfileVC1Simple              :	VAEntrypointVLD
+      VAProfileVC1Main                :	VAEntrypointVLD
+      VAProfileVC1Advanced            :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointEncPicture
+      VAProfileH264ConstrainedBaseline:	VAEntrypointVLD
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline:	VAEntrypointFEI
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSliceLP
+      VAProfileVP8Version0_3          :	VAEntrypointVLD
+      VAProfileVP8Version0_3          :	VAEntrypointEncSlice
+      VAProfileHEVCMain               :	VAEntrypointVLD
+      VAProfileHEVCMain               :	VAEntrypointEncSlice
+      VAProfileHEVCMain               :	VAEntrypointFEI
+      VAProfileHEVCMain10             :	VAEntrypointVLD
+      VAProfileHEVCMain10             :	VAEntrypointEncSlice
+      VAProfileVP9Profile0            :	VAEntrypointVLD
+      VAProfileVP9Profile2            :	VAEntrypointVLD
+</code></pre></div></div>
+
+<h4 id="28-check-the-opencl-runtime-status">2.8 Check the OpenCL runtime status</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /usr/lib/jellyfin-ffmpeg/ffmpeg <span class="nt">-v</span> verbose <span class="nt">-init_hw_device</span> <span class="nv">vaapi</span><span class="o">=</span>va:/dev/dri/renderD128 <span class="nt">-init_hw_device</span> opencl@va
+
+ffmpeg version 7.1.1-Jellyfin Copyright <span class="o">(</span>c<span class="o">)</span> 2000-2025 the FFmpeg developers
+  built with gcc 11 <span class="o">(</span>Ubuntu 11.4.0-1ubuntu1~22.04<span class="o">)</span>
+  configuration: <span class="nt">--prefix</span><span class="o">=</span>/usr/lib/jellyfin-ffmpeg <span class="nt">--target-os</span><span class="o">=</span>linux <span class="nt">--extra-version</span><span class="o">=</span>Jellyfin <span class="nt">--disable-doc</span> <span class="nt">--disable-ffplay</span> <span class="nt">--disable-static</span> <span class="nt">--disable-libxcb</span> <span class="nt">--disable-sdl2</span> <span class="nt">--disable-xlib</span> <span class="nt">--enable-lto</span><span class="o">=</span>auto <span class="nt">--enable-gpl</span> <span class="nt">--enable-version3</span> <span class="nt">--enable-shared</span> <span class="nt">--enable-gmp</span> <span class="nt">--enable-gnutls</span> <span class="nt">--enable-chromaprint</span> <span class="nt">--enable-opencl</span> <span class="nt">--enable-libdrm</span> <span class="nt">--enable-libxml2</span> <span class="nt">--enable-libass</span> <span class="nt">--enable-libfreetype</span> <span class="nt">--enable-libfribidi</span> <span class="nt">--enable-libfontconfig</span> <span class="nt">--enable-libharfbuzz</span> <span class="nt">--enable-libbluray</span> <span class="nt">--enable-libmp3lame</span> <span class="nt">--enable-libopus</span> <span class="nt">--enable-libtheora</span> <span class="nt">--enable-libvorbis</span> <span class="nt">--enable-libopenmpt</span> <span class="nt">--enable-libdav1d</span> <span class="nt">--enable-libsvtav1</span> <span class="nt">--enable-libwebp</span> <span class="nt">--enable-libvpx</span> <span class="nt">--enable-libx264</span> <span class="nt">--enable-libx265</span> <span class="nt">--enable-libzvbi</span> <span class="nt">--enable-libzimg</span> <span class="nt">--enable-libfdk-aac</span> <span class="nt">--arch</span><span class="o">=</span>amd64 <span class="nt">--enable-libshaderc</span> <span class="nt">--enable-libplacebo</span> <span class="nt">--enable-vulkan</span> <span class="nt">--enable-vaapi</span> <span class="nt">--enable-amf</span> <span class="nt">--enable-libvpl</span> <span class="nt">--enable-ffnvcodec</span> <span class="nt">--enable-cuda</span> <span class="nt">--enable-cuda-llvm</span> <span class="nt">--enable-cuvid</span> <span class="nt">--enable-nvdec</span> <span class="nt">--enable-nvenc</span>
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: VA-API version 1.22.0
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: Found init <span class="k">function </span>__vaDriverInit_1_22
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] libva: va_openDriver<span class="o">()</span> returns 0
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] Initialised VAAPI connection: version 1.22
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] VAAPI driver: Intel iHD driver <span class="k">for </span>Intel<span class="o">(</span>R<span class="o">)</span> Gen Graphics - 25.2.6 <span class="o">(</span>c6ab0c9<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad31fe80] Driver not found <span class="k">in </span>known nonstandard list, using standard behaviour.
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] 0.0: Intel<span class="o">(</span>R<span class="o">)</span> OpenCL HD Graphics / Intel<span class="o">(</span>R<span class="o">)</span> UHD Graphics 600 <span class="o">[</span>0x3185]
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] Intel QSV to OpenCL mapping <span class="k">function </span>found <span class="o">(</span>clCreateFromVA_APIMediaSurfaceINTEL<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] Intel QSV <span class="k">in </span>OpenCL acquire <span class="k">function </span>found <span class="o">(</span>clEnqueueAcquireVA_APIMediaSurfacesINTEL<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>AVHWDeviceContext @ 0x5b98ad359240] Intel QSV <span class="k">in </span>OpenCL release <span class="k">function </span>found <span class="o">(</span>clEnqueueReleaseVA_APIMediaSurfacesINTEL<span class="o">)</span><span class="nb">.</span>
+Universal media converter
+usage: ffmpeg <span class="o">[</span>options] <span class="o">[[</span>infile options] <span class="nt">-i</span> infile]... <span class="o">{[</span>outfile options] outfile<span class="o">}</span>...
+
+Use <span class="nt">-h</span> to get full <span class="nb">help </span>or, even better, run <span class="s1">'man ffmpeg'</span>
+</code></pre></div></div>
+
+<h3 id="3-在jellyfin中开启硬件加速转码选择qsv选项">3 在Jellyfin中开启硬件加速转码，选择QSV选项</h3>
+
+<p><img src="/assets/images/2025-07-23 jellyfin transcodiing settings.png" alt="2025-07-23 jellyfin transcodiing settings.png" /></p>
+
+<h3 id="4-验证jellyfin能成功通过qsv完成硬件加速转码">4 验证Jellyfin能成功通过QSV完成硬件加速转码</h3>
+
+<h4 id="41-install-the-intel-gpu-tools-package-on-the-host-system">4.1 Install the intel-gpu-tools package on the host system</h4>
+
+<p>On Debian &amp; Ubuntu:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt update &amp;&amp; sudo apt install -y intel-gpu-tools</code></p>
+
+<h4 id="42-play-a-video-in-jellyfin-web-client-and-trigger-a-video-transcoding-by-setting-a-lower-resolution-or-bitrate">4.2 Play a video in Jellyfin web client and trigger a video transcoding by setting a lower resolution or bitrate.</h4>
+
+<p><img src="/assets/images/2025-07-23 jellyfin transcoding info.png" alt="2025-07-23 jellyfin transcoding info.png" /></p>
+
+<h4 id="43-use-intel_gpu_top-command-to-check-the-occupancy-of-the-engines-as-follows">4.3 Use <code class="language-plaintext highlighter-rouge">intel_gpu_top</code> command to check the occupancy of the engines as follows:</h4>
+
+<p><img src="/assets/images/2025-07-23 verify GPU transcoding on linux.png" alt="2025-07-23 verify GPU transcoding on linux.png" /></p>
+
+<p>本地系统配置好并验证Jellyfin能成功通过QSV完成硬件加速转码后，可以考虑进一步配置Docker版Jellyfin的硬件解码，以后可以考虑只通过Docker运行Jellfyin，方便管理。当然硬件转码最简单的方法还是直接本地运行Jellyfin，因为本地版本的设置步骤更加简单，调试也更加方便直接，可能出现的问题更少。</p>
+
+<h2 id="在j4125小主机上通过docker运行jellyfin并实现硬件加速转码的步骤">在J4125小主机上通过Docker运行Jellyfin并实现硬件加速转码的步骤：</h2>
+
+<h3 id="1-根据jellyfin官方文档在docker上安装jellyfin">1 根据<a href="https://jellyfin.org/docs/general/installation/container#using-docker-compose">Jellyfin官方文档</a>在Docker上安装Jellyfin</h3>
+
+<h3 id="2-query-the-id-of-the-render-group-on-the-host-system">2 Query the id of the render group on the host system</h3>
+
+<p><code class="language-plaintext highlighter-rouge">getent group render | cut -d: -f3</code></p>
+
+<h3 id="3-use-render-group-in-the-docker-cli-or-docker-compose-file">3. Use render group in the Docker CLI or docker-compose file</h3>
+
+<p>Example docker-compose configuration file written in YAML:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">jellyfin</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">jellyfin/jellyfin</span>
+    <span class="na">user</span><span class="pi">:</span> <span class="s">1000:1000</span>
+    <span class="na">group_add</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">122'</span> <span class="c1"># Change this to match your "render" host group id and remove this comment</span>
+    <span class="na">network_mode</span><span class="pi">:</span> <span class="s1">'</span><span class="s">host'</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">/path/to/config:/config</span>
+      <span class="pi">-</span> <span class="s">/path/to/cache:/cache</span>
+      <span class="pi">-</span> <span class="s">/path/to/media:/media</span>
+    <span class="na">devices</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">/dev/dri/renderD128:/dev/dri/renderD128</span>
+</code></pre></div></div>
+
+<h3 id="4-check-the-qsv-and-va-api-codecs-in-container">4 Check the QSV and VA-API codecs in container</h3>
+
+<p><code class="language-plaintext highlighter-rouge">docker exec -it jellyfin /usr/lib/jellyfin-ffmpeg/vainfo</code></p>
+
+<h3 id="5-check-the-opencl-runtime-status-in-container">5 Check the OpenCL runtime status in container</h3>
+
+<p><code class="language-plaintext highlighter-rouge">docker exec -it jellyfin /usr/lib/jellyfin-ffmpeg/ffmpeg -v verbose -init_hw_device vaapi=va -init_hw_device opencl@va</code></p>
+
+<h3 id="6-enable-qsv-or-va-api-in-jellyfin">6 Enable QSV or VA-API in Jellyfin</h3>
+
+<p>参考：<a href="https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel#configure-with-linux-virtualization">Jellyfin官方文档</a></p>
+
+<p>注意：区分Linuxserver.io版本的Jellyfin Docker镜像与Jellyfin官方版本，两者的Jellyfin config和data文件的路径配置有所不同。</p>
+
+<h2 id="在j4125小主机的ubuntu系统上运行ersatztv并实现硬件加速转码的步骤">在J4125小主机的Ubuntu系统上运行ErsatzTV并实现硬件加速转码的步骤：</h2>
+
+<h3 id="1-按照ersatztv官方文档在ubuntu上安装ersatztv">1 按照<a href="https://ersatztv.org/docs/user-guide/install#linux">ErsatzTV官方文档</a>在Ubuntu上安装ErsatzTV</h3>
+
+<h3 id="2-进入settings将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径">2 进入Settings，将ffpmeg和ffprobe路径改为jellyfin-ffmpeg7的安装路径</h3>
+
+<ul>
+  <li>ffmpeg path: <code class="language-plaintext highlighter-rouge">/usr/lib/jellyfin-ffmpeg/ffmpeg</code></li>
+  <li>ffprobe path: <code class="language-plaintext highlighter-rouge">/usr/lib/jellyfin-ffmpeg/ffprobe</code></li>
+</ul>
+
+<h3 id="3-编辑ffmpeg-profile开启硬件加速转码选择qsv选项">3 编辑FFmpeg Profile，开启硬件加速转码，选择QSV选项</h3>
+
+<p><img src="/assets/images/2025-07-23 ersatztv ffmpeg profile settings.png" alt="2025-07-23 ersatztv ffmpeg profile settings.png" /></p>
+
+<h3 id="4-进入troubleshooting展开qsv-capabilities检查输出结果">4 进入Troubleshooting，展开QSV Capabilities，检查输出结果</h3>
+
+<p>检查输出中jellyfin-ffmpeg7是否被正确使用以及结果中是否存在任何报错（比如, “Error creating a MFX session: -9”, “No VA display found for device /dev/dri/renderD128”等）。如果Exit Code不为0或者输出最后出现“Conversion Failed”字样，即表示硬件转码不成功；反之，如果输出中Exit Code为0并且输出最后没有出现“Conversion Failed”字样，即表示硬件转码成功。</p>
+
+<p>ErsatzTV - Troubleshooting - QSV Capabilities 硬件转码成功的输出样例：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Checking device /dev/dri/renderD128
+Exit Code: 0
+
+ffmpeg version 7.1.1-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04)
+  configuration: --prefix=/usr/lib/jellyfin-ffmpeg --target-os=linux --extra-version=Jellyfin --disable-doc --disable-ffplay --disable-static --disable-libxcb --disable-sdl2 --disable-xlib --enable-lto=auto --enable-gpl --enable-version3 --enable-shared --enable-gmp --enable-gnutls --enable-chromaprint --enable-opencl --enable-libdrm --enable-libxml2 --enable-libass --enable-libfreetype --enable-libfribidi --enable-libfontconfig --enable-libharfbuzz --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libopenmpt --enable-libdav1d --enable-libsvtav1 --enable-libwebp --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-libzimg --enable-libfdk-aac --arch=amd64 --enable-libshaderc --enable-libplacebo --enable-vulkan --enable-vaapi --enable-amf --enable-libvpl --enable-ffnvcodec --enable-cuda --enable-cuda-llvm --enable-cuvid --enable-nvdec --enable-nvenc
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+Input #0, lavfi, from 'nullsrc':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: wrapped_avframe, yuv420p, 320x240 [SAR 1:1 DAR 4:3], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -&gt; #0:0 (wrapped_avframe (native) -&gt; h264 (h264_qsv))
+Press [q] to stop, [?] for help
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+[h264_qsv @ 0x5863317fbfc0] Using the constant quantization parameter (CQP) by default. Please use the global_quality option and other options for a quality-based mode or the b option and other options for a bitrate-based mode if the default is not the desired choice.
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264, nv12(tv, progressive), 320x240 [SAR 1:1 DAR 4:3], q=2-31, 25 fps, 25 tbn
+      Metadata:
+        encoder         : Lavc61.19.101 h264_qsv
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+[out#0/null @ 0x5863311d9600] video:1KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=   25 fps=0.0 q=35.0 Lsize=N/A time=00:00:00.88 bitrate=N/A speed=9.19x    
+
+
+Checking device /dev/dri/card0
+Exit Code: 0
+
+ffmpeg version 7.1.1-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.4.0-1ubuntu1~22.04)
+  configuration: --prefix=/usr/lib/jellyfin-ffmpeg --target-os=linux --extra-version=Jellyfin --disable-doc --disable-ffplay --disable-static --disable-libxcb --disable-sdl2 --disable-xlib --enable-lto=auto --enable-gpl --enable-version3 --enable-shared --enable-gmp --enable-gnutls --enable-chromaprint --enable-opencl --enable-libdrm --enable-libxml2 --enable-libass --enable-libfreetype --enable-libfribidi --enable-libfontconfig --enable-libharfbuzz --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libopenmpt --enable-libdav1d --enable-libsvtav1 --enable-libwebp --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-libzimg --enable-libfdk-aac --arch=amd64 --enable-libshaderc --enable-libplacebo --enable-vulkan --enable-vaapi --enable-amf --enable-libvpl --enable-ffnvcodec --enable-cuda --enable-cuda-llvm --enable-cuvid --enable-nvdec --enable-nvenc
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[AVHWDeviceContext @ 0x64e36a2e9600] libva: vaGetDriverNames() failed with operation failed
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+Input #0, lavfi, from 'nullsrc':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: wrapped_avframe, yuv420p, 320x240 [SAR 1:1 DAR 4:3], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -&gt; #0:0 (wrapped_avframe (native) -&gt; h264 (h264_qsv))
+Press [q] to stop, [?] for help
+libva info: VA-API version 1.22.0
+libva info: Trying to open /usr/lib/jellyfin-ffmpeg/lib/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_22
+libva info: va_openDriver() returns 0
+[h264_qsv @ 0x64e36a442a40] Using the constant quantization parameter (CQP) by default. Please use the global_quality option and other options for a quality-based mode or the b option and other options for a bitrate-based mode if the default is not the desired choice.
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264, nv12(tv, progressive), 320x240 [SAR 1:1 DAR 4:3], q=2-31, 25 fps, 25 tbn
+      Metadata:
+        encoder         : Lavc61.19.101 h264_qsv
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+[out#0/null @ 0x64e36a378740] video:1KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=   25 fps=0.0 q=35.0 Lsize=N/A time=00:00:00.88 bitrate=N/A speed=6.12x    
+</code></pre></div></div>
+
+<p>ErsatzTV - Troubleshooting - QSV Capabilities 硬件转码失败的输出样例：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Checking device /dev/dri/renderD128
+Exit Code: 171
+
+ffmpeg version n7.1.1-56-gc2184b65d2-20250716 Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 15.1.0 (crosstool-NG 1.27.0.42_35c1e72)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-ffbuild-linux-gnu- --arch=x86_64 --target-os=linux --enable-gpl --enable-version3 --disable-debug --enable-iconv --enable-zlib --enable-libfribidi --enable-gmp --enable-libxml2 --enable-openssl --enable-lzma --enable-fontconfig --enable-libharfbuzz --enable-libfreetype --enable-libvorbis --enable-opencl --enable-libpulse --enable-libvmaf --enable-libxcb --enable-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --disable-schannel --enable-sdl2 --enable-libsnappy --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame --enable-libuavs3d --enable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libshaderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs='-ldl -lgomp' --extra-ldflags=-pthread --extra-ldexeflags=-pie --cc=x86_64-ffbuild-linux-gnu-gcc --cxx=x86_64-ffbuild-linux-gnu-g++ --ar=x86_64-ffbuild-linux-gnu-gcc-ar --ranlib=x86_64-ffbuild-linux-gnu-gcc-ranlib --nm=x86_64-ffbuild-linux-gnu-gcc-nm --extra-version=20250716
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[AVHWDeviceContext @ 0x57ee44e15780] libva: Failed to get device id from the driver. Please consider to upgrade the driver to support VA-API 1.15.0
+Device creation failed: -1313558101.
+Failed to set value '/dev/dri/renderD128' for option 'qsv_device': Unknown error occurred
+Error parsing global options: Unknown error occurred
+
+
+Checking device /dev/dri/card0
+Exit Code: 171
+
+ffmpeg version n7.1.1-56-gc2184b65d2-20250716 Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 15.1.0 (crosstool-NG 1.27.0.42_35c1e72)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-ffbuild-linux-gnu- --arch=x86_64 --target-os=linux --enable-gpl --enable-version3 --disable-debug --enable-iconv --enable-zlib --enable-libfribidi --enable-gmp --enable-libxml2 --enable-openssl --enable-lzma --enable-fontconfig --enable-libharfbuzz --enable-libfreetype --enable-libvorbis --enable-opencl --enable-libpulse --enable-libvmaf --enable-libxcb --enable-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --disable-schannel --enable-sdl2 --enable-libsnappy --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame --enable-libuavs3d --enable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libshaderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs='-ldl -lgomp' --extra-ldflags=-pthread --extra-ldexeflags=-pie --cc=x86_64-ffbuild-linux-gnu-gcc --cxx=x86_64-ffbuild-linux-gnu-g++ --ar=x86_64-ffbuild-linux-gnu-gcc-ar --ranlib=x86_64-ffbuild-linux-gnu-gcc-ranlib --nm=x86_64-ffbuild-linux-gnu-gcc-nm --extra-version=20250716
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[AVHWDeviceContext @ 0x56747aacf7c0] libva: Failed to get device id from the driver. Please consider to upgrade the driver to support VA-API 1.15.0
+Device creation failed: -1313558101.
+Failed to set value '/dev/dri/card0' for option 'qsv_device': Unknown error occurred
+Error parsing global options: Unknown error occurred
+</code></pre></div></div>
+
+<h3 id="5-auto-start-ersatztv-as-a-systemd-service">5 Auto start ersatztv as a systemd service</h3>
+
+<p>创建一个如下的<code class="language-plaintext highlighter-rouge">ersatztv.service</code>文件：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/systemd/system/ersatztv.service
+
+[Unit]
+Description=ErsatzTV Service
+
+[Service]
+ExecStart=/home/greg/Applications/ersatztv/ErsatzTV-v25.2.0-linux-x64/ErsatzTV
+Restart=on-abort
+User=root
+WorkingDirectory=/home/greg/Applications/ersatztv/ErsatzTV-v25.2.0-linux-x64
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+
+<p>Enable the service to start on boot:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl daemon-reload
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>ersatztv.service
+</code></pre></div></div>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="jellyfin" /><category term="ersatztv" /><category term="hardware-accelerated" /><category term="transcoding" /><category term="docker" /><category term="ubuntu" /></entry><entry><title type="html">NGINX Proxy Manager的试用总结</title><link href="https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html" rel="alternate" type="text/html" title="NGINX Proxy Manager的试用总结" /><published>2025-07-16T00:00:00+00:00</published><updated>2025-07-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/07/16/nginx-proxy-manager-try-out.html"><![CDATA[<p>我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer<a href="https://portal.portainer.io/knowledge/can-i-build-an-image-while-deploying-a-stack/application-from-git">不支持在Deploy时构建镜像</a>，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。</p>
+
+<p>在过去一段时间，我开始注意到一个名为Nginx Proxy Manager的docker应用。它在各种地方越来越频繁地被提及，很多人都极力推荐这个应用（比如，<a href="https://www.reddit.com/r/selfhosted/comments/1dmh3mt/comment/l9vyc0t/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">这个</a>Reddit帖子）。</p>
+
+<p>我想尝试这个Nginx Proxy Manager的想法已经在心里酝酿许久，今天终于决定动手尝试。</p>
+
+<h2 id="我的nginx使用场景">我的nginx使用场景</h2>
+
+<ul>
+  <li>我有一堆本地网络上运行的docker服务希望通过nginx反向代理来支持通过HTTPS请求远程访问</li>
+  <li>其中有部分docker服务自身不带任何authentication，希望nginx可以提供基本的authentication（通过提供一个basic auth的UI界面要求用户输入）</li>
+  <li>没有自己的主域名，只有一个免费的二级域名（即子域名）</li>
+  <li>希望通过nginx在一个地方统一进行SSL证书管理</li>
+</ul>
+
+<h2 id="试用总结">试用总结</h2>
+
+<p>一通操作下来，我成功的配置了一个proxy host，并将onenav通过nginx proxy manager暴露在公网上。</p>
+
+<p><img src="/assets/images/nginx-proxy-manager-config.png" alt="nginx-proxy-manager-config.png" /></p>
+
+<p>但是在使用过程中我逐渐发现nginx proxy manager对于我的使用场景存在的一些局限性。并且逐渐意识到通过图形界面来管理nginx配置可能没有想象中那么美好（当然这一点我之前也想到了，这也是我一直迟迟没有试用它的原因）。</p>
+
+<h3 id="局限性1界面不支持配置nginx端口">局限性#1：界面不支持配置nginx端口</h3>
+
+<p>NGINX Proxy Manager默认只支持通过配置多个subdomain来在同一个domain下代理多个服务，而不支持通过使用同一个subdomain但是不同端口的方式（而这恰好是我的使用场景，因为我没钱买独立域名，所以是使用的免费eu.org subdomain）。</p>
+
+<p>我也尝试过用Custom Locations来支持多个服务的场景。不过很快发现，custom location还是需要自己写配置，而且更致命的问题是，很多服务本身并不支持以子目录的形式运行，比如sonarr：</p>
+
+<blockquote>
+  <p>Configuring Nginx Proxy Manager (NPM) to serve applications like Sonarr under a subdirectory (e.g., mydomain.com/sonarr) can be challenging due to how certain web applications handle base paths. Many applications are designed to run at the root (/) and may not support being served from a subdirectory without additional configuration</p>
+</blockquote>
+
+<p>来自：<a href="https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/">https://forums.unraid.net/topic/186683-nginx-proxy-manager-custom-location-help/</a></p>
+
+<h3 id="局限性2-默认的basic-auth不支持用户手动输入">局限性#2: 默认的Basic Auth不支持用户手动输入</h3>
+
+<p>NPM的Basic Auth只能通过请求本身的header来传递，而不是向用户提供一个basic auth的UI界面要求用户输入。这也不符合我的使用场景。</p>
+
+<h2 id="局限性3兼容性问题">局限性#3：兼容性问题</h2>
+
+<p>在只使用界面提供的功能的情况下，我在配置某些docker容器的代理时还遇到以下功能故障：</p>
+
+<ol>
+  <li>Huginn不work（连不上mysql服务器）</li>
+  <li>Calibre也不work（可以访问主界面但是连接不上远程桌面）</li>
+</ol>
+
+<h2 id="what-are-some-alternatives-to-nginx-proxy-manager">What are some alternatives to Nginx Proxy Manager?</h2>
+
+<p>Alternatives to Nginx Proxy Manager include Traefik, Caddy, Apache HTTP Server, HAProxy, WinGate, and OpenResty. They are worth exploring to determine the best fit for your specific requirements and infrastructure. Bear in mind that these alternatives vary in features, performance, and configuration complexity.</p>
+
+<p>以后可能会尝试一些其他的替代品，比如Traefik, Caddy，但也不会抱太大希望。其实，有时候通过命令行、代码和配置比通过图形界面更灵活更方便也更强大。</p>
+
+<p>比如，假如你有60个proxy host的配置需要迁移到另一个域名，通过界面会非常费时，而命令行就可以很快完成。</p>
+
+<blockquote>
+  <p>I have just finished transferring 60 proxy hosts to another domain through NPM, manually via the GUI. It wouldn’t work if I bulk changed the nginx configs themselves, it would just result in server errors on NPM.</p>
+</blockquote>
+
+<blockquote>
+  <p>If I was using plain nginx, it probably would’ve taken me a second to do the domain switch with configs alone.</p>
+</blockquote>
+
+<p>来自：<a href="https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">https://www.reddit.com/r/selfhosted/comments/18jp6k3/comment/kdlnchq/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button</a></p>
+
+<h2 id="其他收获">其他收获</h2>
+
+<p>这一次试用nginx proxy manager的另一个收获是学会了通过配置default network的方式来大大的简化对各个docker服务的<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>的networks配置的修改工作量。而且我学习到，如果docker镜像自身已经expose了某些端口，那就不用额外的写expose语句来重复操作了（只要nginx跟docker服务在同一个network便能够直接访问的docker容器expose的端口），更不用添加ports指令的在网络上暴露端口。</p>
+
+<p>这样下来，以后如果有新的docker容器希望通过nginx反向代理，只需要在容器的<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>的最后添加如下一段全局默认network配置即可：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>networks:
+  default:
+    name: nginx_default
+    external: true
+</code></pre></div></div>
+
+<p>参考：<a href="https://docs.docker.com/compose/how-tos/networking/">https://docs.docker.com/compose/how-tos/networking/</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="nginx" /><category term="docker" /><category term="docker-compose" /><category term="nginx-proxy-manager" /><summary type="html"><![CDATA[我目前管理nginx代理服务器的方式是将手写的nginx配置文件托管在Github，由于portainer不支持在Deploy时构建镜像，每次想拉取repo最新代码，都需要删除上次构建的nginx镜像和容器，然后重新Deploy来强制拉取repo最新代码并构建镜像，操作起来比较麻烦。]]></summary></entry><entry><title type="html">Jellyfin和ErsatzTV在Windows实机上硬件加速的一次尝试</title><link href="https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment.html" rel="alternate" type="text/html" title="Jellyfin和ErsatzTV在Windows实机上硬件加速的一次尝试" /><published>2025-07-11T00:00:00+00:00</published><updated>2025-07-11T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment.html"><![CDATA[<p>我的硬件是J4125迷你主机，采用在Windows实机（非虚拟机）环境下安装Jellyfin和ErsatzTV。</p>
+
+<h2 id="jellyfin转码成功">Jellyfin转码成功</h2>
+
+<p>经验证，Jellyfin可以成功转码（如下图所示）。</p>
+
+<p><img src="/assets/images/jellyfin-web-player-transcode-information.png" alt="jellyfin-web-player-transcode-information.png" /></p>
+
+<p><img src="/assets/images/cpu-gpu-resource-usage-when-transcoding.png" alt="cpu-gpu-resource-usage-when-transcoding.png" /></p>
+
+<p>Jellyfin官方推荐的硬件转码配置方案推荐顺序如下：</p>
+
+<p>Apple ≥ Intel ≥ Nvidia »&gt; AMD*</p>
+
+<p>其中，集成显卡方案中推荐的CPU配置如下：</p>
+
+<p>CPU: Intel Core i5-11400, Intel Pentium Gold G7400, Intel N100, Apple M series or newer (excluding Intel J/M/N/Y series up to 11th gen)</p>
+
+<p>独立显卡的方案因为Nvidia显卡对Linux支持不够友好，因此我暂时不考虑。Apple M系列我暂时也不考虑。i5功耗较高。综合而言，最适合我的是N100系列迷你主机。</p>
+
+<p>注意，Jellyfin不推荐J系列CPU，包括J4125，原因是架构太老，对最新的视频编码格式支持不够全面。</p>
+
+<p>来源：<a href="https://jellyfin.org/docs/general/administration/hardware-selection/#server-with-integrated-graphics">https://jellyfin.org/docs/general/administration/hardware-selection/#server-with-integrated-graphics</a></p>
+
+<h2 id="ersatztv在windows下未转码成功">ErsatzTV在Windows下未转码成功</h2>
+
+<p>ErsatzTV则是无法在Windows下成功转码。由于VA-API只支持Linux，所以Windows下只能选择QSV。但实际使用发现，J4125无法成功通过QSV进行转码，根据作者的推测是因为CPU太老了。</p>
+
+<p>来源：<a href="https://discuss.ersatztv.org/d/88-help-with-intel-igpu-gen9-htop-shows-ersatz-using-cpu-for-ffmpeg">https://discuss.ersatztv.org/d/88-help-with-intel-igpu-gen9-htop-shows-ersatz-using-cpu-for-ffmpeg</a></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="jellyfin" /><category term="ersatztv" /><category term="hardware-acceleration" /><category term="transcode" /><summary type="html"><![CDATA[我的硬件是J4125迷你主机，采用在Windows实机（非虚拟机）环境下安装Jellyfin和ErsatzTV。]]></summary></entry><entry><title type="html">Android编程笔记（九）：推荐的代码库目录结构</title><link href="https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure.html" rel="alternate" type="text/html" title="Android编程笔记（九）：推荐的代码库目录结构" /><published>2025-07-04T00:00:00+00:00</published><updated>2025-07-04T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/07/04/android-dev-notes-9-directory-structure.html"><![CDATA[<h2 id="概览">概览</h2>
+
+<p><img src="/assets/images/android-directory-structure.png" alt="android-directory-structure.png" /></p>
+
+<p>我个人习惯使用以下目录：</p>
+
+<ul>
+  <li>api</li>
+  <li>db</li>
+  <li>utilities</li>
+  <li>ui</li>
+  <li>viewmodels</li>
+  <li>workers</li>
+</ul>
+
+<h3 id="db子目录">DB子目录</h3>
+
+<p>This directory houses all DB-related components:</p>
+<ul>
+  <li>Database: The main access point to your app’s persistent data.</li>
+  <li>Data Entities: Classes that represent tables in your database.</li>
+  <li>Data Access Objects (Dao): Interfaces or abstract classes that define methods for accessing and manipulating data in your database.</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/db:</p>
+
+<ul>
+  <li>Database.kt</li>
+  <li>ADao.kt</li>
+  <li>A.kt</li>
+  <li>BDao.kt</li>
+  <li>B.kt</li>
+</ul>
+
+<h3 id="ui组件子目录">UI组件子目录</h3>
+
+<p>This directory houses all UI-related components:</p>
+<ul>
+  <li>Activities: The entry points for user interaction.</li>
+  <li>Fragments: Reusable UI components that can be combined within Activities.</li>
+  <li>Custom Views: Specialized UI elements created by extending existing View classes.</li>
+  <li>Adapters: Classes that bridge data and UI elements for displaying lists or grids.</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/ui:</p>
+
+<ul>
+  <li>MainActivity.kt</li>
+  <li>AListFragment.kt</li>
+  <li>ADetailsFragment.kt</li>
+  <li>ARecyclerViewAdapter.kt</li>
+  <li>BListFragment.kt</li>
+  <li>BDetailsFragment.kt</li>
+  <li>CFragment.kt</li>
+</ul>
+
+<h3 id="view-models子目录">View Models子目录</h3>
+
+<p>viewmodels directory:</p>
+<ul>
+  <li>Contains ViewModel classes that manages UI-related data and survives configuration changes (like screen rotation).</li>
+</ul>
+
+<p>src/main/java/com/example/myapplication/viewmodel:</p>
+
+<ul>
+  <li>AViewModel.kt</li>
+  <li>BViewModel.kt</li>
+</ul>
+
+<h3 id="ui布局子目录">UI布局子目录</h3>
+<p>src/main/res/layout:</p>
+
+<ul>
+  <li>activity_main.xml</li>
+  <li>fragment_a_list.xml</li>
+  <li>fragment_a_details.xml</li>
+  <li>fragment_b_list.xml</li>
+  <li>fragment_b_details.xml</li>
+  <li>fragment_c.xml</li>
+  <li>list_item.xml</li>
+</ul>
+
+<h3 id="ui导航子目录">UI导航子目录</h3>
+<p>src/main/res/navigation:</p>
+
+<ul>
+  <li>nav_graph.xml</li>
+</ul>
+
+<h3 id="androidmanifest声明文件">AndroidManifest声明文件</h3>
+
+<p>src/main:</p>
+
+<ul>
+  <li>AndroidManifest.xml</li>
+</ul>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://stackoverflow.com/a/63650013</li>
+  <li>https://blog.stackademic.com/organizing-your-android-app-with-mvvm-a-package-hierarchy-guide-c1c0f48fba60</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="android" /><category term="directory-structure" /><summary type="html"><![CDATA[概览]]></summary></entry><entry><title type="html">How to restore data for Immich with Portainer</title><link href="https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer.html" rel="alternate" type="text/html" title="How to restore data for Immich with Portainer" /><published>2025-06-30T00:00:00+00:00</published><updated>2025-06-30T00:00:00+00:00</updated><id>https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer</id><content type="html" xml:base="https://goooooouwa.github.io/coding/2025/06/30/backup-restore-immich-with-portainer.html"><![CDATA[<h2 id="1-backup-postgres-db">1. Backup Postgres DB</h2>
+<p>docker exec -t immich_postgres pg_dumpall –clean –if-exists –username=postgres | gzip &gt; “/path/to/backup/dump.sql.gz”</p>
+
+<h2 id="2-restore-postgres-db">2. Restore Postgres DB</h2>
+
+<h3 id="21-deletes-all-immich-data-to-start-from-scratch">2.1 Deletes all Immich data to start from scratch</h3>
+
+<ol>
+  <li>Remove all immich related containers from portainer (check the option to “Automatically remove non-persistent volumes”)</li>
+  <li>Backup named volumes by renaming them to a different name with <a href="https://www.commands.dev/workflows/rename_docker_volume">this convenient tool</a> (remember to check the generated commands before running, consider remove the last <code class="language-plaintext highlighter-rouge">docker volume rm</code> command to avoid accidentally data loss)</li>
+  <li>Remove immich named volumes from portainer:
+    <ol>
+      <li>immich_pgdata</li>
+      <li>immich_model-cache</li>
+    </ol>
+  </li>
+  <li>Remove all unused images from portaineer (including <code class="language-plaintext highlighter-rouge">tensorchord/pgvecto-rs</code> &amp; <code class="language-plaintext highlighter-rouge">redis</code>)</li>
+</ol>
+
+<h3 id="22-start-immich_postgres-alone">2.2 Start <code class="language-plaintext highlighter-rouge">immich_postgres</code> alone</h3>
+
+<ol>
+  <li>Comment out all other services except <code class="language-plaintext highlighter-rouge">immich_postgres</code> in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
+  <li>Pull &amp; redeploy all immich images &amp; containers to start <code class="language-plaintext highlighter-rouge">immich_postgres</code> alone without starting other services</li>
+  <li>Wait for <code class="language-plaintext highlighter-rouge">immich_postgres</code> to be fully running (<code class="language-plaintext highlighter-rouge">immich_postgres</code> might only show “starting” status, it’s normal. Check the log, if it says <code class="language-plaintext highlighter-rouge">PostgreSQL init process complete; ready for start up.</code>, it should be good to go, or just wait for another 10 seconds.)</li>
+</ol>
+
+<h3 id="23-restore-postgres-db-from-dump">2.3 Restore Postgres DB from dump</h3>
+<ol>
+  <li>Run the following command with the dump file location to restore Postgres DB from dump:<br />
+  <code class="language-plaintext highlighter-rouge">gunzip --stdout "/home/admin/immich/2025-07-01-dump.sql.gz" | sed "s/SELECT pg_catalog.set_config('search_path', '', false);/SELECT pg_catalog.set_config('search_path', 'public, pg_catalog', true);/g" | sudo docker exec -i immich_postgres psql --dbname=postgres --username=postgres</code></li>
+</ol>
+
+<h3 id="24-start-immich-as-normal">2.4 Start immich as normal</h3>
+
+<ol>
+  <li>Uncomment all other services in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
+  <li>Pull &amp; redeploy all immich images &amp; containers to start immich as normal</li>
+  <li>Restart nginx</li>
+  <li>Open immich &amp; check if everything working as expected (scan library &amp; regenerate thumbnails &amp; transcode videos if necessary)</li>
+</ol>
+
+<p>Done!</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>https://immich.app/docs/administration/backup-and-restore/</li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="coding" /><category term="immich" /><category term="portainer" /><category term="postgres" /><category term="docker" /><summary type="html"><![CDATA[1. Backup Postgres DB docker exec -t immich_postgres pg_dumpall –clean –if-exists –username=postgres | gzip &gt; “/path/to/backup/dump.sql.gz”]]></summary></entry></feed>
