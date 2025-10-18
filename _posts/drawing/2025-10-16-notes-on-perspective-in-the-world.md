@@ -80,4 +80,5 @@ Simulation showing how adjusting the angle of view of a camera, while varying th
 
 All figures are drawn as if centered on the direction of view — that is, with no perspective distortion. This is easiest to see in the two astronomers shown holding celestial globes (at right). Both figures are located at the righthand edge of the fresco, beyond the 30° circle of view. Rather than draw the spheres with the correct but elliptical perspective projections, Raphael simply drew them perfectly round.
 
+![IMG_0095.jpeg]({{site.baseurl}}/assets/images/IMG_0095.jpeg)
 
