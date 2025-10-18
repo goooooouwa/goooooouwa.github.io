@@ -72,7 +72,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Perspective_distortion):
 
 Simulation showing how adjusting the angle of view of a camera, while varying the camera's distance and keeping the object in frame, results in vastly differing images. At narrow angles and long distances, light rays are nearly parallel, resulting in a "flattened" image. At wide angles and short distances, objects appear foreshortened or distorted.
 
-### Cures for Perspective Distortions
+### “修正”透视形变（Cures for Perspective Distortions）
 
 古典壁画会尽量将画面保持在60度视锥之内，以避免出现明显的透视形变，影响画面美感。如果画中出现了一定程度的透视形变，画家便会人为的"修正"这些形变。比如在拉斐尔的壁画中，他将画面中的每个人物都以人物自身为视觉中心来按照一点透视进行绘制，脱离了背景的透视形变；他还将右下角本来因为透视形变会变成椭圆形的球体画成了标准的圆形；此外，他会巧妙地中画面中合适的地方安排人物，以遮挡背景中的建筑上可能出现透视形变的部分（比如画面中心的走廊被正前方的两位人物遮住；左右两根立柱的顶部被现实中的圆顶挡住；地面的瓷砖被各种人物遮挡）。
 
