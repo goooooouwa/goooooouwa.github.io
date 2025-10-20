@@ -22,4 +22,4 @@ published: true
 
 与画面存在非垂直角度的线条，距离观察者越远时角度越接近垂直于地面（因为当物体越接近消失点时，纵深线透视缩短的程度比垂直方向缩短得更多）；距离观察者越近时角度越接近平行于地面（因为当物体越接近观察者时，纵深线透视加长的程度比垂直方向加长得更多）。
 
-![308059d0ef0647c687a62c3ccac7c85c.jpg]({{site.baseurl}}/assets/images/308059d0ef0647c687a62c3ccac7c85c.jpg)
+![line-angle-changes.png]({{site.baseurl}}/assets/images/line-angle-changes.png)
