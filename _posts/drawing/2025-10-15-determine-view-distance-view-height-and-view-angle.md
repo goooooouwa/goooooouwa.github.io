@@ -46,7 +46,7 @@ published: true
 
 如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）。
 
-#### 对比调整视高与调整俯仰角度对画面透视产生的影响
+#### 调整视高与调整俯仰角度对画面透视产生的影响
 
 ![change-view-height-vs-view-angle.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle.png)
 
@@ -62,7 +62,7 @@ published: true
 
 对比高视高画面（图一）与俯视画面（图二）可以得出，当视线角度发生变化后，即使同一个物体在画面的水平方向高度保持不变，其他部位的大小和位置依然会发生变化（比如物体的宽度会变，物体侧边线条的角度也会发生变化。整个画面都展现出同样的变化。
 
-#### 对比仰视角度与俯仰角度对画面透视产生的影响
+#### 仰视角度与俯仰角度对画面透视产生的影响
 
 ![changing view angle.png]({{site.baseurl}}/assets/images/changing view angle.png)
 
