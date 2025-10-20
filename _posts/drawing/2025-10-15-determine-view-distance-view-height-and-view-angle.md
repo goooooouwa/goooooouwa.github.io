@@ -72,6 +72,10 @@ published: true
 
 ![view-angle-view-height]({{site.baseurl}}/assets/images/view-angle-view-height.png)
 
+下图中的比萨斜塔，观察者可以看到塔底低于视平线部分的“顶部”，但是看不塔顶的顶部（因为塔顶高于视平线）。
+
+![pisa.jpg]({{site.baseurl}}/assets/images/pisa.jpg)
+
 ## 确定画面的关键透视点
 
 ### 如何根据画面内容确定一点透视的关键点（中央消失点和视距等）
