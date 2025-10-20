@@ -1,5 +1,5 @@
 ---
-title: 对一些非典型透视画面的研究
+title: 对一些大角度透视画面的研究
 category: drawing
 tags: perspective
 published: true
@@ -13,10 +13,6 @@ published: true
 右图为将画面旋转90度后得到的地平线在水平方向的透视，画面中展示了当观察者仰视（即地平线低于视平线）时，处于地平线下方的物体的透视效果。
 
 ![looking upwards.jpg]({{site.baseurl}}/assets/images/looking upwards.jpg)
-
-下图中比萨斜塔的底部便处于地平线下方，观察者可以看到低于地平线部分的“顶部”，但是看不塔顶的顶部（因为塔顶高于地平线）。
-
-![pisa.jpg]({{site.baseurl}}/assets/images/pisa.jpg)
 
 ### 与画面存在非垂直角度的线条，其画面角度会随着与观察者距离的变化而改变
 
