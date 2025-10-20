@@ -16,7 +16,20 @@ published: true
 1. [笔记：两点透视]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
 1. [笔记：高级透视技巧]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
 
-## creating the perspective view
+## Creating the perspective view
+
+### Four perspective facts
+
+![4facts.gif]({{site.baseurl}}/assets/images/4facts.gif)
+
+1. Light travels in a straight line between any two points in space.
+2. An image is formed by light passing through a single point. This is the viewpoint.
+3. Visual rays through the viewpoint define a visual cone centered on a direction of view.
+4. Every image is a cross section through a visual cone.
+
+![fact3.gif]({{site.baseurl}}/assets/images/fact3.gif)
+
+The image is formed by making a slice through the visual cone at some point other than the viewpoint, either in front of or behind it. This slice cuts across all the visual rays, so that we only see visual rays "end on" within the visual cone. As a result, all visual rays appear as points on an image plane.
 
 ### The Perspective Image
 
