@@ -16,6 +16,12 @@ published: true
 1. [笔记：两点透视]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
 1. [笔记：高级透视技巧]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
 
+## creating the perspective view
+
+### The Perspective Image
+
+![The Perspective Image.png]({{site.baseurl}}/assets/images/The Perspective Image.png)
+
 ## 图像平面、视点和视线方向（image plane, viewpoint & direction of view）
 
 ### 调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）
