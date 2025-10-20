@@ -93,6 +93,17 @@ angle of view的定义即观察者在特定位置观察画面中的物体时物�
 
 不过，建筑师们通常不会去做这些计算：他们只会**尝试不同的模板，直到在角度和尺寸上找到视觉上最接近的匹配为止**。
 
+#### 如何画透视中的圆（即找到椭圆的长轴和短轴）
+
+在一个proko视频里学到一种简单的找到圆形在透视中的椭圆长轴和短轴方向的办法：
+
+![026836C9-3FA7-4C89-A9BD-5F3B8C422928.png](:/69beb799ea0341e9ae58a88874c07015)
+
+A good way to visualize the car wheels trick is to think of the left and right wheel as forming a cylinder bwtween them. And the reason the circle of the wheels is squished along that perpendicular axis is because the more you tilt the cylinder in perspective so you see it from the side, the more those top and bottom plane circles of the cylinder become squished into a line that's perpendicular to the height of the cylinder.
+
+![AA25E1A7-C7DD-461A-825B-434E55DBFB8E.jpg](:/1d8792d00950424dad8c688c32c3e63a)
+
+
 ### 人体透视
 
 艺术家在透视绘画中遇到的最困难的问题，无疑是人体。但这也是最早被尝试解决的问题之一。一个复杂但精确的方法见于皮耶罗·德拉·弗朗切斯卡的《论绘画透视》（De Prospectiva pingendi，约 1474 年），而阿尔布雷希特·丢勒在《人体比例四书》（Vier Bücher von menschlicher Proportion，1528 年）中则提出了比较粗糙但高效的方法。16 世纪时，这个问题真正“火热”起来——因为大量天顶壁画里那些飞向天堂的圣徒与天使需要仔细分析人体的透视缩短（包括人的脚底）。到 17 世纪，这类研究已成为绘画学习的常规课程，追随丁托列托的创作风格。
