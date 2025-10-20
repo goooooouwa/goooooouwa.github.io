@@ -95,14 +95,15 @@ angle of view的定义即观察者在特定位置观察画面中的物体时物�
 
 #### 如何画透视中的圆（即找到椭圆的长轴和短轴）
 
-在一个proko视频里学到一种简单的找到圆形在透视中的椭圆长轴和短轴方向的办法：
+在一个[proko视频](https://www.youtube.com/watch?v=LFMhE9nPrfU)里学到一种简单的找到透视中圆形（即椭圆）的长轴和短轴方向的办法：
 
-![026836C9-3FA7-4C89-A9BD-5F3B8C422928.png](:/69beb799ea0341e9ae58a88874c07015)
+![69beb799ea0341e9ae58a88874c07015.png]({{site.baseurl}}/assets/images/69beb799ea0341e9ae58a88874c07015.png)
 
-A good way to visualize the car wheels trick is to think of the left and right wheel as forming a cylinder bwtween them. And the reason the circle of the wheels is squished along that perpendicular axis is because the more you tilt the cylinder in perspective so you see it from the side, the more those top and bottom plane circles of the cylinder become squished into a line that's perpendicular to the height of the cylinder.
+评论里提供了一个对此方法的直观理解：
 
-![AA25E1A7-C7DD-461A-825B-434E55DBFB8E.jpg](:/1d8792d00950424dad8c688c32c3e63a)
+> A good way to visualize the car wheels trick is to think of the left and right wheel as forming a cylinder bwtween them. And the reason the circle of the wheels is squished along that perpendicular axis is because the more you tilt the cylinder in perspective so you see it from the side, the more those top and bottom plane circles of the cylinder become squished into a line that's perpendicular to the height of the cylinder.
 
+![1d8792d00950424dad8c688c32c3e63a.jpg]({{site.baseurl}}/assets/images/1d8792d00950424dad8c688c32c3e63a.jpg)
 
 ### 人体透视
 
