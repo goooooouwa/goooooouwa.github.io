@@ -27,8 +27,6 @@ published: true
 
 人单眼的水平视角最大可达156度，双眼的水平视角最大可达188度。人两眼重合视域为124度，单眼**舒适视域**为60度，集中注意力时约为25度。
 
-![human-eye-angle.jpg]({{site.baseurl}}/assets/images/human-eye-angle.jpg)
-
 为了避免画面出现明显的透视扭曲 (perspective distortion) ，图像画面通常会被安排在60度视锥之内。对于大于60度透视的情况，参考[对一些大角度透视画面的研究]({% post_url drawing/2025-10-19-perspective-analysis-on-extreme-cases %})。
 
 ### 视距
