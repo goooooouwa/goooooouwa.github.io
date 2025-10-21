@@ -63,7 +63,7 @@ published: true
 
 ## 确定画面的关键透视点
 
-### 一点透视：如何根据画面内容确定透视关键点（中央消失点和视距等）
+### 一点透视：如何根据画面内容确定关键透视点（中央消失点和视距等）
 
 ![1PP reconstruction of the center of projection.PNG]({{site.baseurl}}/assets/images/1PP reconstruction of the center of projection.PNG)
 
@@ -75,7 +75,7 @@ published: true
 
 至此一点透视的关键点就都确定了下来。
 
-### 两点透视：如何根据画面内容确定透视关键点（消失点和direction of view等）
+### 两点透视：如何根据画面内容确定关键透视点（消失点和direction of view等）
 
 ![2PP reconstruction of the center of projection.PNG]({{site.baseurl}}/assets/images/2PP reconstruction of the center of projection.PNG)
 
@@ -103,9 +103,9 @@ published: true
 ![perspective analysis.jpg]({{site.baseurl}}/assets/images/perspective analysis.jpg)
 
 
-## 如何根据透视关键点判断镜头的视距、视高和俯仰角度
+## 如何根据关键透视点判断镜头的视距、视高和俯仰角度
 
-1. 先确定画面的透视关键点（消失点、地平线、center of view等）；
+1. 先确定画面的关键关键点（消失点、地平线、center of view等）；
 2. 找到（一点透视的）dvp或者（两点透视的）folded viewpoint后便确定了**视距**；
 3. 画面中任何处于地平线上的物体（比如人的头部、树的枝干或者建筑物的墙壁），其距离地面的垂直距离等于观察者眼睛与地面的距离（即**视高**），然后可以根据[距离和大小]({% post_url drawing/2024-09-13-notes-on-central-perspective %})来推算出实际的视高；
 4. 检查垂直于地面的物体（比如建筑物）是否出现透视现象（即是否存在垂直方向的消失点），如果存在，则可以根据地平线与视平线在dvp处的夹角确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）；
