@@ -81,18 +81,6 @@ title: 笔记：高级透视技巧
 
 ![yJcOC.png]({{site.baseurl}}/assets/images/yJcOC.png)
 
-有一种方法可以根据圆的透视缩短程度（即椭圆的视觉角度）来大致估算出应该使用多少角度的椭圆模板来画出对应的椭圆，该方法由circle of view中的三角关系（trigonometric tangent）计算得到：
-
-![angle-of-view-at-x.png]({{site.baseurl}}/assets/images/angle-of-view-at-x.png)
-
-angle of view的定义即观察者在特定位置观察画面中的物体时物体所占据的视觉角度：
-
-![angle-of-view]({{site.baseurl}}/assets/images/angle-of-view.jpg)
-
-将地面上的正方形放在视觉中轴线（将viewpint向上翻折后与principal point相连的线）上（令其中心线与中轴线重合），从接近观察者的这一面的一个角引出一条竖直线 A，再从斜对面的后角引出一条水平线 B；这两条线相交后形成一个直角三角形。然后用直尺测量 A 与 B 的长度，并取其比值的反正切（arctangent）。根据angle of view的定义，这个角度就是从点 x 处观察地面上该正方形平面的视觉角度（angle of view）。该角度可用来**粗略估算**出比较合适的椭圆模板角度（两者并不相等，这个方法只是求一个近似值）。
-
-不过，建筑师们通常不会去做这些计算：他们只会**尝试不同的模板，直到在角度和尺寸上找到视觉上最接近的匹配为止**。
-
 #### 如何画透视中的圆（即找到椭圆的长轴和短轴）
 
 在一个[proko视频](https://www.youtube.com/watch?v=LFMhE9nPrfU)里学到一种简单的找到透视中圆形（即椭圆）的长轴和短轴方向的办法：
