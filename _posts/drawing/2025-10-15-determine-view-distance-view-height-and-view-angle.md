@@ -147,7 +147,7 @@ published: true
 3. 根据同样的办法（即画面的缩放比例）确定视距在俯视图的画面大小，进而确定画面平面的位置；
 4. 在俯视图中将物体上的任意点与视点连接后，其与画面的交点即为该点在画面中的位置，可以据此确定物体的左右轮廓在画面中出现的位置（比如根据连线可以确定桌子表面左右边缘分别出现在画面中的位置）。
 
-## 参考
+## 参考资料
 
 - [https://handprint.com/HP/WCL/perspect2.html](https://handprint.com/HP/WCL/perspect2.html)
 - [https://handprint.com/HP/WCL/perspect3.html](https://handprint.com/HP/WCL/perspect3.html)
