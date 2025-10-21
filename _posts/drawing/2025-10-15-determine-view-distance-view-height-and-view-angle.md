@@ -13,14 +13,23 @@ published: true
 
 ### 画的本质
 
-一幅画的本质是一种视错觉，它试图模仿的是当一位观察者站在特定的视高和视距下，视线垂直于图像平面时，透过图像所在的画框（这个透明的窗户）所看到的三维空间的样子。
+一幅画的本质是一种视错觉，它试图模仿的是当一位观察者站在特定的视高和视距下，视线垂直于图像平面时，透过图像所在的画框（这个透明的窗户）所看到的三维空间的样子（参考[The Perspective Image]({% post_url drawing/2025-10-16-notes-on-perspective-in-the-world %})）。
 
 ### 共同的前提和假设
 
 每一副画作都有一些共同的前提和假设：
 1. 观察者眼睛所看到的90度视锥的半径等于观察者的视距（这是基本数学原理）；
-2. 为了避免画面出现明显的透视扭曲 (perspective distortion) ，图像画面通常会被安排在60度视锥之内；
-3. 观察者的视线永远是垂直于图像平面的（画框可以相对于地面有各种不同的俯仰角度）；
+2. 观察者的视线永远是垂直于图像平面的。
+
+虽然画框这个透明的窗户本身可以有相对于地面的各种不同的俯仰角度，但观察者的视线永远是垂直于图像平面的，否则为了真正欣赏一副作品，观众就必须先找到作家设定的特定的观察角度，会很麻烦。
+
+### 视觉角度（view angle)
+
+人单眼的水平视角最大可达156度，双眼的水平视角最大可达188度。人两眼重合视域为124度，单眼**舒适视域**为60度，集中注意力时约为25度。
+
+![human-eye-angle.jpg]({{site.baseurl}}/assets/images/human-eye-angle.jpg)
+
+为了避免画面出现明显的透视扭曲 (perspective distortion) ，图像画面通常会被安排在60度视锥之内。对于大于60度透视的情况，参考[对一些大角度透视画面的研究]({% post_url drawing/2025-10-19-perspective-analysis-on-extreme-cases %})。
 
 ### 视距
 
@@ -30,13 +39,9 @@ published: true
 
 根据透视的平移缩放规则可知，画面的视高是可以任意设定的，不用一定等于视距（比如当观察者趴在地上或者站在高楼上）。90度视锥假设视高等于视距只是为了方便根据90度视锥建立ground line以及定位翻折后的视点（viewpoint）。实际作画中可以任意选择视高和视距，只要画面不要超出60度视锥即可。
 
-作者可以为画面选择选择不同的视高，以营造出不同身高的观察者或者观察者视线处在不同水平高度（比如匍匐在地面或者站在楼顶）时透过画框所看到的三维空间的样子。
-
-![horizon line and viewpoint in landscape perspective.PNG]({{site.baseurl}}/assets/images/horizon line and viewpoint in landscape perspective.PNG)
+作者可以为画面选择选择不同的视高，以营造出不同身高的观察者或者观察者视线处在不同水平高度（比如匍匐在地面或者站在楼顶）时透过画框所看到的三维空间的样子（参考[地平线和视点的关系（Horizon Line and Viewpoint）]({% post_url drawing/2025-10-16-notes-on-perspective-in-the-world %})）。
 
 ### 俯仰角度
-
-画框这个透明的窗户可以相对于地面有各种不同的俯仰角度，但观察者的视线永远是垂直于图像平面的（否则为了真正欣赏一副作品，观众就必须先找到作家设定的特定的观察角度，会很麻烦）。
 
 如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。因此一个快速判断镜头是否相对于地面有俯仰角度的办法是，检查垂直于地面的物体（比如建筑物）是否出现透视现象（寻找消失点，即多条垂直于地面的线条之间的交点）。
 
@@ -46,7 +51,7 @@ published: true
 
 如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）。
 
-#### 对比调整视高与调整俯仰角度对画面透视产生的影响
+### 对比调整视高与调整俯仰角度对画面透视产生的影响
 
 ![change-view-height-vs-view-angle.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle.png)
 
@@ -54,31 +59,11 @@ published: true
 
 **调整俯仰角度对画面透视产生的影响。** 对比初始视角画面（图一）与俯视画面（图三）可以看出，如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。
 
-![change-view-height-vs-view-angle-continued.png]({{site.baseurl}}/assets/images/change-view-height-vs-view-angle-continued.png)
-
-对比初始视角画面（图一）与俯视画面（图二）可以得出，当视线角度发生变化后，画面中的同一个物体最多只会有一条边可以在画面中保持大小位置不变，其他部位的大小和位置都会发生变化。
-
-比如在下图中，右下角的画面从水平视角画面（图一）变为俯视画面（图二）后，即使蓝色建筑物在画面的水平方向高度保持不变，该建筑物的其他部位的大小和位置依然会发生变化（比如该建筑物的宽度变窄了，其侧边线条的角度也会发生变化）。整个画面中的其他部分都展现出了同样的变化。
-
-![2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png]({{site.baseurl}}/assets/images/2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png)
-
-#### 仰视角度与俯仰角度对画面透视产生的影响
-
-![changing view angle.png]({{site.baseurl}}/assets/images/changing view angle.png)
-
-对比初始视角画面（图三）与俯视画面（图二）可以得出，无论视线角度怎么改变，低于视平线（即视高）的物体其顶部（在不被其他物体遮挡的情况下）永远都是可见的，反过来高于视平线（或视高）的物体其底部同样也是永远可见的。
-
-比如在下图中，观察者的视高高于篮球员的右脚，由此可知，无论观察者以多少角度仰视或者俯仰该篮球员，观察者永远都只能看到篮球员右脚的顶部，不可能看到其脚底（除非将视高降到右脚以下）。
-
-![view-angle-view-height]({{site.baseurl}}/assets/images/view-angle-view-height.png)
-
-下图中的比萨斜塔也是如此，观察者可以看到塔底低于视平线部分的“顶部”，但是看不塔顶的顶部（因为塔顶高于视平线）。
-
-![pisa.jpg]({{site.baseurl}}/assets/images/pisa.jpg)
+更多关于俯仰角度对画面透视的影响，请参考[俯仰视角下的透视]({% post_url drawing/2025-10-21-view-angle-s-effect-on-perspective %})。
 
 ## 确定画面的关键透视点
 
-### 如何根据画面内容确定一点透视的关键点（中央消失点和视距等）
+### 一点透视：如何根据画面内容确定透视关键点（中央消失点和视距等）
 
 ![1PP reconstruction of the center of projection.PNG]({{site.baseurl}}/assets/images/1PP reconstruction of the center of projection.PNG)
 
@@ -90,7 +75,7 @@ published: true
 
 至此一点透视的关键点就都确定了下来。
 
-### 如何根据画面内容确定两点透视的关键点（消失点和direction of view等）
+### 两点透视：如何根据画面内容确定透视关键点（消失点和direction of view等）
 
 ![2PP reconstruction of the center of projection.PNG]({{site.baseurl}}/assets/images/2PP reconstruction of the center of projection.PNG)
 
@@ -118,20 +103,20 @@ published: true
 ![perspective analysis.jpg]({{site.baseurl}}/assets/images/perspective analysis.jpg)
 
 
-## 如何根据画面判断镜头的视距、视高和俯仰角度
+## 如何根据透视关键点判断镜头的视距、视高和俯仰角度
 
-1. 先确定画面的关键透视点（消失点、地平线、center of view等）；
+1. 先确定画面的透视关键点（消失点、地平线、center of view等）；
 2. 找到（一点透视的）dvp或者（两点透视的）folded viewpoint后便确定了**视距**；
 3. 画面中任何处于地平线上的物体（比如人的头部、树的枝干或者建筑物的墙壁），其距离地面的垂直距离等于观察者眼睛与地面的距离（即**视高**），然后可以根据[距离和大小]({% post_url drawing/2024-09-13-notes-on-central-perspective %})来推算出实际的视高；
 4. 检查垂直于地面的物体（比如建筑物）是否出现透视现象（即是否存在垂直方向的消失点），如果存在，则可以根据地平线与视平线在dvp处的夹角确定画面的**俯仰角度**（参考[倾斜面和坡斜面]({% post_url drawing/2024-09-13-notes-on-central-perspective %})一节）；
 
-### 根据视距、物体画面大小和实际大小确定物体与观察者的实际距离
+### 已知视距、物体画面大小和实际大小确定物体，求观察者的实际距离
 
 ![reduction in Bierstadts Looking Up the Yosemite Valley.PNG]({{site.baseurl}}/assets/images/reduction in Bierstadts Looking Up the Yosemite Valley.PNG)
 
 如果已知观察者的视距（比如根据画幅的尺寸或者展览馆里作品的摆放来推测理想的欣赏距离，即为视距），且已知物体画面大小（直接在画面上测量）和物体的实际大小（根据现实生活中可以查到的物体数据），根据[距离和大小]({% post_url drawing/2024-09-13-notes-on-central-perspective %})，我们可以计算出物体在三维空间中与画家（或者说假象的观察者）的实际距离。
 
-### 根据物体画面大小和实际大小确定视距
+### 已知物体画面大小和实际大小，求视距
 
 例如，观察者站在一个身高为1.8米的人面前，沿水平方向直视对方，测量得知此人的头部在画面中的身高是18厘米，而90度视锥半径的测量长度是20厘米，求观察者与画面之间的距离（即视距）。
 
@@ -143,7 +128,7 @@ published: true
 6. 将画面中已知尺寸的物体根据透视规则移动到ground line上（并进行相应的缩放），测量出它在ground line上的实际尺寸，即可根据画面和物体大小比例关系计算出画面的视距长度（比如，已知一个人的头部高度是20厘米，将画面中此人的头部移动缩放到ground line后，假设测量出其头部的实际尺寸为10厘米，那么可知整幅画面相比与理论尺寸缩小了2倍，而假如测量出的视距大小为20厘米，那么画面的实际视距即为40厘米）；
 7. 至此，便可将任意其他物体的实际尺寸按照画面缩放倍数在ground line上画出同等长度的线段，然后根据透视规则，将其移动缩放到画面空间中的任意位置。
 
-### 根据物体实际大小和视距确定其在画面中的位置和大小
+### 已知物体实际大小和视距，求其在画面中的位置和大小
 
 例如，已知观察者坐在长度为1米的方形桌子前，以45度角俯视桌子，此时画面中可以看到整个桌子，观察者的视线（direction of view）正好穿过桌子表面的1/2处，要求画出当画面距离观察者视距为80厘米时，桌子在60度视锥中的画面的位置和大小。
 
