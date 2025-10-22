@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Android编程笔记（八）：Fragment | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Android编程笔记（八）：Fragment" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="记录生活、学习和思考" />
+<meta property="og:description" content="记录生活、学习和思考" />
+<link rel="canonical" href="https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Android编程笔记（八）：Fragment" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2025-06-27T00:00:00+00:00","datePublished":"2025-06-27T00:00:00+00:00","description":"记录生活、学习和思考","headline":"Android编程笔记（八）：Fragment","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html"},"url":"https://goooooouwa.github.io/coding/2025/06/27/android-dev-notes-8-fragment.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Android编程笔记（八）：Fragment</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-06-27T00:00:00+00:00" itemprop="datePublished">
+        Jun 27, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li><a href="#how-to-use-fragments" id="markdown-toc-how-to-use-fragments">How to use fragments</a>    <ul>
+      <li><a href="#setup-your-environment" id="markdown-toc-setup-your-environment">Setup your environment</a></li>
+      <li><a href="#create-a-fragment-class" id="markdown-toc-create-a-fragment-class">Create a fragment class</a>        <ul>
+          <li><a href="#difference-and-uses-of-oncreate-oncreateview-in-fragments" id="markdown-toc-difference-and-uses-of-oncreate-oncreateview-in-fragments">Difference and uses of <code class="language-plaintext highlighter-rouge">onCreate()</code>, <code class="language-plaintext highlighter-rouge">onCreateView()</code> in fragments</a></li>
+        </ul>
+      </li>
+      <li><a href="#add-a-fragment-to-an-activity" id="markdown-toc-add-a-fragment-to-an-activity">Add a fragment to an activity</a>        <ul>
+          <li><a href="#add-a-fragment-via-xml" id="markdown-toc-add-a-fragment-via-xml">Add a fragment via XML</a></li>
+          <li><a href="#add-a-fragment-programmatically" id="markdown-toc-add-a-fragment-programmatically">Add a fragment programmatically</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#fragment-manager" id="markdown-toc-fragment-manager">Fragment manager</a>    <ul>
+      <li><a href="#access-the-fragmentmanager" id="markdown-toc-access-the-fragmentmanager">Access the FragmentManager</a></li>
+      <li><a href="#child-fragments" id="markdown-toc-child-fragments">Child fragments</a></li>
+      <li><a href="#use-the-fragmentmanager" id="markdown-toc-use-the-fragmentmanager">Use the FragmentManager</a></li>
+      <li><a href="#perform-a-transaction" id="markdown-toc-perform-a-transaction">Perform a transaction</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References:</a></li>
+</ul>
+
+<h2 id="how-to-use-fragments">How to use fragments</h2>
+
+<p>A <a href="https://developer.android.com/guide/fragments">fragment</a> represents a modular portion of the user interface within an activity. A fragment has its own lifecycle, receives its own input events, and you can add or remove fragments while the containing activity is running.</p>
+
+<p>This document describes how to create a fragment and include it in an activity.</p>
+
+<h3 id="setup-your-environment">Setup your environment</h3>
+
+<p>Fragments require a dependency on the <a href="https://developer.android.com/jetpack/androidx/releases/fragment">AndroidX Fragment library</a>.</p>
+
+<p>To include the AndroidX Fragment library to your project, add the following dependencies in your app’s <code class="language-plaintext highlighter-rouge">build.gradle</code> file:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">fragment_version</span> <span class="p">=</span> <span class="s">"1.8.8"</span>
+
+    <span class="c1">// Java language implementation</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.fragment:fragment:$fragment_version"</span><span class="p">)</span>
+    <span class="c1">// Kotlin</span>
+    <span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.fragment:fragment-ktx:$fragment_version"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="create-a-fragment-class">Create a fragment class</h3>
+
+<p>To create a fragment, extend the AndroidX <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment"><code class="language-plaintext highlighter-rouge">Fragment</code></a> class, and override its methods to insert your app logic, similar to the way you would create an <a href="https://developer.android.com/reference/android/app/Activity"><code class="language-plaintext highlighter-rouge">Activity</code></a> class. To create a minimal fragment that defines its own layout, provide your fragment’s layout resource to the base constructor, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleFragment</span> <span class="p">:</span> <span class="nc">Fragment</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">example_fragment</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can customize the fragment’s view by overriding the <code class="language-plaintext highlighter-rouge">onCreateView()</code> method.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleFragment</span> <span class="p">:</span> <span class="nc">Fragment</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreateView</span><span class="p">(</span>
+        <span class="n">inflater</span><span class="p">:</span> <span class="nc">LayoutInflater</span><span class="p">,</span> <span class="n">container</span><span class="p">:</span> <span class="nc">ViewGroup</span><span class="p">?,</span>
+        <span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?</span>
+    <span class="p">):</span> <span class="nc">View</span><span class="p">?</span> <span class="p">{</span>
+        <span class="c1">// Inflate the layout for this fragment.</span>
+        <span class="c1">// or you can inflate a different layout here.</span>
+        <span class="kd">val</span> <span class="py">root</span><span class="p">:</span> <span class="nc">View</span> <span class="p">=</span> <span class="n">inflater</span><span class="p">.</span><span class="nf">inflate</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">my_fragment_layout</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+        
+        <span class="c1">// Additional graphical initialisations...</span>
+        
+        <span class="k">return</span> <span class="n">root</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="difference-and-uses-of-oncreate-oncreateview-in-fragments">Difference and uses of <code class="language-plaintext highlighter-rouge">onCreate()</code>, <code class="language-plaintext highlighter-rouge">onCreateView()</code> in fragments</h4>
+
+<p><strong><a href="https://developer.android.com/reference/android/app/Fragment.html#onCreate(android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreate()</code></a>:</strong></p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">void</span> <span class="nf">onCreate</span> <span class="p">(</span><span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Called to do initial creation of a fragment. The <code class="language-plaintext highlighter-rouge">onCreate()</code> method in a <code class="language-plaintext highlighter-rouge">Fragment</code> is <strong>called after the <code class="language-plaintext highlighter-rouge">Activity</code>’s <code class="language-plaintext highlighter-rouge">onAttachFragment()</code></strong> but before that <code class="language-plaintext highlighter-rouge">Fragment</code>’s <code class="language-plaintext highlighter-rouge">onCreateView()</code>.<br />
+In this method, you can assign variables, get <code class="language-plaintext highlighter-rouge">Intent</code> extras, and <strong>anything else that doesn’t involve the View hierarchy</strong> (i.e. non-graphical initialisations). This is because this method can be called when the <code class="language-plaintext highlighter-rouge">Activity</code>’s <code class="language-plaintext highlighter-rouge">onCreate()</code> is not finished, and so trying to access the View hierarchy here may result in a crash.</p>
+
+<p><strong><a href="https://developer.android.com/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater,%20android.view.ViewGroup,%20android.os.Bundle)"><code class="language-plaintext highlighter-rouge">onCreateView()</code></a>:</strong></p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nc">View</span> <span class="nf">onCreateView</span> <span class="p">(</span><span class="nc">LayoutInflater</span> <span class="n">inflater</span><span class="p">,</span> 
+                <span class="nc">ViewGroup</span> <span class="n">container</span><span class="p">,</span> 
+                <span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Called to have the fragment instantiate its user interface view. After the <code class="language-plaintext highlighter-rouge">onCreate()</code> is called (in the <code class="language-plaintext highlighter-rouge">Fragment</code>), the <code class="language-plaintext highlighter-rouge">Fragment</code>’s <code class="language-plaintext highlighter-rouge">onCreateView()</code> is called. You can assign your <code class="language-plaintext highlighter-rouge">View</code> variables and <strong>do any graphical initialisations</strong>. You are expected to return a <code class="language-plaintext highlighter-rouge">View</code> from this method, and this is the main UI view, but if your <code class="language-plaintext highlighter-rouge">Fragment</code> does not use any layouts or graphics, you can return <code class="language-plaintext highlighter-rouge">null</code> (happens by default if you don’t override).</p>
+
+<p><strong>To sum up</strong></p>
+
+<p>They are all called in the <code class="language-plaintext highlighter-rouge">Fragment</code> but are called at different times.<br />
+The <code class="language-plaintext highlighter-rouge">onCreate()</code> is called first, for doing any non-graphical initialisations. Next, you can assign and declare any <code class="language-plaintext highlighter-rouge">View</code> variables you want to use in <code class="language-plaintext highlighter-rouge">onCreateView()</code>.</p>
+
+<h3 id="add-a-fragment-to-an-activity">Add a fragment to an activity</h3>
+
+<p>Generally, your fragment must be embedded within an AndroidX <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity"><code class="language-plaintext highlighter-rouge">FragmentActivity</code></a> to contribute a portion of UI to that activity’s layout. <code class="language-plaintext highlighter-rouge">FragmentActivity</code> is the base class for <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity"><code class="language-plaintext highlighter-rouge">AppCompatActivity</code></a>, so if you’re already subclassing <code class="language-plaintext highlighter-rouge">AppCompatActivity</code> to provide backward compatibility in your app, then you do not need to change your activity base class.</p>
+
+<p>You can add your fragment to the activity’s view hierarchy either by defining the fragment in your activity’s layout file or by defining a fragment container in your activity’s layout file and then programmatically adding the fragment from within your activity. In either case, you need to add a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentContainerView"><code class="language-plaintext highlighter-rouge">FragmentContainerView</code></a> that defines the location where the fragment should be placed within the activity’s view hierarchy. It is strongly recommended to always use a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> as the container for fragments, as <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> includes fixes specific to fragments that other view groups such as <code class="language-plaintext highlighter-rouge">FrameLayout</code> do not provide.</p>
+
+<h4 id="add-a-fragment-via-xml">Add a fragment via XML</h4>
+
+<p>To declaratively add a fragment to your activity layout’s XML, use a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> element.</p>
+
+<p>Here’s an example activity layout containing a single <code class="language-plaintext highlighter-rouge">FragmentContainerView</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;!--</span> <span class="n">res</span><span class="p">/</span><span class="n">layout</span><span class="p">/</span><span class="n">example_activity</span><span class="p">.</span><span class="n">xml</span> <span class="p">--&gt;</span>
+<span class="p">&lt;</span><span class="n">androidx</span><span class="p">.</span><span class="n">fragment</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nc">FragmentContainerView</span>
+    <span class="n">xmlns</span><span class="p">:</span><span class="n">android</span><span class="p">=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">id</span><span class="p">=</span><span class="s">"@+id/fragment_container_view"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">name</span><span class="p">=</span><span class="s">"com.example.ExampleFragment"</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">android:name</code> attribute specifies the class name of the <code class="language-plaintext highlighter-rouge">Fragment</code> to instantiate. When the activity’s layout is inflated, the specified fragment is instantiated, <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#onInflate%28android.content.Context,%2520android.util.AttributeSet,%2520android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">onInflate()</code></a> is called on the newly instantiated fragment, and a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code> is created to add the fragment to the <code class="language-plaintext highlighter-rouge">FragmentManager</code>.</p>
+
+<p><strong>Note:</strong> You can use the <code class="language-plaintext highlighter-rouge">class</code> attribute instead of <code class="language-plaintext highlighter-rouge">android:name</code> as an alternative way to specify which <code class="language-plaintext highlighter-rouge">Fragment</code> to instantiate.</p>
+
+<h4 id="add-a-fragment-programmatically">Add a fragment programmatically</h4>
+
+<p>To programmatically add a fragment to your activity’s layout, the layout should include a <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> to serve as a fragment container, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;!--</span> <span class="n">res</span><span class="p">/</span><span class="n">layout</span><span class="p">/</span><span class="n">example_activity</span><span class="p">.</span><span class="n">xml</span> <span class="p">--&gt;</span>
+<span class="p">&lt;</span><span class="n">androidx</span><span class="p">.</span><span class="n">fragment</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nc">FragmentContainerView</span>
+    <span class="n">xmlns</span><span class="p">:</span><span class="n">android</span><span class="p">=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">id</span><span class="p">=</span><span class="s">"@+id/fragment_container_view"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="p">=</span><span class="s">"match_parent"</span>
+    <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="p">=</span><span class="s">"match_parent"</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<p>Unlike the XML approach, the <code class="language-plaintext highlighter-rouge">android:name</code> attribute isn’t used on the <code class="language-plaintext highlighter-rouge">FragmentContainerView</code> here, so no specific fragment is automatically instantiated. Instead, a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction"><code class="language-plaintext highlighter-rouge">FragmentTransaction</code></a> is used to instantiate a fragment and add it to the activity’s layout.</p>
+
+<p>While your activity is running, you can make fragment transactions such as adding, removing, or replacing a fragment. In your <code class="language-plaintext highlighter-rouge">FragmentActivity</code>, you can get an instance of the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager"><code class="language-plaintext highlighter-rouge">FragmentManager</code></a>, which can be used to create a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. Then, you can instantiate your fragment within your activity’s <code class="language-plaintext highlighter-rouge">onCreate()</code> method using <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#add%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">FragmentTransaction.add()</code></a>, passing in the <code class="language-plaintext highlighter-rouge">ViewGroup</code> ID of the container in your layout and the fragment class you want to add and then commit the transaction, as shown in the following example:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="p">:</span> <span class="nc">AppCompatActivity</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">example_activity</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">savedInstanceState</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">commit</span> <span class="p">{</span>
+                <span class="nf">setReorderingAllowed</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+                <span class="n">add</span><span class="p">&lt;</span><span class="nc">ExampleFragment</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fragment_container_view</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> You should <strong>always</strong> use <code class="language-plaintext highlighter-rouge">setReorderingAllowed(true)</code> when performing a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. For more information on reordered transactions, see <a href="https://developer.android.com/guide/fragments/transactions#reordering">Fragment transactions</a>.</p>
+
+<p>In the previous example, note that the fragment transaction is only created when <code class="language-plaintext highlighter-rouge">savedInstanceState</code> is <code class="language-plaintext highlighter-rouge">null</code>. This is to ensure that the fragment is added only once, when the activity is first created. When a configuration change occurs and the activity is recreated, <code class="language-plaintext highlighter-rouge">savedInstanceState</code> is no longer <code class="language-plaintext highlighter-rouge">null</code>, and the fragment does not need to be added a second time, as the fragment is automatically restored from the <code class="language-plaintext highlighter-rouge">savedInstanceState</code>.</p>
+
+<h2 id="fragment-manager">Fragment manager</h2>
+
+<p><strong>Note:</strong> We strongly recommend using the <a href="https://developer.android.com/guide/navigation">Navigation library</a> to manage your app’s navigation. The framework follows best practices for working with fragments, the back stack, and the fragment manager. For more information about Navigation, see <a href="https://developer.android.com/guide/navigation/navigation-getting-started">Get started with the Navigation component</a> and <a href="https://developer.android.com/guide/navigation/navigation-migrate">Migrate to the Navigation component</a>.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager"><code class="language-plaintext highlighter-rouge">FragmentManager</code></a> is the class responsible for performing actions on your app’s fragments, such as adding, removing, or replacing them and adding them to the back stack.</p>
+
+<p><strong>You might never interact with <code class="language-plaintext highlighter-rouge">FragmentManager</code> directly if you’re using the <a href="https://developer.android.com/guide/navigation">Jetpack Navigation</a> library, as it works with the <code class="language-plaintext highlighter-rouge">FragmentManager</code> on your behalf.</strong> However, any app using fragments is using <code class="language-plaintext highlighter-rouge">FragmentManager</code> at some level, so it’s important to understand what it is and how it works.</p>
+
+<h3 id="access-the-fragmentmanager">Access the FragmentManager</h3>
+
+<p>You can access the <code class="language-plaintext highlighter-rouge">FragmentManager</code> from an activity or from a fragment.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity"><code class="language-plaintext highlighter-rouge">FragmentActivity</code></a> and its subclasses, such as <a href="https://developer.android.com/reference/androidx/appcompat/app/AppCompatActivity"><code class="language-plaintext highlighter-rouge">AppCompatActivity</code></a>, have access to the <code class="language-plaintext highlighter-rouge">FragmentManager</code> through the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentActivity#getSupportFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getSupportFragmentManager()</code></a> method.</p>
+
+<p>Fragments can host one or more child fragments. Inside a fragment, you can get a reference to the <code class="language-plaintext highlighter-rouge">FragmentManager</code> that manages the fragment’s children through <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#getChildFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getChildFragmentManager()</code></a>. If you need to access its host <code class="language-plaintext highlighter-rouge">FragmentManager</code>, you can use <a href="https://developer.android.com/reference/androidx/fragment/app/Fragment#getParentFragmentManager%28%29"><code class="language-plaintext highlighter-rouge">getParentFragmentManager()</code></a>.</p>
+
+<p>Here are a couple of examples to see the relationships between fragments, their hosts, and the <code class="language-plaintext highlighter-rouge">FragmentManager</code> instances associated with each.</p>
+
+<p><img src="/assets/images/fragment-host.png" alt="two ui layout examples showing the relationships between
+            fragments and their host activities" /></p>
+
+<p><strong>Figure 1.</strong> Two UI layout examples showing the relationships between fragments and their host activities.</p>
+
+<p>Figure 1 shows two examples, each of which has a single activity host. The host activity in both of these examples displays top-level navigation to the user as a <a href="https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView"><code class="language-plaintext highlighter-rouge">BottomNavigationView</code></a> that is responsible for swapping out the host fragment with different screens in the app. Each screen is implemented as a separate fragment.</p>
+
+<p>The host fragment in Example 1 hosts two child fragments that make up a split-view screen. The host fragment in Example 2 hosts a single child fragment that makes up the display fragment of a <a href="https://developer.android.com/guide/navigation/navigation-swipe-view-2#implement_swipe_views">swipe view</a>.</p>
+
+<p>Given this setup, you can think about each host as having a <code class="language-plaintext highlighter-rouge">FragmentManager</code> associated with it that manages its child fragments. This is illustrated in figure 2 along with property mappings between <code class="language-plaintext highlighter-rouge">supportFragmentManager</code>, <code class="language-plaintext highlighter-rouge">parentFragmentManager</code>, and <code class="language-plaintext highlighter-rouge">childFragmentManager</code>.</p>
+
+<p><img src="/assets/images/manager-mappings.png" alt="each host has its own FragmentManager associated with it
+            that manages its child fragments" /></p>
+
+<p><strong>Figure 2.</strong> Each host has its own <code class="language-plaintext highlighter-rouge">FragmentManager</code> associated with it that manages its child fragments.</p>
+
+<p>The appropriate <code class="language-plaintext highlighter-rouge">FragmentManager</code> property to reference depends on where the callsite is in the fragment hierarchy along with which fragment manager you are trying to access.</p>
+
+<p>Once you have a reference to the <code class="language-plaintext highlighter-rouge">FragmentManager</code>, you can use it to manipulate the fragments being displayed to the user.</p>
+
+<h3 id="child-fragments">Child fragments</h3>
+
+<p>Generally speaking, your app consists of a single or small number of activities in your application project, with each activity representing a group of related screens. The activity might provide a point to place top-level navigation and a place to scope <code class="language-plaintext highlighter-rouge">ViewModel</code> objects and other view-state between fragments. A fragment represents an individual destination in your app.</p>
+
+<p>If you want to show multiple fragments at once, such as in a split-view or a dashboard, you can use child fragments that are managed by your destination fragment and its child fragment manager.</p>
+
+<p>Other use cases for child fragments are the following:</p>
+
+<ul>
+  <li><a href="https://developer.android.com/training/animation/screen-slide-2">Screen slides</a>, using a <code class="language-plaintext highlighter-rouge">ViewPager2</code> in a parent fragment to manage a series of child fragment views.</li>
+  <li>Sub-navigation within a set of related screens.</li>
+  <li>Jetpack Navigation uses child fragments as individual destinations. An activity hosts a single parent <code class="language-plaintext highlighter-rouge">NavHostFragment</code> and fills its space with different child destination fragments as users navigate through your app.</li>
+</ul>
+
+<h3 id="use-the-fragmentmanager">Use the FragmentManager</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">FragmentManager</code> manages the fragment back stack. At runtime, the <code class="language-plaintext highlighter-rouge">FragmentManager</code> can perform back stack operations like adding or removing fragments in response to user interactions. Each set of changes is committed together as a single unit called a <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction"><code class="language-plaintext highlighter-rouge">FragmentTransaction</code></a>. For a more in-depth discussion about fragment transactions, see the <a href="https://developer.android.com/guide/fragments/transactions">fragment transactions guide</a>.</p>
+
+<p>When the user taps the Back button on their device, or when you call <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28%29"><code class="language-plaintext highlighter-rouge">FragmentManager.popBackStack()</code></a>, the top-most fragment transaction pops off of the stack. If there are no more fragment transactions on the stack, and if you aren’t using child fragments, the Back event bubbles up to the activity. If you <em>are</em> using child fragments, see <a href="#considerations">special considerations for child and sibling fragments</a>.</p>
+
+<p>When you call <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29"><code class="language-plaintext highlighter-rouge">addToBackStack()</code></a> on a transaction, the transaction can include any number of operations, such as adding multiple fragments or replacing fragments in multiple containers.</p>
+
+<p>When the back stack is popped, all these operations reverse as a single atomic action. However, if you committed additional transactions prior to the <code class="language-plaintext highlighter-rouge">popBackStack()</code> call, and if you <em>didn’t</em> use <code class="language-plaintext highlighter-rouge">addToBackStack()</code> for the transaction, these operations <em>don’t</em> reverse. Therefore, within a single <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>, avoid interleaving transactions that affect the back stack with those that don’t.</p>
+
+<h3 id="perform-a-transaction">Perform a transaction</h3>
+
+<p>To display a fragment within a layout container, use the <code class="language-plaintext highlighter-rouge">FragmentManager</code> to create a <code class="language-plaintext highlighter-rouge">FragmentTransaction</code>. Within the transaction, you can then perform an <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#add%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">add()</code></a> or <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">replace()</code></a> operation on the container.</p>
+
+<p>For example, a simple <code class="language-plaintext highlighter-rouge">FragmentTransaction</code> might look like this:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">supportFragmentManager</span><span class="p">.</span><span class="nf">commit</span> <span class="p">{</span>
+   <span class="n">replace</span><span class="p">&lt;</span><span class="nc">ExampleFragment</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fragment_container</span><span class="p">)</span>
+   <span class="nf">setReorderingAllowed</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+   <span class="nf">addToBackStack</span><span class="p">(</span><span class="s">"name"</span><span class="p">)</span> <span class="c1">// Name can be null</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this example, <code class="language-plaintext highlighter-rouge">ExampleFragment</code> replaces the fragment, if any, that is currently in the layout container identified by the <code class="language-plaintext highlighter-rouge">R.id.fragment_container</code> ID. Providing the fragment’s class to the <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#replace%28int,%20java.lang.Class%3C?%20extends%20androidx.fragment.app.Fragment%3E,%20android.os.Bundle%29"><code class="language-plaintext highlighter-rouge">replace()</code></a> method lets the <code class="language-plaintext highlighter-rouge">FragmentManager</code> handle instantiation using its <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentFactory"><code class="language-plaintext highlighter-rouge">FragmentFactory</code></a>. For more information, see the <a href="#dependencies">Provide dependencies to your fragments</a> section.</p>
+
+<p><a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#setReorderingAllowed%28boolean%29"><code class="language-plaintext highlighter-rouge">setReorderingAllowed(true)</code></a> optimizes the state changes of the fragments involved in the transaction so that animations and transitions work correctly. For more information on navigating with animations and transitions, see <a href="https://developer.android.com/guide/fragments/transactions">Fragment transactions</a> and <a href="https://developer.android.com/training/basics/fragments/animate">Navigate between fragments using animations</a>.</p>
+
+<p>Calling <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentTransaction#addToBackStack%28java.lang.String%29"><code class="language-plaintext highlighter-rouge">addToBackStack()</code></a> commits the transaction to the back stack. The user can later reverse the transaction and bring back the previous fragment by tapping the Back button. If you added or removed multiple fragments within a single transaction, all those operations are undone when the back stack is popped. The optional name provided in the <code class="language-plaintext highlighter-rouge">addToBackStack()</code> call gives you the ability to pop back to a specific transaction using <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentManager#popBackStack%28java.lang.String,%20int%29"><code class="language-plaintext highlighter-rouge">popBackStack()</code></a>.</p>
+
+<p>If you don’t call <code class="language-plaintext highlighter-rouge">addToBackStack()</code> when you perform a transaction that removes a fragment, then the removed fragment is destroyed when the transaction is committed, and the user cannot navigate back to it. If you do call <code class="language-plaintext highlighter-rouge">addToBackStack()</code> when removing a fragment, then the fragment is only <code class="language-plaintext highlighter-rouge">STOPPED</code> and is later <code class="language-plaintext highlighter-rouge">RESUMED</code> when the user navigates back. Its view <em>is</em> destroyed in this case. For more information, see <a href="https://developer.android.com/guide/fragments/lifecycle">Fragment lifecycle</a>.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li>https://developer.android.com/guide/fragments/create</li>
+  <li>https://stackoverflow.com/questions/28929637/difference-and-uses-of-oncreate-oncreateview-and-onactivitycreated-in-fra</li>
+</ul>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/coding/2025/06/27/android-dev-notes-8-fragment.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
