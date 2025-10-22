@@ -27,3 +27,7 @@ published: true
 下图中的比萨斜塔也是如此，观察者可以看到塔底低于视平线部分的“顶部”，但是看不塔顶的顶部（因为塔顶高于视平线）。
 
 ![pisa.jpg]({{site.baseurl}}/assets/images/pisa.jpg)
+
+漫画中看到的一个从低处仰视的例子（人物的脚处在视平线附近，大概因为小腿斜向镜头外侧的原因看不到鞋底）：
+
+![look upward from low view height.PNG]({{site.baseurl}}/assets/images/look upward from low view height.PNG)
