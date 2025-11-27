@@ -9,8 +9,10 @@ published: true
 2. Install Chinese Addons flatpak version
 3. Start Fcitx 5
 4. Configure -> Add a Chinese input method (e.g.  双拼) -> Confirm
-5. Add the following to `/etc/environment`
+5. Add the following to `/etc/environment`:
 
+```
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
+```
