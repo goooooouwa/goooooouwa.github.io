@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>如何根据画面判断透视类型以及视距、视高和俯仰角度 | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="如何根据画面判断透视类型以及视距、视高和俯仰角度" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="记录生活、学习和思考" />
+<meta property="og:description" content="记录生活、学习和思考" />
+<link rel="canonical" href="https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="如何根据画面判断透视类型以及视距、视高和俯仰角度" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2025-10-15T00:00:00+00:00","datePublished":"2025-10-15T00:00:00+00:00","description":"记录生活、学习和思考","headline":"如何根据画面判断透视类型以及视距、视高和俯仰角度","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html"},"url":"https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">如何根据画面判断透视类型以及视距、视高和俯仰角度</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-10-15T00:00:00+00:00" itemprop="datePublished">
+        Oct 15, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li><a href="#基本概念" id="markdown-toc-基本概念">基本概念</a>    <ul>
+      <li><a href="#画的本质" id="markdown-toc-画的本质">画的本质</a></li>
+      <li><a href="#共同的前提和假设" id="markdown-toc-共同的前提和假设">共同的前提和假设</a></li>
+      <li><a href="#视觉角度view-angle" id="markdown-toc-视觉角度view-angle">视觉角度（view angle)</a></li>
+      <li><a href="#视距" id="markdown-toc-视距">视距</a></li>
+      <li><a href="#视高" id="markdown-toc-视高">视高</a></li>
+      <li><a href="#俯仰角度" id="markdown-toc-俯仰角度">俯仰角度</a></li>
+      <li><a href="#对比调整视高与调整俯仰角度对画面透视产生的影响" id="markdown-toc-对比调整视高与调整俯仰角度对画面透视产生的影响">对比调整视高与调整俯仰角度对画面透视产生的影响</a></li>
+    </ul>
+  </li>
+  <li><a href="#确定画面的关键透视点" id="markdown-toc-确定画面的关键透视点">确定画面的关键透视点</a>    <ul>
+      <li><a href="#一点透视如何根据画面内容确定关键透视点中央消失点和视距等" id="markdown-toc-一点透视如何根据画面内容确定关键透视点中央消失点和视距等">一点透视：如何根据画面内容确定关键透视点（中央消失点和视距等）</a></li>
+      <li><a href="#两点透视如何根据画面内容确定关键透视点消失点和direction-of-view等" id="markdown-toc-两点透视如何根据画面内容确定关键透视点消失点和direction-of-view等">两点透视：如何根据画面内容确定关键透视点（消失点和direction of view等）</a>        <ul>
+          <li><a href="#如何确定median-line" id="markdown-toc-如何确定median-line">如何确定median line</a></li>
+        </ul>
+      </li>
+      <li><a href="#实战演练" id="markdown-toc-实战演练">实战演练</a></li>
+    </ul>
+  </li>
+  <li><a href="#如何根据关键透视点判断镜头的视距视高和俯仰角度" id="markdown-toc-如何根据关键透视点判断镜头的视距视高和俯仰角度">如何根据关键透视点判断镜头的视距、视高和俯仰角度</a>    <ul>
+      <li><a href="#已知视距物体画面大小和实际大小确定物体求观察者的实际距离" id="markdown-toc-已知视距物体画面大小和实际大小确定物体求观察者的实际距离">已知视距、物体画面大小和实际大小确定物体，求观察者的实际距离</a></li>
+      <li><a href="#已知物体画面大小和实际大小求视距" id="markdown-toc-已知物体画面大小和实际大小求视距">已知物体画面大小和实际大小，求视距</a></li>
+      <li><a href="#已知物体实际大小和视距求其在画面中的位置和大小" id="markdown-toc-已知物体实际大小和视距求其在画面中的位置和大小">已知物体实际大小和视距，求其在画面中的位置和大小</a></li>
+    </ul>
+  </li>
+  <li><a href="#参考资料" id="markdown-toc-参考资料">参考资料</a></li>
+</ul>
+
+<p><a href="/tag/perspective">透视系列笔记</a></p>
+
+<h2 id="基本概念">基本概念</h2>
+
+<h3 id="画的本质">画的本质</h3>
+
+<p>一幅画的本质是一种视错觉，它试图模仿的是当一位观察者站在特定的视高和视距下，视线垂直于图像平面时，透过图像所在的画框（这个透明的窗户）所看到的三维空间的样子（参考<a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">The Perspective Image</a>）。</p>
+
+<h3 id="共同的前提和假设">共同的前提和假设</h3>
+
+<p>每一副画作都有一些共同的前提和假设：</p>
+<ol>
+  <li>观察者眼睛所看到的90度视锥的半径等于观察者的视距（这是基本数学原理）；</li>
+  <li>观察者的视线永远是垂直于图像平面的。</li>
+</ol>
+
+<p>虽然画框这个透明的窗户本身可以有相对于地面的各种不同的俯仰角度，但观察者的视线永远是垂直于图像平面的，否则为了真正欣赏一副作品，观众就必须先找到作家设定的特定的观察角度，会很麻烦。</p>
+
+<h3 id="视觉角度view-angle">视觉角度（view angle)</h3>
+
+<p>人单眼的水平视角最大可达156度，双眼的水平视角最大可达188度。人两眼重合视域为124度，单眼<strong>舒适视域</strong>为60度，集中注意力时约为25度。</p>
+
+<p>为了避免画面出现明显的透视扭曲 (perspective distortion) ，图像画面通常会被安排在60度视锥之内。</p>
+
+<p>对于大于60度透视的情况，参考<a href="/drawing/2025/10/19/perspective-analysis-on-extreme-cases.html">对一些大角度透视画面的研究</a>。</p>
+
+<h3 id="视距">视距</h3>
+
+<p>作者可以通过选择不同的视距来控制90度视锥所能看到的三维空间的范围，更长的视距意味着观众通过同样尺寸的画框所能看到的三维空间更小，因为画面的视觉角度更窄。</p>
+
+<h3 id="视高">视高</h3>
+
+<p>根据透视的平移缩放规则可知，画面的视高是可以任意设定的，不用一定等于视距（比如当观察者趴在地上或者站在高楼上）。90度视锥假设视高等于视距只是为了方便根据90度视锥建立ground line以及定位翻折后的视点（viewpoint）。实际作画中可以任意选择视高和视距，只要画面不要超出60度视锥即可。</p>
+
+<p>作者可以为画面选择选择不同的视高，以营造出不同身高的观察者或者观察者视线处在不同水平高度（比如匍匐在地面或者站在楼顶）时透过画框所看到的三维空间的样子（参考<a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">地平线和视点的关系（Horizon Line and Viewpoint）</a>）。</p>
+
+<h3 id="俯仰角度">俯仰角度</h3>
+
+<p>如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。因此一个快速判断镜头是否相对于地面有俯仰角度的办法是，检查垂直于地面的物体（比如建筑物）是否出现透视现象（寻找消失点，即多条垂直于地面的线条之间的交点）。</p>
+
+<p>调整俯仰角度会在画面垂直方向新增一个消失点：</p>
+
+<p><img src="/assets/images/looking downward.PNG" alt="looking downward.PNG" /></p>
+
+<p>如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的<strong>俯仰角度</strong>（参考<a href="/drawing/2024/09/13/notes-on-central-perspective.html">倾斜面和坡斜面</a>一节）。</p>
+
+<h3 id="对比调整视高与调整俯仰角度对画面透视产生的影响">对比调整视高与调整俯仰角度对画面透视产生的影响</h3>
+
+<p><img src="/assets/images/change-view-height-vs-view-angle.png" alt="change-view-height-vs-view-angle.png" /></p>
+
+<p><strong>调整视高对画面透视产生的影响。</strong> 对比初始视角画面（图一）与低视高画面（图二）可以看出，在视线角度保持不变的情况下将视点进行任意的上下左右平移后，画面的透视特征将保持不变（包括center of view，视平线、地平线和消失点的位置等），画面中同一个物体的所有平行于画面的平面大小都将保持不变。（参考平移透视缩短）。</p>
+
+<p><strong>调整俯仰角度对画面透视产生的影响。</strong> 对比初始视角画面（图一）与俯视画面（图三）可以看出，如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。</p>
+
+<p>更多关于俯仰角度对画面透视的影响，请参考<a href="/drawing/2025/10/21/view-angle-s-effect-on-perspective.html">俯仰视角下的透视</a>。</p>
+
+<h2 id="确定画面的关键透视点">确定画面的关键透视点</h2>
+
+<h3 id="一点透视如何根据画面内容确定关键透视点中央消失点和视距等">一点透视：如何根据画面内容确定关键透视点（中央消失点和视距等）</h3>
+
+<p><img src="/assets/images/1PP reconstruction of the center of projection.PNG" alt="1PP reconstruction of the center of projection.PNG" /></p>
+
+<ol>
+  <li>根据画面中的纵深线（orthogonals，即垂直于画面的线条）确定中央消失点；</li>
+  <li>根据中央消失点和画面中地面上的元素确定地平线（通常等于视平线）以及median line的位置；</li>
+  <li>根据画面中的对角线（diagonals，与median line之间夹角45度的线条，比如地面上平行于ground line的正方形瓷砖的对角线）确定dvp（对角线消失点）；</li>
+  <li>找到了dvp也就顺便确定了view distance（视距）；</li>
+  <li>有了view distance（视距）和中央消失点，便可以确定90度和60度视锥的大小。</li>
+</ol>
+
+<p>至此一点透视的关键点就都确定了下来。</p>
+
+<h3 id="两点透视如何根据画面内容确定关键透视点消失点和direction-of-view等">两点透视：如何根据画面内容确定关键透视点（消失点和direction of view等）</h3>
+
+<p><img src="/assets/images/2PP reconstruction of the center of projection.PNG" alt="2PP reconstruction of the center of projection.PNG" /></p>
+
+<ol>
+  <li>根据画面中的直角线条确定两个vanishing points；</li>
+  <li>将2个vanishing points连线即可得到视平线（通常等于视平线）；</li>
+  <li>根据画面中的纵深线（orthogonals，即垂直于画面的线条）找到direction of view并确定median line的位置；</li>
+  <li>在median line上找到一个点，它与两个vanishing points的连线正好是90度，而这个点便是向上翻折后的视点（folded viewpoint）；</li>
+  <li>找到了folded viewpoint也就顺便确定了view distance（视距）和principal point（观察者眼睛的位置）；</li>
+  <li>有了view distance（视距）和principal point，便可以确定90度和60度视锥的大小。</li>
+</ol>
+
+<p>至此两点透视的关键点就都确定了下来。</p>
+
+<h4 id="如何确定median-line">如何确定median line</h4>
+
+<p><strong>Median Line.</strong> This is parallel to the side edges of a rectangular image format, or perpendicular to the floor when the painting is correctly hung. <strong>The median line is nearly always through the center of the image format.</strong></p>
+
+<blockquote>
+  <p>Orthogonals, if visible, will point to the direction of view on the horizon line; if there are no orthogonals, then the median line of the format can be used to locate the dv.</p>
+
+  <p>(if there are no orthogonals) The median line and direction of view (dv) are arbitrarily located on the midline of the painting.</p>
+</blockquote>
+
+<p><strong>如果可以在画面中找到纵深线（orthogonals，即垂直于画面的线条），则可以根据纵深线与地平线的交点确定direction of view，进而确定median line的位置</strong>；如果画面中没有明显的垂直于画面的线条（即纵深线，Orthogonals），则可以将垂直平分画面的竖线作为median line，因为median line几乎总是穿过画面中心的（画家通常都会将center of view设置于画面的垂直中心线上，因为观察者在欣赏画作时会很自然地站在画面的正前方）。</p>
+
+<h3 id="实战演练">实战演练</h3>
+
+<p><img src="/assets/images/perspective analysis.jpg" alt="perspective analysis.jpg" /></p>
+
+<h2 id="如何根据关键透视点判断镜头的视距视高和俯仰角度">如何根据关键透视点判断镜头的视距、视高和俯仰角度</h2>
+
+<ol>
+  <li>先确定画面的关键关键点（消失点、地平线、center of view等）；</li>
+  <li>找到（一点透视的）dvp或者（两点透视的）folded viewpoint后便确定了<strong>视距</strong>；</li>
+  <li>画面中任何处于地平线上的物体（比如人的头部、树的枝干或者建筑物的墙壁），其距离地面的垂直距离等于观察者眼睛与地面的距离（即<strong>视高</strong>），然后可以根据<a href="/drawing/2024/09/13/notes-on-central-perspective.html">距离和大小</a>来推算出实际的视高；</li>
+  <li>检查垂直于地面的物体（比如建筑物）是否出现透视现象（即是否存在垂直方向的消失点），如果存在，则可以根据地平线与视平线在dvp处的夹角确定画面的<strong>俯仰角度</strong>（参考<a href="/drawing/2024/09/13/notes-on-central-perspective.html">倾斜面和坡斜面</a>一节）；</li>
+</ol>
+
+<h3 id="已知视距物体画面大小和实际大小确定物体求观察者的实际距离">已知视距、物体画面大小和实际大小确定物体，求观察者的实际距离</h3>
+
+<p><img src="/assets/images/reduction in Bierstadts Looking Up the Yosemite Valley.PNG" alt="reduction in Bierstadts Looking Up the Yosemite Valley.PNG" /></p>
+
+<p>如果已知观察者的视距（比如根据画幅的尺寸或者展览馆里作品的摆放来推测理想的欣赏距离，即为视距），且已知物体画面大小（直接在画面上测量）和物体的实际大小（根据现实生活中可以查到的物体数据），根据<a href="/drawing/2024/09/13/notes-on-central-perspective.html">距离和大小</a>，我们可以计算出物体在三维空间中与画家（或者说假象的观察者）的实际距离。</p>
+
+<h3 id="已知物体画面大小和实际大小求视距">已知物体画面大小和实际大小，求视距</h3>
+
+<p>例如，观察者站在一个身高为1.8米的人面前，沿水平方向直视对方，测量得知此人的头部在画面中的身高是18厘米，而90度视锥半径的测量长度是20厘米，求观察者与画面之间的距离（即视距）。</p>
+
+<ol>
+  <li>画一幅画面的草图，此时不用考虑透视问题（比如，视距，视高，视锥角度等）；</li>
+  <li>在画面外围画一个圆，将画面包围起来，以这个圆为60度视锥（也可以是25-60度之间的任意角度，这样可以保证画面内不会出现夸张的透视形变），在画面中心作一条垂直线作为median line；</li>
+  <li>在60度视锥外围画一个90度视锥（与60度视锥同心，半径是60度视锥的1.72倍，即1 / 0.58）；</li>
+  <li>根据90度视锥框架的几何属性可知，90度视锥的半径即等于视距；</li>
+  <li>在90度视锥下方画一条平行于地平线的水平线，即ground line（如果找不到地平线，也可以在90度视锥下方画一条水平线，因为它与ground line同样处在画面所在的平面中，所以可以作为一条与ground line等比例的参考线条）；</li>
+  <li>将画面中已知尺寸的物体根据透视规则移动到ground line上（并进行相应的缩放），测量出它在ground line上的实际尺寸，即可根据画面和物体大小比例关系计算出画面的视距长度（比如，已知一个人的头部高度是20厘米，将画面中此人的头部移动缩放到ground line后，假设测量出其头部的实际尺寸为10厘米，那么可知整幅画面相比与理论尺寸缩小了2倍，而假如测量出的视距大小为20厘米，那么画面的实际视距即为40厘米）；</li>
+  <li>至此，便可将任意其他物体的实际尺寸按照画面缩放倍数在ground line上画出同等长度的线段，然后根据透视规则，将其移动缩放到画面空间中的任意位置。</li>
+</ol>
+
+<h3 id="已知物体实际大小和视距求其在画面中的位置和大小">已知物体实际大小和视距，求其在画面中的位置和大小</h3>
+
+<p>例如，已知观察者坐在长度为1米的方形桌子前，以45度角俯视桌子，此时画面中可以看到整个桌子，观察者的视线（direction of view）正好穿过桌子表面的1/2处，要求画出当画面距离观察者视距为80厘米时，桌子在60度视锥中的画面的位置和大小。</p>
+
+<p>确定物体的上下轮廓在画面中出现的位置和大小：</p>
+
+<ol>
+  <li>根据画面要求推导出画面的侧视图（包括观察者的位置和视线方向）；</li>
+  <li>依次在侧视图中画出90度视锥（即两条被视线平分的夹角为90度的线）和60度视锥；</li>
+  <li>根据侧视图中物体的画面大小和实际大小得出画面的缩放比例（比如，在侧视图中测量得出桌子表面的长度是10厘米，而已知桌子的长度是1米，可知侧视图的缩放比例是1/10）；</li>
+  <li>根据视距和缩放比例可以得知侧视图中视距的画面大小，进而确定画面平面所在的位置（比如，已知视距为80厘米，缩放比例是1/10，那么侧视图中视距的画面长度即为8厘米，进而可以从观察者沿着视线方向画一条8厘米的线段，在线段的另一端画一条垂直于视线方向的线条，该线条于60度视锥的两个交点分别对应画面的上下边缘）；</li>
+  <li>在侧视图中将物体上的任意点与视点连接后，其与画面的交点即为该点在画面中的位置，可以据此确定物体的上下轮廓在画面中出现的位置（比如根据连线可以确定桌子表面上下边缘分别出现在画面中的位置）；</li>
+</ol>
+
+<p>确定物体的左右轮廓在画面中出现的位置和大小：</p>
+
+<ol>
+  <li>根据画面要求推导出画面的俯视图（包括观察者的位置和视线方向）；</li>
+  <li>依次在侧视图中画出90度视锥（即两条被视线平分的夹角为90度的线）和60度视锥；</li>
+  <li>根据同样的办法（即画面的缩放比例）确定视距在俯视图的画面大小，进而确定画面平面的位置；</li>
+  <li>在俯视图中将物体上的任意点与视点连接后，其与画面的交点即为该点在画面中的位置，可以据此确定物体的左右轮廓在画面中出现的位置（比如根据连线可以确定桌子表面左右边缘分别出现在画面中的位置）。</li>
+</ol>
+
+<h2 id="参考资料">参考资料</h2>
+
+<ul>
+  <li><a href="https://handprint.com/HP/WCL/perspect2.html">https://handprint.com/HP/WCL/perspect2.html</a></li>
+  <li><a href="https://handprint.com/HP/WCL/perspect3.html">https://handprint.com/HP/WCL/perspect3.html</a></li>
+</ul>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
