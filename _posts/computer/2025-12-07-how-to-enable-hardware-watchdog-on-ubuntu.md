@@ -191,7 +191,7 @@ sudo dmesg | grep w83977f_wdt
 
 To test the watchdog service is configured properly and works as expected, you can trigger a system crash to check if the instance get rebooted.
 
-by running this command you can perform a system crash by a NULL pointer dereference.
+使用`su`命令切换到root身份运行以下命令来触发一次system crash by a NULL pointer dereference：
 
 `sync; sleep 2; sync; echo c > /proc/sysrq-trigger`
 
