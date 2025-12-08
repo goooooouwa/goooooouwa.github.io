@@ -146,9 +146,9 @@ Disable the watchdog service on boot:
 
 `sudo systemctl disable watchdog.service`
 
-Edit the Systemd configuration file /lib/systemd/system/wd_keepalive.service and add the following lines under the [Install] section.
+Edit the Systemd configuration file `/lib/systemd/system/wd_keepalive.service` and add the following lines under the `[Install]` section.
 
-Just paste it in the end if there isn’t any  [Install] section on your file.
+Just paste it in the end if there isn’t any `[Install]` section on your file.
 
 ```
 [Install]
