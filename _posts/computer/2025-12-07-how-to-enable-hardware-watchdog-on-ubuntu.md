@@ -193,7 +193,7 @@ To test the watchdog service is configured properly and works as expected, you c
 
 使用`su`命令切换到root身份运行以下命令来触发一次system crash by a NULL pointer dereference：
 
-`sync; sleep 2; sync; echo c > /proc/sysrq-trigger`
+`echo c > /proc/sysrq-trigger`
 
 Your system should automatically reboot in about a minute.
 
@@ -202,3 +202,4 @@ Your system should automatically reboot in about a minute.
 ## 参考
 
 - [https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/](https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/)
+- [https://unix.stackexchange.com/questions/714910/what-is-a-good-way-to-test-watchdog-script-or-command-to-deliberately-overload](https://unix.stackexchange.com/questions/714910/what-is-a-good-way-to-test-watchdog-script-or-command-to-deliberately-overload)
