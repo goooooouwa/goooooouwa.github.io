@@ -109,9 +109,6 @@ vainfo: Supported profile and entrypoints
       VAProfileVP9Profile2            :	VAEntrypointVLD
 ```
 
-![2025-12-22 21-28-00 jellyfin ffmpeg vainfo.png]({{site.baseurl}}/assets/images/2025-12-22 21-28-00 jellyfin ffmpeg vainfo.png)
-
-
 #### 2.8 Check the OpenCL runtime status
 
 ```bash
@@ -144,6 +141,8 @@ usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfi
 
 Use -h to get full help or, even better, run 'man ffmpeg'
 ```
+
+![2025-12-22 21-28-00 jellyfin ffmpeg vainfo.png]({{site.baseurl}}/assets/images/2025-12-22 21-28-00 jellyfin ffmpeg vainfo.png)
 
 ### 3 在Jellyfin中开启硬件加速转码，选择QSV选项
 
