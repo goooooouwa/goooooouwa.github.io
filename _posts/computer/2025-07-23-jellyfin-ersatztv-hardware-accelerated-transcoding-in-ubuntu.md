@@ -109,6 +109,9 @@ vainfo: Supported profile and entrypoints
       VAProfileVP9Profile2            :	VAEntrypointVLD
 ```
 
+![2025-12-22 21-28-00 jellyfin ffmpeg vainfo.png]({{site.baseurl}}/assets/images/2025-12-22 21-28-00 jellyfin ffmpeg vainfo.png)
+
+
 #### 2.8 Check the OpenCL runtime status
 
 ```bash
