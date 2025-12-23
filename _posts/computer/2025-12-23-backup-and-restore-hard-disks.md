@@ -4,7 +4,7 @@ category: computer
 tags: disk-genius backup hdd
 published: true
 ---
-本教程所使用的工具：软件精灵
+本教程所使用的工具：DiskGenius
 
 ## 方法一：以文件方式备份每个分区
 
@@ -84,5 +84,3 @@ published: true
   1. 还原方式：还原所有扇区（对应备份时自己选择的选项）
   1. 开始
   1. 完成
-
-
