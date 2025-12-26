@@ -1,0 +1,4953 @@
+[
+  
+    {
+      "title"    : "如何使用Clonezilla备份与恢复硬盘",
+      "category" : "computer",
+      "tags"     : "clonezilla, backup, hdd",
+      "url"      : "/computer/2025/12/25/backup-and-restore-hard-disks-with-clonezilla.html",
+      "date"     : "2025-12-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何使用DiskGenius备份与恢复硬盘",
+      "category" : "computer",
+      "tags"     : "disk-genius, backup, hdd",
+      "url"      : "/computer/2025/12/23/backup-and-restore-hard-disks-with-disk-genius.html",
+      "date"     : "2025-12-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何在Ubuntu系统下启用硬件watchdog",
+      "category" : "computer",
+      "tags"     : "watchdog, ubuntu",
+      "url"      : "/computer/2025/12/07/how-to-enable-hardware-watchdog-on-ubuntu.html",
+      "date"     : "2025-12-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to install Chinese input method on  Steam Deck",
+      "category" : "computer",
+      "tags"     : "steam-deck",
+      "url"      : "/computer/2025/11/27/steam-deck-install-chinese-input.html",
+      "date"     : "2025-11-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "俯仰视角下的透视",
+      "category" : "drawing",
+      "tags"     : "perspective",
+      "url"      : "/drawing/2025/10/21/view-angle-s-effect-on-perspective.html",
+      "date"     : "2025-10-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "对一些大角度透视画面的研究",
+      "category" : "drawing",
+      "tags"     : "perspective",
+      "url"      : "/drawing/2025/10/19/perspective-analysis-on-extreme-cases.html",
+      "date"     : "2025-10-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "一点透视中物体大小和物距之间关系",
+      "category" : "drawing",
+      "tags"     : "perspective",
+      "url"      : "/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective.html",
+      "date"     : "2025-10-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "笔记：现实中的透视",
+      "category" : "drawing",
+      "tags"     : "perspective",
+      "url"      : "/drawing/2025/10/16/notes-on-perspective-in-the-world.html",
+      "date"     : "2025-10-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何根据画面判断透视类型以及视距、视高和俯仰角度",
+      "category" : "drawing",
+      "tags"     : "perspective",
+      "url"      : "/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html",
+      "date"     : "2025-10-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "笔记：高级透视技巧",
+      "category" : "drawing",
+      "tags"     : "perspective, study-notes",
+      "url"      : "/drawing/2025/09/28/notes-on-advanced-perspective.html",
+      "date"     : "2025-09-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "笔记：两点透视",
+      "category" : "drawing",
+      "tags"     : "perspective, study-notes",
+      "url"      : "/drawing/2025/09/26/notes-on-2-point-perspective.html",
+      "date"     : "2025-09-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Jellyfin &amp; ErsatzTV在J4125小主机的Ubuntu系统上实现硬件加速转码",
+      "category" : "computer",
+      "tags"     : "jellyfin, ersatztv, hardware-accelerated, transcoding, docker, ubuntu",
+      "url"      : "/computer/2025/07/23/jellyfin-ersatztv-hardware-accelerated-transcoding-in-ubuntu.html",
+      "date"     : "2025-07-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "NGINX Proxy Manager的试用总结",
+      "category" : "computer",
+      "tags"     : "nginx, docker, docker-compose, nginx-proxy-manager",
+      "url"      : "/computer/2025/07/16/nginx-proxy-manager-try-out.html",
+      "date"     : "2025-07-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Jellyfin和ErsatzTV在Windows实机上硬件加速的一次尝试",
+      "category" : "computer",
+      "tags"     : "jellyfin, ersatztv, hardware-acceleration, transcode",
+      "url"      : "/computer/2025/07/11/jellyfin-ersatztv-hardware-acceleration-experiment.html",
+      "date"     : "2025-07-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（九）：推荐的代码库目录结构",
+      "category" : "coding",
+      "tags"     : "android, directory-structure",
+      "url"      : "/coding/2025/07/04/android-dev-notes-9-directory-structure.html",
+      "date"     : "2025-07-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to restore data for Immich with Portainer",
+      "category" : "coding",
+      "tags"     : "immich, portainer, postgres, docker",
+      "url"      : "/coding/2025/06/30/backup-restore-immich-with-portainer.html",
+      "date"     : "2025-06-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（八）：Fragment",
+      "category" : "coding",
+      "tags"     : "android, fragment, fragment-manager",
+      "url"      : "/coding/2025/06/27/android-dev-notes-8-fragment.html",
+      "date"     : "2025-06-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（七）：ViewModel &amp; LiveData + View Binding",
+      "category" : "coding",
+      "tags"     : "android, live-data, view-model, view-binding",
+      "url"      : "/coding/2025/06/22/android-dev-notes-7-view-model-live-data-view-binding.html",
+      "date"     : "2025-06-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "issue: OMV上创建Samba分享遇到的权限问题",
+      "category" : "computer",
+      "tags"     : "OMV, samba, admin",
+      "url"      : "/computer/2025/06/05/omv-samba-permission-issue.html",
+      "date"     : "2025-06-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "记一次Switch版空洞骑士无限金币问题的调试经历",
+      "category" : "gaming",
+      "tags"     : "switch, hollow-knight, cheat, overlay, edizon",
+      "url"      : "/gaming/2025/05/28/switch-hollow-knight-geo-99999.html",
+      "date"     : "2025-05-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "记一次成功在CRT上播放带左右黑边的16:9视频的折腾经历",
+      "category" : "computer",
+      "tags"     : "crt, corelec, kodi, android-tv, 16:9, 4:3",
+      "url"      : "/computer/2025/05/28/play-16-by-9-content-on-crt.html",
+      "date"     : "2025-05-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "几种PC串流客户端方案使用体验总结",
+      "category" : "computer",
+      "tags"     : "streaming, gaming",
+      "url"      : "/computer/2025/05/26/pc-streaming-client-solutions.html",
+      "date"     : "2025-05-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（六）：Navigation UI",
+      "category" : "coding",
+      "tags"     : "android, navigation, ui",
+      "url"      : "/coding/2025/05/21/android-dev-notes-6-navigation-ui.html",
+      "date"     : "2025-05-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（五）：Navigation",
+      "category" : "coding",
+      "tags"     : "android, navigation",
+      "url"      : "/coding/2025/05/20/android-dev-notes-5-navigation.html",
+      "date"     : "2025-05-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（四）：RecyclerView",
+      "category" : "coding",
+      "tags"     : "android, recycler-view",
+      "url"      : "/coding/2025/05/19/android-dev-notes-4-recycler-view.html",
+      "date"     : "2025-05-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（三）：Activity",
+      "category" : "coding",
+      "tags"     : "android, activity",
+      "url"      : "/coding/2025/05/19/android-dev-notes-3-activity.html",
+      "date"     : "2025-05-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（二）：Views",
+      "category" : "coding",
+      "tags"     : "android, ui",
+      "url"      : "/coding/2025/05/18/android-dev-notes-2-views.html",
+      "date"     : "2025-05-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android编程笔记（一）：Model",
+      "category" : "coding",
+      "tags"     : "android, db, model, kotlin, coroutine",
+      "url"      : "/coding/2025/05/18/android-dev-notes-1-model.html",
+      "date"     : "2025-05-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "OMV网络设置和调试方式",
+      "category" : "computer",
+      "tags"     : "homelab, omv, network",
+      "url"      : "/computer/2025/04/12/omv-network-settings.html",
+      "date"     : "2025-04-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Hyper-V Openwrt调试",
+      "category" : "computer",
+      "tags"     : "openwrt, hyper-v",
+      "url"      : "/computer/2025/04/07/hyper-v-openwrt-debug.html",
+      "date"     : "2025-04-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "调试443端口连通性的经历",
+      "category" : "computer",
+      "tags"     : "AC86U, openwrt, 443, port-forwarding",
+      "url"      : "/computer/2025/03/24/debug-443-port-connectivity.html",
+      "date"     : "2025-03-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "离不开的iOS独家功能",
+      "category" : "technology",
+      "tags"     : "iOS",
+      "url"      : "/technology/2025/03/20/iOS-features-I-can-not-live-without.html",
+      "date"     : "2025-03-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Compiz tweaks",
+      "category" : "computer",
+      "tags"     : "linux, compiz",
+      "url"      : "/computer/2025/03/17/compiz-tweaks.html",
+      "date"     : "2025-03-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "SpaceVim shortcuts",
+      "category" : "computer",
+      "tags"     : "vim, spacevim",
+      "url"      : "/computer/2025/03/07/spacevim-shortcuts.html",
+      "date"     : "2025-03-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "ML4W Installation Steps",
+      "category" : "computer",
+      "tags"     : "ml4w, hyprland",
+      "url"      : "/computer/2025/03/07/ml4w-installation-steps.html",
+      "date"     : "2025-03-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Hyprland Installation Steps",
+      "category" : "computer",
+      "tags"     : "hyprland",
+      "url"      : "/computer/2025/03/07/hyprland-installation-steps.html",
+      "date"     : "2025-03-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Arch Linux Installation Steps",
+      "category" : "computer",
+      "tags"     : "archlinux",
+      "url"      : "/computer/2025/03/07/archlinux-installation-steps.html",
+      "date"     : "2025-03-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的理想与成长",
+      "category" : "personal",
+      "tags"     : "",
+      "url"      : "/personal/2024/10/30/my-childhood-dream.html",
+      "date"     : "2024-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "游戏机对应我的人生阶段",
+      "category" : "personal",
+      "tags"     : "gaming, childhood",
+      "url"      : "/personal/2024/10/30/gaming-machines-and-my-life.html",
+      "date"     : "2024-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Web Apps Are Born Limited",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2024/10/19/web-apps-are-born-limited.html",
+      "date"     : "2024-10-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Music playlist m3u8 files in Jellyfin",
+      "category" : "entertainment",
+      "tags"     : "jellyfin",
+      "url"      : "/entertainment/2024/10/08/jellyfin-music-playlist-files-m3u8.html",
+      "date"     : "2024-10-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何将音频文件批量按年月进行文件夹分类",
+      "category" : "computer",
+      "tags"     : "powertoys, mp3tag",
+      "url"      : "/computer/2024/10/02/how-to-combine-powertoys-and-mp3tag-to-batch-rename-audio-files.html",
+      "date"     : "2024-10-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "记一次Xfinity公网端口转发调试",
+      "category" : "computer",
+      "tags"     : "modem, port-forwarding, xfinity",
+      "url"      : "/computer/2024/09/19/debug-xfinity-modem-port-forwarding.html",
+      "date"     : "2024-09-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Mp3Tag: how to convert directory name to tag",
+      "category" : "computer",
+      "tags"     : "mp3tag",
+      "url"      : "/computer/2024/09/18/mp3tag-how-to-convert-directory-name-to-tag.html",
+      "date"     : "2024-09-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "笔记：一点透视",
+      "category" : "drawing",
+      "tags"     : "perspective, study-notes",
+      "url"      : "/drawing/2024/09/13/notes-on-central-perspective.html",
+      "date"     : "2024-09-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "理解一点、两点、三点、四点（鱼眼）透视",
+      "category" : "drawing",
+      "tags"     : "perspective",
+      "url"      : "/drawing/2024/09/02/1-to-4-point-perspective.html",
+      "date"     : "2024-09-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "通过Openwrt上安装ZeroTier实现异地访问局域网设备",
+      "category" : "computer",
+      "tags"     : "openwrt, zerotier",
+      "url"      : "/computer/2024/03/25/openwrt-zerotier-access-lan-devices.html",
+      "date"     : "2024-03-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何在SSR Plus下配合使用Adguard Home过滤广告同时避免DNS污染",
+      "category" : "computer",
+      "tags"     : "adguard-home, openwrt, ssr-plus, dns",
+      "url"      : "/computer/2024/03/20/adguard-home-prevent-dns-poisoning-in-ssr-plus.html",
+      "date"     : "2024-03-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的电脑使用场景",
+      "category" : "computer",
+      "tags"     : "laptop",
+      "url"      : "/computer/2024/03/18/my-pc-use-cases.html",
+      "date"     : "2024-03-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "DIY电子相册和蓝光播放器",
+      "category" : "computer",
+      "tags"     : "raspberry-pi, digital-photo-gallery, cm311, kodi, coreelec",
+      "url"      : "/computer/2024/03/18/DIY-projects.html",
+      "date"     : "2024-03-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "openwrt旁路由模式SSR Plus和Adguard Home的配置",
+      "category" : "computer",
+      "tags"     : "openwrt, adguard-home, ssr-plus",
+      "url"      : "/computer/2024/03/17/adguard-home-configurations.html",
+      "date"     : "2024-03-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "OMV主分区扩容",
+      "category" : "computer",
+      "tags"     : "omv, partition, parted, resize2fs, gparted",
+      "url"      : "/computer/2024/02/24/omv-partition-resize.html",
+      "date"     : "2024-02-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Moonlight串流的网络调试",
+      "category" : "computer",
+      "tags"     : "moonlight, streaming, troubleshooting",
+      "url"      : "/computer/2024/02/22/trouble-shoot-moonlight-manual-port-forwarding.html",
+      "date"     : "2024-02-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "openwrt旁路由设置动态DNS教程",
+      "category" : "computer",
+      "tags"     : "openwrt, ddns, freedns",
+      "url"      : "/computer/2024/02/21/openwrt-ddns-tutorial.html",
+      "date"     : "2024-02-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "模拟器游戏掌机的最佳答案",
+      "category" : "gaming",
+      "tags"     : "retro-gaming, handheld",
+      "url"      : "/gaming/2024/01/23/ultimate-retro-gaming-handheld.html",
+      "date"     : "2024-01-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Issue: Portainer GitHub repo stack not able to pull update",
+      "category" : "computer",
+      "tags"     : "portainer, docker, issue",
+      "url"      : "/computer/2024/01/18/portainer-github-repo-stack-image-removal.html",
+      "date"     : "2024-01-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "记录一次重装PVE的步骤",
+      "category" : "computer",
+      "tags"     : "pve",
+      "url"      : "/computer/2023/11/07/reinstall-pve.html",
+      "date"     : "2023-11-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "电子设备的一些改进",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2023/08/08/devices-improvements.html",
+      "date"     : "2023-08-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何画人体动态",
+      "category" : "drawing",
+      "tags"     : "perspective, body-flow",
+      "url"      : "/drawing/2023/06/28/how-to-draw-body-movements.html",
+      "date"     : "2023-06-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "VPN时断时续问题调试经历记录",
+      "category" : "computer",
+      "tags"     : "vpn, dns, v2ray",
+      "url"      : "/computer/2023/06/25/vpn-connection-troubleshooting.html",
+      "date"     : "2023-06-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "The freedom and openness of the Android platform",
+      "category" : "computer",
+      "tags"     : "android",
+      "url"      : "/computer/2023/06/25/free-and-open-android-platform.html",
+      "date"     : "2023-06-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "2周时间学完了12小时的Android开发视频课程",
+      "category" : "personal",
+      "tags"     : "android",
+      "url"      : "/personal/2023/06/23/12-hour-android-development-course-in-2-weeks.html",
+      "date"     : "2023-06-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "真正意义上的笔记本电脑",
+      "category" : "computer",
+      "tags"     : "laptop, macOS, Windows, Linux",
+      "url"      : "/computer/2023/06/19/the-true-laptop.html",
+      "date"     : "2023-06-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Wirelessly Photo Transfer with PhotoSync",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2023/06/17/photo-management-with-photosync.html",
+      "date"     : "2023-06-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "时间管理",
+      "category" : "personal",
+      "tags"     : "time-management",
+      "url"      : "/personal/2023/06/04/time-management.html",
+      "date"     : "2023-06-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "电子书阅读器使用体验（海信Touch和墨案迷你阅）",
+      "category" : "product-review",
+      "tags"     : "ebook-reader",
+      "url"      : "/product-review/2023/05/26/ebook-reader-hands-on-experience.html",
+      "date"     : "2023-05-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "目前没有完美体验的产品类别",
+      "category" : "product-review",
+      "tags"     : "ebook-reader, digital-note-taking, living-room, web-browsing",
+      "url"      : "/product-review/2023/05/04/requirements-with-no-perfect-solutions-yet.html",
+      "date"     : "2023-05-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的生活总览",
+      "category" : "personal",
+      "tags"     : "my-life",
+      "url"      : "/personal/2023/04/25/my-life-at-a-glance.html",
+      "date"     : "2023-04-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "家庭网络setup",
+      "category" : "personal",
+      "tags"     : "home-network, network, setup",
+      "url"      : "/personal/2023/04/25/home-network.html",
+      "date"     : "2023-04-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "跨平台解决方案setup",
+      "category" : "personal",
+      "tags"     : "cross-platform, setup",
+      "url"      : "/personal/2023/04/25/cross-platform.html",
+      "date"     : "2023-04-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的创作流程",
+      "category" : "personal",
+      "tags"     : "creative, process, setup",
+      "url"      : "/personal/2023/04/24/my-creative-process.html",
+      "date"     : "2023-04-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的生活方式",
+      "category" : "personal",
+      "tags"     : "mindmap, entertainment, setup",
+      "url"      : "/personal/2023/04/24/lifestyle-mindmap.html",
+      "date"     : "2023-04-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "数据管理setup",
+      "category" : "personal",
+      "tags"     : "data, management, setup",
+      "url"      : "/personal/2023/04/24/data-management.html",
+      "date"     : "2023-04-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "HTPC我目前还用不上",
+      "category" : "computer",
+      "tags"     : "htpc",
+      "url"      : "/computer/2023/03/23/HTPC-is-not-my-thing.html",
+      "date"     : "2023-03-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Openwrt旁路由设置（ip动态伪装）",
+      "category" : "computer",
+      "tags"     : "openwrt",
+      "url"      : "/computer/2023/03/06/openwrt-settings-as-gateway.html",
+      "date"     : "2023-03-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "acme.sh安装使用教程",
+      "category" : "computer",
+      "tags"     : "ssl, lets-encrypt, acme.sh",
+      "url"      : "/computer/2023/01/14/setup-acme.sh.html",
+      "date"     : "2023-01-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "计算机游戏图形相关概念",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2022/12/22/videogame-graphics-related-terms.html",
+      "date"     : "2022-12-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "值得和不值得花时间的活动",
+      "category" : "entertainment",
+      "tags"     : "",
+      "url"      : "/entertainment/2022/12/22/time-well-spent-entertainment-activities.html",
+      "date"     : "2022-12-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Where does Innovation come from?",
+      "category" : "insight",
+      "tags"     : "product-innovation, problem-solving, product-management",
+      "url"      : "/insight/2022/10/28/where-do-innovation-come-from.html",
+      "date"     : "2022-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Comparision of Linux distros and desktop environments",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2022/09/27/comparision-of-linux-distros-and-des.html",
+      "date"     : "2022-09-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "数字输入与手写手绘",
+      "category" : "insight",
+      "tags"     : "digital, analog, drawing, writing, note-taking, journal",
+      "url"      : "/insight/2022/08/14/digital-vs-analog-input.html",
+      "date"     : "2022-08-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "GoPlan Web版v1.0正式上线",
+      "category" : "side-project",
+      "tags"     : "todo, project-management, life, product",
+      "url"      : "/side-project/2022/08/09/goplan-go-live.html",
+      "date"     : "2022-08-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "GoPlan app：帮你轻松实现个人目标",
+      "category" : "side-project",
+      "tags"     : "todo, project-management, life",
+      "url"      : "/side-project/2022/05/13/goplan-app.html",
+      "date"     : "2022-05-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to draw a perfect cube in 2pt perspective",
+      "category" : "drawing",
+      "tags"     : "perspective, study-notes",
+      "url"      : "/drawing/2022/05/11/how-to-draw-a-perfect-cube-in-2pt-perspective.html",
+      "date"     : "2022-05-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Color Theory Basics",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2022/05/07/color-theory-basics.html",
+      "date"     : "2022-05-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Retro gaming device setup",
+      "category" : "computer",
+      "tags"     : "retro-gaming, retroarch, lakka",
+      "url"      : "/computer/2021/12/29/retro-gaming-device-setup.html",
+      "date"     : "2021-12-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "ANBERNIC products release timeline",
+      "category" : "computer",
+      "tags"     : "retro-gaming",
+      "url"      : "/computer/2021/12/29/ANBERNIC-products-release-timeline.html",
+      "date"     : "2021-12-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Understand singleton class in module",
+      "category" : "coding",
+      "tags"     : "ruby, module, singleton-class",
+      "url"      : "/coding/2021/12/07/understand-singleton-class-in-module.html",
+      "date"     : "2021-12-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Understand Ruby classes and modules",
+      "category" : "coding",
+      "tags"     : "ruby, oop",
+      "url"      : "/coding/2021/12/07/understand-ruby-classes-and-modules.html",
+      "date"     : "2021-12-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "产品idea从哪里来？",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2021/11/25/where-do-product-ideas-come-from.html",
+      "date"     : "2021-11-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我打算如何做产品？",
+      "category" : "insight",
+      "tags"     : "product-management",
+      "url"      : "/insight/2021/11/25/how-I-find-a-product-idea.html",
+      "date"     : "2021-11-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "电子书阅读器跨平台解决方案探索",
+      "category" : "computer",
+      "tags"     : "ebook, epub, mobi, e-reader",
+      "url"      : "/computer/2021/11/25/ebook-reader-solution-exploration.html",
+      "date"     : "2021-11-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我是谁？我要干嘛？",
+      "category" : "career",
+      "tags"     : "product-management",
+      "url"      : "/career/2021/11/25/who-am-i-what-do-i-want-to-do.html",
+      "date"     : "2021-11-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "家庭娱乐服务器setup",
+      "category" : "computer",
+      "tags"     : "htpc, home-server, raspberry-pi, omv, setup",
+      "url"      : "/computer/2021/11/14/home-media-server-setup.html",
+      "date"     : "2021-11-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "教程：使用Let&#39;s Encrypt + freedns为RT-AC86U路由器及其他服务器颁发SSL证书",
+      "category" : "computer",
+      "tags"     : "home-server, lets-encrypt, acme.sh, freedns, dns, asus, rt-ac86u",
+      "url"      : "/computer/2021/11/13/lets-encrypt-for-home-server.html",
+      "date"     : "2021-11-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "教程：如何通过公网访问家庭服务器",
+      "category" : "computer",
+      "tags"     : "home-server, modem, router, superadmin",
+      "url"      : "/computer/2021/11/13/how-to-setup-internet-access-for-home-server.html",
+      "date"     : "2021-11-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "基于DNS的Ad blocking方案体验",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2021/11/13/dns-based-ad-blocking.html",
+      "date"     : "2021-11-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Java Spring buzz words",
+      "category" : "coding",
+      "tags"     : "java, spring",
+      "url"      : "/coding/2021/08/12/java-spring-buzz-words.html",
+      "date"     : "2021-08-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我是该成为产品经理还是独立开发者？",
+      "category" : "career",
+      "tags"     : "indie-developer, product-manager",
+      "url"      : "/career/2021/08/07/product-manager-or-indie-developer.html",
+      "date"     : "2021-08-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "椰子味的曼谷",
+      "category" : "literature",
+      "tags"     : "",
+      "url"      : "/literature/2021/07/08/%E6%A4%B0%E5%AD%90%E5%91%B3%E7%9A%84%E6%9B%BC%E8%B0%B7.html",
+      "date"     : "2021-07-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "老猫",
+      "category" : "literature",
+      "tags"     : "",
+      "url"      : "/literature/2021/07/07/%E8%80%81%E7%8C%AB.html",
+      "date"     : "2021-07-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "一杯水",
+      "category" : "literature",
+      "tags"     : "",
+      "url"      : "/literature/2021/07/06/a-glass-of-water.html",
+      "date"     : "2021-07-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的工作台",
+      "category" : "literature",
+      "tags"     : "",
+      "url"      : "/literature/2021/07/05/my-work-desk.html",
+      "date"     : "2021-07-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "人到三十",
+      "category" : "literature",
+      "tags"     : "",
+      "url"      : "/literature/2021/07/04/turning-30.html",
+      "date"     : "2021-07-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "文字的体验设计",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2021/07/04/design-of-words.html",
+      "date"     : "2021-07-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "todo 翻译business innovation",
+      "category" : "business",
+      "tags"     : "business-model, innovation",
+      "url"      : "/business/2021/07/04/business-innovation.html",
+      "date"     : "2021-07-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "有问题，找发哥：免费1对1问答服务",
+      "category" : "side-project",
+      "tags"     : "",
+      "url"      : "/side-project/2021/06/20/free-individual-consulting-service.html",
+      "date"     : "2021-06-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Steam游戏串流遇到的问题及解决办法",
+      "category" : "computer",
+      "tags"     : "steam, game-streaming, steam-link",
+      "url"      : "/computer/2021/06/18/steam-game-streaming-issue-trouble-shooting.html",
+      "date"     : "2021-06-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "My gaming setup",
+      "category" : "gaming",
+      "tags"     : "game-streaming, steam, steam-link, setup",
+      "url"      : "/gaming/2021/06/16/gaming-setup.html",
+      "date"     : "2021-06-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Chromecast with Google TV setup",
+      "category" : "entertainment",
+      "tags"     : "setup",
+      "url"      : "/entertainment/2021/06/15/chromecast-with-google-tv-setup.html",
+      "date"     : "2021-06-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip 设计简史",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2021/06/15/a-brief-introduction-to-design.html",
+      "date"     : "2021-06-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "做生意不该关乎自己",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2021/06/15/business-is-not-personal.html",
+      "date"     : "2021-06-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何打造一款产品",
+      "category" : "product-management",
+      "tags"     : "innovation",
+      "url"      : "/product-management/2021/06/09/how-to-make-a-product.html",
+      "date"     : "2021-06-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何在小米路由器上安装shadowsocks",
+      "category" : "computer",
+      "tags"     : "shadowsocks, mi-router",
+      "url"      : "/computer/2021/06/04/mi-router-shadowsocks.html",
+      "date"     : "2021-06-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何在小米路由器上安装ssh工具（以及如何解决mini版亮红灯问题）",
+      "category" : "computer",
+      "tags"     : "mi-router, ssh",
+      "url"      : "/computer/2021/06/04/mi-router-mini-ssh.html",
+      "date"     : "2021-06-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何使用小米手环6模拟加密门禁卡",
+      "category" : "computer",
+      "tags"     : "mi-band, nfc, ios",
+      "url"      : "/computer/2021/06/04/how-to-read-encrypted-ic-card-with-mi-band-6.html",
+      "date"     : "2021-06-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我感兴趣的领域",
+      "category" : "personal",
+      "tags"     : "hobby, interests",
+      "url"      : "/personal/2021/05/30/areas-im-interested-in.html",
+      "date"     : "2021-05-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《商业模式新生代》1 客户细分类型",
+      "category" : "business",
+      "tags"     : "business-model",
+      "url"      : "/business/2021/05/26/customer-segments.html",
+      "date"     : "2021-05-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《商业模式新生代》2 典型的价值主张要素",
+      "category" : "business",
+      "tags"     : "value-proposition, business-model",
+      "url"      : "/business/2021/05/25/typical-value-proposition.html",
+      "date"     : "2021-05-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《商业模式新生代》9个构造块",
+      "category" : "business",
+      "tags"     : "business-model",
+      "url"      : "/business/2021/05/25/9-building-blocks-of-a-business-model.html",
+      "date"     : "2021-05-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "My needs for an open world driving game",
+      "category" : "gaming",
+      "tags"     : "driving",
+      "url"      : "/gaming/2021/05/17/my-needs-for-a-driving-game.html",
+      "date"     : "2021-05-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "译文｜建立创新引擎",
+      "category" : "business",
+      "tags"     : "innovation, thoughtworks, translation",
+      "url"      : "/business/2021/05/16/building-an-innovation-engine-cn-version.html",
+      "date"     : "2021-05-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "运行Forza Horizon 3遇到的问题及解决办法",
+      "category" : "gaming",
+      "tags"     : "forza-horizon",
+      "url"      : "/gaming/2021/05/13/fix-forza-horizon-3-issues.html",
+      "date"     : "2021-05-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "2021业余活动计划",
+      "category" : "side-project",
+      "tags"     : "plan",
+      "url"      : "/side-project/2021/05/09/side-projects-plan.html",
+      "date"     : "2021-05-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何减少手机屏幕使用",
+      "category" : "health",
+      "tags"     : "attention-crisis",
+      "url"      : "/health/2021/05/09/avoiding-the-attention-crisis.html",
+      "date"     : "2021-05-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "2021年职业发展计划",
+      "category" : "career",
+      "tags"     : "plan",
+      "url"      : "/career/2021/05/09/2021-career-plan.html",
+      "date"     : "2021-05-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《商业模式新生代》典型的商业模式",
+      "category" : "business",
+      "tags"     : "business-model",
+      "url"      : "/business/2021/05/08/typical-business-models.html",
+      "date"     : "2021-05-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip《一本书读懂财报》读书笔记",
+      "category" : "business",
+      "tags"     : "accounting",
+      "url"      : "/business/2021/05/06/how-to-read-financial-reports-study-notes.html",
+      "date"     : "2021-05-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Stretchly是一款强提醒休息的app",
+      "category" : "productivity",
+      "tags"     : "app, take-a-break",
+      "url"      : "/productivity/2021/05/04/recommend-stretchly.html",
+      "date"     : "2021-05-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip 我的知识管理系统",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2021/05/03/my-knowledge-management-system.html",
+      "date"     : "2021-05-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "how to generate product ideas?",
+      "category" : "product-management",
+      "tags"     : "ideation",
+      "url"      : "/product-management/2021/05/01/how-to-generate-product-ideas.html",
+      "date"     : "2021-05-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip 市场调研练习",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2021/05/01/market-research-exercise.html",
+      "date"     : "2021-05-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip 原型设计练习",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2021/05/01/design-exercise-prototype.html",
+      "date"     : "2021-05-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip 《先给大家看的设计书》读书笔记",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2021/05/01/book-notes-a-design-book-for-everyone.html",
+      "date"     : "2021-05-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip 小而美的Side project",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2021/04/30/small-and-beautiful-side-project.html",
+      "date"     : "2021-04-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Heroku部署定时任务遇到的一些问题和总结",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2021/04/29/lessons-learned-with-heroku.html",
+      "date"     : "2021-04-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "工具推荐：RSSHub",
+      "category" : "tool",
+      "tags"     : "rss",
+      "url"      : "/tool/2021/04/26/rsshub.html",
+      "date"     : "2021-04-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "RSS未死，RSS必将永生",
+      "category" : "insight",
+      "tags"     : "rss",
+      "url"      : "/insight/2021/04/25/rss-not-dead.html",
+      "date"     : "2021-04-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "和李噗噗关于个人成长的聊天",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2021/04/25/li-on-personal-growth.html",
+      "date"     : "2021-04-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "build system isn&#39;t key to the creative process",
+      "category" : "productivity",
+      "tags"     : "creative, process",
+      "url"      : "/productivity/2021/04/24/pro-setup-and-creative-process.html",
+      "date"     : "2021-04-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to use news2kindle",
+      "category" : "productivity",
+      "tags"     : "rss, kindle, reddit, google-news, news2kindle",
+      "url"      : "/productivity/2021/04/24/how-to-use-news2kindle.html",
+      "date"     : "2021-04-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "wip Don&#39;t be fooled by the myth of a 10x programmer",
+      "category" : "management",
+      "tags"     : "",
+      "url"      : "/management/2021/04/24/the-myth-of-10x-programmer.html",
+      "date"     : "2021-04-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "关于如何记笔记的思考",
+      "category" : "productivity",
+      "tags"     : "note-taking",
+      "url"      : "/productivity/2021/04/23/how-to-take-notes.html",
+      "date"     : "2021-04-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "音频setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/04/22/listening-setup.html",
+      "date"     : "2021-04-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "市场调研是做什么",
+      "category" : "marketing",
+      "tags"     : "",
+      "url"      : "/marketing/2021/04/22/what-is-marketing-research-about.html",
+      "date"     : "2021-04-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Workaround: 如何解决OneDrive, Dropbox或Google Sync的文件夹没有同步状态提示的问题",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2021/04/14/sophos-finder-extension-goole-drive-issue.html",
+      "date"     : "2021-04-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Study Note: How to Do Market Research",
+      "category" : "marketing",
+      "tags"     : "",
+      "url"      : "/marketing/2021/04/12/study-note-how-to-do-market-research.html",
+      "date"     : "2021-04-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "阅读计划",
+      "category" : "personal",
+      "tags"     : "plan",
+      "url"      : "/personal/2021/03/31/reading-plan.html",
+      "date"     : "2021-03-31 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "双拼（微软方案）学习笔记",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2021/03/30/shuangpin-tips.html",
+      "date"     : "2021-03-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "写作计划",
+      "category" : "side-project",
+      "tags"     : "plan",
+      "url"      : "/side-project/2021/03/29/writing-plan.html",
+      "date"     : "2021-03-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "翻译计划",
+      "category" : "side-project",
+      "tags"     : "plan",
+      "url"      : "/side-project/2021/03/29/translation-plan.html",
+      "date"     : "2021-03-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的Jekyll博客",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/29/blog-setup.html",
+      "date"     : "2021-03-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "2021年家庭计划",
+      "category" : "family",
+      "tags"     : "plan",
+      "url"      : "/family/2021/03/29/family-plan.html",
+      "date"     : "2021-03-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "写作setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/writing-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Switch homebrew setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/switch-homebrew-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "搜索setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/search-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "阅读setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/reading-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "图片欣赏setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/picture-viewing-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "照片管理setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/photo-management-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "电影欣赏setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/movie-watching-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "画画setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/drawing-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "编程环境setup",
+      "category" : "productivity",
+      "tags"     : "setup",
+      "url"      : "/productivity/2021/03/28/coding-setup.html",
+      "date"     : "2021-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "exiftool的使用方法",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2021/03/27/exiftool-basics.html",
+      "date"     : "2021-03-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Fifa Strategy",
+      "category" : "football",
+      "tags"     : "",
+      "url"      : "/football/2021/02/21/fifa-strategy.html",
+      "date"     : "2021-02-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "世界三大古游牧民族和中国北方游牧民族细分",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2021/01/10/%E4%B8%96%E7%95%8C%E4%B8%89%E5%A4%A7%E5%8F%A4%E6%B8%B8%E7%89%A7%E6%B0%91%E6%97%8F%E5%92%8C%E4%B8%AD%E5%9B%BD%E5%8C%97%E6%96%B9%E6%B8%B8%E7%89%A7%E6%B0%91%E6%97%8F%E7%BB%86%E5%88%86.html",
+      "date"     : "2021-01-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "瞬间之中存在永恒吗？《全球通史》读后感",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2020/12/28/thoughts-on-book-a-global-history.html",
+      "date"     : "2020-12-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "好用的小工具和资源分享",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2020/12/11/session-productivity-tools-and-tips-sharing.html",
+      "date"     : "2020-12-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "支付相关问题",
+      "category" : "business",
+      "tags"     : "payment",
+      "url"      : "/business/2020/12/04/payment-related-questions.html",
+      "date"     : "2020-12-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "有收获，但更多是困惑 ——《生命中不能承受之轻》书评",
+      "category" : "literature",
+      "tags"     : "",
+      "url"      : "/literature/2020/11/30/the-unbearable-lightness-of-being-book-review.html",
+      "date"     : "2020-11-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "军事战争入门",
+      "category" : "military",
+      "tags"     : "",
+      "url"      : "/military/2020/11/23/military-war-basics.html",
+      "date"     : "2020-11-23 12:07:00 +0000"
+    },
+  
+    {
+      "title"    : "Call of Duty series Titles",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/11/17/call-of-duty-series-titles.html",
+      "date"     : "2020-11-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《世界文明史话（上）》音频笔记",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2020/11/11/shi-jie-wen-ming-shi-hua-shang-yin-pin-bi-ji.html",
+      "date"     : "2020-11-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《用户至上》读书笔记",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2020/10/28/understanding-your-users-1.html",
+      "date"     : "2020-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《全球通史》第三编",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2020/09/24/quan-qiu-tong-shi-du-shu-bi-ji-3.html",
+      "date"     : "2020-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《全球通史》第四编",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2020/09/24/quan-qiu-tong-shi-du-shu-bi-ji-4.html",
+      "date"     : "2020-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《全球通史》第二编",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2020/09/23/quan-qiu-tong-shi-du-shu-bi-ji-2.html",
+      "date"     : "2020-09-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《全球通史》读书分享 Slides",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2020/09/18/shi-jie-li-shi-session-script.html",
+      "date"     : "2020-09-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《全球通史》第一编",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2020/09/18/quan-qiu-tong-shi-du-shu-bi-ji-1.html",
+      "date"     : "2020-09-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "设计书单",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2020/09/12/she-ji-shu-dan.html",
+      "date"     : "2020-09-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "焦点小组",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2020/09/12/jiao-dian-xiao-zu.html",
+      "date"     : "2020-09-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《营销管理》第3章",
+      "category" : "marketing",
+      "tags"     : "marketing-management",
+      "url"      : "/marketing/2020/09/11/ying-xiao-guan-li-du-shu-bi-ji-3.html",
+      "date"     : "2020-09-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《营销管理》第2章",
+      "category" : "marketing",
+      "tags"     : "marketing-management",
+      "url"      : "/marketing/2020/09/10/ying-xiao-guan-li-du-shu-bi-ji-2.html",
+      "date"     : "2020-09-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《营销管理》读书笔记：第4章 实施营销调研",
+      "category" : "marketing",
+      "tags"     : "marketing-management",
+      "url"      : "/marketing/2020/09/09/ying-xiao-guan-li-du-shu-bi-ji-4.html",
+      "date"     : "2020-09-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "读书笔记｜《营销管理》第1章",
+      "category" : "marketing",
+      "tags"     : "marketing-management",
+      "url"      : "/marketing/2020/09/09/ying-xiao-guan-li-du-shu-bi-ji-1.html",
+      "date"     : "2020-09-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to convert wordpress to markdown",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2020/08/15/how-to-convert-wordpress-to-markdown.html",
+      "date"     : "2020-08-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Functional areas of organization",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2020/08/07/functional-areas-of-organization.html",
+      "date"     : "2020-08-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我和Ace关于产品经理、市场分析和用户研究的讨论",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2020/07/27/wo-he-ace-guan-yu-chan-pin-jing-li-shi-chang-fen-xi-he-yong-hu-yan-jiu-de-tao-lun.html",
+      "date"     : "2020-07-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "有关产品经理的思考",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2020/07/25/you-guan-chan-pin-jing-li-de-si-kao.html",
+      "date"     : "2020-07-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "企业的六大职能部门",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2020/07/19/qi-ye-de-liu-da-zhi-neng-bu-men.html",
+      "date"     : "2020-07-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "git commands",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2020/06/09/git-commands.html",
+      "date"     : "2020-06-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "ruby on rails - How devise methods are available in ApplicationController",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2020/06/03/ruby-on-rails-how-devise-methods-are-available-in-applicationcontroller.html",
+      "date"     : "2020-06-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《hardprint perspective》学习笔记",
+      "category" : "drawing",
+      "tags"     : "perspective study-notes",
+      "url"      : "/drawing/2020/05/31/hardprint-perspective-study-notes.html",
+      "date"     : "2020-05-31 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Safari cache despite no cache",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2020/05/30/safari-cache-despite-no-cache.html",
+      "date"     : "2020-05-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《交互设计精髓》学习笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2020/05/30/jiao-hu-she-ji-jing-sui-xue-xi-bi-ji.html",
+      "date"     : "2020-05-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "有关职业选择的思考",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2020/05/30/you-guan-zhi-ye-xuan-ze-de-si-kao.html",
+      "date"     : "2020-05-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "multiple join sql example",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2020/05/19/multiple-join-sql-example.html",
+      "date"     : "2020-05-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Handling State in React Four Immutable Approaches to Consider",
+      "category" : "javascript",
+      "tags"     : "",
+      "url"      : "/javascript/2020/05/11/handling-state-in-react-four-immutable-approaches-to-consider.html",
+      "date"     : "2020-05-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Why Rails permit",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2020/05/07/why-rails-permit.html",
+      "date"     : "2020-05-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "职业发展计划的项目跟踪工具的演进",
+      "category" : "design",
+      "tags"     : "career",
+      "url"      : "/design/2020/05/05/Evolution-of-career-plan-document.html",
+      "date"     : "2020-05-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "DIY：XBox One有线手柄改无线Switch Pro手柄",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2020/05/03/DIY-XBox-One-you-xian-shou-bing-gai-wu-xian-Switch-Pro-shou-bing.html",
+      "date"     : "2020-05-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Issue ActiveSupportMessageEncryptorInvalidMessage",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2020/04/29/issue-activesupportmessageencryptorinvalidmessage.html",
+      "date"     : "2020-04-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "阿卡西斯USB 3.0采集卡使用体验",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/21/a-ka-xi-si-USB-3-cai-ji-ka-shi-yong-ti-yan.html",
+      "date"     : "2020-04-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "写作流程",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2020/04/20/xie-zuo-liu-cheng.html",
+      "date"     : "2020-04-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "便携屏实际使用感受",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/10/poor-experience-with-portal-monitor.html",
+      "date"     : "2020-04-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "体验手机平板外接键盘",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/10/keyboard-experience-for-phones-and-tablets.html",
+      "date"     : "2020-04-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "GoBigger便携屏一线直连的issue",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/10/GoBigger-bian-xie-ping-yi-xian-zhi-lian-de-issue.html",
+      "date"     : "2020-04-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我对于站立办公桌的需求",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2020/04/10/wo-dui-yu-zhan-li-ban-gong-zhuo-de-xu-qiu.html",
+      "date"     : "2020-04-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "GoBigger zb156便携式显示屏使用体验",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/09/GoBigger-zb156-bian-xie-shi-xian-shi-ping-shi-yong-ti-yan.html",
+      "date"     : "2020-04-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "产品设计并不依赖于对技术的理解，但是离不开技术的支持",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2020/04/07/chan-pin-she-ji-bing-bu-yi-lai-yu-dui-ji-shu-de-li-jie-dan-shi-li-bu-kai-ji-shu-de-zhi-chi.html",
+      "date"     : "2020-04-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "飞度历代发布时间及分析",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/03/fei-du-li-dai-fa-bu-shi-jian-ji-fen-xi.html",
+      "date"     : "2020-04-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "各种云服务对于我的使用场景和比较",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/02/ge-zhong-yun-fu-wu-dui-yu-wo-de-shi-yong-chang-jing-he-bi-jiao.html",
+      "date"     : "2020-04-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "各种云服务我的使用场景比较",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2020/04/02/ge-zhong-yun-fu-wu-wo-de-shi-yong-chang-jing-bi-jiao.html",
+      "date"     : "2020-04-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "L.A. Noire Switch版本体验",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/04/01/L-A-Noire-Switch-ban-ben-ti-yan.html",
+      "date"     : "2020-04-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "便携屏的主要场景",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2020/04/01/bian-xie-ping-de-zhu-yao-chang-jing.html",
+      "date"     : "2020-04-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "一次“美国-泰国“国际包裹跟踪体验",
+      "category" : "personal",
+      "tags"     : "",
+      "url"      : "/personal/2020/04/01/yi-ci-mei-guo-tai-guo-guo-ji-bao-guo-gen-zong-ti-yan.html",
+      "date"     : "2020-04-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Switch 3种模式拓展",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2020/03/27/switch-3-zhong-mo-shi-tuo-zhan.html",
+      "date"     : "2020-03-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Switch 充电原则",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2020/03/15/switch-chong-dian-yuan-ze.html",
+      "date"     : "2020-03-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "几款产品的使用issue",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/03/06/ji-kuan-chan-pin-de-shi-yong-issue.html",
+      "date"     : "2020-03-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Switch 准备",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2020/03/05/switch-zhun-bei.html",
+      "date"     : "2020-03-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的日常耳机使用需求",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2020/02/28/wo-de-ri-chang-er-ji-shi-yong-xu-qiu.html",
+      "date"     : "2020-02-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Switch 上手使用遇到的问题及解决方案",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/02/26/Switch-shang-shou-shi-yong-yu-dao-de-wen-ti-ji-jie-jue-fang-an.html",
+      "date"     : "2020-02-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "泰国实体店Switch价格走访",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/02/24/tai-guo-shi-ti-dian-Switch-jia-ge-zou-fang.html",
+      "date"     : "2020-02-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Racing Games personal preference in order",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/02/11/racing-games-personal-preference-in-order.html",
+      "date"     : "2020-02-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Switch的实用性分析",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/02/10/Switch-de-shi-yong-xing-fen-xi.html",
+      "date"     : "2020-02-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "玩Skyrim的体验",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/02/10/wan-Skyrim-de-ti-yan.html",
+      "date"     : "2020-02-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "热血系列游戏名称",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/02/07/re-xue-xi-lie-you-xi-ming-cheng.html",
+      "date"     : "2020-02-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Aim assist on Halo 1",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/02/07/aim-assist-on-halo-1.html",
+      "date"     : "2020-02-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "最近了解过的射击类游戏",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/02/01/zui-jin-liao-jie-guo-de-she-ji-lei-you-xi.html",
+      "date"     : "2020-02-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "最近了解过的一些游戏",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/01/30/zui-jin-liao-jie-guo-de-yi-xie-you-xi.html",
+      "date"     : "2020-01-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Games I like to play by genre 我喜欢玩的游戏类别",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2020/01/30/games-i-like-to-play-by-genre-wo-xi-huan-wan-de-you-xi-lei-bie.html",
+      "date"     : "2020-01-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "武汉病毒给我家泰国行程带来的直接经济损失为0",
+      "category" : "personal",
+      "tags"     : "",
+      "url"      : "/personal/2020/01/29/wu-han-bing-du-gei-wo-jia-tai-guo-xing-cheng-dai-lai-de-zhi-jie-jing-ji-sun-shi-wei.html",
+      "date"     : "2020-01-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Ghost Recon Wildlands游戏体验",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2020/01/28/Ghost-Recon-Wildlands-you-xi-ti-yan.html",
+      "date"     : "2020-01-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我的手机使用场景",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2020/01/13/wo-de-shou-ji-shi-yong-chang-jing.html",
+      "date"     : "2020-01-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "为什么手机上没有主机游戏？",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2020/01/02/wei-shen-me-shou-ji-shang-mei-you-zhu-ji-you-xi.html",
+      "date"     : "2020-01-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "泰语学习笔记",
+      "category" : "language",
+      "tags"     : "",
+      "url"      : "/language/2019/12/27/tai-yu-xue-xi-bi-ji.html",
+      "date"     : "2019-12-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "小米CC9 Pro的使用issues",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/12/19/xiao-mi-CC9-Pro-de-shi-yong-issues.html",
+      "date"     : "2019-12-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Android作为主力机的体验",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/12/19/Android-zuo-wei-zhu-li-ji-de-ti-yan.html",
+      "date"     : "2019-12-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何使用vJoy + UCR来将键盘鼠标作为游戏控制器",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/12/13/ru-he-shi-yong-vjoy-ucr-lai-jiang-jian-pan-shu-biao-zuo-wei-you-xi-kong-zhi-qi.html",
+      "date"     : "2019-12-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "搜索信息的workflow",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2019/11/11/sou-suo-xin-xi-de-workflow.html",
+      "date"     : "2019-11-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "娱乐活动",
+      "category" : "entertainment",
+      "tags"     : "",
+      "url"      : "/entertainment/2019/11/11/entertainment-activities.html",
+      "date"     : "2019-11-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "赛车PPT script",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/11/06/sai-che-PPT-script.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "降档后发动机的转速升高是被拉高还是ecu补油提高？",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/11/06/jiang-dang-hou-fa-dong-ji-de-zhuan-su-sheng-gao-shi-bei-la-gao-hai-shi-ecu-bu-you-ti-gao.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "F1 driving breakdown",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/11/06/F1-driving-breakdown.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "F1 driving G force",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/11/06/F1-driving-G-force.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "汽车实际售价趋势",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/11/06/qi-che-shi-ji-shou-jia-qu-shi.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "车辆实际售价趋势",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/11/06/che-liang-shi-ji-shou-jia-qu-shi.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Difference between Hot version and non-hot ones",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/11/06/Difference-between-Hot-version-and-nonhot-ones.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "设计101",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2019/11/06/she-ji-101.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "东风风光330驾驶感受",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/11/06/dong-feng-feng-guang-330-jia-shi-gan-shou.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "automatic transmission shift strategy",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/11/06/automatic-transmission-shift-strategy.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "1系、马自达3、思域保养费用对比",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/11/06/1-xi-ma-zi-da-3-si-yu-bao-yang-fei-yong-dui-bi.html",
+      "date"     : "2019-11-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "User journey和story是否存在对应关系",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/10/30/User-journey-he-story-shi-fou-cun-zai-dui-ying-guan-xi.html",
+      "date"     : "2019-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何选择一款产品（以汽车为例）",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/10/30/ru-he-xuan-ze-yi-kuan-chan-pin-yi-qi-che-wei-li.html",
+      "date"     : "2019-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "BA mindset and skills",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/10/30/BA-mindset-and-skills.html",
+      "date"     : "2019-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "迭代计划 开发团队带宽分配",
+      "category" : "agile",
+      "tags"     : "",
+      "url"      : "/agile/2019/10/30/die-dai-ji-hua-kai-fa-tuan-dui-dai-kuan-fen-pei.html",
+      "date"     : "2019-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Pre IPM时间分析",
+      "category" : "agile",
+      "tags"     : "",
+      "url"      : "/agile/2019/10/30/Pre-IPM-shi-jian-fen-xi.html",
+      "date"     : "2019-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何使用印象笔记有效管理碎片信息",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2019/10/29/ru-he-shi-yong-yin-xiang-bi-ji-you-xiao-guan-li-sui-pian-xin-xi.html",
+      "date"     : "2019-10-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "iOS无损音乐播放器对比",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/10/29/iOS-wu-sun-yin-yue-bo-fang-qi-dui-bi.html",
+      "date"     : "2019-10-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《Product Management Desk Reference》读后感",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/10/29/Product-Management-Desk-Reference-du-hou-gan.html",
+      "date"     : "2019-10-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "软件开发复杂性的原因",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/10/29/ruan-jian-kai-fa-fu-za-xing-de-yuan-yin.html",
+      "date"     : "2019-10-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Properties of a good open world driving games",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/10/29/Properties-of-a-good-open-world-driving-games.html",
+      "date"     : "2019-10-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "日常驾驶时车辆性能差异明显吗？",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/10/29/ri-chang-jia-shi-shi-che-liang-xing-neng-cha-yi-ming-xian-ma.html",
+      "date"     : "2019-10-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "不同转速下离合的控制",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/10/28/bu-tong-zhuan-su-xia-li-he-de-kong-zhi.html",
+      "date"     : "2019-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "人类造物的本质",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/10/28/ren-lei-zao-wu-de-ben-zhi.html",
+      "date"     : "2019-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "ETS2：最接近真实离合操纵难度的游戏",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/10/28/ETS2-zui-jie-jin-zhen-shi-li-he-cao-zong-nan-du-de-you-xi.html",
+      "date"     : "2019-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "家庭网络文件共享方案",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2019/10/28/jia-ting-wang-luo-wen-jian-gong-xiang-fang-an.html",
+      "date"     : "2019-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我用车的需求",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/10/28/wo-yong-che-de-xu-qiu.html",
+      "date"     : "2019-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "离合器本质是用来转速同步",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/10/28/li-he-qi-ben-zhi-shi-yong-lai-zhuan-su-tong-bu.html",
+      "date"     : "2019-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "What&#39;s the fun of driving on road?",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/10/28/What-s-the-fun-of-driving-on-road.html",
+      "date"     : "2019-10-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "U2专辑评价",
+      "category" : "music",
+      "tags"     : "",
+      "url"      : "/music/2019/10/24/u2-zhuan-ji-ping-jia.html",
+      "date"     : "2019-10-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "我心中的《Devil wears Prada》结局",
+      "category" : "entertainment",
+      "tags"     : "",
+      "url"      : "/entertainment/2019/10/24/wo-xin-zhong-de-Devil-wears-Prada-jie-ju.html",
+      "date"     : "2019-10-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "自己的判断力",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/10/21/zi-ji-de-pan-duan-li.html",
+      "date"     : "2019-10-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Jump to closing bracket in Visual Studio Code",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2019/10/21/jump-to-closing-bracket-in-visual-studio-code.html",
+      "date"     : "2019-10-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "iOS竟然找不到一款好的MOBI电子书阅读器",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2019/10/21/iOS-jing-ran-zhao-bu-dao-yi-kuan-hao-de-MOBI-dian-zi-shu-yue-du-qi.html",
+      "date"     : "2019-10-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "这个洗面奶盖子的设计",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2019/10/14/zhe-ge-xi-mian-nai-gai-zi-de-she-ji.html",
+      "date"     : "2019-10-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "What are iPhone Music Formats on iOS 13",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2019/10/10/what-are-iphone-music-formats-on-ios-13.html",
+      "date"     : "2019-10-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "为什么相比于Drafts我更愿意用Evernote来管理想法",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/10/09/wei-shen-me-xiang-bi-yu-Drafts-wo-geng-yuan-yi-yong-Evernote-lai-guan-li-xiang-fa.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "国内电视盒子的体验太差",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/10/09/guo-nei-dian-shi-he-zi-de-ti-yan-tai-cha.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Gmail poor design",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/10/09/Gmail-poor-design.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Roadmap, Features, Stories 的关系",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/10/09/Roadmap-Features-Stories-de-guan-xi.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "为什么普通大众也不用Edge浏览器？",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/10/09/wei-shen-me-pu-tong-da-zhong-ye-bu-yong-Edge-liu-lan-qi.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "汽车的外观和手机的外观对使用者是有差别的",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/10/09/qi-che-de-wai-guan-he-shou-ji-de-wai-guan-dui-shi-yong-zhe-shi-you-cha-bie-de.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "产品是不是只要好看就够了？",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/10/09/chan-pin-shi-bu-shi-zhi-yao-hao-kan-jiu-gou-le.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何做需求分析",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/10/09/ru-he-zuo-xu-qiu-fen-xi.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Relationship between user story feature and epic",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/10/09/Relationship-between-user-story-feature-and-epic.html",
+      "date"     : "2019-10-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "街道驾驶游戏的乐趣何在",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/10/08/jie-dao-jia-shi-you-xi-de-le-qu-he-zai.html",
+      "date"     : "2019-10-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "产品设计师、工程师和产品经理思考的内容",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2019/10/08/chan-pin-she-ji-shi-gong-cheng-shi-he-chan-pin-jing-li-si-kao-de-nei-rong.html",
+      "date"     : "2019-10-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "雪弗兰科沃兹乘坐感受",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/10/07/xue-fu-lan-ke-wo-zi-cheng-zuo-gan-shou.html",
+      "date"     : "2019-10-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "不用印象笔记记录想法的原因",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2019/10/06/bu-yong-yin-xiang-bi-ji-ji-lu-xiang-fa-de-yuan-yin.html",
+      "date"     : "2019-10-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "过去几年逐渐从印象笔记剥离出的（不适合）使用场景",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2019/10/05/guo-qu-ji-nian-zhu-jian-cong-yin-xiang-bi-ji-bo-li-chu-de-bu-shi-he-shi-yong-chang-jing.html",
+      "date"     : "2019-10-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "用户访谈的注意事项",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2019/10/02/yong-hu-fang-tan-de-zhu-yi-shi-xiang.html",
+      "date"     : "2019-10-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "飞度的乘坐感受",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/10/02/fei-du-de-cheng-zuo-gan-shou.html",
+      "date"     : "2019-10-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "C4L的驾驶感受",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/10/02/C4L-de-jia-shi-gan-shou.html",
+      "date"     : "2019-10-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "User journey",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/10/02/user-journey.html",
+      "date"     : "2019-10-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "最近了解过的一些耳机",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/09/29/zui-jin-liao-jie-guo-de-yi-xie-er-ji.html",
+      "date"     : "2019-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "车载收音机调频的蓝牙通话设备存在的隐私问题",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/09/29/che-zai-shou-yin-ji-tiao-pin-de-lan-ya-tong-hua-she-bei-cun-zai-de-yin-si-wen-ti.html",
+      "date"     : "2019-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "科学理论对于实践和商业活动也是非常重要的",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/09/29/ke-xue-li-lun-dui-yu-shi-jian-he-shang-ye-huo-dong-ye-shi-fei-chang-zhong-yao-de.html",
+      "date"     : "2019-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "最近了解过的赛车类游戏",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/09/29/zui-jin-liao-jie-guo-de-sai-che-lei-you-xi.html",
+      "date"     : "2019-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "最近了解过的动漫",
+      "category" : "entertainment",
+      "tags"     : "",
+      "url"      : "/entertainment/2019/09/29/zui-jin-liao-jie-guo-de-dong-man.html",
+      "date"     : "2019-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "最近了解过的电视剧",
+      "category" : "entertainment",
+      "tags"     : "",
+      "url"      : "/entertainment/2019/09/29/zui-jin-liao-jie-guo-de-dian-shi-ju.html",
+      "date"     : "2019-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "听一个机器学习的技术分享时记的笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2019/09/29/ting-yi-ge-ji-qi-xue-xi-de-ji-shu-fen-xiang-shi-ji-de-bi-ji.html",
+      "date"     : "2019-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Ultimate Speed Secrets notes 笔记",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/09/24/ultimate-speed-secrets-notes-bi-ji.html",
+      "date"     : "2019-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Assetto Corsa racing notes",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/09/24/assetto-corsa-racing-notes.html",
+      "date"     : "2019-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Marketing Research course notes 笔记",
+      "category" : "marketing",
+      "tags"     : "",
+      "url"      : "/marketing/2019/09/24/marketing-research-course-notes-bi-ji.html",
+      "date"     : "2019-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Crash Course Economics",
+      "category" : "economics",
+      "tags"     : "",
+      "url"      : "/economics/2019/09/24/crash-course-economics.html",
+      "date"     : "2019-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "KODO 2.0 设计理念",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2019/09/24/KODO-2-she-ji-li-nian.html",
+      "date"     : "2019-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "iOS 13 features not working for me",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/09/23/iOS-13-features-not-working-for-me.html",
+      "date"     : "2019-09-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "小时候玩过的好玩的红白机游戏",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/09/21/xiao-shi-hou-wan-guo-de-hao-wan-de-hong-bai-ji-you-xi.html",
+      "date"     : "2019-09-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "fix My iPhone keeps connecting and disconnect",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2019/09/21/fix-my-iphone-keeps-connecting-and-disconnect.html",
+      "date"     : "2019-09-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "YouTube视频单位访问量收入",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2019/09/21/YouTube-shi-pin-dan-wei-fang-wen-liang-shou-ru.html",
+      "date"     : "2019-09-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "ACG名词解释",
+      "category" : "entertainment",
+      "tags"     : "",
+      "url"      : "/entertainment/2019/09/07/acg-ming-ci-jie-shi.html",
+      "date"     : "2019-09-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "设计学科",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2019/09/05/she-ji-xue-ke.html",
+      "date"     : "2019-09-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "手动挡一般多少转速起步？",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/09/05/shou-dong-dang-yi-ban-duo-shao-zhuan-su-qi-bu.html",
+      "date"     : "2019-09-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "几款汽车销量对比",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/09/05/ji-kuan-qi-che-xiao-liang-dui-bi.html",
+      "date"     : "2019-09-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "宝马2010年后向市场妥协的原因",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2019/09/05/bao-ma-2010-nian-hou-xiang-shi-chang-tuo-xie-de-yuan-yin.html",
+      "date"     : "2019-09-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何构建知识体系",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2019/08/27/ru-he-gou-jian-zhi-shi-ti-xi.html",
+      "date"     : "2019-08-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "办理公积金抵扣流程",
+      "category" : "housing",
+      "tags"     : "",
+      "url"      : "/housing/2019/08/27/ban-li-gong-ji-jin-di-kou-liu-cheng.html",
+      "date"     : "2019-08-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "手动驾驶的乐趣",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/08/26/shou-dong-jia-shi-de-le-qu.html",
+      "date"     : "2019-08-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "city skyline 如何调整视角",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/08/23/city-skyline-ru-he-tiao-zheng-shi-jiao.html",
+      "date"     : "2019-08-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "笔记 | 赛车必需的改装参考",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/08/22/bi-ji-sai-che-bi-xu-de-gai-zhuang-can-kao.html",
+      "date"     : "2019-08-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Auto Racing Group explained",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/08/22/Auto-Racing-Group-explained.html",
+      "date"     : "2019-08-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "汽车生命周期的价格变化",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/08/22/qi-che-sheng-ming-zhou-qi-de-jia-ge-bian-hua.html",
+      "date"     : "2019-08-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Types of React components",
+      "category" : "javascript",
+      "tags"     : "",
+      "url"      : "/javascript/2019/08/22/types-of-react-components.html",
+      "date"     : "2019-08-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How Babel works",
+      "category" : "javascript",
+      "tags"     : "",
+      "url"      : "/javascript/2019/08/22/How-Babel-works.html",
+      "date"     : "2019-08-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "List of simulation video games",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/08/22/List-of-simulation-video-games.html",
+      "date"     : "2019-08-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Popular FPS games Impressions",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/08/20/Popular-FPS-games-Impressions.html",
+      "date"     : "2019-08-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Arma 3 学习笔记",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/08/16/arma-3-xue-xi-bi-ji.html",
+      "date"     : "2019-08-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How-to fix Battlefield 3 fail to launch",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/08/14/how-to-fix-battlefield-3-fail-to.html",
+      "date"     : "2019-08-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Auto racing genres",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/08/13/auto-racing-genres.html",
+      "date"     : "2019-08-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Blancpain GT Sprint series",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/08/12/blancpain-gt-sprint-series.html",
+      "date"     : "2019-08-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Customer racing",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/08/10/customer-racing.html",
+      "date"     : "2019-08-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "透视画法",
+      "category" : "drawing",
+      "tags"     : "perspective, study-notes",
+      "url"      : "/drawing/2019/08/06/perspective-drawing.html",
+      "date"     : "2019-08-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何稳定地半离合",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/07/16/ru-he-wen-ding-di-ban-li-he.html",
+      "date"     : "2019-07-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "RFC 1796 - Not All RFCs are Standards",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2019/07/02/rfc-1796-not-all-rfcs-are-standards.html",
+      "date"     : "2019-07-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "生活哲学",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/06/17/sheng-huo-zhe-xue.html",
+      "date"     : "2019-06-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "关于生活的思考",
+      "category" : "insight",
+      "tags"     : "",
+      "url"      : "/insight/2019/06/17/guan-yu-sheng-huo-de-si-kao.html",
+      "date"     : "2019-06-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "关于汽车的思考",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/06/17/guan-yu-qi-che-de-si-kao.html",
+      "date"     : "2019-06-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "职业思考",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2019/06/17/zhi-ye-si-kao.html",
+      "date"     : "2019-06-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "关于自己的思考",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2019/06/17/guan-yu-zi-ji-de-si-kao.html",
+      "date"     : "2019-06-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "shadowsocks 命令",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2019/06/14/shadowsocks-ming-ling.html",
+      "date"     : "2019-06-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "fix 狂飙旧金山 Driver SF G29方向盘支持",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/05/30/fix-kuang-biao-jiu-jin-shan-driver-sf-g29-fang-xiang-pan-zhi-chi.html",
+      "date"     : "2019-05-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Fix Burnout Paradise 天堂 方向盘方向自然状态下向右偏移",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/05/30/fix-burnout-paradise-tian-tang-fang-xiang-pan-fang-xiang-zi-ran-zhuang-tai-xia-xiang-you-pian-yi.html",
+      "date"     : "2019-05-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Fix Test Drive Unlimited 进入游戏有声音但是游戏中没有声音",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2019/05/30/fix-test-drive-unlimited-jin-ru-you-xi-you-sheng-yin-dan-shi-you-xi-zhong-mei-you-sheng-yin.html",
+      "date"     : "2019-05-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Torque Converter的三种工作状态",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/05/27/Torque-Converter-de-san-zhong-gong-zuo-zhuang-tai.html",
+      "date"     : "2019-05-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "卡丁车入门教程",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2019/05/22/ka-ding-che-ru-men-jiao-cheng.html",
+      "date"     : "2019-05-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "译文｜为什么区分客户旅程和用户旅程很重要",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/05/12/yi-wen-wei-shen-me-qu-fen-ke-hu-lv-cheng-he-yong-hu-lv-cheng-hen-zhong-yao.html",
+      "date"     : "2019-05-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "共享经济解决了什么问题？",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2019/05/07/gong-xiang-jing-ji-jie-jue-le-shen-me-wen-ti.html",
+      "date"     : "2019-05-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "译文｜如何打造高质量的产品",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/04/27/yi-wen-ru-he-da-zao-gao-zhi-liang-chan-pin.html",
+      "date"     : "2019-04-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "译文｜客戶体验与用户体验的区别",
+      "category" : "product-management",
+      "tags"     : "user-experience",
+      "url"      : "/product-management/2019/04/27/yi-wen-ke-hu-ti-yan-yu-yong-hu-ti-yan-de-qu-bie.html",
+      "date"     : "2019-04-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "商贷转公积金担保流程",
+      "category" : "housing",
+      "tags"     : "",
+      "url"      : "/housing/2019/04/27/shang-dai-zhuan-gong-ji-jin-dan-bao-liu-cheng.html",
+      "date"     : "2019-04-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "世界历史时间轴和世界地图",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2019/04/18/li-shi-xue-xi-bi-ji.html",
+      "date"     : "2019-04-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何连接VPN",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2019/04/09/ru-he-lian-jie-vpn.html",
+      "date"     : "2019-04-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何在Visual Studio Code中新建JavaScript代码文件",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2019/04/09/ru-he-zai-visual-studio-code-zhong-xin-jian-javascript-dai-ma-wen-jian.html",
+      "date"     : "2019-04-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "快速了解组织业务的一些关键问题",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/04/09/kuai-su-liao-jie-zu-zhi-ye-wu-de-yi-xie-guan-jian-wen-ti.html",
+      "date"     : "2019-04-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Product Thinking",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/04/03/Product-Thinking.html",
+      "date"     : "2019-04-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "商转公流程",
+      "category" : "housing",
+      "tags"     : "",
+      "url"      : "/housing/2019/04/03/shang-zhuan-gong-liu-cheng.html",
+      "date"     : "2019-04-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "BA onboarding actions",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/04/03/ba-onboarding-actions.html",
+      "date"     : "2019-04-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "想法管理方案",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2019/03/28/xiang-fa-guan-li-fang-an.html",
+      "date"     : "2019-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "业务分析师不是商业分析师",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/03/28/ye-wu-fen-xi-shi-bu-shi-shang-ye-fen-xi-shi.html",
+      "date"     : "2019-03-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "关于职业选择的思考",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2019/03/16/guan-yu-zhi-ye-xuan-ze-de-si-kao.html",
+      "date"     : "2019-03-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "公积金计算公式",
+      "category" : "housing",
+      "tags"     : "",
+      "url"      : "/housing/2019/03/14/gong-ji-jin-ji-suan-gong-shi.html",
+      "date"     : "2019-03-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "了解人类历史有感",
+      "category" : "history",
+      "tags"     : "",
+      "url"      : "/history/2019/03/12/kan-le-ren-lei-li-shi-you-gan.html",
+      "date"     : "2019-03-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Model 3充电电费与燃油车油费对比",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2019/03/09/Model-3-chong-dian-dian-fei-yu-ran-you-che-you-fei-dui-bi.html",
+      "date"     : "2019-03-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "需求采集和分析的四种方法",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2019/03/08/xu-qiu-cai-ji-he-fen-xi-de-si-zhong-fang-fa.html",
+      "date"     : "2019-03-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "马自达是一家怎样的企业",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2019/02/24/ma-zi-da-shi-yi-jia-zen-yang-de-qi-ye.html",
+      "date"     : "2019-02-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "NUT 3 防丢失芯片实用性如何？",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/02/22/NUT-3-fang-diu-shi-xin-pian-shi-yong-xing-ru-he.html",
+      "date"     : "2019-02-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "文章管理方案",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2019/02/20/wen-zhang-guan-li-fang-an.html",
+      "date"     : "2019-02-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "QCY T1s 使用感受",
+      "category" : "product-review",
+      "tags"     : "qcy, earpods",
+      "url"      : "/product-review/2019/02/20/qcy-t1s-shi-yong-gan-shou.html",
+      "date"     : "2019-02-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何搭建Shadowsocks服务",
+      "category" : "coding",
+      "tags"     : "vpn, shadowsocks",
+      "url"      : "/coding/2019/02/18/vps-gou-mai-ji-shadowsocks-da-jian-jiao-cheng.html",
+      "date"     : "2019-02-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "扭力变矩器工作原理",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/02/17/niu-li-bian-ju-qi-gong-zuo-yuan-li.html",
+      "date"     : "2019-02-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "BA工作经验总结",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/02/17/BA-gong-zuo-jing-yan-zong-jie.html",
+      "date"     : "2019-02-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Story template Consumer view health status of ThoughtAPI",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/02/15/story-template-consumer-view-health-status-of-thoughtapi.html",
+      "date"     : "2019-02-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Story template Admin add team member",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2019/02/15/story-template-admin-add-team-member.html",
+      "date"     : "2019-02-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "特斯拉驾驶感受",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2019/02/11/te-si-la-jia-shi-gan-shou.html",
+      "date"     : "2019-02-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Graphics settings explained",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/01/31/graphics-settings-explained.html",
+      "date"     : "2019-01-31 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Webpage highlight &amp; annotation tool comparison",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2019/01/25/Webpage-highlight-annotation-tool-comparison.html",
+      "date"     : "2019-01-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "fix get rid of the black borders  Assetto Corsa",
+      "category" : "gaming",
+      "tags"     : "",
+      "url"      : "/gaming/2019/01/25/fix-get-rid-of-the-black-borders-assetto-corsa.html",
+      "date"     : "2019-01-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "净网行动 dont feed the trolls",
+      "category" : "society",
+      "tags"     : "",
+      "url"      : "/society/2019/01/11/jing-wang-xing-dong-dont-feed-the-trolls.html",
+      "date"     : "2019-01-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Working plan 周期",
+      "category" : "agile",
+      "tags"     : "product-management, agile",
+      "url"      : "/agile/2018/12/25/working-plan-zhou-qi.html",
+      "date"     : "2018-12-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "是否可以比计划中提前地准备下个月第1个iteration卡？",
+      "category" : "agile",
+      "tags"     : "agile, product-management",
+      "url"      : "/agile/2018/12/25/shi-fou-ke-yi-bi-ji-hua-zhong-ti-qian-de-zhun-bei-xia-ge-yue-di-1-ge-iteration-ka.html",
+      "date"     : "2018-12-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Iteration Planning",
+      "category" : "agile",
+      "tags"     : "agile",
+      "url"      : "/agile/2018/12/22/iteration-planning.html",
+      "date"     : "2018-12-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "第4代马自达3量产车与概念车的高度一致性",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2018/12/04/di-4-dai-ma-zi-da-3-liang-chan-che-yu-gai-nian-che-de-gao-du-yi-zhi-xing.html",
+      "date"     : "2018-12-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "story template (bv, journey, mockup, ui, ac, ts)",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2018/11/28/story-template-bv-journey-mockup-ui-ac-ts.html",
+      "date"     : "2018-11-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "BA mindset and skills",
+      "category" : "business-analysis",
+      "tags"     : "",
+      "url"      : "/business-analysis/2018/11/24/ba-mindset-and-skills.html",
+      "date"     : "2018-11-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "如何开口说英语",
+      "category" : "english",
+      "tags"     : "",
+      "url"      : "/english/2018/11/22/how-to-learn-enligh-speaking.html",
+      "date"     : "2018-11-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "冷鲜肉竞争力分析",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/business/2018/11/19/leng-xian-rou-jing-pin-fen-xi.html",
+      "date"     : "2018-11-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "产品经理面试宝典笔记",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2018/10/31/chan-pin-jing-li-mian-shi-bao-dian-bi-ji.html",
+      "date"     : "2018-10-31 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "什么是版权？",
+      "category" : "misc",
+      "tags"     : "",
+      "url"      : "/misc/2018/10/31/what-is-copyright.html",
+      "date"     : "2018-10-31 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "日常驾驶有乐趣可言吗？",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2018/10/30/is-everyday-driving-pleasure-possible.html",
+      "date"     : "2018-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "了解游戏行业",
+      "category" : "business",
+      "tags"     : "gaming-industry",
+      "url"      : "/business/2018/10/24/liao-jie-you-xi-hang-ye.html",
+      "date"     : "2018-10-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Task管理方案",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2018/10/14/task-guan-li-fang-an.html",
+      "date"     : "2018-10-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Blogs RSS",
+      "category" : "personal",
+      "tags"     : "",
+      "url"      : "/personal/2018/10/06/blogs-rss.html",
+      "date"     : "2018-10-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "2021年健康计划",
+      "category" : "health",
+      "tags"     : "plan",
+      "url"      : "/health/2018/10/01/health-plan.html",
+      "date"     : "2018-10-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "2018 - 2020 职业发展计划",
+      "category" : "career",
+      "tags"     : "plan",
+      "url"      : "/career/2018/10/01/career-plan.html",
+      "date"     : "2018-10-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Gboard pros and cons",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2018/09/29/Gboard-pros-and-cons.html",
+      "date"     : "2018-09-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "转载｜还记得小时候看的这些动画片吗？",
+      "category" : "misc",
+      "tags"     : "",
+      "url"      : "/misc/2018/09/28/child-time-cartoon-memories.html",
+      "date"     : "2018-09-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《花冠历史简述》阅读笔记",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2018/09/27/hua-guan-li-shi-jian-shu-yue-du-bi-ji.html",
+      "date"     : "2018-09-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Git tips &amp; tricks",
+      "category" : "coding",
+      "tags"     : "git",
+      "url"      : "/coding/2018/09/25/git-tips-and-tricks.html",
+      "date"     : "2018-09-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to convert outline text to mindmap",
+      "category" : "productivity",
+      "tags"     : "outline, freemind, mindmap",
+      "url"      : "/productivity/2018/09/18/how-to-convert-outline-to-mindmap.html",
+      "date"     : "2018-09-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Skip Barber - Going Faster 赛车基础教学 学习笔记",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2018/09/17/skip-barber-going-faster-sai-che-ji-chu-jiao-xue-xue-xi-bi-ji.html",
+      "date"     : "2018-09-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "笔记管理方案",
+      "category" : "productivity",
+      "tags"     : "",
+      "url"      : "/productivity/2018/09/17/bi-ji-guan-li-fang-an.html",
+      "date"     : "2018-09-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Safari issue: 导出的PDF中文无法拷贝",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2018/09/12/Safari-issue-dao-chu-de-PDF-zhong-wen-wu-fa-kao-bei.html",
+      "date"     : "2018-09-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "curl How to Download Files",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2018/09/07/curl-how-to-download-files.html",
+      "date"     : "2018-09-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to split the terminal into more than one view",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2018/09/06/how-to-split-the-terminal-into-more-than-one-view.html",
+      "date"     : "2018-09-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Peak traction/breaking forces vs Slip Ratio with different Slip Angle",
+      "category" : "racing",
+      "tags"     : "vehicle-dynamics",
+      "url"      : "/racing/2018/08/25/peak-traction-breaking-forces-vs-slip-ratio-with-different.html",
+      "date"     : "2018-08-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "市场营销学习笔记",
+      "category" : "marketing",
+      "tags"     : "",
+      "url"      : "/marketing/2018/08/17/shi-chang-ying-xiao-xue-xi-bi-ji.html",
+      "date"     : "2018-08-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Batch Resize Images Quickly in the OS X Terminal",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2018/08/07/batch-resize-images-quickly-in-the-os-x-terminal.html",
+      "date"     : "2018-08-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "绘画学习笔记",
+      "category" : "drawing",
+      "tags"     : "perspective, study-notes",
+      "url"      : "/drawing/2018/08/05/drawing-study-notes.html",
+      "date"     : "2018-08-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Accessing host machine from within docker container",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2018/06/14/accessing-host-machine-from-within-docker-container.html",
+      "date"     : "2018-06-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "马自达3驾驶感受",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2018/06/14/ma-zi-da-3-jia-shi-gan-shou.html",
+      "date"     : "2018-06-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "汽车行业与手机行业的差异",
+      "category" : "business",
+      "tags"     : "car, smartphone",
+      "url"      : "/business/2018/05/26/qi-che-hang-ye-yu-shou-ji-hang-ye-de-cha-yi.html",
+      "date"     : "2018-05-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "职业思考",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2018/05/15/zhi-ye-si-kao.html",
+      "date"     : "2018-05-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "数字化时代的注意力危机",
+      "category" : "society",
+      "tags"     : "ethics",
+      "url"      : "/society/2018/04/13/hooked.html",
+      "date"     : "2018-04-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "日语学习笔记",
+      "category" : "language",
+      "tags"     : "",
+      "url"      : "/language/2018/04/05/ri-yu-xue-xi-bi-ji.html",
+      "date"     : "2018-04-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "汽车物理学",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2018/02/12/qi-che-wu-li-xue.html",
+      "date"     : "2018-02-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "头文字D赛道",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/racing/2018/02/04/tou-wen-zi-d-sai-dao.html",
+      "date"     : "2018-02-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How do I find all files containing specific text on Linux",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2017/12/20/how-do-i-find-all-files-containing-specific-text-on-linux.html",
+      "date"     : "2017-12-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "年会话剧节目《小遛子的烦恼》",
+      "category" : "misc",
+      "tags"     : "",
+      "url"      : "/misc/2017/12/13/play-the-sorrows-of-liu.html",
+      "date"     : "2017-12-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to implement north star layout in css",
+      "category" : "coding",
+      "tags"     : "css",
+      "url"      : "/coding/2017/12/08/how-to-implement-north-star-layout-in-css.html",
+      "date"     : "2017-12-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "What should we store in redux state tree?",
+      "category" : "javascript",
+      "tags"     : "",
+      "url"      : "/javascript/2017/12/07/what-should-we-store-in-redux-state-tree.html",
+      "date"     : "2017-12-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How do I add environment variables",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2017/11/16/how-do-i-add-environment-variables.html",
+      "date"     : "2017-11-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Evernote Analysis: changes to special characters in note title when exporting",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2017/11/16/Evernote-Analysis-changes-to-special-characters-in-note-title-when-exporting.html",
+      "date"     : "2017-11-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "State of app. Relationship between React and Redux",
+      "category" : "javascript",
+      "tags"     : "",
+      "url"      : "/javascript/2017/11/09/state-of-app-relationship-between-react-and-redux.html",
+      "date"     : "2017-11-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "React crash course notes",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2017/11/08/react-crash-course-notes.html",
+      "date"     : "2017-11-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "什么是公平？",
+      "category" : "society",
+      "tags"     : "justice",
+      "url"      : "/society/2017/10/20/shen-me-shi-gong-ping.html",
+      "date"     : "2017-10-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "JS prototype-based OOP key steps",
+      "category" : "coding",
+      "tags"     : "javascript, OOP",
+      "url"      : "/coding/2017/07/13/js-prototype-based-oop-key-steps.html",
+      "date"     : "2017-07-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Using Docker-in-Docker for your CI or testing environment Think twice",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2017/07/05/using-docker-in-docker-for-your-ci-or-testing-environment.html",
+      "date"     : "2017-07-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Sketch vs Invision vs Axure vs Photoshop 的区别",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2017/06/13/sketch-vs-invision-vs-axure-vs-photoshop-de-qu-bie.html",
+      "date"     : "2017-06-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "昂克赛拉驾驶感受",
+      "category" : "cars",
+      "tags"     : "",
+      "url"      : "/cars/2017/04/18/mazda-axela-driving-experience.html",
+      "date"     : "2017-04-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How To Render Ejs Template In Browser",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2017/03/16/how-to-render-ejs-template-in-browser.html",
+      "date"     : "2017-03-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to use shadowsocks",
+      "category" : "coding",
+      "tags"     : "shadowsocks",
+      "url"      : "/coding/2017/01/25/how-to-use-shadowsocks.html",
+      "date"     : "2017-01-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to get object reference by memory address (hexadecimal number in inspect result)",
+      "category" : "ruby",
+      "tags"     : "",
+      "url"      : "/ruby/2017/01/04/how-to-get-object-reference-by-memory-address-hexadecimal-number-in-inspect-result.html",
+      "date"     : "2017-01-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How can I list the keys in the in-memory cache store on Ruby on Rails",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2017/01/03/how-can-i-list-the-keys-in-the-in-memory-cache-store-on-ruby-on.html",
+      "date"     : "2017-01-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "list processes currently using port 3000",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2016/11/21/list-processes-currently-using-port-3000.html",
+      "date"     : "2016-11-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Capybara 测试机制分析",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2016/11/05/capybara-ce-shi-ji-zhi-fen-xi.html",
+      "date"     : "2016-11-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to rename with prefixsuffix",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2016/11/03/how-to-rename-with-prefixsuffix.html",
+      "date"     : "2016-11-03 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Redux FAQs Slide script",
+      "category" : "coding",
+      "tags"     : "redux",
+      "url"      : "/coding/2016/07/27/redux-faqs.html",
+      "date"     : "2016-07-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《Making It Right》学习笔记",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2016/07/12/making-it-right-xue-xi-bi-ji.html",
+      "date"     : "2016-07-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "苹果是否该进入AI&amp;ML领域",
+      "category" : "business",
+      "tags"     : "apple",
+      "url"      : "/business/2016/06/06/should-apple-enter-ai-ml-industry.html",
+      "date"     : "2016-06-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "网化商城国内竞品分析",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/product-management/2016/05/13/competitor-analysis-for-whmall.html",
+      "date"     : "2016-05-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Confusing iOS UI text",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2016/04/16/Confusing-iOS-UI-text.html",
+      "date"     : "2016-04-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Podcasts",
+      "category" : "personal",
+      "tags"     : "",
+      "url"      : "/personal/2016/04/12/podcasts.html",
+      "date"     : "2016-04-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "微信摇电视功能技术探秘",
+      "category" : "technology",
+      "tags"     : "",
+      "url"      : "/technology/2016/04/09/wechat-shack-tv-feature-technical-details-discovery.html",
+      "date"     : "2016-04-09 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "sed command with -i option failing on Mac, but works on Linux",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2016/03/16/sed-command-with-i-option-failing-on-mac-but-works-on-linux.html",
+      "date"     : "2016-03-16 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "iPad Pro vs MacBook，谁才是未来个人电脑的主流？",
+      "category" : "product-review",
+      "tags"     : "",
+      "url"      : "/product-review/2016/03/05/ipad-pro-vs-macbook.html",
+      "date"     : "2016-03-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "对一道C语言习题错误结果的分析",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2015/12/02/analysis-result-of-a-problematic-c-program.html",
+      "date"     : "2015-12-02 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to monitor Redis in Docker",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2015/11/10/how-to-monitor-redis-in-docker.html",
+      "date"     : "2015-11-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How is ActiveSupportSecureRandom secure",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2015/10/30/how-is-activesupportsecurerandom-secure.html",
+      "date"     : "2015-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "View content of memcached",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2015/08/07/view-content-of-memcached.html",
+      "date"     : "2015-08-07 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Convert Time from one time zone to another in Rails",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2015/07/20/convert-time-from-one-time-zone-to-another-in-rails.html",
+      "date"     : "2015-07-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "What is an ActiveRecord object",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2015/04/29/what-is-an-activerecord-object.html",
+      "date"     : "2015-04-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Set secure flag on session cookie in RoR even over HTTP",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2015/04/14/set-secure-flag-on-session-cookie-in-ror-even-over-http.html",
+      "date"     : "2015-04-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Using Rails link_to for links that post",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2015/01/27/using-rails-link-to-for-links-that.html",
+      "date"     : "2015-01-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "combine results from two queries and order by created_at [rails 3]",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2015/01/21/combine-results-from-two-queries-and-order-by-created-at-rails.html",
+      "date"     : "2015-01-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "探索的乐趣",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/design/2015/01/08/pleasure-of-quest.html",
+      "date"     : "2015-01-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "csrf-token",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/12/18/csrf.html",
+      "date"     : "2014-12-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "小窍门： 如何在Keynote中插入代码且不丢失样式？",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2014/12/12/how-to-preserve-the-format-of-my-code-while-posting-in-keynote.html",
+      "date"     : "2014-12-12 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Ng service vs factory",
+      "category" : "javascript",
+      "tags"     : "",
+      "url"      : "/javascript/2014/12/08/Ng-service-vs-factory.html",
+      "date"     : "2014-12-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Angular 2 学习笔记: features &amp; changes",
+      "category" : "javascript",
+      "tags"     : "",
+      "url"      : "/javascript/2014/12/05/Angular-2-xue-xi-bi-ji-features-changes.html",
+      "date"     : "2014-12-05 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "What is session and cookie",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2014/12/04/what-is-session-and-cookie.html",
+      "date"     : "2014-12-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to POST JSON data with Curl from TerminalCommandline to Test Spring REST",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2014/11/20/how-to-post-json-data-with-curl-from-terminalcommandline-to-test-spring-rest.html",
+      "date"     : "2014-11-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Working with ActiveRecord associations in Elasticsearch",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/09/25/Working-with-ActiveRecord-associations-in-Elasticsearch.html",
+      "date"     : "2014-09-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "file uploads",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/09/24/file-uploads.html",
+      "date"     : "2014-09-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Defining Abilities with Blocks",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/08/28/defining-abilities-with-blocks.html",
+      "date"     : "2014-08-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "rails app setup",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/07/22/rails-app-setup.html",
+      "date"     : "2014-07-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "regex - sed beginner changing all occurrences in a folder",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2014/07/14/regex-sed-beginner-changing-all-occurrences-in-a-folder.html",
+      "date"     : "2014-07-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Active Record Callbacks — Ruby on Rails Guides",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/06/26/active-record-callbacks-ruby-on-rails-guides.html",
+      "date"     : "2014-06-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "论人际交往",
+      "category" : "society",
+      "tags"     : "social",
+      "url"      : "/society/2014/05/25/lun-ren-ji-jiao-wang.html",
+      "date"     : "2014-05-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "智能车赛道图像识别",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2014/05/25/freescale-smartcar-track-regconition-from-video-images.html",
+      "date"     : "2014-05-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Rails - Validate Presence Of Association",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/05/22/rails-validate-presence-of-association.html",
+      "date"     : "2014-05-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "做什么软件都一样",
+      "category" : "career",
+      "tags"     : "",
+      "url"      : "/career/2014/05/08/zuo-shen-me-ruan-jian-dou-yi-yang.html",
+      "date"     : "2014-05-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "ajax - Rails 3 remote form How do I specify the content type",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2014/04/19/ajax-rails-3-remote-form-how-do-i-specify-the-content-type.html",
+      "date"     : "2014-04-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Screen不用鼠标拷贝粘贴的方法",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2014/04/04/screen-bu-yong-shu-biao-kao-bei-zhan-tie-de-fang-fa.html",
+      "date"     : "2014-04-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Bindkey Examples Screen User S",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2014/04/04/bindkey-examples-screen-user-s.html",
+      "date"     : "2014-04-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to access attached screen after connection dropped",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2014/03/20/how-to-access-attached-screen-after-connection-dropped.html",
+      "date"     : "2014-03-20 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Manage Linux Hardware with udev",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2014/01/23/manage-linux-hardware-with-udev.html",
+      "date"     : "2014-01-23 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "怎样用5V0.5A电源驱动5V1A的移动硬盘？",
+      "category" : "computer",
+      "tags"     : "",
+      "url"      : "/computer/2014/01/17/how-to-use-a-5v1a-hard-drive-with-5v05a-power-supply.html",
+      "date"     : "2014-01-17 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "编程学习笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2013/11/29/bian-cheng-xue-xi-bi-ji.html",
+      "date"     : "2013-11-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Command line disk usage utilities df and du",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2013/11/26/command-line-disk-usage-utilities-df-and-du.html",
+      "date"     : "2013-11-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How to get the list of all installed color schemes in Vim",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2013/11/01/how-to-get-the-list-of-all-installed-color-schemes-in-vim.html",
+      "date"     : "2013-11-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Data object management",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/10/31/data-object-management.html",
+      "date"     : "2013-10-31 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "grep in-text search for files",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2013/10/30/grep-in-text-search-for.html",
+      "date"     : "2013-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "转载｜What&#39;s a conflict in Version Control System?",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2013/10/24/zhuan-zai-What-s-a-conflict-in-Version-Control-System.html",
+      "date"     : "2013-10-24 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "how to examine if a model record is valid in Rails",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/10/14/how-to-examine-if-a-model-record-is-valid-in-rails.html",
+      "date"     : "2013-10-14 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "How RubyGems installs a gem",
+      "category" : "ruby",
+      "tags"     : "",
+      "url"      : "/ruby/2013/10/10/how-rubygems-installs-a-gem.html",
+      "date"     : "2013-10-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "What is Rack Middleware",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/10/08/what-is-rack-middleware.html",
+      "date"     : "2013-10-08 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "转载｜How to handle errors",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2013/09/26/zhuan-zai-How-to-handle-errors.html",
+      "date"     : "2013-09-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Update ctags with brew",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/09/18/update-ctags-with-brew.html",
+      "date"     : "2013-09-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Generate ctags for all bundled gems in a ruby project",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/09/18/generate-ctags-for-all-bundled-gems-in-a-ruby-project.html",
+      "date"     : "2013-09-18 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "see which ports are open and which application is on each one",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2013/09/10/see-which-ports-are-open-and-which-application-is-on-each-one.html",
+      "date"     : "2013-09-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "转载｜where to store data?",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2013/09/10/zhuan-zai-where-to-store-data.html",
+      "date"     : "2013-09-10 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "整数的表示",
+      "category" : "math",
+      "tags"     : "",
+      "url"      : "/math/2013/08/04/zheng-shu-de-biao-shi.html",
+      "date"     : "2013-08-04 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Custom HTML attribute requires a custom helper",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/06/19/custom-html-attribute-requires-a-custom-helper.html",
+      "date"     : "2013-06-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Convert duration to hoursminutesseconds (or similar) in Rails 3 or Ruby",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/06/06/convert-duration-to-hoursminutesseconds-or-similar-in-rails-3-or-ruby.html",
+      "date"     : "2013-06-06 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Why Associations",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/04/28/why-associations.html",
+      "date"     : "2013-04-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "migration and model",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/04/28/migration-and-model.html",
+      "date"     : "2013-04-28 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Rails项目的MVC目录结构",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/04/27/rails-xiang-mu-de-mvc-mu-lu-jie-gou.html",
+      "date"     : "2013-04-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "form processing",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/04/27/form-processing.html",
+      "date"     : "2013-04-27 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "named routes",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/04/26/named-routes.html",
+      "date"     : "2013-04-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "application UI structure and style",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/04/26/application-ui-structure-and-style.html",
+      "date"     : "2013-04-26 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "What does a member and collection route mean",
+      "category" : "rails",
+      "tags"     : "",
+      "url"      : "/rails/2013/04/25/what-does-a-member-and-collection-route-mean.html",
+      "date"     : "2013-04-25 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "Ruby syntax - question mark, return value, instance variable",
+      "category" : "ruby",
+      "tags"     : "",
+      "url"      : "/ruby/2013/04/11/ruby-syntax-question-mark-return-value-instance-variable.html",
+      "date"     : "2013-04-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "tip Using wget to recursively download whole FTP directories",
+      "category" : "linux",
+      "tags"     : "",
+      "url"      : "/linux/2013/04/11/tip-using-wget-to-recursively-download-whole-ftp-directories.html",
+      "date"     : "2013-04-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《UNIX环境高级编程》学习笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2012/11/15/unix-huan-jing-gao-ji-bian-cheng-xue-xi-bi-ji.html",
+      "date"     : "2012-11-15 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "构建嵌入式Linux系统",
+      "category" : "coding",
+      "tags"     : "embedded-linux, linux",
+      "url"      : "/coding/2012/10/30/gou-jian-qian-ru-shi-linux-xi-tong.html",
+      "date"     : "2012-10-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《软件设计师》学习笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2012/10/22/ruan-jian-she-ji-shi-xue-xi-bi-ji.html",
+      "date"     : "2012-10-22 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "《什么是数学》学习笔记",
+      "category" : "math",
+      "tags"     : "",
+      "url"      : "/math/2012/02/11/shen-me-shi-shu-xue-xue-xi-bi-ji.html",
+      "date"     : "2012-02-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "编程珠玑 第一章 读书笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2012/02/11/bian-cheng-zhu-ji-di-yi-zhang-du-shu-bi-ji.html",
+      "date"     : "2012-02-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "编程珠玑 第一章",
+      "category" : "",
+      "tags"     : "computers",
+      "url"      : "/2011/12/15/blog-post.html",
+      "date"     : "2011-12-15 10:25:00 +0000"
+    },
+  
+    {
+      "title"    : "回应：我正在建一个交友网站",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/12/14/blog-post_14.html",
+      "date"     : "2011-12-14 12:00:00 +0000"
+    },
+  
+    {
+      "title"    : "P vs NP",
+      "category" : "math",
+      "tags"     : "",
+      "url"      : "/math/2011/12/13/p-vs-np.html",
+      "date"     : "2011-12-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "C++知识地图",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2011/12/13/c-zhi-shi-di-tu.html",
+      "date"     : "2011-12-13 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "向量空间",
+      "category" : "math",
+      "tags"     : "",
+      "url"      : "/math/2011/12/11/xiang-liang-kong-jian.html",
+      "date"     : "2011-12-11 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "I&#39;m a part of this big community of life",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/12/04/i-part-of-this-big-community-of-life.html",
+      "date"     : "2011-12-04 10:57:00 +0000"
+    },
+  
+    {
+      "title"    : "C2 数学中的数系 S2 不可共度线段 无理数和极限概念",
+      "category" : "",
+      "tags"     : "subject-math, study-notes",
+      "url"      : "/2011/11/25/c2-s2.html",
+      "date"     : "2011-11-25 11:39:00 +0000"
+    },
+  
+    {
+      "title"    : "C2 数学中的数系 S1 有理数",
+      "category" : "",
+      "tags"     : "subject-math, study-notes",
+      "url"      : "/2011/11/25/c2-s1.html",
+      "date"     : "2011-11-25 11:21:00 +0000"
+    },
+  
+    {
+      "title"    : "是什么吸引人研究数学？",
+      "category" : "",
+      "tags"     : "subject-math",
+      "url"      : "/2011/11/21/blog-post.html",
+      "date"     : "2011-11-21 12:37:00 +0000"
+    },
+  
+    {
+      "title"    : "C1(补充) 数论 S1 素数",
+      "category" : "",
+      "tags"     : "subject-math, study-notes",
+      "url"      : "/2011/11/21/c1-s1.html",
+      "date"     : "2011-11-21 12:35:00 +0000"
+    },
+  
+    {
+      "title"    : "规划",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/11/20/blog-post_19.html",
+      "date"     : "2011-11-20 02:51:00 +0000"
+    },
+  
+    {
+      "title"    : "I know you&#39;re there for me",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/11/19/i-know-you-there-for-me.html",
+      "date"     : "2011-11-19 12:40:00 +0000"
+    },
+  
+    {
+      "title"    : "There&#39;s a long way to go in AI field",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/11/17/there-long-way-to-go-in-ai-field.html",
+      "date"     : "2011-11-17 15:29:00 +0000"
+    },
+  
+    {
+      "title"    : "C1 自然数 S2 数系的无限性 自然归纳法",
+      "category" : "",
+      "tags"     : "subject-math, study-notes",
+      "url"      : "/2011/11/17/c1-s2.html",
+      "date"     : "2011-11-17 14:54:00 +0000"
+    },
+  
+    {
+      "title"    : "C1 自然数 S1 整数的计算",
+      "category" : "",
+      "tags"     : "subject-math, study-notes",
+      "url"      : "/2011/11/14/c1-s1_13.html",
+      "date"     : "2011-11-14 04:41:00 +0000"
+    },
+  
+    {
+      "title"    : "数学对象是什么？",
+      "category" : "",
+      "tags"     : "subject-math",
+      "url"      : "/2011/11/12/blog-post_11.html",
+      "date"     : "2011-11-12 04:48:00 +0000"
+    },
+  
+    {
+      "title"    : "Start before you&#39;re fully ready",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/11/04/start-before-you-fully-ready.html",
+      "date"     : "2011-11-04 13:36:00 +0000"
+    },
+  
+    {
+      "title"    : "Idea is not everything",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/10/28/idea-is-not-everything.html",
+      "date"     : "2011-10-28 10:09:00 +0000"
+    },
+  
+    {
+      "title"    : "Here is the plan",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/10/25/here-is-plan.html",
+      "date"     : "2011-10-25 14:42:00 +0000"
+    },
+  
+    {
+      "title"    : "I wanna do something BIG, right now.",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/10/18/i-wanna-do-something-big-right-now.html",
+      "date"     : "2011-10-18 16:26:00 +0000"
+    },
+  
+    {
+      "title"    : "A girl gave a &#39;kiss&#39; to me today",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/10/16/a-girl-gave-to-me-today.html",
+      "date"     : "2011-10-16 11:35:00 +0000"
+    },
+  
+    {
+      "title"    : "我是该激进，还是安然",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/10/01/blog-post.html",
+      "date"     : "2011-10-01 03:19:00 +0000"
+    },
+  
+    {
+      "title"    : "where it ends with computers",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/09/23/where-it-ends-with-computers.html",
+      "date"     : "2011-09-23 14:50:00 +0000"
+    },
+  
+    {
+      "title"    : "I told the girl I love this",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/09/11/i-told-girl-i-love-this.html",
+      "date"     : "2011-09-11 08:50:00 +0000"
+    },
+  
+    {
+      "title"    : "短除法",
+      "category" : "math",
+      "tags"     : "",
+      "url"      : "/math/2011/09/01/duan-chu-fa.html",
+      "date"     : "2011-09-01 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "尺规作图与数域",
+      "category" : "math",
+      "tags"     : "",
+      "url"      : "/math/2011/08/30/chi-gui-zuo-tu-yu-shu-yu.html",
+      "date"     : "2011-08-30 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "快排的核心：分区子程序",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2011/08/29/kuai-pai-de-he-xin-fen-qu-zi-cheng-xu.html",
+      "date"     : "2011-08-29 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "One of my favorite lectures",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/08/23/one-of-my-favorite-lectures.html",
+      "date"     : "2011-08-23 03:33:00 +0000"
+    },
+  
+    {
+      "title"    : "My way of studying",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/08/23/my-way-of-studying.html",
+      "date"     : "2011-08-23 03:33:00 +0000"
+    },
+  
+    {
+      "title"    : "Newly adjust for social network",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/08/21/newly-adjust-for-social-network.html",
+      "date"     : "2011-08-21 03:42:00 +0000"
+    },
+  
+    {
+      "title"    : "我所希望的",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/08/14/blog-post.html",
+      "date"     : "2011-08-14 11:23:00 +0000"
+    },
+  
+    {
+      "title"    : "I will do things with clear motive, not wasting any time without doing any good",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/08/08/i-will-do-things-with-clear-motive-not.html",
+      "date"     : "2011-08-08 05:17:00 +0000"
+    },
+  
+    {
+      "title"    : "下面的路怎么走？",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/31/blog-post.html",
+      "date"     : "2011-07-31 06:00:00 +0000"
+    },
+  
+    {
+      "title"    : "人工智能",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/30/blog-post_29.html",
+      "date"     : "2011-07-30 04:12:00 +0000"
+    },
+  
+    {
+      "title"    : "一切皆逻辑",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/23/blog-post_23.html",
+      "date"     : "2011-07-23 12:51:00 +0000"
+    },
+  
+    {
+      "title"    : "数学和计算",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/23/blog-post_1173.html",
+      "date"     : "2011-07-23 12:43:00 +0000"
+    },
+  
+    {
+      "title"    : "软件工程",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/19/blog-post_19.html",
+      "date"     : "2011-07-19 10:41:00 +0000"
+    },
+  
+    {
+      "title"    : "我不喜欢工程",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/19/blog-post_2832.html",
+      "date"     : "2011-07-19 10:28:00 +0000"
+    },
+  
+    {
+      "title"    : "where am I? (up to date): Algorithm",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/18/where-am-i-up-to-date-algorithm.html",
+      "date"     : "2011-07-18 15:00:00 +0000"
+    },
+  
+    {
+      "title"    : "This is a hard problem",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/07/12/this-is-hard-problem.html",
+      "date"     : "2011-07-12 00:56:00 +0000"
+    },
+  
+    {
+      "title"    : "A middle-night thought",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/30/a-middle-night-thought.html",
+      "date"     : "2011-06-30 08:57:00 +0000"
+    },
+  
+    {
+      "title"    : "我在修行",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/30/blog-post.html",
+      "date"     : "2011-06-30 08:49:00 +0000"
+    },
+  
+    {
+      "title"    : "Find things I can play with!!",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/29/find-things-i-can-play-with.html",
+      "date"     : "2011-06-29 13:34:00 +0000"
+    },
+  
+    {
+      "title"    : "Sometimes I just wanna come up with some ideas",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/29/sometimes-i-just-wanna-come-up-with.html",
+      "date"     : "2011-06-29 13:25:00 +0000"
+    },
+  
+    {
+      "title"    : "Watched &quot;Pirates of Silicon Valley&quot; again",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/28/watched-of-silicon-valley-again.html",
+      "date"     : "2011-06-28 13:01:00 +0000"
+    },
+  
+    {
+      "title"    : "touch真是作弊的利器",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/28/touch.html",
+      "date"     : "2011-06-28 10:48:00 +0000"
+    },
+  
+    {
+      "title"    : "不定期回顾：Where Am I ?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/27/where-am-i.html",
+      "date"     : "2011-06-27 12:31:00 +0000"
+    },
+  
+    {
+      "title"    : "After watching the movie Paul",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/26/after-watching-movie-paul.html",
+      "date"     : "2011-06-26 08:14:00 +0000"
+    },
+  
+    {
+      "title"    : "I choose to be curious",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/24/i-choose-to-be-curious.html",
+      "date"     : "2011-06-24 14:27:00 +0000"
+    },
+  
+    {
+      "title"    : "数学的创造性",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/21/blog-post_20.html",
+      "date"     : "2011-06-21 05:45:00 +0000"
+    },
+  
+    {
+      "title"    : "概念壁垒",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/20/blog-post_1139.html",
+      "date"     : "2011-06-20 08:18:00 +0000"
+    },
+  
+    {
+      "title"    : "学习的途径",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/19/blog-post_18.html",
+      "date"     : "2011-06-19 05:45:00 +0000"
+    },
+  
+    {
+      "title"    : "the fact of truth",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/18/the-fact-of-truth.html",
+      "date"     : "2011-06-18 11:59:00 +0000"
+    },
+  
+    {
+      "title"    : "I&#39;m seeking for patterns",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/18/i-seeking-for-patterns.html",
+      "date"     : "2011-06-18 01:43:00 +0000"
+    },
+  
+    {
+      "title"    : "数学是什么",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/17/blog-post_17.html",
+      "date"     : "2011-06-17 11:44:00 +0000"
+    },
+  
+    {
+      "title"    : "Google invites me to join Google Music Beta !",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/16/google-invites-me-to-join-google-music.html",
+      "date"     : "2011-06-16 18:19:00 +0000"
+    },
+  
+    {
+      "title"    : "Information provider",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/06/14/information-provider.html",
+      "date"     : "2011-06-14 16:20:00 +0000"
+    },
+  
+    {
+      "title"    : "编程：问题解决的一种模式",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/04/12/blog-post.html",
+      "date"     : "2011-04-12 16:52:00 +0000"
+    },
+  
+    {
+      "title"    : "我们尽力去做的事是我们真正想做的事",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/12/03/blog-post.html",
+      "date"     : "2010-12-03 15:35:00 +0000"
+    },
+  
+    {
+      "title"    : "最精彩的内容在你脑中",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/12/02/blog-post_2.html",
+      "date"     : "2010-12-02 12:04:00 +0000"
+    },
+  
+    {
+      "title"    : "持久高效地思考",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/12/01/blog-post.html",
+      "date"     : "2010-12-01 05:38:00 +0000"
+    },
+  
+    {
+      "title"    : "I was over-excited",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/11/22/i-was-over-excited.html",
+      "date"     : "2010-11-22 05:20:00 +0000"
+    },
+  
+    {
+      "title"    : "今天晚上看书看疯了，3个半小时",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/11/21/3.html",
+      "date"     : "2010-11-21 15:39:00 +0000"
+    },
+  
+    {
+      "title"    : "如果这一切都是真的。况且，其实是真的。",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/11/21/blog-post_21.html",
+      "date"     : "2010-11-21 15:38:00 +0000"
+    },
+  
+    {
+      "title"    : "今天看了本讲 hacker 的书",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/11/21/hacker.html",
+      "date"     : "2010-11-21 15:36:00 +0000"
+    },
+  
+    {
+      "title"    : "我不想不停地向别人介绍自己，就像我不想上课一样：浪费时间",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/11/21/blog-post_7928.html",
+      "date"     : "2010-11-21 15:28:00 +0000"
+    },
+  
+    {
+      "title"    : "相比社交型人，我更愿做个待在 dorm room 的 coder",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/11/21/dorm-room-coder.html",
+      "date"     : "2010-11-21 15:21:00 +0000"
+    },
+  
+    {
+      "title"    : "C语言学习笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2010/11/19/c-yu-yan-xue-xi-bi-ji.html",
+      "date"     : "2010-11-19 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "神经网络的工作模式",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/10/23/blog-post.html",
+      "date"     : "2010-10-23 05:49:00 +0000"
+    },
+  
+    {
+      "title"    : "大脑的模型",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/10/21/blog-post_20.html",
+      "date"     : "2010-10-21 05:24:00 +0000"
+    },
+  
+    {
+      "title"    : "On 单片机",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/07/21/on.html",
+      "date"     : "2010-07-21 09:57:00 +0000"
+    },
+  
+    {
+      "title"    : "单片机学习笔记",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/coding/2010/07/21/dan-pian-ji-xue-xi-bi-ji.html",
+      "date"     : "2010-07-21 00:00:00 +0000"
+    },
+  
+    {
+      "title"    : "像外行一样思考，像专家一样实践",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/07/03/blog-post.html",
+      "date"     : "2010-07-03 08:35:00 +0000"
+    },
+  
+  
+    {
+      "title"    : "Android TV",
+      "category" : "build-your-own",
+      "tags"     : "",
+      "url"      : "/wiki/build-your-own/Android-TV.html"
+    } ,
+  
+    {
+      "title"    : "Linux桌面电脑",
+      "category" : "build-your-own",
+      "tags"     : "",
+      "url"      : "/wiki/build-your-own/Linux%E6%A1%8C%E9%9D%A2%E7%94%B5%E8%84%91.html"
+    } ,
+  
+    {
+      "title"    : "Web服务器",
+      "category" : "build-your-own",
+      "tags"     : "",
+      "url"      : "/wiki/build-your-own/Web%E6%9C%8D%E5%8A%A1%E5%99%A8.html"
+    } ,
+  
+    {
+      "title"    : "Windows下载机",
+      "category" : "build-your-own",
+      "tags"     : "",
+      "url"      : "/wiki/build-your-own/Windows%E4%B8%8B%E8%BD%BD%E6%9C%BA.html"
+    } ,
+  
+    {
+      "title"    : "媒体服务器",
+      "category" : "build-your-own",
+      "tags"     : "",
+      "url"      : "/wiki/build-your-own/%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8.html"
+    } ,
+  
+    {
+      "title"    : "怀旧游戏机",
+      "category" : "build-your-own",
+      "tags"     : "",
+      "url"      : "/wiki/build-your-own/%E6%80%80%E6%97%A7%E6%B8%B8%E6%88%8F%E6%9C%BA.html"
+    } ,
+  
+    {
+      "title"    : "软路由",
+      "category" : "build-your-own",
+      "tags"     : "",
+      "url"      : "/wiki/build-your-own/%E8%BD%AF%E8%B7%AF%E7%94%B1.html"
+    } ,
+  
+    {
+      "title"    : "商业模式",
+      "category" : "business",
+      "tags"     : "",
+      "url"      : "/wiki/business/%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F.html"
+    } ,
+  
+    {
+      "title"    : "Docker",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/wiki/coding/Docker.html"
+    } ,
+  
+    {
+      "title"    : "Linux",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/wiki/coding/Linux.html"
+    } ,
+  
+    {
+      "title"    : "React",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/wiki/coding/React.html"
+    } ,
+  
+    {
+      "title"    : "Ruby",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/wiki/coding/Ruby.html"
+    } ,
+  
+    {
+      "title"    : "Git",
+      "category" : "coding",
+      "tags"     : "",
+      "url"      : "/wiki/coding/git.html"
+    } ,
+  
+    {
+      "title"    : "设计原理",
+      "category" : "design",
+      "tags"     : "",
+      "url"      : "/wiki/design/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86.html"
+    } ,
+  
+    {
+      "title"    : "Reference",
+      "category" : "drawing",
+      "tags"     : "",
+      "url"      : "/wiki/drawing/reference.html"
+    } ,
+  
+    {
+      "title"    : "数码作画",
+      "category" : "drawing",
+      "tags"     : "",
+      "url"      : "/wiki/drawing/%E6%95%B0%E7%A0%81%E4%BD%9C%E7%94%BB.html"
+    } ,
+  
+    {
+      "title"    : "漫画",
+      "category" : "drawing",
+      "tags"     : "",
+      "url"      : "/wiki/drawing/%E6%BC%AB%E7%94%BB.html"
+    } ,
+  
+    {
+      "title"    : "绘画技法",
+      "category" : "drawing",
+      "tags"     : "",
+      "url"      : "/wiki/drawing/%E7%BB%98%E7%94%BB%E6%8A%80%E6%B3%95.html"
+    } ,
+  
+    {
+      "title"    : "Mx3 Air Mouse",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/MX3-Air-Mouse.html"
+    } ,
+  
+    {
+      "title"    : "Steamlink",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/Steamlink.html"
+    } ,
+  
+    {
+      "title"    : "开源掌机",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E5%BC%80%E6%BA%90%E6%8E%8C%E6%9C%BA.html"
+    } ,
+  
+    {
+      "title"    : "树莓派",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E6%A0%91%E8%8E%93%E6%B4%BE.html"
+    } ,
+  
+    {
+      "title"    : "游戏手柄",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E6%B8%B8%E6%88%8F%E6%89%8B%E6%9F%84.html"
+    } ,
+  
+    {
+      "title"    : "百魔盒cm311 1a",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E7%99%BE%E9%AD%94%E7%9B%92CM311-1a.html"
+    } ,
+  
+    {
+      "title"    : "矿渣nas",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E7%9F%BF%E6%B8%A3NAS.html"
+    } ,
+  
+    {
+      "title"    : "笔记本支架",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%94%AF%E6%9E%B6.html"
+    } ,
+  
+    {
+      "title"    : "耳机音箱",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E8%80%B3%E6%9C%BA%E9%9F%B3%E7%AE%B1.html"
+    } ,
+  
+    {
+      "title"    : "赛车座椅+方向盘",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E8%B5%9B%E8%BD%A6%E5%BA%A7%E6%A4%85+%E6%96%B9%E5%90%91%E7%9B%98.html"
+    } ,
+  
+    {
+      "title"    : "迷你小主机",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E4%B8%BB%E6%9C%BA.html"
+    } ,
+  
+    {
+      "title"    : "鼠标键盘",
+      "category" : "gadgets",
+      "tags"     : "",
+      "url"      : "/wiki/gadgets/%E9%BC%A0%E6%A0%87%E9%94%AE%E7%9B%98.html"
+    } ,
+  
+    {
+      "title"    : "Roadmap",
+      "category" : "goplan",
+      "tags"     : "",
+      "url"      : "/wiki/goplan/Roadmap.html"
+    } ,
+  
+    {
+      "title"    : "产品介绍",
+      "category" : "goplan",
+      "tags"     : "",
+      "url"      : "/wiki/goplan/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D.html"
+    } ,
+  
+    {
+      "title"    : "整理照片",
+      "category" : "how-to",
+      "tags"     : "",
+      "url"      : "/wiki/how-to/%E6%95%B4%E7%90%86%E7%85%A7%E7%89%87.html"
+    } ,
+  
+    {
+      "title"    : "Infantry",
+      "category" : "military",
+      "tags"     : "",
+      "url"      : "/wiki/military/Infantry.html"
+    } ,
+  
+    {
+      "title"    : "产品管理",
+      "category" : "product-management",
+      "tags"     : "",
+      "url"      : "/wiki/product-management/%E4%BA%A7%E5%93%81%E7%AE%A1%E7%90%86.html"
+    } ,
+  
+    {
+      "title"    : "头文字d",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/wiki/racing/%E5%A4%B4%E6%96%87%E5%AD%97D.html"
+    } ,
+  
+    {
+      "title"    : "汽车动力学原理",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/wiki/racing/%E6%B1%BD%E8%BD%A6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%8E%9F%E7%90%86.html"
+    } ,
+  
+    {
+      "title"    : "赛车理论",
+      "category" : "racing",
+      "tags"     : "",
+      "url"      : "/wiki/racing/%E8%B5%9B%E8%BD%A6%E7%90%86%E8%AE%BA.html"
+    } ,
+  
+    {
+      "title"    : "Microsoft To Do",
+      "category" : "software",
+      "tags"     : "",
+      "url"      : "/wiki/software/Microsoft-To-Do.html"
+    } ,
+  
+    {
+      "title"    : "Simplenote",
+      "category" : "software",
+      "tags"     : "",
+      "url"      : "/wiki/software/Simplenote.html"
+    } ,
+  
+    {
+      "title"    : "网盘",
+      "category" : "software",
+      "tags"     : "",
+      "url"      : "/wiki/software/%E7%BD%91%E7%9B%98.html"
+    } ,
+  
+    {
+      "title"    : "Oss Projects",
+      "category" : "websites",
+      "tags"     : "",
+      "url"      : "/wiki/websites/OSS-projects.html"
+    } ,
+  
+    {
+      "title"    : "Online Services",
+      "category" : "websites",
+      "tags"     : "",
+      "url"      : "/wiki/websites/Online-Services.html"
+    } 
+  
+]

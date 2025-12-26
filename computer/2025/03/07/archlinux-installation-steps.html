@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Arch Linux Installation Steps | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Arch Linux Installation Steps" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1 Pre-installation" />
+<meta property="og:description" content="1 Pre-installation" />
+<link rel="canonical" href="https://goooooouwa.github.io/computer/2025/03/07/archlinux-installation-steps.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/computer/2025/03/07/archlinux-installation-steps.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Arch Linux Installation Steps" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2025-03-07T00:00:00+00:00","datePublished":"2025-03-07T00:00:00+00:00","description":"1 Pre-installation","headline":"Arch Linux Installation Steps","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/computer/2025/03/07/archlinux-installation-steps.html"},"url":"https://goooooouwa.github.io/computer/2025/03/07/archlinux-installation-steps.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Arch Linux Installation Steps</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-03-07T00:00:00+00:00" itemprop="datePublished">
+        Mar 7, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="1-pre-installation">1 Pre-installation</h2>
+
+<h3 id="11-download-iso">1.1 download iso</h3>
+
+<p>Visit the <a href="https://archlinux.org/download/">Download</a> page and download the ISO file.</p>
+
+<h3 id="13-make-bootable-usb">1.3 make bootable usb</h3>
+
+<h3 id="14-boot-live-environment">1.4 boot live environment</h3>
+
+<p>Note: Arch Linux installation images do not support Secure Boot. You will need to disable Secure Boot to boot the installation medium.</p>
+
+<h3 id="15-set-the-console-keyboard-layout-and-font">1.5 Set the console keyboard layout and font</h3>
+
+<p><code class="language-plaintext highlighter-rouge"># loadkeys us</code></p>
+
+<h3 id="16-verify-the-boot-mode">1.6 Verify the boot mode</h3>
+
+<p><code class="language-plaintext highlighter-rouge"># cat /sys/firmware/efi/fw_platform_size</code></p>
+
+<p>If the command returns 64, the system is booted in UEFI mode and has a 64-bit x64 UEFI.</p>
+
+<h3 id="17-connect-to-the-internet">1.7 Connect to the internet</h3>
+
+<p>Ensure your network interface is listed and enabled</p>
+
+<p><code class="language-plaintext highlighter-rouge"># ip link</code></p>
+
+<p>Check ip address
+<code class="language-plaintext highlighter-rouge"># ip address</code></p>
+
+<p>Connect to the network:</p>
+<ul>
+  <li>Ethernet – plug in the cable.</li>
+  <li>Wi-Fi – authenticate to the wireless network using iwctl.</li>
+</ul>
+
+<p>Use iwctl to connect to WiFi:</p>
+
+<p>First, if you do not know your wireless device name, list all Wi-Fi devices:
+[iwd]# device list</p>
+
+<p>Then, to initiate a scan for networks (note that this command will not output anything):
+[iwd]# station name scan</p>
+
+<p>You can then list all available networks:
+[iwd]# station name get-networks</p>
+
+<p>Finally, to connect to a network:
+[iwd]# station name connect SSID</p>
+
+<p>DHCP should be automatically configured by Ethernet or WiFi network connection.</p>
+
+<p>The connection may be verified with ping:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># ping archlinux.org</code></p>
+
+<h3 id="18-update-the-system-clock">1.8 Update the system clock</h3>
+
+<p><code class="language-plaintext highlighter-rouge"># timedatectl</code></p>
+
+<h3 id="19-partition-the-disks">1.9 Partition the disks</h3>
+
+<p>To identify these devices, use lsblk or fdisk.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># fdisk -l</code></p>
+
+<p>Use a partitioning tool like fdisk to modify partition tables. For example:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># fdisk /dev/the_disk_to_be_partitioned (e.g. /dev/sda)</code></p>
+
+<p>Within fdisk:</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">g</code> (create a new GPT table)</p>
+  </li>
+  <li>
+    <p>create EFI partition</p>
+  </li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">n</code> (create a new partition for EFI)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default partition number 1)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default first sector)</p>
+
+<p><code class="language-plaintext highlighter-rouge">+1G</code> (to add 1GB space for EFI boot partition)</p>
+
+<ol>
+  <li>create root partition</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">n</code> (create a new partition for root)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default partition number 2)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default first sector)</p>
+
+<p><code class="language-plaintext highlighter-rouge">Enter</code> (to accept default last sector to use the remaining of the disk space)</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">w</code> (write partitions to disk)</li>
+</ol>
+
+<h3 id="110-format-the-partitions">1.10 Format the partitions</h3>
+
+<p>To create an Ext4 file system on /dev/root_partition, run:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mkfs.ext4 /dev/root_partition (e.g. /dev/sda2)</code></p>
+
+<p>If you created an EFI system partition, format it to FAT32 using mkfs.fat(8).</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mkfs.fat -F 32 /dev/efi_system_partition (e.g. /dev/sda1)</code></p>
+
+<p>1.11 Mount the file systems</p>
+
+<p>Mount the root volume to /mnt. For example, if the root volume is /dev/root_partition:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mount /dev/root_partition /mnt</code></p>
+
+<p>For UEFI systems, mount the EFI system partition:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># mount --mkdir /dev/efi_system_partition /mnt/boot</code></p>
+
+<h2 id="2-installation">2. Installation</h2>
+
+<h3 id="21-select-the-mirrors">2.1 Select the mirrors</h3>
+
+<p>On the live system, after connecting to the internet, reflector updates the mirror list by choosing 20 most recently synchronized HTTPS mirrors and sorting them by download rate.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># reflector</code></p>
+
+<h3 id="22-install-essential-packages">2.2 Install essential packages</h3>
+
+<p>Use the pacstrap(8) script to install the base package, Linux kernel and firmware for common hardware:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacstrap -K /mnt base linux linux-firmware networkmanager grub efibootmgr os-prober sudo amd-ucode (or intel-ucode) vi vim git man-db man-pages texinfo</code></p>
+
+<p>To install other packages or package groups, append the names to the pacstrap command above (space separated) or use pacman to install them while chrooted into the new system. In particular, consider installing:</p>
+
+<ul>
+  <li>CPU microcode updates—amd-ucode or intel-ucode—for hardware bug and security fixes,</li>
+  <li>software necessary for networking (e.g. a network manager or a standalone DHCP client, authentication software for Wi-Fi, ModemManager for mobile broadband connections),</li>
+  <li>a console text editor (e.g nano) to allow editing configuration files from the console,</li>
+  <li>packages for accessing documentation in man and info pages: man-db, man-pages and texinfo.</li>
+  <li>a bootloader</li>
+</ul>
+
+<h2 id="3-configure-the-system">3. Configure the system</h2>
+
+<h3 id="31-fstab">3.1 Fstab</h3>
+
+<p>Generate an fstab file</p>
+
+<p><code class="language-plaintext highlighter-rouge"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p>
+
+<h3 id="32-chroot">3.2 Chroot</h3>
+
+<p>Change root into the new system:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># arch-chroot /mnt</code></p>
+
+<h3 id="33-time">3.3 Time</h3>
+
+<p>Set the time zone:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># ln -sf /usr/share/zoneinfo/Region/City /etc/localtime</code></p>
+
+<p>e.g. <code class="language-plaintext highlighter-rouge"># ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime</code></p>
+
+<p>Run hwclock(8) to generate /etc/adjtime:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># hwclock --systohc</code></p>
+
+<h3 id="34-localization">3.4 Localization</h3>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">/etc/locale.gen</code> and uncomment <code class="language-plaintext highlighter-rouge">en_US.UTF-8 UTF-8</code> and other needed UTF-8 locales (e.g. <code class="language-plaintext highlighter-rouge">zh_CN.UTF-8 UTF-8</code>). Generate the locales by running:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># locale-gen</code></p>
+
+<p>Create the locale.conf(5) file, and set the LANG variable accordingly:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/locale.conf
+LANG=en_US.UTF-8
+</code></pre></div></div>
+
+<p>If you set the console keyboard layout, make the changes persistent in vconsole.conf(5):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/vconsole.conf
+KEYMAP=us
+</code></pre></div></div>
+
+<h3 id="35-network-configuration">3.5 Network configuration</h3>
+
+<p>Create the hostname file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/hostname
+yourhostname (e.g. arch-linux)
+</code></pre></div></div>
+
+<p>Complete the network configuration for the newly installed environment by installing suitable network management software, configuring it if necessary and enabling its systemd unit so that it starts at boot.</p>
+
+<p>Here I choose NetworkManager.</p>
+
+<p>Install NetworkManager (if not installed already)</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S networkmanager</code></p>
+
+<p>Enable NetworkManager.service</p>
+
+<p><code class="language-plaintext highlighter-rouge"># systemctl enable NetworkManager.service</code></p>
+
+<h3 id="37-root-password">3.7 Root password</h3>
+
+<p>passwd</p>
+
+<h3 id="38-boot-loader">3.8 Boot loader</h3>
+
+<p>Choose and install a Linux-capable boot loader.</p>
+
+<p>Here I choose GRUB.</p>
+
+<p>Install GRUB (if not installed already)</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S grub efibootmgr</code></p>
+
+<p>Execute the following command to install the GRUB EFI application <code class="language-plaintext highlighter-rouge">grubx64.efi</code> to <code class="language-plaintext highlighter-rouge">esp/EFI/GRUB/</code> and install its modules to <code class="language-plaintext highlighter-rouge">/boot/grub/x86_64-efi/</code>.</p>
+
+<p>Note: <code class="language-plaintext highlighter-rouge">esp</code> denotes the mountpoint of the EFI system partition aka ESP, one common mountpoint for EFI is <code class="language-plaintext highlighter-rouge">/boot</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</code></p>
+
+<p>Generate the main configuration file</p>
+
+<p><code class="language-plaintext highlighter-rouge"># grub-mkconfig -o /boot/grub/grub.cfg</code></p>
+
+<p>Detecting other operating systems</p>
+
+<p>To have <code class="language-plaintext highlighter-rouge">grub-mkconfig</code> search for other installed systems and automatically add them to the menu, install the <code class="language-plaintext highlighter-rouge">os-prober</code> package and mount the partitions from which the other systems boot.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S os-prober</code></p>
+
+<p>Then re-run grub-mkconfig.</p>
+
+<p><code class="language-plaintext highlighter-rouge"># grub-mkconfig -o /boot/grub/grub.cfg</code></p>
+
+<p>If you get the following output: Warning: os-prober will not be executed to detect other bootable partitions then edit <code class="language-plaintext highlighter-rouge">/etc/default/grub</code> and add/uncomment:</p>
+
+<p><code class="language-plaintext highlighter-rouge">GRUB_DISABLE_OS_PROBER=false</code></p>
+
+<h2 id="4-reboot">4 Reboot</h2>
+
+<p>Exit the chroot environment by typing <code class="language-plaintext highlighter-rouge">exit</code> or pressing <code class="language-plaintext highlighter-rouge">Ctrl+d</code>.</p>
+
+<p>Optionally manually unmount all the partitions with <code class="language-plaintext highlighter-rouge">umount -R /mnt</code>: this allows noticing any “busy” partitions, and finding the cause with fuser(1).</p>
+
+<p>Finally, restart the machine by typing <code class="language-plaintext highlighter-rouge">reboot</code>.</p>
+
+<h2 id="5-post-installation">5 Post-installation</h2>
+
+<h3 id="51-system-administration">5.1 System administration</h3>
+
+<p>Create user</p>
+
+<p><code class="language-plaintext highlighter-rouge"># useradd -m -G wheel greg</code></p>
+
+<p><code class="language-plaintext highlighter-rouge"># passwd greg</code></p>
+
+<p>Add user to sudo group</p>
+
+<p>Run <code class="language-plaintext highlighter-rouge">visudo</code> and uncomment line <code class="language-plaintext highlighter-rouge">"%wheel ALL=(ALL) ALL"</code></p>
+
+<h3 id="57-network-setup">5.7 Network setup</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">nmcli</code> to connect to Wi-Fi</p>
+
+<p><code class="language-plaintext highlighter-rouge">nmcli</code> examples:</p>
+
+<p>List nearby Wi-Fi networks:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># nmcli device wifi list</code></p>
+
+<p>Connect to a Wi-Fi network:</p>
+
+<p><code class="language-plaintext highlighter-rouge"># nmcli device wifi connect SSID_or_BSSID password password</code></p>
+
+<h3 id="54-graphical-user-interface">5.4 Graphical user interface</h3>
+
+<p>Install KDE</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S plasma-meta kde-applications-meta</code></p>
+
+<p>keep pressing Enter to accept default packages to follow through the installation process (or choose your preferred packages)</p>
+
+<p>Install sddm window manager</p>
+
+<p><code class="language-plaintext highlighter-rouge"># pacman -S sddm</code></p>
+
+<p>Enable sddm service</p>
+
+<p><code class="language-plaintext highlighter-rouge"># systemctl enable sddm.service</code></p>
+
+<h3 id="55-install-aur-helper">5.5 Install AUR helper</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -si
+</code></pre></div></div>
+
+<h3 id="56-install-google-chrome-using-aur-helper">5.6 Install Google Chrome using AUR helper</h3>
+
+<p>To install Google Chrome in Arch Linux using yay:</p>
+
+<p><code class="language-plaintext highlighter-rouge">yay -S google-chrome</code></p>
+
+<p>Keep pressing <code class="language-plaintext highlighter-rouge">Enter</code> to follow through the installation process (or choose your preferred packages).</p>
+
+<p>Keep in mind that unlike pacman, yay shouldn’t be run with “sudo” privilege.</p>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/computer/2025/03/07/archlinux-installation-steps.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

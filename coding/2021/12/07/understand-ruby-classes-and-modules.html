@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Understand Ruby classes and modules | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Understand Ruby classes and modules" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="记录生活、学习和思考" />
+<meta property="og:description" content="记录生活、学习和思考" />
+<link rel="canonical" href="https://goooooouwa.github.io/coding/2021/12/07/understand-ruby-classes-and-modules.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/coding/2021/12/07/understand-ruby-classes-and-modules.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Understand Ruby classes and modules" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2021-12-07T00:00:00+00:00","datePublished":"2021-12-07T00:00:00+00:00","description":"记录生活、学习和思考","headline":"Understand Ruby classes and modules","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/coding/2021/12/07/understand-ruby-classes-and-modules.html"},"url":"https://goooooouwa.github.io/coding/2021/12/07/understand-ruby-classes-and-modules.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Understand Ruby classes and modules</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2021-12-07T00:00:00+00:00" itemprop="datePublished">
+        Dec 7, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="markdown-toc">
+  <li>
+<a href="#classes" id="markdown-toc-classes">Classes</a>    <ul>
+      <li><a href="#class-variables" id="markdown-toc-class-variables">class variables</a></li>
+      <li><a href="#class-instance-variables" id="markdown-toc-class-instance-variables">class instance variables</a></li>
+      <li><a href="#what-is-the-difference-between-class-variables-and-class-instance-variables" id="markdown-toc-what-is-the-difference-between-class-variables-and-class-instance-variables">What is the difference between class variables and class instance variables?</a></li>
+      <li><a href="#what-is-a-singleton-class" id="markdown-toc-what-is-a-singleton-class">What is a singleton class?</a></li>
+      <li><a href="#what-does-mean-in-ruby" id="markdown-toc-what-does-mean-in-ruby">What does « mean in Ruby?</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#modules" id="markdown-toc-modules">Modules</a>    <ul>
+      <li><a href="#what-is-a-module" id="markdown-toc-what-is-a-module">What is a module?</a></li>
+      <li><a href="#what-is-the-difference-between-a-class-and-a-module" id="markdown-toc-what-is-the-difference-between-a-class-and-a-module">What is the difference between a class and a module?</a></li>
+      <li><a href="#can-you-subclass-modules" id="markdown-toc-can-you-subclass-modules">Can you subclass modules?</a></li>
+      <li><a href="#what-is-mixin" id="markdown-toc-what-is-mixin">What is Mixin?</a></li>
+      <li><a href="#what-is-the-difference-between-include-and-extend" id="markdown-toc-what-is-the-difference-between-include-and-extend">What is the difference between <code class="language-plaintext highlighter-rouge">include</code> and <code class="language-plaintext highlighter-rouge">extend</code>?</a></li>
+      <li><a href="#include-vs-extend-in-ruby" id="markdown-toc-include-vs-extend-in-ruby">Include v/s Extend in Ruby</a></li>
+      <li><a href="#modules-extendingincluding-modules" id="markdown-toc-modules-extendingincluding-modules">Modules extending/including modules</a></li>
+      <li><a href="#what-is-a-module-funciton" id="markdown-toc-what-is-a-module-funciton">What is a module funciton?</a></li>
+      <li>
+<a href="#ways-to-define-module-function" id="markdown-toc-ways-to-define-module-function">Ways to define module function</a>        <ul>
+          <li><a href="#option-1-call-module_function-method" id="markdown-toc-option-1-call-module_function-method">Option 1: call module_function method</a></li>
+          <li><a href="#option-2-prefix-the-name-of-the-module-while-defining-the-method" id="markdown-toc-option-2-prefix-the-name-of-the-module-while-defining-the-method">Option 2: prefix the name of the module while defining the method</a></li>
+          <li><a href="#option-3-prefix-self-while-defining-the-method" id="markdown-toc-option-3-prefix-self-while-defining-the-method">Option 3: prefix self while defining the method</a></li>
+        </ul>
+      </li>
+      <li><a href="#module-class-variables" id="markdown-toc-module-class-variables">Module “class” variables</a></li>
+      <li><a href="#module-instance-variables" id="markdown-toc-module-instance-variables">Module “instance” variables</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<h2 id="classes">Classes</h2>
+
+<h3 id="class-variables">class variables</h3>
+
+<p>A variable prefixed with two at signs (<code class="language-plaintext highlighter-rouge">@@</code>) is a class variable, accessible within both instance and class methods of the class.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Entity</span>
+
+  <span class="vc">@@instances</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vc">@@instances</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="vi">@number</span> <span class="o">=</span> <span class="vc">@@instances</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">who_am_i</span>
+   <span class="s2">"I'm </span><span class="si">#{</span><span class="vi">@number</span><span class="si">}</span><span class="s2"> of </span><span class="si">#{</span><span class="vc">@@instances</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">total</span>
+    <span class="vc">@@instances</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">entities</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="p">{</span> <span class="no">Entity</span><span class="p">.</span><span class="nf">new</span> <span class="p">}</span>
+
+<span class="n">entities</span><span class="p">[</span><span class="mi">6</span><span class="p">].</span><span class="nf">who_am_i</span>  <span class="c1"># =&gt; "I'm 7 of 9"</span>
+<span class="no">Entity</span><span class="p">.</span><span class="nf">total</span>          <span class="c1"># =&gt; 9</span>
+</code></pre></div></div>
+
+<p>However, you probably should use <em>class instance variables</em> instead.</p>
+
+<h3 id="class-instance-variables">class instance variables</h3>
+
+<p>Here the example of the previous section rewritten using a class instance variable:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Entity</span>
+
+  <span class="vi">@instances</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:instances</span>  <span class="c1"># provide class methods for reading/writing</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">instances</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="vi">@number</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">instances</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">who_am_i</span>
+   <span class="s2">"I'm </span><span class="si">#{</span><span class="vi">@number</span><span class="si">}</span><span class="s2"> of </span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">instances</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">total</span>
+    <span class="vi">@instances</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">entities</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="p">{</span> <span class="no">Entity</span><span class="p">.</span><span class="nf">new</span> <span class="p">}</span>
+
+<span class="n">entities</span><span class="p">[</span><span class="mi">6</span><span class="p">].</span><span class="nf">who_am_i</span>  <span class="c1"># =&gt; "I'm 7 of 9"</span>
+<span class="no">Entity</span><span class="p">.</span><span class="nf">instances</span>      <span class="c1"># =&gt; 9</span>
+<span class="no">Entity</span><span class="p">.</span><span class="nf">total</span>          <span class="c1"># =&gt; 9</span>
+</code></pre></div></div>
+
+<p>Here, <code class="language-plaintext highlighter-rouge">@instances</code> is a <em>class</em> instance variable. It does not belong to an instance of class <code class="language-plaintext highlighter-rouge">Entity</code>, but to the class object <code class="language-plaintext highlighter-rouge">Entity</code>, which is an instance of class <code class="language-plaintext highlighter-rouge">Class</code>.</p>
+
+<h3 id="what-is-the-difference-between-class-variables-and-class-instance-variables">What is the difference between class variables and class instance variables?</h3>
+
+<p>The main difference is the behavior concerning inheritance: class variables are shared between a class and all its subclasses, while class instance variables only belong to one specific class.</p>
+
+<p>Class variables in some way can be seen as global variables within the context of an inheritance hierarchy, with all the problems that come with global variables.</p>
+
+<h3 id="what-is-a-singleton-class">What is a singleton class?</h3>
+
+<p>A singleton class is an anonymous class that is created by subclassing the class associated with a particular object. Singleton classes are another way of extending the functionality associated with just one object.</p>
+
+<p>Take the lowly <code class="language-plaintext highlighter-rouge">Foo</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span>
+  <span class="k">def</span> <span class="nf">hello</span>
+    <span class="s2">"hello"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">foo</span> <span class="o">=</span> <span class="no">Foo</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">foo</span><span class="p">.</span><span class="nf">hello</span>  <span class="c1"># =&gt; "hello"</span>
+</code></pre></div></div>
+
+<p>Now let’s say we need to add class-level functionality to just this one instance:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="n">foo</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:name</span>
+
+  <span class="k">def</span> <span class="nf">hello</span>
+    <span class="s2">"hello, I'm </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">foo</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"Tom"</span>
+<span class="n">foo</span><span class="p">.</span><span class="nf">hello</span>         <span class="c1"># =&gt; "hello, I'm Tom"</span>
+<span class="no">Foo</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">hello</span>     <span class="c1"># =&gt; "hello"</span>
+</code></pre></div></div>
+
+<p>We’ve customized <code class="language-plaintext highlighter-rouge">foo</code> without changing the characteristics of <code class="language-plaintext highlighter-rouge">Foo</code>.</p>
+
+<h3 id="what-does-mean-in-ruby">What does « mean in Ruby?</h3>
+
+<p>It can have 3 distinct meanings:</p>
+
+<p><strong>1. ‘«’ as an ordinary method</strong></p>
+
+<p>In most cases ‘«’ is a method defined like the rest of them, in your case it means “add to the end of this array” (see also <a href="http://www.ruby-doc.org/core/classes/Array.html#M000225">here</a>).</p>
+
+<p>That’s in your particular case, but there are also a lot of other occasions where you’ll encounter the “«” method. I won’t call it ‘operator’ since it’s really a method that is defined on some object that can be overridden by you or implemented for your own objects. Other cases of ‘«’</p>
+
+<ul>
+  <li>String concatenation: “a” « “b”</li>
+  <li>Writing output to an IO: io « “A line of text\n”</li>
+  <li>Writing data to a message digest, HMAC or cipher: sha « “Text to be hashed”</li>
+  <li>left-shifting of an OpenSSL::BN: bn « 2</li>
+  <li>…</li>
+</ul>
+
+<hr>
+
+<p><strong>2. Singleton class definition</strong></p>
+
+<p>Then there is the mysterious shift of the current scope (=change of self) within the program flow:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span>
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="nb">puts</span> <span class="nb">self</span> <span class="c1"># self is the singleton class of A</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="no">A</span><span class="p">.</span><span class="nf">new</span>
+<span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="n">a</span>
+  <span class="nb">puts</span> <span class="nb">self</span> <span class="c1"># now it's the singleton class of object a</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The mystery <code class="language-plaintext highlighter-rouge">class &lt;&lt; self</code> made me wonder and investigate about the internals there. Whereas in all the examples I mentioned <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> is really a method defined in a class, i.e.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">obj</span> <span class="o">&lt;&lt;</span> <span class="n">stuff</span>
+</code></pre></div></div>
+
+<p>is equivalent to</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">obj</span><span class="p">.</span><span class="nf">&lt;</span><span class="o">&lt;</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>the <code class="language-plaintext highlighter-rouge">class &lt;&lt; self</code> (or any object in place of self) construct is truly different. It is really a builtin feature of the language itself, in CRuby it’s defined in <em>parse.y</em> as</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">k_class</span> <span class="n">tLSHFT</span> <span class="n">expr</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">k_class</code> is the ‘class’ keyword, where <code class="language-plaintext highlighter-rouge">tLSHFT</code> is a ‘«’ token and <code class="language-plaintext highlighter-rouge">expr</code> is an arbitrary expression. That is, you can actually write</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="o">&lt;</span><span class="n">any</span> <span class="n">expression</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>and will get <em>shifted</em> into the singleton class of the result of the expression. The <code class="language-plaintext highlighter-rouge">tLSHFT</code> sequence will be parsed as a ‘NODE_SCLASS’ expression, which is called a <em>Singleton Class definition</em> (cf. node.c)</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="no">NODE_SCLASS</span><span class="p">:</span>
+    <span class="no">ANN</span><span class="p">(</span><span class="s2">"singleton class definition"</span><span class="p">);</span>
+    <span class="no">ANN</span><span class="p">(</span><span class="s2">"format: class &lt;&lt; [nd_recv]; [nd_body]; end"</span><span class="p">);</span>
+    <span class="no">ANN</span><span class="p">(</span><span class="s2">"example: class &lt;&lt; obj; ..; end"</span><span class="p">);</span>
+    <span class="no">F_NODE</span><span class="p">(</span><span class="n">nd_recv</span><span class="p">,</span> <span class="s2">"receiver"</span><span class="p">);</span>
+    <span class="no">LAST_NODE</span><span class="p">;</span>
+    <span class="no">F_NODE</span><span class="p">(</span><span class="n">nd_body</span><span class="p">,</span> <span class="s2">"singleton class definition"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span> 
+</code></pre></div></div>
+
+<hr>
+
+<p><strong>3. Here Documents</strong></p>
+
+<p><em>Here Documents</em> use ‘«’ in a way that is again totally different. You can define a string that spans over multiple lines conveniently by declaring</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">here_doc</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">_EOS_</span><span class="sh">
+The quick brown fox jumps over the lazy dog.
+...
+</span><span class="no">_EOS_</span>
+</code></pre></div></div>
+
+<p>To distinguish the ‘here doc operator’ an arbitrary String delimiter has to immediately follow the ‘«’. Everything inbetween that initial delimiter and the second occurrence of that same delimiter will be part of the final string. It is also possible to use ‘«-‘, the difference is that using the latter will ignore any leading or trailing whitespace.</p>
+
+<h2 id="modules">Modules</h2>
+
+<h3 id="what-is-a-module">What is a module?</h3>
+
+<p>Modules are collections of methods and constants. They cannot generate instances.</p>
+
+<p>Modules may be mixed in to classes and other modules. The mixed in module’s constants and methods blend into that class’s own, augmenting the class’s functionality.</p>
+
+<p>A module may not inherit from anything.</p>
+
+<h3 id="what-is-the-difference-between-a-class-and-a-module">What is the difference between a class and a module?</h3>
+
+<p>Modules are collections of methods and constants. They cannot generate instances. Classes may generate instances (objects), and have per-instance state (instance variables).</p>
+
+<p>Modules may be mixed in to classes and other modules. The mixed in module’s constants and methods blend into that class’s own, augmenting the class’s functionality. Classes, however, cannot be mixed in to anything.</p>
+
+<p>A class may inherit from another class, but not from a module.</p>
+
+<p>A module may not inherit from anything.</p>
+
+<h3 id="can-you-subclass-modules">Can you subclass modules?</h3>
+
+<p>No. However, a module may be included in a class or another module to mimic multiple inheritance (the mixin facility).</p>
+
+<h3 id="what-is-mixin">What is Mixin?</h3>
+
+<p>But Ruby does not support multiple inheritance directly and instead uses a facility called mixin. Mixins in Ruby allows <a href="https://www.geeksforgeeks.org/ruby-module/">modules</a> to access instance methods of another one using <strong>include</strong> method.</p>
+
+<p>Mixins provides a controlled way of adding functionality to classes. The code in the mixin starts to interact with code in the class. In Ruby, a code wrapped up in a module is called mixins that a class can include or extend. A class consist many mixins.</p>
+
+<h3 id="what-is-the-difference-between-include-and-extend">What is the difference between <code class="language-plaintext highlighter-rouge">include</code> and <code class="language-plaintext highlighter-rouge">extend</code>?</h3>
+
+<p><em>This section or parts of it might be out-dated or in need of confirmation.</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">include</code> mixes a module into a class or another module. Methods from that module are called function-style (without a receiver).</p>
+
+<p><code class="language-plaintext highlighter-rouge">extend</code> is used to include a module in an object (instance). Methods in the module become methods in the object.</p>
+
+<h3 id="include-vs-extend-in-ruby">Include v/s Extend in Ruby</h3>
+
+<p><strong>Include</strong> is used to importing module code. Ruby will throw an error when we try to access the methods of import module with the class directly because it gets imported as a subclass for the superclass. So, the only way is to access it through the instance of the class.</p>
+
+<p><strong>Extend</strong> is also used to importing module code but extends import them as class methods. Ruby will throw an error when we try to access methods of import module with the instance of the class because the module gets import to the superclass just as the instance of the extended module. So, the only way is to access it through the class definition.</p>
+
+<p>In simple words, the difference between include and extend is that ‘include’ is for adding methods only to an instance of a class and ‘extend’ is for adding methods to the class but not to its instance.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby program of Include and Extend</span>
+
+<span class="c1"># Creating a module contains a method</span>
+<span class="k">module</span> <span class="nn">Geek</span>
+<span class="k">def</span> <span class="nf">geeks</span>
+	<span class="nb">puts</span> <span class="s1">'GeeksforGeeks!'</span>
+<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Lord</span>
+
+<span class="c1"># only can access geek methods</span>
+<span class="c1"># with the instance of the class.</span>
+<span class="kp">include</span> <span class="no">Geek</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Star</span>
+	
+<span class="c1"># only can access geek methods</span>
+<span class="c1"># with the class definition.</span>
+<span class="kp">extend</span> <span class="no">Geek</span>
+<span class="k">end</span>
+
+<span class="c1"># object access</span>
+<span class="no">Lord</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">geeks</span>
+
+<span class="c1"># class access</span>
+<span class="no">Star</span><span class="p">.</span><span class="nf">geeks</span>
+
+<span class="c1"># NoMethodError: undefined method</span>
+<span class="c1"># `geeks' for Lord:Class</span>
+<span class="no">Lord</span><span class="p">.</span><span class="nf">geeks</span>
+</code></pre></div></div>
+
+<h3 id="modules-extendingincluding-modules">Modules extending/including modules</h3>
+
+<p>For example you have such module:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">A</span>
+  <span class="k">def</span> <span class="nf">a</span>
+    <span class="nb">puts</span> <span class="s2">"a"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">b</span>
+    <span class="nb">puts</span> <span class="s2">"b"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>As you see there are 2 types of methods:</p>
+
+<ul>
+  <li><strong>instance_methods</strong></li>
+  <li><strong>singleton_methods</strong></li>
+</ul>
+
+<p>Here is the easiest way to show that they actually differ:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">A</span><span class="p">.</span><span class="nf">instance_methods</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:a</span><span class="p">]</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">singleton_methods</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:b</span><span class="p">]</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">a</span>
+<span class="no">NoMethodError</span><span class="p">:</span> <span class="n">undefined</span> <span class="nb">method</span> <span class="sb">`a' for A:Module
+A.b
+b
+=&gt; nil
+</span></code></pre></div></div>
+
+<p>If you do <code class="language-plaintext highlighter-rouge">include A</code> simplistically you are adding its <strong>instance</strong> methods to the current module <strong>instance</strong> methods. When you do <code class="language-plaintext highlighter-rouge">extend A</code> simplistically you are adding its <strong>instance</strong> methods to the current module <strong>singleton</strong> methods.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">B</span>
+  <span class="kp">include</span> <span class="no">A</span>
+<span class="k">end</span>
+
+<span class="k">module</span> <span class="nn">C</span>
+  <span class="kp">extend</span> <span class="no">A</span>
+<span class="k">end</span>
+
+<span class="no">B</span><span class="p">.</span><span class="nf">instance_methods</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:a</span><span class="p">]</span>
+<span class="no">B</span><span class="p">.</span><span class="nf">singleton_methods</span>
+<span class="o">=&gt;</span> <span class="p">[]</span>
+<span class="no">C</span><span class="p">.</span><span class="nf">instance_methods</span>
+<span class="o">=&gt;</span> <span class="p">[]</span>
+<span class="no">C</span><span class="p">.</span><span class="nf">singleton_methods</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:a</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>One more thing to say is that you could <code class="language-plaintext highlighter-rouge">extend self</code> but not <code class="language-plaintext highlighter-rouge">include self</code> as that doesn’t make any sense and also will raise an exception.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">D</span>
+  <span class="kp">extend</span> <span class="nb">self</span>
+
+  <span class="k">def</span> <span class="nf">a</span>
+    <span class="nb">puts</span> <span class="s2">"a"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">b</span>
+    <span class="nb">puts</span> <span class="s2">"b"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">D</span><span class="p">.</span><span class="nf">singleton_methods</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:b</span><span class="p">,</span> <span class="ss">:a</span><span class="p">]</span>
+<span class="no">D</span><span class="p">.</span><span class="nf">instance_methods</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:a</span><span class="p">]</span>
+<span class="no">D</span><span class="p">.</span><span class="nf">a</span>
+<span class="n">a</span> <span class="c1">#no error there because we have such singleton method</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre></div></div>
+
+<p>I guess these things could help you. There are a lot of questions about <code class="language-plaintext highlighter-rouge">extend</code>/<code class="language-plaintext highlighter-rouge">include</code> on StackOverflow you may check (<a href="https://stackoverflow.com/questions/156362/what-is-the-difference-between-include-and-extend-in-ruby">example</a>).</p>
+
+<h3 id="what-is-a-module-funciton">What is a module funciton?</h3>
+
+<p>A module function is a private, singleton method defined in a module. In effect, it is similar to a <a href="https://www.ruby-lang.org/en/documentation/faq/8/#class-method">class method</a>, in that it can be called using the <code class="language-plaintext highlighter-rouge">Module.method</code> notation.</p>
+
+<p>The methods in a module may be instance methods or module methods. Instance methods appear as methods in a class when the module is included, module methods do not. Conversely, module methods may be called without creating an encapsulating object, while instance methods may not. (See <a href="https://ruby-doc.org/core-3.0.3/Module.html#method-i-module_function">#module_function</a>.)</p>
+
+<h3 id="ways-to-define-module-function">Ways to define module function</h3>
+
+<h4 id="option-1-call-module_function-method">Option 1: call module_function method</h4>
+
+<p><code class="language-plaintext highlighter-rouge">module_function(symbol, ...) → self</code>
+Creates module functions for the named methods. These functions may be called with the module as a receiver, and also become available as instance methods to classes that mix in the module. <strong>Module functions are copies of the original, and so may be changed independently</strong>. The instance-method versions are made private. If used with no arguments, subsequently defined methods become module functions.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Mod</span>
+  <span class="c1"># this defines a instance method for module Mod</span>
+  <span class="k">def</span> <span class="nf">one</span>
+    <span class="s2">"This is one"</span>
+  <span class="k">end</span>
+  
+  <span class="c1"># this will create a module method by copying the instance method</span>
+  <span class="c1"># at this point, module Mod will result 2 methods</span>
+  <span class="kp">module_function</span> <span class="ss">:one</span>
+<span class="k">end</span>
+<span class="k">class</span> <span class="nc">Cls</span>
+  <span class="kp">include</span> <span class="no">Mod</span>
+  <span class="k">def</span> <span class="nf">call_one</span>
+    <span class="n">one</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="no">Mod</span><span class="p">.</span><span class="nf">one</span>     <span class="c1">#=&gt; "This is one"</span>
+<span class="n">c</span> <span class="o">=</span> <span class="no">Cls</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">call_one</span>  <span class="c1">#=&gt; "This is one"</span>
+<span class="k">module</span> <span class="nn">Mod</span>
+  <span class="c1"># this will only override the instance method of module Mod</span>
+  <span class="c1"># the module method will not be changed as it's a separate copy</span>
+  <span class="k">def</span> <span class="nf">one</span>
+    <span class="s2">"This is the new one"</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">one</span>
+    <span class="s2">"This is the old one"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="no">Mod</span><span class="p">.</span><span class="nf">one</span>     <span class="c1">#=&gt; "This is the old one"</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">call_one</span>  <span class="c1">#=&gt; "This is the new one"</span>
+</code></pre></div></div>
+
+<h4 id="option-2-prefix-the-name-of-the-module-while-defining-the-method">Option 2: prefix the name of the module while defining the method</h4>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Gfg</span>
+      
+    <span class="no">C</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    
+    <span class="c1"># Prefix with name of Module</span>
+    <span class="c1"># module method </span>
+    <span class="k">def</span> <span class="nc">Gfg</span><span class="o">.</span><span class="nf">portal</span>
+        <span class="nb">puts</span> <span class="s2">"Welcome to GFG Portal!"</span>
+    <span class="k">end</span>
+        
+    <span class="c1"># Prefix with the name of Module</span>
+    <span class="c1"># module method</span>
+    <span class="k">def</span> <span class="nc">Gfg</span><span class="o">.</span><span class="nf">tutorial</span>  
+        <span class="nb">puts</span> <span class="s2">"Ruby Tutorial!"</span>
+    <span class="k">end</span>
+        
+    <span class="c1"># Prefix with the name of Module</span>
+    <span class="c1"># module method</span>
+    <span class="k">def</span> <span class="nc">Gfg</span><span class="o">.</span><span class="nf">topic</span>  
+        <span class="nb">puts</span> <span class="s2">"Topic - Module"</span>
+    <span class="k">end</span>
+      
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h4 id="option-3-prefix-self-while-defining-the-method">Option 3: prefix self while defining the method</h4>
+
+<p>This is an equivalent of option 2.</p>
+
+<p>The <a href="http://www.ruby-doc.org/core-1.9.3/Module.html#method-i-module_function">Ruby documentation on Module</a> answers this in its introduction text.</p>
+
+<p>This form:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Familiar</span>
+  <span class="k">def</span> <span class="nf">ask_age</span>
+    <span class="k">return</span> <span class="s2">"How old are you?"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>defines <code class="language-plaintext highlighter-rouge">#ask_age</code> as an <em>instance</em> method on Familiar. However, you can’t instantiate Modules, so you can’t get to their instance methods directly; you mix them into other classes. Instance methods in modules are more or less unreachable directly.</p>
+
+<p>This form, by comparison:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Familiar</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">ask_age</span>
+    <span class="k">return</span> <span class="s2">"What's up?"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>defines <code class="language-plaintext highlighter-rouge">::ask_age</code> as a <em>module function</em>. It is directly callable, and does not appear on included classes when the module is mixed into another class.</p>
+
+<h3 id="module-class-variables">Module “class” variables</h3>
+
+<p>Ruby natively supports module variables in modules, so you can use module variables directly, and not some proxy or pseudo-class-variables:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Site</span>
+  <span class="vc">@@name</span> <span class="o">=</span> <span class="s2">"StackOverflow"</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">setName</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="vc">@@name</span> <span class="o">=</span> <span class="n">value</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">name</span>
+    <span class="vc">@@name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Site</span><span class="p">.</span><span class="nf">name</span>            <span class="c1"># =&gt; "StackOverflow"</span>
+<span class="no">Site</span><span class="p">.</span><span class="nf">setName</span><span class="p">(</span><span class="s2">"Test"</span><span class="p">)</span>
+<span class="no">Site</span><span class="p">.</span><span class="nf">name</span>            <span class="c1"># =&gt; "Test"</span>
+</code></pre></div></div>
+
+<h3 id="module-instance-variables">Module “instance” variables</h3>
+
+<p>Think of the instance variable as something which will exist in any class that includes your module, and things make a bit more sense:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Stacklike</span>
+  <span class="k">def</span> <span class="nf">stack</span>
+    <span class="vi">@stack</span> <span class="o">||=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">add_to_stack</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="n">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">take_from_stack</span>
+    <span class="n">stack</span><span class="p">.</span><span class="nf">pop</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">ClownStack</span>
+  <span class="kp">include</span> <span class="no">Stacklike</span>
+
+  <span class="k">def</span> <span class="nf">size</span>
+    <span class="vi">@stack</span><span class="p">.</span><span class="nf">length</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">cs</span> <span class="o">=</span> <span class="no">ClownStack</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">cs</span><span class="p">.</span><span class="nf">add_to_stack</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">cs</span><span class="p">.</span><span class="nf">size</span>
+</code></pre></div></div>
+
+<p>will output “1”.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://www.ruby-lang.org/en/documentation/faq/8/">https://www.ruby-lang.org/en/documentation/faq/8/</a></li>
+  <li><a href="https://www.geeksforgeeks.org/ruby-mixins/">https://www.geeksforgeeks.org/ruby-mixins/</a></li>
+  <li><a href="http://www.ruby-doc.org/core-1.9.3/Module.html#method-i-module_function">Ruby documentation on Module</a></li>
+  <li><a href="https://www.geeksforgeeks.org/include-v-s-extend-in-ruby/">https://www.geeksforgeeks.org/include-v-s-extend-in-ruby/</a></li>
+  <li><a href="https://www.geeksforgeeks.org/ruby-module/">https://www.geeksforgeeks.org/ruby-module/</a></li>
+  <li><a href="https://stackoverflow.com/questions/25322009/defining-a-method-inside-a-module-in-ruby-nomethoderror">https://stackoverflow.com/questions/25322009/defining-a-method-inside-a-module-in-ruby-nomethoderror</a></li>
+  <li><a href="https://stackoverflow.com/questions/32751805/when-to-use-self-in-modules-methods">https://stackoverflow.com/questions/32751805/when-to-use-self-in-modules-methods</a></li>
+  <li><a href="https://stackoverflow.com/questions/5690458/create-module-variables-in-ruby">https://stackoverflow.com/questions/5690458/create-module-variables-in-ruby</a></li>
+  <li><a href="https://stackoverflow.com/questions/15478747/instance-variables-in-modules">https://stackoverflow.com/questions/15478747/instance-variables-in-modules</a></li>
+  <li><a href="https://stackoverflow.com/questions/6852072/what-does-mean-in-ruby">https://stackoverflow.com/questions/6852072/what-does-mean-in-ruby</a></li>
+  <li><a href="https://stackoverflow.com/questions/33848651/ruby-modules-extending-including-modules">https://stackoverflow.com/questions/33848651/ruby-modules-extending-including-modules</a></li>
+  <li><a href="https://medium.com/@leo_hetsch/ruby-modules-include-vs-prepend-vs-extend-f09837a5b073">https://medium.com/@leo_hetsch/ruby-modules-include-vs-prepend-vs-extend-f09837a5b073</a></li>
+  <li><a href="https://medium.com/@leo_hetsch/demystifying-singleton-classes-in-ruby-caf3fa4c9d91">https://medium.com/@leo_hetsch/demystifying-singleton-classes-in-ruby-caf3fa4c9d91</a></li>
+</ul>
+
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/coding/2021/12/07/understand-ruby-classes-and-modules.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700%20(at)%20gmail%20(dot)%20com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"></a><br>本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links">
+<ul class="social-media-list">
+<li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

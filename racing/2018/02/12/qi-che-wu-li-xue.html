@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>汽车物理学 | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="汽车物理学" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="两档位之间的 Gear ratio 差距决定了换挡后引擎转速会有多少差距，不同两挡之间 ratio 差距不同，因此转速回落大小也不同。一档升二档，齿比差距较大，转速落差更大。三档升四档，齿比差距较小，转速落差更小。" />
+<meta property="og:description" content="两档位之间的 Gear ratio 差距决定了换挡后引擎转速会有多少差距，不同两挡之间 ratio 差距不同，因此转速回落大小也不同。一档升二档，齿比差距较大，转速落差更大。三档升四档，齿比差距较小，转速落差更小。" />
+<link rel="canonical" href="https://goooooouwa.github.io/racing/2018/02/12/qi-che-wu-li-xue.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/racing/2018/02/12/qi-che-wu-li-xue.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="汽车物理学" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2018-02-12T00:00:00+00:00","datePublished":"2018-02-12T00:00:00+00:00","description":"两档位之间的 Gear ratio 差距决定了换挡后引擎转速会有多少差距，不同两挡之间 ratio 差距不同，因此转速回落大小也不同。一档升二档，齿比差距较大，转速落差更大。三档升四档，齿比差距较小，转速落差更小。","headline":"汽车物理学","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/racing/2018/02/12/qi-che-wu-li-xue.html"},"url":"https://goooooouwa.github.io/racing/2018/02/12/qi-che-wu-li-xue.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">汽车物理学</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2018-02-12T00:00:00+00:00" itemprop="datePublished">
+        Feb 12, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>两档位之间的 Gear ratio 差距决定了换挡后引擎转速会有多少差距，不同两挡之间 ratio 差距不同，因此转速回落大小也不同。一档升二档，齿比差距较大，转速落差更大。三档升四档，齿比差距较小，转速落差更小。</p>
+
+<p>转动运动如果没有力的作用，会保持角速度不变的旋转。</p>
+
+<p>引擎的转速和扭矩可以直接换算成车轮行驶的速度和牵引力加速度，因为驱动轴 crankshaft 跟驱动轮轴之间只是简单的齿比关系。想象一个大齿轮匹配一个小齿轮 ⚙️⚙️。</p>
+
+<h2 id="不同档位引擎扭矩转速与轮上扭矩和转速以及车速的关系">不同档位，引擎扭矩、转速与轮上扭矩和转速以及车速的关系</h2>
+
+<p>The combination of gear and differential acts as a multiplier from the torque on the crankshaft to the torque on the rear wheels. For example, the Corvette in first gear has a multiplier of 2.66 _ 3.42 = 9.1. This means each Newton meter of torque on the crankshaft results in 9.1 Nm of torque on the rear axle. Accounting for 30% loss of energy, this leaves 6.4 N.m. Divide this by the wheel radius to get the force exerted by the wheels on the road (and conversely by the road back to the wheels). Let’s take a 34 cm wheel radius, that gives us 6.4 N.m/0.34 m = 2.2 N of force per N.m of engine torque. Of course, there’s no such thing as a free lunch. You can’t just multiply torque and not have to pay something in return. <strong>What you gain in torque, you have to pay back in angular velocity.</strong> You trade off strength for speed. For each rpm of the wheel, the engine has to do 9.1 rpm. The rotational speed of the wheel is directly related to the speed of the car (unless we’re skidding). One rpm (revolution per minute) is 1/60th of a revolution per second. Each revolution takes the wheel 2 pi R further, i.e. 2 _ 3.14 * 0.34 = 2.14 m. So when the engine is doing 4400 rpm in first gear, that’s 483 rpm of the wheels, is 8.05 rotations per second is 17.2 m/s, about 62 km/h.</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/oRBnIEb.jpg" alt="Imgur" /></p>
+
+<p>这个图的彩色曲线是车轮转速和扭矩之间的关系(油门全开时)，黑色是引擎转速和扭矩关系。</p>
+
+<p>下图是斯巴鲁 BRZ 的轮上扭矩的曲线：</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/dEU7rW6.jpg" alt="Imgur" /></p>
+
+<p>高尔夫 GTI 2.0T+DSG 的轮上扭矩曲线：</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/zG7Xi4S.jpg" alt="Imgur" /></p>
+
+<p>结合全油门轮上扭矩图和下面的 Engine Torque vs Throttle map 可以绘制出各种油门开度下的轮上扭矩图。</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/mrKze3L.png" alt="Imgur" /></p>
+
+<p><strong>重视加速性的换挡策略</strong>下，在某一油门开度，最佳换挡时机是，当前档位与下一档位轮上扭矩曲线之间的交叉点对应的引擎转速。如果油门开度变化，则换挡时机随着新的轮上扭矩曲线交叉点的变化而变化。油门开度越小，换挡时机越靠前，即换挡转速越低。<strong>油门深度决定了换挡转速。</strong></p>
+
+<p><strong>重视燃油经济性的换挡策略</strong>下，最佳换挡时机是，油门开度在 0%到 70%之间时，约 1700 转换挡（尽量维持发动机在 1500 转左右运转），当油门开度为 70%到 100%之间，随着油门开度增大，逐步升高发动机换挡转速（如 70%时 2000 转，80%时 2700 转，90%时 4000 转），直到油门开度达到 100%之后，随意换挡（维持发动机在 4000 ～ 7000 转之间即可）。</p>
+
+<p>可以比较，当一脚油门到底时，这两种换挡策略下，换挡时机的不同。</p>
+
+<p>重视加速性的换挡策略</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">当前档位</th>
+      <th style="text-align: left">油门深度</th>
+      <th style="text-align: left">升档时机(rpm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">70</td>
+      <td style="text-align: left">4000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">80</td>
+      <td style="text-align: left">5000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left">90</td>
+      <td style="text-align: left">6000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left">100</td>
+      <td style="text-align: left">7000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>重视燃油经济性的换挡策略</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">当前档位</th>
+      <th style="text-align: left">油门深度</th>
+      <th style="text-align: left">升档时机(rpm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">70</td>
+      <td style="text-align: left">1700</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">80</td>
+      <td style="text-align: left">2500</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left">90</td>
+      <td style="text-align: left">4000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left">100</td>
+      <td style="text-align: left">5000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>我怀疑变速箱的换挡逻辑会根据油门开度来选择不同策略。至少在不同驾驶模式下（Echo, Comfort, Sport），变速箱换挡时机不一样，比如 Sport 下，即使轻踩油门，也会在 4000 转换挡。</p>
+
+<p>想想带变速器的自行车，其实原理是一样的。骑车换挡时其实不会考虑最优换挡时机，只要觉得蹬得够快了就升档，觉得蹬不动就将挡。虽然最优换挡时机可能只有一个，但是允许换挡的时机却是一个区间。开车换挡感到顿挫，也许是档位间转速落差太大，还可能是换挡间油门控制不够平稳，还有可能是自动变速箱手动模式换挡 torque converter 结合较快，提供的转速匹配的时间较半集合更短。</p>
+
+<p>原来，汽车厂家对一款车型的定位不一样，变速箱的换挡逻辑标定的也不同。比如说定位经济的车型，变速箱的标定上可能会让它积极升挡和延迟降挡；而定位运动的车型，在变速箱的标定上则是偏向于延迟升挡和积极降挡；定位舒适的车型，变速箱在标定上可能会尽量减少频繁换挡。这就是经济模式、运动模式和舒适模式。</p>
+
+<h2 id="油门深度-vs-换挡时机">油门深度 vs 换挡时机</h2>
+
+<p>For a given throttle in a given gear, there is a unique vehicle speed（车速 ～ 车轮转速～引擎转速） at which an upshift takes place (gear shift goal unknown). The simulation operates similarly for a downshift.</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/KPDoKlS.png" alt="Imgur" /></p>
+
+<p>查表可知：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">当前档位</th>
+      <th style="text-align: left">油门深度</th>
+      <th style="text-align: left">升档时机(mph)</th>
+      <th style="text-align: left">降档时机</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">90</td>
+      <td style="text-align: left">38</td>
+      <td style="text-align: left">无</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">20</td>
+      <td style="text-align: left">30</td>
+      <td style="text-align: left">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left">40</td>
+      <td style="text-align: left">53</td>
+      <td style="text-align: left">25</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left">50</td>
+      <td style="text-align: left">70</td>
+      <td style="text-align: left">50</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fuel-optimal-gear-shift-strategy">Fuel-Optimal Gear Shift Strategy</h3>
+
+<p>early and frequent upshift pattern for the transmission. It renders the engine, on average, to operate at a lower speed and high torque region, and hence improving the fuel economy.</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/WbFr33A.png" alt="Imgur" /></p>
+
+<h3 id="driveability-optimal-gear-shift-strategy">Driveability-Optimal Gear Shift Strategy</h3>
+
+<p>transmission tends to shift up late to ensure a driveability satisfaction.
+Driveability measured by Power reserve = (Max Torque - Current Torque) * Engine Speed</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/Ip41BCf.png" alt="Imgur" /></p>
+
+<p>a req, fit 红色的线表示 90%概率的加速需要，所以只要扭矩大于或等于这个加速度即可。所以 Method 3 的结论其实是说，重视加速性策略下，最佳换挡时机是一个区间，只要发动机扭矩维持在这个区间内，均可满足 90%的加速需要（由 a req, fit 表示）。</p>
+
+<p>The <strong>variable power reserve</strong> concept reveals itself to be able to apply in realtime by a control approach, e.g. model predictive control [148], to <strong>ensure a driveability satisfaction meanwhile still achieving a fuel economy benefit</strong>.</p>
+
+<p><strong>One of the key points in simplifying vehicle physics is to handle the longtitudinal and lateral forces separately</strong>. Longtitudinal forces operate in the direction of the car body (or in the exact opposite direction). These are wheel force, braking force, rolling resistance and drag (= airresistance). Together these forces control the acceleration or deceleration of the car and therefore the speed of the car. Lateral forces allow the car to turn. These forces are caused by sideways friction on the wheels. We’ll also have a look at the angular moment of the car and the torque caused by lateral forces.</p>
+
+<h2 id="典型起步加速和超车过程的油门动作换挡逻辑最终加速度和速度曲线">典型起步加速和超车过程的油门动作、换挡逻辑、最终加速度和速度曲线</h2>
+
+<p>Table 2: Throttle schedule for first simulation (passing maneuver)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Time (sec)</th>
+      <th style="text-align: left">Throttle (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">60</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">14.9</td>
+      <td style="text-align: left">40</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">15</td>
+      <td style="text-align: left">100</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">100</td>
+      <td style="text-align: left">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">200</td>
+      <td style="text-align: left">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The first column corresponds to time; the second column corresponds to throttle opening in percent. In this case no brake is applied (brake torque is zero). The vehicle speed starts at zero and the engine at 1000 RPM. Figure 12 shows the plot for the baseline results, using the default parameters. As the driver steps to 60% throttle at t=0, the engine immediately responds by more than doubling its speed. This brings about a low speed ratio across the torque converter and, hence, a large torque ratio (see Figure 6 and Figure 11). The vehicle accelerates quickly (no tire slip is modeled) and both the engine and the vehicle gain speed until about t = 2 sec, at which time a 1-2 upshift occurs. The engine speed characteristically drops abruptly, then resumes its acceleration. The 2-3 and 3-4 upshifts take place at about four and eight seconds, respectively. Notice that the vehicle speed remains much smoother due to its large inertia.</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/ZAl5NJD.png" alt="Imgur" /></p>
+
+<p>Figure 12: Passing maneuver simulation time history</p>
+
+<p>At t=15sec, the driver steps the throttle to 100% as might be typical of a passing maneuver. The transmission downshifts to third gear and the engine jumps from about 2600 RPM to about 3700 RPM. The engine torque thus increases somewhat, as well as the mechanical advantage of the transmission. With continued heavy throttle, the vehicle accelerates to about 100 mph and then shifts into overdrive at about t = 21 sec. The vehicle cruises along in fourth gear for the remainder of the simulation. Double click on the ManeuversGUI block and use the graphical interface to vary the throttle and brake history.</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/hhu0mJ1.png" alt="Imgur" /></p>
+
+<h3 id="高速转弯时的侧向加速度影响因素">高速转弯时的侧向加速度影响因素</h3>
+
+<p>The <strong>sideslip angle b (bèta</strong>) is the difference between the car orientation and the direction of movement. In other words, it’s the angle between the longtitudinal axis and the actual direction of travel. So it’s similar in concept to what the <strong>slip angle</strong> is for the tyres.</p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/COiKwsi.jpg" alt="Imgur" /></p>
+
+<p>The following information is shown on screen:</p>
+
+<ul>
+  <li>steering angle (also known as delta)</li>
+  <li>side slip angle (also known as beta)</li>
+  <li>“rotation angle” (due to yaw rate)</li>
+  <li>slip angle front wheels</li>
+  <li>slip angle rear wheels</li>
+  <li>velocity vector relative to car reference frame</li>
+  <li>velocity vector in world space</li>
+</ul>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/cPDix4h.jpg" alt="Imgur" /></p>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/racing/2018/02/12/qi-che-wu-li-xue.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

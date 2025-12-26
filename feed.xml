@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2025-12-26T07:10:52+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html">如何使用Clonezilla备份与恢复硬盘</title><link href="https://goooooouwa.github.io/computer/2025/12/25/backup-and-restore-hard-disks-with-clonezilla.html" rel="alternate" type="text/html" title="如何使用Clonezilla备份与恢复硬盘" /><published>2025-12-25T00:00:00+00:00</published><updated>2025-12-25T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/12/25/backup-and-restore-hard-disks-with-clonezilla</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/12/25/backup-and-restore-hard-disks-with-clonezilla.html"><![CDATA[<p>本教程所使用的工具：Clonezilla</p>
+
+<h2 id="方法一备份整个磁盘">方法一：备份整个磁盘</h2>
+
+<p>优点：速度慢</p>
+
+<p>缺点：操作简单</p>
+
+<h3 id="硬盘备份步骤">硬盘备份步骤：</h3>
+
+<ol>
+  <li>将Clonezilla Live CD烧写到U盘里（如果是用的Ventory，则可以直接将Clonezilla ISO文件拷贝进Ventory镜像目录）</li>
+  <li>将含有需要备份硬盘的电脑关机</li>
+  <li>将Clonezilla启动盘插入含有需要备份硬盘的电脑上</li>
+  <li>将电脑从Clonezilla启动盘启动</li>
+  <li>设置语言和键盘</li>
+  <li>选择device-to-image</li>
+  <li>(Option 1) 如果希望通过本地硬盘保存备份镜像，则直接将用来保存备份镜像的硬盘插入电脑，然后选择local disk选项</li>
+  <li>(Option 2) 如果希望备份到远程服务器，比如ssh server，则选择ssh server选项</li>
+  <li>填入服务器ip地址</li>
+  <li>填入服务器端口</li>
+  <li>填入服务器用户名</li>
+  <li>填入远程服务器用来保存备份镜像的文件夹路径（比如: /mnt/backup/backup/system/clonezilla-images）</li>
+  <li>确认服务器的安全性</li>
+  <li>填入服务器用户密码</li>
+  <li>选择savedisk</li>
+  <li>选择expert模式</li>
+  <li>选中<code class="language-plaintext highlighter-rouge">-q1</code>选项（强制使用<code class="language-plaintext highlighter-rouge">dd</code>工具全盘备份硬盘，而不是<code class="language-plaintext highlighter-rouge">partclone</code>工具，使用<code class="language-plaintext highlighter-rouge">dd</code>可以放心不会有任何数据问题）</li>
+  <li>完成备份</li>
+</ol>
+
+<h3 id="硬盘还原步骤">硬盘还原步骤：</h3>
+
+<ol>
+  <li>将电脑从Clonezilla启动盘启动</li>
+  <li>设置语言和键盘</li>
+  <li>选择device-to-image</li>
+  <li>(Option 1) 如果希望通过本地硬盘保存备份镜像，则直接将用来保存备份镜像的硬盘插入电脑，然后选择local disk选项</li>
+  <li>(Option 2) 如果希望备份到远程服务器，比如ssh server，则选择ssh server选项</li>
+  <li>填入服务器ip地址</li>
+  <li>填入服务器端口</li>
+  <li>填入服务器用户名</li>
+  <li>填入远程服务器用来保存备份镜像的文件夹路径（比如: /mnt/backup/backup/system/clonezilla-images）</li>
+  <li>确认服务器的安全性</li>
+  <li>填入服务器用户密码</li>
+  <li>选择restoredisk</li>
+  <li>选择expert模式</li>
+  <li>取消任何自动进行的其他对分区数据进行的额外操作（比如auto grub install, auto resize partition, etc）</li>
+  <li>完成还原</li>
+</ol>
+
+<p>备注：</p>
+
+<p>Clonezilla很聪明，它会默认选择与备份硬盘的文件系统最匹配的工具来进行备份和还原（比如如果是<code class="language-plaintext highlighter-rouge">partclone</code>所支持的文件系统，则会优先使用<code class="language-plaintext highlighter-rouge">partclone</code>来基于used sectors（含有效数据的扇区）进行备份，好处是能够针对各种不同的情况进行针对性的数据处理（比如自动运行grub install以确保新系统可以正常启动），备份的速度更快，生成的文件也更小；但是另一方面，Clonezilla的“自作聪明”有时候也会产生一些令人意料之外的效果。</p>
+
+<p>我之所以强制使用<code class="language-plaintext highlighter-rouge">dd</code>工具进行备份，并且在还原系统时选择取消Clonezilla自动对分区数据进行的额外操作，是因为我的Elementary OS在使用<code class="language-plaintext highlighter-rouge">dd</code>备份后，使用beginner mode的默认参数还原硬盘后，发现Elementary OS里的flatpak应用的icon都消失了，说明clonezilla自动对分区数据进行的额外操作也可能对数据带来一些潜在的影响；在使用expert mode并且取消了clonezilla自动对分区数据进行的一系列额外数据操作后，还原的硬盘则是完美一比一的还原了我的Elementary OS系统。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="clonezilla" /><category term="backup" /><category term="hdd" /><summary type="html"><![CDATA[本教程所使用的工具：Clonezilla]]></summary></entry><entry><title type="html">如何使用DiskGenius备份与恢复硬盘</title><link href="https://goooooouwa.github.io/computer/2025/12/23/backup-and-restore-hard-disks-with-disk-genius.html" rel="alternate" type="text/html" title="如何使用DiskGenius备份与恢复硬盘" /><published>2025-12-23T00:00:00+00:00</published><updated>2025-12-23T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/12/23/backup-and-restore-hard-disks-with-disk-genius</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/12/23/backup-and-restore-hard-disks-with-disk-genius.html"><![CDATA[<p>本教程所使用的工具：DiskGenius</p>
+
+<h2 id="方法一以文件方式备份每个分区">方法一：以文件方式备份每个分区</h2>
+
+<p>优点：速度快</p>
+
+<p>缺点：步骤更多</p>
+
+<h3 id="硬盘备份步骤">硬盘备份步骤：</h3>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择需备份的硬盘</li>
+  <li>选择硬盘的esp分区</li>
+  <li>右键-&gt;备份分区到镜像文件</li>
+  <li>备份类型: 完整备份</li>
+  <li>备份选项：按文件备份（也可以根据自己需要选择其他选项）</li>
+  <li>选择文件路径</li>
+  <li>开始</li>
+  <li>完成（生成的分区镜像文件默认为pmf格式）</li>
+  <li>选择硬盘的数据分区（比如，Linux系统的ext4分区）</li>
+  <li>右键-&gt;备份分区到镜像文件（步骤相同）</li>
+</ol>
+
+<h3 id="硬盘还原步骤">硬盘还原步骤：</h3>
+
+<h4 id="如果是全新的硬盘">如果是全新的硬盘：</h4>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>格式化硬盘（或者删除所有分区）</li>
+  <li>新建分区</li>
+  <li>新建esp分区（默认300M）</li>
+  <li>新建ext4分区（确保分区大小大于或等于备份的镜像文件大小）</li>
+  <li>选择新建的esp分区</li>
+  <li>右键-&gt;从镜像文件还原分区</li>
+  <li>选择文件（选择备份时生成的esp分区镜像文件，默认为pmf格式）</li>
+  <li>开始</li>
+  <li>完成</li>
+  <li>选择新建的数据分区（比如，Linux系统的ext4分区）</li>
+  <li>右键-&gt;从镜像文件还原分区（步骤相同）</li>
+</ol>
+
+<h4 id="如果是备份的原硬盘">如果是备份的原硬盘：</h4>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择硬盘的esp分区</li>
+  <li>右键-&gt;从镜像文件还原分区</li>
+  <li>选择文件（选择备份时生成的esp分区镜像文件，默认为pmf格式）</li>
+  <li>开始</li>
+  <li>完成</li>
+  <li>选择硬盘的数据分区（比如，Linux系统的ext4分区）</li>
+  <li>右键-&gt;从镜像文件还原分区（步骤相同）</li>
+</ol>
+
+<h2 id="方法二备份整个磁盘">方法二：备份整个磁盘</h2>
+
+<p>优点：速度慢</p>
+
+<p>缺点：操作简单</p>
+
+<h3 id="硬盘备份步骤-1">硬盘备份步骤：</h3>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择需备份的硬盘</li>
+  <li>右键-&gt;备份磁盘到镜像文件</li>
+  <li>备份方式：备份所有扇区（也可以根据自己需要选择其他选项）</li>
+  <li>选择文件路径</li>
+  <li>开始</li>
+  <li>完成（生成的分区镜像文件默认为pmfx格式）</li>
+</ol>
+
+<h3 id="硬盘还原步骤-1">硬盘还原步骤：</h3>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择需还原的硬盘</li>
+  <li>右键-&gt;从镜像文件还原磁盘</li>
+  <li>选择文件（选择备份时生成的磁盘镜像文件，默认为pmfx格式）</li>
+  <li>还原方式：还原所有扇区（对应备份时自己选择的选项）</li>
+  <li>开始</li>
+  <li>完成</li>
+</ol>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="disk-genius" /><category term="backup" /><category term="hdd" /><summary type="html"><![CDATA[本教程所使用的工具：DiskGenius]]></summary></entry><entry><title type="html">如何在Ubuntu系统下启用硬件watchdog</title><link href="https://goooooouwa.github.io/computer/2025/12/07/how-to-enable-hardware-watchdog-on-ubuntu.html" rel="alternate" type="text/html" title="如何在Ubuntu系统下启用硬件watchdog" /><published>2025-12-07T00:00:00+00:00</published><updated>2025-12-07T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/12/07/how-to-enable-hardware-watchdog-on-ubuntu</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/12/07/how-to-enable-hardware-watchdog-on-ubuntu.html"><![CDATA[<p>我的一台GK41迷你主机因为系统的某种故障，会不定期死机，于是我尝试启用watchdog来实时检测系统状态，如果系统发生死机，则watchdog会自动将系统重启,保证系统的可用性。以下是我根据网上文章结合自己的机器整理的在Ubuntu系统下启用硬件watchdog的教程。</p>
+
+<h2 id="1-检查系统是否有硬件watchdog">1. 检查系统是否有硬件watchdog</h2>
+
+<p>根据<code class="language-plaintext highlighter-rouge">/etc/watchdog.conf</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># =================== The hardware timer settings ====================
+#
+# For this daemon to be effective it really needs some hardware timer
+# to back up any reboot actions. If you have a server then see if it
+# has IPMI support. Otherwise for Intel-based machines try the iTCO_wdt
+# module, otherwise (or if that fails) then see if any of the following
+# module load and work:
+#
+# it87_wdt it8712f_wdt w83627hf_wdt w83877f_wdt w83977f_wdt
+#
+# If all else fails then 'softdog' is better than no timer at all!
+# Or work your way through the modules listed under:
+#
+# /lib/modules/`uname -r`/kernel/drivers/watchdog/
+#
+# To see if they load, present /dev/watchdog, and are capable of
+# resetting the system on time-out.
+</code></pre></div></div>
+
+<p>使用modprobe命令依次尝试加载以下kernel module，看是否能正常加载（如果没有任何报错就是正常加载）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo modprobe iTCO_wdt
+sudo modprobe it87_wdt
+sudo modprobe it8712f_wdt
+sudo modprobe w83627hf_wdt
+sudo modprobe w83877f_wdt
+sudo modprobe w83977f_wdt
+</code></pre></div></div>
+
+<p>如果某个module加载成功了，则表示系统可能存在相应的硬件watchdog。</p>
+
+<p>可以运行以下两个命令检查硬件watchdog是否被启用：</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo dmesg | grep wdt</code></p>
+
+<p>如果有类似以下返回内容则表示watchdog硬件成功被启用:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[    7.292623] w83977f_wdt: driver v1.00
+[    7.293821] w83977f_wdt: initialized. timeout=45 sec (nowayout=0 testmode=0)
+[    7.392506] w83977f_wdt: activated
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sudo lsmod | grep wdt</code></p>
+
+<p>如果有类似以下返回内容则表示watchdog硬件成功被启用:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>w83977f_wdt            12288  1
+</code></pre></div></div>
+
+<h2 id="2-启用硬件watchdog">2. 启用硬件watchdog</h2>
+
+<p>修改<code class="language-plaintext highlighter-rouge">/usr/lib/modprobe.d</code>目录下的linux内核blacklist文件(比如<code class="language-plaintext highlighter-rouge">/blacklist_linux-hwe-6.8_6.8.0-52-generic.conf</code>），将watchdog相应的module移除（即取消禁用）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blacklist w83627hf_wdt
+blacklist w83877f_wdt
+blacklist w83977f_wdt # remove this line in my case
+blacklist wafer5823wdt
+</code></pre></div></div>
+
+<h2 id="3-安装watchdog服务">3. 安装watchdog服务</h2>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt-get install watchdog</code></p>
+
+<p>检查watchdog设备文件正常被watchdog自动生成：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /dev/watchdog*
+
+crw------- 1 root root 10, 130 Oct 10 10:05 /dev/watchdog
+</code></pre></div></div>
+
+<h2 id="4-配置watchdog服务">4. 配置watchdog服务</h2>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vi /etc/watchdog.conf</code></p>
+
+<p>Uncomment the following lines by removing the <code class="language-plaintext highlighter-rouge">#</code> from beginning of the line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watchdog_device: /dev/watchdog
+interval: 10
+</code></pre></div></div>
+
+<p>Set the realtime option to yes and priority to 1:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>realtime = yes
+priority = 1
+</code></pre></div></div>
+
+<p>Save and close the file.</p>
+
+<p>Modify the <code class="language-plaintext highlighter-rouge">/etc/default/watchdog</code> file and set the <code class="language-plaintext highlighter-rouge">watchdog_module</code> to <code class="language-plaintext highlighter-rouge">w83977f_wdt</code> (in my case):</p>
+
+<p><code class="language-plaintext highlighter-rouge">watchdog_module="w83977f_wdt"</code></p>
+
+<h1 id="5-配置wd_keepalive服务">5. 配置wd_keepalive服务</h1>
+
+<p>使用wd_keepalive服务代替watchdog服务，可能是因为wd_keepalive服务功能更全面。以下步骤参考自<a href="https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/">此文章</a>：</p>
+
+<p>You will use the wd_keepalive service to monitor the watchdog device, therefore the watchdog daemon required to be stopped and disabled on startup.</p>
+
+<p>Make sure the watchdog service is not running :</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl status watchdog.service</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ● watchdog.service - watchdog daemon
+
+       Loaded: loaded (/lib/systemd/system/watchdog.service; enabled; vendor preset: enabled)
+
+       Active: inactive (dead)
+</code></pre></div></div>
+
+<p>Make sure the watchdog service is running then stop it:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl stop watchdog.service</code></p>
+
+<p>check again and Make sure the watchdog service is not running :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>● watchdog.service - watchdog daemon
+
+       Loaded: loaded (/lib/systemd/system/watchdog.service; enabled; vendor preset: enabled)
+
+       Active: inactive (dead)
+</code></pre></div></div>
+
+<p>Disable the watchdog service on boot:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl disable watchdog.service</code></p>
+
+<p>Edit the Systemd configuration file <code class="language-plaintext highlighter-rouge">/lib/systemd/system/wd_keepalive.service</code> and add the following lines under the <code class="language-plaintext highlighter-rouge">[Install]</code> section.</p>
+
+<p>Just paste it in the end if there isn’t any <code class="language-plaintext highlighter-rouge">[Install]</code> section on your file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+
+<h2 id="6-设置wd_keepalive服务自启动">6. 设置wd_keepalive服务自启动</h2>
+
+<p>Reload systemd manager configuration:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl daemon-reload</code></p>
+
+<p>Start the wd_keepalive service:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl start wd_keepalive</code></p>
+
+<p>Enable the service to start at system boot:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl enable wd_keepalive</code></p>
+
+<p>Check the status of the wd_keepalive service:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl status wd_keepalive</code></p>
+
+<p>Reboot the system and confirm again that the wd_keepalive service is started on system boot:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl status wd_keepalive</code></p>
+
+<p>Check the watchdog module is up and working by running <code class="language-plaintext highlighter-rouge">dmesg | grep w83977f_wdt</code> (in my case)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo dmesg | grep w83977f_wdt
+
+[    7.292623] w83977f_wdt: driver v1.00
+[    7.293821] w83977f_wdt: initialized. timeout=45 sec (nowayout=0 testmode=0)
+[    7.392506] w83977f_wdt: activated
+</code></pre></div></div>
+
+<h2 id="7-测试watchdog是否正常工作">7. 测试watchdog是否正常工作</h2>
+
+<p>To test the watchdog service is configured properly and works as expected, you can trigger a system crash to check if the instance get rebooted.</p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">su</code>命令切换到root身份运行以下命令来触发一次system crash by a NULL pointer dereference：</p>
+
+<p><code class="language-plaintext highlighter-rouge">echo c &gt; /proc/sysrq-trigger</code></p>
+
+<p>Your system should automatically reboot in about a minute.</p>
+
+<p>至此如果系统1分钟后自动重启，则说明硬件watchdog配置完成并且正常工作。</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+  <li><a href="https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/">https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/</a></li>
+  <li><a href="https://unix.stackexchange.com/questions/714910/what-is-a-good-way-to-test-watchdog-script-or-command-to-deliberately-overload">https://unix.stackexchange.com/questions/714910/what-is-a-good-way-to-test-watchdog-script-or-command-to-deliberately-overload</a></li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="watchdog" /><category term="ubuntu" /><summary type="html"><![CDATA[我的一台GK41迷你主机因为系统的某种故障，会不定期死机，于是我尝试启用watchdog来实时检测系统状态，如果系统发生死机，则watchdog会自动将系统重启,保证系统的可用性。以下是我根据网上文章结合自己的机器整理的在Ubuntu系统下启用硬件watchdog的教程。]]></summary></entry><entry><title type="html">How to install Chinese input method on Steam Deck</title><link href="https://goooooouwa.github.io/computer/2025/11/27/steam-deck-install-chinese-input.html" rel="alternate" type="text/html" title="How to install Chinese input method on Steam Deck" /><published>2025-11-27T00:00:00+00:00</published><updated>2025-11-27T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/11/27/steam-deck-install-chinese-input</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/11/27/steam-deck-install-chinese-input.html"><![CDATA[<ol>
+  <li>Install Fcitx 5 flatpak version</li>
+  <li>Install Chinese Addons flatpak version</li>
+  <li>Add Fcitx 5 to Auto Start on Boot in System Settings</li>
+  <li>Start Fcitx 5 -&gt; Configure -&gt; Add a Chinese input method (e.g.  双拼) -&gt; Confirm</li>
+  <li>Add the following to <code class="language-plaintext highlighter-rouge">/etc/environment</code>:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+</code></pre></div></div>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="steam-deck" /><summary type="html"><![CDATA[Install Fcitx 5 flatpak version Install Chinese Addons flatpak version Add Fcitx 5 to Auto Start on Boot in System Settings Start Fcitx 5 -&gt; Configure -&gt; Add a Chinese input method (e.g. 双拼) -&gt; Confirm Add the following to /etc/environment:]]></summary></entry><entry><title type="html">俯仰视角下的透视</title><link href="https://goooooouwa.github.io/drawing/2025/10/21/view-angle-s-effect-on-perspective.html" rel="alternate" type="text/html" title="俯仰视角下的透视" /><published>2025-10-21T00:00:00+00:00</published><updated>2025-10-21T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/21/view-angle-s-effect-on-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/21/view-angle-s-effect-on-perspective.html"><![CDATA[<h3 id="调整俯仰角度对画面透视产生的影响">调整俯仰角度对画面透视产生的影响</h3>
+
+<p><img src="/assets/images/change-view-height-vs-view-angle-continued.png" alt="change-view-height-vs-view-angle-continued.png" /></p>
+
+<p>对比初始视角画面（图一）与俯视画面（图二）可以得出，当视线角度发生变化后，画面中的同一个物体最多只会有一条边可以在画面中保持大小位置不变，其他部位的大小和位置都会发生变化。</p>
+
+<p>比如在下图中，右下角的画面从水平视角画面（图一）变为俯视画面（图二）后，即使蓝色建筑物在画面的水平方向高度保持不变，该建筑物的其他部位的大小和位置依然会发生变化（比如该建筑物的宽度变窄了，其侧边线条的角度也会发生变化）。整个画面中的其他部分都展现出了同样的变化。</p>
+
+<p><img src="/assets/images/2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png" alt="2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png" /></p>
+
+<h3 id="仰视角度与俯仰角度对画面透视产生的影响">仰视角度与俯仰角度对画面透视产生的影响</h3>
+
+<p><img src="/assets/images/changing view angle.png" alt="changing view angle.png" /></p>
+
+<p>对比初始视角画面（图三）与俯视画面（图二）可以得出，无论视线角度怎么改变，低于视平线（即视高）的物体其顶部（在不被其他物体遮挡的情况下）永远都是可见的，反过来高于视平线（或视高）的物体其底部同样也是永远可见的。</p>
+
+<p>比如在下图中，观察者的视高高于篮球员的右脚，由此可知，无论观察者以多少角度仰视或者俯仰该篮球员，观察者永远都只能看到篮球员右脚的顶部，不可能看到其脚底（除非将视高降到右脚以下）。</p>
+
+<p><img src="/assets/images/view-angle-view-height.png" alt="view-angle-view-height" /></p>
+
+<p>下图中的比萨斜塔也是如此，观察者可以看到塔底低于视平线部分的“顶部”，但是看不塔顶的顶部（因为塔顶高于视平线）。</p>
+
+<p><img src="/assets/images/pisa.jpg" alt="pisa.jpg" /></p>
+
+<p>漫画中看到的一个从低处仰视的例子（人物的脚处在视平线附近，大概因为小腿斜向镜头外侧的原因看不到鞋底）：</p>
+
+<p><img src="/assets/images/look upward from low view height.PNG" alt="look upward from low view height.PNG" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[调整俯仰角度对画面透视产生的影响]]></summary></entry><entry><title type="html">对一些大角度透视画面的研究</title><link href="https://goooooouwa.github.io/drawing/2025/10/19/perspective-analysis-on-extreme-cases.html" rel="alternate" type="text/html" title="对一些大角度透视画面的研究" /><published>2025-10-19T00:00:00+00:00</published><updated>2025-10-19T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/19/perspective-analysis-on-extreme-cases</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/19/perspective-analysis-on-extreme-cases.html"><![CDATA[<h3 id="当物体处在两个消失点同一侧时的透视效果">当物体处在两个消失点同一侧时的透视效果</h3>
+
+<p>下图展示了当物体处在两个消失点同一侧时的透视效果（此时地平线在垂直方向）。</p>
+
+<p><img src="/assets/images/eede887cec994cdaa824e182f4705c52.jpg" alt="eede887cec994cdaa824e182f4705c52.jpg" /></p>
+
+<p>右图为将画面旋转90度后得到的地平线在水平方向的透视，画面中展示了当观察者仰视（即地平线低于视平线）时，处于地平线下方的物体的透视效果。</p>
+
+<p><img src="/assets/images/looking upwards.jpg" alt="looking upwards.jpg" /></p>
+
+<h3 id="与画面存在非垂直角度的线条其画面角度会随着与观察者距离的变化而改变">与画面存在非垂直角度的线条，其画面角度会随着与观察者距离的变化而改变</h3>
+
+<p>与画面存在非垂直角度的线条，距离观察者越远时角度越接近垂直于地面（因为当物体越接近消失点时，纵深线透视缩短的程度比垂直方向缩短得更多）；距离观察者越近时角度越接近平行于地面（因为当物体越接近观察者时，纵深线透视加长的程度比垂直方向加长得更多）。</p>
+
+<p><img src="/assets/images/line-angle-changes.png" alt="line-angle-changes.png" /></p>
+
+<h3 id="人眼的水平视角">人眼的水平视角</h3>
+
+<p>人单眼的水平视角最大可达156度，双眼的水平视角最大可达188度。人两眼重合视域为124度，单眼<strong>舒适视域</strong>为60度，集中注意力时约为25度。</p>
+
+<p><img src="/assets/images/human-eye-angle.jpg" alt="human-eye-angle.jpg" /></p>
+
+<p>本文提到的这些非典型透视画面（比如，仰视时低于地平线的物体，正方体斜向上45度对角线在画面中趋于水平方向）通常都是出现在60度（甚至90度）视锥以外，平时不易被人眼注意到，这也是为什么这些透视情况如此难以凭直觉想象出来。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[当物体处在两个消失点同一侧时的透视效果]]></summary></entry><entry><title type="html">笔记：现实中的透视</title><link href="https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world.html" rel="alternate" type="text/html" title="笔记：现实中的透视" /><published>2025-10-16T00:00:00+00:00</published><updated>2025-10-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#creating-the-perspective-view" id="markdown-toc-creating-the-perspective-view">Creating the perspective view</a>    <ul>
+      <li><a href="#four-perspective-facts" id="markdown-toc-four-perspective-facts">Four perspective facts</a></li>
+      <li><a href="#the-perspective-image" id="markdown-toc-the-perspective-image">The Perspective Image</a></li>
+    </ul>
+  </li>
+  <li><a href="#图像平面视点和视线方向image-plane-viewpoint--direction-of-view" id="markdown-toc-图像平面视点和视线方向image-plane-viewpoint--direction-of-view">图像平面、视点和视线方向（image plane, viewpoint &amp; direction of view）</a>    <ul>
+      <li><a href="#调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view" id="markdown-toc-调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view">调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）</a></li>
+      <li><a href="#地平线和视点的关系horizon-line-and-viewpoint" id="markdown-toc-地平线和视点的关系horizon-line-and-viewpoint">地平线和视点的关系（Horizon Line and Viewpoint）</a></li>
+    </ul>
+  </li>
+  <li><a href="#透视形变perspective-distortions" id="markdown-toc-透视形变perspective-distortions">透视形变（perspective distortions）</a>    <ul>
+      <li><a href="#透视缩短形变foreshortening-distortions" id="markdown-toc-透视缩短形变foreshortening-distortions">透视缩短形变（Foreshortening Distortions）</a></li>
+      <li><a href="#修正透视形变cures-for-perspective-distortions" id="markdown-toc-修正透视形变cures-for-perspective-distortions">“修正”透视形变（Cures for Perspective Distortions）</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>原文地址：<a href="https://handprint.com/HP/WCL/perspect1.html">https://handprint.com/HP/WCL/perspect1.html</a></p>
+
+<p>系列笔记：</p>
+
+<ol>
+  <li><a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">笔记：现实中的透视</a></li>
+  <li><a href="/drawing/2024/09/13/notes-on-central-perspective.html">笔记：一点透视</a></li>
+  <li><a href="/drawing/2025/09/26/notes-on-2-point-perspective.html">笔记：两点透视</a></li>
+  <li><a href="/drawing/2025/09/28/notes-on-advanced-perspective.html">笔记：高级透视技巧</a></li>
+</ol>
+
+<h2 id="creating-the-perspective-view">Creating the perspective view</h2>
+
+<h3 id="four-perspective-facts">Four perspective facts</h3>
+
+<p><img src="/assets/images/4facts.gif" alt="4facts.gif" /></p>
+
+<ol>
+  <li>Light travels in a straight line between any two points in space.</li>
+  <li>An image is formed by light passing through a single point. This is the viewpoint.</li>
+  <li>Visual rays through the viewpoint define a visual cone centered on a direction of view.</li>
+  <li>Every image is a cross section through a visual cone.</li>
+</ol>
+
+<p><img src="/assets/images/fact3.gif" alt="fact3.gif" /></p>
+
+<p>The image is formed by making a slice through the visual cone at some point other than the viewpoint, either in front of or behind it. This slice cuts across all the visual rays, so that we only see visual rays “end on” within the visual cone. As a result, all visual rays appear as points on an image plane.</p>
+
+<h3 id="the-perspective-image">The Perspective Image</h3>
+
+<p><img src="/assets/images/The Perspective Image.png" alt="The Perspective Image.png" /></p>
+
+<h2 id="图像平面视点和视线方向image-plane-viewpoint--direction-of-view">图像平面、视点和视线方向（image plane, viewpoint &amp; direction of view）</h2>
+
+<h3 id="调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view">调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）</h3>
+
+<p>假设画面中有一个出现在观察者正前方的物体，当我们在水平方向将direction of view从正前方移向其他方向时，物体在画面中所呈现的图形随即从一点透视变为两点透视。</p>
+
+<p><img src="/assets/images/effect of changing only the direction of view.jpg" alt="effect of changing only the direction of view.jpg" /></p>
+
+<h3 id="地平线和视点的关系horizon-line-and-viewpoint">地平线和视点的关系（Horizon Line and Viewpoint）</h3>
+
+<p>An important and useful fact of linear perspective is that objects at the same height above the ground plane as the viewpoint are intersected in the image plane by the horizon line.</p>
+
+<p><img src="/assets/images/horizon line and viewpoint in landscape perspective.PNG" alt="horizon line and viewpoint in landscape perspective.PNG" /></p>
+
+<h2 id="透视形变perspective-distortions">透视形变（perspective distortions）</h2>
+
+<h3 id="透视缩短形变foreshortening-distortions">透视缩短形变（Foreshortening Distortions）</h3>
+
+<p><img src="/assets/images/foreshortening and the triangular proportions.png" alt="foreshortening and the triangular proportions.png" /></p>
+
+<p><strong>平移产生的透视缩短</strong></p>
+
+<p>In <strong>shift foreshortening</strong>, a two dimensional surface is shifted away from the direction of view (the principal point) but remains parallel to the image plane; the actual surface <em>always</em> appears foreshortened because it is at an oblique angle to the viewpoint.</p>
+
+<p><strong>旋转产生的透视缩短</strong></p>
+
+<p>In <strong>rotation foreshortening</strong>, the surface is rotated so that it is no longer parallel to the image plane; the actual surface may or may not appear foreshortened, depending on whether it is at an oblique or perpendicular angle to the viewpoint.</p>
+
+<p>These different types of foreshortening have different perspective effects.</p>
+
+<p><img src="/assets/images/perspective image of flat forms.png" alt="perspective image of flat forms.png" /></p>
+
+<p><strong>shift foreshortening has no effect on the perspective image of a two dimensional surface parallel to the image plane</strong></p>
+
+<p>在空间中与画面平行的平面图形在保持与画面距离不变的情况下进行任意平移所导致的透视缩短并不改变该图形在画面中的形状和尺寸。换句话说，对于一个空间中的与画面平行的平面图形，将其在其所在的平面上任意挪动，该平面出现在画面中的大小将保持不变，哪怕超出了90度视锥。</p>
+
+<p>The figure above shows the correct perspective projection of an identical row of windows (center). In the top row, the windows are kept parallel to the image plane but become increasingly oblique to the direction of view (<em>shift foreshortening</em>); in the bottom row, the windows are rotated in place to remain perpendicular to the viewpoint, which puts them at an oblique angle to the image plane (<em>rotation foreshortening</em>).</p>
+
+<p>Surprisingly, even though it produces a foreshortened view of the actual two dimensional object, <strong>shift foreshortening has no effect on a perspective image</strong>. A window shifted 45° to one side is exactly the same size <em>on the image plane</em> as a window centered on the direction of view. This occurs because, at the location of the perspective image of the window, <strong>the image plane is also foreshortened</strong> by the same oblique angle of view, and this “secondary” foreshortening matches the foreshortening seen in the surface.</p>
+
+<p>这是因为观察者在观看画面时，画面本身在进入观察者眼里时同样会产生透视缩短，而画面中的图形与观察者眼睛之间的视角倾斜程度（oblique angle of view）刚好使该图形在进入观察者眼睛后投影出正确的透视图形。</p>
+
+<p>In contrast, <strong>rotation foreshortening <em>always alters</em> the perspective image</strong>. The image becomes “distorted” in the direction <em>perpendicular to the axis of rotation,</em> regardless of whether the object is central or peripheral in the circle of view and even when the rotation eliminates any foreshortening in the actual object! Remember: rotation foreshortening is still a completely correct perspective view of the rotated object, when viewed from the center of projection; it just <em>looks wrong</em> when we view the image from farther away.</p>
+
+<p>The objectionable perspective distortions occur in the oblique view of a three dimensional object that has only been shift foreshortened on the image plane. In these cases, what “rotates” is not the plane surface of a two dimensional object but our view of a plane cross section through its three dimensional form.</p>
+
+<p>将一个三维物体（而不是二维的平面图形）的斜视图在图像平面上仅进行“平移缩短”处理时，会出现令人不适的透视形变。在这种情况下，发生“旋转”的不是二维物体的平面表面，而是三维形体中的某个平面截面。</p>
+
+<p><img src="/assets/images/perspective image of rounded forms.png" alt="perspective image of rounded forms.png" /></p>
+
+<p>From <a href="https://en.wikipedia.org/wiki/Perspective_distortion">Wikipedia</a>:</p>
+
+<p><img src="/assets/images/Camera_focal_length_distance_house_animation.gif" alt="Camera_focal_length_distance_house_animation.gif" /></p>
+
+<p>Simulation showing how adjusting the angle of view of a camera, while varying the camera’s distance and keeping the object in frame, results in vastly differing images. At narrow angles and long distances, light rays are nearly parallel, resulting in a “flattened” image. At wide angles and short distances, objects appear foreshortened or distorted.</p>
+
+<h3 id="修正透视形变cures-for-perspective-distortions">“修正”透视形变（Cures for Perspective Distortions）</h3>
+
+<p>古典壁画会尽量将画面保持在60度视锥之内，以避免出现明显的透视形变，影响画面美感。如果画中出现了一定程度的透视形变，画家便会人为的”修正”这些形变。比如在拉斐尔的壁画中，他将画面中的每个人物都以人物自身为视觉中心来按照一点透视进行绘制，脱离了背景的透视形变；他还将右下角本来因为透视形变会变成椭圆形的球体画成了标准的圆形；此外，他会巧妙地中画面中合适的地方安排人物，以遮挡背景中的建筑上可能出现透视形变的部分（比如画面中心的走廊被正前方的两位人物遮住；左右两根立柱的顶部被现实中的圆顶挡住；地面的瓷砖被各种人物遮挡）。</p>
+
+<p><img src="/assets/images/IMG_0098.jpeg" alt="IMG_0098.jpeg" /></p>
+
+<p>All figures are drawn as if centered on the direction of view — that is, with no perspective distortion. This is easiest to see in the two astronomers shown holding celestial globes (at right). Both figures are located at the righthand edge of the fresco, beyond the 30° circle of view. Rather than draw the spheres with the correct but elliptical perspective projections, Raphael simply drew them perfectly round.</p>
+
+<p><img src="/assets/images/IMG_0095.jpeg" alt="IMG_0095.jpeg" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /></entry><entry><title type="html">一点透视中物体大小和物距之间关系</title><link href="https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective.html" rel="alternate" type="text/html" title="一点透视中物体大小和物距之间关系" /><published>2025-10-16T00:00:00+00:00</published><updated>2025-10-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective.html"><![CDATA[<h3 id="距离和物体大小关系的核心几何原理">距离和物体大小关系的核心几何原理</h3>
+
+<p>两个等角三角形的三条边之间的比例是相等的，即边a/边A = 边b/边B = 边c/边C。</p>
+
+<p><img src="/assets/images/angle-of-view.jpg" alt="angle of view" /></p>
+
+<h3 id="当物体处于画面后方更远处时">当物体处于画面后方更远处时</h3>
+
+<p>根据这一公式可以推算出：</p>
+
+<ul>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者1倍视锥半径距离（即物体距离画面0距离）时，其视觉高度为视锥半径的1倍（因为此时该物体的底部处于地面与画面的相交线上，而其顶部位于视平线上，因此其高度在画面中等于视锥半径）；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者2倍视锥半径距离（即物体距离画面1倍距离）时，其视觉高度为视锥半径的1/2；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者3倍视锥半径距离（即物体距离画面2倍距离）时，其视觉高度为视锥半径的1/3；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者4倍视锥半径距离（即物体距离画面3倍距离）时，其视觉高度为视锥半径的1/4；</li>
+</ul>
+
+<p>由此可以得出，当一个高度为视锥半径1倍的物体站在距离观察者n倍 视锥半径距离（即物体距离画面n - 1倍距离) 时，其视觉高度为视锥半径的1 / n。</p>
+
+<h3 id="当物体处于画面跟观察者之间时">当物体处于画面跟观察者之间时</h3>
+
+<p>反过来，也可以推算出：</p>
+
+<ul>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.5倍视锥半径距离（即物体距离画面-0.5倍距离，即距1.6米高的观察者80厘米）时，其视觉高度为视锥半径的2倍；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.25倍 (即0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.75倍距离，即距1.6米高的观察者40厘米）时，其视觉高度为视锥半径的4倍 (即2 * 2)；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.125倍 (即0.5 * 0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.875倍距离，即距1.6米高的观察者20厘米）时，其视觉高度为视锥半径的8倍 (即2 * 2 * 2)；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.0625倍 (即0.5 * 0.5 * 0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.9375倍距离，即距1.6米高的观察者10厘米）时，其视觉高度为视锥半径的16倍 (即2 * 2 * 2 * 2)；</li>
+</ul>
+
+<p>由此可以得出，当一个高度为视锥半径1倍的物体站在距离观察者0.5^n倍 (即n个0.5相乘) 的视锥半径距离（即物体距离画面1 - 0.5^n倍距离）时，其视觉高度为视锥半径的2^n倍 (即n个2相乘)。</p>
+
+<p><img src="/assets/images/relation-between-object-distance-and-its-image-size.png" alt="relation-between-object-distance-and-its-image-size.png" /></p>
+
+<h3 id="物体离画面距离占画面比例画面尺寸速查表">物体离画面距离、占画面比例、画面尺寸速查表：</h3>
+
+<p><img src="/assets/images/object-distance-visual-angle-image-scale.png" alt="object-distance-visual-angle-image-scale.png" /></p>
+
+<h3 id="练习">练习</h3>
+
+<p>地面上的正方形边长为视锥半径长度的0.5倍，距离画面的距离分别为视锥半径的1倍、0、-0.5倍。</p>
+
+<p>可以发现，超出90度视锥后的正方形形变很厉害（60度视锥半径是半径的0.58倍，所以蓝色正方形的大部分区域和黄色正方形已经处在60度视锥以外了，可以看到它们也有不同程度的透视扭曲distortion）。</p>
+
+<p><img src="/assets/images/object-distance-exercise.png" alt="object-distance-exercise.png" /></p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[距离和物体大小关系的核心几何原理]]></summary></entry><entry><title type="html">如何根据画面判断透视类型以及视距、视高和俯仰角度</title><link href="https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html" rel="alternate" type="text/html" title="如何根据画面判断透视类型以及视距、视高和俯仰角度" /><published>2025-10-15T00:00:00+00:00</published><updated>2025-10-15T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/15/determine-view-distance-view-height-and-view-angle.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#基本概念" id="markdown-toc-基本概念">基本概念</a>    <ul>
+      <li><a href="#画的本质" id="markdown-toc-画的本质">画的本质</a></li>
+      <li><a href="#共同的前提和假设" id="markdown-toc-共同的前提和假设">共同的前提和假设</a></li>
+      <li><a href="#视觉角度view-angle" id="markdown-toc-视觉角度view-angle">视觉角度（view angle)</a></li>
+      <li><a href="#视距" id="markdown-toc-视距">视距</a></li>
+      <li><a href="#视高" id="markdown-toc-视高">视高</a></li>
+      <li><a href="#俯仰角度" id="markdown-toc-俯仰角度">俯仰角度</a></li>
+      <li><a href="#对比调整视高与调整俯仰角度对画面透视产生的影响" id="markdown-toc-对比调整视高与调整俯仰角度对画面透视产生的影响">对比调整视高与调整俯仰角度对画面透视产生的影响</a></li>
+    </ul>
+  </li>
+  <li><a href="#确定画面的关键透视点" id="markdown-toc-确定画面的关键透视点">确定画面的关键透视点</a>    <ul>
+      <li><a href="#一点透视如何根据画面内容确定关键透视点中央消失点和视距等" id="markdown-toc-一点透视如何根据画面内容确定关键透视点中央消失点和视距等">一点透视：如何根据画面内容确定关键透视点（中央消失点和视距等）</a></li>
+      <li><a href="#两点透视如何根据画面内容确定关键透视点消失点和direction-of-view等" id="markdown-toc-两点透视如何根据画面内容确定关键透视点消失点和direction-of-view等">两点透视：如何根据画面内容确定关键透视点（消失点和direction of view等）</a>        <ul>
+          <li><a href="#如何确定median-line" id="markdown-toc-如何确定median-line">如何确定median line</a></li>
+        </ul>
+      </li>
+      <li><a href="#实战演练" id="markdown-toc-实战演练">实战演练</a></li>
+    </ul>
+  </li>
+  <li><a href="#如何根据关键透视点判断镜头的视距视高和俯仰角度" id="markdown-toc-如何根据关键透视点判断镜头的视距视高和俯仰角度">如何根据关键透视点判断镜头的视距、视高和俯仰角度</a>    <ul>
+      <li><a href="#已知视距物体画面大小和实际大小确定物体求观察者的实际距离" id="markdown-toc-已知视距物体画面大小和实际大小确定物体求观察者的实际距离">已知视距、物体画面大小和实际大小确定物体，求观察者的实际距离</a></li>
+      <li><a href="#已知物体画面大小和实际大小求视距" id="markdown-toc-已知物体画面大小和实际大小求视距">已知物体画面大小和实际大小，求视距</a></li>
+      <li><a href="#已知物体实际大小和视距求其在画面中的位置和大小" id="markdown-toc-已知物体实际大小和视距求其在画面中的位置和大小">已知物体实际大小和视距，求其在画面中的位置和大小</a></li>
+    </ul>
+  </li>
+  <li><a href="#参考资料" id="markdown-toc-参考资料">参考资料</a></li>
+</ul>
+
+<p><a href="/tag/perspective">透视系列笔记</a></p>
+
+<h2 id="基本概念">基本概念</h2>
+
+<h3 id="画的本质">画的本质</h3>
+
+<p>一幅画的本质是一种视错觉，它试图模仿的是当一位观察者站在特定的视高和视距下，视线垂直于图像平面时，透过图像所在的画框（这个透明的窗户）所看到的三维空间的样子（参考<a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">The Perspective Image</a>）。</p>
+
+<h3 id="共同的前提和假设">共同的前提和假设</h3>
+
+<p>每一副画作都有一些共同的前提和假设：</p>
+<ol>
+  <li>观察者眼睛所看到的90度视锥的半径等于观察者的视距（这是基本数学原理）；</li>
+  <li>观察者的视线永远是垂直于图像平面的。</li>
+</ol>
+
+<p>虽然画框这个透明的窗户本身可以有相对于地面的各种不同的俯仰角度，但观察者的视线永远是垂直于图像平面的，否则为了真正欣赏一副作品，观众就必须先找到作家设定的特定的观察角度，会很麻烦。</p>
+
+<h3 id="视觉角度view-angle">视觉角度（view angle)</h3>
+
+<p>人单眼的水平视角最大可达156度，双眼的水平视角最大可达188度。人两眼重合视域为124度，单眼<strong>舒适视域</strong>为60度，集中注意力时约为25度。</p>
+
+<p>为了避免画面出现明显的透视扭曲 (perspective distortion) ，图像画面通常会被安排在60度视锥之内。</p>
+
+<p>对于大于60度透视的情况，参考<a href="/drawing/2025/10/19/perspective-analysis-on-extreme-cases.html">对一些大角度透视画面的研究</a>。</p>
+
+<h3 id="视距">视距</h3>
+
+<p>作者可以通过选择不同的视距来控制90度视锥所能看到的三维空间的范围，更长的视距意味着观众通过同样尺寸的画框所能看到的三维空间更小，因为画面的视觉角度更窄。</p>
+
+<h3 id="视高">视高</h3>
+
+<p>根据透视的平移缩放规则可知，画面的视高是可以任意设定的，不用一定等于视距（比如当观察者趴在地上或者站在高楼上）。90度视锥假设视高等于视距只是为了方便根据90度视锥建立ground line以及定位翻折后的视点（viewpoint）。实际作画中可以任意选择视高和视距，只要画面不要超出60度视锥即可。</p>
+
+<p>作者可以为画面选择选择不同的视高，以营造出不同身高的观察者或者观察者视线处在不同水平高度（比如匍匐在地面或者站在楼顶）时透过画框所看到的三维空间的样子（参考<a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">地平线和视点的关系（Horizon Line and Viewpoint）</a>）。</p>
+
+<h3 id="俯仰角度">俯仰角度</h3>
+
+<p>如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。因此一个快速判断镜头是否相对于地面有俯仰角度的办法是，检查垂直于地面的物体（比如建筑物）是否出现透视现象（寻找消失点，即多条垂直于地面的线条之间的交点）。</p>
+
+<p>调整俯仰角度会在画面垂直方向新增一个消失点：</p>
+
+<p><img src="/assets/images/looking downward.PNG" alt="looking downward.PNG" /></p>
+
+<p>如果镜头相对地面存在俯仰角度，则可以通过测量地平线与视平线在dvp处的夹角来确定画面的<strong>俯仰角度</strong>（参考<a href="/drawing/2024/09/13/notes-on-central-perspective.html">倾斜面和坡斜面</a>一节）。</p>
+
+<h3 id="对比调整视高与调整俯仰角度对画面透视产生的影响">对比调整视高与调整俯仰角度对画面透视产生的影响</h3>
+
+<p><img src="/assets/images/change-view-height-vs-view-angle.png" alt="change-view-height-vs-view-angle.png" /></p>
+
+<p><strong>调整视高对画面透视产生的影响。</strong> 对比初始视角画面（图一）与低视高画面（图二）可以看出，在视线角度保持不变的情况下将视点进行任意的上下左右平移后，画面的透视特征将保持不变（包括center of view，视平线、地平线和消失点的位置等），画面中同一个物体的所有平行于画面的平面大小都将保持不变。（参考平移透视缩短）。</p>
+
+<p><strong>调整俯仰角度对画面透视产生的影响。</strong> 对比初始视角画面（图一）与俯视画面（图三）可以看出，如果镜头相对地面产生俯仰角度，画面垂直方向便会新增一个消失点（天空中或者地底下），这时原本是一点透视的画面会变成垂直方向的两点透视，而两点透视的画面则会成为三点透视。</p>
+
+<p>更多关于俯仰角度对画面透视的影响，请参考<a href="/drawing/2025/10/21/view-angle-s-effect-on-perspective.html">俯仰视角下的透视</a>。</p>
+
+<h2 id="确定画面的关键透视点">确定画面的关键透视点</h2>
+
+<h3 id="一点透视如何根据画面内容确定关键透视点中央消失点和视距等">一点透视：如何根据画面内容确定关键透视点（中央消失点和视距等）</h3>
+
+<p><img src="/assets/images/1PP reconstruction of the center of projection.PNG" alt="1PP reconstruction of the center of projection.PNG" /></p>
+
+<ol>
+  <li>根据画面中的纵深线（orthogonals，即垂直于画面的线条）确定中央消失点；</li>
+  <li>根据中央消失点和画面中地面上的元素确定地平线（通常等于视平线）以及median line的位置；</li>
+  <li>根据画面中的对角线（diagonals，与median line之间夹角45度的线条，比如地面上平行于ground line的正方形瓷砖的对角线）确定dvp（对角线消失点）；</li>
+  <li>找到了dvp也就顺便确定了view distance（视距）；</li>
+  <li>有了view distance（视距）和中央消失点，便可以确定90度和60度视锥的大小。</li>
+</ol>
+
+<p>至此一点透视的关键点就都确定了下来。</p>
+
+<h3 id="两点透视如何根据画面内容确定关键透视点消失点和direction-of-view等">两点透视：如何根据画面内容确定关键透视点（消失点和direction of view等）</h3>
+
+<p><img src="/assets/images/2PP reconstruction of the center of projection.PNG" alt="2PP reconstruction of the center of projection.PNG" /></p>
+
+<ol>
+  <li>根据画面中的直角线条确定两个vanishing points；</li>
+  <li>将2个vanishing points连线即可得到视平线（通常等于视平线）；</li>
+  <li>根据画面中的纵深线（orthogonals，即垂直于画面的线条）找到direction of view并确定median line的位置；</li>
+  <li>在median line上找到一个点，它与两个vanishing points的连线正好是90度，而这个点便是向上翻折后的视点（folded viewpoint）；</li>
+  <li>找到了folded viewpoint也就顺便确定了view distance（视距）和principal point（观察者眼睛的位置）；</li>
+  <li>有了view distance（视距）和principal point，便可以确定90度和60度视锥的大小。</li>
+</ol>
+
+<p>至此两点透视的关键点就都确定了下来。</p>
+
+<h4 id="如何确定median-line">如何确定median line</h4>
+
+<p><strong>Median Line.</strong> This is parallel to the side edges of a rectangular image format, or perpendicular to the floor when the painting is correctly hung. <strong>The median line is nearly always through the center of the image format.</strong></p>
+
+<blockquote>
+  <p>Orthogonals, if visible, will point to the direction of view on the horizon line; if there are no orthogonals, then the median line of the format can be used to locate the dv.</p>
+
+  <p>(if there are no orthogonals) The median line and direction of view (dv) are arbitrarily located on the midline of the painting.</p>
+</blockquote>
+
+<p><strong>如果可以在画面中找到纵深线（orthogonals，即垂直于画面的线条），则可以根据纵深线与地平线的交点确定direction of view，进而确定median line的位置</strong>；如果画面中没有明显的垂直于画面的线条（即纵深线，Orthogonals），则可以将垂直平分画面的竖线作为median line，因为median line几乎总是穿过画面中心的（画家通常都会将center of view设置于画面的垂直中心线上，因为观察者在欣赏画作时会很自然地站在画面的正前方）。</p>
+
+<h3 id="实战演练">实战演练</h3>
+
+<p><img src="/assets/images/perspective analysis.jpg" alt="perspective analysis.jpg" /></p>
+
+<h2 id="如何根据关键透视点判断镜头的视距视高和俯仰角度">如何根据关键透视点判断镜头的视距、视高和俯仰角度</h2>
+
+<ol>
+  <li>先确定画面的关键关键点（消失点、地平线、center of view等）；</li>
+  <li>找到（一点透视的）dvp或者（两点透视的）folded viewpoint后便确定了<strong>视距</strong>；</li>
+  <li>画面中任何处于地平线上的物体（比如人的头部、树的枝干或者建筑物的墙壁），其距离地面的垂直距离等于观察者眼睛与地面的距离（即<strong>视高</strong>），然后可以根据<a href="/drawing/2024/09/13/notes-on-central-perspective.html">距离和大小</a>来推算出实际的视高；</li>
+  <li>检查垂直于地面的物体（比如建筑物）是否出现透视现象（即是否存在垂直方向的消失点），如果存在，则可以根据地平线与视平线在dvp处的夹角确定画面的<strong>俯仰角度</strong>（参考<a href="/drawing/2024/09/13/notes-on-central-perspective.html">倾斜面和坡斜面</a>一节）；</li>
+</ol>
+
+<h3 id="已知视距物体画面大小和实际大小确定物体求观察者的实际距离">已知视距、物体画面大小和实际大小确定物体，求观察者的实际距离</h3>
+
+<p><img src="/assets/images/reduction in Bierstadts Looking Up the Yosemite Valley.PNG" alt="reduction in Bierstadts Looking Up the Yosemite Valley.PNG" /></p>
+
+<p>如果已知观察者的视距（比如根据画幅的尺寸或者展览馆里作品的摆放来推测理想的欣赏距离，即为视距），且已知物体画面大小（直接在画面上测量）和物体的实际大小（根据现实生活中可以查到的物体数据），根据<a href="/drawing/2024/09/13/notes-on-central-perspective.html">距离和大小</a>，我们可以计算出物体在三维空间中与画家（或者说假象的观察者）的实际距离。</p>
+
+<h3 id="已知物体画面大小和实际大小求视距">已知物体画面大小和实际大小，求视距</h3>
+
+<p>例如，观察者站在一个身高为1.8米的人面前，沿水平方向直视对方，测量得知此人的头部在画面中的身高是18厘米，而90度视锥半径的测量长度是20厘米，求观察者与画面之间的距离（即视距）。</p>
+
+<ol>
+  <li>画一幅画面的草图，此时不用考虑透视问题（比如，视距，视高，视锥角度等）；</li>
+  <li>在画面外围画一个圆，将画面包围起来，以这个圆为60度视锥（也可以是25-60度之间的任意角度，这样可以保证画面内不会出现夸张的透视形变），在画面中心作一条垂直线作为median line；</li>
+  <li>在60度视锥外围画一个90度视锥（与60度视锥同心，半径是60度视锥的1.72倍，即1 / 0.58）；</li>
+  <li>根据90度视锥框架的几何属性可知，90度视锥的半径即等于视距；</li>
+  <li>在90度视锥下方画一条平行于地平线的水平线，即ground line（如果找不到地平线，也可以在90度视锥下方画一条水平线，因为它与ground line同样处在画面所在的平面中，所以可以作为一条与ground line等比例的参考线条）；</li>
+  <li>将画面中已知尺寸的物体根据透视规则移动到ground line上（并进行相应的缩放），测量出它在ground line上的实际尺寸，即可根据画面和物体大小比例关系计算出画面的视距长度（比如，已知一个人的头部高度是20厘米，将画面中此人的头部移动缩放到ground line后，假设测量出其头部的实际尺寸为10厘米，那么可知整幅画面相比与理论尺寸缩小了2倍，而假如测量出的视距大小为20厘米，那么画面的实际视距即为40厘米）；</li>
+  <li>至此，便可将任意其他物体的实际尺寸按照画面缩放倍数在ground line上画出同等长度的线段，然后根据透视规则，将其移动缩放到画面空间中的任意位置。</li>
+</ol>
+
+<h3 id="已知物体实际大小和视距求其在画面中的位置和大小">已知物体实际大小和视距，求其在画面中的位置和大小</h3>
+
+<p>例如，已知观察者坐在长度为1米的方形桌子前，以45度角俯视桌子，此时画面中可以看到整个桌子，观察者的视线（direction of view）正好穿过桌子表面的1/2处，要求画出当画面距离观察者视距为80厘米时，桌子在60度视锥中的画面的位置和大小。</p>
+
+<p>确定物体的上下轮廓在画面中出现的位置和大小：</p>
+
+<ol>
+  <li>根据画面要求推导出画面的侧视图（包括观察者的位置和视线方向）；</li>
+  <li>依次在侧视图中画出90度视锥（即两条被视线平分的夹角为90度的线）和60度视锥；</li>
+  <li>根据侧视图中物体的画面大小和实际大小得出画面的缩放比例（比如，在侧视图中测量得出桌子表面的长度是10厘米，而已知桌子的长度是1米，可知侧视图的缩放比例是1/10）；</li>
+  <li>根据视距和缩放比例可以得知侧视图中视距的画面大小，进而确定画面平面所在的位置（比如，已知视距为80厘米，缩放比例是1/10，那么侧视图中视距的画面长度即为8厘米，进而可以从观察者沿着视线方向画一条8厘米的线段，在线段的另一端画一条垂直于视线方向的线条，该线条于60度视锥的两个交点分别对应画面的上下边缘）；</li>
+  <li>在侧视图中将物体上的任意点与视点连接后，其与画面的交点即为该点在画面中的位置，可以据此确定物体的上下轮廓在画面中出现的位置（比如根据连线可以确定桌子表面上下边缘分别出现在画面中的位置）；</li>
+</ol>
+
+<p>确定物体的左右轮廓在画面中出现的位置和大小：</p>
+
+<ol>
+  <li>根据画面要求推导出画面的俯视图（包括观察者的位置和视线方向）；</li>
+  <li>依次在侧视图中画出90度视锥（即两条被视线平分的夹角为90度的线）和60度视锥；</li>
+  <li>根据同样的办法（即画面的缩放比例）确定视距在俯视图的画面大小，进而确定画面平面的位置；</li>
+  <li>在俯视图中将物体上的任意点与视点连接后，其与画面的交点即为该点在画面中的位置，可以据此确定物体的左右轮廓在画面中出现的位置（比如根据连线可以确定桌子表面左右边缘分别出现在画面中的位置）。</li>
+</ol>
+
+<h2 id="参考资料">参考资料</h2>
+
+<ul>
+  <li><a href="https://handprint.com/HP/WCL/perspect2.html">https://handprint.com/HP/WCL/perspect2.html</a></li>
+  <li><a href="https://handprint.com/HP/WCL/perspect3.html">https://handprint.com/HP/WCL/perspect3.html</a></li>
+</ul>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /></entry><entry><title type="html">笔记：高级透视技巧</title><link href="https://goooooouwa.github.io/drawing/2025/09/28/notes-on-advanced-perspective.html" rel="alternate" type="text/html" title="笔记：高级透视技巧" /><published>2025-09-28T00:00:00+00:00</published><updated>2025-09-28T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/09/28/notes-on-advanced-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/09/28/notes-on-advanced-perspective.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#复杂平面图形的透视画法" id="markdown-toc-复杂平面图形的透视画法">复杂平面图形的透视画法</a>    <ul>
+      <li><a href="#圆的透视画法projecting-a-circle" id="markdown-toc-圆的透视画法projecting-a-circle">圆的透视画法（Projecting A Circle）</a></li>
+      <li><a href="#椭圆的构造ellipse-construction" id="markdown-toc-椭圆的构造ellipse-construction">椭圆的构造（Ellipse Construction）</a>        <ul>
+          <li><a href="#如何画透视中的圆即找到椭圆的长轴和短轴" id="markdown-toc-如何画透视中的圆即找到椭圆的长轴和短轴">如何画透视中的圆（即找到椭圆的长轴和短轴）</a></li>
+        </ul>
+      </li>
+      <li><a href="#人体透视" id="markdown-toc-人体透视">人体透视</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>原文地址：<a href="https://handprint.com/HP/WCL/perspect5.html">https://handprint.com/HP/WCL/perspect5.html</a></p>
+
+<p>系列笔记：</p>
+
+<ol>
+  <li><a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">笔记：现实中的透视</a></li>
+  <li><a href="/drawing/2024/09/13/notes-on-central-perspective.html">笔记：一点透视</a></li>
+  <li><a href="/drawing/2025/09/26/notes-on-2-point-perspective.html">笔记：两点透视</a></li>
+  <li><a href="/drawing/2025/09/28/notes-on-advanced-perspective.html">笔记：高级透视技巧</a></li>
+</ol>
+
+<h2 id="复杂平面图形的透视画法">复杂平面图形的透视画法</h2>
+
+<h3 id="圆的透视画法projecting-a-circle">圆的透视画法（Projecting A Circle）</h3>
+
+<p><strong>不使用平面图来构造圆形的透视（Circle Without a Plan）</strong></p>
+
+<p><img src="/assets/images/projecting a circle without a plan.png" alt="projecting a circle without a plan.png" /></p>
+
+<p>构造步骤：</p>
+
+<ol>
+  <li>在画面中画出透视的正方形</li>
+  <li>在透视的正方形内逐步构造出图中的辅助线</li>
+  <li>根据辅助线构造出透视中的圆形</li>
+</ol>
+
+<p><strong>使用平面图来构造圆形的透视（Circle With a Plan）</strong></p>
+
+<p><img src="/assets/images/projecting a circle with a plan.png" alt="projecting a circle with a plan.png" /></p>
+
+<p>构造步骤：</p>
+
+<ol>
+  <li>在平面图中画出正方形和内嵌的圆形</li>
+  <li>逐步画出辅助线</li>
+  <li>将正方形和辅助线投射到画面中</li>
+  <li>根据辅助线构造出透视中的圆形</li>
+</ol>
+
+<h3 id="椭圆的构造ellipse-construction">椭圆的构造（Ellipse Construction）</h3>
+
+<p>每一个椭圆都可以通过它的高度和宽度来描述，这两个维度分别称为长轴（最长的方向）和短轴（与长轴垂直的方向）。由此可以得到两种简单的椭圆构造方法，以及一种估算圆在透视中缩短程度的计算方式。</p>
+
+<p><strong>根据固定的高度和宽度来构造椭圆的3种方法</strong></p>
+
+<p>在 <strong>第一种方法（A）</strong> 中，高度和宽度先定义一个矩形，然后用两条线将矩形等分为四个象限。接着，将矩形内部的一条水平线段（相当于椭圆的长轴）和矩形外部的一条垂直线段（长度等于椭圆的短轴）按同样的比例划分为相等的部分（这些点之间不必保持相等的间隔距离，只需这些点在两条线段上的比例相等即可，比如均为所在线段的4分之一长度）。然后，从中线上的两个点 a 和 b 分别向这些分点引线，如图所示。对应直线的交点定义了椭圆在一个象限中的点。最后，将这些关键点用徒手曲线或曲线板分段连接，并复制到其他三个象限中，即可得到完整椭圆。</p>
+
+<p><img src="/assets/images/ellipse-construction-method-a.png" alt="ellipse-construction-method-a.png" /></p>
+
+<p>另一种更高效的方法是<strong>游标法（Trammel Method，方法 B）</strong>。</p>
+
+<p>具体做法是：先确定椭圆的外接矩形，然后将长轴和短轴的长度转移到一条硬纸板或厚纸条上（保持长短轴的某一端对齐，见右图）。由于长轴和短轴长度不相等，在另一端会留下一个间隔（洋红色线所示）。将这两个端点分别与椭圆矩形的短轴和长轴对齐，此时便可以直接在纸条另一端的对齐点标记出椭圆的圆周所在的位置。此方法快速，但当长轴和短轴逐渐接近相等（即椭圆趋近圆形）时，精度会显著下降。</p>
+
+<p><img src="/assets/images/ellipse-construction-method-b.png" alt="ellipse-construction-method-b.png" /></p>
+
+<p><strong>第三种方法（C）</strong> 使用两个以点 a 为圆心的同心圆。</p>
+
+<p>先画出大圆和小圆，然后用两条互相垂直的直线将其四等分，这两条直线定义了椭圆的长轴和短轴。接着，从点 a 向外任意画若干条放射线，使它们分别交小圆和大圆，得到成对的交点。然后从这些交点分别作平行于椭圆的长轴或短轴的线段；这些线的交点便是该椭圆在这个象限内所在的点。此方法的优点在于：如果将“辐射线”以及水平、垂直辅助线延伸穿过整个大圆，就能标定出完整椭圆的全部圆周。</p>
+
+<p><img src="/assets/images/ellipse-construction-method-c.png" alt="ellipse-construction-method-c.png" /></p>
+
+<p>然而，这里出现了一个问题。从下面的圆形构造图可以看出，椭圆的中心并不与图像方形的中心（即方形对角线的交点）重合，因为透视缩短导致方形的后半部分看起来比前半部分略小。因此，表示椭圆中心的黑色十字并没有位于对角线交点，而是稍微偏下（靠前）的位置。</p>
+
+<p><img src="/assets/images/center of the ellipse is not coincident with the center of the image square.png" alt="center of the ellipse is not coincident with the center of the image square.png" /></p>
+
+<p>这与另一个视觉差异本质相同：球体的可见宽度（等于椭圆长轴在图像中的宽度）与球体直径的视觉角度（等于透视方形中横跨中心的宽度）之间的差异（见下图）。这个问题会在下面“球体投影”章节中进一步讨论。遗憾的是，<strong>除了在平面图中按比例绘制外，没有一种简单的方法能直接缩放椭圆的宽度</strong>，因为<strong>椭圆的长轴并不与正方形的中心横截线重合</strong>，而<strong>椭圆与正方形边框相切的点通常也不位于椭圆的长轴上</strong>。但在小于20°视角范围的透视圆中，这种误差极小，可以忽略不计（这里的视角范围不是指下文提到的椭圆自身的角度，而是椭圆在画面中的视觉角度，这与椭圆的大小以及其与画面距离有关，不是固定不变的；而下文提到的椭圆自身的角度对同一个椭圆而言是一个固定值，有相关的定义，不受观察距离影响）。</p>
+
+<p><img src="/assets/images/discrepancy between the visible circumference and angular diameter of a sphere.png" alt="discrepancy between the visible circumference and angular diameter of a sphere.png" /></p>
+
+<p>这也是为什么建筑师们通常习惯使用椭圆模板以及依赖于计算机绘图软件的一个主要原因。椭圆模板包含大量切割好的椭圆，每一个都比前一个略大，并且都按照一个标准视角比例缩放，适配到包含圆的平面。绘图者只需选择与所需长短轴比例最接近的模板角度，然后再挑选最符合图像大小的椭圆切口即可。</p>
+
+<p><img src="/assets/images/ellipse-template.PNG" alt="ellipse-template.PNG" /></p>
+
+<p>椭圆模板角度的定义是椭圆焦点到短轴顶点的连线与长轴之间的夹角。注意这里的角度虽然也是通常范围从 0°（一条平直的线）到 90°（一个完整的圆），但它与该椭圆在透视画面中的视觉角度（angle of view）是两个完全不同的概念。以下图蓝色的45°椭圆为例。首先，将一段长度与长轴相等的线段的一端与短轴顶点重合、另一端与长轴相交，根据椭圆焦点的公式（长轴^2 = 短轴^2 + 焦点到圆心距离^2）可知，相交得到的点即该椭圆的焦点。椭圆模板的角度指的就是这条线段与长轴之间的夹角。图中显示该椭圆长轴为30，短轴为21.5，根据椭圆公式可以求得焦点距圆心距离也等于21.5（这里是一个等边直角三角形），进而可以求得焦点与短轴的连线与长轴的夹角，即椭圆的角度为45度。</p>
+
+<p><img src="/assets/images/yJcOC.png" alt="yJcOC.png" /></p>
+
+<h4 id="如何画透视中的圆即找到椭圆的长轴和短轴">如何画透视中的圆（即找到椭圆的长轴和短轴）</h4>
+
+<p>在一个<a href="https://www.youtube.com/watch?v=LFMhE9nPrfU">proko视频</a>里学到一种简单的找到透视中圆形（即椭圆）的长轴和短轴方向的办法：</p>
+
+<ol>
+  <li>画一条垂直于圆所在平面的透视线条，该线条与椭圆的短轴平行；</li>
+  <li>在画面上画一条垂直于短轴的线条（注意，这里是画面上的垂直关系，直接用量角器和直尺即可确定），该线条与椭圆的长轴平行；</li>
+  <li>可以根据包含该圆形的正方形大致确定椭圆的圆心，以及长轴和短轴的长度（只是大概，不是精确，原因如上文所述）</li>
+</ol>
+
+<p><img src="/assets/images/69beb799ea0341e9ae58a88874c07015.png" alt="69beb799ea0341e9ae58a88874c07015.png" /></p>
+
+<p>评论里提供了一个对此方法的直观理解：</p>
+
+<blockquote>
+  <p>A good way to visualize the car wheels trick is to think of the left and right wheel as forming a cylinder bwtween them. And the reason the circle of the wheels is squished along that perpendicular axis is because the more you tilt the cylinder in perspective so you see it from the side, the more those top and bottom plane circles of the cylinder become squished into a line that’s perpendicular to the height of the cylinder.</p>
+</blockquote>
+
+<p><img src="/assets/images/1d8792d00950424dad8c688c32c3e63a.jpg" alt="1d8792d00950424dad8c688c32c3e63a.jpg" /></p>
+
+<h3 id="人体透视">人体透视</h3>
+
+<p>艺术家在透视绘画中遇到的最困难的问题，无疑是人体。但这也是最早被尝试解决的问题之一。一个复杂但精确的方法见于皮耶罗·德拉·弗朗切斯卡的《论绘画透视》（De Prospectiva pingendi，约 1474 年），而阿尔布雷希特·丢勒在《人体比例四书》（Vier Bücher von menschlicher Proportion，1528 年）中则提出了比较粗糙但高效的方法。16 世纪时，这个问题真正“火热”起来——因为大量天顶壁画里那些飞向天堂的圣徒与天使需要仔细分析人体的透视缩短（包括人的脚底）。到 17 世纪，这类研究已成为绘画学习的常规课程，追随丁托列托的创作风格。</p>
+
+<p>将人体进行透视的最简单的方法是：先通过写生或或临摹一张合适角度和姿态的照片。然后把这幅人物作画按比例缩放到所需大小，并描摹到画面上的指定位置即可。</p>
+
+<p><img src="/assets/images/perspective drawing using a viewing grid.PNG" alt="perspective drawing using a viewing grid.PNG" /></p>
+
+<p>使用观察网格进行透视绘制</p>
+
+<p>一种更严格更“较真”的方法是：将人体的三维点映射到透视空间里。传统上大体有三种方法：</p>
+
+<ol>
+  <li>截面投影法 (sectional projection)</li>
+  <li>体块投影法 (volumetric projection)</li>
+  <li>骨架投影法 (armature projection)</li>
+</ol>
+
+<p><strong>截面投影法 (sectional projection)</strong></p>
+
+<p>皮耶罗使用的就是截面投影法：他将人头划分为一系列平行的矢状面，然后像我们之前投射八边形平面那样，把每个截面的关键点投射出来。只不过这里的这些方格在垂直方向上的间距要与解剖学上各截面之间的实际距离相对应。这样就形成了一个由点构成的“笼子”，最后只需把这些点还原为面部特征，就能重建出整张脸。</p>
+
+<p><strong>体块投影法 (volumetric projection)</strong></p>
+
+<p>第二种方法是体块投影法：它先把人体分解成一系列相互连接的椭圆体、圆柱体、方盒子或棱锥，然后在透视中投射这些简单形体的主要棱角或轴线，接着再围绕它们重建人体。这种方法在巴洛克时期很流行，甚至一直延续到 20 世纪的人体绘画和透视教材中。我非常不喜欢这种方法，因为它彻底破坏了人体那种富有张力、关节灵活、又浑圆有力的特征。我认为，<strong>积极的人体写生绘画训练才是更好的方法，它能让人从不同角度真正理解身体的形态与重量感</strong>。</p>
+
+<p><strong>骨架投影法 (armature projection)</strong></p>
+
+<p>如果你已经具备了对人体的基本理解，那么骨架投影法就是一个非常高效的方式，可以在透视中把握人体比例。你真正需要的，只是一个在美术商店里随处可见的那种木制人体模型。</p>
+
+<p><img src="/assets/images/projecting the human figure from an art school mannekin.png" alt="projecting the human figure from an art school mannekin.png" /></p>
+
+<p>上图展示了这种方法的基本步骤：</p>
+
+<ol>
+  <li>先把木偶摆放成所需的姿势，然后把它放在玻璃桌面或投影架上。用天花板灯或尽可能高处的聚光灯，把木偶的影子投射到人物下方的一块硬质白卡纸上。利用影子作为参照，在卡纸上标记出主要关节的位置。</li>
+  <li>接着，在木偶的一侧、与木偶等高、并且与人体主轴成直角的地方，放置一盏聚光灯或台灯，距离要和天花板灯与木偶的距离相同。然后在木偶身后，支撑另一块硬质白卡纸，距离与先前下方卡纸相同。用同样的方法标记出关节的位置。</li>
+  <li>从这两张卡纸中选择其中关节间距更合理的一张卡纸作为主视面，把关节点要么描到方格纸上，要么直接使用卡纸进行测量：测量从每个点到卡纸的一条长边和一条短边的距离（作为X轴和Z轴的比例数据）。再从另一张卡纸上，取一组点到其长边的距离（作为Y轴的比例数据）。</li>
+  <li>接着，用前面介绍的方法把这些数据缩放、旋转并转移到一个比例尺上，然后投射到透视空间中（的X、Y、Z轴上去）。</li>
+  <li>最后再根据这些关节位置，通过手绘将透视后的身体形态描绘出来。</li>
+</ol>
+
+<p><img src="/assets/images/drawing-spider-using-armature-projection.PNG" alt="drawing-spider-using-armature-projection.PNG" /></p>
+
+<p>虽然我用木偶来解释这种方法，但如果能从同一距离拍摄一个姿势的两张互相垂直的照片，这个方法会更好用。测量可以直接在照片上进行，把每张照片看作是一块“投影卡”。在电脑上，用 Photoshop 之类的图像处理软件，你甚至可以先把照片变形、缩放，使之与预先绘制好的透视矩形框相吻合，然后直接在两张照片之间连线对应的特征点，而不必进行任何测量。</p>
+
+<p><strong>艺术家们现在完全可以用 Poser 这样的软件来生成任意姿势的男女“数字木偶”</strong>，无论是裸体还是着装，并以此为基础绘制作品。而且还有一系列 VirtualPose 光盘可以用二维旋转的方式呈现静态姿势。针对大型动物的类似软件，相信也很快会出现。</p>]]></content><author><name>徐顺发</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><category term="study-notes" /></entry></feed>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>《UNIX环境高级编程》学习笔记 | 开放笔记</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="《UNIX环境高级编程》学习笔记" />
+<meta name="author" content="徐顺发" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="《UNIX 环境高级编程》学习笔记" />
+<meta property="og:description" content="《UNIX 环境高级编程》学习笔记" />
+<link rel="canonical" href="https://goooooouwa.github.io/coding/2012/11/15/unix-huan-jing-gao-ji-bian-cheng-xue-xi-bi-ji.html" />
+<meta property="og:url" content="https://goooooouwa.github.io/coding/2012/11/15/unix-huan-jing-gao-ji-bian-cheng-xue-xi-bi-ji.html" />
+<meta property="og:site_name" content="开放笔记" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-11-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="《UNIX环境高级编程》学习笔记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"徐顺发"},"dateModified":"2012-11-15T00:00:00+00:00","datePublished":"2012-11-15T00:00:00+00:00","description":"《UNIX 环境高级编程》学习笔记","headline":"《UNIX环境高级编程》学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"https://goooooouwa.github.io/coding/2012/11/15/unix-huan-jing-gao-ji-bian-cheng-xue-xi-bi-ji.html"},"url":"https://goooooouwa.github.io/coding/2012/11/15/unix-huan-jing-gao-ji-bian-cheng-xue-xi-bi-ji.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://goooooouwa.github.io/feed.xml" title="开放笔记" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-669F0VG7BL"></script>
+<script>
+  window['ga-disable-G-669F0VG7BL'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-669F0VG7BL');
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="/assets/css/google-custom-search-style-fix.css">
+<script data-ad-client="ca-pub-6847741633817418" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src=/assets/javascript/chartjs-2.9.3/chart.min.js></script>
+<script src=/assets/javascript/mermaid-8.7.0/mermaid.min.js></script></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">开放笔记</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/categories.html">分类</a><a class="page-link" href="/tags.html">标签</a><a class="page-link" href="/wiki.html">Wiki</a><a class="page-link" href="/about/">关于作者</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">《UNIX环境高级编程》学习笔记</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2012-11-15T00:00:00+00:00" itemprop="datePublished">
+        Nov 15, 2012
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="unix-环境高级编程学习笔记">《UNIX 环境高级编程》学习笔记</h1>
+
+<p>Thread synchronization, deadlock avoidance( same locking order)</p>
+
+<p>Register, volatile, automatic variables( storage location). an automatic variable can never be referenced after the function that declares it returns.</p>
+
+<p>赋值传递，引用传递</p>
+
+<p>指针变量本身不一定存储在堆中。</p>
+
+<h2 id="a-basic-understanding-of-the-characteristics-of-atomic-operation">A basic understanding of the characteristics of atomic operation</h2>
+
+<p>Atomicity does not prevent an operation from failure( e.g. power lose), it only ensures that when it fails, it fails completely.</p>
+
+<p>Basically a system treats an atomic operation as failed by default from the beginning, and only accept it as successful until the last instruction is completed. If anything causes the operation failure( e.g. Power lose), the system will simply treat it as failed and will not attempt to recover it afterwards.</p>
+
+<p>So data lose caused by failure is inevitable, atomicity only means if it fails, if fails completely.</p>
+
+<p>Any state before the final state is treated as failure in an atomic operation.</p>
+
+<h2 id="the-difference-between-noblocking-io-and-asyncronous-io">The difference between Noblocking IO and Asyncronous IO</h2>
+
+<p>Noblocking IO is a machenism to allow the caller read or write a file which can return immediately.</p>
+
+<p>Asyncronous IO is to let the system notify the caller when the file is available.</p>
+
+<h2 id="unix-system-calls">Unix system calls</h2>
+
+<p>Unix system calls( write, create, etc) are wrappers of CPU instructions( MOV, ADD, CALL, etc).</p>
+
+<p>微机原理学的是 CPU 指令，与操作系统无关的。操作系统调用是对 CPU 指令的封装。而 C 库函数又是对系统调用的封装。</p>
+
+<h2 id="ipc">IPC</h2>
+
+<p>Chapter 5 Interprocess Communication
+In this chapter, we discuss five types of interprocess communication:</p>
+
+<ul>
+  <li>Shared memory permits processes to communicate by simply reading and writing to a specified memory location.</li>
+  <li>Mapped memory is similar to shared memory, except that it is associated with a file in the filesystem.</li>
+  <li>Pipes permit sequential communication from one process to a related process.</li>
+  <li>FIFOs are similar to pipes, except that unrelated processes can communicate because the pipe is given a name in the filesystem.</li>
+  <li>Sockets support communication between unrelated processes even on different computers.</li>
+</ul>
+
+<p>These types of IPC differ by the following criteria:</p>
+
+<ul>
+  <li>Whether they restrict communication to related processes (processes with a common ancestor), to unrelated processes sharing the same filesystem, or to any computer connected to a network</li>
+  <li>Whether a communicating process is limited to only write data or only read data</li>
+  <li>The number of processes permitted to communicate</li>
+  <li>Whether the communicating processes are synchronized by the IPC — for example, a reading process halts until data is available to read</li>
+</ul>
+
+<h3 id="51-shared-memory">5.1 Shared Memory</h3>
+
+<p>One of the simplest interprocess communication methods is using shared memory.</p>
+
+<p>Shared memory allows two or more processes to access the same memory as if they all called malloc and were returned pointers to the same actual memory. When one process changes the memory, all the other processes see the modification.</p>
+
+<h3 id="511-fast-local-communication">5.1.1 Fast Local Communication</h3>
+
+<p><strong>Shared memory is the fastest form of interprocess communication because all</strong></p>
+
+<p><strong>processes share the same piece of memory.</strong> Access to this shared memory is as fast as accessing a process’s nonshared memory, and it does not require a system call or entry to the kernel. It also avoids copying data unnecessarily.</p>
+
+<h3 id="53-mapped-memory">5.3 Mapped Memory</h3>
+
+<p><strong>Mapped memory permits different processes to communicate via a shared file.</strong></p>
+
+<p>Although you can think of mapped memory as using a shared memory segment with a name, you should be aware that there are technical differences. Mapped memory can be used for interprocess communication or as an easy way to access the contents of a file.</p>
+
+<h3 id="54-pipes">5.4 Pipes</h3>
+
+<p>A pipe is a communication device that permits unidirectional communication. Data written to the “write end” of the pipe is read back from the “read end.” Pipes are serial devices; the data is always read from the pipe in the same order it was written.</p>
+
+<p><strong>Typically, a pipe is used to communicate between two threads in a single process or between parent and child processes.</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>In a shell, the symbol</td>
+      <td>creates a pipe. For example, this shell command causes the shell to produce two child processes, one for ls and one for less:</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>% ls</td>
+      <td>less</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The shell also creates a pipe connecting the standard output of the ls subprocess with the standard input of the less process.The filenames listed by ls are sent to less in exactly the same order as if they were sent directly to the terminal.</p>
+
+<p>A pipe’s data capacity is limited. If the writer process writes faster than the reader process consumes the data, and if the pipe cannot store more data, the writer process blocks until more capacity becomes available. If the reader tries to read but no data is available, it blocks until data becomes available.Thus, the pipe automatically synchronizes the two processes.</p>
+
+<h3 id="545-fifos">5.4.5 FIFOs</h3>
+
+<p><strong>A first-in, first-out (FIFO) file is a pipe that has a name in the filesystem</strong>. Any process can open or close the FIFO; the processes on either end of the pipe need not be related to each other. FIFOs are also called named pipes.</p>
+
+<h3 id="55-sockets">5.5 Sockets</h3>
+
+<p>A socket is a bidirectional communication device that can be used to communicate with another process on the same machine or with a process running on other machines.</p>
+
+<p><strong>Sockets are the only interprocess communication we’ll discuss in this chapter that</strong></p>
+
+<p><strong>permit communication between processes on different computers.</strong> Internet programs such as Telnet, rlogin, FTP, talk, and the World Wide Web use sockets.</p>
+
+<h2 id="system-memory-layout">System memory layout</h2>
+
+<p><strong>Physical and virtual memory maps</strong></p>
+
+<p><img src="https://goooooouwa.eu.org:8143/static/images/XqsBMgx.png" alt="https://goooooouwa.eu.org:8143/static/images/XqsBMgx.png" /></p>
+
+<p>The physical map of a system is usually available with the technical literature accompanying your hardware. In the case of the iPAQ, the StrongARM manual, the SA-1110 Developer’s manual, is available from Intel’s web site.</p>
+
+<p>The physical map is important, because it provides you with information on how to configure the kernel and how to develop custom drivers. During the kernel’s configuration, for instance, you may need to specify the location of the flash devices in your system. During development, you may also need to write a driver for a memory-mapped peripheral. You will also need to provide your bootloader with information regarding the components it has to load. For these reasons, it is good practice to take the time to establish your system’s physical memory map before starting software development.</p>
+
+  </div>
+
+  <!-- <div class="reward">
+    <p>觉得文章对你有帮助？打赏以支持作者持续创作：</p>
+    <div class="reward-button">
+      <span class="alipay-code"><img class="alipay-img wdp-appear" alt="支付宝打赏" src="https://goooooouwa.eu.org:8143/static/images/alipay_paycode.jpg"></span>
+    </div>
+  </div> --><script src="https://utteranc.es/client.js" repo="goooooouwa/goooooouwa.github.io" issue-term="pathname"
+    theme="github-light" crossorigin="anonymous" async>
+    </script>
+
+  <a class="u-url" href="/coding/2012/11/15/unix-huan-jing-gao-ji-bian-cheng-xue-xi-bi-ji.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>订阅</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">徐顺发</li>
+          <li><a class="u-email" href="mailto:gouwa5700 (at) gmail (dot) com">gouwa5700 (at) gmail (dot) com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>记录生活、学习和思考
+</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可。
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/goooooouwa" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/Goooooouwa" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
