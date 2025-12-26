@@ -6,7 +6,7 @@ published: true
 ---
 ## 1. Backup Postgres DB
 
-`docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip > "/path/to/backup/dump.sql.gz"`
+`sudo docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip > "/path/to/backup/dump.sql.gz"`
 
 ## 2. Restore Postgres DB
 
