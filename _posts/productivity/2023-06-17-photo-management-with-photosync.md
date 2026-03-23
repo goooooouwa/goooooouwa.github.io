@@ -11,6 +11,14 @@ I can now use PhotoSync to wirelessly transfer my photos directly to my NAS (via
 
 ![](https://goooooouwa.eu.org:8143/static/images/photosync-webdav-configuration.jpg)
 
+![]({{site.baseurl}}/assets/images/20260317_212714000_iOS.png)
+
+![]({{site.baseurl}}/assets/images/20260317_212722000_iOS.png)
+
+![]({{site.baseurl}}/assets/images/20260317_212848000_iOS.png)
+
+![]({{site.baseurl}}/assets/images/20260317_213438000_iOS.png)
+
 ## Result folder & filename
 
 ![](https://goooooouwa.eu.org:8143/static/images/photosync-folder-filename-example.jpg)
