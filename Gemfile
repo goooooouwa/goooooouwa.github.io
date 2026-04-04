@@ -60,12 +60,16 @@ group :jekyll_plugins do
   gem 'jemoji'
   gem 'kramdown'
   gem 'liquid'
-  gem 'minima', github: 'jekyll/minima'
+  gem 'minima', github: 'jekyll/minima', ref: '2863624'
   gem 'nokogiri'
   gem 'rouge'
   # gem 'ruby'
   gem 'safe_yaml'
   gem 'sass'
+  gem 'csv'
+  gem 'base64'
+  gem 'bigdecimal'
+  gem 'rdoc'
 
   # Custom Jekyll plugins: https://jekyllrb.com/docs/plugins/installation/
 
