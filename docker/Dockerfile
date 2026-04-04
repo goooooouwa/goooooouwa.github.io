@@ -1,5 +1,5 @@
 # Multi-stage
-# 1) Jekyll image for building static blog site
+# 1) Ruby stage for building static blog site
 # 2) nginx stage to serve static site
 
 FROM ruby:3.4.2 AS builder
