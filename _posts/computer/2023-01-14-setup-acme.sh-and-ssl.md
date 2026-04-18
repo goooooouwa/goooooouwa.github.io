@@ -1,6 +1,6 @@
 ---
 published: true
-title: acme.sh安装使用教程
+title: acme.sh安装和ssl证书使用教程
 category: computer
 tags: ssl lets-encrypt acme.sh
 ---
@@ -43,14 +43,14 @@ FreeDNS (doesn't support subdomains)
 ```
 export FREEDNS_User="xxx"
 export FREEDNS_Password="xxx"
-acme.sh --issue --dns dns_freedns -d your-domain.com -d www.your-domain.com
+acme.sh --issue --dns dns_freedns -d 'subdomain.eu.org' -d '*.subdomain.eu.org'
 ```
 
 Cloudflare (works for subdomains)
 ```
 export CF_Zone_ID="xxx"
 export CF_Token="xxx"
-acme.sh --issue --dns dns_cf -d subdomain.eu.org -d *.subdomain.eu.org
+acme.sh --issue --dns dns_cf -d 'subdomain.eu.org' -d '*.subdomain.eu.org'
 ```
 
 
