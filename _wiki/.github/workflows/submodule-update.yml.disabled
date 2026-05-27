@@ -32,7 +32,7 @@ jobs:
       ####################################
       - name: Commit files
         run: |
-          git config --local user.name "Shunfa Xu"
+          git config --local user.name "Goooooouwa"
           git config --local user.email "1495607+goooooouwa@users.noreply.github.com"
           git submodule update --remote _docs
           git add .

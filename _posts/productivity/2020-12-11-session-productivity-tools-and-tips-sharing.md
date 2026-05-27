@@ -158,4 +158,4 @@ Figma社区共享资源:
 
 
 
-Curated by [Shunfa](https://twitter.com/goooooouwa) with ❤️.
+Curated by [Greg](https://twitter.com/goooooouwa) with ❤️.
