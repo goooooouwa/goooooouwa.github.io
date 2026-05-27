@@ -194,7 +194,6 @@ From Wikipedia:
 
 # Thank You.
 
-by 徐顺发
-sfxu@thoughtworks.com
+by Greg
 
 <!-- _class: lead invert -->

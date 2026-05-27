@@ -54,7 +54,7 @@ markdown: kramdown
 theme: minima
 
 author:
-  name: 徐顺发
+  name: Greg
   email: gouwa5700 (at) gmail (dot) com
 
 minima:
