@@ -1,0 +1,13 @@
+version: '3'
+services:
+  blog:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    pull_policy: build
+    volumes:
+      - ${SSL_CERTIFICATE}:/certs/fullchain.cer
+      - ${SSL_CERTIFICATE_KEY}:/certs/private.key
+    ports:
+      - 8743:443
+    restart: unless-stopped

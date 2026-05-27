@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://goooooouwa.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://goooooouwa.github.io/" rel="alternate" type="text/html" /><updated>2026-05-27T06:37:32+00:00</updated><id>https://goooooouwa.github.io/feed.xml</id><title type="html">开放笔记</title><subtitle>记录生活、学习和思考
+</subtitle><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><entry><title type="html"></title><link href="https://goooooouwa.github.io/2026/05/27/2011-08-07-i-will-do-things-with-clear-motive-not.html" rel="alternate" type="text/html" title="" /><published>2026-05-27T06:37:32+00:00</published><updated>2026-05-27T06:37:32+00:00</updated><id>https://goooooouwa.github.io/2026/05/27/2011-08-07-i-will-do-things-with-clear-motive-not</id><content type="html" xml:base="https://goooooouwa.github.io/2026/05/27/2011-08-07-i-will-do-things-with-clear-motive-not.html"><![CDATA[]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author></entry><entry><title type="html">OpenWrt旁路由设置</title><link href="https://goooooouwa.github.io/computer/2026/04/08/openwrt-setup.html" rel="alternate" type="text/html" title="OpenWrt旁路由设置" /><published>2026-04-08T00:00:00+00:00</published><updated>2026-04-08T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2026/04/08/openwrt-setup</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2026/04/08/openwrt-setup.html"><![CDATA[<h2 id="1-配置openwrt旁路由网络设置">1. 配置Openwrt旁路由网络设置</h2>
+<ol>
+  <li>进入：网络 -&gt; 接口 -&gt; Lan</li>
+  <li>指定静态ip地址</li>
+  <li>网关地址：主路由ip</li>
+  <li>DNS地址：主路由ip</li>
+  <li>不使用DHCP</li>
+  <li>关闭IPV6</li>
+  <li>设置防火墙（Lan口打开ip动态伪装，添加路由规则）</li>
+</ol>
+
+<h2 id="2-配置主路由网络设置">2. 配置主路由网络设置</h2>
+<ol>
+  <li>主路由默认网关：旁路由ip</li>
+  <li>主路由端口映射：指向旁路由ip</li>
+</ol>
+
+<h2 id="3-端口映射">3. 端口映射</h2>
+<p>1.旁路由端口映射：指向具体服务ip</p>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="openwrt" /><summary type="html"><![CDATA[1. 配置Openwrt旁路由网络设置 进入：网络 -&gt; 接口 -&gt; Lan 指定静态ip地址 网关地址：主路由ip DNS地址：主路由ip 不使用DHCP 关闭IPV6 设置防火墙（Lan口打开ip动态伪装，添加路由规则）]]></summary></entry><entry><title type="html">如何使用Clonezilla备份与恢复硬盘</title><link href="https://goooooouwa.github.io/computer/2025/12/25/backup-and-restore-hard-disks-with-clonezilla.html" rel="alternate" type="text/html" title="如何使用Clonezilla备份与恢复硬盘" /><published>2025-12-25T00:00:00+00:00</published><updated>2025-12-25T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/12/25/backup-and-restore-hard-disks-with-clonezilla</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/12/25/backup-and-restore-hard-disks-with-clonezilla.html"><![CDATA[<p>本教程所使用的工具：Clonezilla</p>
+
+<h2 id="方法一备份整个磁盘">方法一：备份整个磁盘</h2>
+
+<p>优点：速度慢</p>
+
+<p>缺点：操作简单</p>
+
+<h3 id="硬盘备份步骤">硬盘备份步骤：</h3>
+
+<ol>
+  <li>将Clonezilla Live CD烧写到U盘里（如果是用的Ventory，则可以直接将Clonezilla ISO文件拷贝进Ventory镜像目录）</li>
+  <li>将含有需要备份硬盘的电脑关机</li>
+  <li>将Clonezilla启动盘插入含有需要备份硬盘的电脑上</li>
+  <li>将电脑从Clonezilla启动盘启动</li>
+  <li>设置语言和键盘</li>
+  <li>选择device-to-image</li>
+  <li>(Option 1) 如果希望通过本地硬盘保存备份镜像，则直接将用来保存备份镜像的硬盘插入电脑，然后选择local disk选项</li>
+  <li>(Option 2) 如果希望备份到远程服务器，比如ssh server，则选择ssh server选项</li>
+  <li>填入服务器ip地址</li>
+  <li>填入服务器端口</li>
+  <li>填入服务器用户名</li>
+  <li>填入远程服务器用来保存备份镜像的文件夹路径（比如: /mnt/backup/backup/system/clonezilla-images）</li>
+  <li>确认服务器的安全性</li>
+  <li>填入服务器用户密码</li>
+  <li>选择savedisk</li>
+  <li>选择expert模式</li>
+  <li>选中<code class="language-plaintext highlighter-rouge">-q1</code>选项（强制使用<code class="language-plaintext highlighter-rouge">dd</code>工具全盘备份硬盘，而不是<code class="language-plaintext highlighter-rouge">partclone</code>工具，使用<code class="language-plaintext highlighter-rouge">dd</code>可以放心不会有任何数据问题）</li>
+  <li>完成备份</li>
+</ol>
+
+<h3 id="硬盘还原步骤">硬盘还原步骤：</h3>
+
+<ol>
+  <li>将电脑从Clonezilla启动盘启动</li>
+  <li>设置语言和键盘</li>
+  <li>选择device-to-image</li>
+  <li>(Option 1) 如果希望通过本地硬盘保存备份镜像，则直接将用来保存备份镜像的硬盘插入电脑，然后选择local disk选项</li>
+  <li>(Option 2) 如果希望备份到远程服务器，比如ssh server，则选择ssh server选项</li>
+  <li>填入服务器ip地址</li>
+  <li>填入服务器端口</li>
+  <li>填入服务器用户名</li>
+  <li>填入远程服务器用来保存备份镜像的文件夹路径（比如: /mnt/backup/backup/system/clonezilla-images）</li>
+  <li>确认服务器的安全性</li>
+  <li>填入服务器用户密码</li>
+  <li>选择restoredisk</li>
+  <li>选择expert模式</li>
+  <li>取消任何自动进行的其他对分区数据进行的额外操作（比如auto grub install, auto resize partition, etc）</li>
+  <li>完成还原</li>
+</ol>
+
+<p>备注：</p>
+
+<p>Clonezilla很聪明，它会默认选择与备份硬盘的文件系统最匹配的工具来进行备份和还原（比如如果是<code class="language-plaintext highlighter-rouge">partclone</code>所支持的文件系统，则会优先使用<code class="language-plaintext highlighter-rouge">partclone</code>来基于used sectors（含有效数据的扇区）进行备份，好处是能够针对各种不同的情况进行针对性的数据处理（比如自动运行grub install以确保新系统可以正常启动），备份的速度更快，生成的文件也更小；但是另一方面，Clonezilla的“自作聪明”有时候也会产生一些令人意料之外的效果。</p>
+
+<p>我之所以强制使用<code class="language-plaintext highlighter-rouge">dd</code>工具进行备份，并且在还原系统时选择取消Clonezilla自动对分区数据进行的额外操作，是因为我的Elementary OS在使用<code class="language-plaintext highlighter-rouge">dd</code>备份后，使用beginner mode的默认参数还原硬盘后，发现Elementary OS里的flatpak应用的icon都消失了，说明clonezilla自动对分区数据进行的额外操作也可能对数据带来一些潜在的影响；在使用expert mode并且取消了clonezilla自动对分区数据进行的一系列额外数据操作后，还原的硬盘则是完美一比一的还原了我的Elementary OS系统。</p>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="clonezilla" /><category term="backup" /><category term="hdd" /><summary type="html"><![CDATA[本教程所使用的工具：Clonezilla]]></summary></entry><entry><title type="html">如何使用DiskGenius备份与恢复硬盘</title><link href="https://goooooouwa.github.io/computer/2025/12/23/backup-and-restore-hard-disks-with-disk-genius.html" rel="alternate" type="text/html" title="如何使用DiskGenius备份与恢复硬盘" /><published>2025-12-23T00:00:00+00:00</published><updated>2025-12-23T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/12/23/backup-and-restore-hard-disks-with-disk-genius</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/12/23/backup-and-restore-hard-disks-with-disk-genius.html"><![CDATA[<p>本教程所使用的工具：DiskGenius</p>
+
+<h2 id="方法一以文件方式备份每个分区">方法一：以文件方式备份每个分区</h2>
+
+<p>优点：速度快</p>
+
+<p>缺点：步骤更多</p>
+
+<h3 id="硬盘备份步骤">硬盘备份步骤：</h3>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择需备份的硬盘</li>
+  <li>选择硬盘的esp分区</li>
+  <li>右键-&gt;备份分区到镜像文件</li>
+  <li>备份类型: 完整备份</li>
+  <li>备份选项：按文件备份（也可以根据自己需要选择其他选项）</li>
+  <li>选择文件路径</li>
+  <li>开始</li>
+  <li>完成（生成的分区镜像文件默认为pmf格式）</li>
+  <li>选择硬盘的数据分区（比如，Linux系统的ext4分区）</li>
+  <li>右键-&gt;备份分区到镜像文件（步骤相同）</li>
+</ol>
+
+<h3 id="硬盘还原步骤">硬盘还原步骤：</h3>
+
+<h4 id="如果是全新的硬盘">如果是全新的硬盘：</h4>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>格式化硬盘（或者删除所有分区）</li>
+  <li>新建分区</li>
+  <li>新建esp分区（默认300M）</li>
+  <li>新建ext4分区（确保分区大小大于或等于备份的镜像文件大小）</li>
+  <li>选择新建的esp分区</li>
+  <li>右键-&gt;从镜像文件还原分区</li>
+  <li>选择文件（选择备份时生成的esp分区镜像文件，默认为pmf格式）</li>
+  <li>开始</li>
+  <li>完成</li>
+  <li>选择新建的数据分区（比如，Linux系统的ext4分区）</li>
+  <li>右键-&gt;从镜像文件还原分区（步骤相同）</li>
+</ol>
+
+<h4 id="如果是备份的原硬盘">如果是备份的原硬盘：</h4>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择硬盘的esp分区</li>
+  <li>右键-&gt;从镜像文件还原分区</li>
+  <li>选择文件（选择备份时生成的esp分区镜像文件，默认为pmf格式）</li>
+  <li>开始</li>
+  <li>完成</li>
+  <li>选择硬盘的数据分区（比如，Linux系统的ext4分区）</li>
+  <li>右键-&gt;从镜像文件还原分区（步骤相同）</li>
+</ol>
+
+<h2 id="方法二备份整个磁盘">方法二：备份整个磁盘</h2>
+
+<p>优点：速度慢</p>
+
+<p>缺点：操作简单</p>
+
+<h3 id="硬盘备份步骤-1">硬盘备份步骤：</h3>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择需备份的硬盘</li>
+  <li>右键-&gt;备份磁盘到镜像文件</li>
+  <li>备份方式：备份所有扇区（也可以根据自己需要选择其他选项）</li>
+  <li>选择文件路径</li>
+  <li>开始</li>
+  <li>完成（生成的分区镜像文件默认为pmfx格式）</li>
+</ol>
+
+<h3 id="硬盘还原步骤-1">硬盘还原步骤：</h3>
+
+<ol>
+  <li>将硬盘接到电脑</li>
+  <li>打开磁盘精灵软件</li>
+  <li>选择需还原的硬盘</li>
+  <li>右键-&gt;从镜像文件还原磁盘</li>
+  <li>选择文件（选择备份时生成的磁盘镜像文件，默认为pmfx格式）</li>
+  <li>还原方式：还原所有扇区（对应备份时自己选择的选项）</li>
+  <li>开始</li>
+  <li>完成</li>
+</ol>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="disk-genius" /><category term="backup" /><category term="hdd" /><summary type="html"><![CDATA[本教程所使用的工具：DiskGenius]]></summary></entry><entry><title type="html">如何在Ubuntu系统下启用硬件watchdog</title><link href="https://goooooouwa.github.io/computer/2025/12/07/how-to-enable-hardware-watchdog-on-ubuntu.html" rel="alternate" type="text/html" title="如何在Ubuntu系统下启用硬件watchdog" /><published>2025-12-07T00:00:00+00:00</published><updated>2025-12-07T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/12/07/how-to-enable-hardware-watchdog-on-ubuntu</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/12/07/how-to-enable-hardware-watchdog-on-ubuntu.html"><![CDATA[<p>我的一台GK41迷你主机因为系统的某种故障，会不定期死机，于是我尝试启用watchdog来实时检测系统状态，如果系统发生死机，则watchdog会自动将系统重启,保证系统的可用性。以下是我根据网上文章结合自己的机器整理的在Ubuntu系统下启用硬件watchdog的教程。</p>
+
+<h2 id="1-检查系统是否有硬件watchdog">1. 检查系统是否有硬件watchdog</h2>
+
+<p>根据<code class="language-plaintext highlighter-rouge">/etc/watchdog.conf</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># =================== The hardware timer settings ====================
+#
+# For this daemon to be effective it really needs some hardware timer
+# to back up any reboot actions. If you have a server then see if it
+# has IPMI support. Otherwise for Intel-based machines try the iTCO_wdt
+# module, otherwise (or if that fails) then see if any of the following
+# module load and work:
+#
+# it87_wdt it8712f_wdt w83627hf_wdt w83877f_wdt w83977f_wdt
+#
+# If all else fails then 'softdog' is better than no timer at all!
+# Or work your way through the modules listed under:
+#
+# /lib/modules/`uname -r`/kernel/drivers/watchdog/
+#
+# To see if they load, present /dev/watchdog, and are capable of
+# resetting the system on time-out.
+</code></pre></div></div>
+
+<p>使用modprobe命令依次尝试加载以下kernel module，看是否能正常加载（如果没有任何报错就是正常加载）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo modprobe iTCO_wdt
+sudo modprobe it87_wdt
+sudo modprobe it8712f_wdt
+sudo modprobe w83627hf_wdt
+sudo modprobe w83877f_wdt
+sudo modprobe w83977f_wdt
+</code></pre></div></div>
+
+<p>如果某个module加载成功了，则表示系统可能存在相应的硬件watchdog。</p>
+
+<p>可以运行以下两个命令检查硬件watchdog是否被启用：</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo dmesg | grep wdt</code></p>
+
+<p>如果有类似以下返回内容则表示watchdog硬件成功被启用:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[    7.292623] w83977f_wdt: driver v1.00
+[    7.293821] w83977f_wdt: initialized. timeout=45 sec (nowayout=0 testmode=0)
+[    7.392506] w83977f_wdt: activated
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sudo lsmod | grep wdt</code></p>
+
+<p>如果有类似以下返回内容则表示watchdog硬件成功被启用:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>w83977f_wdt            12288  1
+</code></pre></div></div>
+
+<h2 id="2-启用硬件watchdog">2. 启用硬件watchdog</h2>
+
+<p>修改<code class="language-plaintext highlighter-rouge">/usr/lib/modprobe.d</code>目录下的linux内核blacklist文件(比如<code class="language-plaintext highlighter-rouge">/blacklist_linux-hwe-6.8_6.8.0-52-generic.conf</code>），将watchdog相应的module移除（即取消禁用）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blacklist w83627hf_wdt
+blacklist w83877f_wdt
+blacklist w83977f_wdt # remove this line in my case
+blacklist wafer5823wdt
+</code></pre></div></div>
+
+<h2 id="3-安装watchdog服务">3. 安装watchdog服务</h2>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt-get install watchdog</code></p>
+
+<p>检查watchdog设备文件正常被watchdog自动生成：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /dev/watchdog*
+
+crw------- 1 root root 10, 130 Oct 10 10:05 /dev/watchdog
+</code></pre></div></div>
+
+<h2 id="4-配置watchdog服务">4. 配置watchdog服务</h2>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vi /etc/watchdog.conf</code></p>
+
+<p>Uncomment the following lines by removing the <code class="language-plaintext highlighter-rouge">#</code> from beginning of the line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watchdog_device: /dev/watchdog
+interval: 10
+</code></pre></div></div>
+
+<p>Set the realtime option to yes and priority to 1:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>realtime = yes
+priority = 1
+</code></pre></div></div>
+
+<p>Save and close the file.</p>
+
+<p>Modify the <code class="language-plaintext highlighter-rouge">/etc/default/watchdog</code> file and set the <code class="language-plaintext highlighter-rouge">watchdog_module</code> to <code class="language-plaintext highlighter-rouge">w83977f_wdt</code> (in my case):</p>
+
+<p><code class="language-plaintext highlighter-rouge">watchdog_module="w83977f_wdt"</code></p>
+
+<h1 id="5-配置wd_keepalive服务">5. 配置wd_keepalive服务</h1>
+
+<p>使用wd_keepalive服务代替watchdog服务，可能是因为wd_keepalive服务功能更全面。以下步骤参考自<a href="https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/">此文章</a>：</p>
+
+<p>You will use the wd_keepalive service to monitor the watchdog device, therefore the watchdog daemon required to be stopped and disabled on startup.</p>
+
+<p>Make sure the watchdog service is not running :</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl status watchdog.service</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ● watchdog.service - watchdog daemon
+
+       Loaded: loaded (/lib/systemd/system/watchdog.service; enabled; vendor preset: enabled)
+
+       Active: inactive (dead)
+</code></pre></div></div>
+
+<p>Make sure the watchdog service is running then stop it:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl stop watchdog.service</code></p>
+
+<p>check again and Make sure the watchdog service is not running :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>● watchdog.service - watchdog daemon
+
+       Loaded: loaded (/lib/systemd/system/watchdog.service; enabled; vendor preset: enabled)
+
+       Active: inactive (dead)
+</code></pre></div></div>
+
+<p>Disable the watchdog service on boot:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl disable watchdog.service</code></p>
+
+<p>Edit the Systemd configuration file <code class="language-plaintext highlighter-rouge">/lib/systemd/system/wd_keepalive.service</code> and add the following lines under the <code class="language-plaintext highlighter-rouge">[Install]</code> section.</p>
+
+<p>Just paste it in the end if there isn’t any <code class="language-plaintext highlighter-rouge">[Install]</code> section on your file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+
+<h2 id="6-设置wd_keepalive服务自启动">6. 设置wd_keepalive服务自启动</h2>
+
+<p>Reload systemd manager configuration:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl daemon-reload</code></p>
+
+<p>Start the wd_keepalive service:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl start wd_keepalive</code></p>
+
+<p>Enable the service to start at system boot:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl enable wd_keepalive</code></p>
+
+<p>Check the status of the wd_keepalive service:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl status wd_keepalive</code></p>
+
+<p>Reboot the system and confirm again that the wd_keepalive service is started on system boot:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl status wd_keepalive</code></p>
+
+<p>Check the watchdog module is up and working by running <code class="language-plaintext highlighter-rouge">dmesg | grep w83977f_wdt</code> (in my case)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo dmesg | grep w83977f_wdt
+
+[    7.292623] w83977f_wdt: driver v1.00
+[    7.293821] w83977f_wdt: initialized. timeout=45 sec (nowayout=0 testmode=0)
+[    7.392506] w83977f_wdt: activated
+</code></pre></div></div>
+
+<h2 id="7-测试watchdog是否正常工作">7. 测试watchdog是否正常工作</h2>
+
+<p>To test the watchdog service is configured properly and works as expected, you can trigger a system crash to check if the instance get rebooted.</p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">su</code>命令切换到root身份运行以下命令来触发一次system crash by a NULL pointer dereference：</p>
+
+<p><code class="language-plaintext highlighter-rouge">echo c &gt; /proc/sysrq-trigger</code></p>
+
+<p>Your system should automatically reboot in about a minute.</p>
+
+<p>至此如果系统1分钟后自动重启，则说明硬件watchdog配置完成并且正常工作。</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+  <li><a href="https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/">https://iobitsolutions.com/how-to-enable-linux-hardware-watchdog-service-on-ubuntu-22-04-on-vultr/</a></li>
+  <li><a href="https://unix.stackexchange.com/questions/714910/what-is-a-good-way-to-test-watchdog-script-or-command-to-deliberately-overload">https://unix.stackexchange.com/questions/714910/what-is-a-good-way-to-test-watchdog-script-or-command-to-deliberately-overload</a></li>
+</ul>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="watchdog" /><category term="ubuntu" /><summary type="html"><![CDATA[我的一台GK41迷你主机因为系统的某种故障，会不定期死机，于是我尝试启用watchdog来实时检测系统状态，如果系统发生死机，则watchdog会自动将系统重启,保证系统的可用性。以下是我根据网上文章结合自己的机器整理的在Ubuntu系统下启用硬件watchdog的教程。]]></summary></entry><entry><title type="html">How to install Chinese input method on Steam Deck</title><link href="https://goooooouwa.github.io/computer/2025/11/27/steam-deck-install-chinese-input.html" rel="alternate" type="text/html" title="How to install Chinese input method on Steam Deck" /><published>2025-11-27T00:00:00+00:00</published><updated>2025-11-27T00:00:00+00:00</updated><id>https://goooooouwa.github.io/computer/2025/11/27/steam-deck-install-chinese-input</id><content type="html" xml:base="https://goooooouwa.github.io/computer/2025/11/27/steam-deck-install-chinese-input.html"><![CDATA[<ol>
+  <li>Install Fcitx 5 flatpak version</li>
+  <li>Install Chinese Addons flatpak version</li>
+  <li>Add Fcitx 5 to Auto Start on Boot in System Settings</li>
+  <li>Start Fcitx 5 -&gt; Configure -&gt; Add a Chinese input method (e.g.  双拼) -&gt; Confirm</li>
+  <li>Add the following to <code class="language-plaintext highlighter-rouge">/etc/environment</code>:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+</code></pre></div></div>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="computer" /><category term="steam-deck" /><summary type="html"><![CDATA[Install Fcitx 5 flatpak version Install Chinese Addons flatpak version Add Fcitx 5 to Auto Start on Boot in System Settings Start Fcitx 5 -&gt; Configure -&gt; Add a Chinese input method (e.g. 双拼) -&gt; Confirm Add the following to /etc/environment:]]></summary></entry><entry><title type="html">俯仰视角下的透视</title><link href="https://goooooouwa.github.io/drawing/2025/10/21/view-angle-s-effect-on-perspective.html" rel="alternate" type="text/html" title="俯仰视角下的透视" /><published>2025-10-21T00:00:00+00:00</published><updated>2025-10-21T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/21/view-angle-s-effect-on-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/21/view-angle-s-effect-on-perspective.html"><![CDATA[<h3 id="调整俯仰角度对画面透视产生的影响">调整俯仰角度对画面透视产生的影响</h3>
+
+<p><img src="/assets/images/change-view-height-vs-view-angle-continued.png" alt="change-view-height-vs-view-angle-continued.png" /></p>
+
+<p>对比初始视角画面（图一）与俯视画面（图二）可以得出，当视线角度发生变化后，画面中的同一个物体最多只会有一条边可以在画面中保持大小位置不变，其他部位的大小和位置都会发生变化。</p>
+
+<p>比如在下图中，右下角的画面从水平视角画面（图一）变为俯视画面（图二）后，即使蓝色建筑物在画面的水平方向高度保持不变，该建筑物的其他部位的大小和位置依然会发生变化（比如该建筑物的宽度变窄了，其侧边线条的角度也会发生变化）。整个画面中的其他部分都展现出了同样的变化。</p>
+
+<p><img src="/assets/images/2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png" alt="2025-10-16 perspective analysis_ difference between changing view height and changing view angle.png" /></p>
+
+<h3 id="仰视角度与俯仰角度对画面透视产生的影响">仰视角度与俯仰角度对画面透视产生的影响</h3>
+
+<p><img src="/assets/images/changing view angle.png" alt="changing view angle.png" /></p>
+
+<p>对比初始视角画面（图三）与俯视画面（图二）可以得出，无论视线角度怎么改变，低于视平线（即视高）的物体其顶部（在不被其他物体遮挡的情况下）永远都是可见的，反过来高于视平线（或视高）的物体其底部同样也是永远可见的。</p>
+
+<p>比如在下图中，观察者的视高高于篮球员的右脚，由此可知，无论观察者以多少角度仰视或者俯仰该篮球员，观察者永远都只能看到篮球员右脚的顶部，不可能看到其脚底（除非将视高降到右脚以下）。</p>
+
+<p><img src="/assets/images/view-angle-view-height.png" alt="view-angle-view-height" /></p>
+
+<p>下图中的比萨斜塔也是如此，观察者可以看到塔底低于视平线部分的“顶部”，但是看不塔顶的顶部（因为塔顶高于视平线）。</p>
+
+<p><img src="/assets/images/pisa.jpg" alt="pisa.jpg" /></p>
+
+<p>漫画中看到的一个从低处仰视的例子（人物的脚处在视平线附近，大概因为小腿斜向镜头外侧的原因看不到鞋底）：</p>
+
+<p><img src="/assets/images/look upward from low view height.PNG" alt="look upward from low view height.PNG" /></p>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[调整俯仰角度对画面透视产生的影响]]></summary></entry><entry><title type="html">对一些大角度透视画面的研究</title><link href="https://goooooouwa.github.io/drawing/2025/10/19/perspective-analysis-on-extreme-cases.html" rel="alternate" type="text/html" title="对一些大角度透视画面的研究" /><published>2025-10-19T00:00:00+00:00</published><updated>2025-10-19T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/19/perspective-analysis-on-extreme-cases</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/19/perspective-analysis-on-extreme-cases.html"><![CDATA[<h3 id="当物体处在两个消失点同一侧时的透视效果">当物体处在两个消失点同一侧时的透视效果</h3>
+
+<p>下图展示了当物体处在两个消失点同一侧时的透视效果（此时地平线在垂直方向）。</p>
+
+<p><img src="/assets/images/eede887cec994cdaa824e182f4705c52.jpg" alt="eede887cec994cdaa824e182f4705c52.jpg" /></p>
+
+<p>右图为将画面旋转90度后得到的地平线在水平方向的透视，画面中展示了当观察者仰视（即地平线低于视平线）时，处于地平线下方的物体的透视效果。</p>
+
+<p><img src="/assets/images/looking upwards.jpg" alt="looking upwards.jpg" /></p>
+
+<h3 id="与画面存在非垂直角度的线条其画面角度会随着与观察者距离的变化而改变">与画面存在非垂直角度的线条，其画面角度会随着与观察者距离的变化而改变</h3>
+
+<p>与画面存在非垂直角度的线条，距离观察者越远时角度越接近垂直于地面（因为当物体越接近消失点时，纵深线透视缩短的程度比垂直方向缩短得更多）；距离观察者越近时角度越接近平行于地面（因为当物体越接近观察者时，纵深线透视加长的程度比垂直方向加长得更多）。</p>
+
+<p><img src="/assets/images/line-angle-changes.png" alt="line-angle-changes.png" /></p>
+
+<h3 id="人眼的水平视角">人眼的水平视角</h3>
+
+<p>人单眼的水平视角最大可达156度，双眼的水平视角最大可达188度。人两眼重合视域为124度，单眼<strong>舒适视域</strong>为60度，集中注意力时约为25度。</p>
+
+<p><img src="/assets/images/human-eye-angle.jpg" alt="human-eye-angle.jpg" /></p>
+
+<p>本文提到的这些非典型透视画面（比如，仰视时低于地平线的物体，正方体斜向上45度对角线在画面中趋于水平方向）通常都是出现在60度（甚至90度）视锥以外，平时不易被人眼注意到，这也是为什么这些透视情况如此难以凭直觉想象出来。</p>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[当物体处在两个消失点同一侧时的透视效果]]></summary></entry><entry><title type="html">笔记：现实中的透视</title><link href="https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world.html" rel="alternate" type="text/html" title="笔记：现实中的透视" /><published>2025-10-16T00:00:00+00:00</published><updated>2025-10-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/16/notes-on-perspective-in-the-world.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#creating-the-perspective-view" id="markdown-toc-creating-the-perspective-view">Creating the perspective view</a>    <ul>
+      <li><a href="#four-perspective-facts" id="markdown-toc-four-perspective-facts">Four perspective facts</a></li>
+      <li><a href="#the-perspective-image" id="markdown-toc-the-perspective-image">The Perspective Image</a></li>
+    </ul>
+  </li>
+  <li><a href="#图像平面视点和视线方向image-plane-viewpoint--direction-of-view" id="markdown-toc-图像平面视点和视线方向image-plane-viewpoint--direction-of-view">图像平面、视点和视线方向（image plane, viewpoint &amp; direction of view）</a>    <ul>
+      <li><a href="#调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view" id="markdown-toc-调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view">调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）</a></li>
+      <li><a href="#地平线和视点的关系horizon-line-and-viewpoint" id="markdown-toc-地平线和视点的关系horizon-line-and-viewpoint">地平线和视点的关系（Horizon Line and Viewpoint）</a></li>
+    </ul>
+  </li>
+  <li><a href="#透视形变perspective-distortions" id="markdown-toc-透视形变perspective-distortions">透视形变（perspective distortions）</a>    <ul>
+      <li><a href="#透视缩短形变foreshortening-distortions" id="markdown-toc-透视缩短形变foreshortening-distortions">透视缩短形变（Foreshortening Distortions）</a></li>
+      <li><a href="#修正透视形变cures-for-perspective-distortions" id="markdown-toc-修正透视形变cures-for-perspective-distortions">“修正”透视形变（Cures for Perspective Distortions）</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>原文地址：<a href="https://handprint.com/HP/WCL/perspect1.html">https://handprint.com/HP/WCL/perspect1.html</a></p>
+
+<p>系列笔记：</p>
+
+<ol>
+  <li><a href="/drawing/2025/10/16/notes-on-perspective-in-the-world.html">笔记：现实中的透视</a></li>
+  <li><a href="/drawing/2024/09/13/notes-on-central-perspective.html">笔记：一点透视</a></li>
+  <li><a href="/drawing/2025/09/26/notes-on-2-point-perspective.html">笔记：两点透视</a></li>
+  <li><a href="/drawing/2025/09/28/notes-on-advanced-perspective.html">笔记：高级透视技巧</a></li>
+</ol>
+
+<h2 id="creating-the-perspective-view">Creating the perspective view</h2>
+
+<h3 id="four-perspective-facts">Four perspective facts</h3>
+
+<p><img src="/assets/images/4facts.gif" alt="4facts.gif" /></p>
+
+<ol>
+  <li>Light travels in a straight line between any two points in space.</li>
+  <li>An image is formed by light passing through a single point. This is the viewpoint.</li>
+  <li>Visual rays through the viewpoint define a visual cone centered on a direction of view.</li>
+  <li>Every image is a cross section through a visual cone.</li>
+</ol>
+
+<p><img src="/assets/images/fact3.gif" alt="fact3.gif" /></p>
+
+<p>The image is formed by making a slice through the visual cone at some point other than the viewpoint, either in front of or behind it. This slice cuts across all the visual rays, so that we only see visual rays “end on” within the visual cone. As a result, all visual rays appear as points on an image plane.</p>
+
+<h3 id="the-perspective-image">The Perspective Image</h3>
+
+<p><img src="/assets/images/The Perspective Image.png" alt="The Perspective Image.png" /></p>
+
+<h2 id="图像平面视点和视线方向image-plane-viewpoint--direction-of-view">图像平面、视点和视线方向（image plane, viewpoint &amp; direction of view）</h2>
+
+<h3 id="调整视线方向对于物体透视所产生的变化object-orientation-to-the-direction-of-view">调整视线方向对于物体透视所产生的变化（Object Orientation to the Direction of View）</h3>
+
+<p>假设画面中有一个出现在观察者正前方的物体，当我们在水平方向将direction of view从正前方移向其他方向时，物体在画面中所呈现的图形随即从一点透视变为两点透视。</p>
+
+<p><img src="/assets/images/effect of changing only the direction of view.jpg" alt="effect of changing only the direction of view.jpg" /></p>
+
+<h3 id="地平线和视点的关系horizon-line-and-viewpoint">地平线和视点的关系（Horizon Line and Viewpoint）</h3>
+
+<p>An important and useful fact of linear perspective is that objects at the same height above the ground plane as the viewpoint are intersected in the image plane by the horizon line.</p>
+
+<p><img src="/assets/images/horizon line and viewpoint in landscape perspective.PNG" alt="horizon line and viewpoint in landscape perspective.PNG" /></p>
+
+<h2 id="透视形变perspective-distortions">透视形变（perspective distortions）</h2>
+
+<h3 id="透视缩短形变foreshortening-distortions">透视缩短形变（Foreshortening Distortions）</h3>
+
+<p><img src="/assets/images/foreshortening and the triangular proportions.png" alt="foreshortening and the triangular proportions.png" /></p>
+
+<p><strong>平移产生的透视缩短</strong></p>
+
+<p>In <strong>shift foreshortening</strong>, a two dimensional surface is shifted away from the direction of view (the principal point) but remains parallel to the image plane; the actual surface <em>always</em> appears foreshortened because it is at an oblique angle to the viewpoint.</p>
+
+<p><strong>旋转产生的透视缩短</strong></p>
+
+<p>In <strong>rotation foreshortening</strong>, the surface is rotated so that it is no longer parallel to the image plane; the actual surface may or may not appear foreshortened, depending on whether it is at an oblique or perpendicular angle to the viewpoint.</p>
+
+<p>These different types of foreshortening have different perspective effects.</p>
+
+<p><img src="/assets/images/perspective image of flat forms.png" alt="perspective image of flat forms.png" /></p>
+
+<p><strong>shift foreshortening has no effect on the perspective image of a two dimensional surface parallel to the image plane</strong></p>
+
+<p>在空间中与画面平行的平面图形在保持与画面距离不变的情况下进行任意平移所导致的透视缩短并不改变该图形在画面中的形状和尺寸。换句话说，对于一个空间中的与画面平行的平面图形，将其在其所在的平面上任意挪动，该平面出现在画面中的大小将保持不变，哪怕超出了90度视锥。</p>
+
+<p>The figure above shows the correct perspective projection of an identical row of windows (center). In the top row, the windows are kept parallel to the image plane but become increasingly oblique to the direction of view (<em>shift foreshortening</em>); in the bottom row, the windows are rotated in place to remain perpendicular to the viewpoint, which puts them at an oblique angle to the image plane (<em>rotation foreshortening</em>).</p>
+
+<p>Surprisingly, even though it produces a foreshortened view of the actual two dimensional object, <strong>shift foreshortening has no effect on a perspective image</strong>. A window shifted 45° to one side is exactly the same size <em>on the image plane</em> as a window centered on the direction of view. This occurs because, at the location of the perspective image of the window, <strong>the image plane is also foreshortened</strong> by the same oblique angle of view, and this “secondary” foreshortening matches the foreshortening seen in the surface.</p>
+
+<p>这是因为观察者在观看画面时，画面本身在进入观察者眼里时同样会产生透视缩短，而画面中的图形与观察者眼睛之间的视角倾斜程度（oblique angle of view）刚好使该图形在进入观察者眼睛后投影出正确的透视图形。</p>
+
+<p>In contrast, <strong>rotation foreshortening <em>always alters</em> the perspective image</strong>. The image becomes “distorted” in the direction <em>perpendicular to the axis of rotation,</em> regardless of whether the object is central or peripheral in the circle of view and even when the rotation eliminates any foreshortening in the actual object! Remember: rotation foreshortening is still a completely correct perspective view of the rotated object, when viewed from the center of projection; it just <em>looks wrong</em> when we view the image from farther away.</p>
+
+<p>The objectionable perspective distortions occur in the oblique view of a three dimensional object that has only been shift foreshortened on the image plane. In these cases, what “rotates” is not the plane surface of a two dimensional object but our view of a plane cross section through its three dimensional form.</p>
+
+<p>将一个三维物体（而不是二维的平面图形）的斜视图在图像平面上仅进行“平移缩短”处理时，会出现令人不适的透视形变。在这种情况下，发生“旋转”的不是二维物体的平面表面，而是三维形体中的某个平面截面。</p>
+
+<p><img src="/assets/images/perspective image of rounded forms.png" alt="perspective image of rounded forms.png" /></p>
+
+<p>From <a href="https://en.wikipedia.org/wiki/Perspective_distortion">Wikipedia</a>:</p>
+
+<p><img src="/assets/images/Camera_focal_length_distance_house_animation.gif" alt="Camera_focal_length_distance_house_animation.gif" /></p>
+
+<p>Simulation showing how adjusting the angle of view of a camera, while varying the camera’s distance and keeping the object in frame, results in vastly differing images. At narrow angles and long distances, light rays are nearly parallel, resulting in a “flattened” image. At wide angles and short distances, objects appear foreshortened or distorted.</p>
+
+<h3 id="修正透视形变cures-for-perspective-distortions">“修正”透视形变（Cures for Perspective Distortions）</h3>
+
+<p>古典壁画会尽量将画面保持在60度视锥之内，以避免出现明显的透视形变，影响画面美感。如果画中出现了一定程度的透视形变，画家便会人为的”修正”这些形变。比如在拉斐尔的壁画中，他将画面中的每个人物都以人物自身为视觉中心来按照一点透视进行绘制，脱离了背景的透视形变；他还将右下角本来因为透视形变会变成椭圆形的球体画成了标准的圆形；此外，他会巧妙地中画面中合适的地方安排人物，以遮挡背景中的建筑上可能出现透视形变的部分（比如画面中心的走廊被正前方的两位人物遮住；左右两根立柱的顶部被现实中的圆顶挡住；地面的瓷砖被各种人物遮挡）。</p>
+
+<p><img src="/assets/images/IMG_0098.jpeg" alt="IMG_0098.jpeg" /></p>
+
+<p>All figures are drawn as if centered on the direction of view — that is, with no perspective distortion. This is easiest to see in the two astronomers shown holding celestial globes (at right). Both figures are located at the righthand edge of the fresco, beyond the 30° circle of view. Rather than draw the spheres with the correct but elliptical perspective projections, Raphael simply drew them perfectly round.</p>
+
+<p><img src="/assets/images/IMG_0095.jpeg" alt="IMG_0095.jpeg" /></p>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /></entry><entry><title type="html">一点透视中物体大小和物距之间关系</title><link href="https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective.html" rel="alternate" type="text/html" title="一点透视中物体大小和物距之间关系" /><published>2025-10-16T00:00:00+00:00</published><updated>2025-10-16T00:00:00+00:00</updated><id>https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective</id><content type="html" xml:base="https://goooooouwa.github.io/drawing/2025/10/16/object-size-and-object-distance-in-center-perspective.html"><![CDATA[<h3 id="距离和物体大小关系的核心几何原理">距离和物体大小关系的核心几何原理</h3>
+
+<p>两个等角三角形的三条边之间的比例是相等的，即边a/边A = 边b/边B = 边c/边C。</p>
+
+<p><img src="/assets/images/angle-of-view.jpg" alt="angle of view" /></p>
+
+<h3 id="当物体处于画面后方更远处时">当物体处于画面后方更远处时</h3>
+
+<p>根据这一公式可以推算出：</p>
+
+<ul>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者1倍视锥半径距离（即物体距离画面0距离）时，其视觉高度为视锥半径的1倍（因为此时该物体的底部处于地面与画面的相交线上，而其顶部位于视平线上，因此其高度在画面中等于视锥半径）；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者2倍视锥半径距离（即物体距离画面1倍距离）时，其视觉高度为视锥半径的1/2；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者3倍视锥半径距离（即物体距离画面2倍距离）时，其视觉高度为视锥半径的1/3；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者4倍视锥半径距离（即物体距离画面3倍距离）时，其视觉高度为视锥半径的1/4；</li>
+</ul>
+
+<p>由此可以得出，当一个高度为视锥半径1倍的物体站在距离观察者n倍 视锥半径距离（即物体距离画面n - 1倍距离) 时，其视觉高度为视锥半径的1 / n。</p>
+
+<h3 id="当物体处于画面跟观察者之间时">当物体处于画面跟观察者之间时</h3>
+
+<p>反过来，也可以推算出：</p>
+
+<ul>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.5倍视锥半径距离（即物体距离画面-0.5倍距离，即距1.6米高的观察者80厘米）时，其视觉高度为视锥半径的2倍；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.25倍 (即0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.75倍距离，即距1.6米高的观察者40厘米）时，其视觉高度为视锥半径的4倍 (即2 * 2)；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.125倍 (即0.5 * 0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.875倍距离，即距1.6米高的观察者20厘米）时，其视觉高度为视锥半径的8倍 (即2 * 2 * 2)；</li>
+  <li>当一个高度为视锥半径1倍的物体站在距离观察者0.0625倍 (即0.5 * 0.5 * 0.5 * 0.5) 的视锥半径距离（即物体距离画面-0.9375倍距离，即距1.6米高的观察者10厘米）时，其视觉高度为视锥半径的16倍 (即2 * 2 * 2 * 2)；</li>
+</ul>
+
+<p>由此可以得出，当一个高度为视锥半径1倍的物体站在距离观察者0.5^n倍 (即n个0.5相乘) 的视锥半径距离（即物体距离画面1 - 0.5^n倍距离）时，其视觉高度为视锥半径的2^n倍 (即n个2相乘)。</p>
+
+<p><img src="/assets/images/relation-between-object-distance-and-its-image-size.png" alt="relation-between-object-distance-and-its-image-size.png" /></p>
+
+<h3 id="物体离画面距离占画面比例画面尺寸速查表">物体离画面距离、占画面比例、画面尺寸速查表：</h3>
+
+<p><img src="/assets/images/object-distance-visual-angle-image-scale.png" alt="object-distance-visual-angle-image-scale.png" /></p>
+
+<h3 id="练习">练习</h3>
+
+<p>地面上的正方形边长为视锥半径长度的0.5倍，距离画面的距离分别为视锥半径的1倍、0、-0.5倍。</p>
+
+<p>可以发现，超出90度视锥后的正方形形变很厉害（60度视锥半径是半径的0.58倍，所以蓝色正方形的大部分区域和黄色正方形已经处在60度视锥以外了，可以看到它们也有不同程度的透视扭曲distortion）。</p>
+
+<p><img src="/assets/images/object-distance-exercise.png" alt="object-distance-exercise.png" /></p>]]></content><author><name>Greg</name><email>gouwa5700 (at) gmail (dot) com</email></author><category term="drawing" /><category term="perspective" /><summary type="html"><![CDATA[距离和物体大小关系的核心几何原理]]></summary></entry></feed>

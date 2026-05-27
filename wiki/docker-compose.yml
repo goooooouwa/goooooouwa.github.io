@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  knowledge-base:
+    build:
+      context: .
+    container_name: knowledge-base
+    restart: always
+    networks:
+      - reverse-proxy
+    expose:
+      - 4567
+
+networks:
+  reverse-proxy:
+    name: nginx_default
+    external: true
