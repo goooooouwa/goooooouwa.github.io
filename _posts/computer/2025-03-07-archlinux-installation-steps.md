@@ -114,11 +114,11 @@ If you created an EFI system partition, format it to FAT32 using mkfs.fat(8).
 
 Mount the root volume to /mnt. For example, if the root volume is /dev/root_partition:
 
-`# mount /dev/root_partition /mnt`
+`# mount /dev/root_partition(e.g. /dev/sda2) /mnt`
 
 For UEFI systems, mount the EFI system partition:
 
-`# mount --mkdir /dev/efi_system_partition /mnt/boot`
+`# mount --mkdir /dev/efi_system_partition(e.g. /dev/sda1) /mnt/boot`
 
 ## 2. Installation
 
