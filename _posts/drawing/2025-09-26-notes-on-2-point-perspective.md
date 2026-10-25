@@ -113,8 +113,6 @@ published: true
 
 **寻找任意旋转斜线、斜面的消失点**
 
-![2pp-inclined-lines.PNG]({{site.baseurl}}/assets/images/2pp-inclined-lines.PNG)
-
 通过以下步骤确定2点透视中任意角度斜线、斜面的消失点：
 
 1. 首先确定斜线、斜面所在平面的消失线（类似于地平线的概念）。这条线其实就是vp1所在的垂直于视平线的线。
@@ -122,6 +120,8 @@ published: true
 3. 确定中心线与90度视锥的交点。
 4. 以vp1为圆心，vp1到x的线段为半径，画一条圆弧与视平线相交，交点为A，这个点就是该斜面的辅助视点。
 5. 确定A点后，便可以以A点为顶点，绘制任意角度的直线，该直线与vp1所在垂线（斜面消失线）的交点即所有该角度的斜线共同的消失点，叫做ivp，即inclined vanishing point。
+
+![2pp-inclined-lines.PNG]({{site.baseurl}}/assets/images/2pp-inclined-lines.PNG)
 
 ## 如何绘制非常远的消失点（who has a 12 foot table?）
 
