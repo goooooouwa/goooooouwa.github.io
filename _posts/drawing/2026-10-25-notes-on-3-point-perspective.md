@@ -21,11 +21,11 @@ published: true
 
 两点透视的核心几何模型是向上翻折的视点，而三点透视更复杂一点，使用的是透视金字塔。两点透视可以通过向上翻折的视点轻松地将物体旋转任意角度，而三点透视每次旋转物体角度需要重新定位三个消失点。
 
-两点透视的视域圆几何设置： 在“视觉光线法”（Visual Ray Method）中，将视点（Viewpoint）折叠放置于 $90^\circ$ **视域圆（Circle of View）**的最顶端，向下俯视地平线。
+两点透视的视域圆几何设置： 在“视觉光线法”（Visual Ray Method）中，将视点（Viewpoint）折叠放置于90度**视域圆（Circle of View）**的最顶端，向下俯视地平线。
 
 理解三点透视的核心几何模型：**透视金字塔**。
 
-三点透视中的三个消失点（$vp_1, vp_2, vp_3$）在三维空间中代表三个相互垂直的光线方向。把视点（Viewpoint）看作金字塔的顶点，三个消失点看作基底，就构成了一个高为观察距离（即 $90^\circ$ 视域圆半径）的三棱锥。将物体在空间中旋转任意角度，就是将这个三棱锥在视线周围进行倾斜（俯仰角）与旋转（偏航角）。
+三点透视中的三个消失点（vp1, vp2, vp3）在三维空间中代表三个相互垂直的光线方向。把视点（Viewpoint）看作金字塔的顶点，三个消失点看作基底，就构成了一个高为观察距离（即90度视域圆半径）的三棱锥。将物体在空间中旋转任意角度，就是将这个三棱锥在视线周围进行倾斜（俯仰角）与旋转（偏航角）。
 
 ![three-point-perspective.PNG]({{site.baseurl}}/assets/images/three-point-perspective.PNG)
 
@@ -69,6 +69,6 @@ published: true
 
 **泰勒斯半圆（Semicircle of Thales）**
 
-泰勒斯半圆（Semicircle of Thales）就是以 $vp_1$ 与 $vp_2$两点连线为直径所绘制的半圆。
+泰勒斯半圆（Semicircle of Thales）就是以 vp1 与 vp2两点连线为直径所绘制的半圆。
 
 ![Anotated illustration]({{site.baseurl}}/assets/images/41ee6af7e3f140cd864123adfa7c9d07.jpg)
