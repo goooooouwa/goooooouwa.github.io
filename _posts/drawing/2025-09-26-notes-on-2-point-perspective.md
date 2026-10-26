@@ -111,8 +111,9 @@ published: true
 
 ## 斜线和斜面（inclined lines & inclined planes）
 
-
 **寻找任意旋转斜线、斜面的消失点**
+
+倾斜消失点（$ivp$）： 不平行于地面的线条（如屋顶斜坡、楼梯）其消失点（$ivp$）不在地平线上，而是位于过水平消失点（$vp$）的垂直消失线上。辅助视点构建法（Auxiliary Viewpoint）： 通过在 $90^\circ$ 视域圆上寻找辅助视点（$A$），旋转对应的斜角光线，可精准算出 $ivp_1$ 与 $ivp_2$ 的位置。
 
 通过以下步骤确定2点透视中任意角度斜线、斜面的消失点：
 
@@ -123,6 +124,8 @@ published: true
 5. 确定A点后，便可以以A点为顶点，绘制任意角度的直线，该直线与vp1所在垂线（斜面消失线）的交点即所有该角度的斜线共同的消失点，叫做ivp，即inclined vanishing point。
 
 ![2pp-inclined-lines.PNG]({{site.baseurl}}/assets/images/2pp-inclined-lines.PNG)
+
+![Anotated illustration]({{site.baseurl}}/assets/images/013cd9778be54a24ab75cff563bd4335.PNG)
 
 ## 如何绘制非常远的消失点（who has a 12 foot table?）
 
