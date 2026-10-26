@@ -72,3 +72,28 @@ published: true
 泰勒斯半圆（Semicircle of Thales）就是以 vp1 与 vp2两点连线为直径所绘制的半圆。
 
 ![Anotated illustration]({{site.baseurl}}/assets/images/41ee6af7e3f140cd864123adfa7c9d07.jpg)
+
+### 定位测量点
+
+最后一步是确定测量点的位置。如果沿着消失线标记，则需要六个测量点；如果沿着辅助地平线标记，则只需要三个。
+
+**定位辅助地平线测量点（Auxiliary Horizon Line Measure Points）**
+
+![three-point-perspective-finding-the-measure-points]({{site.baseurl}}/assets/images/three-point-perspective-finding-the-measure-points.PNG)
+
+![Anotated illustration]({{site.baseurl}}/assets/images/three-point-perspective-finding-the-measure-points-on-auxiliary-horizon-line.PNG)
+
+**定位消失线测量点（Vanishing Line Measure Points）**
+
+使用三个测量点的3PP方法虽然方便，但当测量锚点靠近视向(dv)时就会失效。在这种情况下，您可能需要改用消失线测量点法。
+
+1. 借用之前构建视圆所构造的其中一条消失线上的泰勒斯半圆，该半圆以 M 为圆心，并与消失线vp2-vp3两端的消失点相交。
+2. 将辅助地平线延长至与该半圆相交于点 h'。
+3. 点 h' 与消失线上的两个消失点始终成 90° 角。也就是说，它等价于两点透视旋转中的视点。因此，你可以从该点向消失线画两条弧线，分别以两个消失点为弧点，从而确定消失线的2个测量点——就像在两点透视中一样。
+4. 在另外两条消失线上重复以上步骤以确定全部6个测量点。
+
+这就是定义该消失线上2个测量点所需的全部步骤。（注意，您可以通过将辅助地平线与透视三角形内部相交来定义内部点 h'，并从该点构建测量点，从而节省步骤和工作空间。）
+
+![three-point-perspective-alternate-method-to-define-measure-points]({{site.baseurl}}/assets/images/three-point-perspective-alternate-method-to-define-measure-points.PNG)
+
+![Anotated illustration]({{site.baseurl}}/assets/images/three-point-perspective-alternate-method-to-define-measure-points-annotated.PNG)
