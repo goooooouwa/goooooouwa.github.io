@@ -67,3 +67,8 @@ published: true
 
 ![Anotated illustration]({{site.baseurl}}/assets/images/d02faafb29394de982fa5c940d47a944.jpg)
 
+**泰勒斯半圆（Semicircle of Thales）**
+
+泰勒斯半圆（Semicircle of Thales）就是以 $vp_1$ 与 $vp_2$两点连线为直径所绘制的半圆。
+
+![Anotated illustration]({{site.baseurl}}/assets/images/41ee6af7e3f140cd864123adfa7c9d07.jpg)
