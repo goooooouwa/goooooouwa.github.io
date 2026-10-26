@@ -14,6 +14,7 @@ published: true
 1. [笔记：现实中的透视]({% post_url drawing/2025-10-16-notes-on-perspective-in-the-world %})
 1. [笔记：一点透视]({% post_url drawing/2024-09-13-notes-on-central-perspective %})
 1. [笔记：两点透视]({% post_url drawing/2025-09-26-notes-on-2-point-perspective %})
+1. [笔记：三点透视]({% post_url drawing/2026-10-25-notes-on-3-point-perspective %})
 1. [笔记：高级透视技巧]({% post_url drawing/2025-09-28-notes-on-advanced-perspective %})
 
 ## Creating the perspective view
