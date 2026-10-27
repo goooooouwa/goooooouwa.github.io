@@ -8,11 +8,11 @@ title: 日语学习笔记
 
 ## #1 日語 50 音的發音和寫法簡單教學！
 
-![https://goooooouwa.eu.org:8143/static/images/4s0zDvD.png]({{site.baseurl}}/assets/images/4s0zDvD.png)
+![]({{site.baseurl}}/assets/images/4s0zDvD.png)
 
-![https://goooooouwa.eu.org:8143/static/images/wmAIn0s.png]({{site.baseurl}}/assets/images/wmAIn0s.png)
+![]({{site.baseurl}}/assets/images/wmAIn0s.png)
 
-![https://goooooouwa.eu.org:8143/static/images/aVELNmv.png]({{site.baseurl}}/assets/images/aVELNmv.png)
+![]({{site.baseurl}}/assets/images/aVELNmv.png)
 
 50 个平假名：日文
 
@@ -52,43 +52,43 @@ konnichiwa = 你好
 
 ## #2 搞懂日文發音的 5 個特徵！濁音，促音，拗音..etc
 
-![https://goooooouwa.eu.org:8143/static/images/9CKFozQ.png]({{site.baseurl}}/assets/images/9CKFozQ.png)
+![]({{site.baseurl}}/assets/images/9CKFozQ.png)
 
-![https://goooooouwa.eu.org:8143/static/images/KUX2lJH.png]({{site.baseurl}}/assets/images/KUX2lJH.png)
+![]({{site.baseurl}}/assets/images/KUX2lJH.png)
 
-![https://goooooouwa.eu.org:8143/static/images/UeTHvMv.png]({{site.baseurl}}/assets/images/UeTHvMv.png)
+![]({{site.baseurl}}/assets/images/UeTHvMv.png)
 
-![https://goooooouwa.eu.org:8143/static/images/ey9KCXm.png]({{site.baseurl}}/assets/images/ey9KCXm.png)
+![]({{site.baseurl}}/assets/images/ey9KCXm.png)
 
-![https://goooooouwa.eu.org:8143/static/images/llwQh4F.png]({{site.baseurl}}/assets/images/llwQh4F.png)
+![]({{site.baseurl}}/assets/images/llwQh4F.png)
 
-![https://goooooouwa.eu.org:8143/static/images/0OqVby0.png]({{site.baseurl}}/assets/images/0OqVby0.png)
+![]({{site.baseurl}}/assets/images/0OqVby0.png)
 
-![https://goooooouwa.eu.org:8143/static/images/5koLfPy.png]({{site.baseurl}}/assets/images/5koLfPy.png)
+![]({{site.baseurl}}/assets/images/5koLfPy.png)
 
-![https://goooooouwa.eu.org:8143/static/images/144umMR.png]({{site.baseurl}}/assets/images/144umMR.png)
+![]({{site.baseurl}}/assets/images/144umMR.png)
 
-![https://goooooouwa.eu.org:8143/static/images/rrEEl5R.png]({{site.baseurl}}/assets/images/rrEEl5R.png)
+![]({{site.baseurl}}/assets/images/rrEEl5R.png)
 
-![https://goooooouwa.eu.org:8143/static/images/0pz73Ov.png]({{site.baseurl}}/assets/images/0pz73Ov.png)
+![]({{site.baseurl}}/assets/images/0pz73Ov.png)
 
-![https://goooooouwa.eu.org:8143/static/images/UGvZgJi.png]({{site.baseurl}}/assets/images/UGvZgJi.png)
+![]({{site.baseurl}}/assets/images/UGvZgJi.png)
 
-![https://goooooouwa.eu.org:8143/static/images/N5P3MEx.png]({{site.baseurl}}/assets/images/N5P3MEx.png)
+![]({{site.baseurl}}/assets/images/N5P3MEx.png)
 
-![https://goooooouwa.eu.org:8143/static/images/SLE5PqN.png]({{site.baseurl}}/assets/images/SLE5PqN.png)
+![]({{site.baseurl}}/assets/images/SLE5PqN.png)
 
-![https://goooooouwa.eu.org:8143/static/images/kA4f291.png]({{site.baseurl}}/assets/images/kA4f291.png)
+![]({{site.baseurl}}/assets/images/kA4f291.png)
 
-![https://goooooouwa.eu.org:8143/static/images/jOXLssc.png]({{site.baseurl}}/assets/images/jOXLssc.png)
+![]({{site.baseurl}}/assets/images/jOXLssc.png)
 
-![https://goooooouwa.eu.org:8143/static/images/yGjJ3YP.png]({{site.baseurl}}/assets/images/yGjJ3YP.png)
+![]({{site.baseurl}}/assets/images/yGjJ3YP.png)
 
-![https://goooooouwa.eu.org:8143/static/images/Hfw68ck.png]({{site.baseurl}}/assets/images/Hfw68ck.png)
+![]({{site.baseurl}}/assets/images/Hfw68ck.png)
 
 ## #3 一起來背片假名！日語 50 音的簡單教學～
 
-![https://goooooouwa.eu.org:8143/static/images/lQCXPBT.png]({{site.baseurl}}/assets/images/lQCXPBT.png)
+![]({{site.baseurl}}/assets/images/lQCXPBT.png)
 
 ## #4 15 句日文基本生活問候語
 
@@ -108,7 +108,7 @@ konnichiwa = 你好
 
 ![]({{site.baseurl}}/assets/images/TNJheqx.png)
 
-![https://goooooouwa.eu.org:8143/static/images/ssWQ2h9.png]({{site.baseurl}}/assets/images/ssWQ2h9.png)
+![]({{site.baseurl}}/assets/images/ssWQ2h9.png)
 
 ![]({{site.baseurl}}/assets/images/4NXEcl5.png)
 
@@ -130,13 +130,13 @@ konnichiwa = 你好
 
 ![]({{site.baseurl}}/assets/images/DQ5VK9u.png)
 
-![https://goooooouwa.eu.org:8143/static/images/vstEuf1.png]({{site.baseurl}}/assets/images/vstEuf1.png)
+![]({{site.baseurl}}/assets/images/vstEuf1.png)
 
-![https://goooooouwa.eu.org:8143/static/images/udwnLzX.png]({{site.baseurl}}/assets/images/udwnLzX.png)
+![]({{site.baseurl}}/assets/images/udwnLzX.png)
 
 ## #5 簡單文型：「初次見面我叫..」日文基礎文型教學
 
-![https://goooooouwa.eu.org:8143/static/images/WTUOLhO.png]({{site.baseurl}}/assets/images/WTUOLhO.png)
+![]({{site.baseurl}}/assets/images/WTUOLhO.png)
 
 ## 日语常用语
 

@@ -48,7 +48,7 @@ title: 世界历史时间轴和世界地图
 
 宋元明清后，皇朝至此完。
 
-![https://goooooouwa.eu.org:8143/static/images/v0TLdNx.png]({{site.baseurl}}/assets/images/v0TLdNx.png)
+![]({{site.baseurl}}/assets/images/v0TLdNx.png)
 
 ## 参考
 

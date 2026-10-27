@@ -36,4 +36,4 @@ The circle of view framework
 
 如何找出一对 vanishing points
 
-![https://goooooouwa.eu.org:8143/static/images/QX9VmhB.jpg]({{site.baseurl}}/assets/images/QX9VmhB.jpg)
+![]({{site.baseurl}}/assets/images/QX9VmhB.jpg)

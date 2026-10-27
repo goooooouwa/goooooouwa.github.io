@@ -8,7 +8,7 @@ tags: perspective study-notes
 
 ## 透视：关键概念
 
-![https://goooooouwa.eu.org:8143/static/images/1hTrISA.jpg]({{site.baseurl}}/assets/images/1hTrISA.jpg)
+![]({{site.baseurl}}/assets/images/1hTrISA.jpg)
 
 ## 透视：什么是 measurement points
 
@@ -54,4 +54,4 @@ V 点见下图。
 
 所谓三点透视，就是视角超过 180 度的透视。
 
-![https://goooooouwa.eu.org:8143/static/images/2m3W0Mt.png]({{site.baseurl}}/assets/images/2m3W0Mt.png)
+![]({{site.baseurl}}/assets/images/2m3W0Mt.png)

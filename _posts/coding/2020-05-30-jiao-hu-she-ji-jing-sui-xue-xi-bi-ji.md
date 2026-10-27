@@ -60,7 +60,7 @@ title: 《交互设计精髓》学习笔记
 
 交互设计是研究数字时代衍生出的复杂行为的产品的设计学科。
 
-![https://goooooouwa.eu.org:8143/static/images/ipPHhya.jpg]({{site.baseurl}}/assets/images/ipPHhya.jpg)
+![]({{site.baseurl}}/assets/images/ipPHhya.jpg)
 
 设计需要从总体上考虑
 
