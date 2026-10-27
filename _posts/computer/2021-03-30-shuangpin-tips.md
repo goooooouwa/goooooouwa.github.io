@@ -14,11 +14,11 @@ https://mp.weixin.qq.com/s/vpznyt6LxGW4gLnZTpeqng
 
 ## 微软双拼方案键位图
 
-![](https://goooooouwa.eu.org:8143/static/images/UUYHzgW.png)
+![]({{site.baseurl}}/assets/images/UUYHzgW.png)
 
 ## 微软双拼速记口诀
 
-![](https://goooooouwa.eu.org:8143/static/images/yRGgbzW.jpg)
+![]({{site.baseurl}}/assets/images/yRGgbzW.jpg)
 
 ## 双拼（微软方案）难记韵母
 

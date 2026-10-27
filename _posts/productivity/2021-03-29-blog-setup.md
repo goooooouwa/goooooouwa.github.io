@@ -63,7 +63,7 @@ published: true
 
 我目前基于 prose.io 的博客发布工作流如下图：
 
-![](https://goooooouwa.eu.org:8143/static/images/AUL1X0a.png)
+![]({{site.baseurl}}/assets/images/AUL1X0a.png)
 
 ```mermaid
     graph TD

@@ -4,30 +4,31 @@ category: computer
 tags: openwrt zerotier
 published: true
 ---
+
 ## 操作细节
 
 1. Openwrt ZeroTier基本设置
 
-![](https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/1%20openwrt-zerotier-settings.PNG)
+![]({{site.baseurl}}/assets/images/openwrt-zerotier-access-lan-devices/1%20openwrt-zerotier-settings.PNG)
 
 2. 为ZeroTier创建一个新的接口作为DHCP客户端
 
-![](https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/2.1%20create-new-interface-for-zerotier-dhcp.PNG)
+![]({{site.baseurl}}/assets/images/openwrt-zerotier-access-lan-devices/2.1%20create-new-interface-for-zerotier-dhcp.PNG)
 
-![](https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/2.2%20zerotier-dhcp-firewall-settings.PNG)
+![]({{site.baseurl}}/assets/images/openwrt-zerotier-access-lan-devices/2.2%20zerotier-dhcp-firewall-settings.PNG)
 
 3. 为ZeroTier新的DHCP客户端接口添加防火墙规则
 
-![](https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/3%20add-firewall-rules-for-zerotier-dhcp-interface.PNG)
+![]({{site.baseurl}}/assets/images/openwrt-zerotier-access-lan-devices/3%20add-firewall-rules-for-zerotier-dhcp-interface.PNG)
 
 4. 在ZeroTier上为本地局域网添加指向Openwrt虚拟IP的Default Route
 
-![](https://goooooouwa.eu.org:8143/static/images/openwrt-zerotier-access-lan-devices/4%20add-zerotier-default-route.PNG)
+![]({{site.baseurl}}/assets/images/openwrt-zerotier-access-lan-devices/4%20add-zerotier-default-route.PNG)
 
 ## 参考教程：
+
 1. OpenWrt 通过安装 ZeroTier 实现异地组网教程：[https://opclash.com/article/198.html](https://opclash.com/article/198.html)
 1. ZeroTier+Openwrt 内网穿透配置| WAN口配置: [https://eller.top/post/94](https://eller.top/post/94)
-
 
 ## 关于如何使用ZeroTier作为VPN
 

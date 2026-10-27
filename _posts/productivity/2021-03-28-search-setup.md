@@ -5,7 +5,7 @@ tag: setup
 published: true
 ---
 
-![](https://goooooouwa.eu.org:8143/static/images/50CY25C.png)
+![]({{site.baseurl}}/assets/images/50CY25C.png)
 
 ```mermaid
     graph TD

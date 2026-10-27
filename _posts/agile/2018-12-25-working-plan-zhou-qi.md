@@ -6,7 +6,7 @@ category: agile
 tags: product-management agile
 ---
 
-![Imgur](https://goooooouwa.eu.org:8143/static/images/r6VWImg.png)
+![Imgur]({{site.baseurl}}/assets/images/r6VWImg.png)
 Change management (stable our release)
 一张卡的诞生：
 需求调研 -> User story map -> 细化业务逻辑 -> 用户验证 -> 拆卡写卡 -> 设计 journey 和 UI-> 细化卡的 AC 和 TS

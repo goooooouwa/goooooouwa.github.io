@@ -16,7 +16,7 @@ OMV 主分区扩容本质上需要以下 3 步：
 1. [Linux 系统通过命令行给主分区扩容](https://forum.openmediavault.org/index.php?thread/41271-expand-file-system-size-to-disk-size/)
 1. [OMV 通过 GParted Live 图形界面给主分区扩容](https://www.wnark.com/archives/118.html)
 
-![IMG_4196.JPG](https://goooooouwa.eu.org:8143/static/images/IMG_4196.JPG)
+![IMG_4196.JPG]({{site.baseurl}}/assets/images/IMG_4196.JPG)
 
 OMV 通过 GParted Live 扩容的具体步骤如下：
 

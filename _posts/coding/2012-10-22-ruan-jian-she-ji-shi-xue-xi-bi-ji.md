@@ -8,9 +8,9 @@ title: 《软件设计师》学习笔记
 
 ## 关系数据库规范化：函数依赖
 
-![](https://goooooouwa.eu.org:8143/static/images/WwnWq9b.jpg)
+![]({{site.baseurl}}/assets/images/WwnWq9b.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/NrLAkyB.jpg)
+![]({{site.baseurl}}/assets/images/NrLAkyB.jpg)
 
 产生冗余和异常的两个重要原因是部分依赖和传递依赖。关系模式的规范化处理就是将非 3NF 的 1NF、2NF 变换成为 3NF 或更高级别的范式的过程。
 
@@ -32,9 +32,9 @@ V 操作就是释放一个资源(S=S+1)，如果有人排队(S<0)就叫一个上
 
 ## 基本的设计模式
 
-![](https://goooooouwa.eu.org:8143/static/images/Ab0bZAw.jpg)
+![]({{site.baseurl}}/assets/images/Ab0bZAw.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/Hzw32ak.jpg)
+![]({{site.baseurl}}/assets/images/Hzw32ak.jpg)
 
 ## AOE 图
 
@@ -50,7 +50,7 @@ A tree with 'n' number of nodes has exactly 'n-1' branches or degree.
 
 ## 各种基本排序的时间复杂度
 
-![](https://goooooouwa.eu.org:8143/static/images/YmH01Ne.jpg)
+![]({{site.baseurl}}/assets/images/YmH01Ne.jpg)
 
 ## 关系代数运算
 
@@ -62,11 +62,11 @@ P.S. 关系=集合, 元组=记录
 
 ## 分层数据流图例图
 
-![](https://goooooouwa.eu.org:8143/static/images/CA0Wazr.jpg)
+![]({{site.baseurl}}/assets/images/CA0Wazr.jpg)
 
 ## Java 异常处理
 
-![](https://goooooouwa.eu.org:8143/static/images/dhUenfF.jpg)
+![]({{site.baseurl}}/assets/images/dhUenfF.jpg)
 
 （4）throw 语句用来明确地抛出一个＂异常＂。在 catch 子句进行异常处理。
 

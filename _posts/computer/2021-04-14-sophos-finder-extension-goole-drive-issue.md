@@ -14,11 +14,11 @@ TL;DR: 如果你有遇到 OneDrive, Dropbox 或 Google Sync 的文件夹没有�
 
 Expected（正常显示的同步状态的提示图标）:
 
-![Expected](https://goooooouwa.eu.org:8143/static/images/KZGuyYz.png)
+![Expected]({{site.baseurl}}/assets/images/KZGuyYz.png)
 
 Actual（同步状态的提示图标没有显示）:
 
-![Actual](https://goooooouwa.eu.org:8143/static/images/jlf1BGf.png)
+![Actual]({{site.baseurl}}/assets/images/jlf1BGf.png)
 
 ## 问题原因：
 
@@ -30,8 +30,8 @@ Sophos Finder Scan 的 Finder extension 影响了 OneDrive, Dropbox 和 Google S
 
 Step 1: 取消勾选 Sophos Finder Scan
 
-![Step 1](https://goooooouwa.eu.org:8143/static/images/Kllt6lH.png)
+![Step 1]({{site.baseurl}}/assets/images/Kllt6lH.png)
 
 Step 2: 将 Sophos Finder Scan 再勾选回去
 
-![Step 2](https://goooooouwa.eu.org:8143/static/images/miXpbKF.png)
+![Step 2]({{site.baseurl}}/assets/images/miXpbKF.png)

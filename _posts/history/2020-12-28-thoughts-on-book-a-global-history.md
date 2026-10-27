@@ -80,17 +80,17 @@ Wikipedia 上对“Civilization”的定义是：
 
 公元前 16000 年，蒙古人种到达了美洲，此时人类的足迹已经遍布整个地球。
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/DafDR7R.png)
+![w:1140]({{site.baseurl}}/assets/images/DafDR7R.png)
 
 #### 古代时期：夏朝出现（公元前 2069 年）
 
 公元前 2069 年，四大古代文明已然成形（彩色区域），全球大部分地区仍然处在部落文化。
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/Ddts9D3.png)
+![w:1140]({{site.baseurl}}/assets/images/Ddts9D3.png)
 
 #### 古典时期：罗马帝国形成（公元 359 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/rMx3Zsv.png)
+![w:1140]({{site.baseurl}}/assets/images/rMx3Zsv.png)
 
 #### 中世纪：突厥人和蒙古人的入侵（公元 1280 年）
 
@@ -100,31 +100,31 @@ Wikipedia 上对“Civilization”的定义是：
 
 这段历史告诉我们，再强大的帝国，一旦技术发展停滞，总有一天会被保持进步的国家打败。
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/IDAjikR.png)
+![w:1140]({{site.baseurl}}/assets/images/IDAjikR.png)
 
 #### 中世纪末期（公元 1500 年）
 
 匈奴人的入侵，促使了罗马帝国的灭亡，从此欧洲被日耳曼蛮族统治。而也正是因为罗马帝国的衰落，为欧洲国家新兴资产阶级发展提供了空间，为海外扩张铺平了道路。
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/7OUXDt0.png)
+![w:1140]({{site.baseurl}}/assets/images/7OUXDt0.png)
 
 #### 地理大发现（公元 1763 年）
 
 在相对非常短暂的时间内，南北美洲及许多世界其他地区成为英国、法国、荷兰等欧洲国家的殖民地。
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/oqubh9h.png)
+![w:1140]({{site.baseurl}}/assets/images/oqubh9h.png)
 
 #### 第一次世界大战（公元 1914 年）
 
 由于各地区殖民地的民族崛起，欧洲国家的殖民地版图迅速萎缩，欧洲国家因为实力不均而发起了第一次世界大战。第一、二次世界大战的直接结果是欧洲各殖民强国在丧失对殖民地的控制后，达到新的实力平衡，整体开始走向衰落。
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/x06NpkU.png)
+![w:1140]({{site.baseurl}}/assets/images/x06NpkU.png)
 
 #### 当今的世界（公元 2016 年）
 
 当今世界整体处于西方国家走向衰落，世界各地区民族崛起的时期。各地区广泛交流，全球化和信息高度统一。
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/fZ4XP6V.png)
+![w:1140]({{site.baseurl}}/assets/images/fZ4XP6V.png)
 
 ## 思考与总结
 

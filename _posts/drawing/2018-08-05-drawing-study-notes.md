@@ -8,7 +8,7 @@ tags: perspective study-notes
 
 ## 透视：关键概念
 
-![https://goooooouwa.eu.org:8143/static/images/1hTrISA.jpg](https://goooooouwa.eu.org:8143/static/images/1hTrISA.jpg)
+![https://goooooouwa.eu.org:8143/static/images/1hTrISA.jpg]({{site.baseurl}}/assets/images/1hTrISA.jpg)
 
 ## 透视：什么是 measurement points
 
@@ -20,9 +20,9 @@ V 点见下图。
 
 找到 a，b 点后，在 LT 线上的任意长度线段两端与 a（或 b）的连线与 D'（或 D）的交点即该线段在 D'（或 D）上的等长投影。
 
-![Imgur](https://goooooouwa.eu.org:8143/static/images/CW4MgNW.png)
+![Imgur]({{site.baseurl}}/assets/images/CW4MgNW.png)
 
-![Imgur](https://goooooouwa.eu.org:8143/static/images/6ZHpdM7.png)
+![Imgur]({{site.baseurl}}/assets/images/6ZHpdM7.png)
 
 ## 透视规律
 
@@ -54,4 +54,4 @@ V 点见下图。
 
 所谓三点透视，就是视角超过 180 度的透视。
 
-![https://goooooouwa.eu.org:8143/static/images/2m3W0Mt.png](https://goooooouwa.eu.org:8143/static/images/2m3W0Mt.png)
+![https://goooooouwa.eu.org:8143/static/images/2m3W0Mt.png]({{site.baseurl}}/assets/images/2m3W0Mt.png)

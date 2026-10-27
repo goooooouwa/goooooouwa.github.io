@@ -102,7 +102,7 @@ A socket is a bidirectional communication device that can be used to communicate
 
 **Physical and virtual memory maps**
 
-![https://goooooouwa.eu.org:8143/static/images/XqsBMgx.png](https://goooooouwa.eu.org:8143/static/images/XqsBMgx.png)
+![https://goooooouwa.eu.org:8143/static/images/XqsBMgx.png]({{site.baseurl}}/assets/images/XqsBMgx.png)
 
 The physical map of a system is usually available with the technical literature accompanying your hardware. In the case of the iPAQ, the StrongARM manual, the SA-1110 Developer's manual, is available from Intel's web site.
 

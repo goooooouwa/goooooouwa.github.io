@@ -20,7 +20,7 @@ tags: embedded-linux linux
 ## Storage device setup
 
 1.Partition storage device.
-![Imgur](https://goooooouwa.eu.org:8143/static/images/pMuTGYp.png)
+![Imgur]({{site.baseurl}}/assets/images/pMuTGYp.png)
 
 Bootloader, Boot parameters, Kernel, Root filesystem
 

@@ -15,12 +15,12 @@ There are four types of aim assist in Halo titles: Snapping, Friction, Accelerat
 
 https://www.halopedia.org/Aim_assist
 
-![](https://goooooouwa.eu.org:8143/static/images/kmIAvoc.jpg)
+![]({{site.baseurl}}/assets/images/kmIAvoc.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/VeDDwCX.jpg)
+![]({{site.baseurl}}/assets/images/VeDDwCX.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/1oBexsB.jpg)
+![]({{site.baseurl}}/assets/images/1oBexsB.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/luaEtWQ.jpg)
+![]({{site.baseurl}}/assets/images/luaEtWQ.jpg)
 
 https://youtu.be/Q4aBhJy6zog

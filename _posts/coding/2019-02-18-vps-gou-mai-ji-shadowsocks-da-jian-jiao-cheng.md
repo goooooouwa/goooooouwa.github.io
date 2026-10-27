@@ -41,7 +41,7 @@ iOS 客户端官网推荐的[Outline](https://itunes.apple.com/app/outline-app/i
 
 可以在 Chrome Console 中使用 JavaScript 的`btoa()`方法进行 base64 编码，如下：
 
-![](https://goooooouwa.eu.org:8143/static/images/SSzucyN.png)
+![]({{site.baseurl}}/assets/images/SSzucyN.png)
 
 例如，将`ss://bf-cfb-auth:test@192.168.100.1:8888`，这个内容转换成标准的 SS 协议内容就成了：
 

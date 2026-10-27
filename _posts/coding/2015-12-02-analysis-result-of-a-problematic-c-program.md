@@ -31,8 +31,8 @@ result=1410065408
 为什么 i=10 时，result=1410065408 呢？
 因为 10^10 超出了 long 数据类型（占 4 字节内存空间）所能表达数字的范围，溢出了。
 
-![overflow](https://goooooouwa.eu.org:8143/static/images/RR9Cpnj.png)
+![overflow]({{site.baseurl}}/assets/images/RR9Cpnj.png)
 
 为了证实这一猜测，我们可以用程序员计算器查看 10^10 的二进制表示，即：10 0101 0100 0000 1011 1110 0100 0000 1000。取其后 32 位，即 0101 0100 0000 1011 1110 0100 0000 1000，以十进制表示可得 1410065408。由此证明，1410065408 是 10^10 以 long 数据类型表示的结果。同样可以证明，题中代码运行结果 1215752192 也是 10^11 以 long 数据类型表示溢出后的结果。
 
-![proof](https://goooooouwa.eu.org:8143/static/images/eNpBwrs.png)
+![proof]({{site.baseurl}}/assets/images/eNpBwrs.png)

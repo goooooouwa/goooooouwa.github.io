@@ -32,4 +32,4 @@ date: "2019-11-06"
 - 2016 13.2 万
 - 2014 13.6 万
 
-![Imgur](https://goooooouwa.eu.org:8143/static/images/CxDVVyj.png)
+![Imgur]({{site.baseurl}}/assets/images/CxDVVyj.png)

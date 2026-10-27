@@ -19,10 +19,10 @@ category: technology
 1. 服务器通过对比用户上传的节目声音与各个电视台实时传来的节目声音进行对比，成功找出匹配的节目；
 1. 最后将节目的互动信息发送给用户。
 
-![Shake TV 3](https://goooooouwa.eu.org:8143/static/images/UW6sw9e.jpg)
-![Shake TV 4](https://goooooouwa.eu.org:8143/static/images/wzozYQq.jpg)
-![Shake TV 5](https://goooooouwa.eu.org:8143/static/images/LoVEsLG.jpg)
-![Shake TV 6](https://goooooouwa.eu.org:8143/static/images/7k5cmja.jpg)
+![Shake TV 3]({{site.baseurl}}/assets/images/UW6sw9e.jpg)
+![Shake TV 4]({{site.baseurl}}/assets/images/wzozYQq.jpg)
+![Shake TV 5]({{site.baseurl}}/assets/images/LoVEsLG.jpg)
+![Shake TV 6]({{site.baseurl}}/assets/images/7k5cmja.jpg)
 
 ## 后记
 

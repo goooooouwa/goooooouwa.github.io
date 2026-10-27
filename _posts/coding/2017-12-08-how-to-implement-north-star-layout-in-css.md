@@ -6,7 +6,7 @@ category: coding
 tags: css
 ---
 
-![Desired Style](https://goooooouwa.eu.org:8143/static/images/K5AXNzB.png)
+![Desired Style]({{site.baseurl}}/assets/images/K5AXNzB.png)
 
 ## Design Requirements
 
@@ -18,7 +18,7 @@ navigation tab has `display` set as `flex`, so `float`, `clear` and `vertical-al
 
 ### Box model
 
-![Box model](https://goooooouwa.eu.org:8143/static/images/4uKCNvQ.png)
+![Box model]({{site.baseurl}}/assets/images/4uKCNvQ.png)
 
 ## Solution
 

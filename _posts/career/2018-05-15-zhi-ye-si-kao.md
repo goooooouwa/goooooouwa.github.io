@@ -6,14 +6,14 @@ title: 职业思考
 
 # 职业思考
 
-![](https://goooooouwa.eu.org:8143/static/images/mTYkfL6.jpg)
+![]({{site.baseurl}}/assets/images/mTYkfL6.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/umkCJ88.jpg)
+![]({{site.baseurl}}/assets/images/umkCJ88.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/FCg6Pri.jpg)
+![]({{site.baseurl}}/assets/images/FCg6Pri.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/xxtYXbW.jpg)
+![]({{site.baseurl}}/assets/images/xxtYXbW.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/A30IMSq.jpg)
+![]({{site.baseurl}}/assets/images/A30IMSq.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/ZbZe7gV.jpg)
+![]({{site.baseurl}}/assets/images/ZbZe7gV.jpg)

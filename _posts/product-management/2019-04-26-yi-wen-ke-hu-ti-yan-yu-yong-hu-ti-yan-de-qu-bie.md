@@ -20,7 +20,7 @@ tags: user-experience
 
 客户体验是通过整体体验、再次使用的可能性以及对他人的推荐率等指标来衡量的。 客户体验是全局，用户体验是其中的一部分。
 
-![](https://goooooouwa.eu.org:8143/static/images/7JaMFyp.png)
+![]({{site.baseurl}}/assets/images/7JaMFyp.png)
 
 有了这些定义，现在让我们来思考一个例子 - 约翰想要开设一个银行账户。如果让我简要的描述他的旅程，它会是这样的：
 
@@ -43,7 +43,7 @@ tags: user-experience
 
 在约翰的例子中，他对银行应用程序有很好的体验，但他对银行本身的体验并不好。因此，为了让约翰拥有良好的客户体验，银行需要在每个方面进行改进 -- （a）雇用更多员工以在繁忙时段减少排队，（b）在 48 小时左右验证身份信息，（c）提供良好的客户服务，（d）并有一个很棒的移动应用程序。
 
-![](https://goooooouwa.eu.org:8143/static/images/PkGHyY4.png)
+![]({{site.baseurl}}/assets/images/PkGHyY4.png)
 
 ## 结论
 

@@ -207,7 +207,7 @@ tags: marketing-management
 - 目标市场（target market)是在合格的有效市场中，公司决定从事经营的那部分市场。如公司应当侧重美国东海岸的营销和分销努力。
 - 渗透市场（penetrated market)是指购买公司产品的消费者群体。
 
-![https://goooooouwa.eu.org:8143/static/images/MWRea6v.png](https://goooooouwa.eu.org:8143/static/images/MWRea6v.png)
+![https://goooooouwa.eu.org:8143/static/images/MWRea6v.png]({{site.baseurl}}/assets/images/MWRea6v.png)
 
 #### 有关需求测量的术语
 
@@ -227,7 +227,7 @@ tags: marketing-management
 
 公司也可以将当前市场占有率除以潜在市场占有率，获得公司的**市场占有率渗 透指数**（share penetration index）。较低的市场占有率渗透指数表明公司可以大幅 度扩张它的份额。市场占有率渗透指数低的原因可能是品牌知名度尚低，品牌可获 得程度不高，获利不足或价格太高等。**公司应当计算移除每项因素后市场占有率渗 透指数的提升，并分析哪些投资可以使占有率渗透指数获得最大限度的改善。**
 
-![https://goooooouwa.eu.org:8143/static/images/mU1HvYQ.png](https://goooooouwa.eu.org:8143/static/images/mU1HvYQ.png)
+![https://goooooouwa.eu.org:8143/static/images/mU1HvYQ.png]({{site.baseurl}}/assets/images/mU1HvYQ.png)
 
 需要强调的是从市场需求函数**无法看出时间对市场需求的影响**。反之，市场需 求曲线只显示了当期行业营销活动与当期市场需求预测值间的函数关系。
 

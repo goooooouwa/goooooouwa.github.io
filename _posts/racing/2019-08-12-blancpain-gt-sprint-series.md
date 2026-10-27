@@ -21,13 +21,13 @@ According to [Red Bull](https://www.redbull.com/sg-en/gt-racing-101-a-guide-for-
 ### Blancpain GT3 classes
 
 Pro & Silver: white LED number lights
-![](https://goooooouwa.eu.org:8143/static/images/ayp6Ys4.jpg)
+![]({{site.baseurl}}/assets/images/ayp6Ys4.jpg)
 
 Pro-Am: blue LED number lights
-![](https://goooooouwa.eu.org:8143/static/images/Ltwf9iv.jpg)
+![]({{site.baseurl}}/assets/images/Ltwf9iv.jpg)
 
 Am: orange LED number lights
-![](https://goooooouwa.eu.org:8143/static/images/ymklhBj.jpg)
+![]({{site.baseurl}}/assets/images/ymklhBj.jpg)
 
 ### How to reconginze Intercontinental GT Challenge cars in the Total 24 Hours of Spa
 
@@ -36,7 +36,7 @@ In addition to the Blancpain GT Series Endurance Cup, the Total 24 Hours of Spa 
 White windscreen sticker is Intercontinental GT challenge GT3 cars
 Black windscreen sticker is Blancpain GT3 cars
 
-![](https://goooooouwa.eu.org:8143/static/images/IJ19iZS.jpg)
+![]({{site.baseurl}}/assets/images/IJ19iZS.jpg)
 
 ### Other popular GT3 races
 

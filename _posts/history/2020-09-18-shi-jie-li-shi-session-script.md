@@ -25,7 +25,7 @@ headingDivider: 2
 
 #
 
-[![w:1100](https://goooooouwa.eu.org:8143/static/images/bc9HOJU.png)](https://www.youtube.com/watch?v=FKxsuy1UxJY)
+[![w:1100]({{site.baseurl}}/assets/images/bc9HOJU.png)](https://www.youtube.com/watch?v=FKxsuy1UxJY)
 
 # 关键时间节点跨度对比
 
@@ -46,7 +46,7 @@ headingDivider: 2
 
 #
 
-[![w:1100](https://goooooouwa.eu.org:8143/static/images/J7o3iJL.png)](https://www.youtube.com/watch?v=o-3LD4-cG4A)
+[![w:1100]({{site.baseurl}}/assets/images/J7o3iJL.png)](https://www.youtube.com/watch?v=o-3LD4-cG4A)
 
 # 世界历史时间轴
 
@@ -81,35 +81,35 @@ headingDivider: 2
 
 ## 史前时代：人类到达美洲（公元前 16000 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/DafDR7R.png)
+![w:1140]({{site.baseurl}}/assets/images/DafDR7R.png)
 
 ## 古代时期：夏朝出现（公元前 2069 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/Ddts9D3.png)
+![w:1140]({{site.baseurl}}/assets/images/Ddts9D3.png)
 
 ## 古典时期：罗马帝国形成（359 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/rMx3Zsv.png)
+![w:1140]({{site.baseurl}}/assets/images/rMx3Zsv.png)
 
 ## 中世纪：蒙古帝国（1280 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/IDAjikR.png)
+![w:1140]({{site.baseurl}}/assets/images/IDAjikR.png)
 
 ## 中世纪末期（1500 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/7OUXDt0.png)
+![w:1140]({{site.baseurl}}/assets/images/7OUXDt0.png)
 
 ## 地理大发现（1763 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/oqubh9h.png)
+![w:1140]({{site.baseurl}}/assets/images/oqubh9h.png)
 
 ## 第一次世界大战（1914 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/x06NpkU.png)
+![w:1140]({{site.baseurl}}/assets/images/x06NpkU.png)
 
 ## 当今的世界（2016 年）
 
-![w:1140](https://goooooouwa.eu.org:8143/static/images/fZ4XP6V.png)
+![w:1140]({{site.baseurl}}/assets/images/fZ4XP6V.png)
 
 # 人类各历史时期的显著特征
 

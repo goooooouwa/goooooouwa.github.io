@@ -8,22 +8,22 @@ date: "2018-12-04"
 
 如果不看注释，你能分辨马自达的魁概念车和量产车吗？
 
-![](https://goooooouwa.eu.org:8143/static/images/CzGrgcD.jpg)
+![]({{site.baseurl}}/assets/images/CzGrgcD.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/9ervc8r.jpg)
+![]({{site.baseurl}}/assets/images/9ervc8r.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/YQGE06p.jpg)
+![]({{site.baseurl}}/assets/images/YQGE06p.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/CPJT1lX.jpg)
+![]({{site.baseurl}}/assets/images/CPJT1lX.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/UxO96nv.jpg)
+![]({{site.baseurl}}/assets/images/UxO96nv.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/0JQ8d4s.jpg)
+![]({{site.baseurl}}/assets/images/0JQ8d4s.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/CYFjnL2.jpg)
+![]({{site.baseurl}}/assets/images/CYFjnL2.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/lff1hKR.jpg)
+![]({{site.baseurl}}/assets/images/lff1hKR.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/RFj8X9O.jpg)
+![]({{site.baseurl}}/assets/images/RFj8X9O.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/p9V5flC.jpg)
+![]({{site.baseurl}}/assets/images/p9V5flC.jpg)

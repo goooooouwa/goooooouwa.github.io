@@ -8,19 +8,19 @@ title: Ultimate Speed Secrets notes 笔记
 
 走线，找好 turn in point（开始转向的点，Turn in point 之后逐步加大油门，提高速度，在 midcorner 阶段需要维持油门以维持速度和转弯半径来过弯。）, apex（转向中离内道最近的点，不一定是开始全油门的点，过了 apex 就开始驶离弯道，转向角度一定是逐渐减小）, turn out point（转向回 0 的点）
 
-![](https://goooooouwa.eu.org:8143/static/images/4AObvZt.jpg)
+![]({{site.baseurl}}/assets/images/4AObvZt.jpg)
 
 下面这张图仅示意，部分比例失真
 
-![](https://goooooouwa.eu.org:8143/static/images/sdhBzLR.jpg)
+![]({{site.baseurl}}/assets/images/sdhBzLR.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/yT0RwUE.jpg)
+![]({{site.baseurl}}/assets/images/yT0RwUE.jpg)
 
-![](https://goooooouwa.eu.org:8143/static/images/rwhmo4Z.jpg)
+![]({{site.baseurl}}/assets/images/rwhmo4Z.jpg)
 
 油门 modular 控制（从入弯开始，逐渐加大油门，只在 midcorner 阶段保持稳定。油门 percentage 由转向 radius 转弯半径决定：radius 决定了极限过弯速度，随着 radius 增大，极限速度增大，进而油门 percentage 可以增大）
 
-![](https://goooooouwa.eu.org:8143/static/images/JocMVYl.jpg)
+![]({{site.baseurl}}/assets/images/JocMVYl.jpg)
 
 早刹车比晩刹车好
 
@@ -28,7 +28,7 @@ title: Ultimate Speed Secrets notes 笔记
 
 临界刹车要快速渐进且坚决地踩到临界的，不能一脚剁下去，也不能不敢深踩。
 
-![](https://goooooouwa.eu.org:8143/static/images/IMAQaTZ.jpg)
+![]({{site.baseurl}}/assets/images/IMAQaTZ.jpg)
 
 Friction circle is the limit. Fill the circle.
 

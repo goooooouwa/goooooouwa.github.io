@@ -8,32 +8,32 @@ tag: perspective study-notes
 
 90 度视锥框架使得我们可以自由地精确绘制出任何画面
 
-![](https://goooooouwa.eu.org:8143/static/images/ok462AI.jpg)
+![]({{site.baseurl}}/assets/images/ok462AI.jpg)
 
 90 度视锥是一种方便透视绘画的工具
 
-![](https://goooooouwa.eu.org:8143/static/images/NGkoEAS.jpg)
+![]({{site.baseurl}}/assets/images/NGkoEAS.jpg)
 
 general rule on average size of image plane
 
-![](https://goooooouwa.eu.org:8143/static/images/argte7a.jpg)
+![]({{site.baseurl}}/assets/images/argte7a.jpg)
 
 convenient 90 degrees circle of view framework
 
-![](https://goooooouwa.eu.org:8143/static/images/iRjbtia.jpg)
+![]({{site.baseurl}}/assets/images/iRjbtia.jpg)
 
 The circle of view framework
 
-![](https://goooooouwa.eu.org:8143/static/images/4xy9Qt4.jpg)
+![]({{site.baseurl}}/assets/images/4xy9Qt4.jpg)
 
 一幅画通常由多种透视组成。
 
-![](https://goooooouwa.eu.org:8143/static/images/ucP9i8X.jpg)
+![]({{site.baseurl}}/assets/images/ucP9i8X.jpg)
 
 为什么视线方法是正确的
 
-![](https://goooooouwa.eu.org:8143/static/images/zZQXu0H.jpg)
+![]({{site.baseurl}}/assets/images/zZQXu0H.jpg)
 
 如何找出一对 vanishing points
 
-![https://goooooouwa.eu.org:8143/static/images/QX9VmhB.jpg](https://goooooouwa.eu.org:8143/static/images/QX9VmhB.jpg)
+![https://goooooouwa.eu.org:8143/static/images/QX9VmhB.jpg]({{site.baseurl}}/assets/images/QX9VmhB.jpg)

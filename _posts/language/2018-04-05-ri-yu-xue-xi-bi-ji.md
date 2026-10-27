@@ -8,11 +8,11 @@ title: 日语学习笔记
 
 ## #1 日語 50 音的發音和寫法簡單教學！
 
-![https://goooooouwa.eu.org:8143/static/images/4s0zDvD.png](https://goooooouwa.eu.org:8143/static/images/4s0zDvD.png)
+![https://goooooouwa.eu.org:8143/static/images/4s0zDvD.png]({{site.baseurl}}/assets/images/4s0zDvD.png)
 
-![https://goooooouwa.eu.org:8143/static/images/wmAIn0s.png](https://goooooouwa.eu.org:8143/static/images/wmAIn0s.png)
+![https://goooooouwa.eu.org:8143/static/images/wmAIn0s.png]({{site.baseurl}}/assets/images/wmAIn0s.png)
 
-![https://goooooouwa.eu.org:8143/static/images/aVELNmv.png](https://goooooouwa.eu.org:8143/static/images/aVELNmv.png)
+![https://goooooouwa.eu.org:8143/static/images/aVELNmv.png]({{site.baseurl}}/assets/images/aVELNmv.png)
 
 50 个平假名：日文
 
@@ -52,91 +52,91 @@ konnichiwa = 你好
 
 ## #2 搞懂日文發音的 5 個特徵！濁音，促音，拗音..etc
 
-![https://goooooouwa.eu.org:8143/static/images/9CKFozQ.png](https://goooooouwa.eu.org:8143/static/images/9CKFozQ.png)
+![https://goooooouwa.eu.org:8143/static/images/9CKFozQ.png]({{site.baseurl}}/assets/images/9CKFozQ.png)
 
-![https://goooooouwa.eu.org:8143/static/images/KUX2lJH.png](https://goooooouwa.eu.org:8143/static/images/KUX2lJH.png)
+![https://goooooouwa.eu.org:8143/static/images/KUX2lJH.png]({{site.baseurl}}/assets/images/KUX2lJH.png)
 
-![https://goooooouwa.eu.org:8143/static/images/UeTHvMv.png](https://goooooouwa.eu.org:8143/static/images/UeTHvMv.png)
+![https://goooooouwa.eu.org:8143/static/images/UeTHvMv.png]({{site.baseurl}}/assets/images/UeTHvMv.png)
 
-![https://goooooouwa.eu.org:8143/static/images/ey9KCXm.png](https://goooooouwa.eu.org:8143/static/images/ey9KCXm.png)
+![https://goooooouwa.eu.org:8143/static/images/ey9KCXm.png]({{site.baseurl}}/assets/images/ey9KCXm.png)
 
-![https://goooooouwa.eu.org:8143/static/images/llwQh4F.png](https://goooooouwa.eu.org:8143/static/images/llwQh4F.png)
+![https://goooooouwa.eu.org:8143/static/images/llwQh4F.png]({{site.baseurl}}/assets/images/llwQh4F.png)
 
-![https://goooooouwa.eu.org:8143/static/images/0OqVby0.png](https://goooooouwa.eu.org:8143/static/images/0OqVby0.png)
+![https://goooooouwa.eu.org:8143/static/images/0OqVby0.png]({{site.baseurl}}/assets/images/0OqVby0.png)
 
-![https://goooooouwa.eu.org:8143/static/images/5koLfPy.png](https://goooooouwa.eu.org:8143/static/images/5koLfPy.png)
+![https://goooooouwa.eu.org:8143/static/images/5koLfPy.png]({{site.baseurl}}/assets/images/5koLfPy.png)
 
-![https://goooooouwa.eu.org:8143/static/images/144umMR.png](https://goooooouwa.eu.org:8143/static/images/144umMR.png)
+![https://goooooouwa.eu.org:8143/static/images/144umMR.png]({{site.baseurl}}/assets/images/144umMR.png)
 
-![https://goooooouwa.eu.org:8143/static/images/rrEEl5R.png](https://goooooouwa.eu.org:8143/static/images/rrEEl5R.png)
+![https://goooooouwa.eu.org:8143/static/images/rrEEl5R.png]({{site.baseurl}}/assets/images/rrEEl5R.png)
 
-![https://goooooouwa.eu.org:8143/static/images/0pz73Ov.png](https://goooooouwa.eu.org:8143/static/images/0pz73Ov.png)
+![https://goooooouwa.eu.org:8143/static/images/0pz73Ov.png]({{site.baseurl}}/assets/images/0pz73Ov.png)
 
-![https://goooooouwa.eu.org:8143/static/images/UGvZgJi.png](https://goooooouwa.eu.org:8143/static/images/UGvZgJi.png)
+![https://goooooouwa.eu.org:8143/static/images/UGvZgJi.png]({{site.baseurl}}/assets/images/UGvZgJi.png)
 
-![https://goooooouwa.eu.org:8143/static/images/N5P3MEx.png](https://goooooouwa.eu.org:8143/static/images/N5P3MEx.png)
+![https://goooooouwa.eu.org:8143/static/images/N5P3MEx.png]({{site.baseurl}}/assets/images/N5P3MEx.png)
 
-![https://goooooouwa.eu.org:8143/static/images/SLE5PqN.png](https://goooooouwa.eu.org:8143/static/images/SLE5PqN.png)
+![https://goooooouwa.eu.org:8143/static/images/SLE5PqN.png]({{site.baseurl}}/assets/images/SLE5PqN.png)
 
-![https://goooooouwa.eu.org:8143/static/images/kA4f291.png](https://goooooouwa.eu.org:8143/static/images/kA4f291.png)
+![https://goooooouwa.eu.org:8143/static/images/kA4f291.png]({{site.baseurl}}/assets/images/kA4f291.png)
 
-![https://goooooouwa.eu.org:8143/static/images/jOXLssc.png](https://goooooouwa.eu.org:8143/static/images/jOXLssc.png)
+![https://goooooouwa.eu.org:8143/static/images/jOXLssc.png]({{site.baseurl}}/assets/images/jOXLssc.png)
 
-![https://goooooouwa.eu.org:8143/static/images/yGjJ3YP.png](https://goooooouwa.eu.org:8143/static/images/yGjJ3YP.png)
+![https://goooooouwa.eu.org:8143/static/images/yGjJ3YP.png]({{site.baseurl}}/assets/images/yGjJ3YP.png)
 
-![https://goooooouwa.eu.org:8143/static/images/Hfw68ck.png](https://goooooouwa.eu.org:8143/static/images/Hfw68ck.png)
+![https://goooooouwa.eu.org:8143/static/images/Hfw68ck.png]({{site.baseurl}}/assets/images/Hfw68ck.png)
 
 ## #3 一起來背片假名！日語 50 音的簡單教學～
 
-![https://goooooouwa.eu.org:8143/static/images/lQCXPBT.png](https://goooooouwa.eu.org:8143/static/images/lQCXPBT.png)
+![https://goooooouwa.eu.org:8143/static/images/lQCXPBT.png]({{site.baseurl}}/assets/images/lQCXPBT.png)
 
 ## #4 15 句日文基本生活問候語
 
-![](https://goooooouwa.eu.org:8143/static/images/poVmxnd.png)
+![]({{site.baseurl}}/assets/images/poVmxnd.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/7VZBjPx.png)
+![]({{site.baseurl}}/assets/images/7VZBjPx.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/GBYvJip.png)
+![]({{site.baseurl}}/assets/images/GBYvJip.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/Ndgs2pT.png)
+![]({{site.baseurl}}/assets/images/Ndgs2pT.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/09OwtAO.png)
+![]({{site.baseurl}}/assets/images/09OwtAO.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/mFeU3Si.png)
+![]({{site.baseurl}}/assets/images/mFeU3Si.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/MZDqqtm.png)
+![]({{site.baseurl}}/assets/images/MZDqqtm.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/TNJheqx.png)
+![]({{site.baseurl}}/assets/images/TNJheqx.png)
 
-![https://goooooouwa.eu.org:8143/static/images/ssWQ2h9.png](https://goooooouwa.eu.org:8143/static/images/ssWQ2h9.png)
+![https://goooooouwa.eu.org:8143/static/images/ssWQ2h9.png]({{site.baseurl}}/assets/images/ssWQ2h9.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/4NXEcl5.png)
+![]({{site.baseurl}}/assets/images/4NXEcl5.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/ugIpJog.png)
+![]({{site.baseurl}}/assets/images/ugIpJog.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/EcRoxGm.png)
+![]({{site.baseurl}}/assets/images/EcRoxGm.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/zrAkPIO.png)
+![]({{site.baseurl}}/assets/images/zrAkPIO.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/CmkTn5n.png)
+![]({{site.baseurl}}/assets/images/CmkTn5n.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/XTjY6f5.png)
+![]({{site.baseurl}}/assets/images/XTjY6f5.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/qsHMqH5.png)
+![]({{site.baseurl}}/assets/images/qsHMqH5.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/YRW51ty.png)
+![]({{site.baseurl}}/assets/images/YRW51ty.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/BohmX1x.png)
+![]({{site.baseurl}}/assets/images/BohmX1x.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/DQ5VK9u.png)
+![]({{site.baseurl}}/assets/images/DQ5VK9u.png)
 
-![https://goooooouwa.eu.org:8143/static/images/vstEuf1.png](https://goooooouwa.eu.org:8143/static/images/vstEuf1.png)
+![https://goooooouwa.eu.org:8143/static/images/vstEuf1.png]({{site.baseurl}}/assets/images/vstEuf1.png)
 
-![https://goooooouwa.eu.org:8143/static/images/udwnLzX.png](https://goooooouwa.eu.org:8143/static/images/udwnLzX.png)
+![https://goooooouwa.eu.org:8143/static/images/udwnLzX.png]({{site.baseurl}}/assets/images/udwnLzX.png)
 
 ## #5 簡單文型：「初次見面我叫..」日文基礎文型教學
 
-![https://goooooouwa.eu.org:8143/static/images/WTUOLhO.png](https://goooooouwa.eu.org:8143/static/images/WTUOLhO.png)
+![https://goooooouwa.eu.org:8143/static/images/WTUOLhO.png]({{site.baseurl}}/assets/images/WTUOLhO.png)
 
 ## 日语常用语
 

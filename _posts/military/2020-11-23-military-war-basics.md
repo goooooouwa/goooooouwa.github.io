@@ -39,9 +39,9 @@ Types of military operations, by scope:
 
 https://www.youtube.com/watch?v=nBStKk3fE4E&t=494s
 
-![](https://goooooouwa.eu.org:8143/static/images/p9xzDut.png)
+![]({{site.baseurl}}/assets/images/p9xzDut.png)
 
-![](https://goooooouwa.eu.org:8143/static/images/FiTNTvc.png)
+![]({{site.baseurl}}/assets/images/FiTNTvc.png)
 
 #### Strategic
 

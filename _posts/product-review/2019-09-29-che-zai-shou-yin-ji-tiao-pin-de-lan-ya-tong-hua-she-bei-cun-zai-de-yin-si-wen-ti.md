@@ -8,9 +8,9 @@ date: "2019-09-29"
 
 还是只支持音频播放、不支持通话的同类型产品隐私性会更好一些（这种设备在来电话时只支持通过手机麦克和扬声器接听电话），大不了别人知道你在听什么歌。
 
-![](https://goooooouwa.eu.org:8143/static/images/efnznazu4aalxad.jpeg)
+![]({{site.baseurl}}/assets/images/efnznazu4aalxad.jpeg)
 
-![](https://goooooouwa.eu.org:8143/static/images/efnznazu4aiyovt.jpeg)
+![]({{site.baseurl}}/assets/images/efnznazu4aiyovt.jpeg)
 
 参考来源：
 

@@ -9,7 +9,7 @@ category: product-management
 
 原文作者：[Julie Zhuo](https://medium.com/@joulee)
 
-![图片来自[JD Hancock](https://www.flickr.com/photos/jdhancock/)](https://goooooouwa.eu.org:8143/static/images/aOTrLhN.jpg)
+![图片来自[JD Hancock](https://www.flickr.com/photos/jdhancock/)]({{site.baseurl}}/assets/images/aOTrLhN.jpg)
 
 **如**果产品开发中也存在着“星球大战还是星际迷航”一般无休止地的辩论，那便是我所说的“质量与时间之间的权衡”（TTBQT，The Tradeoff Between Quality and Time）。这种辩论通常是这样的：
 

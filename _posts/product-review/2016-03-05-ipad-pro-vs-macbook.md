@@ -7,8 +7,8 @@ category: product-review
 
 继推出 12 寸的 iPad Pro 后，苹果又推出了全新 MacBook。为什么苹果要同时推出两款功能如此接近的产品？到底哪一款会成为未来个人电脑的主流？
 
-![iPad Pro](https://goooooouwa.eu.org:8143/static/images/sbkY590.jpg)
-![MacBook](https://goooooouwa.eu.org:8143/static/images/cIYFXD1.png)
+![iPad Pro]({{site.baseurl}}/assets/images/sbkY590.jpg)
+![MacBook]({{site.baseurl}}/assets/images/cIYFXD1.png)
 
 首先这两台设备有许多相似之处：相似的尺寸、相似的处理性能、相似的屏幕分辨率、相似的续航能力、相似的键盘手感。
 

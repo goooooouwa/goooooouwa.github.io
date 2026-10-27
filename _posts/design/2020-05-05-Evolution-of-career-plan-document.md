@@ -17,7 +17,7 @@ Cons:
 
 - 容易信息过载
 
-![](https://goooooouwa.eu.org:8143/static/images/c7Fa9ez.png)
+![]({{site.baseurl}}/assets/images/c7Fa9ez.png)
 
 ## Version 2: Google Sheet
 
@@ -33,11 +33,11 @@ Cons:
 
 Roadmap
 
-![](https://goooooouwa.eu.org:8143/static/images/b3jx3HV.png)
+![]({{site.baseurl}}/assets/images/b3jx3HV.png)
 
 Task breakdown
 
-![](https://goooooouwa.eu.org:8143/static/images/BQsPN2S.png)
+![]({{site.baseurl}}/assets/images/BQsPN2S.png)
 
 ## Version 3: Trello
 
@@ -51,4 +51,4 @@ Cons:
 
 - 可视化效果受限（时间线不直观，可视维度固定）
 
-![](https://goooooouwa.eu.org:8143/static/images/IEPFLBc.png)
+![]({{site.baseurl}}/assets/images/IEPFLBc.png)

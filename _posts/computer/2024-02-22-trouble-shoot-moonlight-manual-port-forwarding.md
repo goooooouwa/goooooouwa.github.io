@@ -4,6 +4,7 @@ category: computer
 tags: moonlight streaming troubleshooting
 published: true
 ---
+
 由于我的一台X86小主机与其他设备不在同一内网（姑且称为内网A），无法在局域网完成配对，因此Automatic configuration的方式就行不通了，此时如果想通过moonlight串流就只有以下2种方式：
 
 1. ZeroTier
@@ -32,7 +33,7 @@ published: true
 
 当我将旁路由的moonlight端口映射规则禁用后，问题就解决了，可以在内网B使用moonlight客户端访问内网A的X86小主机了。
 
-![屏幕截图 2024-02-22 171930.png](https://goooooouwa.eu.org:8143/static/images/2024-02-22 171930.png)
+![屏幕截图 2024-02-22 171930.png]({{site.baseurl}}/assets/images/2024-02-22 171930.png)
 
 我怀疑moonlight串流需要客户端所在网络和服务器所在网络均能使用UDP+TCP: 47984 - 48010来完成网络连接，由于我在内网B将UDP+TCP: 47984 - 48010端口映射到了N卡游戏本IP，便导致当我尝试从内网B使用moonlight客户端访问内网A的X86小主机时所需的端口被占用了（X86小主机尝试将请求发给moonlight客户端，但是请求被映射到了N卡游戏本IP）。
 
@@ -42,11 +43,11 @@ published: true
 
 当我尝试在旁路由上开启UPnP服务然后从外网访问N卡游戏本时，结果发现moonlight串流的所有端口都被占用了。
 
-![moonlight client error](https://goooooouwa.eu.org:8143/static/images/Screenshot_20240222-193529.jpg)
+![moonlight client error]({{site.baseurl}}/assets/images/Screenshot_20240222-193529.jpg)
 
 后来一番排查才发现，原来moonlight串流所需的端口已经在UPnP服务中被自动设置了映射规则，映射到了N卡游戏本IP（如下图）。
 
-![屏幕截图 2024-02-22 200702.png](https://goooooouwa.eu.org:8143/static/images/2024-02-22 200702.png)
+![屏幕截图 2024-02-22 200702.png]({{site.baseurl}}/assets/images/2024-02-22 200702.png)
 
 可是为什么即使映射了端口，外网仍然无法串流到内网B的N卡游戏本呢？可能还是由于我的旁路由网络拓扑结构所致吧。网上简单搜了一下，也没有找到好用的旁路由设置UPnP的教程，懒得折腾了，卸载了旁路由上的UPnP，避免端口再次被悄悄占用。
 

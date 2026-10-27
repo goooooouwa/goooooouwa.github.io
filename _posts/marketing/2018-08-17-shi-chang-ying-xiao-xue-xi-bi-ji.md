@@ -12,9 +12,9 @@ Market 的需求端 = 现有客户 + 潜在客户
 
 Market 的供应端 = 现有供应者 + 可替代的产品 + 潜在的加入者
 
-![Imgur](https://goooooouwa.eu.org:8143/static/images/aPKwacT.png)
+![Imgur]({{site.baseurl}}/assets/images/aPKwacT.png)
 
-![Imgur](https://goooooouwa.eu.org:8143/static/images/00gPDtV.png)
+![Imgur]({{site.baseurl}}/assets/images/00gPDtV.png)
 
 ## 市场调研和营销调研的区别
 
@@ -22,13 +22,13 @@ Market 的供应端 = 现有供应者 + 可替代的产品 + 潜在的加入者
 
 市场研究通过一系列手段来了解市场情况，包括许多方面：
 
-![img](https://goooooouwa.eu.org:8143/static/images/VcSRHzn.png)
+![img]({{site.baseurl}}/assets/images/VcSRHzn.png)
 
 了解 what customers want 一般由专门的营销（Marketing）部门负责研究（通过 Marketing Research，比如 A/B 测试、调查问卷，等等）。
 
 不要把市场调研和营销调研搞混了。市场调研是一切商业开始之前的活动，通常在商业计划书（Business Plan）阶段进行。
 
-![img](https://goooooouwa.eu.org:8143/static/images/h1unXFA.jpg)
+![img]({{site.baseurl}}/assets/images/h1unXFA.jpg)
 
 ## 8 种需求
 

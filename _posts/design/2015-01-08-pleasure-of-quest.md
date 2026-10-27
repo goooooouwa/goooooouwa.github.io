@@ -8,23 +8,23 @@ category: design
 
 在一次项目开发中，客户提出需求：用户要能够方便地将多个文档放进多个包裹。他给出了下面的实现方案：
 
-![overflow](https://goooooouwa.eu.org:8143/static/images/xobg0KZ.png)
+![overflow]({{site.baseurl}}/assets/images/xobg0KZ.png)
 
 这个设计本质上就是一个表格。横标题是包裹列表，竖标题是文档列表。用户在某个文档行与某个包裹列相交处作上标记即表明此文档需要放进此包裹。我觉得这种设计用户体验太差，而且实现太复杂，于是我开始寻找更好的方案。
 
 我反复寻找身边处理多对多关系的例子，最终我想到了 iOS 上的照片分享功能：首先选择你要分享的照片，然后选择你要分享给的联系人。我觉得这个方案可行，于是做了下面这个功能：
 
-![overflow](https://goooooouwa.eu.org:8143/static/images/62FzHGF.png)
+![overflow]({{site.baseurl}}/assets/images/62FzHGF.png)
 
 这样用户就可以方便的将多个文档分批次放进多个包裹了。客户也觉得很好。不过用户实际使用一段时间后反馈说这个方案存在一个缺陷：用户无法全局查看所有包裹的内容，而最初的表格方案是可以的。用户就是这么任性。于是我又开始思考：是否存在一种包管理方案，既功能强大，又简单好用呢？哼，听着就觉得不太可能。
 
 最终我想到了 Google+的人脉圈管理，见下图：
 
-![overflow](https://goooooouwa.eu.org:8143/static/images/OJP6K7u.png)
+![overflow]({{site.baseurl}}/assets/images/OJP6K7u.png)
 
 上半部分是好友列表，下半部分是人脉圈列表。用户通过拖拽好友至人脉圈上然后释放，即可将此好友加入此人脉圈。这种设计正是我所寻找的“功能强大、简单好用”的方案。于是我开始动手将其实现。
 
-![overflow](https://goooooouwa.eu.org:8143/static/images/AOfUxLi.png)
+![overflow]({{site.baseurl}}/assets/images/AOfUxLi.png)
 
 这是我目前正在实现的拖拽式包管理方案的 demo。这样用户就可以同时查看全部文档和全部包裹的内容了，并且可以通过简单直观地拖拽来管理包裹。当我把这个 demo 展示给客户时，他觉得非常好。
 

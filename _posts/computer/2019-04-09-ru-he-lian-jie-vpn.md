@@ -6,8 +6,8 @@ category: computer
 
 # 如何连接 VPN
 
-![](https://goooooouwa.eu.org:8143/static/images/wmYww4H.png)
+![]({{site.baseurl}}/assets/images/wmYww4H.png)
 
 连上了就是这个样子：
 
-![](https://goooooouwa.eu.org:8143/static/images/fSUjVR5.png)
+![]({{site.baseurl}}/assets/images/fSUjVR5.png)

@@ -3,13 +3,14 @@ published: true
 title: Wirelessly Photo Transfer with PhotoSync
 category: productivity
 ---
+
 ## Lstest update to my photo organizing workflows
 
 I can now use PhotoSync to wirelessly transfer my photos directly to my NAS (via A-List WebDav). Below is the configuration I use and the end result.
 
 ## PhotoSync configuration
 
-![](https://goooooouwa.eu.org:8143/static/images/photosync-webdav-configuration.jpg)
+![]({{site.baseurl}}/assets/images/photosync-webdav-configuration.jpg)
 
 ![]({{site.baseurl}}/assets/images/20260317_212714000_iOS.png)
 
@@ -21,7 +22,7 @@ I can now use PhotoSync to wirelessly transfer my photos directly to my NAS (via
 
 ## Result folder & filename
 
-![](https://goooooouwa.eu.org:8143/static/images/photosync-folder-filename-example.jpg)
+![]({{site.baseurl}}/assets/images/photosync-folder-filename-example.jpg)
 
 ## Comparision with photo transfer with USB cable
 

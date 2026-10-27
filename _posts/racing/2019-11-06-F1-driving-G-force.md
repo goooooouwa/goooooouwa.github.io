@@ -6,23 +6,23 @@ date: "2019-11-06"
 
 G force
 
-![](https://goooooouwa.eu.org:8143/static/images/8omGrnt.png)
+![]({{site.baseurl}}/assets/images/8omGrnt.png)
 
 Maximum braking 5.9G
 
-![](https://goooooouwa.eu.org:8143/static/images/ITum5mn.png)
+![]({{site.baseurl}}/assets/images/ITum5mn.png)
 
 Turn in 3.0G
 
-![](https://goooooouwa.eu.org:8143/static/images/IPgAWrz.png)
+![]({{site.baseurl}}/assets/images/IPgAWrz.png)
 
 Cornering force 3.6G
 
-![](https://goooooouwa.eu.org:8143/static/images/7bOapvl.png)
+![]({{site.baseurl}}/assets/images/7bOapvl.png)
 
 Cornering force 4.9G
 
-![](https://goooooouwa.eu.org:8143/static/images/8ZY0ivl.png)
+![]({{site.baseurl}}/assets/images/8ZY0ivl.png)
 
 轮胎能承受 5、6 个 G 的力量，转向角度这么大仍可以全油门。
 

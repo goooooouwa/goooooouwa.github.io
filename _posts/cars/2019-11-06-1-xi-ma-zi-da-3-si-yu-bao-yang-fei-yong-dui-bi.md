@@ -8,7 +8,7 @@ date: "2019-11-06"
 马自达 3：6 年一共 8918 元  
 思域：6 年一共 6619 元
 
-![](https://goooooouwa.eu.org:8143/static/images/screen-shot-2020-04-21-at-3.40.06-pm.png)
+![]({{site.baseurl}}/assets/images/screen-shot-2020-04-21-at-3.40.06-pm.png)
 
 一系保养
 

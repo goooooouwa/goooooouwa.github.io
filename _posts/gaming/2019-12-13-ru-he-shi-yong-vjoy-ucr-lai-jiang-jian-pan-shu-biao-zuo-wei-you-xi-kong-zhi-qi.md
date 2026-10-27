@@ -11,7 +11,7 @@ UCR: Universal Controller Remapper，将键盘鼠标按键映射到控制器按�
 
 Step 1: Download and Install Vjoy
 Step 2: Setup Vjoy device (不要设为第 1 个设备，会跟实际插入电脑的控制器冲突）
-![](https://goooooouwa.eu.org:8143/static/images/ZqA9t8Z.png)
+![]({{site.baseurl}}/assets/images/ZqA9t8Z.png)
 
 Step 3: Download and Install UCR
 Step 3.1 Setup UCR
@@ -23,23 +23,23 @@ If this step fails, open an admin command prompt and navigate to UCR's resources
 Step 4: 将键盘按键或者鼠标映射到控制器按钮或摇杆
 4.1 将键盘按键映射到控制器按钮
 4.1.1 选择 button to button，点击 add
-![](https://goooooouwa.eu.org:8143/static/images/eXrtnPQ.png)
+![]({{site.baseurl}}/assets/images/eXrtnPQ.png)
 
 4.1.2 映射键盘按键到控制器按钮
 4.1.1 Input Button: 选择键盘按键
 4.1.2 Output Button: 选择 vXBox Stick 2?（明确是模拟 XBox 控制器，我也不确定这里应该选择 vJoy Stick 2 还是 vXBox Stick 2，自己试一下吧）
 4.1.3 Output Button: 选择 vXBox Buttons -> 具体 Button
-![](https://goooooouwa.eu.org:8143/static/images/uuZ87oi.png)
+![]({{site.baseurl}}/assets/images/uuZ87oi.png)
 
 4.2.1 选择 Mouse to Axis（注意，不是 Axis to Mouse），点击 add
-![](https://goooooouwa.eu.org:8143/static/images/pgmcGmp.png)
+![]({{site.baseurl}}/assets/images/pgmcGmp.png)
 4.2.2 映射鼠标到摇杆
 4.2.2.1 Input: 选择 Any Mouse
 4.2.2.2 Outputs: 选择 vJoy Stick 2
 4.2.2.3 Outputs: 选择 vJoy Stick Axes -> 1(X)（左摇杆横向移动）
 4.2.2.4 Outputs: 选择 vJoy Stick Axes -> 2(Y)（右摇杆纵向移动）
-![](https://goooooouwa.eu.org:8143/static/images/p1nBK66.png)
+![]({{site.baseurl}}/assets/images/p1nBK66.png)
 4.3 点击 Save Settings 保存设置
-![](https://goooooouwa.eu.org:8143/static/images/P4NZfr5.png)
+![]({{site.baseurl}}/assets/images/P4NZfr5.png)
 Step 5: 可以使用设备管理器或者 Vjoy Monitor 来检查映射是不是成功
-![](https://goooooouwa.eu.org:8143/static/images/B40GrZV.png)
+![]({{site.baseurl}}/assets/images/B40GrZV.png)

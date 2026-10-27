@@ -10,13 +10,13 @@ tags: perspective study-notes
 
 在网上查了好多资料，终于找到了真理所在，向 17 世纪文艺复兴时期的艺术家们致敬！
 
-![](https://goooooouwa.eu.org:8143/static/images/dj4uectu4aewces.jpeg)
+![]({{site.baseurl}}/assets/images/dj4uectu4aewces.jpeg)
 
-![](https://goooooouwa.eu.org:8143/static/images/dj4uecsuuaaxbou.jpeg)
+![]({{site.baseurl}}/assets/images/dj4uecsuuaaxbou.jpeg)
 
-![](https://goooooouwa.eu.org:8143/static/images/dj4uecsv4aedjjc.jpeg)
+![]({{site.baseurl}}/assets/images/dj4uecsv4aedjjc.jpeg)
 
-![](https://goooooouwa.eu.org:8143/static/images/dj4uecrvsaeot59.jpeg)
+![]({{site.baseurl}}/assets/images/dj4uecrvsaeot59.jpeg)
 
 透视画法资料：  
 https://handprint.com/HP/WCL/perspect1.html  

@@ -17,7 +17,7 @@ tags: business-model
 8. KP 重要合作 Key Partnerships 有些业务要外包，而另外一些资源需要从企业外部获得。
 9. C$ 成本结构 Cost Structure 商业模式上述要素所引发的成本构成。
 
-![](https://goooooouwa.eu.org:8143/static/images/20210525064447.jpg)
+![]({{site.baseurl}}/assets/images/20210525064447.jpg)
 
 ## 1 客户细分
 

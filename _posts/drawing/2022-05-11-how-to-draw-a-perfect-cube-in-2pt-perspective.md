@@ -5,7 +5,7 @@ category: drawing
 tags: perspective study-notes
 ---
 
-![](https://goooooouwa.eu.org:8143/static/images/202205111248740.png)
+![]({{site.baseurl}}/assets/images/202205111248740.png)
 
 Reference:
 

@@ -5,16 +5,16 @@ date: "2019-08-22"
 ---
 
 车辆生命周期  
-![](https://goooooouwa.eu.org:8143/static/images/laThYoR.jpg)
+![]({{site.baseurl}}/assets/images/laThYoR.jpg)
 
 车辆生命周期售价整体趋势  
-![](https://goooooouwa.eu.org:8143/static/images/4d3pHD2.jpg)
+![]({{site.baseurl}}/assets/images/4d3pHD2.jpg)
 
 年度改款和中期改款对售价和销量的影响  
-![](https://goooooouwa.eu.org:8143/static/images/kp8CMK2.jpg)
+![]({{site.baseurl}}/assets/images/kp8CMK2.jpg)
 
 何时买车最划算  
-![](https://goooooouwa.eu.org:8143/static/images/rw3TKDG.jpg)
+![]({{site.baseurl}}/assets/images/rw3TKDG.jpg)
 
 参考：  
 知乎：https://zhuanlan.zhihu.com/p/34180268  
