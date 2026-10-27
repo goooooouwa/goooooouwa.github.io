@@ -1,5 +1,5 @@
 ---
-title: 俯仰视角下的透视
+title: 研究：俯仰视角下的透视
 category: drawing
 tags: perspective
 published: true

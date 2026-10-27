@@ -1,6 +1,6 @@
 ---
 published: true
-title: 如何画人体动态
+title: 思考：如何画人体动态
 category: drawing
 tags: perspective body-flow
 ---

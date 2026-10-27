@@ -1,5 +1,5 @@
 ---
-title: 对一些大角度透视画面的研究
+title: 研究：大角度透视
 category: drawing
 tags: perspective
 published: true

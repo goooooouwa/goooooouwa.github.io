@@ -1,5 +1,5 @@
 ---
-title: 一点透视中物体大小和物距之间关系
+title: 研究：一点透视中物体大小和物距之间关系
 category: drawing
 tags: perspective
 published: true

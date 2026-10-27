@@ -1,5 +1,5 @@
 ---
-title: 理解一点、两点、三点、四点（鱼眼）透视
+title: 思考：理解一点、两点、三点、四点（鱼眼）透视
 category: drawing
 tags: perspective
 published: true
