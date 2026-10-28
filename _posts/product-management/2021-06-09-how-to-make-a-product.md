@@ -5,8 +5,8 @@ category: product-management
 tags: innovation
 ---
 
-- TOC
-  {:toc}
+* TOC
+{:toc}
 
 ## 前言
 
