@@ -1,5 +1,5 @@
 ---
-title: 笔记：透视线条的构造方法
+title: 笔记：透视线条的构造
 category: drawing
 tags: perspective study-notes
 published: true
