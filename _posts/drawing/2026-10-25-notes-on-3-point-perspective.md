@@ -65,6 +65,8 @@ published: true
 4. 两个圆相交的点之一即为P2；
 5. 将vp2与P2连线即得到一条经过vp2且垂直于vp1和vp3连线的线条。
 
+![constructing-auxiliary-horizon-lines.PNG]({{site.baseurl}}/assets/images/constructing-auxiliary-horizon-lines.PNG)
+
 ![Anotated illustration]({{site.baseurl}}/assets/images/d02faafb29394de982fa5c940d47a944.jpg)
 
 **泰勒斯半圆（Semicircle of Thales）**
