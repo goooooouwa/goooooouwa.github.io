@@ -98,7 +98,7 @@ title: 笔记：高级透视技巧
 
 ![1da4a6b45fd34587906b1b1381441595.jpg]({{site.baseurl}}/assets/images/1da4a6b45fd34587906b1b1381441595.jpg)
 
-#### 如何画透视中的圆（即找到椭圆的长轴和短轴）
+#### 透视中画圆（即找到椭圆的长轴和短轴）的另一个tip
 
 在一个[proko视频](https://www.youtube.com/watch?v=LFMhE9nPrfU)里学到一种简单的找到透视中圆形（即椭圆）的长轴和短轴方向的办法：
 
@@ -113,6 +113,16 @@ title: 笔记：高级透视技巧
 > A good way to visualize the car wheels trick is to think of the left and right wheel as forming a cylinder bwtween them. And the reason the circle of the wheels is squished along that perpendicular axis is because the more you tilt the cylinder in perspective so you see it from the side, the more those top and bottom plane circles of the cylinder become squished into a line that's perpendicular to the height of the cylinder.
 
 ![1d8792d00950424dad8c688c32c3e63a.jpg]({{site.baseurl}}/assets/images/1d8792d00950424dad8c688c32c3e63a.jpg)
+
+当然，从以下实验结果可以得知，这种方法也只是一种近似，并不是精确定位椭圆的长轴和短轴。
+
+实验1 - 空间中的椭圆短轴并不严格垂直于消失点
+
+![]({{site.baseurl}}/assets/images/透视实验3 - 空间中的椭圆短轴并不严格垂直于消失点.PNG)
+
+实验2 - 地面上的椭圆短轴也不严格重合于圆心与地平线的交点
+
+![]({{site.baseurl}}/assets/images/透视实验4 - 地面上的椭圆短轴也不严格重合于圆心与地平线的交点.PNG)
 
 ### 人体透视
 
